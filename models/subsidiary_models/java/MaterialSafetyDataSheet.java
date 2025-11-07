@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
+  A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

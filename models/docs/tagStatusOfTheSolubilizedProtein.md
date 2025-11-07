@@ -3,7 +3,7 @@
 # Slot: tag status of the solubilized protein (tagStatusOfTheSolubilizedProtein) 
 
 
-_Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)_
+_Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)._
 
 
 
@@ -74,7 +74,7 @@ name: tagStatusOfTheSolubilizedProtein
 description: Indicates the presence and condition of a tag on the protein after solubilization.
   Possible values include 'Uncleaved Tag' (the tag is still attached to the protein),
   'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein
-  does not have a tag)
+  does not have a tag).
 title: tag status of the solubilized protein
 from_schema: https://w3id.org/evorao/
 rank: 1000

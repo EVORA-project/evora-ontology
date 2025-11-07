@@ -3,7 +3,7 @@
 # Slot: antibody purified by affinity (antibodyPurifiedByAffinity) 
 
 
-_Indicates whether or not if the antibody was purified by affinity_
+_Indicates whether or not if the antibody was purified by affinity._
 
 
 
@@ -72,7 +72,7 @@ Alias: antibodyPurifiedByAffinity
 <details>
 ```yaml
 name: antibodyPurifiedByAffinity
-description: Indicates whether or not if the antibody was purified by affinity
+description: Indicates whether or not if the antibody was purified by affinity.
 title: antibody purified by affinity
 from_schema: https://w3id.org/evorao/
 rank: 1000

@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially
+  A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

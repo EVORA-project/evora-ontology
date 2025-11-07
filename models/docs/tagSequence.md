@@ -3,7 +3,7 @@
 # Slot: tag sequence (tagSequence) 
 
 
-_The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids_
+_The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids._
 
 
 
@@ -22,8 +22,8 @@ Alias: tagSequence
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
 | [Protein](Protein.md) | A protein as a derived product from a pathogen |  yes  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
 
 
 
@@ -76,7 +76,7 @@ name: tagSequence
 description: The name of the DNA coding sequence or corresponding peptide/protein
   sequence fused to a sequence of interest, used to facilitate experimental operations
   such as purification, detection, localization, tracking, solubility enhancement,
-  or selection. Applicable to both proteins and nucleic acids
+  or selection. Applicable to both proteins and nucleic acids.
 title: tag sequence
 from_schema: https://w3id.org/evorao/
 exact_mappings:

@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
+  The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

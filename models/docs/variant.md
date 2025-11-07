@@ -3,7 +3,7 @@
 # Slot: variant (variant) 
 
 
-_An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain_
+_An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain._
 
 
 
@@ -70,7 +70,7 @@ Alias: variant
 ```yaml
 name: variant
 description: An organism with one or more new mutations is referred to as a “variant”
-  of the original organism if not sufficiently different to be termed a distinct strain
+  of the original organism if not sufficiently different to be termed a distinct strain.
 title: variant
 from_schema: https://w3id.org/evorao/
 rank: 1000

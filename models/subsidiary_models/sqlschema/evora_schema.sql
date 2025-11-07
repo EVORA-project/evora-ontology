@@ -1,1061 +1,1061 @@
--- # Class: "Resource" Description: "Resource published or curated by a single agent"
+-- # Class: "Resource" Description: "Resource published or curated by a single agent."
 --     * Slot: id Description: 
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
--- # Class: "Dataset" Description: "A collection of data, published or curated by a single agent, and available for access"
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+-- # Class: "Dataset" Description: "A collection of data, published or curated by a single agent, and available for access."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
--- # Class: "DataService" Description: "A collection of operations that provides access to one or more datasets or data processing functions"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+-- # Class: "DataService" Description: "A collection of operations that provides access to one or more datasets or data processing functions."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: endpointUrl Description: The URL template that allows to get the content
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
--- # Class: "Version" Description: "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: endpointUrl Description: The URL template that allows to get the content.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+-- # Class: "Version" Description: "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)."
 --     * Slot: id Description: 
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: versionOf Description: Identifier of what type of entities the version qualifies
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
--- # Class: "Catalogue" Description: "A curated collection of metadata about resources"
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: versionOf Description: Identifier of what type of entities the version qualifies.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+-- # Class: "Catalogue" Description: "A curated collection of metadata about resources."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
--- # Class: "Taxonomy" Description: "A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+-- # Class: "Taxonomy" Description: "A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics."
 --     * Slot: id Description: 
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: taxonDataProvider_id Description: The data provider for the taxons of the taxonomy
---     * Slot: versionDataProvider_id Description: The data provider for the Version ID of this taxonomy
---     * Slot: rankDataProvider_id Description: The data provider for the description of the taxonomic ranks used in this taxonomy
--- # Class: "DataProvider" Description: "An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources"
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: taxonDataProvider_id Description: The data provider for the taxons of the taxonomy.
+--     * Slot: versionDataProvider_id Description: The data provider for the Version ID of this taxonomy.
+--     * Slot: rankDataProvider_id Description: The data provider for the description of the taxonomic ranks used in this taxonomy.
+-- # Class: "DataProvider" Description: "An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources."
 --     * Slot: id Description: 
---     * Slot: loginRequestMethod Description: The http request method used to acces the login request url
---     * Slot: loginUrl Description: The URL template that allows to log in if required
---     * Slot: loginTokenName Description: The name of the token, unique identifier of an interaction session, that will have to be reused as credential in the query
---     * Slot: queryMethod Description: The http request method used to access the requested query url
---     * Slot: contentType Description: The content type of the response to queries. It specifies the serialization, file type, or media type used to convey the resource, typically expressed as a MIME type following IANA media type registrations
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: endpointUrl Description: The URL template that allows to get the content
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
--- # Class: "PathogenIdentification" Description: "A collection of distinguishing information that enables the differentiation of a pathogen from another"
+--     * Slot: loginRequestMethod Description: The http request method used to acces the login request url.
+--     * Slot: loginUrl Description: The URL template that allows to log in if required.
+--     * Slot: loginTokenName Description: The name of the token, unique identifier of an interaction session, that will have to be reused as credential in the query.
+--     * Slot: queryMethod Description: The http request method used to access the requested query url.
+--     * Slot: contentType Description: The content type of the response to queries. It specifies the serialization, file type, or media type used to convey the resource, typically expressed as a MIME type following IANA media type registrations.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: endpointUrl Description: The URL template that allows to get the content.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+-- # Class: "PathogenIdentification" Description: "A collection of distinguishing information that enables the differentiation of a pathogen from another."
 --     * Slot: id Description: 
 --     * Slot: pathogenType Description: Identification of the specific type of pathogen among the listed categories e.g. 'Virus','Viroid','Bacterium'...
---     * Slot: subspecies Description: The subspecies information differentiates closely related pathogens within a single species
---     * Slot: strain Description: Identifier given to a genetic variant within a single species
---     * Slot: isolate Description: Identifier given to a pathogen that has been isolated from an infected host and propagated in a laboratory culture. The isolate information may include an internal reference code from the laboratory that took the sample or performed the isolation, as well as details about the specific conditions of isolation, such as the name of the town, hospital, and type of host
---     * Slot: genotype Description: Genotype information that identifies organisms that cluster in phylogenetic trees, thus different clusters are distinct genotypes
---     * Slot: serotype Description: Genetically related pathogens that group together based on serological relationships
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: taxon_id Description: Scientifically classified group or entity within the reference taxonomy
---     * Slot: pathogenName_id Description: A pathogen common name or a name that describes a group of pathogens
---     * Slot: variant_id Description: An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
--- # Class: "Publication" Description: "A scientific publication"
+--     * Slot: subspecies Description: The subspecies information differentiates closely related pathogens within a single species.
+--     * Slot: strain Description: Identifier given to a genetic variant within a single species.
+--     * Slot: isolate Description: Identifier given to a pathogen that has been isolated from an infected host and propagated in a laboratory culture. The isolate information may include an internal reference code from the laboratory that took the sample or performed the isolation, as well as details about the specific conditions of isolation, such as the name of the town, hospital, and type of host.
+--     * Slot: genotype Description: Genotype information that identifies organisms that cluster in phylogenetic trees, thus different clusters are distinct genotypes.
+--     * Slot: serotype Description: Genetically related pathogens that group together based on serological relationships.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: taxon_id Description: Scientifically classified group or entity within the reference taxonomy.
+--     * Slot: pathogenName_id Description: A pathogen common name or a name that describes a group of pathogens.
+--     * Slot: variant_id Description: An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain.
+-- # Class: "Publication" Description: "A scientific publication."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: authors Description: The list of authors
---     * Slot: abstract Description: Concise summary of the publication
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
---     * Slot: journal_id Description: The scientific journal in which the publication was published
--- # Class: "Vocabulary" Description: "A subset of words or phrases specific to a particular subject or field"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: authors Description: The list of authors.
+--     * Slot: abstract Description: Concise summary of the publication.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
+--     * Slot: journal_id Description: The scientific journal in which the publication was published.
+-- # Class: "Vocabulary" Description: "A subset of words or phrases specific to a particular subject or field."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: termDataProvider_id Description: An external API or Endpoint that permits to retrieve the terms of this vocabulary
--- # Class: "Term" Description: "Word or phrase from a specialized area of knowledge"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: termDataProvider_id Description: An external API or Endpoint that permits to retrieve the terms of this vocabulary.
+-- # Class: "Term" Description: "Word or phrase from a specialized area of knowledge."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "CommonName" Description: "Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "CommonName" Description: "Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "VirusName" Description: "A virus vernacular name or a name that describes a group of viruses"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "VirusName" Description: "A virus vernacular name or a name that describes a group of viruses."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "AlternateName" Description: "List of other names for things"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "AlternateName" Description: "List of other names for things."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "RiskGroup" Description: "Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "RiskGroup" Description: "Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "BiosafetyLevel" Description: "The level of biocontainment required or applied in the facility where the biological agent is manipulated"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "BiosafetyLevel" Description: "The level of biocontainment required or applied in the facility where the biological agent is manipulated."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "Doi" Description: "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "Doi" Description: "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "Journal" Description: "Periodical journal publishing scientific research"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "Journal" Description: "Periodical journal publishing scientific research."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "PdbReference" Description: "Identifier for 3D structural data as per the PDB (Protein Data Bank) database"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "PdbReference" Description: "Identifier for 3D structural data as per the PDB (Protein Data Bank) database."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "Keyword" Description: "A term or phrase used to tag and categorize content"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "Keyword" Description: "A term or phrase used to tag and categorize content."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "TagSequence" Description: "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "TagSequence" Description: "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
 -- # Class: "SpecialFeature" Description: "Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ..."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "ExpressionVector" Description: "A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "ExpressionVector" Description: "A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "PlasmidSelection" Description: "The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "PlasmidSelection" Description: "The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "PropagationHost" Description: "The organism used to grow and multiply the pathogen under controlled conditions"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "PropagationHost" Description: "The organism used to grow and multiply the pathogen under controlled conditions."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "TransmissionMethod" Description: "The process by which the pathogen spreads between hosts"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "TransmissionMethod" Description: "The process by which the pathogen spreads between hosts."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "ProductionCellLine" Description: "A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "ProductionCellLine" Description: "A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "ProductCategory" Description: "A term used to classify a group of products that share common characteristics or functions, which helps in their organization"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "ProductCategory" Description: "A term used to classify a group of products that share common characteristics or functions, which helps in their organization."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: parentCategory_id Description: An overarching category that encompasses the current category within a hierarchical classification system. It serves as the top-level classification, organizing related subcategories under its umbrella to create a structured and logical order.
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "IsolationHost" Description: "Host organism from which the pathogen was isolated"
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "IsolationHost" Description: "Host organism from which the pathogen was isolated."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "GeographicalOrigin" Description: "The specific location or region where a physical item, originates or is naturally found"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "GeographicalOrigin" Description: "The specific location or region where a physical item, originates or is naturally found."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "IplcOrigin" Description: "The IPLC area (Indigenous People and Local Communities) from which a physical item originates"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "IplcOrigin" Description: "The IPLC area (Indigenous People and Local Communities) from which a physical item originates."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "Country" Description: "The country as of ISO3166"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "Country" Description: "The country as of ISO3166."
 --     * Slot: id Description: 
---     * Slot: alpha2Code Description: Two-letter country codes from ISO 3166-1 alpha-2
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "IataClassification" Description: "The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air"
+--     * Slot: alpha2Code Description: Two-letter country codes from ISO 3166-1 alpha-2.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "IataClassification" Description: "The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "Variant" Description: "An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "Variant" Description: "An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "TaxonomicRank" Description: "The possible taxonomic ranks and their description"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "TaxonomicRank" Description: "The possible taxonomic ranks and their description."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "Taxon" Description: "Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "Taxon" Description: "Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit."
 --     * Slot: id Description: 
---     * Slot: taxonomicId Description: The taxonomic identifier as a persistent identifier accross releases
---     * Slot: taxonomicNodeId Description: The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: parentTaxon_id Description: The parent taxon of the current taxon
---     * Slot: rank_id Description: Relative level or position of the identified taxon in the taxonomy
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "ClinicalGroup" Description: "A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health"
+--     * Slot: taxonomicId Description: The taxonomic identifier as a persistent identifier accross releases.
+--     * Slot: taxonomicNodeId Description: The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: parentTaxon_id Description: The parent taxon of the current taxon.
+--     * Slot: rank_id Description: Relative level or position of the identified taxon in the taxonomy.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "ClinicalGroup" Description: "A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary
--- # Class: "ExternalRelatedReference" Description: "A reference that permits to retrieve an item from an external provider"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+-- # Class: "ExternalRelatedReference" Description: "A reference that permits to retrieve an item from an external provider."
 --     * Slot: id Description: 
---     * Slot: reference Description: The identifier reference of the connected external item
---     * Slot: referenceLabel Description: The label informing what this reference is about
---     * Slot: referenceProviderPrefix Description: The url prefix that once completed with the reference will lead to the linked external resource
---     * Slot: referenceProviderName Description: The name for the reference provider
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
--- # Class: "Sequence" Description: "A nucleic acid or protein sequence information"
+--     * Slot: reference Description: The identifier reference of the connected external item.
+--     * Slot: referenceLabel Description: The label informing what this reference is about.
+--     * Slot: referenceProviderPrefix Description: The url prefix that once completed with the reference will lead to the linked external resource.
+--     * Slot: referenceProviderName Description: The name for the reference provider.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+-- # Class: "Sequence" Description: "A nucleic acid or protein sequence information."
 --     * Slot: id Description: 
---     * Slot: sequenceFasta Description: Textual encoding of a biological sequence information in FASTA format
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
--- # Class: "SequenceReference" Description: "A reference that permits to retrieve the sequence information from a sequence provider"
+--     * Slot: sequenceFasta Description: Textual encoding of a biological sequence information in FASTA format.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+-- # Class: "SequenceReference" Description: "A reference that permits to retrieve the sequence information from a sequence provider."
 --     * Slot: id Description: 
---     * Slot: accessionNumber Description: The sequence ID that permits to retrieve the sequence information from the sequence provider
---     * Slot: sequenceProvider Description: The name of the sequence provider within the list of accepted sequence providers
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
--- # Class: "PersonOrOrganization" Description: "A person or an organization"
+--     * Slot: accessionNumber Description: The sequence ID that permits to retrieve the sequence information from the sequence provider.
+--     * Slot: sequenceProvider Description: The name of the sequence provider within the list of accepted sequence providers.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+-- # Class: "PersonOrOrganization" Description: "A person or an organization."
 --     * Slot: id Description: 
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: homePage Description: A web page that serves as the main or introductory page
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
---     * Slot: logo_id Description: A path or URL to the related logo
--- # Class: "Person" Description: "An individual"
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: homePage Description: A web page that serves as the main or introductory page.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: logo_id Description: A path or URL to the related logo.
+-- # Class: "Person" Description: "An individual."
 --     * Slot: id Description: 
---     * Slot: orcidId Description: Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: homePage Description: A web page that serves as the main or introductory page
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
---     * Slot: logo_id Description: A path or URL to the related logo
--- # Class: "Organization" Description: "A social entity established to meet needs or pursue specific goals"
+--     * Slot: orcidId Description: Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation.
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: homePage Description: A web page that serves as the main or introductory page.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: logo_id Description: A path or URL to the related logo.
+-- # Class: "Organization" Description: "A social entity established to meet needs or pursue specific goals."
 --     * Slot: id Description: 
---     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: homePage Description: A web page that serves as the main or introductory page
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: country_id Description: The country of the organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
---     * Slot: logo_id Description: A path or URL to the related logo
--- # Class: "ReasearchInfrastructure" Description: "A research infrastructure (RI)"
+--     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR).
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: homePage Description: A web page that serves as the main or introductory page.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: country_id Description: The country of the organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: logo_id Description: A path or URL to the related logo.
+-- # Class: "ReasearchInfrastructure" Description: "A research infrastructure (RI)."
 --     * Slot: id Description: 
---     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: homePage Description: A web page that serves as the main or introductory page
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: country_id Description: The country of the organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
---     * Slot: logo_id Description: A path or URL to the related logo
--- # Class: "Provider" Description: "A provider of products or services, as a specific organization"
+--     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR).
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: homePage Description: A web page that serves as the main or introductory page.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: country_id Description: The country of the organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: logo_id Description: A path or URL to the related logo.
+-- # Class: "Provider" Description: "A provider of products or services, as a specific organization."
 --     * Slot: id Description: 
---     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR)
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: homePage Description: A web page that serves as the main or introductory page
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: country_id Description: The country of the organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
---     * Slot: logo_id Description: A path or URL to the related logo
--- # Class: "Originator" Description: "The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample"
+--     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR).
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: homePage Description: A web page that serves as the main or introductory page.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: country_id Description: The country of the organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: logo_id Description: A path or URL to the related logo.
+-- # Class: "Originator" Description: "The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample."
 --     * Slot: id Description: 
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: homePage Description: A web page that serves as the main or introductory page
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
---     * Slot: logo_id Description: A path or URL to the related logo
--- # Class: "BiologicalMaterialOrigin" Description: "Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol"
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: homePage Description: A web page that serves as the main or introductory page.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: logo_id Description: A path or URL to the related logo.
+-- # Class: "BiologicalMaterialOrigin" Description: "Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol."
 --     * Slot: id Description: 
 --     * Slot: recombinantMaterial Description: Indicates if this biological material is a recombinant biological material.
 --     * Slot: biologicalSourceType Description: Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
--- # Class: "BiologicalPartOrigin" Description: "Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material"
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+-- # Class: "BiologicalPartOrigin" Description: "Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material."
 --     * Slot: id Description: 
---     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
--- # Class: "NaturalPartOrigin" Description: "Information on the origin of a natural part that composes the biological material"
+--     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part.
+-- # Class: "NaturalPartOrigin" Description: "Information on the origin of a natural part that composes the biological material."
 --     * Slot: id Description: 
---     * Slot: collectionDate Description: The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property
---     * Slot: beforeDate Description: Set to TRUE if a proxy date for the collection date is used
---     * Slot: permitIdentifierForAbs Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations
---     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
+--     * Slot: collectionDate Description: The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property.
+--     * Slot: beforeDate Description: Set to TRUE if a proxy date for the collection date is used.
+--     * Slot: permitIdentifierForAbs Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations.
+--     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: countryOfCollection_id Description: The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to 'country of origin'.
---     * Slot: indigenousPeopleAndLocalCommunityOrigin_id Description: The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant
---     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
--- # Class: "SyntheticPartOrigin" Description: "Information on the origin of a synthetic part that composes the biological material"
+--     * Slot: indigenousPeopleAndLocalCommunityOrigin_id Description: The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant.
+--     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part.
+-- # Class: "SyntheticPartOrigin" Description: "Information on the origin of a synthetic part that composes the biological material."
 --     * Slot: id Description: 
---     * Slot: modificationsFromTheReferenceSequences Description: Set to TRUE if there was is any modification made from the reference sequence
---     * Slot: descriptionOfModificationsMadeFromTheReferenceSequences Description: List the modifications mades from the reference sequence if any
---     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part
--- # Class: "RecombinantPartIdentification" Description: "Identification of a recombinant part"
+--     * Slot: modificationsFromTheReferenceSequences Description: Set to TRUE if there was is any modification made from the reference sequence.
+--     * Slot: descriptionOfModificationsMadeFromTheReferenceSequences Description: List the modifications mades from the reference sequence if any.
+--     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part.
+-- # Class: "RecombinantPartIdentification" Description: "Identification of a recombinant part."
 --     * Slot: id Description: 
---     * Slot: partIdentification Description: A short designation of this recombinant part of the related biological material
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
--- # Class: "Collection" Description: "Set of products and services with some common characteristics"
+--     * Slot: partIdentification Description: A short designation of this recombinant part of the related biological material.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+-- # Class: "Collection" Description: "Set of products and services with some common characteristics."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: collectionDataProvider_id Description: The provider of the data of the collection
--- # Class: "ProductOrService" Description: "An offering provided by a provider, which may be tangible (a product) or intangible (a service)"
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: collectionDataProvider_id Description: The provider of the data of the collection.
+-- # Class: "ProductOrService" Description: "An offering provided by a provider, which may be tangible (a product) or intangible (a service)."
 --     * Slot: id Description: 
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Service" Description: "An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Service" Description: "An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need."
 --     * Slot: id Description: 
---     * Slot: modelSpecies Description: The species of the infected organism in the experiment
---     * Slot: modelType Description: The specific name of the infected organism, including its modification if necessary
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: modelSpecies Description: The species of the infected organism in the experiment.
+--     * Slot: modelType Description: The specific name of the infected organism, including its modification if necessary.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Product" Description: "A tangible, physical item made available by a provider for use, consumption, or ownership transfer"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Product" Description: "A tangible, physical item made available by a provider for use, consumption, or ownership transfer."
 --     * Slot: id Description: 
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Antibody" Description: "Protein that can bind to certain types of foreign bodies, such as pathogens"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Antibody" Description: "Protein that can bind to certain types of foreign bodies, such as pathogens."
 --     * Slot: id Description: 
---     * Slot: productionSystem Description: The biological and technological methods and processes used to produce the antibody
---     * Slot: antibodyPurifiedByAffinity Description: Indicates whether or not if the antibody was purified by affinity
---     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented
---     * Slot: targetedAntigen Description: Specific molecular structure or epitope recognized and bound by an antibody
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: productionSystem Description: The biological and technological methods and processes used to produce the antibody.
+--     * Slot: antibodyPurifiedByAffinity Description: Indicates whether or not if the antibody was purified by affinity.
+--     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented.
+--     * Slot: targetedAntigen Description: Specific molecular structure or epitope recognized and bound by an antibody.
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Hybridoma" Description: "An hybridoma that provides antibodies that can be related to a pathogen"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Hybridoma" Description: "An hybridoma that provides antibodies that can be related to a pathogen."
 --     * Slot: id Description: 
---     * Slot: hybridomaDescription Description: The description of the hybridoma
---     * Slot: productionSystem Description: The biological and technological methods and processes used to produce the antibody
---     * Slot: antibodyPurifiedByAffinity Description: Indicates whether or not if the antibody was purified by affinity
---     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented
---     * Slot: targetedAntigen Description: Specific molecular structure or epitope recognized and bound by an antibody
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: hybridomaDescription Description: The description of the hybridoma.
+--     * Slot: productionSystem Description: The biological and technological methods and processes used to produce the antibody.
+--     * Slot: antibodyPurifiedByAffinity Description: Indicates whether or not if the antibody was purified by affinity.
+--     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented.
+--     * Slot: targetedAntigen Description: Specific molecular structure or epitope recognized and bound by an antibody.
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Protein" Description: "A protein as a derived product from a pathogen"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Protein" Description: "A protein as a derived product from a pathogen."
 --     * Slot: id Description: 
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "NucleicAcid" Description: "Nucleic acid related to a pathogen. It can be extracted or synthetic"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "NucleicAcid" Description: "Nucleic acid related to a pathogen. It can be extracted or synthetic."
 --     * Slot: id Description: 
---     * Slot: clonedNucleicAcid Description: Specification of the terms and parameters for transporting
---     * Slot: regionEncompassedInThisProduct Description: The specific region encompassed in the product
---     * Slot: mutationObserved Description: Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true
---     * Slot: observedMutations Description: The specific mutations that have been identified and documented in the nucleic acid sequence
---     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
+--     * Slot: clonedNucleicAcid Description: Specification of the terms and parameters for transporting.
+--     * Slot: regionEncompassedInThisProduct Description: The specific region encompassed in the product.
+--     * Slot: mutationObserved Description: Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true.
+--     * Slot: observedMutations Description: The specific mutations that have been identified and documented in the nucleic acid sequence.
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis.
 --     * Slot: sequencing Description: Refers to the level of sequencing performed on the nucleic acid. Possible values include 'Not sequenced' (no sequencing has been performed), 'Partly sequenced' (only a portion of the nucleic acid sequence has been determined), and 'Fully sequenced' (the entire nucleic acid sequence has been determined).
---     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
---     * Slot: sequenceChecked Description: Tell whether or not the sequence of the product was controlled (compulsory for cloned products)
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
+--     * Slot: sequenceChecked Description: Tell whether or not the sequence of the product was controlled (compulsory for cloned products).
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: clonedIntoPlasmid_id Description: The plasmid into which the nucleic acid has been cloned
---     * Slot: tagSequence_id Description: The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: clonedIntoPlasmid_id Description: The plasmid into which the nucleic acid has been cloned.
+--     * Slot: tagSequence_id Description: The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "DetectionKit" Description: "A detection kit for specific pathogens"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "DetectionKit" Description: "A detection kit for specific pathogens."
 --     * Slot: id Description: 
---     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented
---     * Slot: specificity Description: Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting
+--     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented.
+--     * Slot: specificity Description: Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting.
 --     * Slot: targetedRegion Description: The specific area or sequence within the target analyte that the detection kit is designed to identify and interact with, ensuring accurate detection and analysis.
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Bundle" Description: "A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Bundle" Description: "A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility."
 --     * Slot: id Description: 
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Pathogen" Description: "Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such as a virus, bacterium, protozoan, prion, viroid, or fungus"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Pathogen" Description: "Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such as a virus, bacterium, protozoan, prion, viroid, or fungus."
 --     * Slot: id Description: 
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
---     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
+--     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes.
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis.
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
---     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
---     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
---     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
+--     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
+--     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
+--     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
---     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
+--     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Virus" Description: "The virus as a biological material"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Virus" Description: "The virus as a biological material."
 --     * Slot: id Description: 
---     * Slot: contaminationWithCoInfectingViruses Description: A boolean value indicating whether there is contamination with co-infecting viruses
---     * Slot: mycoplasmicContent Description: Indicates the presence of mycoplasma contamination within the sample
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
---     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
+--     * Slot: contaminationWithCoInfectingViruses Description: A boolean value indicating whether there is contamination with co-infecting viruses.
+--     * Slot: mycoplasmicContent Description: Indicates the presence of mycoplasma contamination within the sample.
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
+--     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes.
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis.
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
---     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
---     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
---     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
+--     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
+--     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
+--     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
---     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
+--     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Bacterium" Description: "The bacterium as a biological material"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Bacterium" Description: "The bacterium as a biological material."
 --     * Slot: id Description: 
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
---     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
+--     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes.
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis.
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
---     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
---     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
---     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
+--     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
+--     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
+--     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
---     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
+--     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Fungus" Description: "The fungus as a biological material"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Fungus" Description: "The fungus as a biological material."
 --     * Slot: id Description: 
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
---     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
+--     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes.
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis.
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
---     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
---     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
---     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
+--     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
+--     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
+--     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
---     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
+--     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Protozoan" Description: "The protozoan as a biological material"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Protozoan" Description: "The protozoan as a biological material."
 --     * Slot: id Description: 
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
---     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
+--     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes.
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis.
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
---     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
---     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
---     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
+--     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
+--     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
+--     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
---     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
+--     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Viroid" Description: "The viroid as a biological material"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Viroid" Description: "The viroid as a biological material."
 --     * Slot: id Description: 
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
---     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
+--     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes.
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis.
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
---     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
---     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
---     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
+--     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
+--     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
+--     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
---     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
+--     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "Prion" Description: "The prion as a biological material"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "Prion" Description: "The prion as a biological material."
 --     * Slot: id Description: 
---     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'
---     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes
---     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis
+--     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
+--     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes.
+--     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis.
 --     * Slot: infectivity Description: Indicates the ability of the pathogen to establish an infection in a host organism, with possible values detailing whether infectivity has been tested, quantified, or cannot be tested due to non-cultivable nature.
---     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism
---     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process
---     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'
+--     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
+--     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
+--     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
---     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material
---     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading
---     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting
+--     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
+--     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
+--     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
---     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required
---     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material
---     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage
---     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry
---     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item
---     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition
---     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD)
---     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume)
---     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided
---     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service
---     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO
---     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained
---     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions
---     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose
---     * Slot: note Description: An aditional information as a textual comment
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: version Description: The version indicator (name or identifier) of a resource
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
---     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product
---     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
---     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
---     * Slot: category_id Description: The main category of the service or product
---     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual
+--     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
+--     * Slot: usageRestrictions Description: Specifies any limitations or conditions on the use of the biological material, including restrictions on research, commercial use, or distribution, considering any potential concerns about the related genetic material.
+--     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
+--     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
+--     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
+--     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
+--     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
+--     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
+--     * Slot: qualityGrading Description: Information that permits to assess the quality level of what will be provided.
+--     * Slot: biosafetyRestrictions Description: Information about guidelines and regulations designed to prevent the exposure to or release of potentially harmful biological agents. It thereby contributes to protecting people and the environment from biohazards while accessing this product or service.
+--     * Slot: canBeUsedToProduceGmo Description: Indicates if the current service or product can be used to produce GMO.
+--     * Slot: availability Description: The state or condition in which this item is accessible and ready for use or can be obtained.
+--     * Slot: technicalRecommendation Description: Expert advice or guidelines provided to ensure the optimal use, performance, and maintenance of what is provided, including best practices, troubleshooting tips, and procedural instructions.
+--     * Slot: internalReference Description: Any reference or indication to be used for local retrieval purpose.
+--     * Slot: note Description: An aditional information as a textual comment.
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: version Description: The version indicator (name or identifier) of a resource.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: biologicalMaterialOrigin_id Description: Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
+--     * Slot: iataClassification_id Description: The corresponding International Air Transport Association (IATA)'s category for this Product.
+--     * Slot: materialSafetyDataSheet_id Description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
+--     * Slot: originator_id Description: The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
+--     * Slot: category_id Description: The main category of the service or product.
+--     * Slot: riskGroup_id Description: The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual.
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
---     * Slot: provider_id Description: A provider of this product or service, as a specific organization
---     * Slot: contactPoint_id Description: An information that allows someone to establish communication
--- # Class: "MaterialSafetyDataSheet" Description: "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product"
+--     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
+--     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+-- # Class: "MaterialSafetyDataSheet" Description: "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product."
 --     * Slot: id Description: 
---     * Slot: physicalChemicalProperties Description: Key characteristics of the product, such as physical state, appearance, solubility, pH, chemical composition, and molecular weight, essential for safe handling and storage
+--     * Slot: physicalChemicalProperties Description: Key characteristics of the product, such as physical state, appearance, solubility, pH, chemical composition, and molecular weight, essential for safe handling and storage.
 --     * Slot: hazardsIdentification Description: Outlines the potential risks and dangers associated with handling the product, including its physical, chemical, and health hazards. This section provides information on toxicity, flammability, reactivity, and other relevant risks for safe use.
 --     * Slot: firstAidMeasures Description: Instructions on immediate actions to take in case of exposure to the product, including inhalation, ingestion, skin, or eye contact. This section outlines steps to minimize harm before medical help is available.
 --     * Slot: fireFightingMeasures Description: Guidance on how to safely extinguish a fire involving the product, including suitable extinguishing agents, special protective equipment for firefighters, and any specific hazards from combustion.
@@ -1063,894 +1063,894 @@
 --     * Slot: handlingAndStorage Description: Instructions on the safe handling practices and storage conditions for the product, including precautions to prevent accidents, degradation, or contamination, as well as recommended temperature, humidity, and container requirements.
 --     * Slot: exposureControlsPersonalProtection Description: Specifies measures to limit exposure to the product, including recommended engineering controls (e.g., ventilation) and personal protective equipment (PPE) such as gloves, masks, goggles, and clothing to ensure safe handling.
 --     * Slot: stabilityAndReactivity Description: Describes the product’s stability under normal conditions and its potential to react with other substances. This section includes information on hazardous reactions, conditions to avoid, and incompatible materials that could cause degradation or dangerous reactions.
---     * Slot: toxicologicalInformation Description: Details on the potential health effects of the product, including routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic toxicity and symptoms of exposure
+--     * Slot: toxicologicalInformation Description: Details on the potential health effects of the product, including routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic toxicity and symptoms of exposure.
 --     * Slot: ecologicalInformation Description: Details the potential environmental impact of the product, including its effects on ecosystems, persistence, degradability, bioaccumulation potential, and toxicity to aquatic and terrestrial organisms.
 --     * Slot: disposalConsiderations Description: Guidance on the safe and environmentally responsible disposal of the product, including recommended disposal methods, regulatory requirements, and precautions to avoid harm to people and the environment during disposal.
 --     * Slot: transportInformation Description: Details the regulations and guidelines for safely transporting the product, including classifications for road, air, sea, or rail transport, UN numbers, packaging requirements, and any special precautions to ensure safe transit.
 --     * Slot: regulatoryInformation Description: Lists applicable laws, regulations, and standards governing the product, including local, national, or international requirements for its handling, use, transportation, and disposal, ensuring compliance with legal obligations.
 --     * Slot: furtherInformation Description: Provides any additional details or clarifications not covered in other sections of the MSDS, such as references, supporting documents, or specific instructions for safe handling and use of the product.
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: materialSafetyContact_id Description: The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.
--- # Class: "File" Description: "Digital document or record stored in a specific format that contains data or information"
+-- # Class: "File" Description: "Digital document or record stored in a specific format that contains data or information."
 --     * Slot: id Description: 
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
 --     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
---     * Slot: format Description: The file type or format that indicates how the data within the file is structured
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
--- # Class: "Data" Description: "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information"
+--     * Slot: format Description: The file type or format that indicates how the data within the file is structured.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+-- # Class: "Data" Description: "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information."
 --     * Slot: id Description: 
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
 --     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
---     * Slot: format Description: The file type or format that indicates how the data within the file is structured
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
--- # Class: "Document" Description: "Subclass of File representing textual or written files such as reports, manuals, or forms"
+--     * Slot: format Description: The file type or format that indicates how the data within the file is structured.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+-- # Class: "Document" Description: "Subclass of File representing textual or written files such as reports, manuals, or forms."
 --     * Slot: id Description: 
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
 --     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
---     * Slot: format Description: The file type or format that indicates how the data within the file is structured
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
--- # Class: "Audio" Description: "Subclass of File representing sound recordings or audio tracks"
+--     * Slot: format Description: The file type or format that indicates how the data within the file is structured.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+-- # Class: "Audio" Description: "Subclass of File representing sound recordings or audio tracks."
 --     * Slot: id Description: 
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
 --     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
---     * Slot: format Description: The file type or format that indicates how the data within the file is structured
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
--- # Class: "Video" Description: "Subclass of File representing moving visual media, such as recordings, presentations, or movies"
+--     * Slot: format Description: The file type or format that indicates how the data within the file is structured.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+-- # Class: "Video" Description: "Subclass of File representing moving visual media, such as recordings, presentations, or movies."
 --     * Slot: id Description: 
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
 --     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
---     * Slot: format Description: The file type or format that indicates how the data within the file is structured
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
--- # Class: "Image" Description: "Subclass of File representing visual content such as pictures, diagrams, or illustrations"
+--     * Slot: format Description: The file type or format that indicates how the data within the file is structured.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+-- # Class: "Image" Description: "Subclass of File representing visual content such as pictures, diagrams, or illustrations."
 --     * Slot: id Description: 
---     * Slot: altText Description: An alternate text for the image, if the image cannot be displayed
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: altText Description: An alternate text for the image, if the image cannot be displayed.
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
 --     * Slot: contentUrl Description: The web address or location where the file content is stored and can be accessed or downloaded.
---     * Slot: format Description: The file type or format that indicates how the data within the file is structured
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
--- # Class: "ContactPoint" Description: "Entity serving as focal point of information"
+--     * Slot: format Description: The file type or format that indicates how the data within the file is structured.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+-- # Class: "ContactPoint" Description: "Entity serving as focal point of information."
 --     * Slot: id Description: 
---     * Slot: name Description: A word or set of words used to identify and refer to an entity
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: email Description: Email address
---     * Slot: telephone Description: The telephone number
---     * Slot: streetAddress Description: The building/apartment number and the street name
---     * Slot: addressLocality Description: The locality in which the street address is, and which is in the region. e.g, the city
---     * Slot: addressRegion Description: The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division
---     * Slot: postalCode Description: The postal code
---     * Slot: orcidId Description: Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: addressCountry_id Description: The country as of  ISO 3166
--- # Class: "License" Description: "The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions"
+--     * Slot: name Description: A word or set of words used to identify and refer to an entity.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: email Description: The email address.
+--     * Slot: telephone Description: The telephone number.
+--     * Slot: streetAddress Description: The building/apartment number and the street name.
+--     * Slot: addressLocality Description: The locality in which the street address is, and which is in the region. e.g, the city.
+--     * Slot: addressRegion Description: The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division.
+--     * Slot: postalCode Description: The postal code.
+--     * Slot: orcidId Description: Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: addressCountry_id Description: The country as of  ISO 3166.
+-- # Class: "License" Description: "The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
 --     * Slot: resourceUrl Description: The web address or location where the details or content is stored and can be accessed or downloaded.
---     * Slot: licensingOrAttribution Description: A text or html code that provides any related data sharing licence and/or attribution
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: logo_id Description: A path or URL to the related logo
--- # Class: "Certification" Description: "Assurance given by an independent certification body that a product, service or system meets the requirements of a standard"
+--     * Slot: licensingOrAttribution Description: A text or html code that provides any related data sharing licence and/or attribution.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: logo_id Description: A path or URL to the related logo.
+-- # Class: "Certification" Description: "Assurance given by an independent certification body that a product, service or system meets the requirements of a standard."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
 --     * Slot: resourceUrl Description: The web address or location where the details or content is stored and can be accessed or downloaded.
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: logo_id Description: A path or URL to the related logo
--- # Class: "FundingSource" Description: "A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially"
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: logo_id Description: A path or URL to the related logo.
+-- # Class: "FundingSource" Description: "A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially."
 --     * Slot: id Description: 
---     * Slot: title Description: A name given to the resource
---     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item
---     * Slot: fundingProgram Description: Identifies the overarching financial framework, research initiative, or support mechanism that enables or contributes to the provision of a product or service. The value may correspond to a European funding framework (e.g. Horizon Europe), a specific research initiative (e.g. an EU project), or another public or private funding mechanism
---     * Slot: grantNumber Description: A formal reference or agreement number assigned by the funding body
---     * Slot: fundingPeriodStart Description: The date from which the financial mechanism is active or applicable to the supported product or service
---     * Slot: fundingPeriodEnd Description: The date on which the financial mechanism ceases to apply to the supported product or service
---     * Slot: eligibilityCriteria Description: Conditions under which individuals or organisations may benefit from the financial mechanism, including access rules, eligibility requirements, or geographical/institutional restrictions. May be expressed as text or as a link to a formal eligibility statement
---     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource
---     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified
---     * Slot: funder_id Description: The organization providing the financial support
---     * Slot: logo_id Description: A path or URL to the related logo
+--     * Slot: title Description: A name given to the resource.
+--     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
+--     * Slot: fundingProgram Description: Identifies the overarching financial framework, research initiative, or support mechanism that enables or contributes to the provision of a product or service. The value may correspond to a European funding framework (e.g. Horizon Europe), a specific research initiative (e.g. an EU project), or another public or private funding mechanism.
+--     * Slot: grantNumber Description: A formal reference or agreement number assigned by the funding body.
+--     * Slot: fundingPeriodStart Description: The date from which the financial mechanism is active or applicable to the supported product or service.
+--     * Slot: fundingPeriodEnd Description: The date on which the financial mechanism ceases to apply to the supported product or service.
+--     * Slot: eligibilityCriteria Description: Conditions under which individuals or organisations may benefit from the financial mechanism, including access rules, eligibility requirements, or geographical/institutional restrictions. May be expressed as text or as a link to a formal eligibility statement.
+--     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
+--     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: funder_id Description: The organization providing the financial support.
+--     * Slot: logo_id Description: A path or URL to the related logo.
 -- # Class: "Resource_keyword" Description: ""
 --     * Slot: Resource_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Resource_identifier" Description: ""
 --     * Slot: Resource_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Resource_iri" Description: ""
 --     * Slot: Resource_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Dataset_keyword" Description: ""
 --     * Slot: Dataset_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Dataset_identifier" Description: ""
 --     * Slot: Dataset_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Dataset_iri" Description: ""
 --     * Slot: Dataset_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "DataService_servesDataset" Description: ""
 --     * Slot: DataService_id Description: Autocreated FK slot
---     * Slot: servesDataset_id Description: A collection of data that this data service can distribute
+--     * Slot: servesDataset_id Description: A collection of data that this data service can distribute.
 -- # Class: "DataService_keyword" Description: ""
 --     * Slot: DataService_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "DataService_identifier" Description: ""
 --     * Slot: DataService_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "DataService_iri" Description: ""
 --     * Slot: DataService_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Version_resource" Description: ""
 --     * Slot: Version_id Description: Autocreated FK slot
---     * Slot: resource_id Description: Resource published or curated by a single agent
+--     * Slot: resource_id Description: Resource published or curated by a single agent.
 -- # Class: "Version_keyword" Description: ""
 --     * Slot: Version_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Version_identifier" Description: ""
 --     * Slot: Version_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Version_iri" Description: ""
 --     * Slot: Version_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Catalogue_keyword" Description: ""
 --     * Slot: Catalogue_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Catalogue_identifier" Description: ""
 --     * Slot: Catalogue_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Catalogue_iri" Description: ""
 --     * Slot: Catalogue_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Taxonomy_taxon" Description: ""
 --     * Slot: Taxonomy_id Description: Autocreated FK slot
---     * Slot: taxon_id Description: Scientifically classified group or entity within the reference taxonomy
+--     * Slot: taxon_id Description: Scientifically classified group or entity within the reference taxonomy.
 -- # Class: "Taxonomy_rank" Description: ""
 --     * Slot: Taxonomy_id Description: Autocreated FK slot
---     * Slot: rank_id Description: Relative level or position of the identified taxon in the taxonomy
+--     * Slot: rank_id Description: Relative level or position of the identified taxon in the taxonomy.
 -- # Class: "Taxonomy_keyword" Description: ""
 --     * Slot: Taxonomy_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Taxonomy_identifier" Description: ""
 --     * Slot: Taxonomy_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Taxonomy_iri" Description: ""
 --     * Slot: Taxonomy_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "DataProvider_providedEntityType" Description: ""
 --     * Slot: DataProvider_id Description: Autocreated FK slot
---     * Slot: providedEntityType Description: Identifies the type of entity (ontology class) described by the response to a query. Values should be expressed as IRIs (e.g., from an ontology)
+--     * Slot: providedEntityType Description: Identifies the type of entity (ontology class) described by the response to a query. Values should be expressed as IRIs (e.g., from an ontology).
 -- # Class: "DataProvider_servesDataset" Description: ""
 --     * Slot: DataProvider_id Description: Autocreated FK slot
---     * Slot: servesDataset_id Description: A collection of data that this data service can distribute
+--     * Slot: servesDataset_id Description: A collection of data that this data service can distribute.
 -- # Class: "DataProvider_keyword" Description: ""
 --     * Slot: DataProvider_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "DataProvider_identifier" Description: ""
 --     * Slot: DataProvider_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "DataProvider_iri" Description: ""
 --     * Slot: DataProvider_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "PathogenIdentification_hostType" Description: ""
 --     * Slot: PathogenIdentification_id Description: Autocreated FK slot
---     * Slot: hostType Description: Indication of the possible host(s) for the identified pathogens among the listed main categories
+--     * Slot: hostType Description: Indication of the possible host(s) for the identified pathogens among the listed main categories.
 -- # Class: "PathogenIdentification_keyword" Description: ""
 --     * Slot: PathogenIdentification_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "PathogenIdentification_identifier" Description: ""
 --     * Slot: PathogenIdentification_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "PathogenIdentification_iri" Description: ""
 --     * Slot: PathogenIdentification_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Publication_keyword" Description: ""
 --     * Slot: Publication_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Publication_identifier" Description: ""
 --     * Slot: Publication_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Publication_iri" Description: ""
 --     * Slot: Publication_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Vocabulary_term" Description: ""
 --     * Slot: Vocabulary_id Description: Autocreated FK slot
---     * Slot: term_id Description: The terms related to this vocabulary
+--     * Slot: term_id Description: The terms related to this vocabulary.
 -- # Class: "Vocabulary_keyword" Description: ""
 --     * Slot: Vocabulary_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Vocabulary_identifier" Description: ""
 --     * Slot: Vocabulary_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Vocabulary_iri" Description: ""
 --     * Slot: Vocabulary_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Term_keyword" Description: ""
 --     * Slot: Term_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Term_identifier" Description: ""
 --     * Slot: Term_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Term_iri" Description: ""
 --     * Slot: Term_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "CommonName_alternateName" Description: ""
 --     * Slot: CommonName_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any other name under which the entity can be known
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known.
 -- # Class: "CommonName_sourceOfInformation" Description: ""
 --     * Slot: CommonName_id Description: Autocreated FK slot
---     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information
+--     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information.
 -- # Class: "CommonName_keyword" Description: ""
 --     * Slot: CommonName_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "CommonName_identifier" Description: ""
 --     * Slot: CommonName_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "CommonName_iri" Description: ""
 --     * Slot: CommonName_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "VirusName_alternateName" Description: ""
 --     * Slot: VirusName_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any other name under which the entity can be known
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known.
 -- # Class: "VirusName_sourceOfInformation" Description: ""
 --     * Slot: VirusName_id Description: Autocreated FK slot
---     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information
+--     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information.
 -- # Class: "VirusName_keyword" Description: ""
 --     * Slot: VirusName_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "VirusName_identifier" Description: ""
 --     * Slot: VirusName_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "VirusName_iri" Description: ""
 --     * Slot: VirusName_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "AlternateName_alternateName" Description: ""
 --     * Slot: AlternateName_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any other name under which the entity can be known
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known.
 -- # Class: "AlternateName_sourceOfInformation" Description: ""
 --     * Slot: AlternateName_id Description: Autocreated FK slot
---     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information
+--     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information.
 -- # Class: "AlternateName_keyword" Description: ""
 --     * Slot: AlternateName_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "AlternateName_identifier" Description: ""
 --     * Slot: AlternateName_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "AlternateName_iri" Description: ""
 --     * Slot: AlternateName_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "RiskGroup_keyword" Description: ""
 --     * Slot: RiskGroup_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "RiskGroup_identifier" Description: ""
 --     * Slot: RiskGroup_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "RiskGroup_iri" Description: ""
 --     * Slot: RiskGroup_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "BiosafetyLevel_keyword" Description: ""
 --     * Slot: BiosafetyLevel_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "BiosafetyLevel_identifier" Description: ""
 --     * Slot: BiosafetyLevel_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "BiosafetyLevel_iri" Description: ""
 --     * Slot: BiosafetyLevel_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Doi_keyword" Description: ""
 --     * Slot: Doi_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Doi_identifier" Description: ""
 --     * Slot: Doi_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Doi_iri" Description: ""
 --     * Slot: Doi_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Journal_keyword" Description: ""
 --     * Slot: Journal_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Journal_identifier" Description: ""
 --     * Slot: Journal_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Journal_iri" Description: ""
 --     * Slot: Journal_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "PdbReference_keyword" Description: ""
 --     * Slot: PdbReference_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "PdbReference_identifier" Description: ""
 --     * Slot: PdbReference_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "PdbReference_iri" Description: ""
 --     * Slot: PdbReference_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Keyword_keyword" Description: ""
 --     * Slot: Keyword_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Keyword_identifier" Description: ""
 --     * Slot: Keyword_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Keyword_iri" Description: ""
 --     * Slot: Keyword_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "TagSequence_keyword" Description: ""
 --     * Slot: TagSequence_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "TagSequence_identifier" Description: ""
 --     * Slot: TagSequence_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "TagSequence_iri" Description: ""
 --     * Slot: TagSequence_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "SpecialFeature_keyword" Description: ""
 --     * Slot: SpecialFeature_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "SpecialFeature_identifier" Description: ""
 --     * Slot: SpecialFeature_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "SpecialFeature_iri" Description: ""
 --     * Slot: SpecialFeature_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "ExpressionVector_keyword" Description: ""
 --     * Slot: ExpressionVector_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "ExpressionVector_identifier" Description: ""
 --     * Slot: ExpressionVector_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "ExpressionVector_iri" Description: ""
 --     * Slot: ExpressionVector_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "PlasmidSelection_keyword" Description: ""
 --     * Slot: PlasmidSelection_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "PlasmidSelection_identifier" Description: ""
 --     * Slot: PlasmidSelection_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "PlasmidSelection_iri" Description: ""
 --     * Slot: PlasmidSelection_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "PropagationHost_keyword" Description: ""
 --     * Slot: PropagationHost_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "PropagationHost_identifier" Description: ""
 --     * Slot: PropagationHost_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "PropagationHost_iri" Description: ""
 --     * Slot: PropagationHost_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "TransmissionMethod_keyword" Description: ""
 --     * Slot: TransmissionMethod_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "TransmissionMethod_identifier" Description: ""
 --     * Slot: TransmissionMethod_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "TransmissionMethod_iri" Description: ""
 --     * Slot: TransmissionMethod_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "ProductionCellLine_keyword" Description: ""
 --     * Slot: ProductionCellLine_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "ProductionCellLine_identifier" Description: ""
 --     * Slot: ProductionCellLine_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "ProductionCellLine_iri" Description: ""
 --     * Slot: ProductionCellLine_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "ProductCategory_keyword" Description: ""
 --     * Slot: ProductCategory_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "ProductCategory_identifier" Description: ""
 --     * Slot: ProductCategory_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "ProductCategory_iri" Description: ""
 --     * Slot: ProductCategory_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "IsolationHost_keyword" Description: ""
 --     * Slot: IsolationHost_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "IsolationHost_identifier" Description: ""
 --     * Slot: IsolationHost_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "IsolationHost_iri" Description: ""
 --     * Slot: IsolationHost_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "GeographicalOrigin_keyword" Description: ""
 --     * Slot: GeographicalOrigin_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "GeographicalOrigin_identifier" Description: ""
 --     * Slot: GeographicalOrigin_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "GeographicalOrigin_iri" Description: ""
 --     * Slot: GeographicalOrigin_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "IplcOrigin_keyword" Description: ""
 --     * Slot: IplcOrigin_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "IplcOrigin_identifier" Description: ""
 --     * Slot: IplcOrigin_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "IplcOrigin_iri" Description: ""
 --     * Slot: IplcOrigin_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Country_keyword" Description: ""
 --     * Slot: Country_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Country_identifier" Description: ""
 --     * Slot: Country_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Country_iri" Description: ""
 --     * Slot: Country_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "IataClassification_keyword" Description: ""
 --     * Slot: IataClassification_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "IataClassification_identifier" Description: ""
 --     * Slot: IataClassification_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "IataClassification_iri" Description: ""
 --     * Slot: IataClassification_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Variant_alternateName" Description: ""
 --     * Slot: Variant_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any other name under which the entity can be known
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known.
 -- # Class: "Variant_sourceOfInformation" Description: ""
 --     * Slot: Variant_id Description: Autocreated FK slot
---     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information
+--     * Slot: sourceOfInformation Description: The name of the origin from which knowledge is obtained. This can include any entity that provides information.
 -- # Class: "Variant_keyword" Description: ""
 --     * Slot: Variant_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Variant_identifier" Description: ""
 --     * Slot: Variant_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Variant_iri" Description: ""
 --     * Slot: Variant_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "TaxonomicRank_taxonomy" Description: ""
 --     * Slot: TaxonomicRank_id Description: Autocreated FK slot
---     * Slot: taxonomy_id Description: The taxonomy release(s) in which this entity exists
+--     * Slot: taxonomy_id Description: The taxonomy release(s) in which this entity exists.
 -- # Class: "TaxonomicRank_keyword" Description: ""
 --     * Slot: TaxonomicRank_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "TaxonomicRank_identifier" Description: ""
 --     * Slot: TaxonomicRank_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "TaxonomicRank_iri" Description: ""
 --     * Slot: TaxonomicRank_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Taxon_taxonomy" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
---     * Slot: taxonomy_id Description: The taxonomy release(s) in which this entity exists
+--     * Slot: taxonomy_id Description: The taxonomy release(s) in which this entity exists.
 -- # Class: "Taxon_externalEquivalentTaxon" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
---     * Slot: externalEquivalentTaxon_id Description: Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI)
+--     * Slot: externalEquivalentTaxon_id Description: Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI).
 -- # Class: "Taxon_alternateName" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any other name under which the entity can be known
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known.
 -- # Class: "Taxon_previouslyKnownAs" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
---     * Slot: previouslyKnownAs_id Description: Any historic version of this taxon having a different name
+--     * Slot: previouslyKnownAs_id Description: Any historic version of this taxon having a different name.
 -- # Class: "Taxon_keyword" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Taxon_identifier" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Taxon_iri" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "ClinicalGroup_alternateName" Description: ""
 --     * Slot: ClinicalGroup_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any other name under which the entity can be known
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known.
 -- # Class: "ClinicalGroup_taxon" Description: ""
 --     * Slot: ClinicalGroup_id Description: Autocreated FK slot
---     * Slot: taxon_id Description: Scientifically classified group or entity within the reference taxonomy
+--     * Slot: taxon_id Description: Scientifically classified group or entity within the reference taxonomy.
 -- # Class: "ClinicalGroup_keyword" Description: ""
 --     * Slot: ClinicalGroup_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "ClinicalGroup_identifier" Description: ""
 --     * Slot: ClinicalGroup_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "ClinicalGroup_iri" Description: ""
 --     * Slot: ClinicalGroup_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "ExternalRelatedReference_keyword" Description: ""
 --     * Slot: ExternalRelatedReference_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "ExternalRelatedReference_identifier" Description: ""
 --     * Slot: ExternalRelatedReference_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "ExternalRelatedReference_iri" Description: ""
 --     * Slot: ExternalRelatedReference_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Sequence_sequenceReference" Description: ""
 --     * Slot: Sequence_id Description: Autocreated FK slot
---     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider
+--     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider.
 -- # Class: "Sequence_keyword" Description: ""
 --     * Slot: Sequence_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Sequence_identifier" Description: ""
 --     * Slot: Sequence_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Sequence_iri" Description: ""
 --     * Slot: Sequence_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "SequenceReference_keyword" Description: ""
 --     * Slot: SequenceReference_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "SequenceReference_identifier" Description: ""
 --     * Slot: SequenceReference_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "SequenceReference_iri" Description: ""
 --     * Slot: SequenceReference_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "PersonOrOrganization_keyword" Description: ""
 --     * Slot: PersonOrOrganization_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "PersonOrOrganization_identifier" Description: ""
 --     * Slot: PersonOrOrganization_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "PersonOrOrganization_iri" Description: ""
 --     * Slot: PersonOrOrganization_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Person_keyword" Description: ""
 --     * Slot: Person_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Person_identifier" Description: ""
 --     * Slot: Person_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Person_iri" Description: ""
 --     * Slot: Person_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Organization_alternateName" Description: ""
 --     * Slot: Organization_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any other name under which the entity can be known
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known.
 -- # Class: "Organization_keyword" Description: ""
 --     * Slot: Organization_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Organization_identifier" Description: ""
 --     * Slot: Organization_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Organization_iri" Description: ""
 --     * Slot: Organization_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "ReasearchInfrastructure_alternateName" Description: ""
 --     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any other name under which the entity can be known
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known.
 -- # Class: "ReasearchInfrastructure_keyword" Description: ""
 --     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "ReasearchInfrastructure_identifier" Description: ""
 --     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "ReasearchInfrastructure_iri" Description: ""
 --     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Provider_memberOfRi" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
---     * Slot: memberOfRi_id Description: The research infrastructure of which this organization is a member
+--     * Slot: memberOfRi_id Description: The research infrastructure of which this organization is a member.
 -- # Class: "Provider_alternateName" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
---     * Slot: alternateName_id Description: Any other name under which the entity can be known
+--     * Slot: alternateName_id Description: Any other name under which the entity can be known.
 -- # Class: "Provider_keyword" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Provider_identifier" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Provider_iri" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Originator_keyword" Description: ""
 --     * Slot: Originator_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Originator_identifier" Description: ""
 --     * Slot: Originator_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Originator_iri" Description: ""
 --     * Slot: Originator_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "BiologicalMaterialOrigin_biologicalPartOrigin" Description: ""
 --     * Slot: BiologicalMaterialOrigin_id Description: Autocreated FK slot
 --     * Slot: biologicalPartOrigin_id Description: Details the origin of one or more unitary parts that make up the biological material. In the case of recombinant biological material, multiple parts may be involved.
 -- # Class: "BiologicalMaterialOrigin_keyword" Description: ""
 --     * Slot: BiologicalMaterialOrigin_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "BiologicalMaterialOrigin_identifier" Description: ""
 --     * Slot: BiologicalMaterialOrigin_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "BiologicalMaterialOrigin_iri" Description: ""
 --     * Slot: BiologicalMaterialOrigin_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "BiologicalPartOrigin_keyword" Description: ""
 --     * Slot: BiologicalPartOrigin_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "BiologicalPartOrigin_identifier" Description: ""
 --     * Slot: BiologicalPartOrigin_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "BiologicalPartOrigin_iri" Description: ""
 --     * Slot: BiologicalPartOrigin_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "NaturalPartOrigin_keyword" Description: ""
 --     * Slot: NaturalPartOrigin_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "NaturalPartOrigin_identifier" Description: ""
 --     * Slot: NaturalPartOrigin_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "NaturalPartOrigin_iri" Description: ""
 --     * Slot: NaturalPartOrigin_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "SyntheticPartOrigin_keyword" Description: ""
 --     * Slot: SyntheticPartOrigin_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "SyntheticPartOrigin_identifier" Description: ""
 --     * Slot: SyntheticPartOrigin_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "SyntheticPartOrigin_iri" Description: ""
 --     * Slot: SyntheticPartOrigin_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "RecombinantPartIdentification_sequence" Description: ""
 --     * Slot: RecombinantPartIdentification_id Description: Autocreated FK slot
---     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
+--     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format.
 -- # Class: "RecombinantPartIdentification_keyword" Description: ""
 --     * Slot: RecombinantPartIdentification_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "RecombinantPartIdentification_identifier" Description: ""
 --     * Slot: RecombinantPartIdentification_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "RecombinantPartIdentification_iri" Description: ""
 --     * Slot: RecombinantPartIdentification_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Collection_collectionItem" Description: ""
 --     * Slot: Collection_id Description: Autocreated FK slot
---     * Slot: collectionItem_id Description: An item of the collection
+--     * Slot: collectionItem_id Description: An item of the collection.
 -- # Class: "Collection_keyword" Description: ""
 --     * Slot: Collection_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Collection_identifier" Description: ""
 --     * Slot: Collection_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Collection_iri" Description: ""
 --     * Slot: Collection_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "ProductOrService_additionalCategory" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "ProductOrService_pathogenIdentification" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "ProductOrService_doi" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "ProductOrService_collection" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "ProductOrService_keywords" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "ProductOrService_complementaryDocument" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "ProductOrService_productPicture" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "ProductOrService_externalRelatedReference" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "ProductOrService_certification" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "ProductOrService_fundingSource" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "ProductOrService_keyword" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "ProductOrService_identifier" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "ProductOrService_iri" Description: ""
 --     * Slot: ProductOrService_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Service_additionalCategory" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Service_pathogenIdentification" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Service_doi" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Service_collection" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Service_keywords" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Service_complementaryDocument" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Service_productPicture" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Service_externalRelatedReference" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Service_certification" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Service_fundingSource" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Service_keyword" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Service_identifier" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Service_iri" Description: ""
 --     * Slot: Service_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Product_additionalCategory" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Product_pathogenIdentification" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Product_doi" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Product_collection" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Product_keywords" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Product_complementaryDocument" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Product_productPicture" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Product_externalRelatedReference" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Product_certification" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Product_fundingSource" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Product_keyword" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Product_identifier" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Product_iri" Description: ""
 --     * Slot: Product_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Antibody_sequenceReference" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider
+--     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider.
 -- # Class: "Antibody_additionalCategory" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Antibody_pathogenIdentification" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Antibody_doi" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Antibody_collection" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Antibody_keywords" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Antibody_complementaryDocument" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Antibody_productPicture" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Antibody_externalRelatedReference" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Antibody_certification" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Antibody_fundingSource" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Antibody_keyword" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Antibody_identifier" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Antibody_iri" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Hybridoma_sequenceReference" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider
+--     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider.
 -- # Class: "Hybridoma_additionalCategory" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Hybridoma_pathogenIdentification" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Hybridoma_doi" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Hybridoma_collection" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Hybridoma_keywords" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Hybridoma_complementaryDocument" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Hybridoma_productPicture" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Hybridoma_externalRelatedReference" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Hybridoma_certification" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Hybridoma_fundingSource" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Hybridoma_keyword" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Hybridoma_identifier" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Hybridoma_iri" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Protein_sequence" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
+--     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format.
 -- # Class: "Protein_relatedPdb" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: relatedPdb_id Description: Identifier for 3D structural data as per the PDB (Protein Data Bank) database
+--     * Slot: relatedPdb_id Description: Identifier for 3D structural data as per the PDB (Protein Data Bank) database.
 -- # Class: "Protein_specialFeature" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: specialFeature_id Description: Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
 -- # Class: "Protein_tagSequence" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: tagSequence_id Description: The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
+--     * Slot: tagSequence_id Description: The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids.
 -- # Class: "Protein_domain" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: domain Description: A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function
+--     * Slot: domain Description: A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function.
 -- # Class: "Protein_expressedAs" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: expressedAs Description: Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell)
+--     * Slot: expressedAs Description: Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell).
 -- # Class: "Protein_inclusionBodiesType" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: inclusionBodiesType Description: Refers to the state of aggregated proteins within a cell. Possible values include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded' (proteins have been processed to regain their functional, active conformation).
@@ -1968,685 +1968,685 @@
 --     * Slot: proteinPurification Description: Refers to the degree of purity achieved for a protein sample. Possible values include '>95%' (the protein is highly purified, with more than 95% purity) and 'Unpurified expression host lysate or partly purified protein' (the protein is either unpurified and present in the host cell lysate or only partially purified).
 -- # Class: "Protein_tagStatusOfTheSolubilizedProtein" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: tagStatusOfTheSolubilizedProtein Description: Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag)
+--     * Slot: tagStatusOfTheSolubilizedProtein Description: Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag).
 -- # Class: "Protein_typeOfFunctionalCharacterization" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: typeOfFunctionalCharacterization Description: Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include 'Enzymatic' (the protein has been characterized for its enzyme activity) and 'Antigenic' (the protein has been characterized for its ability to elicit an immune response).
 -- # Class: "Protein_additionalCategory" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Protein_pathogenIdentification" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Protein_doi" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Protein_collection" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Protein_keywords" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Protein_complementaryDocument" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Protein_productPicture" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Protein_externalRelatedReference" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Protein_certification" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Protein_fundingSource" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Protein_keyword" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Protein_identifier" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Protein_iri" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "NucleicAcid_genBankFileOfTheConstruct" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: genBankFileOfTheConstruct_id Description: A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct
+--     * Slot: genBankFileOfTheConstruct_id Description: A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct.
 -- # Class: "NucleicAcid_sequence" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
+--     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format.
 -- # Class: "NucleicAcid_plasmidSelection" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: plasmidSelection_id Description: Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid
+--     * Slot: plasmidSelection_id Description: Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid.
 -- # Class: "NucleicAcid_additionalCategory" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "NucleicAcid_pathogenIdentification" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "NucleicAcid_doi" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "NucleicAcid_collection" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "NucleicAcid_keywords" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "NucleicAcid_complementaryDocument" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "NucleicAcid_productPicture" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "NucleicAcid_externalRelatedReference" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "NucleicAcid_certification" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "NucleicAcid_fundingSource" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "NucleicAcid_keyword" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "NucleicAcid_identifier" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "NucleicAcid_iri" Description: ""
 --     * Slot: NucleicAcid_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "DetectionKit_standardOperatingProcedureFile" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: standardOperatingProcedureFile_id Description: The related standard operating procedure file (SOP)
+--     * Slot: standardOperatingProcedureFile_id Description: The related standard operating procedure file (SOP).
 -- # Class: "DetectionKit_additionalCategory" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "DetectionKit_pathogenIdentification" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "DetectionKit_doi" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "DetectionKit_collection" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "DetectionKit_keywords" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "DetectionKit_complementaryDocument" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "DetectionKit_productPicture" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "DetectionKit_externalRelatedReference" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "DetectionKit_certification" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "DetectionKit_fundingSource" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "DetectionKit_keyword" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "DetectionKit_identifier" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "DetectionKit_iri" Description: ""
 --     * Slot: DetectionKit_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Bundle_itemsOfTheBundle" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: itemsOfTheBundle_id Description: Specifies the constituent products and/or services that are part of the bundle
+--     * Slot: itemsOfTheBundle_id Description: Specifies the constituent products and/or services that are part of the bundle.
 -- # Class: "Bundle_additionalCategory" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Bundle_pathogenIdentification" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Bundle_doi" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Bundle_collection" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Bundle_keywords" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Bundle_complementaryDocument" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Bundle_productPicture" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Bundle_externalRelatedReference" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Bundle_certification" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Bundle_fundingSource" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Bundle_keyword" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Bundle_identifier" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Bundle_iri" Description: ""
 --     * Slot: Bundle_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Pathogen_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
+--     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted.
 -- # Class: "Pathogen_isolationHost" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated
+--     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated.
 -- # Class: "Pathogen_productionCellLine" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study
+--     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study.
 -- # Class: "Pathogen_propagationHost" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: propagationHost_id Description: The host organism that propagates the pathogen
+--     * Slot: propagationHost_id Description: The host organism that propagates the pathogen.
 -- # Class: "Pathogen_transmissionMethod" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
 --     * Slot: transmissionMethod_id Description: The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.
 -- # Class: "Pathogen_sequence" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
+--     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format.
 -- # Class: "Pathogen_additionalCategory" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Pathogen_pathogenIdentification" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Pathogen_doi" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Pathogen_collection" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Pathogen_keywords" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Pathogen_complementaryDocument" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Pathogen_productPicture" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Pathogen_externalRelatedReference" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Pathogen_certification" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Pathogen_fundingSource" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Pathogen_keyword" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Pathogen_identifier" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Pathogen_iri" Description: ""
 --     * Slot: Pathogen_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Virus_coInfectingViruses" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: coInfectingViruses_id Description: Identifies other viruses that may co-infect the host organism along with the primary virus, indicating the presence of multiple viral infections within the same host.
 -- # Class: "Virus_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
+--     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted.
 -- # Class: "Virus_isolationHost" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated
+--     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated.
 -- # Class: "Virus_productionCellLine" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study
+--     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study.
 -- # Class: "Virus_propagationHost" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: propagationHost_id Description: The host organism that propagates the pathogen
+--     * Slot: propagationHost_id Description: The host organism that propagates the pathogen.
 -- # Class: "Virus_transmissionMethod" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: transmissionMethod_id Description: The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.
 -- # Class: "Virus_sequence" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
+--     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format.
 -- # Class: "Virus_additionalCategory" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Virus_pathogenIdentification" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Virus_doi" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Virus_collection" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Virus_keywords" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Virus_complementaryDocument" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Virus_productPicture" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Virus_externalRelatedReference" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Virus_certification" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Virus_fundingSource" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Virus_keyword" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Virus_identifier" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Virus_iri" Description: ""
 --     * Slot: Virus_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Bacterium_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
+--     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted.
 -- # Class: "Bacterium_isolationHost" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated
+--     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated.
 -- # Class: "Bacterium_productionCellLine" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study
+--     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study.
 -- # Class: "Bacterium_propagationHost" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: propagationHost_id Description: The host organism that propagates the pathogen
+--     * Slot: propagationHost_id Description: The host organism that propagates the pathogen.
 -- # Class: "Bacterium_transmissionMethod" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
 --     * Slot: transmissionMethod_id Description: The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.
 -- # Class: "Bacterium_sequence" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
+--     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format.
 -- # Class: "Bacterium_additionalCategory" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Bacterium_pathogenIdentification" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Bacterium_doi" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Bacterium_collection" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Bacterium_keywords" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Bacterium_complementaryDocument" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Bacterium_productPicture" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Bacterium_externalRelatedReference" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Bacterium_certification" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Bacterium_fundingSource" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Bacterium_keyword" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Bacterium_identifier" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Bacterium_iri" Description: ""
 --     * Slot: Bacterium_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Fungus_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
+--     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted.
 -- # Class: "Fungus_isolationHost" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated
+--     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated.
 -- # Class: "Fungus_productionCellLine" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study
+--     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study.
 -- # Class: "Fungus_propagationHost" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: propagationHost_id Description: The host organism that propagates the pathogen
+--     * Slot: propagationHost_id Description: The host organism that propagates the pathogen.
 -- # Class: "Fungus_transmissionMethod" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
 --     * Slot: transmissionMethod_id Description: The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.
 -- # Class: "Fungus_sequence" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
+--     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format.
 -- # Class: "Fungus_additionalCategory" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Fungus_pathogenIdentification" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Fungus_doi" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Fungus_collection" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Fungus_keywords" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Fungus_complementaryDocument" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Fungus_productPicture" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Fungus_externalRelatedReference" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Fungus_certification" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Fungus_fundingSource" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Fungus_keyword" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Fungus_identifier" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Fungus_iri" Description: ""
 --     * Slot: Fungus_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Protozoan_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
+--     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted.
 -- # Class: "Protozoan_isolationHost" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated
+--     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated.
 -- # Class: "Protozoan_productionCellLine" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study
+--     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study.
 -- # Class: "Protozoan_propagationHost" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: propagationHost_id Description: The host organism that propagates the pathogen
+--     * Slot: propagationHost_id Description: The host organism that propagates the pathogen.
 -- # Class: "Protozoan_transmissionMethod" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
 --     * Slot: transmissionMethod_id Description: The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.
 -- # Class: "Protozoan_sequence" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
+--     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format.
 -- # Class: "Protozoan_additionalCategory" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Protozoan_pathogenIdentification" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Protozoan_doi" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Protozoan_collection" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Protozoan_keywords" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Protozoan_complementaryDocument" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Protozoan_productPicture" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Protozoan_externalRelatedReference" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Protozoan_certification" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Protozoan_fundingSource" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Protozoan_keyword" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Protozoan_identifier" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Protozoan_iri" Description: ""
 --     * Slot: Protozoan_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Viroid_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
+--     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted.
 -- # Class: "Viroid_isolationHost" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated
+--     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated.
 -- # Class: "Viroid_productionCellLine" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study
+--     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study.
 -- # Class: "Viroid_propagationHost" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: propagationHost_id Description: The host organism that propagates the pathogen
+--     * Slot: propagationHost_id Description: The host organism that propagates the pathogen.
 -- # Class: "Viroid_transmissionMethod" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
 --     * Slot: transmissionMethod_id Description: The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.
 -- # Class: "Viroid_sequence" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
+--     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format.
 -- # Class: "Viroid_additionalCategory" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Viroid_pathogenIdentification" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Viroid_doi" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Viroid_collection" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Viroid_keywords" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Viroid_complementaryDocument" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Viroid_productPicture" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Viroid_externalRelatedReference" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Viroid_certification" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Viroid_fundingSource" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Viroid_keyword" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Viroid_identifier" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Viroid_iri" Description: ""
 --     * Slot: Viroid_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Prion_suspectedEpidemiologicalOrigin" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted
+--     * Slot: suspectedEpidemiologicalOrigin_id Description: The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted.
 -- # Class: "Prion_isolationHost" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated
+--     * Slot: isolationHost_id Description: The host organism from which the pathogen was originally isolated.
 -- # Class: "Prion_productionCellLine" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study
+--     * Slot: productionCellLine_id Description: The cell line used for the production or propagation of the pathogen, detailing the cellular environment employed in its cultivation and study.
 -- # Class: "Prion_propagationHost" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: propagationHost_id Description: The host organism that propagates the pathogen
+--     * Slot: propagationHost_id Description: The host organism that propagates the pathogen.
 -- # Class: "Prion_transmissionMethod" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
 --     * Slot: transmissionMethod_id Description: The method or route through which the pathogen is transmitted from one host to another, detailing the mechanisms of infection spread.
 -- # Class: "Prion_sequence" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format
+--     * Slot: sequence_id Description: The related sequence information from a sequence provider or in fasta format.
 -- # Class: "Prion_additionalCategory" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit
+--     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
 -- # Class: "Prion_pathogenIdentification" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
 --     * Slot: pathogenIdentification_id Description: The identification of the pathogen or group of pathogens (e.g; name, taxon identification, etc.) related to the current item.
 -- # Class: "Prion_doi" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related
+--     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 -- # Class: "Prion_collection" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: collection_id Description: The collection(s) to which belongs this item
+--     * Slot: collection_id Description: The collection(s) to which belongs this item.
 -- # Class: "Prion_keywords" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: keywords_id Description: List of terms used to tag and categorize this Item
+--     * Slot: keywords_id Description: List of terms used to tag and categorize this Item.
 -- # Class: "Prion_complementaryDocument" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item
+--     * Slot: complementaryDocument_id Description: Any additional documents that provide supplementary information, instructions, or guidelines relevant to the use of this item.
 -- # Class: "Prion_productPicture" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: productPicture_id Description: A picture that can represent the item
+--     * Slot: productPicture_id Description: A picture that can represent the item.
 -- # Class: "Prion_externalRelatedReference" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider
+--     * Slot: externalRelatedReference_id Description: A reference that permits to retrieve another related item from an external provider.
 -- # Class: "Prion_certification" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification
+--     * Slot: certification_id Description: Any certification related to the current product or service; e.g., ISO certification.
 -- # Class: "Prion_fundingSource" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially
+--     * Slot: fundingSource_id Description: A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially.
 -- # Class: "Prion_keyword" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Prion_identifier" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Prion_iri" Description: ""
 --     * Slot: Prion_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "MaterialSafetyDataSheet_keyword" Description: ""
 --     * Slot: MaterialSafetyDataSheet_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "MaterialSafetyDataSheet_identifier" Description: ""
 --     * Slot: MaterialSafetyDataSheet_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "MaterialSafetyDataSheet_iri" Description: ""
 --     * Slot: MaterialSafetyDataSheet_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "File_keyword" Description: ""
 --     * Slot: File_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "File_identifier" Description: ""
 --     * Slot: File_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "File_iri" Description: ""
 --     * Slot: File_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Data_keyword" Description: ""
 --     * Slot: Data_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Data_identifier" Description: ""
 --     * Slot: Data_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Data_iri" Description: ""
 --     * Slot: Data_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Document_keyword" Description: ""
 --     * Slot: Document_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Document_identifier" Description: ""
 --     * Slot: Document_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Document_iri" Description: ""
 --     * Slot: Document_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Audio_keyword" Description: ""
 --     * Slot: Audio_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Audio_identifier" Description: ""
 --     * Slot: Audio_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Audio_iri" Description: ""
 --     * Slot: Audio_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Video_keyword" Description: ""
 --     * Slot: Video_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Video_identifier" Description: ""
 --     * Slot: Video_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Video_iri" Description: ""
 --     * Slot: Video_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Image_keyword" Description: ""
 --     * Slot: Image_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Image_identifier" Description: ""
 --     * Slot: Image_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Image_iri" Description: ""
 --     * Slot: Image_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "ContactPoint_keyword" Description: ""
 --     * Slot: ContactPoint_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "ContactPoint_identifier" Description: ""
 --     * Slot: ContactPoint_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "ContactPoint_iri" Description: ""
 --     * Slot: ContactPoint_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "License_keyword" Description: ""
 --     * Slot: License_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "License_identifier" Description: ""
 --     * Slot: License_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "License_iri" Description: ""
 --     * Slot: License_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Certification_certificationDocument" Description: ""
 --     * Slot: Certification_id Description: Autocreated FK slot
 --     * Slot: certificationDocument_id Description: The document(s) issued by an authority certifying the conformity of the subject to the applicable scheme, including, as the case may be, the documents attesting the equivalence to another certification scheme.
 -- # Class: "Certification_keyword" Description: ""
 --     * Slot: Certification_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "Certification_identifier" Description: ""
 --     * Slot: Certification_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "Certification_iri" Description: ""
 --     * Slot: Certification_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "FundingSource_keyword" Description: ""
 --     * Slot: FundingSource_id Description: Autocreated FK slot
---     * Slot: keyword Description: A keyword or tag describing the resource
+--     * Slot: keyword Description: A keyword or tag describing the resource.
 -- # Class: "FundingSource_identifier" Description: ""
 --     * Slot: FundingSource_id Description: Autocreated FK slot
---     * Slot: identifier Description: A unique identifier of the resource being described or cataloged
+--     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
 -- # Class: "FundingSource_iri" Description: ""
 --     * Slot: FundingSource_id Description: Autocreated FK slot
---     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs
+--     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 
 CREATE TABLE "Resource" (
 	id INTEGER NOT NULL, 

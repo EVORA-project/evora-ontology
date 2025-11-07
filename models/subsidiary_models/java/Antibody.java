@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Protein that can bind to certain types of foreign bodies, such as pathogens
+  Protein that can bind to certain types of foreign bodies, such as pathogens.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

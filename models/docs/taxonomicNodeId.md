@@ -3,7 +3,7 @@
 # Slot: taxonomic node ID (taxonomicNodeId) 
 
 
-_The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy_
+_The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy._
 
 
 
@@ -49,7 +49,7 @@ Alias: taxonomicNodeId
 
 ## Comments
 
-* NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in ICTV= Key of the taxon node !! Could be replaced by a composite key made of 'taxonomic ID' + 'has version'
+* NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in ICTV= Key of the taxon node !! Could be replaced by a composite key made of 'taxonomic ID' + 'has version'.
 
 ## Identifier and Mapping Information
 
@@ -85,12 +85,12 @@ Alias: taxonomicNodeId
 ```yaml
 name: taxonomicNodeId
 description: The taxonomic_Node Identifier as an identifier specific the current taxon
-  in the corresponding release/version of the taxonomy
+  in the corresponding release/version of the taxonomy.
 title: taxonomic node ID
 comments:
 - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
   ICTV= Key of the taxon node !! Could be replaced by a composite key made of 'taxonomic
-  ID' + 'has version'
+  ID' + 'has version'.
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - dwc:taxonID

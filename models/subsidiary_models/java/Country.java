@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The country as of ISO3166
+  The country as of ISO3166.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

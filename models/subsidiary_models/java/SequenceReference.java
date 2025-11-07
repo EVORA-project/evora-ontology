@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A reference that permits to retrieve the sequence information from a sequence provider
+  A reference that permits to retrieve the sequence information from a sequence provider.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

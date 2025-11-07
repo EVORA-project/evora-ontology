@@ -3,7 +3,7 @@
 # Class: Pathogen identification (PathogenIdentification) 
 
 
-_A collection of distinguishing information that enables the differentiation of a pathogen from another_
+_A collection of distinguishing information that enables the differentiation of a pathogen from another._
 
 
 
@@ -177,7 +177,7 @@ URI: [EVORAO:PathogenIdentification](https://w3id.org/evorao/PathogenIdentificat
 ```yaml
 name: PathogenIdentification
 description: A collection of distinguishing information that enables the differentiation
-  of a pathogen from another
+  of a pathogen from another.
 title: Pathogen identification
 from_schema: https://w3id.org/evorao/
 broad_mappings:
@@ -198,11 +198,11 @@ slots:
 slot_usage:
   taxon:
     name: taxon
-    description: Scientifically classified group or entity within the reference taxonomy
+    description: Scientifically classified group or entity within the reference taxonomy.
     title: taxon
     comments:
     - The taxon of the highest rank known that can be used to classify a pathogen
-      or group of pathogens (e.g viruses) in the reference taxonomy
+      or group of pathogens (e.g viruses) in the reference taxonomy.
     close_mappings:
     - schema:taxonomicRange
     - dwc:taxonID
@@ -218,7 +218,7 @@ slot_usage:
     multivalued: false
   pathogenName:
     name: pathogenName
-    description: A pathogen common name or a name that describes a group of pathogens
+    description: A pathogen common name or a name that describes a group of pathogens.
     title: pathogen name
     exact_mappings:
     - dwc:organismName
@@ -244,7 +244,7 @@ slot_usage:
   hostType:
     name: hostType
     description: Indication of the possible host(s) for the identified pathogens among
-      the listed main categories
+      the listed main categories.
     title: host type
     domain_of:
     - PathogenIdentification
@@ -255,7 +255,7 @@ slot_usage:
   subspecies:
     name: subspecies
     description: The subspecies information differentiates closely related pathogens
-      within a single species
+      within a single species.
     title: subspecies
     domain_of:
     - PathogenIdentification
@@ -264,7 +264,7 @@ slot_usage:
     multivalued: false
   strain:
     name: strain
-    description: Identifier given to a genetic variant within a single species
+    description: Identifier given to a genetic variant within a single species.
     title: strain
     domain_of:
     - PathogenIdentification
@@ -278,7 +278,7 @@ slot_usage:
       host and propagated in a laboratory culture. The isolate information may include
       an internal reference code from the laboratory that took the sample or performed
       the isolation, as well as details about the specific conditions of isolation,
-      such as the name of the town, hospital, and type of host
+      such as the name of the town, hospital, and type of host.
     title: isolate
     domain_of:
     - PathogenIdentification
@@ -288,7 +288,7 @@ slot_usage:
   genotype:
     name: genotype
     description: Genotype information that identifies organisms that cluster in phylogenetic
-      trees, thus different clusters are distinct genotypes
+      trees, thus different clusters are distinct genotypes.
     title: genotype
     close_mappings:
     - geno:0000222
@@ -300,7 +300,7 @@ slot_usage:
   serotype:
     name: serotype
     description: Genetically related pathogens that group together based on serological
-      relationships
+      relationships.
     title: serotype
     domain_of:
     - PathogenIdentification
@@ -311,7 +311,7 @@ slot_usage:
     name: variant
     description: An organism with one or more new mutations is referred to as a “variant”
       of the original organism if not sufficiently different to be termed a distinct
-      strain
+      strain.
     title: variant
     domain_of:
     - PathogenIdentification
@@ -328,7 +328,7 @@ slot_usage:
 ```yaml
 name: PathogenIdentification
 description: A collection of distinguishing information that enables the differentiation
-  of a pathogen from another
+  of a pathogen from another.
 title: Pathogen identification
 from_schema: https://w3id.org/evorao/
 broad_mappings:
@@ -338,11 +338,11 @@ is_a: Resource
 slot_usage:
   taxon:
     name: taxon
-    description: Scientifically classified group or entity within the reference taxonomy
+    description: Scientifically classified group or entity within the reference taxonomy.
     title: taxon
     comments:
     - The taxon of the highest rank known that can be used to classify a pathogen
-      or group of pathogens (e.g viruses) in the reference taxonomy
+      or group of pathogens (e.g viruses) in the reference taxonomy.
     close_mappings:
     - schema:taxonomicRange
     - dwc:taxonID
@@ -358,7 +358,7 @@ slot_usage:
     multivalued: false
   pathogenName:
     name: pathogenName
-    description: A pathogen common name or a name that describes a group of pathogens
+    description: A pathogen common name or a name that describes a group of pathogens.
     title: pathogen name
     exact_mappings:
     - dwc:organismName
@@ -384,7 +384,7 @@ slot_usage:
   hostType:
     name: hostType
     description: Indication of the possible host(s) for the identified pathogens among
-      the listed main categories
+      the listed main categories.
     title: host type
     domain_of:
     - PathogenIdentification
@@ -395,7 +395,7 @@ slot_usage:
   subspecies:
     name: subspecies
     description: The subspecies information differentiates closely related pathogens
-      within a single species
+      within a single species.
     title: subspecies
     domain_of:
     - PathogenIdentification
@@ -404,7 +404,7 @@ slot_usage:
     multivalued: false
   strain:
     name: strain
-    description: Identifier given to a genetic variant within a single species
+    description: Identifier given to a genetic variant within a single species.
     title: strain
     domain_of:
     - PathogenIdentification
@@ -418,7 +418,7 @@ slot_usage:
       host and propagated in a laboratory culture. The isolate information may include
       an internal reference code from the laboratory that took the sample or performed
       the isolation, as well as details about the specific conditions of isolation,
-      such as the name of the town, hospital, and type of host
+      such as the name of the town, hospital, and type of host.
     title: isolate
     domain_of:
     - PathogenIdentification
@@ -428,7 +428,7 @@ slot_usage:
   genotype:
     name: genotype
     description: Genotype information that identifies organisms that cluster in phylogenetic
-      trees, thus different clusters are distinct genotypes
+      trees, thus different clusters are distinct genotypes.
     title: genotype
     close_mappings:
     - geno:0000222
@@ -440,7 +440,7 @@ slot_usage:
   serotype:
     name: serotype
     description: Genetically related pathogens that group together based on serological
-      relationships
+      relationships.
     title: serotype
     domain_of:
     - PathogenIdentification
@@ -451,7 +451,7 @@ slot_usage:
     name: variant
     description: An organism with one or more new mutations is referred to as a “variant”
       of the original organism if not sufficiently different to be termed a distinct
-      strain
+      strain.
     title: variant
     domain_of:
     - PathogenIdentification
@@ -461,11 +461,11 @@ slot_usage:
 attributes:
   taxon:
     name: taxon
-    description: Scientifically classified group or entity within the reference taxonomy
+    description: Scientifically classified group or entity within the reference taxonomy.
     title: taxon
     comments:
     - The taxon of the highest rank known that can be used to classify a pathogen
-      or group of pathogens (e.g viruses) in the reference taxonomy
+      or group of pathogens (e.g viruses) in the reference taxonomy.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - schema:taxonomicRange
@@ -485,7 +485,7 @@ attributes:
     multivalued: false
   pathogenName:
     name: pathogenName
-    description: A pathogen common name or a name that describes a group of pathogens
+    description: A pathogen common name or a name that describes a group of pathogens.
     title: pathogen name
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -526,7 +526,7 @@ attributes:
   hostType:
     name: hostType
     description: Indication of the possible host(s) for the identified pathogens among
-      the listed main categories
+      the listed main categories.
     title: host type
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -545,7 +545,7 @@ attributes:
   subspecies:
     name: subspecies
     description: The subspecies information differentiates closely related pathogens
-      within a single species
+      within a single species.
     title: subspecies
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -558,7 +558,7 @@ attributes:
     multivalued: false
   strain:
     name: strain
-    description: Identifier given to a genetic variant within a single species
+    description: Identifier given to a genetic variant within a single species.
     title: strain
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -576,7 +576,7 @@ attributes:
       host and propagated in a laboratory culture. The isolate information may include
       an internal reference code from the laboratory that took the sample or performed
       the isolation, as well as details about the specific conditions of isolation,
-      such as the name of the town, hospital, and type of host
+      such as the name of the town, hospital, and type of host.
     title: isolate
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -590,7 +590,7 @@ attributes:
   genotype:
     name: genotype
     description: Genotype information that identifies organisms that cluster in phylogenetic
-      trees, thus different clusters are distinct genotypes
+      trees, thus different clusters are distinct genotypes.
     title: genotype
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -606,7 +606,7 @@ attributes:
   serotype:
     name: serotype
     description: Genetically related pathogens that group together based on serological
-      relationships
+      relationships.
     title: serotype
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -621,7 +621,7 @@ attributes:
     name: variant
     description: An organism with one or more new mutations is referred to as a “variant”
       of the original organism if not sufficiently different to be termed a distinct
-      strain
+      strain.
     title: variant
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -634,7 +634,7 @@ attributes:
     multivalued: false
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -648,10 +648,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -669,10 +669,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -689,12 +689,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -710,11 +710,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

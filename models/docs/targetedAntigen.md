@@ -3,7 +3,7 @@
 # Slot: targeted antigen (targetedAntigen) 
 
 
-_Specific molecular structure or epitope recognized and bound by an antibody_
+_Specific molecular structure or epitope recognized and bound by an antibody._
 
 
 
@@ -72,7 +72,7 @@ Alias: targetedAntigen
 <details>
 ```yaml
 name: targetedAntigen
-description: Specific molecular structure or epitope recognized and bound by an antibody
+description: Specific molecular structure or epitope recognized and bound by an antibody.
 title: targeted antigen
 from_schema: https://w3id.org/evorao/
 rank: 1000

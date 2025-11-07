@@ -3,7 +3,7 @@
 # Slot: grant number (grantNumber) 
 
 
-_A formal reference or agreement number assigned by the funding body_
+_A formal reference or agreement number assigned by the funding body._
 
 
 
@@ -76,7 +76,7 @@ Alias: grantNumber
 <details>
 ```yaml
 name: grantNumber
-description: A formal reference or agreement number assigned by the funding body
+description: A formal reference or agreement number assigned by the funding body.
 title: grant number
 from_schema: https://w3id.org/evorao/
 rank: 1000

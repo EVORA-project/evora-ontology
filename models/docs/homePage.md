@@ -3,7 +3,7 @@
 # Slot: home page (homePage) 
 
 
-_A web page that serves as the main or introductory page_
+_A web page that serves as the main or introductory page._
 
 
 
@@ -22,12 +22,12 @@ Alias: homePage
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
 | [Person](Person.md) | An individual |  no  |
+| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
+| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
 
 
 
@@ -75,7 +75,7 @@ Alias: homePage
 <details>
 ```yaml
 name: homePage
-description: A web page that serves as the main or introductory page
+description: A web page that serves as the main or introductory page.
 title: home page
 from_schema: https://w3id.org/evorao/
 close_mappings:

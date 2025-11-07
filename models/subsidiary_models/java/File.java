@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Digital document or record stored in a specific format that contains data or information
+  Digital document or record stored in a specific format that contains data or information.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A tangible, physical item made available by a provider for use, consumption, or ownership transfer
+  A tangible, physical item made available by a provider for use, consumption, or ownership transfer.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

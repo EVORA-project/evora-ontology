@@ -1,8 +1,8 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.10170
-// List of other names for things
+// version: 1.0.10537
+// List of other names for things.
 message AlternateName
  {
  repeated  string keyword = 0
@@ -17,7 +17,7 @@ message AlternateName
  repeated  alternateName alternateName = 0
  repeated  string sourceOfInformation = 0
  }
-// Protein that can bind to certain types of foreign bodies, such as pathogens
+// Protein that can bind to certain types of foreign bodies, such as pathogens.
 message Antibody
  {
  repeated  string keyword = 0
@@ -70,7 +70,7 @@ message Antibody
   string targetedAntigen = 0
  repeated  sequenceReference sequenceReference = 0
  }
-// Subclass of File representing sound recordings or audio tracks
+// Subclass of File representing sound recordings or audio tracks.
 message Audio
  {
  repeated  string keyword = 0
@@ -84,7 +84,7 @@ message Audio
   string format = 0
   license license = 0
  }
-// The bacterium as a biological material
+// The bacterium as a biological material.
 message Bacterium
  {
  repeated  string keyword = 0
@@ -150,7 +150,7 @@ message Bacterium
   string genomeSequencing = 0
   string titer = 0
  }
-// Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
+// Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
 message BiologicalMaterialOrigin
  {
  repeated  string keyword = 0
@@ -162,7 +162,7 @@ message BiologicalMaterialOrigin
   boolean biologicalSourceType = 0
  repeated  biologicalPartOrigin biologicalPartOrigin = 0
  }
-// The level of biocontainment required or applied in the facility where the biological agent is manipulated
+// The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 message BiosafetyLevel
  {
  repeated  string keyword = 0
@@ -175,7 +175,7 @@ message BiosafetyLevel
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility
+// A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility.
 message Bundle
  {
  repeated  string keyword = 0
@@ -224,7 +224,7 @@ message Bundle
   string preparationTechnique = 0
  repeated  product itemsOfTheBundle = 0
  }
-// Assurance given by an independent certification body that a product, service or system meets the requirements of a standard
+// Assurance given by an independent certification body that a product, service or system meets the requirements of a standard.
 message Certification
  {
  repeated  string keyword = 0
@@ -238,7 +238,7 @@ message Certification
  repeated  document certificationDocument = 0
   uri resourceUrl = 0
  }
-// A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health
+// A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health.
 message ClinicalGroup
  {
  repeated  string keyword = 0
@@ -253,7 +253,7 @@ message ClinicalGroup
  repeated  alternateName alternateName = 0
  repeated  taxon taxon = 0
  }
-// Set of products and services with some common characteristics
+// Set of products and services with some common characteristics.
 message Collection
  {
  repeated  string keyword = 0
@@ -267,7 +267,7 @@ message Collection
  repeated  productOrService collectionItem = 0
   dataProvider collectionDataProvider = 0
  }
-// Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name
+// Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name.
 message CommonName
  {
  repeated  string keyword = 0
@@ -282,7 +282,7 @@ message CommonName
  repeated  alternateName alternateName = 0
  repeated  string sourceOfInformation = 0
  }
-// Entity serving as focal point of information
+// Entity serving as focal point of information.
 message ContactPoint
  {
  repeated  string keyword = 0
@@ -301,7 +301,7 @@ message ContactPoint
   country addressCountry = 0
   string orcidId = 0
  }
-// The country as of ISO3166
+// The country as of ISO3166.
 message Country
  {
  repeated  string keyword = 0
@@ -315,7 +315,7 @@ message Country
   vocabulary inVocabulary = 0
   string alpha2Code = 0
  }
-// Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information
+// Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information.
 message Data
  {
  repeated  string keyword = 0
@@ -329,7 +329,7 @@ message Data
   string format = 0
   license license = 0
  }
-// An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources
+// An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources.
 message DataProvider
  {
  repeated  string keyword = 0
@@ -350,7 +350,7 @@ message DataProvider
  repeated  uri providedEntityType = 0
   integer weight = 0
  }
-// A detection kit for specific pathogens
+// A detection kit for specific pathogens.
 message DetectionKit
  {
  repeated  string keyword = 0
@@ -402,7 +402,7 @@ message DetectionKit
   string specificity = 0
   string targetedRegion = 0
  }
-// Subclass of File representing textual or written files such as reports, manuals, or forms
+// Subclass of File representing textual or written files such as reports, manuals, or forms.
 message Document
  {
  repeated  string keyword = 0
@@ -416,7 +416,7 @@ message Document
   string format = 0
   license license = 0
  }
-// A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
+// A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard.
 message Doi
  {
  repeated  string keyword = 0
@@ -429,7 +429,7 @@ message Doi
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression
+// A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression.
 message ExpressionVector
  {
  repeated  string keyword = 0
@@ -442,7 +442,7 @@ message ExpressionVector
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// A reference that permits to retrieve an item from an external provider
+// A reference that permits to retrieve an item from an external provider.
 message ExternalRelatedReference
  {
  repeated  string keyword = 0
@@ -455,7 +455,7 @@ message ExternalRelatedReference
   string referenceProviderPrefix = 0
   string referenceProviderName = 0
  }
-// A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially
+// A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially.
 message FundingSource
  {
  repeated  string keyword = 0
@@ -473,7 +473,7 @@ message FundingSource
   string eligibilityCriteria = 0
   image logo = 0
  }
-// The fungus as a biological material
+// The fungus as a biological material.
 message Fungus
  {
  repeated  string keyword = 0
@@ -539,7 +539,7 @@ message Fungus
   string genomeSequencing = 0
   string titer = 0
  }
-// The specific location or region where a physical item, originates or is naturally found
+// The specific location or region where a physical item, originates or is naturally found.
 message GeographicalOrigin
  {
  repeated  string keyword = 0
@@ -552,7 +552,7 @@ message GeographicalOrigin
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// An hybridoma that provides antibodies that can be related to a pathogen
+// An hybridoma that provides antibodies that can be related to a pathogen.
 message Hybridoma
  {
  repeated  string keyword = 0
@@ -606,7 +606,7 @@ message Hybridoma
  repeated  sequenceReference sequenceReference = 0
   string hybridomaDescription = 0
  }
-// The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
+// The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air.
 message IataClassification
  {
  repeated  string keyword = 0
@@ -619,7 +619,7 @@ message IataClassification
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// Subclass of File representing visual content such as pictures, diagrams, or illustrations
+// Subclass of File representing visual content such as pictures, diagrams, or illustrations.
 message Image
  {
  repeated  string keyword = 0
@@ -634,7 +634,7 @@ message Image
   license license = 0
   string altText = 0
  }
-// The IPLC area (Indigenous People and Local Communities) from which a physical item originates
+// The IPLC area (Indigenous People and Local Communities) from which a physical item originates.
 message IplcOrigin
  {
  repeated  string keyword = 0
@@ -647,7 +647,7 @@ message IplcOrigin
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// Host organism from which the pathogen was isolated
+// Host organism from which the pathogen was isolated.
 message IsolationHost
  {
  repeated  string keyword = 0
@@ -660,7 +660,7 @@ message IsolationHost
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// Periodical journal publishing scientific research
+// Periodical journal publishing scientific research.
 message Journal
  {
  repeated  string keyword = 0
@@ -673,7 +673,7 @@ message Journal
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// A term or phrase used to tag and categorize content
+// A term or phrase used to tag and categorize content.
 message Keyword
  {
  repeated  string keyword = 0
@@ -686,7 +686,7 @@ message Keyword
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
+// The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
 message License
  {
  repeated  string keyword = 0
@@ -700,7 +700,7 @@ message License
   string licensingOrAttribution = 0
   image logo = 0
  }
-// A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
+// A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 message MaterialSafetyDataSheet
  {
  repeated  string keyword = 0
@@ -724,7 +724,7 @@ message MaterialSafetyDataSheet
   string regulatoryInformation = 0
   string furtherInformation = 0
  }
-// Information on the origin of a natural part that composes the biological material
+// Information on the origin of a natural part that composes the biological material.
 message NaturalPartOrigin
  {
  repeated  string keyword = 0
@@ -740,7 +740,7 @@ message NaturalPartOrigin
   boolean beforeDate = 0
   string permitIdentifierForAbs = 0
  }
-// Nucleic acid related to a pathogen. It can be extracted or synthetic
+// Nucleic acid related to a pathogen. It can be extracted or synthetic.
 message NucleicAcid
  {
  repeated  string keyword = 0
@@ -802,7 +802,7 @@ message NucleicAcid
   string titer = 0
   boolean sequenceChecked = 0
  }
-// A social entity established to meet needs or pursue specific goals
+// A social entity established to meet needs or pursue specific goals.
 message Organization
  {
  repeated  string keyword = 0
@@ -819,7 +819,7 @@ message Organization
   country country = 0
   string rorId = 0
  }
-// The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
+// The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 message Originator
  {
  repeated  string keyword = 0
@@ -833,7 +833,7 @@ message Originator
   contactPoint contactPoint = 0
   image logo = 0
  }
-// A collection of distinguishing information that enables the differentiation of a pathogen from another
+// A collection of distinguishing information that enables the differentiation of a pathogen from another.
 message PathogenIdentification
  {
  repeated  string keyword = 0
@@ -852,7 +852,7 @@ message PathogenIdentification
   string serotype = 0
   variant variant = 0
  }
-// Identifier for 3D structural data as per the PDB (Protein Data Bank) database
+// Identifier for 3D structural data as per the PDB (Protein Data Bank) database.
 message PdbReference
  {
  repeated  string keyword = 0
@@ -865,7 +865,7 @@ message PdbReference
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// An individual
+// An individual.
 message Person
  {
  repeated  string keyword = 0
@@ -880,7 +880,7 @@ message Person
   image logo = 0
   string orcidId = 0
  }
-// A person or an organization
+// A person or an organization.
 message PersonOrOrganization
  {
  repeated  string keyword = 0
@@ -894,7 +894,7 @@ message PersonOrOrganization
   contactPoint contactPoint = 0
   image logo = 0
  }
-// The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers
+// The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers.
 message PlasmidSelection
  {
  repeated  string keyword = 0
@@ -907,7 +907,7 @@ message PlasmidSelection
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// The prion as a biological material
+// The prion as a biological material.
 message Prion
  {
  repeated  string keyword = 0
@@ -973,7 +973,7 @@ message Prion
   string genomeSequencing = 0
   string titer = 0
  }
-// A tangible, physical item made available by a provider for use, consumption, or ownership transfer
+// A tangible, physical item made available by a provider for use, consumption, or ownership transfer.
 message Product
  {
  repeated  string keyword = 0
@@ -1021,7 +1021,7 @@ message Product
   string usageRestrictions = 0
   string preparationTechnique = 0
  }
-// A term used to classify a group of products that share common characteristics or functions, which helps in their organization
+// A term used to classify a group of products that share common characteristics or functions, which helps in their organization.
 message ProductCategory
  {
  repeated  string keyword = 0
@@ -1035,7 +1035,7 @@ message ProductCategory
   vocabulary inVocabulary = 0
   productCategory parentCategory = 0
  }
-// A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances
+// A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances.
 message ProductionCellLine
  {
  repeated  string keyword = 0
@@ -1048,7 +1048,7 @@ message ProductionCellLine
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// The organism used to grow and multiply the pathogen under controlled conditions
+// The organism used to grow and multiply the pathogen under controlled conditions.
 message PropagationHost
  {
  repeated  string keyword = 0
@@ -1061,7 +1061,7 @@ message PropagationHost
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// A protein as a derived product from a pathogen
+// A protein as a derived product from a pathogen.
 message Protein
  {
  repeated  string keyword = 0
@@ -1123,7 +1123,7 @@ message Protein
  repeated  string tagStatusOfTheSolubilizedProtein = 0
  repeated  string typeOfFunctionalCharacterization = 0
  }
-// The protozoan as a biological material
+// The protozoan as a biological material.
 message Protozoan
  {
  repeated  string keyword = 0
@@ -1189,7 +1189,7 @@ message Protozoan
   string genomeSequencing = 0
   string titer = 0
  }
-// A provider of products or services, as a specific organization
+// A provider of products or services, as a specific organization.
 message Provider
  {
  repeated  string keyword = 0
@@ -1207,7 +1207,7 @@ message Provider
   string rorId = 0
  repeated  reasearchInfrastructure memberOfRi = 0
  }
-// A scientific publication
+// A scientific publication.
 message Publication
  {
  repeated  string keyword = 0
@@ -1221,7 +1221,7 @@ message Publication
  repeated  doi doi = 0
   journal journal = 0
  }
-// A research infrastructure (RI)
+// A research infrastructure (RI).
 message ReasearchInfrastructure
  {
  repeated  string keyword = 0
@@ -1238,7 +1238,7 @@ message ReasearchInfrastructure
   country country = 0
   string rorId = 0
  }
-// Identification of a recombinant part
+// Identification of a recombinant part.
 message RecombinantPartIdentification
  {
  repeated  string keyword = 0
@@ -1249,7 +1249,7 @@ message RecombinantPartIdentification
   string partIdentification = 0
  repeated  sequence sequence = 0
  }
-// Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence
+// Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence.
 message RiskGroup
  {
  repeated  string keyword = 0
@@ -1262,7 +1262,7 @@ message RiskGroup
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// A nucleic acid or protein sequence information
+// A nucleic acid or protein sequence information.
 message Sequence
  {
  repeated  string keyword = 0
@@ -1273,7 +1273,7 @@ message Sequence
  repeated  sequenceReference sequenceReference = 0
   string sequenceFasta = 0
  }
-// A reference that permits to retrieve the sequence information from a sequence provider
+// A reference that permits to retrieve the sequence information from a sequence provider.
 message SequenceReference
  {
  repeated  string keyword = 0
@@ -1284,7 +1284,7 @@ message SequenceReference
   string accessionNumber = 0
   string sequenceProvider = 0
  }
-// An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need
+// An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need.
 message Service
  {
  repeated  string keyword = 0
@@ -1339,7 +1339,7 @@ message SpecialFeature
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// Information on the origin of a synthetic part that composes the biological material
+// Information on the origin of a synthetic part that composes the biological material.
 message SyntheticPartOrigin
  {
  repeated  string keyword = 0
@@ -1352,7 +1352,7 @@ message SyntheticPartOrigin
   boolean modificationsFromTheReferenceSequences = 0
   string descriptionOfModificationsMadeFromTheReferenceSequences = 0
  }
-// The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
+// The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids.
 message TagSequence
  {
  repeated  string keyword = 0
@@ -1365,7 +1365,7 @@ message TagSequence
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit
+// Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit.
 message Taxon
  {
  repeated  string keyword = 0
@@ -1386,7 +1386,7 @@ message Taxon
  repeated  alternateName alternateName = 0
  repeated  taxon previouslyKnownAs = 0
  }
-// The possible taxonomic ranks and their description
+// The possible taxonomic ranks and their description.
 message TaxonomicRank
  {
  repeated  string keyword = 0
@@ -1400,7 +1400,7 @@ message TaxonomicRank
   vocabulary inVocabulary = 0
  repeated  taxonomy taxonomy = 0
  }
-// A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics
+// A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics.
 message Taxonomy
  {
  repeated  string keyword = 0
@@ -1417,7 +1417,7 @@ message Taxonomy
  repeated  taxonomicRank rank = 0
   dataProvider rankDataProvider = 0
  }
-// The process by which the pathogen spreads between hosts
+// The process by which the pathogen spreads between hosts.
 message TransmissionMethod
  {
  repeated  string keyword = 0
@@ -1430,7 +1430,7 @@ message TransmissionMethod
   integer weight = 0
   vocabulary inVocabulary = 0
  }
-// An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
+// An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain.
 message Variant
  {
  repeated  string keyword = 0
@@ -1445,7 +1445,7 @@ message Variant
  repeated  alternateName alternateName = 0
  repeated  string sourceOfInformation = 0
  }
-// Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
+// Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards).
 message Version
  {
  repeated  string keyword = 0
@@ -1457,7 +1457,7 @@ message Version
   string versionOf = 0
  repeated  resource resource = 0
  }
-// Subclass of File representing moving visual media, such as recordings, presentations, or movies
+// Subclass of File representing moving visual media, such as recordings, presentations, or movies.
 message Video
  {
  repeated  string keyword = 0
@@ -1471,7 +1471,7 @@ message Video
   string format = 0
   license license = 0
  }
-// The viroid as a biological material
+// The viroid as a biological material.
 message Viroid
  {
  repeated  string keyword = 0
@@ -1537,7 +1537,7 @@ message Viroid
   string genomeSequencing = 0
   string titer = 0
  }
-// The virus as a biological material
+// The virus as a biological material.
 message Virus
  {
  repeated  string keyword = 0
@@ -1606,7 +1606,7 @@ message Virus
   boolean contaminationWithCoInfectingViruses = 0
   boolean mycoplasmicContent = 0
  }
-// A virus vernacular name or a name that describes a group of viruses
+// A virus vernacular name or a name that describes a group of viruses.
 message VirusName
  {
  repeated  string keyword = 0
@@ -1621,7 +1621,7 @@ message VirusName
  repeated  alternateName alternateName = 0
  repeated  string sourceOfInformation = 0
  }
-// A subset of words or phrases specific to a particular subject or field
+// A subset of words or phrases specific to a particular subject or field.
 message Vocabulary
  {
  repeated  string keyword = 0

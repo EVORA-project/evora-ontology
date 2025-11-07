@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Subclass of File representing sound recordings or audio tracks
+  Subclass of File representing sound recordings or audio tracks.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

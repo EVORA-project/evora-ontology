@@ -3,7 +3,7 @@
 # Slot: items of the bundle (itemsOfTheBundle) 
 
 
-_Specifies the constituent products and/or services that are part of the bundle_
+_Specifies the constituent products and/or services that are part of the bundle._
 
 
 
@@ -75,7 +75,7 @@ Alias: itemsOfTheBundle
 ```yaml
 name: itemsOfTheBundle
 description: Specifies the constituent products and/or services that are part of the
-  bundle
+  bundle.
 title: items of the bundle
 from_schema: https://w3id.org/evorao/
 close_mappings:

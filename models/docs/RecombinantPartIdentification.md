@@ -3,7 +3,7 @@
 # Class: Recombinant part identification (RecombinantPartIdentification) 
 
 
-_Identification of a recombinant part_
+_Identification of a recombinant part._
 
 
 
@@ -124,7 +124,7 @@ URI: [EVORAO:RecombinantPartIdentification](https://w3id.org/evorao/RecombinantP
 <details>
 ```yaml
 name: RecombinantPartIdentification
-description: Identification of a recombinant part
+description: Identification of a recombinant part.
 title: Recombinant part identification
 from_schema: https://w3id.org/evorao/
 is_a: Resource
@@ -135,7 +135,7 @@ slot_usage:
   partIdentification:
     name: partIdentification
     description: A short designation of this recombinant part of the related biological
-      material
+      material.
     title: Part identification
     domain_of:
     - RecombinantPartIdentification
@@ -145,7 +145,7 @@ slot_usage:
   sequence:
     name: sequence
     description: The related sequence information from a sequence provider or in fasta
-      format
+      format.
     title: sequence
     close_mappings:
     - geno:0000239
@@ -170,7 +170,7 @@ slot_usage:
 <details>
 ```yaml
 name: RecombinantPartIdentification
-description: Identification of a recombinant part
+description: Identification of a recombinant part.
 title: Recombinant part identification
 from_schema: https://w3id.org/evorao/
 is_a: Resource
@@ -178,7 +178,7 @@ slot_usage:
   partIdentification:
     name: partIdentification
     description: A short designation of this recombinant part of the related biological
-      material
+      material.
     title: Part identification
     domain_of:
     - RecombinantPartIdentification
@@ -188,7 +188,7 @@ slot_usage:
   sequence:
     name: sequence
     description: The related sequence information from a sequence provider or in fasta
-      format
+      format.
     title: sequence
     close_mappings:
     - geno:0000239
@@ -208,7 +208,7 @@ attributes:
   partIdentification:
     name: partIdentification
     description: A short designation of this recombinant part of the related biological
-      material
+      material.
     title: Part identification
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -222,7 +222,7 @@ attributes:
   sequence:
     name: sequence
     description: The related sequence information from a sequence provider or in fasta
-      format
+      format.
     title: sequence
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -244,7 +244,7 @@ attributes:
     multivalued: true
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -258,10 +258,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -279,10 +279,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -299,12 +299,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -320,11 +320,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

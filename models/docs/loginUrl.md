@@ -3,7 +3,7 @@
 # Slot: login URL (loginUrl) 
 
 
-_The URL template that allows to log in if required_
+_The URL template that allows to log in if required._
 
 
 
@@ -71,7 +71,7 @@ Alias: loginUrl
 <details>
 ```yaml
 name: loginUrl
-description: The URL template that allows to log in if required
+description: The URL template that allows to log in if required.
 title: login URL
 from_schema: https://w3id.org/evorao/
 close_mappings:

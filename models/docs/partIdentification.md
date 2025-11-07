@@ -3,7 +3,7 @@
 # Slot: Part identification (partIdentification) 
 
 
-_A short designation of this recombinant part of the related biological material_
+_A short designation of this recombinant part of the related biological material._
 
 
 
@@ -72,7 +72,7 @@ Alias: partIdentification
 ```yaml
 name: partIdentification
 description: A short designation of this recombinant part of the related biological
-  material
+  material.
 title: Part identification
 from_schema: https://w3id.org/evorao/
 rank: 1000

@@ -3,7 +3,7 @@
 # Slot: authors (authors) 
 
 
-_The list of authors_
+_The list of authors._
 
 
 
@@ -73,7 +73,7 @@ Alias: authors
 <details>
 ```yaml
 name: authors
-description: The list of authors
+description: The list of authors.
 title: authors
 from_schema: https://w3id.org/evorao/
 close_mappings:

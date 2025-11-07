@@ -3,7 +3,7 @@
 # Slot: toxicological information (toxicologicalInformation) 
 
 
-_Details on the potential health effects of the product, including routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic toxicity and symptoms of exposure_
+_Details on the potential health effects of the product, including routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic toxicity and symptoms of exposure._
 
 
 
@@ -73,7 +73,7 @@ Alias: toxicologicalInformation
 name: toxicologicalInformation
 description: Details on the potential health effects of the product, including routes
   of exposure (inhalation, ingestion, skin, eye contact), acute and chronic toxicity
-  and symptoms of exposure
+  and symptoms of exposure.
 title: toxicological information
 from_schema: https://w3id.org/evorao/
 rank: 1000

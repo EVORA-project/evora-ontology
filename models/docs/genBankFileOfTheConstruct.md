@@ -3,7 +3,7 @@
 # Slot: GenBank file of the construct (genBankFileOfTheConstruct) 
 
 
-_A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct_
+_A GenBank formatted file that contains detailed sequence and annotation information of a nucleic acid construct._
 
 
 
@@ -72,7 +72,7 @@ Alias: genBankFileOfTheConstruct
 ```yaml
 name: genBankFileOfTheConstruct
 description: A GenBank formatted file that contains detailed sequence and annotation
-  information of a nucleic acid construct
+  information of a nucleic acid construct.
 title: GenBank file of the construct
 from_schema: https://w3id.org/evorao/
 rank: 1000

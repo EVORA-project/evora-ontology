@@ -3,7 +3,7 @@
 # Slot: email (email) 
 
 
-_Email address_
+_The email address._
 
 
 
@@ -73,7 +73,7 @@ Alias: email
 <details>
 ```yaml
 name: email
-description: Email address
+description: The email address.
 title: email
 from_schema: https://w3id.org/evorao/
 exact_mappings:

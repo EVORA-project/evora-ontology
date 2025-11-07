@@ -3,7 +3,7 @@
 # Slot: expressed as (expressedAs) 
 
 
-_Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell)_
+_Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell)._
 
 
 
@@ -75,7 +75,7 @@ name: expressedAs
 description: Refers to the form in which the protein is produced and manifested in
   a biological system. Possible values include 'Soluble' (proteins that are dissolved
   in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins
-  that are insoluble and form within the cell)
+  that are insoluble and form within the cell).
 title: expressed as
 from_schema: https://w3id.org/evorao/
 close_mappings:

@@ -3,7 +3,7 @@
 # Slot: logo (logo) 
 
 
-_A path or URL to the related logo_
+_A path or URL to the related logo._
 
 
 
@@ -22,15 +22,15 @@ Alias: logo
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [FundingSource](FundingSource.md) | A program, grant, or project providing financial support for the access or us... |  yes  |
-| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
 | [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
 | [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
+| [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
 | [Person](Person.md) | An individual |  no  |
+| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
+| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [FundingSource](FundingSource.md) | A program, grant, or project providing financial support for the access or us... |  yes  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
 
 
 
@@ -78,7 +78,7 @@ Alias: logo
 <details>
 ```yaml
 name: logo
-description: A path or URL to the related logo
+description: A path or URL to the related logo.
 title: logo
 from_schema: https://w3id.org/evorao/
 exact_mappings:

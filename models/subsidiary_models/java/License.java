@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
+  The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

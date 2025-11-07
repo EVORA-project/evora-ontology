@@ -3,7 +3,7 @@
 # Slot: cloned nucleic acid (clonedNucleicAcid) 
 
 
-_Specification of the terms and parameters for transporting_
+_Specification of the terms and parameters for transporting._
 
 
 
@@ -71,7 +71,7 @@ Alias: clonedNucleicAcid
 <details>
 ```yaml
 name: clonedNucleicAcid
-description: Specification of the terms and parameters for transporting
+description: Specification of the terms and parameters for transporting.
 title: cloned nucleic acid
 from_schema: https://w3id.org/evorao/
 rank: 1000

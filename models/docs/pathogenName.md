@@ -3,7 +3,7 @@
 # Slot: pathogen name (pathogenName) 
 
 
-_A pathogen common name or a name that describes a group of pathogens_
+_A pathogen common name or a name that describes a group of pathogens._
 
 
 
@@ -72,7 +72,7 @@ Alias: pathogenName
 <details>
 ```yaml
 name: pathogenName
-description: A pathogen common name or a name that describes a group of pathogens
+description: A pathogen common name or a name that describes a group of pathogens.
 title: pathogen name
 from_schema: https://w3id.org/evorao/
 exact_mappings:

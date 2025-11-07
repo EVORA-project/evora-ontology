@@ -3,7 +3,7 @@
 # Class: External related reference (ExternalRelatedReference) 
 
 
-_A reference that permits to retrieve an item from an external provider_
+_A reference that permits to retrieve an item from an external provider._
 
 
 
@@ -137,7 +137,7 @@ URI: [EVORAO:ExternalRelatedReference](https://w3id.org/evorao/ExternalRelatedRe
 <details>
 ```yaml
 name: ExternalRelatedReference
-description: A reference that permits to retrieve an item from an external provider
+description: A reference that permits to retrieve an item from an external provider.
 title: External related reference
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -154,7 +154,7 @@ slots:
 slot_usage:
   reference:
     name: reference
-    description: The identifier reference of the connected external item
+    description: The identifier reference of the connected external item.
     title: reference
     close_mappings:
     - dct:identifier
@@ -167,10 +167,10 @@ slot_usage:
     multivalued: false
   referenceLabel:
     name: referenceLabel
-    description: The label informing what this reference is about
+    description: The label informing what this reference is about.
     title: reference label
     comments:
-    - e.g., 'Infravec2 related product'
+    - e.g., 'Infravec2 related product'.
     close_mappings:
     - dct:title
     domain_of:
@@ -181,7 +181,7 @@ slot_usage:
   referenceProviderPrefix:
     name: referenceProviderPrefix
     description: The url prefix that once completed with the reference will lead to
-      the linked external resource
+      the linked external resource.
     title: reference provider prefix
     related_mappings:
     - dcat:landingPage
@@ -193,7 +193,7 @@ slot_usage:
     multivalued: false
   referenceProviderName:
     name: referenceProviderName
-    description: The name for the reference provider
+    description: The name for the reference provider.
     title: reference provider name
     close_mappings:
     - dct:publisher
@@ -211,7 +211,7 @@ slot_usage:
 <details>
 ```yaml
 name: ExternalRelatedReference
-description: A reference that permits to retrieve an item from an external provider
+description: A reference that permits to retrieve an item from an external provider.
 title: External related reference
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -223,7 +223,7 @@ is_a: Resource
 slot_usage:
   reference:
     name: reference
-    description: The identifier reference of the connected external item
+    description: The identifier reference of the connected external item.
     title: reference
     close_mappings:
     - dct:identifier
@@ -236,10 +236,10 @@ slot_usage:
     multivalued: false
   referenceLabel:
     name: referenceLabel
-    description: The label informing what this reference is about
+    description: The label informing what this reference is about.
     title: reference label
     comments:
-    - e.g., 'Infravec2 related product'
+    - e.g., 'Infravec2 related product'.
     close_mappings:
     - dct:title
     domain_of:
@@ -250,7 +250,7 @@ slot_usage:
   referenceProviderPrefix:
     name: referenceProviderPrefix
     description: The url prefix that once completed with the reference will lead to
-      the linked external resource
+      the linked external resource.
     title: reference provider prefix
     related_mappings:
     - dcat:landingPage
@@ -262,7 +262,7 @@ slot_usage:
     multivalued: false
   referenceProviderName:
     name: referenceProviderName
-    description: The name for the reference provider
+    description: The name for the reference provider.
     title: reference provider name
     close_mappings:
     - dct:publisher
@@ -274,7 +274,7 @@ slot_usage:
 attributes:
   reference:
     name: reference
-    description: The identifier reference of the connected external item
+    description: The identifier reference of the connected external item.
     title: reference
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -291,10 +291,10 @@ attributes:
     multivalued: false
   referenceLabel:
     name: referenceLabel
-    description: The label informing what this reference is about
+    description: The label informing what this reference is about.
     title: reference label
     comments:
-    - e.g., 'Infravec2 related product'
+    - e.g., 'Infravec2 related product'.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:title
@@ -309,7 +309,7 @@ attributes:
   referenceProviderPrefix:
     name: referenceProviderPrefix
     description: The url prefix that once completed with the reference will lead to
-      the linked external resource
+      the linked external resource.
     title: reference provider prefix
     from_schema: https://w3id.org/evorao/
     related_mappings:
@@ -325,7 +325,7 @@ attributes:
     multivalued: false
   referenceProviderName:
     name: referenceProviderName
-    description: The name for the reference provider
+    description: The name for the reference provider.
     title: reference provider name
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -340,7 +340,7 @@ attributes:
     multivalued: false
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -354,10 +354,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -375,10 +375,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -395,12 +395,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -416,11 +416,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

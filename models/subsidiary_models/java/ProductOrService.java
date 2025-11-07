@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  An offering provided by a provider, which may be tangible (a product) or intangible (a service)
+  An offering provided by a provider, which may be tangible (a product) or intangible (a service).
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

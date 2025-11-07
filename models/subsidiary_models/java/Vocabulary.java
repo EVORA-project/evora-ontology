@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A subset of words or phrases specific to a particular subject or field
+  A subset of words or phrases specific to a particular subject or field.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

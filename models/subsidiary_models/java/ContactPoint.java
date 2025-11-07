@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Entity serving as focal point of information
+  Entity serving as focal point of information.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

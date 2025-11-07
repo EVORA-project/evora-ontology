@@ -3,7 +3,7 @@
 # Slot: mutation observed (mutationObserved) 
 
 
-_Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true_
+_Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true._
 
 
 
@@ -73,7 +73,7 @@ Alias: mutationObserved
 name: mutationObserved
 description: Indicates if the current nucleic acid has No mutation compared to the
   reference sequence if the value is set to false or if it contains mutations (no
-  frameshift, no unexpected STOP codon) if set to true
+  frameshift, no unexpected STOP codon) if set to true.
 title: mutation observed
 from_schema: https://w3id.org/evorao/
 rank: 1000

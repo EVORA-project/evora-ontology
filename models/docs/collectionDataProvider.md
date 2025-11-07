@@ -3,7 +3,7 @@
 # Slot: collection data provider (collectionDataProvider) 
 
 
-_The provider of the data of the collection_
+_The provider of the data of the collection._
 
 
 
@@ -70,7 +70,7 @@ Alias: collectionDataProvider
 <details>
 ```yaml
 name: collectionDataProvider
-description: The provider of the data of the collection
+description: The provider of the data of the collection.
 title: collection data provider
 from_schema: https://w3id.org/evorao/
 broad_mappings:

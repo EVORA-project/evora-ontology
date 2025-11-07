@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A research infrastructure (RI)
+  A research infrastructure (RI).
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

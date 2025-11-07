@@ -3,7 +3,7 @@
 # Slot: journal (journal) 
 
 
-_The scientific journal in which the publication was published_
+_The scientific journal in which the publication was published._
 
 
 
@@ -70,7 +70,7 @@ Alias: journal
 <details>
 ```yaml
 name: journal
-description: The scientific journal in which the publication was published
+description: The scientific journal in which the publication was published.
 title: journal
 from_schema: https://w3id.org/evorao/
 close_mappings:

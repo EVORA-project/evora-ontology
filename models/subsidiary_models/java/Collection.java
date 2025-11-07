@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Set of products and services with some common characteristics
+  Set of products and services with some common characteristics.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

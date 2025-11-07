@@ -3,7 +3,7 @@
 # Slot: funding period end (fundingPeriodEnd) 
 
 
-_The date on which the financial mechanism ceases to apply to the supported product or service_
+_The date on which the financial mechanism ceases to apply to the supported product or service._
 
 
 
@@ -70,7 +70,7 @@ Alias: fundingPeriodEnd
 ```yaml
 name: fundingPeriodEnd
 description: The date on which the financial mechanism ceases to apply to the supported
-  product or service
+  product or service.
 title: funding period end
 from_schema: https://w3id.org/evorao/
 rank: 1000

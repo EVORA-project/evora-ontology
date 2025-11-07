@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
+  An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

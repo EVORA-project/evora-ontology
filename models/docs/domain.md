@@ -3,7 +3,7 @@
 # Slot: domain (domain) 
 
 
-_A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function_
+_A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function._
 
 
 
@@ -74,7 +74,7 @@ Alias: domain
 name: domain
 description: A distinct structural and functional unit within the protein, often capable
   of independent folding and stability, which contributes to the protein's overall
-  function
+  function.
 title: domain
 from_schema: https://w3id.org/evorao/
 close_mappings:

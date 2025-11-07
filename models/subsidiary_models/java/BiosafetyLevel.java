@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The level of biocontainment required or applied in the facility where the biological agent is manipulated
+  The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

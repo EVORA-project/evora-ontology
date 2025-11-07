@@ -3,7 +3,7 @@
 # Slot: contamination with co-infecting viruses (contaminationWithCoInfectingViruses) 
 
 
-_A boolean value indicating whether there is contamination with co-infecting viruses_
+_A boolean value indicating whether there is contamination with co-infecting viruses._
 
 
 
@@ -72,7 +72,7 @@ Alias: contaminationWithCoInfectingViruses
 ```yaml
 name: contaminationWithCoInfectingViruses
 description: A boolean value indicating whether there is contamination with co-infecting
-  viruses
+  viruses.
 title: contamination with co-infecting viruses
 from_schema: https://w3id.org/evorao/
 rank: 1000

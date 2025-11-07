@@ -3,7 +3,7 @@
 # Class: Document (Document) 
 
 
-_Subclass of File representing textual or written files such as reports, manuals, or forms_
+_Subclass of File representing textual or written files such as reports, manuals, or forms._
 
 
 
@@ -152,7 +152,7 @@ URI: [EVORAO:Document](https://w3id.org/evorao/Document)
 ```yaml
 name: Document
 description: Subclass of File representing textual or written files such as reports,
-  manuals, or forms
+  manuals, or forms.
 title: Document
 from_schema: https://w3id.org/evorao/
 exact_mappings:
@@ -181,7 +181,7 @@ is_a: File
 ```yaml
 name: Document
 description: Subclass of File representing textual or written files such as reports,
-  manuals, or forms
+  manuals, or forms.
 title: Document
 from_schema: https://w3id.org/evorao/
 exact_mappings:
@@ -203,7 +203,7 @@ is_a: File
 attributes:
   name:
     name: name
-    description: A word or set of words used to identify and refer to an entity
+    description: A word or set of words used to identify and refer to an entity.
     title: name
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -226,15 +226,13 @@ attributes:
   description:
     name: description
     description: A short explanation of the characteristics, features, or nature of
-      the current item
+      the current item.
     title: description
     comments:
     - Describe this item in few lines. This description will serve as a summary to
-      present the resource
+      present the resource.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - schema:description
-    close_mappings:
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -273,7 +271,7 @@ attributes:
   format:
     name: format
     description: The file type or format that indicates how the data within the file
-      is structured
+      is structured.
     title: format
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -292,7 +290,7 @@ attributes:
   license:
     name: license
     description: Information about terms and conditions under which the subject can
-      be used, shared, or distributed, indicating any restrictions or permissions
+      be used, shared, or distributed, indicating any restrictions or permissions.
     title: license
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -312,7 +310,7 @@ attributes:
     multivalued: false
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -326,10 +324,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -347,10 +345,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -367,12 +365,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -388,11 +386,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

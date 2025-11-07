@@ -3,7 +3,7 @@
 # Slot: clinical information (clinicalInformation) 
 
 
-_Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes_
+_Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes._
 
 
 
@@ -22,13 +22,13 @@ Alias: clinicalInformation
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 
 
 
@@ -77,7 +77,7 @@ Alias: clinicalInformation
 ```yaml
 name: clinicalInformation
 description: Details about the clinical aspects of the pathogen, including symptoms,
-  severity, treatment protocols, and patient outcomes
+  severity, treatment protocols, and patient outcomes.
 title: clinical information
 from_schema: https://w3id.org/evorao/
 related_mappings:

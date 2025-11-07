@@ -3,7 +3,7 @@
 # Slot: collection item (collectionItem) 
 
 
-_An item of the collection_
+_An item of the collection._
 
 
 
@@ -75,7 +75,7 @@ Alias: collectionItem
 <details>
 ```yaml
 name: collectionItem
-description: An item of the collection
+description: An item of the collection.
 title: collection item
 from_schema: https://w3id.org/evorao/
 related_mappings:

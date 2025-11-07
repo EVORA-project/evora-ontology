@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A protein as a derived product from a pathogen
+  A protein as a derived product from a pathogen.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

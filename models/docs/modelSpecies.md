@@ -3,7 +3,7 @@
 # Slot: model species (modelSpecies) 
 
 
-_The species of the infected organism in the experiment_
+_The species of the infected organism in the experiment._
 
 
 
@@ -69,7 +69,7 @@ Alias: modelSpecies
 <details>
 ```yaml
 name: modelSpecies
-description: The species of the infected organism in the experiment
+description: The species of the infected organism in the experiment.
 title: model species
 from_schema: https://w3id.org/evorao/
 rank: 1000

@@ -3,7 +3,7 @@
 # Slot: genotype (genotype) 
 
 
-_Genotype information that identifies organisms that cluster in phylogenetic trees, thus different clusters are distinct genotypes_
+_Genotype information that identifies organisms that cluster in phylogenetic trees, thus different clusters are distinct genotypes._
 
 
 
@@ -71,7 +71,7 @@ Alias: genotype
 ```yaml
 name: genotype
 description: Genotype information that identifies organisms that cluster in phylogenetic
-  trees, thus different clusters are distinct genotypes
+  trees, thus different clusters are distinct genotypes.
 title: genotype
 from_schema: https://w3id.org/evorao/
 close_mappings:

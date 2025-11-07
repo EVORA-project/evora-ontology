@@ -3,7 +3,7 @@
 # Slot: funding source (fundingSource) 
 
 
-_A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially_
+_A program, grant, or project providing financial support for the access or use of the product or service, either fully or partially._
 
 
 
@@ -22,22 +22,22 @@ Alias: fundingSource
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [ProductOrService](ProductOrService.md) | An offering provided by a provider, which may be tangible (a product) or inta... |  yes  |
 | [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  no  |
 | [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
 | [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
-| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [ProductOrService](ProductOrService.md) | An offering provided by a provider, which may be tangible (a product) or inta... |  yes  |
-| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
+| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 
 
 
@@ -57,7 +57,7 @@ Alias: fundingSource
 
 ## Comments
 
-* Links a product or service to one or more financial mechanisms, initiatives, or grants that enable or support its provision or access
+* Links a product or service to one or more financial mechanisms, initiatives, or grants that enable or support its provision or access.
 
 ## Identifier and Mapping Information
 
@@ -92,11 +92,11 @@ Alias: fundingSource
 ```yaml
 name: fundingSource
 description: A program, grant, or project providing financial support for the access
-  or use of the product or service, either fully or partially
+  or use of the product or service, either fully or partially.
 title: funding source
 comments:
 - Links a product or service to one or more financial mechanisms, initiatives, or
-  grants that enable or support its provision or access
+  grants that enable or support its provision or access.
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - schema:funding

@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The process by which the pathogen spreads between hosts
+  The process by which the pathogen spreads between hosts.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

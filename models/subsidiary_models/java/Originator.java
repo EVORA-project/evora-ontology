@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
+  The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

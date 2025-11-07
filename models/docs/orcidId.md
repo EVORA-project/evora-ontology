@@ -3,7 +3,7 @@
 # Slot: ORCID id (orcidId) 
 
 
-_Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation_
+_Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation._
 
 
 
@@ -27,8 +27,8 @@ Alias: orcidId
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
 | [Person](Person.md) | An individual |  yes  |
+| [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
 
 
 
@@ -82,7 +82,7 @@ Alias: orcidId
 ```yaml
 name: orcidId
 description: Unique persistent identifier for a person, provided by the Open Researcher
-  and Contributor ID (ORCID) organisation
+  and Contributor ID (ORCID) organisation.
 title: ORCID id
 from_schema: https://w3id.org/evorao/
 exact_mappings:

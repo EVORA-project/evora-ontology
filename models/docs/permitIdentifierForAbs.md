@@ -3,7 +3,7 @@
 # Slot: permit identifier for ABS (permitIdentifierForAbs) 
 
 
-_Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations_
+_Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations._
 
 
 
@@ -71,7 +71,7 @@ Alias: permitIdentifierForAbs
 name: permitIdentifierForAbs
 description: Reference of the permit identifiers for access to the genetic resource,
   applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
-  regulations
+  regulations.
 title: permit identifier for ABS
 from_schema: https://w3id.org/evorao/
 rank: 1000

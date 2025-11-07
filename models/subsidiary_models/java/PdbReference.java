@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Identifier for 3D structural data as per the PDB (Protein Data Bank) database
+  Identifier for 3D structural data as per the PDB (Protein Data Bank) database.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

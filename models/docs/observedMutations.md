@@ -3,7 +3,7 @@
 # Slot: observed mutations (observedMutations) 
 
 
-_The specific mutations that have been identified and documented in the nucleic acid sequence_
+_The specific mutations that have been identified and documented in the nucleic acid sequence._
 
 
 
@@ -70,7 +70,7 @@ Alias: observedMutations
 ```yaml
 name: observedMutations
 description: The specific mutations that have been identified and documented in the
-  nucleic acid sequence
+  nucleic acid sequence.
 title: observed mutations
 from_schema: https://w3id.org/evorao/
 rank: 1000

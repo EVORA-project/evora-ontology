@@ -3,7 +3,7 @@
 # Class: Contact Point (ContactPoint) 
 
 
-_Entity serving as focal point of information_
+_Entity serving as focal point of information._
 
 
 
@@ -79,7 +79,7 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
 | ---  | --- | --- | --- |
 | [name](name.md) | 1 <br/> [String](String.md) | A word or set of words used to identify and refer to an entity | direct |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
-| [email](email.md) | 0..1 _recommended_ <br/> [String](String.md) | Email address | direct |
+| [email](email.md) | 0..1 _recommended_ <br/> [String](String.md) | The email address | direct |
 | [telephone](telephone.md) | 0..1 _recommended_ <br/> [String](String.md) | The telephone number | direct |
 | [streetAddress](streetAddress.md) | 0..1 <br/> [String](String.md) | The building/apartment number and the street name | direct |
 | [addressLocality](addressLocality.md) | 0..1 <br/> [String](String.md) | The locality in which the street address is, and which is in the region | direct |
@@ -172,7 +172,7 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
 <details>
 ```yaml
 name: ContactPoint
-description: Entity serving as focal point of information
+description: Entity serving as focal point of information.
 title: Contact Point
 from_schema: https://w3id.org/evorao/
 exact_mappings:
@@ -204,7 +204,7 @@ slots:
 slot_usage:
   name:
     name: name
-    description: A word or set of words used to identify and refer to an entity
+    description: A word or set of words used to identify and refer to an entity.
     title: name
     exact_mappings:
     - schema:name
@@ -223,7 +223,7 @@ slot_usage:
   description:
     name: description
     description: A short explanation of the characteristics, features, or nature of
-      the current item
+      the current item.
     title: description
     comments:
     - Describe this item in few lines. This description will serve as a summary to
@@ -247,7 +247,7 @@ slot_usage:
     multivalued: false
   email:
     name: email
-    description: Email address
+    description: The email address.
     title: email
     exact_mappings:
     - schema:email
@@ -262,7 +262,7 @@ slot_usage:
     multivalued: false
   telephone:
     name: telephone
-    description: The telephone number
+    description: The telephone number.
     title: telephone
     exact_mappings:
     - schema:telephone
@@ -276,7 +276,7 @@ slot_usage:
     multivalued: false
   streetAddress:
     name: streetAddress
-    description: The building/apartment number and the street name
+    description: The building/apartment number and the street name.
     title: street address
     exact_mappings:
     - schema:streetAddress
@@ -291,7 +291,7 @@ slot_usage:
   addressLocality:
     name: addressLocality
     description: The locality in which the street address is, and which is in the
-      region. e.g, the city
+      region. e.g, the city.
     title: locality/city
     exact_mappings:
     - schema:addressLocality
@@ -306,7 +306,7 @@ slot_usage:
   addressRegion:
     name: addressRegion
     description: The region in which the locality is, and which is in the country.
-      For example, California or another appropriate first-level Administrative division
+      For example, California or another appropriate first-level Administrative division.
     title: region
     exact_mappings:
     - schema:addressRegion
@@ -320,7 +320,7 @@ slot_usage:
     multivalued: false
   postalCode:
     name: postalCode
-    description: The postal code
+    description: The postal code.
     title: postal code
     exact_mappings:
     - schema:postalCode
@@ -334,7 +334,7 @@ slot_usage:
     multivalued: false
   addressCountry:
     name: addressCountry
-    description: The country as of  ISO 3166
+    description: The country as of  ISO 3166.
     title: address Country
     exact_mappings:
     - schema:addressCountry
@@ -347,7 +347,7 @@ slot_usage:
   orcidId:
     name: orcidId
     description: Unique persistent identifier for a person, provided by the Open Researcher
-      and Contributor ID (ORCID) organisation
+      and Contributor ID (ORCID) organisation.
     title: ORCID id
     exact_mappings:
     - wdp:P496
@@ -371,7 +371,7 @@ slot_usage:
 <details>
 ```yaml
 name: ContactPoint
-description: Entity serving as focal point of information
+description: Entity serving as focal point of information.
 title: Contact Point
 from_schema: https://w3id.org/evorao/
 exact_mappings:
@@ -392,7 +392,7 @@ is_a: Resource
 slot_usage:
   name:
     name: name
-    description: A word or set of words used to identify and refer to an entity
+    description: A word or set of words used to identify and refer to an entity.
     title: name
     exact_mappings:
     - schema:name
@@ -411,7 +411,7 @@ slot_usage:
   description:
     name: description
     description: A short explanation of the characteristics, features, or nature of
-      the current item
+      the current item.
     title: description
     comments:
     - Describe this item in few lines. This description will serve as a summary to
@@ -435,7 +435,7 @@ slot_usage:
     multivalued: false
   email:
     name: email
-    description: Email address
+    description: The email address.
     title: email
     exact_mappings:
     - schema:email
@@ -450,7 +450,7 @@ slot_usage:
     multivalued: false
   telephone:
     name: telephone
-    description: The telephone number
+    description: The telephone number.
     title: telephone
     exact_mappings:
     - schema:telephone
@@ -464,7 +464,7 @@ slot_usage:
     multivalued: false
   streetAddress:
     name: streetAddress
-    description: The building/apartment number and the street name
+    description: The building/apartment number and the street name.
     title: street address
     exact_mappings:
     - schema:streetAddress
@@ -479,7 +479,7 @@ slot_usage:
   addressLocality:
     name: addressLocality
     description: The locality in which the street address is, and which is in the
-      region. e.g, the city
+      region. e.g, the city.
     title: locality/city
     exact_mappings:
     - schema:addressLocality
@@ -494,7 +494,7 @@ slot_usage:
   addressRegion:
     name: addressRegion
     description: The region in which the locality is, and which is in the country.
-      For example, California or another appropriate first-level Administrative division
+      For example, California or another appropriate first-level Administrative division.
     title: region
     exact_mappings:
     - schema:addressRegion
@@ -508,7 +508,7 @@ slot_usage:
     multivalued: false
   postalCode:
     name: postalCode
-    description: The postal code
+    description: The postal code.
     title: postal code
     exact_mappings:
     - schema:postalCode
@@ -522,7 +522,7 @@ slot_usage:
     multivalued: false
   addressCountry:
     name: addressCountry
-    description: The country as of  ISO 3166
+    description: The country as of  ISO 3166.
     title: address Country
     exact_mappings:
     - schema:addressCountry
@@ -535,7 +535,7 @@ slot_usage:
   orcidId:
     name: orcidId
     description: Unique persistent identifier for a person, provided by the Open Researcher
-      and Contributor ID (ORCID) organisation
+      and Contributor ID (ORCID) organisation.
     title: ORCID id
     exact_mappings:
     - wdp:P496
@@ -553,7 +553,7 @@ slot_usage:
 attributes:
   name:
     name: name
-    description: A word or set of words used to identify and refer to an entity
+    description: A word or set of words used to identify and refer to an entity.
     title: name
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -576,15 +576,13 @@ attributes:
   description:
     name: description
     description: A short explanation of the characteristics, features, or nature of
-      the current item
+      the current item.
     title: description
     comments:
     - Describe this item in few lines. This description will serve as a summary to
       present the resource.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - schema:description
-    close_mappings:
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -606,7 +604,7 @@ attributes:
     multivalued: false
   email:
     name: email
-    description: Email address
+    description: The email address.
     title: email
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -625,7 +623,7 @@ attributes:
     multivalued: false
   telephone:
     name: telephone
-    description: The telephone number
+    description: The telephone number.
     title: telephone
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -643,7 +641,7 @@ attributes:
     multivalued: false
   streetAddress:
     name: streetAddress
-    description: The building/apartment number and the street name
+    description: The building/apartment number and the street name.
     title: street address
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -662,7 +660,7 @@ attributes:
   addressLocality:
     name: addressLocality
     description: The locality in which the street address is, and which is in the
-      region. e.g, the city
+      region. e.g, the city.
     title: locality/city
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -681,7 +679,7 @@ attributes:
   addressRegion:
     name: addressRegion
     description: The region in which the locality is, and which is in the country.
-      For example, California or another appropriate first-level Administrative division
+      For example, California or another appropriate first-level Administrative division.
     title: region
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -699,7 +697,7 @@ attributes:
     multivalued: false
   postalCode:
     name: postalCode
-    description: The postal code
+    description: The postal code.
     title: postal code
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -717,7 +715,7 @@ attributes:
     multivalued: false
   addressCountry:
     name: addressCountry
-    description: The country as of  ISO 3166
+    description: The country as of  ISO 3166.
     title: address Country
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -734,7 +732,7 @@ attributes:
   orcidId:
     name: orcidId
     description: Unique persistent identifier for a person, provided by the Open Researcher
-      and Contributor ID (ORCID) organisation
+      and Contributor ID (ORCID) organisation.
     title: ORCID id
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -756,7 +754,7 @@ attributes:
     multivalued: false
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -770,10 +768,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -791,10 +789,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -811,12 +809,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -832,11 +830,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

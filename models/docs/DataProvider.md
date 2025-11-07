@@ -3,7 +3,7 @@
 # Class: Data provider (DataProvider) 
 
 
-_An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources_
+_An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources._
 
 
 
@@ -167,7 +167,7 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
 ```yaml
 name: DataProvider
 description: An external API (Application Programming Interface) or Endpoint that
-  permits to retrieve data from other sources
+  permits to retrieve data from other sources.
 title: Data provider
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -192,7 +192,7 @@ slot_usage:
   license:
     name: license
     description: Information about terms and conditions under which the subject can
-      be used, shared, or distributed, indicating any restrictions or permissions
+      be used, shared, or distributed, indicating any restrictions or permissions.
     title: license
     exact_mappings:
     - schema:license
@@ -207,7 +207,7 @@ slot_usage:
     multivalued: false
   loginRequestMethod:
     name: loginRequestMethod
-    description: The http request method used to acces the login request url
+    description: The http request method used to acces the login request url.
     title: login request method
     close_mappings:
     - dcat:endpointDescription
@@ -221,7 +221,7 @@ slot_usage:
     multivalued: false
   loginUrl:
     name: loginUrl
-    description: The URL template that allows to log in if required
+    description: The URL template that allows to log in if required.
     title: login URL
     close_mappings:
     - wdp:P1630
@@ -236,7 +236,7 @@ slot_usage:
   loginTokenName:
     name: loginTokenName
     description: The name of the token, unique identifier of an interaction session,
-      that will have to be reused as credential in the query
+      that will have to be reused as credential in the query.
     title: login token name
     close_mappings:
     - dcat:endpointDescription
@@ -247,7 +247,7 @@ slot_usage:
     multivalued: false
   queryMethod:
     name: queryMethod
-    description: The http request method used to access the requested query url
+    description: The http request method used to access the requested query url.
     title: query method
     close_mappings:
     - dcat:endpointDescription
@@ -262,12 +262,12 @@ slot_usage:
     name: contentType
     description: The content type of the response to queries. It specifies the serialization,
       file type, or media type used to convey the resource, typically expressed as
-      a MIME type following IANA media type registrations
+      a MIME type following IANA media type registrations.
     title: content type
     comments:
     - This property characterizes how the content is structured or encoded, independent
       of the entity type it represents. Values should use MIME types (e.g. application/json,
-      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank)
+      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank).
     exact_mappings:
     - schema:contentType
     - dct:format
@@ -280,11 +280,11 @@ slot_usage:
   providedEntityType:
     name: providedEntityType
     description: Identifies the type of entity (ontology class) described by the response
-      to a query. Values should be expressed as IRIs (e.g., from an ontology)
+      to a query. Values should be expressed as IRIs (e.g., from an ontology).
     title: provided entity type
     comments:
     - This property defines what the response is about, independent of its serialization.
-      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus)
+      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
     close_mappings:
     - dct:type
     - schema:additionalType
@@ -299,12 +299,12 @@ slot_usage:
     name: weight
     description: A numerical value indicating relative importance or priority, generally
       processed in ascending order. This weight helps prioritize content when organizing
-      or processing data. Its value can be negative, with a default set to 0
+      or processing data. Its value can be negative, with a default set to 0.
     title: weight
     comments:
     - The lowest weighted Data providers are triggered first, this may be usefull
       to populate at first entities that are referenced by others (e.g. Version ahead
-      of Rank ahead of Taxon)
+      of Rank ahead of Taxon).
     close_mappings:
     - adms:status
     domain_of:
@@ -323,7 +323,7 @@ slot_usage:
 ```yaml
 name: DataProvider
 description: An external API (Application Programming Interface) or Endpoint that
-  permits to retrieve data from other sources
+  permits to retrieve data from other sources.
 title: Data provider
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -339,7 +339,7 @@ slot_usage:
   license:
     name: license
     description: Information about terms and conditions under which the subject can
-      be used, shared, or distributed, indicating any restrictions or permissions
+      be used, shared, or distributed, indicating any restrictions or permissions.
     title: license
     exact_mappings:
     - schema:license
@@ -354,7 +354,7 @@ slot_usage:
     multivalued: false
   loginRequestMethod:
     name: loginRequestMethod
-    description: The http request method used to acces the login request url
+    description: The http request method used to acces the login request url.
     title: login request method
     close_mappings:
     - dcat:endpointDescription
@@ -368,7 +368,7 @@ slot_usage:
     multivalued: false
   loginUrl:
     name: loginUrl
-    description: The URL template that allows to log in if required
+    description: The URL template that allows to log in if required.
     title: login URL
     close_mappings:
     - wdp:P1630
@@ -383,7 +383,7 @@ slot_usage:
   loginTokenName:
     name: loginTokenName
     description: The name of the token, unique identifier of an interaction session,
-      that will have to be reused as credential in the query
+      that will have to be reused as credential in the query.
     title: login token name
     close_mappings:
     - dcat:endpointDescription
@@ -394,7 +394,7 @@ slot_usage:
     multivalued: false
   queryMethod:
     name: queryMethod
-    description: The http request method used to access the requested query url
+    description: The http request method used to access the requested query url.
     title: query method
     close_mappings:
     - dcat:endpointDescription
@@ -409,12 +409,12 @@ slot_usage:
     name: contentType
     description: The content type of the response to queries. It specifies the serialization,
       file type, or media type used to convey the resource, typically expressed as
-      a MIME type following IANA media type registrations
+      a MIME type following IANA media type registrations.
     title: content type
     comments:
     - This property characterizes how the content is structured or encoded, independent
       of the entity type it represents. Values should use MIME types (e.g. application/json,
-      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank)
+      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank).
     exact_mappings:
     - schema:contentType
     - dct:format
@@ -427,11 +427,11 @@ slot_usage:
   providedEntityType:
     name: providedEntityType
     description: Identifies the type of entity (ontology class) described by the response
-      to a query. Values should be expressed as IRIs (e.g., from an ontology)
+      to a query. Values should be expressed as IRIs (e.g., from an ontology).
     title: provided entity type
     comments:
     - This property defines what the response is about, independent of its serialization.
-      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus)
+      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
     close_mappings:
     - dct:type
     - schema:additionalType
@@ -446,12 +446,12 @@ slot_usage:
     name: weight
     description: A numerical value indicating relative importance or priority, generally
       processed in ascending order. This weight helps prioritize content when organizing
-      or processing data. Its value can be negative, with a default set to 0
+      or processing data. Its value can be negative, with a default set to 0.
     title: weight
     comments:
     - The lowest weighted Data providers are triggered first, this may be usefull
       to populate at first entities that are referenced by others (e.g. Version ahead
-      of Rank ahead of Taxon)
+      of Rank ahead of Taxon).
     close_mappings:
     - adms:status
     domain_of:
@@ -464,7 +464,7 @@ attributes:
   license:
     name: license
     description: Information about terms and conditions under which the subject can
-      be used, shared, or distributed, indicating any restrictions or permissions
+      be used, shared, or distributed, indicating any restrictions or permissions.
     title: license
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -483,7 +483,7 @@ attributes:
     multivalued: false
   loginRequestMethod:
     name: loginRequestMethod
-    description: The http request method used to acces the login request url
+    description: The http request method used to acces the login request url.
     title: login request method
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -504,7 +504,7 @@ attributes:
     - POST
   loginUrl:
     name: loginUrl
-    description: The URL template that allows to log in if required
+    description: The URL template that allows to log in if required.
     title: login URL
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -523,7 +523,7 @@ attributes:
   loginTokenName:
     name: loginTokenName
     description: The name of the token, unique identifier of an interaction session,
-      that will have to be reused as credential in the query
+      that will have to be reused as credential in the query.
     title: login token name
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -538,7 +538,7 @@ attributes:
     multivalued: false
   queryMethod:
     name: queryMethod
-    description: The http request method used to access the requested query url
+    description: The http request method used to access the requested query url.
     title: query method
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -560,12 +560,12 @@ attributes:
     name: contentType
     description: The content type of the response to queries. It specifies the serialization,
       file type, or media type used to convey the resource, typically expressed as
-      a MIME type following IANA media type registrations
+      a MIME type following IANA media type registrations.
     title: content type
     comments:
     - This property characterizes how the content is structured or encoded, independent
       of the entity type it represents. Values should use MIME types (e.g. application/json,
-      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank)
+      text/csv, text/tab-separated-values, text/x-fasta, application/vnd.genbank).
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:contentType
@@ -582,11 +582,11 @@ attributes:
   providedEntityType:
     name: providedEntityType
     description: Identifies the type of entity (ontology class) described by the response
-      to a query. Values should be expressed as IRIs (e.g., from an ontology)
+      to a query. Values should be expressed as IRIs (e.g., from an ontology).
     title: provided entity type
     comments:
     - This property defines what the response is about, independent of its serialization.
-      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus)
+      Values should be ontology class IRIs (e.g. https://w3id.org/evorao/Virus).
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - dct:type
@@ -605,12 +605,12 @@ attributes:
     name: weight
     description: A numerical value indicating relative importance or priority, generally
       processed in ascending order. This weight helps prioritize content when organizing
-      or processing data. Its value can be negative, with a default set to 0
+      or processing data. Its value can be negative, with a default set to 0.
     title: weight
     comments:
     - The lowest weighted Data providers are triggered first, this may be usefull
       to populate at first entities that are referenced by others (e.g. Version ahead
-      of Rank ahead of Taxon)
+      of Rank ahead of Taxon).
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - adms:status
@@ -626,14 +626,14 @@ attributes:
     multivalued: false
   title:
     name: title
-    description: A name given to the resource
+    description: A name given to the resource.
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern: ''Virus
       name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-      name or specific feature'
+      name or specific feature.'
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
@@ -656,15 +656,13 @@ attributes:
   description:
     name: description
     description: A short explanation of the characteristics, features, or nature of
-      the current item
+      the current item.
     title: description
     comments:
     - Describe this item in few lines. This description will serve as a summary to
       present the resource.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - schema:description
-    close_mappings:
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -686,7 +684,7 @@ attributes:
     multivalued: false
   endpointUrl:
     name: endpointUrl
-    description: The URL template that allows to get the content
+    description: The URL template that allows to get the content.
     title: endpoint URL
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -704,10 +702,10 @@ attributes:
     multivalued: false
   servesDataset:
     name: servesDataset
-    description: A collection of data that this data service can distribute
+    description: A collection of data that this data service can distribute.
     title: serves dataset
     comments:
-    - This property rather intends to point towards Catalogues as collections of Datasets
+    - This property rather intends to point towards Catalogues as collections of Datasets.
     from_schema: https://w3id.org/evorao/
     rank: 1000
     slot_uri: dcat:servesDataset
@@ -721,7 +719,7 @@ attributes:
     multivalued: true
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -735,10 +733,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -756,10 +754,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -776,12 +774,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -797,11 +795,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

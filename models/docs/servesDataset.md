@@ -3,7 +3,7 @@
 # Slot: serves dataset (servesDataset) 
 
 
-_A collection of data that this data service can distribute_
+_A collection of data that this data service can distribute._
 
 
 
@@ -22,8 +22,8 @@ Alias: servesDataset
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  no  |
 | [DataService](DataService.md) | A collection of operations that provides access to one or more datasets or da... |  yes  |
+| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  no  |
 
 
 
@@ -45,7 +45,7 @@ Alias: servesDataset
 
 ## Comments
 
-* This property rather intends to point towards Catalogues as collections of Datasets
+* This property rather intends to point towards Catalogues as collections of Datasets.
 
 ## Identifier and Mapping Information
 
@@ -78,10 +78,10 @@ Alias: servesDataset
 <details>
 ```yaml
 name: servesDataset
-description: A collection of data that this data service can distribute
+description: A collection of data that this data service can distribute.
 title: serves dataset
 comments:
-- This property rather intends to point towards Catalogues as collections of Datasets
+- This property rather intends to point towards Catalogues as collections of Datasets.
 from_schema: https://w3id.org/evorao/
 rank: 1000
 slot_uri: dcat:servesDataset

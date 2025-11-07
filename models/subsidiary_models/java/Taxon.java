@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit
+  Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

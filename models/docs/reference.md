@@ -3,7 +3,7 @@
 # Slot: reference (reference) 
 
 
-_The identifier reference of the connected external item_
+_The identifier reference of the connected external item._
 
 
 
@@ -79,7 +79,7 @@ Alias: reference
 <details>
 ```yaml
 name: reference
-description: The identifier reference of the connected external item
+description: The identifier reference of the connected external item.
 title: reference
 from_schema: https://w3id.org/evorao/
 close_mappings:

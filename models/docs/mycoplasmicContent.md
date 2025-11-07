@@ -3,7 +3,7 @@
 # Slot: mycoplasmic content (mycoplasmicContent) 
 
 
-_Indicates the presence of mycoplasma contamination within the sample_
+_Indicates the presence of mycoplasma contamination within the sample._
 
 
 
@@ -71,7 +71,7 @@ Alias: mycoplasmicContent
 <details>
 ```yaml
 name: mycoplasmicContent
-description: Indicates the presence of mycoplasma contamination within the sample
+description: Indicates the presence of mycoplasma contamination within the sample.
 title: mycoplasmic content
 from_schema: https://w3id.org/evorao/
 rank: 1000

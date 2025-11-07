@@ -3,7 +3,7 @@
 # Slot: funding period start (fundingPeriodStart) 
 
 
-_The date from which the financial mechanism is active or applicable to the supported product or service_
+_The date from which the financial mechanism is active or applicable to the supported product or service._
 
 
 
@@ -70,7 +70,7 @@ Alias: fundingPeriodStart
 ```yaml
 name: fundingPeriodStart
 description: The date from which the financial mechanism is active or applicable to
-  the supported product or service
+  the supported product or service.
 title: funding period start
 from_schema: https://w3id.org/evorao/
 rank: 1000

@@ -3,7 +3,7 @@
 # Class: Person or organization (PersonOrOrganization) 
 
 
-_A person or an organization_
+_A person or an organization._
 
 
 
@@ -145,7 +145,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
 <details>
 ```yaml
 name: PersonOrOrganization
-description: A person or an organization
+description: A person or an organization.
 title: Person or organization
 from_schema: https://w3id.org/evorao/
 exact_mappings:
@@ -166,7 +166,7 @@ slots:
 slot_usage:
   name:
     name: name
-    description: A word or set of words used to identify and refer to an entity
+    description: A word or set of words used to identify and refer to an entity.
     title: name
     exact_mappings:
     - schema:name
@@ -185,7 +185,7 @@ slot_usage:
   description:
     name: description
     description: A short explanation of the characteristics, features, or nature of
-      the current item
+      the current item.
     title: description
     comments:
     - Describe this item in few lines. This description will serve as a summary to
@@ -209,7 +209,7 @@ slot_usage:
     multivalued: false
   homePage:
     name: homePage
-    description: A web page that serves as the main or introductory page
+    description: A web page that serves as the main or introductory page.
     title: home page
     close_mappings:
     - swo:0004006
@@ -221,7 +221,7 @@ slot_usage:
     multivalued: false
   contactPoint:
     name: contactPoint
-    description: An information that allows someone to establish communication
+    description: An information that allows someone to establish communication.
     title: contact point
     exact_mappings:
     - schema:contactPoint
@@ -235,7 +235,7 @@ slot_usage:
     multivalued: false
   logo:
     name: logo
-    description: A path or URL to the related logo
+    description: A path or URL to the related logo.
     title: logo
     exact_mappings:
     - schema:logo
@@ -257,7 +257,7 @@ class_uri: foaf:Agent
 <details>
 ```yaml
 name: PersonOrOrganization
-description: A person or an organization
+description: A person or an organization.
 title: Person or organization
 from_schema: https://w3id.org/evorao/
 exact_mappings:
@@ -272,7 +272,7 @@ is_a: Resource
 slot_usage:
   name:
     name: name
-    description: A word or set of words used to identify and refer to an entity
+    description: A word or set of words used to identify and refer to an entity.
     title: name
     exact_mappings:
     - schema:name
@@ -291,7 +291,7 @@ slot_usage:
   description:
     name: description
     description: A short explanation of the characteristics, features, or nature of
-      the current item
+      the current item.
     title: description
     comments:
     - Describe this item in few lines. This description will serve as a summary to
@@ -315,7 +315,7 @@ slot_usage:
     multivalued: false
   homePage:
     name: homePage
-    description: A web page that serves as the main or introductory page
+    description: A web page that serves as the main or introductory page.
     title: home page
     close_mappings:
     - swo:0004006
@@ -327,7 +327,7 @@ slot_usage:
     multivalued: false
   contactPoint:
     name: contactPoint
-    description: An information that allows someone to establish communication
+    description: An information that allows someone to establish communication.
     title: contact point
     exact_mappings:
     - schema:contactPoint
@@ -341,7 +341,7 @@ slot_usage:
     multivalued: false
   logo:
     name: logo
-    description: A path or URL to the related logo
+    description: A path or URL to the related logo.
     title: logo
     exact_mappings:
     - schema:logo
@@ -356,7 +356,7 @@ slot_usage:
 attributes:
   name:
     name: name
-    description: A word or set of words used to identify and refer to an entity
+    description: A word or set of words used to identify and refer to an entity.
     title: name
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -379,15 +379,13 @@ attributes:
   description:
     name: description
     description: A short explanation of the characteristics, features, or nature of
-      the current item
+      the current item.
     title: description
     comments:
     - Describe this item in few lines. This description will serve as a summary to
       present the resource.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - schema:description
-    close_mappings:
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -409,7 +407,7 @@ attributes:
     multivalued: false
   homePage:
     name: homePage
-    description: A web page that serves as the main or introductory page
+    description: A web page that serves as the main or introductory page.
     title: home page
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -425,7 +423,7 @@ attributes:
     multivalued: false
   contactPoint:
     name: contactPoint
-    description: An information that allows someone to establish communication
+    description: An information that allows someone to establish communication.
     title: contact point
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -443,7 +441,7 @@ attributes:
     multivalued: false
   logo:
     name: logo
-    description: A path or URL to the related logo
+    description: A path or URL to the related logo.
     title: logo
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -461,7 +459,7 @@ attributes:
     multivalued: false
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -475,10 +473,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -496,10 +494,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -516,12 +514,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -537,11 +535,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

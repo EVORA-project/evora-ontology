@@ -3,7 +3,7 @@
 # Slot: region encompassed in this Product (regionEncompassedInThisProduct) 
 
 
-_The specific region encompassed in the product_
+_The specific region encompassed in the product._
 
 
 
@@ -71,7 +71,7 @@ Alias: regionEncompassedInThisProduct
 <details>
 ```yaml
 name: regionEncompassedInThisProduct
-description: The specific region encompassed in the product
+description: The specific region encompassed in the product.
 title: region encompassed in this Product
 from_schema: https://w3id.org/evorao/
 rank: 1000

@@ -3,7 +3,7 @@
 # Class: Protein (Protein) 
 
 
-_A protein as a derived product from a pathogen_
+_A protein as a derived product from a pathogen._
 
 
 
@@ -426,7 +426,7 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
 <details>
 ```yaml
 name: Protein
-description: A protein as a derived product from a pathogen
+description: A protein as a derived product from a pathogen.
 title: Protein
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -459,7 +459,7 @@ slot_usage:
     name: biologicalMaterialOrigin
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
-      with the Nagoya Protocol
+      with the Nagoya Protocol.
     title: biological material origin
     related_mappings:
     - sepio:0000058
@@ -473,7 +473,7 @@ slot_usage:
   sequence:
     name: sequence
     description: The related sequence information from a sequence provider or in fasta
-      format
+      format.
     title: sequence
     close_mappings:
     - geno:0000239
@@ -491,7 +491,7 @@ slot_usage:
   relatedPdb:
     name: relatedPdb
     description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
-      database
+      database.
     title: related PDB
     close_mappings:
     - wdp:P638
@@ -516,7 +516,7 @@ slot_usage:
     description: The name of the DNA coding sequence or corresponding peptide/protein
       sequence fused to a sequence of interest, used to facilitate experimental operations
       such as purification, detection, localization, tracking, solubility enhancement,
-      or selection. Applicable to both proteins and nucleic acids
+      or selection. Applicable to both proteins and nucleic acids.
     title: tag sequence
     exact_mappings:
     - bao:0002796
@@ -530,7 +530,7 @@ slot_usage:
     name: domain
     description: A distinct structural and functional unit within the protein, often
       capable of independent folding and stability, which contributes to the protein's
-      overall function
+      overall function.
     title: domain
     close_mappings:
     - uniprotrdfs:domain
@@ -544,7 +544,7 @@ slot_usage:
     description: Refers to the form in which the protein is produced and manifested
       in a biological system. Possible values include 'Soluble' (proteins that are
       dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated
-      proteins that are insoluble and form within the cell)
+      proteins that are insoluble and form within the cell).
     title: expressed as
     close_mappings:
     - apollo:00000102
@@ -621,7 +621,7 @@ slot_usage:
     description: Indicates the presence and condition of a tag on the protein after
       solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached
       to the protein), 'Cleaved Tag' (the tag has been removed from the protein),
-      and 'No Tag' (the protein does not have a tag)
+      and 'No Tag' (the protein does not have a tag).
     title: tag status of the solubilized protein
     domain_of:
     - Protein
@@ -650,7 +650,7 @@ slot_usage:
 <details>
 ```yaml
 name: Protein
-description: A protein as a derived product from a pathogen
+description: A protein as a derived product from a pathogen.
 title: Protein
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -668,7 +668,7 @@ slot_usage:
     name: biologicalMaterialOrigin
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
-      with the Nagoya Protocol
+      with the Nagoya Protocol.
     title: biological material origin
     related_mappings:
     - sepio:0000058
@@ -682,7 +682,7 @@ slot_usage:
   sequence:
     name: sequence
     description: The related sequence information from a sequence provider or in fasta
-      format
+      format.
     title: sequence
     close_mappings:
     - geno:0000239
@@ -700,7 +700,7 @@ slot_usage:
   relatedPdb:
     name: relatedPdb
     description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
-      database
+      database.
     title: related PDB
     close_mappings:
     - wdp:P638
@@ -725,7 +725,7 @@ slot_usage:
     description: The name of the DNA coding sequence or corresponding peptide/protein
       sequence fused to a sequence of interest, used to facilitate experimental operations
       such as purification, detection, localization, tracking, solubility enhancement,
-      or selection. Applicable to both proteins and nucleic acids
+      or selection. Applicable to both proteins and nucleic acids.
     title: tag sequence
     exact_mappings:
     - bao:0002796
@@ -739,7 +739,7 @@ slot_usage:
     name: domain
     description: A distinct structural and functional unit within the protein, often
       capable of independent folding and stability, which contributes to the protein's
-      overall function
+      overall function.
     title: domain
     close_mappings:
     - uniprotrdfs:domain
@@ -753,7 +753,7 @@ slot_usage:
     description: Refers to the form in which the protein is produced and manifested
       in a biological system. Possible values include 'Soluble' (proteins that are
       dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated
-      proteins that are insoluble and form within the cell)
+      proteins that are insoluble and form within the cell).
     title: expressed as
     close_mappings:
     - apollo:00000102
@@ -830,7 +830,7 @@ slot_usage:
     description: Indicates the presence and condition of a tag on the protein after
       solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached
       to the protein), 'Cleaved Tag' (the tag has been removed from the protein),
-      and 'No Tag' (the protein does not have a tag)
+      and 'No Tag' (the protein does not have a tag).
     title: tag status of the solubilized protein
     domain_of:
     - Protein
@@ -855,7 +855,7 @@ attributes:
     name: biologicalMaterialOrigin
     description: Information about the origin of the biological material, essential
       for access, utilization, and benefit-sharing of genetic resources in compliance
-      with the Nagoya Protocol
+      with the Nagoya Protocol.
     title: biological material origin
     from_schema: https://w3id.org/evorao/
     related_mappings:
@@ -873,7 +873,7 @@ attributes:
   sequence:
     name: sequence
     description: The related sequence information from a sequence provider or in fasta
-      format
+      format.
     title: sequence
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -896,7 +896,7 @@ attributes:
   relatedPdb:
     name: relatedPdb
     description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
-      database
+      database.
     title: related PDB
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -929,7 +929,7 @@ attributes:
     description: The name of the DNA coding sequence or corresponding peptide/protein
       sequence fused to a sequence of interest, used to facilitate experimental operations
       such as purification, detection, localization, tracking, solubility enhancement,
-      or selection. Applicable to both proteins and nucleic acids
+      or selection. Applicable to both proteins and nucleic acids.
     title: tag sequence
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -947,7 +947,7 @@ attributes:
     name: domain
     description: A distinct structural and functional unit within the protein, often
       capable of independent folding and stability, which contributes to the protein's
-      overall function
+      overall function.
     title: domain
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -965,7 +965,7 @@ attributes:
     description: Refers to the form in which the protein is produced and manifested
       in a biological system. Possible values include 'Soluble' (proteins that are
       dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated
-      proteins that are insoluble and form within the cell)
+      proteins that are insoluble and form within the cell).
     title: expressed as
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -1082,7 +1082,7 @@ attributes:
     description: Indicates the presence and condition of a tag on the protein after
       solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached
       to the protein), 'Cleaved Tag' (the tag has been removed from the protein),
-      and 'No Tag' (the protein does not have a tag)
+      and 'No Tag' (the protein does not have a tag).
     title: tag status of the solubilized protein
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -1116,7 +1116,7 @@ attributes:
   iataClassification:
     name: iataClassification
     description: The corresponding International Air Transport Association (IATA)'s
-      category for this Product
+      category for this Product.
     title: IATA classification
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -1132,7 +1132,7 @@ attributes:
     multivalued: false
   shippingConditions:
     name: shippingConditions
-    description: Specification of the terms and parameters for transporting
+    description: Specification of the terms and parameters for transporting.
     title: shipping conditions
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -1149,12 +1149,12 @@ attributes:
     name: materialSafetyDataSheet
     description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is
       a standardized document that contains crucial occupational safety and health
-      information related to the product
+      information related to the product.
     title: material safety data sheet
     comments:
     - The MSD  is a document that provides detailed information about the properties,
       hazards, handling, storage, and emergency procedures related to the use of a
-      chemical or substance
+      chemical or substance.
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: materialSafetyDataSheet
@@ -1168,7 +1168,7 @@ attributes:
     name: originator
     description: The individual or organization responsible for the original discovery,
       isolation, or creation of an item, providing information about the source or
-      origin of the sample
+      origin of the sample.
     title: originator
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -1190,7 +1190,7 @@ attributes:
     comments:
     - e.g, could be a xsd:string in enumeration ('Freeze Dried', 'Liquid Nitrogen',
       'Viral Storage Medium -20C', 'Viral Storage Medium -80C', 'Living plant material
-      (>= +4°C)', 'Gas Phase', 'Ethanol -20C', 'Ethanol -80C', 'Dried')
+      (>= +4°C)', 'Gas Phase', 'Ethanol -20C', 'Ethanol -80C', 'Dried').
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: storageConditions
@@ -1204,7 +1204,7 @@ attributes:
     name: thirdPartyDistributionConsent
     description: Indicates whether the biological material can be distributed without
       restriction to third parties, as indicated by the ABS permit, in case an ABS
-      permit is required
+      permit is required.
     title: third party distribution consent
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -1219,7 +1219,7 @@ attributes:
     name: usageRestrictions
     description: Specifies any limitations or conditions on the use of the biological
       material, including restrictions on research, commercial use, or distribution,
-      considering any potential concerns about the related genetic material
+      considering any potential concerns about the related genetic material.
     title: usage restrictions
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -1233,7 +1233,7 @@ attributes:
   preparationTechnique:
     name: preparationTechnique
     description: The technique, method, or procedure employed to obtain or prepare
-      the material prior to its use or storage
+      the material prior to its use or storage.
     title: preparation technique
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -1248,7 +1248,7 @@ attributes:
     name: accessPointUrl
     description: The URL that permits to access to the product/service detailed description
       page on the provider's website and/or allows to place an order about it or at
-      least describe the process to place an order/enquiry
+      least describe the process to place an order/enquiry.
     title: access point URL
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -1268,7 +1268,7 @@ attributes:
   refSku:
     name: refSku
     description: The reference or the stock keeping unit of the service or item provided
-      in the provider's catalogue
+      in the provider's catalogue.
     title: ref SKU
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -1290,11 +1290,11 @@ attributes:
   unitDefinition:
     name: unitDefinition
     description: A short description of what will be delivered by ordering one unit
-      of this item
+      of this item.
     title: unit definition
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
-      quantity...)'
+      quantity...).'
     from_schema: https://w3id.org/evorao/
     related_mappings:
     - dct:format
@@ -1309,7 +1309,7 @@ attributes:
     multivalued: false
   category:
     name: category
-    description: The main category of the service or product
+    description: The main category of the service or product.
     title: category
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -1327,7 +1327,7 @@ attributes:
   additionalCategory:
     name: additionalCategory
     description: Any category apart from its main category in which this product or
-      service can fit
+      service can fit.
     title: additional category
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -1344,7 +1344,7 @@ attributes:
     multivalued: true
   unitCost:
     name: unitCost
-    description: The cost per access for one unit as defined by the unit definition
+    description: The cost per access for one unit as defined by the unit definition.
     title: unit cost
     comments:
     - The cost per access may not always be defined as a fixed numerical value. In
@@ -1368,7 +1368,7 @@ attributes:
   unitCostCurrency:
     name: unitCostCurrency
     description: The currency in which the unit cost is expressed, following ISO 4217
-      three-letter codes (e.g., EUR, USD)
+      three-letter codes (e.g., EUR, USD).
     title: unit cost currency
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -1387,7 +1387,7 @@ attributes:
     name: unitCostNote
     description: A free-text note describing special conditions or cases where the
       cost cannot be represented by a numerical value (e.g., on request, free for
-      academics, depends on volume)
+      academics, depends on volume).
     title: unit cost note
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -1401,7 +1401,7 @@ attributes:
   qualityGrading:
     name: qualityGrading
     description: Information that permits to assess the quality level of what will
-      be provided
+      be provided.
     title: quality grading
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -1424,7 +1424,7 @@ attributes:
     - 'The pathogen identification contains information about name and taxon but in
       some cases(e.g: FAIRSHARING) there may have no direct pathogen related but simply
       a taxonomic information .... the default value should be the root of virology:
-      Viruses'
+      Viruses.'
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: pathogenIdentification
@@ -1436,7 +1436,7 @@ attributes:
     multivalued: true
   doi:
     name: doi
-    description: A Digital Object Identifier (DOI) that can be related
+    description: A Digital Object Identifier (DOI) that can be related.
     title: DOI
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -1459,14 +1459,14 @@ attributes:
     name: riskGroup
     description: The highest risk group related to this resource. The risk group of
       a biological agent guiding its initial handling in labs according to the risk
-      group classification defined by the WHO laboratory biosafety manual
+      group classification defined by the WHO laboratory biosafety manual.
     title: risk group
     comments:
     - The Risk Group (RG) assignments to an item are jurisdiction-dependent and may
       differ between countries/regions and by material form (e.g., live isolate, inactivated
       preparation, nucleic acid). Assignments can also change over time. We store
       here a single reference assignment; users must verify the current, locally applicable
-      assignment with their competent authority
+      assignment with their competent authority.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - wdp:P12663
@@ -1506,7 +1506,7 @@ attributes:
     description: Information about guidelines and regulations designed to prevent
       the exposure to or release of potentially harmful biological agents. It thereby
       contributes to protecting people and the environment from biohazards while accessing
-      this product or service
+      this product or service.
     title: biosafety restrictions
     from_schema: https://w3id.org/evorao/
     related_mappings:
@@ -1522,11 +1522,11 @@ attributes:
   canBeUsedToProduceGmo:
     name: canBeUsedToProduceGmo
     description: Indicates if the current service or product can be used to produce
-      GMO
+      GMO.
     title: can be used to produce GMO
     comments:
     - Set to TRUE if it can produce GMO. It is recommended to have a value for this
-      field, no value will be understood as unknown
+      field, no value will be understood as unknown.
     from_schema: https://w3id.org/evorao/
     broad_mappings:
     - schema:potentialUse
@@ -1541,7 +1541,7 @@ attributes:
     multivalued: false
   provider:
     name: provider
-    description: A provider of this product or service, as a specific organization
+    description: A provider of this product or service, as a specific organization.
     title: provider
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -1559,7 +1559,7 @@ attributes:
     multivalued: false
   collection:
     name: collection
-    description: The collection(s) to which belongs this item
+    description: The collection(s) to which belongs this item.
     title: collection
     from_schema: https://w3id.org/evorao/
     related_mappings:
@@ -1576,7 +1576,7 @@ attributes:
     multivalued: true
   keywords:
     name: keywords
-    description: List of terms used to tag and categorize this Item
+    description: List of terms used to tag and categorize this Item.
     title: keywords
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -1595,10 +1595,10 @@ attributes:
   availability:
     name: availability
     description: The state or condition in which this item is accessible and ready
-      for use or can be obtained
+      for use or can be obtained.
     title: availability
     comments:
-    - Possible availabilities may differ from a project to another
+    - Possible availabilities may differ from a project to another.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - schema:availability
@@ -1615,7 +1615,7 @@ attributes:
   complementaryDocument:
     name: complementaryDocument
     description: Any additional documents that provide supplementary information,
-      instructions, or guidelines relevant to the use of this item
+      instructions, or guidelines relevant to the use of this item.
     title: complementary document
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -1632,7 +1632,7 @@ attributes:
     name: technicalRecommendation
     description: Expert advice or guidelines provided to ensure the optimal use, performance,
       and maintenance of what is provided, including best practices, troubleshooting
-      tips, and procedural instructions
+      tips, and procedural instructions.
     title: technical recommendation
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -1645,7 +1645,7 @@ attributes:
     multivalued: false
   productPicture:
     name: productPicture
-    description: A picture that can represent the item
+    description: A picture that can represent the item.
     title: product picture
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -1659,7 +1659,7 @@ attributes:
   externalRelatedReference:
     name: externalRelatedReference
     description: A reference that permits to retrieve another related item from an
-      external provider
+      external provider.
     title: external related reference
     from_schema: https://w3id.org/evorao/
     broad_mappings:
@@ -1675,7 +1675,7 @@ attributes:
   certification:
     name: certification
     description: Any certification related to the current product or service; e.g.,
-      ISO certification
+      ISO certification.
     title: certification
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -1692,7 +1692,7 @@ attributes:
     multivalued: true
   internalReference:
     name: internalReference
-    description: Any reference or indication to be used for local retrieval purpose
+    description: Any reference or indication to be used for local retrieval purpose.
     title: internal reference
     from_schema: https://w3id.org/evorao/
     broad_mappings:
@@ -1707,7 +1707,7 @@ attributes:
     multivalued: false
   note:
     name: note
-    description: An aditional information as a textual comment
+    description: An aditional information as a textual comment.
     title: note
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -1721,7 +1721,7 @@ attributes:
     multivalued: false
   contactPoint:
     name: contactPoint
-    description: An information that allows someone to establish communication
+    description: An information that allows someone to establish communication.
     title: contact point
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -1740,11 +1740,11 @@ attributes:
   fundingSource:
     name: fundingSource
     description: A program, grant, or project providing financial support for the
-      access or use of the product or service, either fully or partially
+      access or use of the product or service, either fully or partially.
     title: funding source
     comments:
     - Links a product or service to one or more financial mechanisms, initiatives,
-      or grants that enable or support its provision or access
+      or grants that enable or support its provision or access.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:funding
@@ -1758,14 +1758,14 @@ attributes:
     multivalued: true
   title:
     name: title
-    description: A name given to the resource
+    description: A name given to the resource.
     title: title
     comments:
     - 'The title of the item should be as short and descriptive as possible. E.g.
       for virus products it should basically be based on the following Pattern: ''Virus
       name'', ''virus host type'', ''collection year'', ''country of collection''
       ex ''suspected epidemiological origin'', ''genotype'', ''strain'', ''variant
-      name or specific feature'
+      name or specific feature.'
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:name
@@ -1788,15 +1788,13 @@ attributes:
   description:
     name: description
     description: A short explanation of the characteristics, features, or nature of
-      the current item
+      the current item.
     title: description
     comments:
     - Describe this item in few lines. This description will serve as a summary to
       present the resource.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - schema:description
-    close_mappings:
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -1818,7 +1816,7 @@ attributes:
     multivalued: false
   version:
     name: version
-    description: The version indicator (name or identifier) of a resource
+    description: The version indicator (name or identifier) of a resource.
     title: version
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -1842,7 +1840,7 @@ attributes:
     multivalued: false
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -1856,10 +1854,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -1877,10 +1875,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -1897,12 +1895,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -1918,11 +1916,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

@@ -3,7 +3,7 @@
 # Slot: term (term) 
 
 
-_The terms related to this vocabulary_
+_The terms related to this vocabulary._
 
 
 
@@ -74,7 +74,7 @@ Alias: term
 <details>
 ```yaml
 name: term
-description: The terms related to this vocabulary
+description: The terms related to this vocabulary.
 title: term
 from_schema: https://w3id.org/evorao/
 related_mappings:

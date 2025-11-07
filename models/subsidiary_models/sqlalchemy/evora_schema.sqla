@@ -11,7 +11,7 @@ metadata = Base.metadata
 
 class Resource(Base):
     """
-    Resource published or curated by a single agent
+    Resource published or curated by a single agent.
     """
     __tablename__ = 'Resource'
 
@@ -8901,7 +8901,7 @@ class FundingSourceIri(Base):
 
 class Dataset(Resource):
     """
-    A collection of data, published or curated by a single agent, and available for access
+    A collection of data, published or curated by a single agent, and available for access.
     """
     __tablename__ = 'Dataset'
 
@@ -8943,7 +8943,7 @@ class Dataset(Resource):
 
 class DataService(Resource):
     """
-    A collection of operations that provides access to one or more datasets or data processing functions
+    A collection of operations that provides access to one or more datasets or data processing functions.
     """
     __tablename__ = 'DataService'
 
@@ -8989,7 +8989,7 @@ class DataService(Resource):
 
 class Version(Resource):
     """
-    Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
+    Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards).
     """
     __tablename__ = 'Version'
 
@@ -9034,7 +9034,7 @@ class Version(Resource):
 
 class PathogenIdentification(Resource):
     """
-    A collection of distinguishing information that enables the differentiation of a pathogen from another
+    A collection of distinguishing information that enables the differentiation of a pathogen from another.
     """
     __tablename__ = 'PathogenIdentification'
 
@@ -9090,7 +9090,7 @@ class PathogenIdentification(Resource):
 
 class Publication(Resource):
     """
-    A scientific publication
+    A scientific publication.
     """
     __tablename__ = 'Publication'
 
@@ -9136,7 +9136,7 @@ class Publication(Resource):
 
 class Term(Resource):
     """
-    Word or phrase from a specialized area of knowledge
+    Word or phrase from a specialized area of knowledge.
     """
     __tablename__ = 'Term'
 
@@ -9180,7 +9180,7 @@ class Term(Resource):
 
 class ExternalRelatedReference(Resource):
     """
-    A reference that permits to retrieve an item from an external provider
+    A reference that permits to retrieve an item from an external provider.
     """
     __tablename__ = 'ExternalRelatedReference'
 
@@ -9223,7 +9223,7 @@ class ExternalRelatedReference(Resource):
 
 class Sequence(Resource):
     """
-    A nucleic acid or protein sequence information
+    A nucleic acid or protein sequence information.
     """
     __tablename__ = 'Sequence'
 
@@ -9267,7 +9267,7 @@ class Sequence(Resource):
 
 class SequenceReference(Resource):
     """
-    A reference that permits to retrieve the sequence information from a sequence provider
+    A reference that permits to retrieve the sequence information from a sequence provider.
     """
     __tablename__ = 'SequenceReference'
 
@@ -9308,7 +9308,7 @@ class SequenceReference(Resource):
 
 class PersonOrOrganization(Resource):
     """
-    A person or an organization
+    A person or an organization.
     """
     __tablename__ = 'PersonOrOrganization'
 
@@ -9354,7 +9354,7 @@ class PersonOrOrganization(Resource):
 
 class BiologicalMaterialOrigin(Resource):
     """
-    Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol
+    Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
     """
     __tablename__ = 'BiologicalMaterialOrigin'
 
@@ -9399,7 +9399,7 @@ class BiologicalMaterialOrigin(Resource):
 
 class BiologicalPartOrigin(Resource):
     """
-    Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material
+    Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material.
     """
     __tablename__ = 'BiologicalPartOrigin'
 
@@ -9441,7 +9441,7 @@ class BiologicalPartOrigin(Resource):
 
 class RecombinantPartIdentification(Resource):
     """
-    Identification of a recombinant part
+    Identification of a recombinant part.
     """
     __tablename__ = 'RecombinantPartIdentification'
 
@@ -9485,7 +9485,7 @@ class RecombinantPartIdentification(Resource):
 
 class MaterialSafetyDataSheet(Resource):
     """
-    A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product
+    A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
     """
     __tablename__ = 'MaterialSafetyDataSheet'
 
@@ -9540,7 +9540,7 @@ class MaterialSafetyDataSheet(Resource):
 
 class File(Resource):
     """
-    Digital document or record stored in a specific format that contains data or information
+    Digital document or record stored in a specific format that contains data or information.
     """
     __tablename__ = 'File'
 
@@ -9585,7 +9585,7 @@ class File(Resource):
 
 class ContactPoint(Resource):
     """
-    Entity serving as focal point of information
+    Entity serving as focal point of information.
     """
     __tablename__ = 'ContactPoint'
 
@@ -9635,7 +9635,7 @@ class ContactPoint(Resource):
 
 class License(Resource):
     """
-    The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions
+    The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
     """
     __tablename__ = 'License'
 
@@ -9680,7 +9680,7 @@ class License(Resource):
 
 class Certification(Resource):
     """
-    Assurance given by an independent certification body that a product, service or system meets the requirements of a standard
+    Assurance given by an independent certification body that a product, service or system meets the requirements of a standard.
     """
     __tablename__ = 'Certification'
 
@@ -9728,7 +9728,7 @@ class Certification(Resource):
 
 class FundingSource(Resource):
     """
-    A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially
+    A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially.
     """
     __tablename__ = 'FundingSource'
 
@@ -9778,7 +9778,7 @@ class FundingSource(Resource):
 
 class Catalogue(Dataset):
     """
-    A curated collection of metadata about resources
+    A curated collection of metadata about resources.
     """
     __tablename__ = 'Catalogue'
 
@@ -9820,7 +9820,7 @@ class Catalogue(Dataset):
 
 class DataProvider(DataService):
     """
-    An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources
+    An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources.
     """
     __tablename__ = 'DataProvider'
 
@@ -9879,7 +9879,7 @@ class DataProvider(DataService):
 
 class CommonName(Term):
     """
-    Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name
+    Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name.
     """
     __tablename__ = 'CommonName'
 
@@ -9932,7 +9932,7 @@ class CommonName(Term):
 
 class AlternateName(Term):
     """
-    List of other names for things
+    List of other names for things.
     """
     __tablename__ = 'AlternateName'
 
@@ -9985,7 +9985,7 @@ class AlternateName(Term):
 
 class RiskGroup(Term):
     """
-    Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence
+    Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence.
     """
     __tablename__ = 'RiskGroup'
 
@@ -10029,7 +10029,7 @@ class RiskGroup(Term):
 
 class BiosafetyLevel(Term):
     """
-    The level of biocontainment required or applied in the facility where the biological agent is manipulated
+    The level of biocontainment required or applied in the facility where the biological agent is manipulated.
     """
     __tablename__ = 'BiosafetyLevel'
 
@@ -10073,7 +10073,7 @@ class BiosafetyLevel(Term):
 
 class Doi(Term):
     """
-    A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
+    A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard.
     """
     __tablename__ = 'Doi'
 
@@ -10117,7 +10117,7 @@ class Doi(Term):
 
 class Journal(Term):
     """
-    Periodical journal publishing scientific research
+    Periodical journal publishing scientific research.
     """
     __tablename__ = 'Journal'
 
@@ -10161,7 +10161,7 @@ class Journal(Term):
 
 class PdbReference(Term):
     """
-    Identifier for 3D structural data as per the PDB (Protein Data Bank) database
+    Identifier for 3D structural data as per the PDB (Protein Data Bank) database.
     """
     __tablename__ = 'PdbReference'
 
@@ -10205,7 +10205,7 @@ class PdbReference(Term):
 
 class Keyword(Term):
     """
-    A term or phrase used to tag and categorize content
+    A term or phrase used to tag and categorize content.
     """
     __tablename__ = 'Keyword'
 
@@ -10249,7 +10249,7 @@ class Keyword(Term):
 
 class TagSequence(Term):
     """
-    The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids
+    The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids.
     """
     __tablename__ = 'TagSequence'
 
@@ -10337,7 +10337,7 @@ class SpecialFeature(Term):
 
 class ExpressionVector(Term):
     """
-    A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression
+    A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression.
     """
     __tablename__ = 'ExpressionVector'
 
@@ -10381,7 +10381,7 @@ class ExpressionVector(Term):
 
 class PlasmidSelection(Term):
     """
-    The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers
+    The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers.
     """
     __tablename__ = 'PlasmidSelection'
 
@@ -10425,7 +10425,7 @@ class PlasmidSelection(Term):
 
 class PropagationHost(Term):
     """
-    The organism used to grow and multiply the pathogen under controlled conditions
+    The organism used to grow and multiply the pathogen under controlled conditions.
     """
     __tablename__ = 'PropagationHost'
 
@@ -10469,7 +10469,7 @@ class PropagationHost(Term):
 
 class TransmissionMethod(Term):
     """
-    The process by which the pathogen spreads between hosts
+    The process by which the pathogen spreads between hosts.
     """
     __tablename__ = 'TransmissionMethod'
 
@@ -10513,7 +10513,7 @@ class TransmissionMethod(Term):
 
 class ProductionCellLine(Term):
     """
-    A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances
+    A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances.
     """
     __tablename__ = 'ProductionCellLine'
 
@@ -10557,7 +10557,7 @@ class ProductionCellLine(Term):
 
 class ProductCategory(Term):
     """
-    A term used to classify a group of products that share common characteristics or functions, which helps in their organization
+    A term used to classify a group of products that share common characteristics or functions, which helps in their organization.
     """
     __tablename__ = 'ProductCategory'
 
@@ -10603,7 +10603,7 @@ class ProductCategory(Term):
 
 class IsolationHost(Term):
     """
-    Host organism from which the pathogen was isolated
+    Host organism from which the pathogen was isolated.
     """
     __tablename__ = 'IsolationHost'
 
@@ -10647,7 +10647,7 @@ class IsolationHost(Term):
 
 class GeographicalOrigin(Term):
     """
-    The specific location or region where a physical item, originates or is naturally found
+    The specific location or region where a physical item, originates or is naturally found.
     """
     __tablename__ = 'GeographicalOrigin'
 
@@ -10691,7 +10691,7 @@ class GeographicalOrigin(Term):
 
 class Country(Term):
     """
-    The country as of ISO3166
+    The country as of ISO3166.
     """
     __tablename__ = 'Country'
 
@@ -10736,7 +10736,7 @@ class Country(Term):
 
 class IataClassification(Term):
     """
-    The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air
+    The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air.
     """
     __tablename__ = 'IataClassification'
 
@@ -10780,7 +10780,7 @@ class IataClassification(Term):
 
 class TaxonomicRank(Term):
     """
-    The possible taxonomic ranks and their description
+    The possible taxonomic ranks and their description.
     """
     __tablename__ = 'TaxonomicRank'
 
@@ -10828,7 +10828,7 @@ class TaxonomicRank(Term):
 
 class Taxon(Term):
     """
-    Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit
+    Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit.
     """
     __tablename__ = 'Taxon'
 
@@ -10894,7 +10894,7 @@ class Taxon(Term):
 
 class ClinicalGroup(Term):
     """
-    A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health
+    A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health.
     """
     __tablename__ = 'ClinicalGroup'
 
@@ -10946,7 +10946,7 @@ class ClinicalGroup(Term):
 
 class Person(PersonOrOrganization):
     """
-    An individual
+    An individual.
     """
     __tablename__ = 'Person'
 
@@ -10993,7 +10993,7 @@ class Person(PersonOrOrganization):
 
 class Organization(PersonOrOrganization):
     """
-    A social entity established to meet needs or pursue specific goals
+    A social entity established to meet needs or pursue specific goals.
     """
     __tablename__ = 'Organization'
 
@@ -11046,7 +11046,7 @@ class Organization(PersonOrOrganization):
 
 class Originator(PersonOrOrganization):
     """
-    The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample
+    The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
     """
     __tablename__ = 'Originator'
 
@@ -11092,7 +11092,7 @@ class Originator(PersonOrOrganization):
 
 class NaturalPartOrigin(BiologicalPartOrigin):
     """
-    Information on the origin of a natural part that composes the biological material
+    Information on the origin of a natural part that composes the biological material.
     """
     __tablename__ = 'NaturalPartOrigin'
 
@@ -11141,7 +11141,7 @@ class NaturalPartOrigin(BiologicalPartOrigin):
 
 class SyntheticPartOrigin(BiologicalPartOrigin):
     """
-    Information on the origin of a synthetic part that composes the biological material
+    Information on the origin of a synthetic part that composes the biological material.
     """
     __tablename__ = 'SyntheticPartOrigin'
 
@@ -11185,7 +11185,7 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
 
 class ProductOrService(Dataset):
     """
-    An offering provided by a provider, which may be tangible (a product) or intangible (a service)
+    An offering provided by a provider, which may be tangible (a product) or intangible (a service).
     """
     __tablename__ = 'ProductOrService'
 
@@ -11290,7 +11290,7 @@ class ProductOrService(Dataset):
 
 class Data(File):
     """
-    Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information
+    Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information.
     """
     __tablename__ = 'Data'
 
@@ -11335,7 +11335,7 @@ class Data(File):
 
 class Document(File):
     """
-    Subclass of File representing textual or written files such as reports, manuals, or forms
+    Subclass of File representing textual or written files such as reports, manuals, or forms.
     """
     __tablename__ = 'Document'
 
@@ -11380,7 +11380,7 @@ class Document(File):
 
 class Audio(File):
     """
-    Subclass of File representing sound recordings or audio tracks
+    Subclass of File representing sound recordings or audio tracks.
     """
     __tablename__ = 'Audio'
 
@@ -11425,7 +11425,7 @@ class Audio(File):
 
 class Video(File):
     """
-    Subclass of File representing moving visual media, such as recordings, presentations, or movies
+    Subclass of File representing moving visual media, such as recordings, presentations, or movies.
     """
     __tablename__ = 'Video'
 
@@ -11470,7 +11470,7 @@ class Video(File):
 
 class Image(File):
     """
-    Subclass of File representing visual content such as pictures, diagrams, or illustrations
+    Subclass of File representing visual content such as pictures, diagrams, or illustrations.
     """
     __tablename__ = 'Image'
 
@@ -11516,7 +11516,7 @@ class Image(File):
 
 class Taxonomy(Catalogue):
     """
-    A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics
+    A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics.
     """
     __tablename__ = 'Taxonomy'
 
@@ -11572,7 +11572,7 @@ class Taxonomy(Catalogue):
 
 class Vocabulary(Catalogue):
     """
-    A subset of words or phrases specific to a particular subject or field
+    A subset of words or phrases specific to a particular subject or field.
     """
     __tablename__ = 'Vocabulary'
 
@@ -11620,7 +11620,7 @@ class Vocabulary(Catalogue):
 
 class VirusName(CommonName):
     """
-    A virus vernacular name or a name that describes a group of viruses
+    A virus vernacular name or a name that describes a group of viruses.
     """
     __tablename__ = 'VirusName'
 
@@ -11673,7 +11673,7 @@ class VirusName(CommonName):
 
 class IplcOrigin(GeographicalOrigin):
     """
-    The IPLC area (Indigenous People and Local Communities) from which a physical item originates
+    The IPLC area (Indigenous People and Local Communities) from which a physical item originates.
     """
     __tablename__ = 'IplcOrigin'
 
@@ -11717,7 +11717,7 @@ class IplcOrigin(GeographicalOrigin):
 
 class Variant(CommonName):
     """
-    An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain
+    An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain.
     """
     __tablename__ = 'Variant'
 
@@ -11770,7 +11770,7 @@ class Variant(CommonName):
 
 class ReasearchInfrastructure(Organization):
     """
-    A research infrastructure (RI)
+    A research infrastructure (RI).
     """
     __tablename__ = 'ReasearchInfrastructure'
 
@@ -11823,7 +11823,7 @@ class ReasearchInfrastructure(Organization):
 
 class Provider(Organization):
     """
-    A provider of products or services, as a specific organization
+    A provider of products or services, as a specific organization.
     """
     __tablename__ = 'Provider'
 
@@ -11880,7 +11880,7 @@ class Provider(Organization):
 
 class Collection(Catalogue):
     """
-    Set of products and services with some common characteristics
+    Set of products and services with some common characteristics.
     """
     __tablename__ = 'Collection'
 
@@ -11928,7 +11928,7 @@ class Collection(Catalogue):
 
 class Service(ProductOrService):
     """
-    An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need
+    An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need.
     """
     __tablename__ = 'Service'
 
@@ -12035,7 +12035,7 @@ class Service(ProductOrService):
 
 class Product(ProductOrService):
     """
-    A tangible, physical item made available by a provider for use, consumption, or ownership transfer
+    A tangible, physical item made available by a provider for use, consumption, or ownership transfer.
     """
     __tablename__ = 'Product'
 
@@ -12151,7 +12151,7 @@ class Product(ProductOrService):
 
 class Antibody(Product):
     """
-    Protein that can bind to certain types of foreign bodies, such as pathogens
+    Protein that can bind to certain types of foreign bodies, such as pathogens.
     """
     __tablename__ = 'Antibody'
 
@@ -12275,7 +12275,7 @@ class Antibody(Product):
 
 class Protein(Product):
     """
-    A protein as a derived product from a pathogen
+    A protein as a derived product from a pathogen.
     """
     __tablename__ = 'Protein'
 
@@ -12454,7 +12454,7 @@ class Protein(Product):
 
 class NucleicAcid(Product):
     """
-    Nucleic acid related to a pathogen. It can be extracted or synthetic
+    Nucleic acid related to a pathogen. It can be extracted or synthetic.
     """
     __tablename__ = 'NucleicAcid'
 
@@ -12596,7 +12596,7 @@ class NucleicAcid(Product):
 
 class DetectionKit(Product):
     """
-    A detection kit for specific pathogens
+    A detection kit for specific pathogens.
     """
     __tablename__ = 'DetectionKit'
 
@@ -12719,7 +12719,7 @@ class DetectionKit(Product):
 
 class Bundle(Product):
     """
-    A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility
+    A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility.
     """
     __tablename__ = 'Bundle'
 
@@ -12839,7 +12839,7 @@ class Bundle(Product):
 
 class Pathogen(Product):
     """
-    Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such as a virus, bacterium, protozoan, prion, viroid, or fungus
+    Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such as a virus, bacterium, protozoan, prion, viroid, or fungus.
     """
     __tablename__ = 'Pathogen'
 
@@ -12992,7 +12992,7 @@ class Pathogen(Product):
 
 class Hybridoma(Antibody):
     """
-    An hybridoma that provides antibodies that can be related to a pathogen
+    An hybridoma that provides antibodies that can be related to a pathogen.
     """
     __tablename__ = 'Hybridoma'
 
@@ -13117,7 +13117,7 @@ class Hybridoma(Antibody):
 
 class Virus(Pathogen):
     """
-    The virus as a biological material
+    The virus as a biological material.
     """
     __tablename__ = 'Virus'
 
@@ -13276,7 +13276,7 @@ class Virus(Pathogen):
 
 class Bacterium(Pathogen):
     """
-    The bacterium as a biological material
+    The bacterium as a biological material.
     """
     __tablename__ = 'Bacterium'
 
@@ -13429,7 +13429,7 @@ class Bacterium(Pathogen):
 
 class Fungus(Pathogen):
     """
-    The fungus as a biological material
+    The fungus as a biological material.
     """
     __tablename__ = 'Fungus'
 
@@ -13582,7 +13582,7 @@ class Fungus(Pathogen):
 
 class Protozoan(Pathogen):
     """
-    The protozoan as a biological material
+    The protozoan as a biological material.
     """
     __tablename__ = 'Protozoan'
 
@@ -13735,7 +13735,7 @@ class Protozoan(Pathogen):
 
 class Viroid(Pathogen):
     """
-    The viroid as a biological material
+    The viroid as a biological material.
     """
     __tablename__ = 'Viroid'
 
@@ -13888,7 +13888,7 @@ class Viroid(Pathogen):
 
 class Prion(Pathogen):
     """
-    The prion as a biological material
+    The prion as a biological material.
     """
     __tablename__ = 'Prion'
 

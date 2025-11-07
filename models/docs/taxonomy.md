@@ -3,7 +3,7 @@
 # Slot: taxonomy (taxonomy) 
 
 
-_The taxonomy release(s) in which this entity exists_
+_The taxonomy release(s) in which this entity exists._
 
 
 
@@ -75,7 +75,7 @@ Alias: taxonomy
 <details>
 ```yaml
 name: taxonomy
-description: The taxonomy release(s) in which this entity exists
+description: The taxonomy release(s) in which this entity exists.
 title: taxonomy
 from_schema: https://w3id.org/evorao/
 broad_mappings:

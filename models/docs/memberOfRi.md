@@ -3,7 +3,7 @@
 # Slot: member of RI (memberOfRi) 
 
 
-_The research infrastructure of which this organization is a member_
+_The research infrastructure of which this organization is a member._
 
 
 
@@ -72,7 +72,7 @@ Alias: memberOfRi
 <details>
 ```yaml
 name: memberOfRi
-description: The research infrastructure of which this organization is a member
+description: The research infrastructure of which this organization is a member.
 title: member of RI
 from_schema: https://w3id.org/evorao/
 broad_mappings:

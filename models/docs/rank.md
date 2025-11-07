@@ -3,7 +3,7 @@
 # Slot: rank (rank) 
 
 
-_Relative level or position of the identified taxon in the taxonomy_
+_Relative level or position of the identified taxon in the taxonomy._
 
 
 
@@ -75,7 +75,7 @@ Alias: rank
 <details>
 ```yaml
 name: rank
-description: Relative level or position of the identified taxon in the taxonomy
+description: Relative level or position of the identified taxon in the taxonomy.
 title: rank
 from_schema: https://w3id.org/evorao/
 exact_mappings:

@@ -3,7 +3,7 @@
 # Slot: street address (streetAddress) 
 
 
-_The building/apartment number and the street name_
+_The building/apartment number and the street name._
 
 
 
@@ -71,7 +71,7 @@ Alias: streetAddress
 <details>
 ```yaml
 name: streetAddress
-description: The building/apartment number and the street name
+description: The building/apartment number and the street name.
 title: street address
 from_schema: https://w3id.org/evorao/
 exact_mappings:

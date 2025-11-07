@@ -3,7 +3,7 @@
 # Slot: specificity (specificity) 
 
 
-_Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting_
+_Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting._
 
 
 
@@ -71,7 +71,7 @@ Alias: specificity
 name: specificity
 description: Details on the ability of a detection kit to correctly identify negative
   results, distinguishing between the target analyte and other substances without
-  cross-reacting
+  cross-reacting.
 title: specificity
 from_schema: https://w3id.org/evorao/
 rank: 1000

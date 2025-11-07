@@ -3,7 +3,7 @@
 # Class: Sequence (Sequence) 
 
 
-_A nucleic acid or protein sequence information_
+_A nucleic acid or protein sequence information._
 
 
 
@@ -133,7 +133,7 @@ URI: [EVORAO:Sequence](https://w3id.org/evorao/Sequence)
 <details>
 ```yaml
 name: Sequence
-description: A nucleic acid or protein sequence information
+description: A nucleic acid or protein sequence information.
 title: Sequence
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -150,7 +150,7 @@ slot_usage:
   sequenceReference:
     name: sequenceReference
     description: A reference that permits to retrieve the sequence information from
-      a sequence provider
+      a sequence provider.
     title: sequence reference
     domain_of:
     - Sequence
@@ -161,7 +161,7 @@ slot_usage:
     multivalued: true
   sequenceFasta:
     name: sequenceFasta
-    description: Textual encoding of a biological sequence information in FASTA format
+    description: Textual encoding of a biological sequence information in FASTA format.
     title: sequence FASTA
     comments:
     - In cases where no reference sequence exists in public repositories, the corresponding
@@ -169,7 +169,7 @@ slot_usage:
       In FASTA format the line before the nucleotide sequence, called the FASTA definition
       line, must begin with a charater ('>'), followed by a unique SeqID (sequence
       identifier). In case the sequence is made of multiple parts several fasta sequences
-      can be provided
+      can be provided.
     domain_of:
     - Sequence
     range: string
@@ -184,7 +184,7 @@ slot_usage:
 <details>
 ```yaml
 name: Sequence
-description: A nucleic acid or protein sequence information
+description: A nucleic acid or protein sequence information.
 title: Sequence
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -198,7 +198,7 @@ slot_usage:
   sequenceReference:
     name: sequenceReference
     description: A reference that permits to retrieve the sequence information from
-      a sequence provider
+      a sequence provider.
     title: sequence reference
     domain_of:
     - Sequence
@@ -209,7 +209,7 @@ slot_usage:
     multivalued: true
   sequenceFasta:
     name: sequenceFasta
-    description: Textual encoding of a biological sequence information in FASTA format
+    description: Textual encoding of a biological sequence information in FASTA format.
     title: sequence FASTA
     comments:
     - In cases where no reference sequence exists in public repositories, the corresponding
@@ -217,7 +217,7 @@ slot_usage:
       In FASTA format the line before the nucleotide sequence, called the FASTA definition
       line, must begin with a charater ('>'), followed by a unique SeqID (sequence
       identifier). In case the sequence is made of multiple parts several fasta sequences
-      can be provided
+      can be provided.
     domain_of:
     - Sequence
     range: string
@@ -227,7 +227,7 @@ attributes:
   sequenceReference:
     name: sequenceReference
     description: A reference that permits to retrieve the sequence information from
-      a sequence provider
+      a sequence provider.
     title: sequence reference
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -242,7 +242,7 @@ attributes:
     multivalued: true
   sequenceFasta:
     name: sequenceFasta
-    description: Textual encoding of a biological sequence information in FASTA format
+    description: Textual encoding of a biological sequence information in FASTA format.
     title: sequence FASTA
     comments:
     - In cases where no reference sequence exists in public repositories, the corresponding
@@ -250,7 +250,7 @@ attributes:
       In FASTA format the line before the nucleotide sequence, called the FASTA definition
       line, must begin with a charater ('>'), followed by a unique SeqID (sequence
       identifier). In case the sequence is made of multiple parts several fasta sequences
-      can be provided
+      can be provided.
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: sequenceFasta
@@ -262,7 +262,7 @@ attributes:
     multivalued: false
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -276,10 +276,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -297,10 +297,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -317,12 +317,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -338,11 +338,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

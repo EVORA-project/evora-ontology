@@ -3,7 +3,7 @@
 # Class: Natural part origin (NaturalPartOrigin) 
 
 
-_Information on the origin of a natural part that composes the biological material_
+_Information on the origin of a natural part that composes the biological material._
 
 
 
@@ -148,7 +148,7 @@ URI: [EVORAO:NaturalPartOrigin](https://w3id.org/evorao/NaturalPartOrigin)
 ```yaml
 name: NaturalPartOrigin
 description: Information on the origin of a natural part that composes the biological
-  material
+  material.
 title: Natural part origin
 from_schema: https://w3id.org/evorao/
 related_mappings:
@@ -189,7 +189,7 @@ slot_usage:
   indigenousPeopleAndLocalCommunityOrigin:
     name: indigenousPeopleAndLocalCommunityOrigin
     description: The specific IPLC area (Indigenous People and Local Communities)
-      from which this sample/element was sampled, if relevant
+      from which this sample/element was sampled, if relevant.
     title: indigenous people and local community origin
     related_mappings:
     - mesh:D000081034
@@ -203,7 +203,7 @@ slot_usage:
     name: collectionDate
     description: The date when the sample was collected in situ. If unknown/private,
       use a proxy date such as 'date received' and indicate this by setting to true
-      the before date property
+      the before date property.
     title: collection date
     related_mappings:
     - obib:0000714
@@ -216,7 +216,7 @@ slot_usage:
     multivalued: false
   beforeDate:
     name: beforeDate
-    description: Set to TRUE if a proxy date for the collection date is used
+    description: Set to TRUE if a proxy date for the collection date is used.
     title: before date
     related_mappings:
     - sepio:0000105
@@ -231,7 +231,7 @@ slot_usage:
     name: permitIdentifierForAbs
     description: Reference of the permit identifiers for access to the genetic resource,
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
-      regulations
+      regulations.
     title: permit identifier for ABS
     domain_of:
     - NaturalPartOrigin
@@ -247,7 +247,7 @@ slot_usage:
 ```yaml
 name: NaturalPartOrigin
 description: Information on the origin of a natural part that composes the biological
-  material
+  material.
 title: Natural part origin
 from_schema: https://w3id.org/evorao/
 related_mappings:
@@ -282,7 +282,7 @@ slot_usage:
   indigenousPeopleAndLocalCommunityOrigin:
     name: indigenousPeopleAndLocalCommunityOrigin
     description: The specific IPLC area (Indigenous People and Local Communities)
-      from which this sample/element was sampled, if relevant
+      from which this sample/element was sampled, if relevant.
     title: indigenous people and local community origin
     related_mappings:
     - mesh:D000081034
@@ -296,7 +296,7 @@ slot_usage:
     name: collectionDate
     description: The date when the sample was collected in situ. If unknown/private,
       use a proxy date such as 'date received' and indicate this by setting to true
-      the before date property
+      the before date property.
     title: collection date
     related_mappings:
     - obib:0000714
@@ -309,7 +309,7 @@ slot_usage:
     multivalued: false
   beforeDate:
     name: beforeDate
-    description: Set to TRUE if a proxy date for the collection date is used
+    description: Set to TRUE if a proxy date for the collection date is used.
     title: before date
     related_mappings:
     - sepio:0000105
@@ -324,7 +324,7 @@ slot_usage:
     name: permitIdentifierForAbs
     description: Reference of the permit identifiers for access to the genetic resource,
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
-      regulations
+      regulations.
     title: permit identifier for ABS
     domain_of:
     - NaturalPartOrigin
@@ -357,7 +357,7 @@ attributes:
   indigenousPeopleAndLocalCommunityOrigin:
     name: indigenousPeopleAndLocalCommunityOrigin
     description: The specific IPLC area (Indigenous People and Local Communities)
-      from which this sample/element was sampled, if relevant
+      from which this sample/element was sampled, if relevant.
     title: indigenous people and local community origin
     from_schema: https://w3id.org/evorao/
     related_mappings:
@@ -375,7 +375,7 @@ attributes:
     name: collectionDate
     description: The date when the sample was collected in situ. If unknown/private,
       use a proxy date such as 'date received' and indicate this by setting to true
-      the before date property
+      the before date property.
     title: collection date
     from_schema: https://w3id.org/evorao/
     related_mappings:
@@ -392,7 +392,7 @@ attributes:
     multivalued: false
   beforeDate:
     name: beforeDate
-    description: Set to TRUE if a proxy date for the collection date is used
+    description: Set to TRUE if a proxy date for the collection date is used.
     title: before date
     from_schema: https://w3id.org/evorao/
     related_mappings:
@@ -411,7 +411,7 @@ attributes:
     name: permitIdentifierForAbs
     description: Reference of the permit identifiers for access to the genetic resource,
       applicable if the genetic resource falls under Access and Benefit-Sharing (ABS)
-      regulations
+      regulations.
     title: permit identifier for ABS
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -424,11 +424,11 @@ attributes:
     multivalued: false
   recombinantPartIdentification:
     name: recombinantPartIdentification
-    description: Identification of a recombinant part
+    description: Identification of a recombinant part.
     title: recombinant part identification
     comments:
     - Information not required if the current biological part constitutes the complete
-      biological material
+      biological material.
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: recombinantPartIdentification
@@ -441,7 +441,7 @@ attributes:
   accessToPhysicalGeneticResource:
     name: accessToPhysicalGeneticResource
     description: Indicate if the biological part was produced with access to a physical
-      genetic resource
+      genetic resource.
     title: access to physical genetic resource
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -454,7 +454,7 @@ attributes:
     multivalued: false
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -468,10 +468,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -489,10 +489,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -509,12 +509,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -530,11 +530,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

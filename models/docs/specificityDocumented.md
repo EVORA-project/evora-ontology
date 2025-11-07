@@ -3,7 +3,7 @@
 # Slot: specificity documented (specificityDocumented) 
 
 
-_Boolean value indicating whether the specificity of the product has been formally documented_
+_Boolean value indicating whether the specificity of the product has been formally documented._
 
 
 
@@ -23,8 +23,8 @@ Alias: specificityDocumented
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  yes  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  yes  |
 
 
 
@@ -74,7 +74,7 @@ Alias: specificityDocumented
 ```yaml
 name: specificityDocumented
 description: Boolean value indicating whether the specificity of the product has been
-  formally documented
+  formally documented.
 title: specificity documented
 from_schema: https://w3id.org/evorao/
 rank: 1000

@@ -3,7 +3,7 @@
 # Slot: region (addressRegion) 
 
 
-_The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division_
+_The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division._
 
 
 
@@ -72,7 +72,7 @@ Alias: addressRegion
 ```yaml
 name: addressRegion
 description: The region in which the locality is, and which is in the country. For
-  example, California or another appropriate first-level Administrative division
+  example, California or another appropriate first-level Administrative division.
 title: region
 from_schema: https://w3id.org/evorao/
 exact_mappings:

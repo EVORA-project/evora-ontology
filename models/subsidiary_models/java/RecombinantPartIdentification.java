@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Identification of a recombinant part
+  Identification of a recombinant part.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

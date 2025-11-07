@@ -3,7 +3,7 @@
 # Slot: indigenous people and local community origin (indigenousPeopleAndLocalCommunityOrigin) 
 
 
-_The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant_
+_The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant._
 
 
 
@@ -71,7 +71,7 @@ Alias: indigenousPeopleAndLocalCommunityOrigin
 ```yaml
 name: indigenousPeopleAndLocalCommunityOrigin
 description: The specific IPLC area (Indigenous People and Local Communities) from
-  which this sample/element was sampled, if relevant
+  which this sample/element was sampled, if relevant.
 title: indigenous people and local community origin
 from_schema: https://w3id.org/evorao/
 related_mappings:

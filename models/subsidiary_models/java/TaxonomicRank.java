@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The possible taxonomic ranks and their description
+  The possible taxonomic ranks and their description.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

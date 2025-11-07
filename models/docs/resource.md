@@ -3,7 +3,7 @@
 # Slot: resource (resource) 
 
 
-_Resource published or curated by a single agent_
+_Resource published or curated by a single agent._
 
 
 
@@ -73,7 +73,7 @@ Alias: resource
 <details>
 ```yaml
 name: resource
-description: Resource published or curated by a single agent
+description: Resource published or curated by a single agent.
 title: resource
 from_schema: https://w3id.org/evorao/
 rank: 1000

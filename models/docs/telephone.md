@@ -3,7 +3,7 @@
 # Slot: telephone (telephone) 
 
 
-_The telephone number_
+_The telephone number._
 
 
 
@@ -73,7 +73,7 @@ Alias: telephone
 <details>
 ```yaml
 name: telephone
-description: The telephone number
+description: The telephone number.
 title: telephone
 from_schema: https://w3id.org/evorao/
 exact_mappings:

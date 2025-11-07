@@ -3,7 +3,7 @@
 # Class: Biological part origin (BiologicalPartOrigin) 
 
 
-_Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material_
+_Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material._
 
 
 
@@ -136,7 +136,7 @@ URI: [EVORAO:BiologicalPartOrigin](https://w3id.org/evorao/BiologicalPartOrigin)
 name: BiologicalPartOrigin
 description: Information on the origin of a unitary, cohesive part that is part of,
   or constitutes the biological material. It can be multiple parts in case of a recombinant
-  biological material
+  biological material.
 title: Biological part origin
 from_schema: https://w3id.org/evorao/
 broad_mappings:
@@ -150,11 +150,11 @@ slots:
 slot_usage:
   recombinantPartIdentification:
     name: recombinantPartIdentification
-    description: Identification of a recombinant part
+    description: Identification of a recombinant part.
     title: recombinant part identification
     comments:
     - Information not required if the current biological part constitutes the complete
-      biological material
+      biological material.
     domain_of:
     - BiologicalPartOrigin
     range: RecombinantPartIdentification
@@ -163,7 +163,7 @@ slot_usage:
   accessToPhysicalGeneticResource:
     name: accessToPhysicalGeneticResource
     description: Indicate if the biological part was produced with access to a physical
-      genetic resource
+      genetic resource.
     title: access to physical genetic resource
     domain_of:
     - BiologicalPartOrigin
@@ -181,7 +181,7 @@ slot_usage:
 name: BiologicalPartOrigin
 description: Information on the origin of a unitary, cohesive part that is part of,
   or constitutes the biological material. It can be multiple parts in case of a recombinant
-  biological material
+  biological material.
 title: Biological part origin
 from_schema: https://w3id.org/evorao/
 broad_mappings:
@@ -192,11 +192,11 @@ abstract: true
 slot_usage:
   recombinantPartIdentification:
     name: recombinantPartIdentification
-    description: Identification of a recombinant part
+    description: Identification of a recombinant part.
     title: recombinant part identification
     comments:
     - Information not required if the current biological part constitutes the complete
-      biological material
+      biological material.
     domain_of:
     - BiologicalPartOrigin
     range: RecombinantPartIdentification
@@ -205,7 +205,7 @@ slot_usage:
   accessToPhysicalGeneticResource:
     name: accessToPhysicalGeneticResource
     description: Indicate if the biological part was produced with access to a physical
-      genetic resource
+      genetic resource.
     title: access to physical genetic resource
     domain_of:
     - BiologicalPartOrigin
@@ -215,11 +215,11 @@ slot_usage:
 attributes:
   recombinantPartIdentification:
     name: recombinantPartIdentification
-    description: Identification of a recombinant part
+    description: Identification of a recombinant part.
     title: recombinant part identification
     comments:
     - Information not required if the current biological part constitutes the complete
-      biological material
+      biological material.
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: recombinantPartIdentification
@@ -232,7 +232,7 @@ attributes:
   accessToPhysicalGeneticResource:
     name: accessToPhysicalGeneticResource
     description: Indicate if the biological part was produced with access to a physical
-      genetic resource
+      genetic resource.
     title: access to physical genetic resource
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -245,7 +245,7 @@ attributes:
     multivalued: false
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -259,10 +259,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -280,10 +280,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -300,12 +300,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -321,11 +321,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

@@ -3,7 +3,7 @@
 # Slot: external equivalent taxon (externalEquivalentTaxon) 
 
 
-_Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI)_
+_Any equivalent taxon in a different taxonomy if exists/known to serve as a bridge (e.g, ICTV towards NCBI)._
 
 
 
@@ -42,7 +42,7 @@ Alias: externalEquivalentTaxon
 
 ## Comments
 
-* Could serve as a bridge between ICTV and NCBI as several providers currently uses NCBI Taxonomy
+* Could serve as a bridge between ICTV and NCBI as several providers currently uses NCBI Taxonomy.
 
 ## Identifier and Mapping Information
 
@@ -78,11 +78,11 @@ Alias: externalEquivalentTaxon
 ```yaml
 name: externalEquivalentTaxon
 description: Any equivalent taxon in a different taxonomy if exists/known to serve
-  as a bridge (e.g, ICTV towards NCBI)
+  as a bridge (e.g, ICTV towards NCBI).
 title: external equivalent taxon
 comments:
 - Could serve as a bridge between ICTV and NCBI as several providers currently uses
-  NCBI Taxonomy
+  NCBI Taxonomy.
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - dwc:taxonID

@@ -3,7 +3,7 @@
 # Slot: related PDB (relatedPdb) 
 
 
-_Identifier for 3D structural data as per the PDB (Protein Data Bank) database_
+_Identifier for 3D structural data as per the PDB (Protein Data Bank) database._
 
 
 
@@ -73,7 +73,7 @@ Alias: relatedPdb
 ```yaml
 name: relatedPdb
 description: Identifier for 3D structural data as per the PDB (Protein Data Bank)
-  database
+  database.
 title: related PDB
 from_schema: https://w3id.org/evorao/
 close_mappings:

@@ -3,7 +3,7 @@
 # Slot: risk group (riskGroup) 
 
 
-_The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual_
+_The highest risk group related to this resource. The risk group of a biological agent guiding its initial handling in labs according to the risk group classification defined by the WHO laboratory biosafety manual._
 
 
 
@@ -22,22 +22,22 @@ Alias: riskGroup
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [ProductOrService](ProductOrService.md) | An offering provided by a provider, which may be tangible (a product) or inta... |  yes  |
 | [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  no  |
 | [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
 | [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
-| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [ProductOrService](ProductOrService.md) | An offering provided by a provider, which may be tangible (a product) or inta... |  yes  |
-| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
+| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 
 
 
@@ -57,7 +57,7 @@ Alias: riskGroup
 
 ## Comments
 
-* The Risk Group (RG) assignments to an item are jurisdiction-dependent and may differ between countries/regions and by material form (e.g., live isolate, inactivated preparation, nucleic acid). Assignments can also change over time. We store here a single reference assignment; users must verify the current, locally applicable assignment with their competent authority
+* The Risk Group (RG) assignments to an item are jurisdiction-dependent and may differ between countries/regions and by material form (e.g., live isolate, inactivated preparation, nucleic acid). Assignments can also change over time. We store here a single reference assignment; users must verify the current, locally applicable assignment with their competent authority.
 
 ## Identifier and Mapping Information
 
@@ -94,14 +94,14 @@ Alias: riskGroup
 name: riskGroup
 description: The highest risk group related to this resource. The risk group of a
   biological agent guiding its initial handling in labs according to the risk group
-  classification defined by the WHO laboratory biosafety manual
+  classification defined by the WHO laboratory biosafety manual.
 title: risk group
 comments:
 - The Risk Group (RG) assignments to an item are jurisdiction-dependent and may differ
   between countries/regions and by material form (e.g., live isolate, inactivated
   preparation, nucleic acid). Assignments can also change over time. We store here
   a single reference assignment; users must verify the current, locally applicable
-  assignment with their competent authority
+  assignment with their competent authority.
 from_schema: https://w3id.org/evorao/
 exact_mappings:
 - wdp:P12663

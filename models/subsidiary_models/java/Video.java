@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Subclass of File representing moving visual media, such as recordings, presentations, or movies
+  Subclass of File representing moving visual media, such as recordings, presentations, or movies.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

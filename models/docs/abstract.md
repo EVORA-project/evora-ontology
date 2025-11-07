@@ -3,7 +3,7 @@
 # Slot: abstract (abstract) 
 
 
-_Concise summary of the publication_
+_Concise summary of the publication._
 
 
 
@@ -72,7 +72,7 @@ Alias: abstract
 <details>
 ```yaml
 name: abstract
-description: Concise summary of the publication
+description: Concise summary of the publication.
 title: abstract
 from_schema: https://w3id.org/evorao/
 close_mappings:

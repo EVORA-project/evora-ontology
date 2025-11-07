@@ -3,7 +3,7 @@
 # Slot: host type (hostType) 
 
 
-_Indication of the possible host(s) for the identified pathogens among the listed main categories_
+_Indication of the possible host(s) for the identified pathogens among the listed main categories._
 
 
 
@@ -74,7 +74,7 @@ Alias: hostType
 ```yaml
 name: hostType
 description: Indication of the possible host(s) for the identified pathogens among
-  the listed main categories
+  the listed main categories.
 title: host type
 from_schema: https://w3id.org/evorao/
 rank: 1000

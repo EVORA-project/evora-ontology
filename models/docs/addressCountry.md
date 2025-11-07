@@ -3,7 +3,7 @@
 # Slot: address Country (addressCountry) 
 
 
-_The country as of  ISO 3166_
+_The country as of  ISO 3166._
 
 
 
@@ -70,7 +70,7 @@ Alias: addressCountry
 <details>
 ```yaml
 name: addressCountry
-description: The country as of  ISO 3166
+description: The country as of  ISO 3166.
 title: address Country
 from_schema: https://w3id.org/evorao/
 exact_mappings:

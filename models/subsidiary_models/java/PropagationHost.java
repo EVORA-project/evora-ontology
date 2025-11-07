@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The organism used to grow and multiply the pathogen under controlled conditions
+  The organism used to grow and multiply the pathogen under controlled conditions.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

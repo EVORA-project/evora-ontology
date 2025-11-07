@@ -3,7 +3,7 @@
 # Slot: funder (funder) 
 
 
-_The organization providing the financial support_
+_The organization providing the financial support._
 
 
 
@@ -70,7 +70,7 @@ Alias: funder
 <details>
 ```yaml
 name: funder
-description: The organization providing the financial support
+description: The organization providing the financial support.
 title: funder
 from_schema: https://w3id.org/evorao/
 close_mappings:

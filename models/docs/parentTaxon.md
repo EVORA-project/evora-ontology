@@ -3,7 +3,7 @@
 # Slot: parent taxon (parentTaxon) 
 
 
-_The parent taxon of the current taxon_
+_The parent taxon of the current taxon._
 
 
 
@@ -74,7 +74,7 @@ Alias: parentTaxon
 <details>
 ```yaml
 name: parentTaxon
-description: The parent taxon of the current taxon
+description: The parent taxon of the current taxon.
 title: parent taxon
 from_schema: https://w3id.org/evorao/
 exact_mappings:

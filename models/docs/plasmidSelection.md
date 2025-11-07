@@ -3,7 +3,7 @@
 # Slot: plasmid selection (plasmidSelection) 
 
 
-_Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid_
+_Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid._
 
 
 
@@ -74,7 +74,7 @@ Alias: plasmidSelection
 ```yaml
 name: plasmidSelection
 description: Specific selectable markers in the plasmid, such as antibiotic resistance
-  genes, used to identify and maintain cells that contain the plasmid
+  genes, used to identify and maintain cells that contain the plasmid.
 title: plasmid selection
 from_schema: https://w3id.org/evorao/
 rank: 1000

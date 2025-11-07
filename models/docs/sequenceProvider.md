@@ -3,7 +3,7 @@
 # Slot: sequence provider (sequenceProvider) 
 
 
-_The name of the sequence provider within the list of accepted sequence providers_
+_The name of the sequence provider within the list of accepted sequence providers._
 
 
 
@@ -73,7 +73,7 @@ Alias: sequenceProvider
 ```yaml
 name: sequenceProvider
 description: The name of the sequence provider within the list of accepted sequence
-  providers
+  providers.
 title: sequence provider
 from_schema: https://w3id.org/evorao/
 close_mappings:

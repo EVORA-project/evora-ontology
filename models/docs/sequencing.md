@@ -42,7 +42,7 @@ Alias: sequencing
 
 ## Comments
 
-* Cloned products have to be sequenced
+* Cloned products have to be sequenced.
 
 ## Identifier and Mapping Information
 
@@ -81,7 +81,7 @@ description: Refers to the level of sequencing performed on the nucleic acid. Po
   (the entire nucleic acid sequence has been determined).
 title: sequencing
 comments:
-- Cloned products have to be sequenced
+- Cloned products have to be sequenced.
 from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: sequencing

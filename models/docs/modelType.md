@@ -3,7 +3,7 @@
 # Slot: model type (modelType) 
 
 
-_The specific name of the infected organism, including its modification if necessary_
+_The specific name of the infected organism, including its modification if necessary._
 
 
 
@@ -70,7 +70,7 @@ Alias: modelType
 ```yaml
 name: modelType
 description: The specific name of the infected organism, including its modification
-  if necessary
+  if necessary.
 title: model type
 from_schema: https://w3id.org/evorao/
 rank: 1000

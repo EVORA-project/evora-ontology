@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics
+  A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

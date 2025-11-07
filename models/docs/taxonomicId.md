@@ -3,7 +3,7 @@
 # Slot: taxonomic ID (taxonomicId) 
 
 
-_The taxonomic identifier as a persistent identifier accross releases_
+_The taxonomic identifier as a persistent identifier accross releases._
 
 
 
@@ -81,7 +81,7 @@ Alias: taxonomicId
 <details>
 ```yaml
 name: taxonomicId
-description: The taxonomic identifier as a persistent identifier accross releases
+description: The taxonomic identifier as a persistent identifier accross releases.
 title: taxonomic ID
 from_schema: https://w3id.org/evorao/
 exact_mappings:

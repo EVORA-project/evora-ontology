@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  List of other names for things
+  List of other names for things.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

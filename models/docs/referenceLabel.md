@@ -3,7 +3,7 @@
 # Slot: reference label (referenceLabel) 
 
 
-_The label informing what this reference is about_
+_The label informing what this reference is about._
 
 
 
@@ -42,7 +42,7 @@ Alias: referenceLabel
 
 ## Comments
 
-* e.g., 'Infravec2 related product'
+* e.g., 'Infravec2 related product'.
 
 ## Identifier and Mapping Information
 
@@ -76,10 +76,10 @@ Alias: referenceLabel
 <details>
 ```yaml
 name: referenceLabel
-description: The label informing what this reference is about
+description: The label informing what this reference is about.
 title: reference label
 comments:
-- e.g., 'Infravec2 related product'
+- e.g., 'Infravec2 related product'.
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - dct:title

@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Word or phrase from a specialized area of knowledge
+  Word or phrase from a specialized area of knowledge.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

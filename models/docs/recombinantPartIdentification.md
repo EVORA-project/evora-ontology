@@ -3,7 +3,7 @@
 # Slot: recombinant part identification (recombinantPartIdentification) 
 
 
-_Identification of a recombinant part_
+_Identification of a recombinant part._
 
 
 
@@ -22,9 +22,9 @@ Alias: recombinantPartIdentification
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SyntheticPartOrigin](SyntheticPartOrigin.md) | Information on the origin of a synthetic part that composes the biological ma... |  no  |
-| [BiologicalPartOrigin](BiologicalPartOrigin.md) | Information on the origin of a unitary, cohesive part that is part of, or con... |  yes  |
 | [NaturalPartOrigin](NaturalPartOrigin.md) | Information on the origin of a natural part that composes the biological mate... |  no  |
+| [BiologicalPartOrigin](BiologicalPartOrigin.md) | Information on the origin of a unitary, cohesive part that is part of, or con... |  yes  |
+| [SyntheticPartOrigin](SyntheticPartOrigin.md) | Information on the origin of a synthetic part that composes the biological ma... |  no  |
 
 
 
@@ -42,7 +42,7 @@ Alias: recombinantPartIdentification
 
 ## Comments
 
-* Information not required if the current biological part constitutes the complete biological material
+* Information not required if the current biological part constitutes the complete biological material.
 
 ## Identifier and Mapping Information
 
@@ -75,11 +75,11 @@ Alias: recombinantPartIdentification
 <details>
 ```yaml
 name: recombinantPartIdentification
-description: Identification of a recombinant part
+description: Identification of a recombinant part.
 title: recombinant part identification
 comments:
 - Information not required if the current biological part constitutes the complete
-  biological material
+  biological material.
 from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: recombinantPartIdentification

@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Periodical journal publishing scientific research
+  Periodical journal publishing scientific research.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

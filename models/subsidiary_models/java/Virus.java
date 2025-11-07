@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The virus as a biological material
+  The virus as a biological material.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

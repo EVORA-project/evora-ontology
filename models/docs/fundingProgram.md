@@ -3,7 +3,7 @@
 # Slot: funding program (fundingProgram) 
 
 
-_Identifies the overarching financial framework, research initiative, or support mechanism that enables or contributes to the provision of a product or service. The value may correspond to a European funding framework (e.g. Horizon Europe), a specific research initiative (e.g. an EU project), or another public or private funding mechanism_
+_Identifies the overarching financial framework, research initiative, or support mechanism that enables or contributes to the provision of a product or service. The value may correspond to a European funding framework (e.g. Horizon Europe), a specific research initiative (e.g. an EU project), or another public or private funding mechanism._
 
 
 
@@ -73,7 +73,7 @@ description: Identifies the overarching financial framework, research initiative
   or support mechanism that enables or contributes to the provision of a product or
   service. The value may correspond to a European funding framework (e.g. Horizon
   Europe), a specific research initiative (e.g. an EU project), or another public
-  or private funding mechanism
+  or private funding mechanism.
 title: funding program
 from_schema: https://w3id.org/evorao/
 rank: 1000

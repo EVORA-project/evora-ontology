@@ -3,7 +3,7 @@
 # Slot: login token name (loginTokenName) 
 
 
-_The name of the token, unique identifier of an interaction session, that will have to be reused as credential in the query_
+_The name of the token, unique identifier of an interaction session, that will have to be reused as credential in the query._
 
 
 
@@ -71,7 +71,7 @@ Alias: loginTokenName
 ```yaml
 name: loginTokenName
 description: The name of the token, unique identifier of an interaction session, that
-  will have to be reused as credential in the query
+  will have to be reused as credential in the query.
 title: login token name
 from_schema: https://w3id.org/evorao/
 close_mappings:

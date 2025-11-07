@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A provider of products or services, as a specific organization
+  A provider of products or services, as a specific organization.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

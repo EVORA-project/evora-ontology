@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Subclass of File representing visual content such as pictures, diagrams, or illustrations
+  Subclass of File representing visual content such as pictures, diagrams, or illustrations.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

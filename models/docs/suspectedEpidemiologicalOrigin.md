@@ -3,7 +3,7 @@
 # Slot: suspected epidemiological origin (suspectedEpidemiologicalOrigin) 
 
 
-_The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted_
+_The potential geographical or environmental source from which the pathogen is believed to have originated or been transmitted._
 
 
 
@@ -22,13 +22,13 @@ Alias: suspectedEpidemiologicalOrigin
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 
 
 
@@ -79,7 +79,7 @@ Alias: suspectedEpidemiologicalOrigin
 ```yaml
 name: suspectedEpidemiologicalOrigin
 description: The potential geographical or environmental source from which the pathogen
-  is believed to have originated or been transmitted
+  is believed to have originated or been transmitted.
 title: suspected epidemiological origin
 from_schema: https://w3id.org/evorao/
 related_mappings:

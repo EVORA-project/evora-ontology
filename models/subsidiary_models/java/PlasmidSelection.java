@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers
+  The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

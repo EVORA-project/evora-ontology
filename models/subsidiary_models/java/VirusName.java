@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A virus vernacular name or a name that describes a group of viruses
+  A virus vernacular name or a name that describes a group of viruses.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

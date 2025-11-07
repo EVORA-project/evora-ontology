@@ -3,7 +3,7 @@
 # Slot: genome sequencing (genomeSequencing) 
 
 
-_The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material_
+_The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material._
 
 
 
@@ -22,13 +22,13 @@ Alias: genomeSequencing
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 
 
 
@@ -81,7 +81,7 @@ name: genomeSequencing
 description: The extent of the pathogen's genetic material that has been sequenced,
   with possible values including 'Complete genome' for the entire genome, 'Complete
   coding sequence' for all coding regions, and 'Partial sequence' for only a portion
-  of the genetic material
+  of the genetic material.
 title: genome sequencing
 from_schema: https://w3id.org/evorao/
 close_mappings:

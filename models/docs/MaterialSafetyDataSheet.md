@@ -3,7 +3,7 @@
 # Class: Material safety data sheet (MaterialSafetyDataSheet) 
 
 
-_A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product_
+_A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product._
 
 
 
@@ -157,7 +157,7 @@ URI: [EVORAO:MaterialSafetyDataSheet](https://w3id.org/evorao/MaterialSafetyData
 name: MaterialSafetyDataSheet
 description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized
   document that contains crucial occupational safety and health information related
-  to the product
+  to the product.
 title: Material safety data sheet
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -199,7 +199,7 @@ slot_usage:
     name: physicalChemicalProperties
     description: Key characteristics of the product, such as physical state, appearance,
       solubility, pH, chemical composition, and molecular weight, essential for safe
-      handling and storage
+      handling and storage.
     title: physical and chemical properties and information on ingredients
     domain_of:
     - MaterialSafetyDataSheet
@@ -303,7 +303,7 @@ slot_usage:
     name: toxicologicalInformation
     description: Details on the potential health effects of the product, including
       routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic
-      toxicity and symptoms of exposure
+      toxicity and symptoms of exposure.
     title: toxicological information
     domain_of:
     - MaterialSafetyDataSheet
@@ -385,7 +385,7 @@ slot_usage:
 name: MaterialSafetyDataSheet
 description: A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized
   document that contains crucial occupational safety and health information related
-  to the product
+  to the product.
 title: Material safety data sheet
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -411,7 +411,7 @@ slot_usage:
     name: physicalChemicalProperties
     description: Key characteristics of the product, such as physical state, appearance,
       solubility, pH, chemical composition, and molecular weight, essential for safe
-      handling and storage
+      handling and storage.
     title: physical and chemical properties and information on ingredients
     domain_of:
     - MaterialSafetyDataSheet
@@ -515,7 +515,7 @@ slot_usage:
     name: toxicologicalInformation
     description: Details on the potential health effects of the product, including
       routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic
-      toxicity and symptoms of exposure
+      toxicity and symptoms of exposure.
     title: toxicological information
     domain_of:
     - MaterialSafetyDataSheet
@@ -610,7 +610,7 @@ attributes:
     name: physicalChemicalProperties
     description: Key characteristics of the product, such as physical state, appearance,
       solubility, pH, chemical composition, and molecular weight, essential for safe
-      handling and storage
+      handling and storage.
     title: physical and chemical properties and information on ingredients
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -746,7 +746,7 @@ attributes:
     name: toxicologicalInformation
     description: Details on the potential health effects of the product, including
       routes of exposure (inhalation, ingestion, skin, eye contact), acute and chronic
-      toxicity and symptoms of exposure
+      toxicity and symptoms of exposure.
     title: toxicological information
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -843,7 +843,7 @@ attributes:
     multivalued: false
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -857,10 +857,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -878,10 +878,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -898,12 +898,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -919,11 +919,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

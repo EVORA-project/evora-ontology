@@ -3,7 +3,7 @@
 # Slot: alpha 2 code (alpha2Code) 
 
 
-_Two-letter country codes from ISO 3166-1 alpha-2_
+_Two-letter country codes from ISO 3166-1 alpha-2._
 
 
 
@@ -74,7 +74,7 @@ Alias: alpha2Code
 <details>
 ```yaml
 name: alpha2Code
-description: Two-letter country codes from ISO 3166-1 alpha-2
+description: Two-letter country codes from ISO 3166-1 alpha-2.
 title: alpha 2 code
 from_schema: https://w3id.org/evorao/
 exact_mappings:

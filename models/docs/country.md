@@ -3,7 +3,7 @@
 # Slot: country (country) 
 
 
-_The country of the organization_
+_The country of the organization._
 
 
 
@@ -22,9 +22,9 @@ Alias: country
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
 | [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
 
 
 
@@ -73,7 +73,7 @@ Alias: country
 <details>
 ```yaml
 name: country
-description: The country of the organization
+description: The country of the organization.
 title: country
 from_schema: https://w3id.org/evorao/
 rank: 1000

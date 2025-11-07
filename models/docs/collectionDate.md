@@ -3,7 +3,7 @@
 # Slot: collection date (collectionDate) 
 
 
-_The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property_
+_The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property._
 
 
 
@@ -75,7 +75,7 @@ Alias: collectionDate
 name: collectionDate
 description: The date when the sample was collected in situ. If unknown/private, use
   a proxy date such as 'date received' and indicate this by setting to true the before
-  date property
+  date property.
 title: collection date
 from_schema: https://w3id.org/evorao/
 related_mappings:

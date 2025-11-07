@@ -3,7 +3,7 @@
 # Slot: taxon data provider (taxonDataProvider) 
 
 
-_The data provider for the taxons of the taxonomy_
+_The data provider for the taxons of the taxonomy._
 
 
 
@@ -69,7 +69,7 @@ Alias: taxonDataProvider
 <details>
 ```yaml
 name: taxonDataProvider
-description: The data provider for the taxons of the taxonomy
+description: The data provider for the taxons of the taxonomy.
 title: taxon data provider
 from_schema: https://w3id.org/evorao/
 rank: 1000

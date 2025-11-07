@@ -3,7 +3,7 @@
 # Slot: postal code (postalCode) 
 
 
-_The postal code_
+_The postal code._
 
 
 
@@ -71,7 +71,7 @@ Alias: postalCode
 <details>
 ```yaml
 name: postalCode
-description: The postal code
+description: The postal code.
 title: postal code
 from_schema: https://w3id.org/evorao/
 exact_mappings:

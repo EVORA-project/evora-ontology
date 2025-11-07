@@ -3,7 +3,7 @@
 # Slot: term data provider (termDataProvider) 
 
 
-_An external API or Endpoint that permits to retrieve the terms of this vocabulary_
+_An external API or Endpoint that permits to retrieve the terms of this vocabulary._
 
 
 
@@ -70,7 +70,7 @@ Alias: termDataProvider
 ```yaml
 name: termDataProvider
 description: An external API or Endpoint that permits to retrieve the terms of this
-  vocabulary
+  vocabulary.
 title: term data provider
 from_schema: https://w3id.org/evorao/
 rank: 1000

@@ -3,7 +3,7 @@
 # Slot: serotype (serotype) 
 
 
-_Genetically related pathogens that group together based on serological relationships_
+_Genetically related pathogens that group together based on serological relationships._
 
 
 
@@ -70,7 +70,7 @@ Alias: serotype
 ```yaml
 name: serotype
 description: Genetically related pathogens that group together based on serological
-  relationships
+  relationships.
 title: serotype
 from_schema: https://w3id.org/evorao/
 rank: 1000

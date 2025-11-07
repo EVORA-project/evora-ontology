@@ -3,7 +3,7 @@
 # Slot: endpoint URL (endpointUrl) 
 
 
-_The URL template that allows to get the content_
+_The URL template that allows to get the content._
 
 
 
@@ -22,8 +22,8 @@ Alias: endpointUrl
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  no  |
 | [DataService](DataService.md) | A collection of operations that provides access to one or more datasets or da... |  yes  |
+| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  no  |
 
 
 
@@ -74,7 +74,7 @@ Alias: endpointUrl
 <details>
 ```yaml
 name: endpointUrl
-description: The URL template that allows to get the content
+description: The URL template that allows to get the content.
 title: endpoint URL
 from_schema: https://w3id.org/evorao/
 exact_mappings:

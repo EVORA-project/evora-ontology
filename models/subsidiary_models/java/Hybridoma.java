@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  An hybridoma that provides antibodies that can be related to a pathogen
+  An hybridoma that provides antibodies that can be related to a pathogen.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

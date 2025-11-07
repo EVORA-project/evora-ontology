@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources
+  An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

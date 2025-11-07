@@ -3,7 +3,7 @@
 # Slot: description of modification(s) made from the reference sequence(s) (descriptionOfModificationsMadeFromTheReferenceSequences) 
 
 
-_List the modifications mades from the reference sequence if any_
+_List the modifications mades from the reference sequence if any._
 
 
 
@@ -72,7 +72,7 @@ Alias: descriptionOfModificationsMadeFromTheReferenceSequences
 <details>
 ```yaml
 name: descriptionOfModificationsMadeFromTheReferenceSequences
-description: List the modifications mades from the reference sequence if any
+description: List the modifications mades from the reference sequence if any.
 title: description of modification(s) made from the reference sequence(s)
 from_schema: https://w3id.org/evorao/
 related_mappings:

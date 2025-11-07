@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A term used to classify a group of products that share common characteristics or functions, which helps in their organization
+  A term used to classify a group of products that share common characteristics or functions, which helps in their organization.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

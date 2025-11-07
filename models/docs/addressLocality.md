@@ -3,7 +3,7 @@
 # Slot: locality/city (addressLocality) 
 
 
-_The locality in which the street address is, and which is in the region. e.g, the city_
+_The locality in which the street address is, and which is in the region. e.g, the city._
 
 
 
@@ -72,7 +72,7 @@ Alias: addressLocality
 ```yaml
 name: addressLocality
 description: The locality in which the street address is, and which is in the region.
-  e.g, the city
+  e.g, the city.
 title: locality/city
 from_schema: https://w3id.org/evorao/
 exact_mappings:

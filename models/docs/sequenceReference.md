@@ -3,7 +3,7 @@
 # Slot: sequence reference (sequenceReference) 
 
 
-_A reference that permits to retrieve the sequence information from a sequence provider_
+_A reference that permits to retrieve the sequence information from a sequence provider._
 
 
 
@@ -22,9 +22,9 @@ Alias: sequenceReference
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Sequence](Sequence.md) | A nucleic acid or protein sequence information |  yes  |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [Sequence](Sequence.md) | A nucleic acid or protein sequence information |  yes  |
 
 
 
@@ -76,7 +76,7 @@ Alias: sequenceReference
 ```yaml
 name: sequenceReference
 description: A reference that permits to retrieve the sequence information from a
-  sequence provider
+  sequence provider.
 title: sequence reference
 from_schema: https://w3id.org/evorao/
 rank: 1000

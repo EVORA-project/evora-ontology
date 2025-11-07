@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The IPLC area (Indigenous People and Local Communities) from which a physical item originates
+  The IPLC area (Indigenous People and Local Communities) from which a physical item originates.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

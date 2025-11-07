@@ -3,7 +3,7 @@
 # Slot: strain (strain) 
 
 
-_Identifier given to a genetic variant within a single species_
+_Identifier given to a genetic variant within a single species._
 
 
 
@@ -71,7 +71,7 @@ Alias: strain
 <details>
 ```yaml
 name: strain
-description: Identifier given to a genetic variant within a single species
+description: Identifier given to a genetic variant within a single species.
 title: strain
 from_schema: https://w3id.org/evorao/
 rank: 1000

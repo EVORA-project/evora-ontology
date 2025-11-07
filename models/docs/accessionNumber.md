@@ -3,7 +3,7 @@
 # Slot: accession number (accessionNumber) 
 
 
-_The sequence ID that permits to retrieve the sequence information from the sequence provider_
+_The sequence ID that permits to retrieve the sequence information from the sequence provider._
 
 
 
@@ -82,7 +82,7 @@ Alias: accessionNumber
 ```yaml
 name: accessionNumber
 description: The sequence ID that permits to retrieve the sequence information from
-  the sequence provider
+  the sequence provider.
 title: accession number
 from_schema: https://w3id.org/evorao/
 related_mappings:

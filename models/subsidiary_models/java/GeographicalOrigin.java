@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The specific location or region where a physical item, originates or is naturally found
+  The specific location or region where a physical item, originates or is naturally found.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

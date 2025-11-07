@@ -3,7 +3,7 @@
 # Slot: query method (queryMethod) 
 
 
-_The http request method used to access the requested query url_
+_The http request method used to access the requested query url._
 
 
 
@@ -73,7 +73,7 @@ Alias: queryMethod
 <details>
 ```yaml
 name: queryMethod
-description: The http request method used to access the requested query url
+description: The http request method used to access the requested query url.
 title: query method
 from_schema: https://w3id.org/evorao/
 close_mappings:

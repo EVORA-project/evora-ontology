@@ -3,7 +3,7 @@
 # Slot: login request method (loginRequestMethod) 
 
 
-_The http request method used to acces the login request url_
+_The http request method used to acces the login request url._
 
 
 
@@ -71,7 +71,7 @@ Alias: loginRequestMethod
 <details>
 ```yaml
 name: loginRequestMethod
-description: The http request method used to acces the login request url
+description: The http request method used to acces the login request url.
 title: login request method
 from_schema: https://w3id.org/evorao/
 close_mappings:

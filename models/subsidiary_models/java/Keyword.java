@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A term or phrase used to tag and categorize content
+  A term or phrase used to tag and categorize content.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

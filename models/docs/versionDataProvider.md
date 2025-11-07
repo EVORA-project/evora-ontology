@@ -3,7 +3,7 @@
 # Slot: version data provider (versionDataProvider) 
 
 
-_The data provider for the Version ID of this taxonomy_
+_The data provider for the Version ID of this taxonomy._
 
 
 
@@ -71,7 +71,7 @@ Alias: versionDataProvider
 <details>
 ```yaml
 name: versionDataProvider
-description: The data provider for the Version ID of this taxonomy
+description: The data provider for the Version ID of this taxonomy.
 title: version data provider
 from_schema: https://w3id.org/evorao/
 rank: 1000

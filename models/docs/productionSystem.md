@@ -3,7 +3,7 @@
 # Slot: production system (productionSystem) 
 
 
-_The biological and technological methods and processes used to produce the antibody_
+_The biological and technological methods and processes used to produce the antibody._
 
 
 
@@ -73,7 +73,7 @@ Alias: productionSystem
 ```yaml
 name: productionSystem
 description: The biological and technological methods and processes used to produce
-  the antibody
+  the antibody.
 title: production system
 from_schema: https://w3id.org/evorao/
 rank: 1000

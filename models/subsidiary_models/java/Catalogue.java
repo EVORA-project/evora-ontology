@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A curated collection of metadata about resources
+  A curated collection of metadata about resources.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

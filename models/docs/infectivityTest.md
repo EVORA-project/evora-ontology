@@ -3,7 +3,7 @@
 # Slot: infectivity Test (infectivityTest) 
 
 
-_The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism_
+_The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism._
 
 
 
@@ -22,13 +22,13 @@ Alias: infectivityTest
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 
 
 
@@ -78,7 +78,7 @@ Alias: infectivityTest
 name: infectivityTest
 description: The description of the completed infectivity test, providing details
   on the methods, conditions, and results of the test used to assess the pathogen's
-  ability to infect a host organism
+  ability to infect a host organism.
 title: infectivity Test
 from_schema: https://w3id.org/evorao/
 related_mappings:

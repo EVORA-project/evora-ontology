@@ -3,7 +3,7 @@
 # Slot: licensing or attribution (licensingOrAttribution) 
 
 
-_A text or html code that provides any related data sharing licence and/or attribution_
+_A text or html code that provides any related data sharing licence and/or attribution._
 
 
 
@@ -72,7 +72,7 @@ Alias: licensingOrAttribution
 ```yaml
 name: licensingOrAttribution
 description: A text or html code that provides any related data sharing licence and/or
-  attribution
+  attribution.
 title: licensing or attribution
 from_schema: https://w3id.org/evorao/
 exact_mappings:

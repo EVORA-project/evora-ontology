@@ -3,7 +3,7 @@
 # Slot: sequence FASTA (sequenceFasta) 
 
 
-_Textual encoding of a biological sequence information in FASTA format_
+_Textual encoding of a biological sequence information in FASTA format._
 
 
 
@@ -40,7 +40,7 @@ Alias: sequenceFasta
 
 ## Comments
 
-* In cases where no reference sequence exists in public repositories, the corresponding FASTA sequence is expected; otherwise, the reference sequence is sufficient. In FASTA format the line before the nucleotide sequence, called the FASTA definition line, must begin with a charater ('>'), followed by a unique SeqID (sequence identifier). In case the sequence is made of multiple parts several fasta sequences can be provided
+* In cases where no reference sequence exists in public repositories, the corresponding FASTA sequence is expected; otherwise, the reference sequence is sufficient. In FASTA format the line before the nucleotide sequence, called the FASTA definition line, must begin with a charater ('>'), followed by a unique SeqID (sequence identifier). In case the sequence is made of multiple parts several fasta sequences can be provided.
 
 ## Identifier and Mapping Information
 
@@ -73,14 +73,14 @@ Alias: sequenceFasta
 <details>
 ```yaml
 name: sequenceFasta
-description: Textual encoding of a biological sequence information in FASTA format
+description: Textual encoding of a biological sequence information in FASTA format.
 title: sequence FASTA
 comments:
 - In cases where no reference sequence exists in public repositories, the corresponding
   FASTA sequence is expected; otherwise, the reference sequence is sufficient. In
   FASTA format the line before the nucleotide sequence, called the FASTA definition
   line, must begin with a charater ('>'), followed by a unique SeqID (sequence identifier).
-  In case the sequence is made of multiple parts several fasta sequences can be provided
+  In case the sequence is made of multiple parts several fasta sequences can be provided.
 from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: sequenceFasta

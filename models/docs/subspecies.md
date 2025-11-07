@@ -3,7 +3,7 @@
 # Slot: subspecies (subspecies) 
 
 
-_The subspecies information differentiates closely related pathogens within a single species_
+_The subspecies information differentiates closely related pathogens within a single species._
 
 
 
@@ -70,7 +70,7 @@ Alias: subspecies
 ```yaml
 name: subspecies
 description: The subspecies information differentiates closely related pathogens within
-  a single species
+  a single species.
 title: subspecies
 from_schema: https://w3id.org/evorao/
 rank: 1000

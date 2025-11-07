@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility
+  A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

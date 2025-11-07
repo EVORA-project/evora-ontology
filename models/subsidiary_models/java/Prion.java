@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  The prion as a biological material
+  The prion as a biological material.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

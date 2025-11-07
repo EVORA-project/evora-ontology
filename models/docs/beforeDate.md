@@ -3,7 +3,7 @@
 # Slot: before date (beforeDate) 
 
 
-_Set to TRUE if a proxy date for the collection date is used_
+_Set to TRUE if a proxy date for the collection date is used._
 
 
 
@@ -72,7 +72,7 @@ Alias: beforeDate
 <details>
 ```yaml
 name: beforeDate
-description: Set to TRUE if a proxy date for the collection date is used
+description: Set to TRUE if a proxy date for the collection date is used.
 title: before date
 from_schema: https://w3id.org/evorao/
 related_mappings:

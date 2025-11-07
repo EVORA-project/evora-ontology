@@ -3,7 +3,7 @@
 # Slot: alt text (altText) 
 
 
-_An alternate text for the image, if the image cannot be displayed_
+_An alternate text for the image, if the image cannot be displayed._
 
 
 
@@ -72,7 +72,7 @@ Alias: altText
 <details>
 ```yaml
 name: altText
-description: An alternate text for the image, if the image cannot be displayed
+description: An alternate text for the image, if the image cannot be displayed.
 title: alt text
 from_schema: https://w3id.org/evorao/
 exact_mappings:

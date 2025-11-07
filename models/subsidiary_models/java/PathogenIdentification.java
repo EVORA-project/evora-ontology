@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A collection of distinguishing information that enables the differentiation of a pathogen from another
+  A collection of distinguishing information that enables the differentiation of a pathogen from another.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

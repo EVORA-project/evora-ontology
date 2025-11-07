@@ -3,7 +3,7 @@
 # Slot: standard operating procedure file (standardOperatingProcedureFile) 
 
 
-_The related standard operating procedure file (SOP)_
+_The related standard operating procedure file (SOP)._
 
 
 
@@ -71,7 +71,7 @@ Alias: standardOperatingProcedureFile
 <details>
 ```yaml
 name: standardOperatingProcedureFile
-description: The related standard operating procedure file (SOP)
+description: The related standard operating procedure file (SOP).
 title: standard operating procedure file
 from_schema: https://w3id.org/evorao/
 rank: 1000

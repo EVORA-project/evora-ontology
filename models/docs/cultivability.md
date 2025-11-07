@@ -3,7 +3,7 @@
 # Slot: cultivability (cultivability) 
 
 
-_The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'_
+_The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'._
 
 
 
@@ -22,13 +22,13 @@ Alias: cultivability
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 
 
 
@@ -48,7 +48,7 @@ Alias: cultivability
 
 ## Comments
 
-* Might also be related to a product sub-category that helps filtering
+* Might also be related to a product sub-category that helps filtering.
 
 ## Identifier and Mapping Information
 
@@ -83,10 +83,10 @@ Alias: cultivability
 name: cultivability
 description: The ability of the pathogen to be cultivated or grown in laboratory conditions.
   Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated
-  pathogen'
+  pathogen'.
 title: cultivability
 comments:
-- Might also be related to a product sub-category that helps filtering
+- Might also be related to a product sub-category that helps filtering.
 from_schema: https://w3id.org/evorao/
 rank: 1000
 ifabsent: string(Cultivable)

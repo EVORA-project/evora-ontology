@@ -3,7 +3,7 @@
 # Class: Provider (Provider) 
 
 
-_A provider of products or services, as a specific organization_
+_A provider of products or services, as a specific organization._
 
 
 
@@ -190,7 +190,7 @@ URI: [EVORAO:Provider](https://w3id.org/evorao/Provider)
 <details>
 ```yaml
 name: Provider
-description: A provider of products or services, as a specific organization
+description: A provider of products or services, as a specific organization.
 title: Provider
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -207,7 +207,7 @@ slots:
 slot_usage:
   memberOfRi:
     name: memberOfRi
-    description: The research infrastructure of which this organization is a member
+    description: The research infrastructure of which this organization is a member.
     title: member of RI
     broad_mappings:
     - schema:memberOf
@@ -225,7 +225,7 @@ slot_usage:
 <details>
 ```yaml
 name: Provider
-description: A provider of products or services, as a specific organization
+description: A provider of products or services, as a specific organization.
 title: Provider
 from_schema: https://w3id.org/evorao/
 close_mappings:
@@ -240,7 +240,7 @@ is_a: Organization
 slot_usage:
   memberOfRi:
     name: memberOfRi
-    description: The research infrastructure of which this organization is a member
+    description: The research infrastructure of which this organization is a member.
     title: member of RI
     broad_mappings:
     - schema:memberOf
@@ -252,7 +252,7 @@ slot_usage:
 attributes:
   memberOfRi:
     name: memberOfRi
-    description: The research infrastructure of which this organization is a member
+    description: The research infrastructure of which this organization is a member.
     title: member of RI
     from_schema: https://w3id.org/evorao/
     broad_mappings:
@@ -267,12 +267,12 @@ attributes:
     multivalued: true
   alternateName:
     name: alternateName
-    description: Any other name under which the entity can be known
+    description: Any other name under which the entity can be known.
     title: alternate name
     comments:
     - This includes previous names, acronyms, former taxonomic terms, and other variations.
       This information can serve as keywords for search purposes and as a bridge with
-      other projects that use different naming systems or taxonomies
+      other projects that use different naming systems or taxonomies.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:alternateName
@@ -294,7 +294,7 @@ attributes:
     multivalued: true
   country:
     name: country
-    description: The country of the organization
+    description: The country of the organization.
     title: country
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -309,7 +309,7 @@ attributes:
   rorId:
     name: rorId
     description: The corresponding organization's persistent identifier from the Research
-      Organization Registry (ROR)
+      Organization Registry (ROR).
     title: ROR iD
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -328,7 +328,7 @@ attributes:
     multivalued: false
   name:
     name: name
-    description: A word or set of words used to identify and refer to an entity
+    description: A word or set of words used to identify and refer to an entity.
     title: name
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -351,15 +351,13 @@ attributes:
   description:
     name: description
     description: A short explanation of the characteristics, features, or nature of
-      the current item
+      the current item.
     title: description
     comments:
     - Describe this item in few lines. This description will serve as a summary to
       present the resource.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - schema:description
-    close_mappings:
     - schema:description
     rank: 1000
     slot_uri: dct:description
@@ -381,7 +379,7 @@ attributes:
     multivalued: false
   homePage:
     name: homePage
-    description: A web page that serves as the main or introductory page
+    description: A web page that serves as the main or introductory page.
     title: home page
     from_schema: https://w3id.org/evorao/
     close_mappings:
@@ -397,7 +395,7 @@ attributes:
     multivalued: false
   contactPoint:
     name: contactPoint
-    description: An information that allows someone to establish communication
+    description: An information that allows someone to establish communication.
     title: contact point
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -415,7 +413,7 @@ attributes:
     multivalued: false
   logo:
     name: logo
-    description: A path or URL to the related logo
+    description: A path or URL to the related logo.
     title: logo
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -433,7 +431,7 @@ attributes:
     multivalued: false
   keyword:
     name: keyword
-    description: A keyword or tag describing the resource
+    description: A keyword or tag describing the resource.
     title: keyword
     from_schema: https://w3id.org/evorao/
     rank: 1000
@@ -447,10 +445,10 @@ attributes:
     multivalued: true
   dateIssued:
     name: dateIssued
-    description: Date of formal issuance (e.g., publication) of the resource
+    description: Date of formal issuance (e.g., publication) of the resource.
     title: date issued
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000051
@@ -468,10 +466,10 @@ attributes:
     multivalued: false
   dateModified:
     name: dateModified
-    description: Most recent date on which the resource was changed, updated or modified
+    description: Most recent date on which the resource was changed, updated or modified.
     title: date modified
     comments:
-    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME]
+    - encoded using the relevant ISO 8601 Date and Time compliant string [DATETIME].
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - sepio:0000036
@@ -488,12 +486,12 @@ attributes:
     multivalued: false
   identifier:
     name: identifier
-    description: A unique identifier of the resource being described or cataloged
+    description: A unique identifier of the resource being described or cataloged.
     title: identifier
     comments:
     - The identifier is a text string which is assigned to the resource to provide
       an unambiguous reference within a particular context. Persistent identifiers
-      should be provided as HTTP URIs
+      should be provided as HTTP URIs.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - schema:identifier
@@ -509,11 +507,11 @@ attributes:
   iri:
     name: iri
     description: International Resource Identifier (IRI) that uniquely identifies
-      or refers to the resource. IRIs include URIs, and URIs include URLs
+      or refers to the resource. IRIs include URIs, and URIs include URLs.
     title: IRI
     comments:
     - An IRI is a global identifier standardized by IETF RFC 3987. It may or may not
-      be resolvable on the web. IRIs include URIs, and URIs include URLs
+      be resolvable on the web. IRIs include URIs, and URIs include URLs.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - biolink:iri

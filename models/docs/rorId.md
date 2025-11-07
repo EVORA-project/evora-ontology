@@ -3,7 +3,7 @@
 # Slot: ROR iD (rorId) 
 
 
-_The corresponding organization's persistent identifier from the Research Organization Registry (ROR)_
+_The corresponding organization's persistent identifier from the Research Organization Registry (ROR)._
 
 
 
@@ -27,9 +27,9 @@ Alias: rorId
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
 | [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
 
 
 
@@ -83,7 +83,7 @@ Alias: rorId
 ```yaml
 name: rorId
 description: The corresponding organization's persistent identifier from the Research
-  Organization Registry (ROR)
+  Organization Registry (ROR).
 title: ROR iD
 from_schema: https://w3id.org/evorao/
 exact_mappings:

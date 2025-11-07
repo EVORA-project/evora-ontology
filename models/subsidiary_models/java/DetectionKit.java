@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A detection kit for specific pathogens
+  A detection kit for specific pathogens.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

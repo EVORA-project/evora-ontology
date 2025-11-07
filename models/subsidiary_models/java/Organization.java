@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A social entity established to meet needs or pursue specific goals
+  A social entity established to meet needs or pursue specific goals.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

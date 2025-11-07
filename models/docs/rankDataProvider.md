@@ -3,7 +3,7 @@
 # Slot: rank data provider (rankDataProvider) 
 
 
-_The data provider for the description of the taxonomic ranks used in this taxonomy_
+_The data provider for the description of the taxonomic ranks used in this taxonomy._
 
 
 
@@ -70,7 +70,7 @@ Alias: rankDataProvider
 ```yaml
 name: rankDataProvider
 description: The data provider for the description of the taxonomic ranks used in
-  this taxonomy
+  this taxonomy.
 title: rank data provider
 from_schema: https://w3id.org/evorao/
 rank: 1000

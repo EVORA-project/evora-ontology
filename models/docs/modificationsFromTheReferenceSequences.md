@@ -3,7 +3,7 @@
 # Slot: modifications from the reference sequence(s) (modificationsFromTheReferenceSequences) 
 
 
-_Set to TRUE if there was is any modification made from the reference sequence_
+_Set to TRUE if there was is any modification made from the reference sequence._
 
 
 
@@ -73,7 +73,7 @@ Alias: modificationsFromTheReferenceSequences
 ```yaml
 name: modificationsFromTheReferenceSequences
 description: Set to TRUE if there was is any modification made from the reference
-  sequence
+  sequence.
 title: modifications from the reference sequence(s)
 from_schema: https://w3id.org/evorao/
 related_mappings:

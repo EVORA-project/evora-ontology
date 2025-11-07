@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Subclass of File representing textual or written files such as reports, manuals, or forms
+  Subclass of File representing textual or written files such as reports, manuals, or forms.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  An individual
+  An individual.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

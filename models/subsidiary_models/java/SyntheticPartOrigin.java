@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Information on the origin of a synthetic part that composes the biological material
+  Information on the origin of a synthetic part that composes the biological material.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

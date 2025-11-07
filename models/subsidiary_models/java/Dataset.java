@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  A collection of data, published or curated by a single agent, and available for access
+  A collection of data, published or curated by a single agent, and available for access.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

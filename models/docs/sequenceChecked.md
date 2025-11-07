@@ -3,7 +3,7 @@
 # Slot: sequence checked (sequenceChecked) 
 
 
-_Tell whether or not the sequence of the product was controlled (compulsory for cloned products)_
+_Tell whether or not the sequence of the product was controlled (compulsory for cloned products)._
 
 
 
@@ -42,7 +42,7 @@ Alias: sequenceChecked
 
 ## Comments
 
-* Sequence check is mandatory for cloned products
+* Sequence check is mandatory for cloned products.
 
 ## Identifier and Mapping Information
 
@@ -77,10 +77,10 @@ Alias: sequenceChecked
 ```yaml
 name: sequenceChecked
 description: Tell whether or not the sequence of the product was controlled (compulsory
-  for cloned products)
+  for cloned products).
 title: sequence checked
 comments:
-- Sequence check is mandatory for cloned products
+- Sequence check is mandatory for cloned products.
 from_schema: https://w3id.org/evorao/
 related_mappings:
 - iceo:0000336

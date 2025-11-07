@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-06T15:33:30
+# Generation date: 2025-11-07T08:23:41
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10170"
+version = "1.0.10537"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -134,7 +134,7 @@ DEFAULT_ = EVORAO
 @dataclass(repr=False)
 class Resource(YAMLRoot):
     """
-    Resource published or curated by a single agent
+    Resource published or curated by a single agent.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -178,7 +178,7 @@ class Resource(YAMLRoot):
 @dataclass(repr=False)
 class Dataset(Resource):
     """
-    A collection of data, published or curated by a single agent, and available for access
+    A collection of data, published or curated by a single agent, and available for access.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -213,7 +213,7 @@ class Dataset(Resource):
 @dataclass(repr=False)
 class DataService(Resource):
     """
-    A collection of operations that provides access to one or more datasets or data processing functions
+    A collection of operations that provides access to one or more datasets or data processing functions.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -249,7 +249,7 @@ class DataService(Resource):
 @dataclass(repr=False)
 class Version(Resource):
     """
-    Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
+    Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards).
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -283,7 +283,7 @@ class Version(Resource):
 @dataclass(repr=False)
 class Catalogue(Dataset):
     """
-    A curated collection of metadata about resources
+    A curated collection of metadata about resources.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -300,7 +300,7 @@ class Catalogue(Dataset):
 class Taxonomy(Catalogue):
     """
     A structured representation of data about the classification and naming of biological organisms into groups
-    according to shared characteristics
+    according to shared characteristics.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -352,7 +352,7 @@ class Taxonomy(Catalogue):
 @dataclass(repr=False)
 class DataProvider(DataService):
     """
-    An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources
+    An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -412,7 +412,7 @@ class DataProvider(DataService):
 @dataclass(repr=False)
 class PathogenIdentification(Resource):
     """
-    A collection of distinguishing information that enables the differentiation of a pathogen from another
+    A collection of distinguishing information that enables the differentiation of a pathogen from another.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -476,7 +476,7 @@ class PathogenIdentification(Resource):
 @dataclass(repr=False)
 class Publication(Resource):
     """
-    A scientific publication
+    A scientific publication.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -520,7 +520,7 @@ class Publication(Resource):
 @dataclass(repr=False)
 class Vocabulary(Catalogue):
     """
-    A subset of words or phrases specific to a particular subject or field
+    A subset of words or phrases specific to a particular subject or field.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -547,7 +547,7 @@ class Vocabulary(Catalogue):
 @dataclass(repr=False)
 class Term(Resource):
     """
-    Word or phrase from a specialized area of knowledge
+    Word or phrase from a specialized area of knowledge.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -587,7 +587,7 @@ class Term(Resource):
 class CommonName(Term):
     """
     Vernacular name that is the name used in everyday language to refer to something like an organism or group of
-    organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name
+    organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -615,7 +615,7 @@ class CommonName(Term):
 @dataclass(repr=False)
 class VirusName(CommonName):
     """
-    A virus vernacular name or a name that describes a group of viruses
+    A virus vernacular name or a name that describes a group of viruses.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -631,7 +631,7 @@ class VirusName(CommonName):
 @dataclass(repr=False)
 class AlternateName(Term):
     """
-    List of other names for things
+    List of other names for things.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -660,7 +660,7 @@ class AlternateName(Term):
 class RiskGroup(Term):
     """
     Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate
-    to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence
+    to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -676,7 +676,7 @@ class RiskGroup(Term):
 @dataclass(repr=False)
 class BiosafetyLevel(Term):
     """
-    The level of biocontainment required or applied in the facility where the biological agent is manipulated
+    The level of biocontainment required or applied in the facility where the biological agent is manipulated.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -693,7 +693,7 @@ class BiosafetyLevel(Term):
 class Doi(Term):
     """
     A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and
-    access. The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard
+    access. The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -709,7 +709,7 @@ class Doi(Term):
 @dataclass(repr=False)
 class Journal(Term):
     """
-    Periodical journal publishing scientific research
+    Periodical journal publishing scientific research.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -725,7 +725,7 @@ class Journal(Term):
 @dataclass(repr=False)
 class PdbReference(Term):
     """
-    Identifier for 3D structural data as per the PDB (Protein Data Bank) database
+    Identifier for 3D structural data as per the PDB (Protein Data Bank) database.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -741,7 +741,7 @@ class PdbReference(Term):
 @dataclass(repr=False)
 class Keyword(Term):
     """
-    A term or phrase used to tag and categorize content
+    A term or phrase used to tag and categorize content.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -759,7 +759,7 @@ class TagSequence(Term):
     """
     The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest,
     used to facilitate experimental operations such as purification, detection, localization, tracking, solubility
-    enhancement, or selection. Applicable to both proteins and nucleic acids
+    enhancement, or selection. Applicable to both proteins and nucleic acids.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -793,7 +793,7 @@ class SpecialFeature(Term):
 class ExpressionVector(Term):
     """
     A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein
-    expression
+    expression.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -810,7 +810,7 @@ class ExpressionVector(Term):
 class PlasmidSelection(Term):
     """
     The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic
-    resistance markers
+    resistance markers.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -826,7 +826,7 @@ class PlasmidSelection(Term):
 @dataclass(repr=False)
 class PropagationHost(Term):
     """
-    The organism used to grow and multiply the pathogen under controlled conditions
+    The organism used to grow and multiply the pathogen under controlled conditions.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -842,7 +842,7 @@ class PropagationHost(Term):
 @dataclass(repr=False)
 class TransmissionMethod(Term):
     """
-    The process by which the pathogen spreads between hosts
+    The process by which the pathogen spreads between hosts.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -859,7 +859,7 @@ class TransmissionMethod(Term):
 class ProductionCellLine(Term):
     """
     A population of cells that originates from a primary culture, adapted to grow and divide under laboratory
-    conditions. Used in biotechnology to consistently produce biological substances
+    conditions. Used in biotechnology to consistently produce biological substances.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -876,7 +876,7 @@ class ProductionCellLine(Term):
 class ProductCategory(Term):
     """
     A term used to classify a group of products that share common characteristics or functions, which helps in their
-    organization
+    organization.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -900,7 +900,7 @@ class ProductCategory(Term):
 @dataclass(repr=False)
 class IsolationHost(Term):
     """
-    Host organism from which the pathogen was isolated
+    Host organism from which the pathogen was isolated.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -916,7 +916,7 @@ class IsolationHost(Term):
 @dataclass(repr=False)
 class GeographicalOrigin(Term):
     """
-    The specific location or region where a physical item, originates or is naturally found
+    The specific location or region where a physical item, originates or is naturally found.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -932,7 +932,7 @@ class GeographicalOrigin(Term):
 @dataclass(repr=False)
 class IplcOrigin(GeographicalOrigin):
     """
-    The IPLC area (Indigenous People and Local Communities) from which a physical item originates
+    The IPLC area (Indigenous People and Local Communities) from which a physical item originates.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -948,7 +948,7 @@ class IplcOrigin(GeographicalOrigin):
 @dataclass(repr=False)
 class Country(Term):
     """
-    The country as of ISO3166
+    The country as of ISO3166.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -975,7 +975,7 @@ class Country(Term):
 class IataClassification(Term):
     """
     The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are
-    transported by air
+    transported by air.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -992,7 +992,7 @@ class IataClassification(Term):
 class Variant(CommonName):
     """
     An organism with one or more new mutations is referred to as a “variant” of the original organism if not
-    sufficiently different to be termed a distinct strain
+    sufficiently different to be termed a distinct strain.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1008,7 +1008,7 @@ class Variant(CommonName):
 @dataclass(repr=False)
 class TaxonomicRank(Term):
     """
-    The possible taxonomic ranks and their description
+    The possible taxonomic ranks and their description.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1032,7 +1032,7 @@ class TaxonomicRank(Term):
 class Taxon(Term):
     """
     Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form
-    a unit
+    a unit.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1092,7 +1092,7 @@ class ClinicalGroup(Term):
     """
     A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system
     affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups
-    are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health
+    are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1120,7 +1120,7 @@ class ClinicalGroup(Term):
 @dataclass(repr=False)
 class ExternalRelatedReference(Resource):
     """
-    A reference that permits to retrieve an item from an external provider
+    A reference that permits to retrieve an item from an external provider.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1166,7 +1166,7 @@ class ExternalRelatedReference(Resource):
 @dataclass(repr=False)
 class Sequence(Resource):
     """
-    A nucleic acid or protein sequence information
+    A nucleic acid or protein sequence information.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1190,7 +1190,7 @@ class Sequence(Resource):
 @dataclass(repr=False)
 class SequenceReference(Resource):
     """
-    A reference that permits to retrieve the sequence information from a sequence provider
+    A reference that permits to retrieve the sequence information from a sequence provider.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1224,7 +1224,7 @@ class SequenceReference(Resource):
 @dataclass(repr=False)
 class PersonOrOrganization(Resource):
     """
-    A person or an organization
+    A person or an organization.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1263,7 +1263,7 @@ class PersonOrOrganization(Resource):
 @dataclass(repr=False)
 class Person(PersonOrOrganization):
     """
-    An individual
+    An individual.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1288,7 +1288,7 @@ class Person(PersonOrOrganization):
 @dataclass(repr=False)
 class Organization(PersonOrOrganization):
     """
-    A social entity established to meet needs or pursue specific goals
+    A social entity established to meet needs or pursue specific goals.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1320,7 +1320,7 @@ class Organization(PersonOrOrganization):
 @dataclass(repr=False)
 class ReasearchInfrastructure(Organization):
     """
-    A research infrastructure (RI)
+    A research infrastructure (RI).
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1334,7 +1334,7 @@ class ReasearchInfrastructure(Organization):
 @dataclass(repr=False)
 class Provider(Organization):
     """
-    A provider of products or services, as a specific organization
+    A provider of products or services, as a specific organization.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1356,7 +1356,7 @@ class Provider(Organization):
 class Originator(PersonOrOrganization):
     """
     The individual or organization responsible for the original discovery, isolation, or creation of an item,
-    providing information about the source or origin of the sample
+    providing information about the source or origin of the sample.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1371,7 +1371,7 @@ class Originator(PersonOrOrganization):
 class BiologicalMaterialOrigin(Resource):
     """
     Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing
-    of genetic resources in compliance with the Nagoya Protocol
+    of genetic resources in compliance with the Nagoya Protocol.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1406,7 +1406,7 @@ class BiologicalMaterialOrigin(Resource):
 class BiologicalPartOrigin(Resource):
     """
     Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It
-    can be multiple parts in case of a recombinant biological material
+    can be multiple parts in case of a recombinant biological material.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1433,7 +1433,7 @@ class BiologicalPartOrigin(Resource):
 @dataclass(repr=False)
 class NaturalPartOrigin(BiologicalPartOrigin):
     """
-    Information on the origin of a natural part that composes the biological material
+    Information on the origin of a natural part that composes the biological material.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1477,7 +1477,7 @@ class NaturalPartOrigin(BiologicalPartOrigin):
 @dataclass(repr=False)
 class SyntheticPartOrigin(BiologicalPartOrigin):
     """
-    Information on the origin of a synthetic part that composes the biological material
+    Information on the origin of a synthetic part that composes the biological material.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1505,7 +1505,7 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
 @dataclass(repr=False)
 class RecombinantPartIdentification(Resource):
     """
-    Identification of a recombinant part
+    Identification of a recombinant part.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1535,7 +1535,7 @@ class RecombinantPartIdentification(Resource):
 @dataclass(repr=False)
 class Collection(Catalogue):
     """
-    Set of products and services with some common characteristics
+    Set of products and services with some common characteristics.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1562,7 +1562,7 @@ class Collection(Catalogue):
 @dataclass(repr=False)
 class ProductOrService(Dataset):
     """
-    An offering provided by a provider, which may be tangible (a product) or intangible (a service)
+    An offering provided by a provider, which may be tangible (a product) or intangible (a service).
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1710,7 +1710,7 @@ class ProductOrService(Dataset):
 class Service(ProductOrService):
     """
     An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to
-    fulfill a user’s need
+    fulfill a user’s need.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1747,7 +1747,7 @@ class Service(ProductOrService):
 @dataclass(repr=False)
 class Product(ProductOrService):
     """
-    A tangible, physical item made available by a provider for use, consumption, or ownership transfer
+    A tangible, physical item made available by a provider for use, consumption, or ownership transfer.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1814,7 +1814,7 @@ class Product(ProductOrService):
 @dataclass(repr=False)
 class Antibody(Product):
     """
-    Protein that can bind to certain types of foreign bodies, such as pathogens
+    Protein that can bind to certain types of foreign bodies, such as pathogens.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1871,7 +1871,7 @@ class Antibody(Product):
 @dataclass(repr=False)
 class Hybridoma(Antibody):
     """
-    An hybridoma that provides antibodies that can be related to a pathogen
+    An hybridoma that provides antibodies that can be related to a pathogen.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1912,7 +1912,7 @@ class Hybridoma(Antibody):
 @dataclass(repr=False)
 class Protein(Product):
     """
-    A protein as a derived product from a pathogen
+    A protein as a derived product from a pathogen.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2013,7 +2013,7 @@ class Protein(Product):
 @dataclass(repr=False)
 class NucleicAcid(Product):
     """
-    Nucleic acid related to a pathogen. It can be extracted or synthetic
+    Nucleic acid related to a pathogen. It can be extracted or synthetic.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2118,7 +2118,7 @@ class NucleicAcid(Product):
 @dataclass(repr=False)
 class DetectionKit(Product):
     """
-    A detection kit for specific pathogens
+    A detection kit for specific pathogens.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2168,7 +2168,7 @@ class DetectionKit(Product):
 class Bundle(Product):
     """
     A grouping of products and/or services intentionally combined into a single offering, typically to provide added
-    value, convenience, or specific experimental utility
+    value, convenience, or specific experimental utility.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2206,7 +2206,7 @@ class Bundle(Product):
 class Pathogen(Product):
     """
     Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such
-    as a virus, bacterium, protozoan, prion, viroid, or fungus
+    as a virus, bacterium, protozoan, prion, viroid, or fungus.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2320,7 +2320,7 @@ class Pathogen(Product):
 @dataclass(repr=False)
 class Virus(Pathogen):
     """
-    The virus as a biological material
+    The virus as a biological material.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2374,7 +2374,7 @@ class Virus(Pathogen):
 @dataclass(repr=False)
 class Bacterium(Pathogen):
     """
-    The bacterium as a biological material
+    The bacterium as a biological material.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2409,7 +2409,7 @@ class Bacterium(Pathogen):
 @dataclass(repr=False)
 class Fungus(Pathogen):
     """
-    The fungus as a biological material
+    The fungus as a biological material.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2444,7 +2444,7 @@ class Fungus(Pathogen):
 @dataclass(repr=False)
 class Protozoan(Pathogen):
     """
-    The protozoan as a biological material
+    The protozoan as a biological material.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2479,7 +2479,7 @@ class Protozoan(Pathogen):
 @dataclass(repr=False)
 class Viroid(Pathogen):
     """
-    The viroid as a biological material
+    The viroid as a biological material.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2514,7 +2514,7 @@ class Viroid(Pathogen):
 @dataclass(repr=False)
 class Prion(Pathogen):
     """
-    The prion as a biological material
+    The prion as a biological material.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2550,7 +2550,7 @@ class Prion(Pathogen):
 class MaterialSafetyDataSheet(Resource):
     """
     A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial
-    occupational safety and health information related to the product
+    occupational safety and health information related to the product.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2634,7 +2634,7 @@ class MaterialSafetyDataSheet(Resource):
 @dataclass(repr=False)
 class File(Resource):
     """
-    Digital document or record stored in a specific format that contains data or information
+    Digital document or record stored in a specific format that contains data or information.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2678,7 +2678,7 @@ class File(Resource):
 class Data(File):
     """
     Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer
-    of information
+    of information.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2694,7 +2694,7 @@ class Data(File):
 @dataclass(repr=False)
 class Document(File):
     """
-    Subclass of File representing textual or written files such as reports, manuals, or forms
+    Subclass of File representing textual or written files such as reports, manuals, or forms.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2710,7 +2710,7 @@ class Document(File):
 @dataclass(repr=False)
 class Audio(File):
     """
-    Subclass of File representing sound recordings or audio tracks
+    Subclass of File representing sound recordings or audio tracks.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2726,7 +2726,7 @@ class Audio(File):
 @dataclass(repr=False)
 class Video(File):
     """
-    Subclass of File representing moving visual media, such as recordings, presentations, or movies
+    Subclass of File representing moving visual media, such as recordings, presentations, or movies.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2742,7 +2742,7 @@ class Video(File):
 @dataclass(repr=False)
 class Image(File):
     """
-    Subclass of File representing visual content such as pictures, diagrams, or illustrations
+    Subclass of File representing visual content such as pictures, diagrams, or illustrations.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2766,7 +2766,7 @@ class Image(File):
 @dataclass(repr=False)
 class ContactPoint(Resource):
     """
-    Entity serving as focal point of information
+    Entity serving as focal point of information.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2826,7 +2826,7 @@ class ContactPoint(Resource):
 class License(Resource):
     """
     The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any
-    restrictions or permissions
+    restrictions or permissions.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2866,7 +2866,7 @@ class License(Resource):
 class Certification(Resource):
     """
     Assurance given by an independent certification body that a product, service or system meets the requirements of a
-    standard
+    standard.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2905,7 +2905,7 @@ class Certification(Resource):
 class FundingSource(Resource):
     """
     A program, grant, or project providing financial support for the access or use of a product or service, either
-    fully or partially
+    fully or partially.
     """
     _inherited_slots: ClassVar[list[str]] = []
 

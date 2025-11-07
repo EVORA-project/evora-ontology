@@ -3,7 +3,7 @@
 # Slot: reference provider name (referenceProviderName) 
 
 
-_The name for the reference provider_
+_The name for the reference provider._
 
 
 
@@ -72,7 +72,7 @@ Alias: referenceProviderName
 <details>
 ```yaml
 name: referenceProviderName
-description: The name for the reference provider
+description: The name for the reference provider.
 title: reference provider name
 from_schema: https://w3id.org/evorao/
 close_mappings:

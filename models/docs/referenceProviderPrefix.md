@@ -3,7 +3,7 @@
 # Slot: reference provider prefix (referenceProviderPrefix) 
 
 
-_The url prefix that once completed with the reference will lead to the linked external resource_
+_The url prefix that once completed with the reference will lead to the linked external resource._
 
 
 
@@ -73,7 +73,7 @@ Alias: referenceProviderPrefix
 ```yaml
 name: referenceProviderPrefix
 description: The url prefix that once completed with the reference will lead to the
-  linked external resource
+  linked external resource.
 title: reference provider prefix
 from_schema: https://w3id.org/evorao/
 related_mappings:

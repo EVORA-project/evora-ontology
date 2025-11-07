@@ -3,7 +3,7 @@
 # Slot: hybridoma description (hybridomaDescription) 
 
 
-_The description of the hybridoma_
+_The description of the hybridoma._
 
 
 
@@ -71,7 +71,7 @@ Alias: hybridomaDescription
 <details>
 ```yaml
 name: hybridomaDescription
-description: The description of the hybridoma
+description: The description of the hybridoma.
 title: hybridoma description
 from_schema: https://w3id.org/evorao/
 rank: 1000

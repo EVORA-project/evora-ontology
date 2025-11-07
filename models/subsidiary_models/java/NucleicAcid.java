@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Nucleic acid related to a pathogen. It can be extracted or synthetic
+  Nucleic acid related to a pathogen. It can be extracted or synthetic.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

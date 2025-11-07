@@ -3,7 +3,7 @@
 # Slot: license (license) 
 
 
-_Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions_
+_Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions._
 
 
 
@@ -22,12 +22,12 @@ Alias: license
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
-| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
 | [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
-| [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
-| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
+| [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
+| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
 | [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
+| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
+| [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
 | [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  yes  |
 
 
@@ -78,7 +78,7 @@ Alias: license
 ```yaml
 name: license
 description: Information about terms and conditions under which the subject can be
-  used, shared, or distributed, indicating any restrictions or permissions
+  used, shared, or distributed, indicating any restrictions or permissions.
 title: license
 from_schema: https://w3id.org/evorao/
 exact_mappings:

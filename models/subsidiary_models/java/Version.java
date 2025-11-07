@@ -5,11 +5,11 @@ import lombok.*;
 
 
 
-/* version: 1.0.10170 */
+/* version: 1.0.10537 */
 
 
 /**
-  Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)
+  Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards).
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

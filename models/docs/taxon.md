@@ -3,7 +3,7 @@
 # Slot: taxon (taxon) 
 
 
-_Scientifically classified group or entity within the reference taxonomy_
+_Scientifically classified group or entity within the reference taxonomy._
 
 
 
@@ -22,8 +22,8 @@ Alias: taxon
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ClinicalGroup](ClinicalGroup.md) | A syndromic grouping of pathogens, based on typical disease manifestation, cl... |  yes  |
 | [PathogenIdentification](PathogenIdentification.md) | A collection of distinguishing information that enables the differentiation o... |  yes  |
+| [ClinicalGroup](ClinicalGroup.md) | A syndromic grouping of pathogens, based on typical disease manifestation, cl... |  yes  |
 | [Taxonomy](Taxonomy.md) | A structured representation of data about the classification and naming of bi... |  yes  |
 
 
@@ -44,7 +44,7 @@ Alias: taxon
 
 ## Comments
 
-* The taxon of the highest rank known that can be used to classify a pathogen or group of pathogens (e.g viruses) in the reference taxonomy
+* The taxon of the highest rank known that can be used to classify a pathogen or group of pathogens (e.g viruses) in the reference taxonomy.
 
 ## Identifier and Mapping Information
 
@@ -79,11 +79,11 @@ Alias: taxon
 <details>
 ```yaml
 name: taxon
-description: Scientifically classified group or entity within the reference taxonomy
+description: Scientifically classified group or entity within the reference taxonomy.
 title: taxon
 comments:
 - The taxon of the highest rank known that can be used to classify a pathogen or group
-  of pathogens (e.g viruses) in the reference taxonomy
+  of pathogens (e.g viruses) in the reference taxonomy.
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - schema:taxonomicRange

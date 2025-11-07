@@ -3,7 +3,7 @@
 # Slot: cloned into plasmid (clonedIntoPlasmid) 
 
 
-_The plasmid into which the nucleic acid has been cloned_
+_The plasmid into which the nucleic acid has been cloned._
 
 
 
@@ -71,7 +71,7 @@ Alias: clonedIntoPlasmid
 <details>
 ```yaml
 name: clonedIntoPlasmid
-description: The plasmid into which the nucleic acid has been cloned
+description: The plasmid into which the nucleic acid has been cloned.
 title: cloned into plasmid
 from_schema: https://w3id.org/evorao/
 rank: 1000
