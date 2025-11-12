@@ -1,16 +1,16 @@
 
 
-# Slot: production system (productionSystem) 
+# Slot: antibody characterization observation (antibodyCharacterizationObservation) 
 
 
-_The biological and technological methods and processes used to produce the antibody._
+_A statement summarizing observed characteristics, behaviors, or findings derived from the antibody characterization process._
 
 
 
 
 
-URI: [EVORAO:productionSystem](https://w3id.org/evorao/productionSystem)
-Alias: productionSystem
+URI: [EVORAO:antibodyCharacterizationObservation](https://w3id.org/evorao/antibodyCharacterizationObservation)
+Alias: antibodyCharacterizationObservation
 
 <!-- no inheritance hierarchy -->
 
@@ -34,8 +34,6 @@ Alias: productionSystem
 ## Properties
 
 * Range: [String](String.md)
-
-* Recommended: True
 
 
 
@@ -61,8 +59,8 @@ Alias: productionSystem
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORAO:productionSystem |
-| native | EVORAO:productionSystem |
+| self | EVORAO:antibodyCharacterizationObservation |
+| native | EVORAO:antibodyCharacterizationObservation |
 
 
 
@@ -71,18 +69,17 @@ Alias: productionSystem
 
 <details>
 ```yaml
-name: productionSystem
-description: The biological and technological methods and processes used to produce
-  the antibody.
-title: production system
+name: antibodyCharacterizationObservation
+description: A statement summarizing observed characteristics, behaviors, or findings
+  derived from the antibody characterization process.
+title: antibody characterization observation
 from_schema: https://w3id.org/evorao/
 rank: 1000
-alias: productionSystem
+alias: antibodyCharacterizationObservation
 domain_of:
 - Antibody
 range: string
 required: false
-recommended: true
 multivalued: false
 
 ```

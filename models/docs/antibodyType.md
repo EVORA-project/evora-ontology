@@ -1,16 +1,16 @@
 
 
-# Slot: production system (productionSystem) 
+# Slot: antibody type (antibodyType) 
 
 
-_The biological and technological methods and processes used to produce the antibody._
+_The specification of the class of antibody based on its production method or biological origin. Expected values are "Polyclonal", "Monoclonal" or "Serum"_
 
 
 
 
 
-URI: [EVORAO:productionSystem](https://w3id.org/evorao/productionSystem)
-Alias: productionSystem
+URI: [EVORAO:antibodyType](https://w3id.org/evorao/antibodyType)
+Alias: antibodyType
 
 <!-- no inheritance hierarchy -->
 
@@ -61,8 +61,9 @@ Alias: productionSystem
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORAO:productionSystem |
-| native | EVORAO:productionSystem |
+| self | EVORAO:antibodyType |
+| native | EVORAO:antibodyType |
+| related | bao:0000503, bao:0000507 |
 
 
 
@@ -71,19 +72,26 @@ Alias: productionSystem
 
 <details>
 ```yaml
-name: productionSystem
-description: The biological and technological methods and processes used to produce
-  the antibody.
-title: production system
+name: antibodyType
+description: The specification of the class of antibody based on its production method
+  or biological origin. Expected values are "Polyclonal", "Monoclonal" or "Serum"
+title: antibody type
 from_schema: https://w3id.org/evorao/
+related_mappings:
+- bao:0000503
+- bao:0000507
 rank: 1000
-alias: productionSystem
+alias: antibodyType
 domain_of:
 - Antibody
 range: string
 required: false
 recommended: true
 multivalued: false
+equals_string_in:
+- Monoclonal
+- Polyclonal
+- Serum
 
 ```
 </details>

@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-07T11:02:43
+# Generation date: 2025-11-12T14:12:39
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10635"
+version = "1.0.10720"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1865,6 +1865,9 @@ class Antibody(Product):
     availability: str = "on request"
     productionSystem: Optional[str] = None
     sequenceReference: Optional[Union[Union[dict, SequenceReference], list[Union[dict, SequenceReference]]]] = empty_list()
+    antibodyType: Optional[str] = None
+    antibodyCharacterizationMethod: Optional[Union[str, list[str]]] = empty_list()
+    antibodyCharacterizationObservation: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.antibodyPurifiedByAffinity):
@@ -1886,6 +1889,16 @@ class Antibody(Product):
             self.productionSystem = str(self.productionSystem)
 
         self._normalize_inlined_as_dict(slot_name="sequenceReference", slot_type=SequenceReference, key_name="accessionNumber", keyed=False)
+
+        if self.antibodyType is not None and not isinstance(self.antibodyType, str):
+            self.antibodyType = str(self.antibodyType)
+
+        if not isinstance(self.antibodyCharacterizationMethod, list):
+            self.antibodyCharacterizationMethod = [self.antibodyCharacterizationMethod] if self.antibodyCharacterizationMethod is not None else []
+        self.antibodyCharacterizationMethod = [v if isinstance(v, str) else str(v) for v in self.antibodyCharacterizationMethod]
+
+        if self.antibodyCharacterizationObservation is not None and not isinstance(self.antibodyCharacterizationObservation, str):
+            self.antibodyCharacterizationObservation = str(self.antibodyCharacterizationObservation)
 
         super().__post_init__(**kwargs)
 
@@ -3372,6 +3385,15 @@ slots.specificityDocumented = Slot(uri=EVORAO.specificityDocumented, name="speci
 slots.targetedAntigen = Slot(uri=EVORAO.targetedAntigen, name="targetedAntigen", curie=EVORAO.curie('targetedAntigen'),
                    model_uri=EVORAO.targetedAntigen, domain=None, range=str)
 
+slots.antibodyType = Slot(uri=EVORAO.antibodyType, name="antibodyType", curie=EVORAO.curie('antibodyType'),
+                   model_uri=EVORAO.antibodyType, domain=None, range=Optional[str])
+
+slots.antibodyCharacterizationMethod = Slot(uri=EVORAO.antibodyCharacterizationMethod, name="antibodyCharacterizationMethod", curie=EVORAO.curie('antibodyCharacterizationMethod'),
+                   model_uri=EVORAO.antibodyCharacterizationMethod, domain=None, range=Optional[Union[str, list[str]]])
+
+slots.antibodyCharacterizationObservation = Slot(uri=EVORAO.antibodyCharacterizationObservation, name="antibodyCharacterizationObservation", curie=EVORAO.curie('antibodyCharacterizationObservation'),
+                   model_uri=EVORAO.antibodyCharacterizationObservation, domain=None, range=Optional[str])
+
 slots.hybridomaDescription = Slot(uri=EVORAO.hybridomaDescription, name="hybridomaDescription", curie=EVORAO.curie('hybridomaDescription'),
                    model_uri=EVORAO.hybridomaDescription, domain=None, range=str)
 
@@ -4043,6 +4065,15 @@ slots.Antibody_targetedAntigen = Slot(uri=EVORAO.targetedAntigen, name="Antibody
 
 slots.Antibody_sequenceReference = Slot(uri=EVORAO.sequenceReference, name="Antibody_sequenceReference", curie=EVORAO.curie('sequenceReference'),
                    model_uri=EVORAO.Antibody_sequenceReference, domain=Antibody, range=Optional[Union[Union[dict, SequenceReference], list[Union[dict, SequenceReference]]]])
+
+slots.Antibody_antibodyType = Slot(uri=EVORAO.antibodyType, name="Antibody_antibodyType", curie=EVORAO.curie('antibodyType'),
+                   model_uri=EVORAO.Antibody_antibodyType, domain=Antibody, range=Optional[str])
+
+slots.Antibody_antibodyCharacterizationMethod = Slot(uri=EVORAO.antibodyCharacterizationMethod, name="Antibody_antibodyCharacterizationMethod", curie=EVORAO.curie('antibodyCharacterizationMethod'),
+                   model_uri=EVORAO.Antibody_antibodyCharacterizationMethod, domain=Antibody, range=Optional[Union[str, list[str]]])
+
+slots.Antibody_antibodyCharacterizationObservation = Slot(uri=EVORAO.antibodyCharacterizationObservation, name="Antibody_antibodyCharacterizationObservation", curie=EVORAO.curie('antibodyCharacterizationObservation'),
+                   model_uri=EVORAO.Antibody_antibodyCharacterizationObservation, domain=Antibody, range=Optional[str])
 
 slots.Hybridoma_hybridomaDescription = Slot(uri=EVORAO.hybridomaDescription, name="Hybridoma_hybridomaDescription", curie=EVORAO.curie('hybridomaDescription'),
                    model_uri=EVORAO.Hybridoma_hybridomaDescription, domain=Hybridoma, range=str)

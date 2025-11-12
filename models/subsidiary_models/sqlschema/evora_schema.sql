@@ -520,6 +520,8 @@
 --     * Slot: antibodyPurifiedByAffinity Description: Indicates whether or not if the antibody was purified by affinity.
 --     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented.
 --     * Slot: targetedAntigen Description: Specific molecular structure or epitope recognized and bound by an antibody.
+--     * Slot: antibodyType Description: The specification of the class of antibody based on its production method or biological origin. Expected values are "Polyclonal", "Monoclonal" or "Serum"
+--     * Slot: antibodyCharacterizationObservation Description: A statement summarizing observed characteristics, behaviors, or findings derived from the antibody characterization process.
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
@@ -558,6 +560,8 @@
 --     * Slot: antibodyPurifiedByAffinity Description: Indicates whether or not if the antibody was purified by affinity.
 --     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented.
 --     * Slot: targetedAntigen Description: Specific molecular structure or epitope recognized and bound by an antibody.
+--     * Slot: antibodyType Description: The specification of the class of antibody based on its production method or biological origin. Expected values are "Polyclonal", "Monoclonal" or "Serum"
+--     * Slot: antibodyCharacterizationObservation Description: A statement summarizing observed characteristics, behaviors, or findings derived from the antibody characterization process.
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
@@ -1852,6 +1856,9 @@
 -- # Class: "Antibody_sequenceReference" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider.
+-- # Class: "Antibody_antibodyCharacterizationMethod" Description: ""
+--     * Slot: Antibody_id Description: Autocreated FK slot
+--     * Slot: antibodyCharacterizationMethod Description: A method used to determine the specificity, affinity, or functionality of an antibody or antiserum.
 -- # Class: "Antibody_additionalCategory" Description: ""
 --     * Slot: Antibody_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
@@ -1894,6 +1901,9 @@
 -- # Class: "Hybridoma_sequenceReference" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: sequenceReference_id Description: A reference that permits to retrieve the sequence information from a sequence provider.
+-- # Class: "Hybridoma_antibodyCharacterizationMethod" Description: ""
+--     * Slot: Hybridoma_id Description: Autocreated FK slot
+--     * Slot: antibodyCharacterizationMethod Description: A method used to determine the specificity, affinity, or functionality of an antibody or antiserum.
 -- # Class: "Hybridoma_additionalCategory" Description: ""
 --     * Slot: Hybridoma_id Description: Autocreated FK slot
 --     * Slot: additionalCategory_id Description: Any category apart from its main category in which this product or service can fit.
@@ -4643,6 +4653,8 @@ CREATE TABLE "Antibody" (
 	"antibodyPurifiedByAffinity" BOOLEAN NOT NULL, 
 	"specificityDocumented" BOOLEAN NOT NULL, 
 	"targetedAntigen" TEXT NOT NULL, 
+	"antibodyType" TEXT, 
+	"antibodyCharacterizationObservation" TEXT, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
@@ -4691,6 +4703,8 @@ CREATE TABLE "Hybridoma" (
 	"antibodyPurifiedByAffinity" BOOLEAN NOT NULL, 
 	"specificityDocumented" BOOLEAN NOT NULL, 
 	"targetedAntigen" TEXT NOT NULL, 
+	"antibodyType" TEXT, 
+	"antibodyCharacterizationObservation" TEXT, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
@@ -5790,6 +5804,12 @@ CREATE TABLE "Antibody_sequenceReference" (
 	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id), 
 	FOREIGN KEY("sequenceReference_id") REFERENCES "SequenceReference" (id)
 );
+CREATE TABLE "Antibody_antibodyCharacterizationMethod" (
+	"Antibody_id" INTEGER, 
+	"antibodyCharacterizationMethod" TEXT, 
+	PRIMARY KEY ("Antibody_id", "antibodyCharacterizationMethod"), 
+	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id)
+);
 CREATE TABLE "Antibody_additionalCategory" (
 	"Antibody_id" INTEGER, 
 	"additionalCategory_id" INTEGER, 
@@ -5884,6 +5904,12 @@ CREATE TABLE "Hybridoma_sequenceReference" (
 	PRIMARY KEY ("Hybridoma_id", "sequenceReference_id"), 
 	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id), 
 	FOREIGN KEY("sequenceReference_id") REFERENCES "SequenceReference" (id)
+);
+CREATE TABLE "Hybridoma_antibodyCharacterizationMethod" (
+	"Hybridoma_id" INTEGER, 
+	"antibodyCharacterizationMethod" TEXT, 
+	PRIMARY KEY ("Hybridoma_id", "antibodyCharacterizationMethod"), 
+	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id)
 );
 CREATE TABLE "Hybridoma_additionalCategory" (
 	"Hybridoma_id" INTEGER, 

@@ -39,7 +39,13 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
     click ProductCategory href "../ProductCategory"
 
         
+      Antibody : antibodyCharacterizationMethod
+        
+      Antibody : antibodyCharacterizationObservation
+        
       Antibody : antibodyPurifiedByAffinity
+        
+      Antibody : antibodyType
         
       Antibody : availability
         
@@ -285,6 +291,9 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
 | [specificityDocumented](specificityDocumented.md) | 1 <br/> [Boolean](Boolean.md) | Boolean value indicating whether the specificity of the product has been form... | direct |
 | [targetedAntigen](targetedAntigen.md) | 1 <br/> [String](String.md) | Specific molecular structure or epitope recognized and bound by an antibody | direct |
 | [sequenceReference](sequenceReference.md) | * _recommended_ <br/> [SequenceReference](SequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... | direct |
+| [antibodyType](antibodyType.md) | 0..1 _recommended_ <br/> [String](String.md) | The specification of the class of antibody based on its production method or ... | direct |
+| [antibodyCharacterizationMethod](antibodyCharacterizationMethod.md) | * <br/> [String](String.md) | A method used to determine the specificity, affinity, or functionality of an ... | direct |
+| [antibodyCharacterizationObservation](antibodyCharacterizationObservation.md) | 0..1 <br/> [String](String.md) | A statement summarizing observed characteristics, behaviors, or findings deri... | direct |
 | [iataClassification](iataClassification.md) | 1 <br/> [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
 | [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [ReasearchInfrastructure](ReasearchInfrastructure.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
@@ -360,7 +369,7 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
 | ---  | ---  |
 | self | EVORAO:Antibody |
 | native | EVORAO:Antibody |
-| close | wd:Q79460, snomed:68498002, wd:Q79460, snomed:68498002 |
+| close | wd:Q79460, snomed:68498002, bao:0000502, wd:Q79460, snomed:68498002, bao:0000502 |
 
 
 
@@ -383,8 +392,10 @@ from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q79460
 - snomed:68498002
+- bao:0000502
 - wd:Q79460
 - snomed:68498002
+- bao:0000502
 is_a: Product
 slots:
 - productionSystem
@@ -392,6 +403,9 @@ slots:
 - specificityDocumented
 - targetedAntigen
 - sequenceReference
+- antibodyType
+- antibodyCharacterizationMethod
+- antibodyCharacterizationObservation
 slot_usage:
   productionSystem:
     name: productionSystem
@@ -446,6 +460,41 @@ slot_usage:
     required: false
     recommended: true
     multivalued: true
+  antibodyType:
+    name: antibodyType
+    description: The specification of the class of antibody based on its production
+      method or biological origin. Expected values are "Polyclonal", "Monoclonal"
+      or "Serum"
+    title: antibody type
+    related_mappings:
+    - bao:0000503
+    - bao:0000507
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  antibodyCharacterizationMethod:
+    name: antibodyCharacterizationMethod
+    description: A method used to determine the specificity, affinity, or functionality
+      of an antibody or antiserum.
+    title: antibody characterization method
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    multivalued: true
+  antibodyCharacterizationObservation:
+    name: antibodyCharacterizationObservation
+    description: A statement summarizing observed characteristics, behaviors, or findings
+      derived from the antibody characterization process.
+    title: antibody characterization observation
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    multivalued: false
 
 ```
 </details>
@@ -461,8 +510,10 @@ from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q79460
 - snomed:68498002
+- bao:0000502
 - wd:Q79460
 - snomed:68498002
+- bao:0000502
 is_a: Product
 slot_usage:
   productionSystem:
@@ -518,6 +569,41 @@ slot_usage:
     required: false
     recommended: true
     multivalued: true
+  antibodyType:
+    name: antibodyType
+    description: The specification of the class of antibody based on its production
+      method or biological origin. Expected values are "Polyclonal", "Monoclonal"
+      or "Serum"
+    title: antibody type
+    related_mappings:
+    - bao:0000503
+    - bao:0000507
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+  antibodyCharacterizationMethod:
+    name: antibodyCharacterizationMethod
+    description: A method used to determine the specificity, affinity, or functionality
+      of an antibody or antiserum.
+    title: antibody characterization method
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    multivalued: true
+  antibodyCharacterizationObservation:
+    name: antibodyCharacterizationObservation
+    description: A statement summarizing observed characteristics, behaviors, or findings
+      derived from the antibody characterization process.
+    title: antibody characterization observation
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    multivalued: false
 attributes:
   productionSystem:
     name: productionSystem
@@ -592,6 +678,64 @@ attributes:
     required: false
     recommended: true
     multivalued: true
+  antibodyType:
+    name: antibodyType
+    description: The specification of the class of antibody based on its production
+      method or biological origin. Expected values are "Polyclonal", "Monoclonal"
+      or "Serum"
+    title: antibody type
+    from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - bao:0000503
+    - bao:0000507
+    rank: 1000
+    alias: antibodyType
+    owner: Antibody
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+    equals_string_in:
+    - Monoclonal
+    - Polyclonal
+    - Serum
+  antibodyCharacterizationMethod:
+    name: antibodyCharacterizationMethod
+    description: A method used to determine the specificity, affinity, or functionality
+      of an antibody or antiserum.
+    title: antibody characterization method
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    alias: antibodyCharacterizationMethod
+    owner: Antibody
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    multivalued: true
+    equals_string_in:
+    - Western blot
+    - ELISA
+    - IFA
+    - Neutralisation
+    - Immunoprecipitation
+    - Biophysical method
+  antibodyCharacterizationObservation:
+    name: antibodyCharacterizationObservation
+    description: A statement summarizing observed characteristics, behaviors, or findings
+      derived from the antibody characterization process.
+    title: antibody characterization observation
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    alias: antibodyCharacterizationObservation
+    owner: Antibody
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    multivalued: false
   iataClassification:
     name: iataClassification
     description: The corresponding International Air Transport Association (IATA)'s

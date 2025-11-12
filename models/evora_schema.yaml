@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10635
+version: 1.0.10720
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1889,6 +1889,52 @@ slots:
     - Antibody
     range: string
     required: true
+    multivalued: false
+  antibodyType:
+    description: The specification of the class of antibody based on its production
+      method or biological origin. Expected values are "Polyclonal", "Monoclonal"
+      or "Serum"
+    title: antibody type
+    from_schema: https://w3id.org/evorao/
+    related_mappings:
+    - bao:0000503
+    - bao:0000507
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    recommended: true
+    multivalued: false
+    equals_string_in:
+    - Monoclonal
+    - Polyclonal
+    - Serum
+  antibodyCharacterizationMethod:
+    description: A method used to determine the specificity, affinity, or functionality
+      of an antibody or antiserum.
+    title: antibody characterization method
+    from_schema: https://w3id.org/evorao/
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    multivalued: true
+    equals_string_in:
+    - Western blot
+    - ELISA
+    - IFA
+    - Neutralisation
+    - Immunoprecipitation
+    - Biophysical method
+  antibodyCharacterizationObservation:
+    description: A statement summarizing observed characteristics, behaviors, or findings
+      derived from the antibody characterization process.
+    title: antibody characterization observation
+    from_schema: https://w3id.org/evorao/
+    domain_of:
+    - Antibody
+    range: string
+    required: false
     multivalued: false
   hybridomaDescription:
     description: The description of the hybridoma.
@@ -5766,8 +5812,10 @@ classes:
     close_mappings:
     - wd:Q79460
     - snomed:68498002
+    - bao:0000502
     - wd:Q79460
     - snomed:68498002
+    - bao:0000502
     is_a: Product
     slots:
     - productionSystem
@@ -5775,6 +5823,9 @@ classes:
     - specificityDocumented
     - targetedAntigen
     - sequenceReference
+    - antibodyType
+    - antibodyCharacterizationMethod
+    - antibodyCharacterizationObservation
     slot_usage:
       productionSystem:
         description: The biological and technological methods and processes used to
@@ -5822,6 +5873,38 @@ classes:
         required: false
         recommended: true
         multivalued: true
+      antibodyType:
+        description: The specification of the class of antibody based on its production
+          method or biological origin. Expected values are "Polyclonal", "Monoclonal"
+          or "Serum"
+        title: antibody type
+        related_mappings:
+        - bao:0000503
+        - bao:0000507
+        domain_of:
+        - Antibody
+        range: string
+        required: false
+        recommended: true
+        multivalued: false
+      antibodyCharacterizationMethod:
+        description: A method used to determine the specificity, affinity, or functionality
+          of an antibody or antiserum.
+        title: antibody characterization method
+        domain_of:
+        - Antibody
+        range: string
+        required: false
+        multivalued: true
+      antibodyCharacterizationObservation:
+        description: A statement summarizing observed characteristics, behaviors,
+          or findings derived from the antibody characterization process.
+        title: antibody characterization observation
+        domain_of:
+        - Antibody
+        range: string
+        required: false
+        multivalued: false
   Hybridoma:
     description: An hybridoma that provides antibodies that can be related to a pathogen.
     title: Hybridoma
@@ -7621,4 +7704,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-11-07T12:02:01'
+generation_date: '2025-11-12T15:11:47'

@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10635"
+version = "1.0.10720"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-11-07T12:02:01',
+     'generation_date': '2025-11-12T15:11:47',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -7675,10 +7675,53 @@ class Antibody(Product):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'close_mappings': ['wd:Q79460',
                             'snomed:68498002',
+                            'bao:0000502',
                             'wd:Q79460',
-                            'snomed:68498002'],
+                            'snomed:68498002',
+                            'bao:0000502'],
          'from_schema': 'https://w3id.org/evorao/',
-         'slot_usage': {'antibodyPurifiedByAffinity': {'description': 'Indicates '
+         'slot_usage': {'antibodyCharacterizationMethod': {'description': 'A method '
+                                                                          'used to '
+                                                                          'determine '
+                                                                          'the '
+                                                                          'specificity, '
+                                                                          'affinity, '
+                                                                          'or '
+                                                                          'functionality '
+                                                                          'of an '
+                                                                          'antibody or '
+                                                                          'antiserum.',
+                                                           'domain_of': ['Antibody'],
+                                                           'multivalued': True,
+                                                           'name': 'antibodyCharacterizationMethod',
+                                                           'range': 'string',
+                                                           'required': False,
+                                                           'title': 'antibody '
+                                                                    'characterization '
+                                                                    'method'},
+                        'antibodyCharacterizationObservation': {'description': 'A '
+                                                                               'statement '
+                                                                               'summarizing '
+                                                                               'observed '
+                                                                               'characteristics, '
+                                                                               'behaviors, '
+                                                                               'or '
+                                                                               'findings '
+                                                                               'derived '
+                                                                               'from '
+                                                                               'the '
+                                                                               'antibody '
+                                                                               'characterization '
+                                                                               'process.',
+                                                                'domain_of': ['Antibody'],
+                                                                'multivalued': False,
+                                                                'name': 'antibodyCharacterizationObservation',
+                                                                'range': 'string',
+                                                                'required': False,
+                                                                'title': 'antibody '
+                                                                         'characterization '
+                                                                         'observation'},
+                        'antibodyPurifiedByAffinity': {'description': 'Indicates '
                                                                       'whether or not '
                                                                       'if the antibody '
                                                                       'was purified by '
@@ -7690,6 +7733,21 @@ class Antibody(Product):
                                                        'required': True,
                                                        'title': 'antibody purified by '
                                                                 'affinity'},
+                        'antibodyType': {'description': 'The specification of the '
+                                                        'class of antibody based on '
+                                                        'its production method or '
+                                                        'biological origin. Expected '
+                                                        'values are "Polyclonal", '
+                                                        '"Monoclonal" or "Serum"',
+                                         'domain_of': ['Antibody'],
+                                         'multivalued': False,
+                                         'name': 'antibodyType',
+                                         'range': 'string',
+                                         'recommended': True,
+                                         'related_mappings': ['bao:0000503',
+                                                              'bao:0000507'],
+                                         'required': False,
+                                         'title': 'antibody type'},
                         'productionSystem': {'description': 'The biological and '
                                                             'technological methods and '
                                                             'processes used to produce '
@@ -7743,6 +7801,20 @@ class Antibody(Product):
     sequenceReference: Optional[list[SequenceReference]] = Field(default=None, title="sequence reference", description="""A reference that permits to retrieve the sequence information from a sequence provider.""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceReference',
          'domain_of': ['Antibody', 'Sequence'],
          'recommended': True} })
+    antibodyType: Optional[Literal["Monoclonal", "Polyclonal", "Serum"]] = Field(default=None, title="antibody type", description="""The specification of the class of antibody based on its production method or biological origin. Expected values are \"Polyclonal\", \"Monoclonal\" or \"Serum\"""", json_schema_extra = { "linkml_meta": {'alias': 'antibodyType',
+         'domain_of': ['Antibody'],
+         'equals_string_in': ['Monoclonal', 'Polyclonal', 'Serum'],
+         'recommended': True,
+         'related_mappings': ['bao:0000503', 'bao:0000507']} })
+    antibodyCharacterizationMethod: Optional[list[Literal["Western blot", "ELISA", "IFA", "Neutralisation", "Immunoprecipitation", "Biophysical method"]]] = Field(default=None, title="antibody characterization method", description="""A method used to determine the specificity, affinity, or functionality of an antibody or antiserum.""", json_schema_extra = { "linkml_meta": {'alias': 'antibodyCharacterizationMethod',
+         'domain_of': ['Antibody'],
+         'equals_string_in': ['Western blot',
+                              'ELISA',
+                              'IFA',
+                              'Neutralisation',
+                              'Immunoprecipitation',
+                              'Biophysical method']} })
+    antibodyCharacterizationObservation: Optional[str] = Field(default=None, title="antibody characterization observation", description="""A statement summarizing observed characteristics, behaviors, or findings derived from the antibody characterization process.""", json_schema_extra = { "linkml_meta": {'alias': 'antibodyCharacterizationObservation', 'domain_of': ['Antibody']} })
     iataClassification: IataClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product.""", json_schema_extra = { "linkml_meta": {'alias': 'iataClassification',
          'close_mappings': ['wdp:P238', 'schema:iataCode'],
          'domain_of': ['Product']} })
@@ -8004,6 +8076,20 @@ class Hybridoma(Antibody):
     sequenceReference: Optional[list[SequenceReference]] = Field(default=None, title="sequence reference", description="""A reference that permits to retrieve the sequence information from a sequence provider.""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceReference',
          'domain_of': ['Antibody', 'Sequence'],
          'recommended': True} })
+    antibodyType: Optional[Literal["Monoclonal", "Polyclonal", "Serum"]] = Field(default=None, title="antibody type", description="""The specification of the class of antibody based on its production method or biological origin. Expected values are \"Polyclonal\", \"Monoclonal\" or \"Serum\"""", json_schema_extra = { "linkml_meta": {'alias': 'antibodyType',
+         'domain_of': ['Antibody'],
+         'equals_string_in': ['Monoclonal', 'Polyclonal', 'Serum'],
+         'recommended': True,
+         'related_mappings': ['bao:0000503', 'bao:0000507']} })
+    antibodyCharacterizationMethod: Optional[list[Literal["Western blot", "ELISA", "IFA", "Neutralisation", "Immunoprecipitation", "Biophysical method"]]] = Field(default=None, title="antibody characterization method", description="""A method used to determine the specificity, affinity, or functionality of an antibody or antiserum.""", json_schema_extra = { "linkml_meta": {'alias': 'antibodyCharacterizationMethod',
+         'domain_of': ['Antibody'],
+         'equals_string_in': ['Western blot',
+                              'ELISA',
+                              'IFA',
+                              'Neutralisation',
+                              'Immunoprecipitation',
+                              'Biophysical method']} })
+    antibodyCharacterizationObservation: Optional[str] = Field(default=None, title="antibody characterization observation", description="""A statement summarizing observed characteristics, behaviors, or findings derived from the antibody characterization process.""", json_schema_extra = { "linkml_meta": {'alias': 'antibodyCharacterizationObservation', 'domain_of': ['Antibody']} })
     iataClassification: IataClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product.""", json_schema_extra = { "linkml_meta": {'alias': 'iataClassification',
          'close_mappings': ['wdp:P238', 'schema:iataCode'],
          'domain_of': ['Product']} })

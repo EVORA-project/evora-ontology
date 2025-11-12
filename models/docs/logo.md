@@ -22,15 +22,15 @@ Alias: logo
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
 | [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
+| [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
+| [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
+| [FundingSource](FundingSource.md) | A program, grant, or project providing financial support for the access or us... |  yes  |
 | [Person](Person.md) | An individual |  no  |
 | [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
-| [FundingSource](FundingSource.md) | A program, grant, or project providing financial support for the access or us... |  yes  |
-| [ReasearchInfrastructure](ReasearchInfrastructure.md) | A research infrastructure (RI) |  no  |
-| [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
 
 
 

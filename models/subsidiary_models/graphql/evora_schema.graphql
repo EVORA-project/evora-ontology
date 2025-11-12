@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10635
+# version: 1.0.10720
 type AlternateName
   {
     keyword: [String]
@@ -66,6 +66,9 @@ type Antibody
     specificityDocumented: Boolean!
     targetedAntigen: String!
     sequenceReference: [SequenceReference]
+    antibodyType: String
+    antibodyCharacterizationMethod: [String]
+    antibodyCharacterizationObservation: String
   }
 
 type Audio
@@ -663,6 +666,9 @@ type Hybridoma
     specificityDocumented: Boolean!
     targetedAntigen: String!
     sequenceReference: [SequenceReference]
+    antibodyType: String
+    antibodyCharacterizationMethod: [String]
+    antibodyCharacterizationObservation: String
     hybridomaDescription: String!
   }
 

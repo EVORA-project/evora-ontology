@@ -4129,6 +4129,24 @@ class AntibodySequenceReference(Base):
     
 
 
+class AntibodyAntibodyCharacterizationMethod(Base):
+    """
+    
+    """
+    __tablename__ = 'Antibody_antibodyCharacterizationMethod'
+
+    Antibody_id = Column(Integer(), ForeignKey('Antibody.id'), primary_key=True)
+    antibodyCharacterizationMethod = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Antibody_antibodyCharacterizationMethod(Antibody_id={self.Antibody_id},antibodyCharacterizationMethod={self.antibodyCharacterizationMethod},)"
+
+
+
+    
+
+
 class AntibodyAdditionalCategory(Base):
     """
     
@@ -4375,6 +4393,24 @@ class HybridomaSequenceReference(Base):
 
     def __repr__(self):
         return f"Hybridoma_sequenceReference(Hybridoma_id={self.Hybridoma_id},sequenceReference_id={self.sequenceReference_id},)"
+
+
+
+    
+
+
+class HybridomaAntibodyCharacterizationMethod(Base):
+    """
+    
+    """
+    __tablename__ = 'Hybridoma_antibodyCharacterizationMethod'
+
+    Hybridoma_id = Column(Integer(), ForeignKey('Hybridoma.id'), primary_key=True)
+    antibodyCharacterizationMethod = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Hybridoma_antibodyCharacterizationMethod(Hybridoma_id={self.Hybridoma_id},antibodyCharacterizationMethod={self.antibodyCharacterizationMethod},)"
 
 
 
@@ -12160,6 +12196,8 @@ class Antibody(Product):
     antibodyPurifiedByAffinity = Column(Boolean(), nullable=False )
     specificityDocumented = Column(Boolean(), nullable=False )
     targetedAntigen = Column(Text(), nullable=False )
+    antibodyType = Column(Text())
+    antibodyCharacterizationObservation = Column(Text())
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
@@ -12203,6 +12241,11 @@ class Antibody(Product):
     
     # ManyToMany
     sequenceReference = relationship( "SequenceReference", secondary="Antibody_sequenceReference")
+    
+    
+    antibodyCharacterizationMethod_rel = relationship( "AntibodyAntibodyCharacterizationMethod" )
+    antibodyCharacterizationMethod = association_proxy("antibodyCharacterizationMethod_rel", "antibodyCharacterizationMethod",
+                                  creator=lambda x_: AntibodyAntibodyCharacterizationMethod(antibodyCharacterizationMethod=x_))
     
     
     # ManyToMany
@@ -12261,7 +12304,7 @@ class Antibody(Product):
     
 
     def __repr__(self):
-        return f"Antibody(id={self.id},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Antibody(id={self.id},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},antibodyType={self.antibodyType},antibodyCharacterizationObservation={self.antibodyCharacterizationObservation},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 
@@ -13002,6 +13045,8 @@ class Hybridoma(Antibody):
     antibodyPurifiedByAffinity = Column(Boolean(), nullable=False )
     specificityDocumented = Column(Boolean(), nullable=False )
     targetedAntigen = Column(Text(), nullable=False )
+    antibodyType = Column(Text())
+    antibodyCharacterizationObservation = Column(Text())
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
@@ -13045,6 +13090,11 @@ class Hybridoma(Antibody):
     
     # ManyToMany
     sequenceReference = relationship( "SequenceReference", secondary="Hybridoma_sequenceReference")
+    
+    
+    antibodyCharacterizationMethod_rel = relationship( "HybridomaAntibodyCharacterizationMethod" )
+    antibodyCharacterizationMethod = association_proxy("antibodyCharacterizationMethod_rel", "antibodyCharacterizationMethod",
+                                  creator=lambda x_: HybridomaAntibodyCharacterizationMethod(antibodyCharacterizationMethod=x_))
     
     
     # ManyToMany
@@ -13103,7 +13153,7 @@ class Hybridoma(Antibody):
     
 
     def __repr__(self):
-        return f"Hybridoma(id={self.id},hybridomaDescription={self.hybridomaDescription},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Hybridoma(id={self.id},hybridomaDescription={self.hybridomaDescription},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},targetedAntigen={self.targetedAntigen},antibodyType={self.antibodyType},antibodyCharacterizationObservation={self.antibodyCharacterizationObservation},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
 
 
 

@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10635",
+  "version": "1.0.10720",
   "imports": [
     "linkml:types"
   ],
@@ -3174,6 +3174,67 @@
       ],
       "range": "string",
       "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "antibodyType",
+      "definition_uri": "https://w3id.org/evorao/antibodyType",
+      "description": "The specification of the class of antibody based on its production method or biological origin. Expected values are \"Polyclonal\", \"Monoclonal\" or \"Serum\"",
+      "title": "antibody type",
+      "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0000503",
+        "http://www.bioassayontology.org/bao#BAO_0000507"
+      ],
+      "slot_uri": "https://w3id.org/evorao/antibodyType",
+      "owner": "Antibody",
+      "domain_of": [
+        "Antibody"
+      ],
+      "range": "string",
+      "recommended": true,
+      "equals_string_in": [
+        "Monoclonal",
+        "Polyclonal",
+        "Serum"
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "antibodyCharacterizationMethod",
+      "definition_uri": "https://w3id.org/evorao/antibodyCharacterizationMethod",
+      "description": "A method used to determine the specificity, affinity, or functionality of an antibody or antiserum.",
+      "title": "antibody characterization method",
+      "from_schema": "https://w3id.org/evorao/",
+      "slot_uri": "https://w3id.org/evorao/antibodyCharacterizationMethod",
+      "owner": "Antibody",
+      "domain_of": [
+        "Antibody"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "equals_string_in": [
+        "Western blot",
+        "ELISA",
+        "IFA",
+        "Neutralisation",
+        "Immunoprecipitation",
+        "Biophysical method"
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "antibodyCharacterizationObservation",
+      "definition_uri": "https://w3id.org/evorao/antibodyCharacterizationObservation",
+      "description": "A statement summarizing observed characteristics, behaviors, or findings derived from the antibody characterization process.",
+      "title": "antibody characterization observation",
+      "from_schema": "https://w3id.org/evorao/",
+      "slot_uri": "https://w3id.org/evorao/antibodyCharacterizationObservation",
+      "owner": "Antibody",
+      "domain_of": [
+        "Antibody"
+      ],
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -8354,6 +8415,82 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "Antibody_antibodyType",
+      "definition_uri": "https://w3id.org/evorao/antibodyType",
+      "description": "The specification of the class of antibody based on its production method or biological origin. Expected values are \"Polyclonal\", \"Monoclonal\" or \"Serum\"",
+      "title": "antibody type",
+      "from_schema": "https://w3id.org/evorao/",
+      "related_mappings": [
+        "http://www.bioassayontology.org/bao#BAO_0000503",
+        "http://www.bioassayontology.org/bao#BAO_0000507"
+      ],
+      "is_a": "antibodyType",
+      "domain": "Antibody",
+      "slot_uri": "https://w3id.org/evorao/antibodyType",
+      "alias": "antibodyType",
+      "owner": "Antibody",
+      "domain_of": [
+        "Antibody"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "antibodyType",
+      "range": "string",
+      "recommended": true,
+      "equals_string_in": [
+        "Monoclonal",
+        "Polyclonal",
+        "Serum"
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Antibody_antibodyCharacterizationMethod",
+      "definition_uri": "https://w3id.org/evorao/antibodyCharacterizationMethod",
+      "description": "A method used to determine the specificity, affinity, or functionality of an antibody or antiserum.",
+      "title": "antibody characterization method",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "antibodyCharacterizationMethod",
+      "domain": "Antibody",
+      "slot_uri": "https://w3id.org/evorao/antibodyCharacterizationMethod",
+      "alias": "antibodyCharacterizationMethod",
+      "owner": "Antibody",
+      "domain_of": [
+        "Antibody"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "antibodyCharacterizationMethod",
+      "range": "string",
+      "multivalued": true,
+      "equals_string_in": [
+        "Western blot",
+        "ELISA",
+        "IFA",
+        "Neutralisation",
+        "Immunoprecipitation",
+        "Biophysical method"
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Antibody_antibodyCharacterizationObservation",
+      "definition_uri": "https://w3id.org/evorao/antibodyCharacterizationObservation",
+      "description": "A statement summarizing observed characteristics, behaviors, or findings derived from the antibody characterization process.",
+      "title": "antibody characterization observation",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "antibodyCharacterizationObservation",
+      "domain": "Antibody",
+      "slot_uri": "https://w3id.org/evorao/antibodyCharacterizationObservation",
+      "alias": "antibodyCharacterizationObservation",
+      "owner": "Antibody",
+      "domain_of": [
+        "Antibody"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "antibodyCharacterizationObservation",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "Hybridoma_hybridomaDescription",
       "definition_uri": "https://w3id.org/evorao/hybridomaDescription",
       "description": "The description of the hybridoma.",
@@ -12776,8 +12913,10 @@
       "close_mappings": [
         "wd:Q79460",
         "snomed:68498002",
+        "bao:0000502",
         "wd:Q79460",
-        "snomed:68498002"
+        "snomed:68498002",
+        "bao:0000502"
       ],
       "is_a": "Product",
       "slots": [
@@ -12829,7 +12968,10 @@
         "Antibody_antibodyPurifiedByAffinity",
         "Antibody_specificityDocumented",
         "Antibody_targetedAntigen",
-        "Antibody_sequenceReference"
+        "Antibody_sequenceReference",
+        "Antibody_antibodyType",
+        "Antibody_antibodyCharacterizationMethod",
+        "Antibody_antibodyCharacterizationObservation"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/Antibody",
@@ -12904,6 +13046,9 @@
         "Antibody_specificityDocumented",
         "Antibody_targetedAntigen",
         "Antibody_sequenceReference",
+        "Antibody_antibodyType",
+        "Antibody_antibodyCharacterizationMethod",
+        "Antibody_antibodyCharacterizationObservation",
         "Hybridoma_hybridomaDescription"
       ],
       "slot_usage": {},
@@ -14299,9 +14444,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-11-07T11:02:22",
-  "source_file_size": 241047,
-  "generation_date": "2025-11-07T11:02:38",
+  "source_file_date": "2025-11-12T14:12:19",
+  "source_file_size": 243664,
+  "generation_date": "2025-11-12T14:12:35",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

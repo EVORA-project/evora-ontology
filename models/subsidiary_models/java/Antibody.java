@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10635 */
+/* version: 1.0.10720 */
 
 
 /**
@@ -20,5 +20,8 @@ public class Antibody extends Product {
   private boolean specificityDocumented;
   private String targetedAntigen;
   private List<SequenceReference> sequenceReference;
+  private String antibodyType;
+  private List<String> antibodyCharacterizationMethod;
+  private String antibodyCharacterizationObservation;
 
 }

@@ -3103,6 +3103,18 @@ type Antibody struct {
 	 */
 	SequenceReference []SequenceReference `json:"sequenceReference"`
 	/*
+	 * The specification of the class of antibody based on its production method or biological origin. Expected values are "Polyclonal", "Monoclonal" or "Serum"
+	 */
+	AntibodyType string `json:"antibodyType"`
+	/*
+	 * A method used to determine the specificity, affinity, or functionality of an antibody or antiserum.
+	 */
+	AntibodyCharacterizationMethod string `json:"antibodyCharacterizationMethod"`
+	/*
+	 * A statement summarizing observed characteristics, behaviors, or findings derived from the antibody characterization process.
+	 */
+	AntibodyCharacterizationObservation string `json:"antibodyCharacterizationObservation"`
+	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product.
 	 */
 	IataClassification IataClassification `json:"iataClassification"`
@@ -3312,6 +3324,18 @@ type Hybridoma struct {
 	 * A reference that permits to retrieve the sequence information from a sequence provider.
 	 */
 	SequenceReference []SequenceReference `json:"sequenceReference"`
+	/*
+	 * The specification of the class of antibody based on its production method or biological origin. Expected values are "Polyclonal", "Monoclonal" or "Serum"
+	 */
+	AntibodyType string `json:"antibodyType"`
+	/*
+	 * A method used to determine the specificity, affinity, or functionality of an antibody or antiserum.
+	 */
+	AntibodyCharacterizationMethod string `json:"antibodyCharacterizationMethod"`
+	/*
+	 * A statement summarizing observed characteristics, behaviors, or findings derived from the antibody characterization process.
+	 */
+	AntibodyCharacterizationObservation string `json:"antibodyCharacterizationObservation"`
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product.
 	 */
