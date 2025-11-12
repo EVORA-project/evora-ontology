@@ -67,6 +67,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:productionSystem,
    EVORAO:antibodyPurifiedByAffinity,
    EVORAO:specificityDocumented,
+   EVORAO:antibodySpecificity,
    EVORAO:targetedAntigen,
    EVORAO:sequenceReference,
    EVORAO:antibodyType,

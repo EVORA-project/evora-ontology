@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.10727
+// version: 1.0.10742
 // List of other names for things.
 message AlternateName
  {
@@ -67,6 +67,7 @@ message Antibody
   string productionSystem = 0
   boolean antibodyPurifiedByAffinity = 0
   boolean specificityDocumented = 0
+  string antibodySpecificity = 0
   string targetedAntigen = 0
  repeated  sequenceReference sequenceReference = 0
   string antibodyType = 0
@@ -605,6 +606,7 @@ message Hybridoma
   string productionSystem = 0
   boolean antibodyPurifiedByAffinity = 0
   boolean specificityDocumented = 0
+  string antibodySpecificity = 0
   string targetedAntigen = 0
  repeated  sequenceReference sequenceReference = 0
   string antibodyType = 0

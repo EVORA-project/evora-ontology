@@ -519,6 +519,7 @@
 --     * Slot: productionSystem Description: The biological and technological methods and processes used to produce the antibody.
 --     * Slot: antibodyPurifiedByAffinity Description: Indicates whether or not if the antibody was purified by affinity.
 --     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented.
+--     * Slot: antibodySpecificity Description: Information describing the molecular or antigenic specificity of the antibody, including its recognized target(s), cross-reactivity with related antigens, and any contextual information supporting its selectivity.
 --     * Slot: targetedAntigen Description: Specific molecular structure or epitope recognized and bound by an antibody.
 --     * Slot: antibodyType Description: The specification of the class of antibody based on its production method or biological origin. Expected values are "Polyclonal", "Monoclonal" or "Serum"
 --     * Slot: antibodyCharacterizationObservation Description: A statement summarizing observed characteristics, behaviors, or findings derived from the antibody characterization process.
@@ -559,6 +560,7 @@
 --     * Slot: productionSystem Description: The biological and technological methods and processes used to produce the antibody.
 --     * Slot: antibodyPurifiedByAffinity Description: Indicates whether or not if the antibody was purified by affinity.
 --     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented.
+--     * Slot: antibodySpecificity Description: Information describing the molecular or antigenic specificity of the antibody, including its recognized target(s), cross-reactivity with related antigens, and any contextual information supporting its selectivity.
 --     * Slot: targetedAntigen Description: Specific molecular structure or epitope recognized and bound by an antibody.
 --     * Slot: antibodyType Description: The specification of the class of antibody based on its production method or biological origin. Expected values are "Polyclonal", "Monoclonal" or "Serum"
 --     * Slot: antibodyCharacterizationObservation Description: A statement summarizing observed characteristics, behaviors, or findings derived from the antibody characterization process.
@@ -4652,6 +4654,7 @@ CREATE TABLE "Antibody" (
 	"productionSystem" TEXT, 
 	"antibodyPurifiedByAffinity" BOOLEAN, 
 	"specificityDocumented" BOOLEAN NOT NULL, 
+	"antibodySpecificity" TEXT, 
 	"targetedAntigen" TEXT NOT NULL, 
 	"antibodyType" TEXT, 
 	"antibodyCharacterizationObservation" TEXT, 
@@ -4702,6 +4705,7 @@ CREATE TABLE "Hybridoma" (
 	"productionSystem" TEXT, 
 	"antibodyPurifiedByAffinity" BOOLEAN, 
 	"specificityDocumented" BOOLEAN NOT NULL, 
+	"antibodySpecificity" TEXT, 
 	"targetedAntigen" TEXT NOT NULL, 
 	"antibodyType" TEXT, 
 	"antibodyCharacterizationObservation" TEXT, 

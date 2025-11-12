@@ -3095,6 +3095,10 @@ type Antibody struct {
 	 */
 	SpecificityDocumented bool `json:"specificityDocumented"`
 	/*
+	 * Information describing the molecular or antigenic specificity of the antibody, including its recognized target(s), cross-reactivity with related antigens, and any contextual information supporting its selectivity.
+	 */
+	AntibodySpecificity string `json:"antibodySpecificity"`
+	/*
 	 * Specific molecular structure or epitope recognized and bound by an antibody.
 	 */
 	TargetedAntigen string `json:"targetedAntigen"`
@@ -3316,6 +3320,10 @@ type Hybridoma struct {
 	 * Boolean value indicating whether the specificity of the product has been formally documented.
 	 */
 	SpecificityDocumented bool `json:"specificityDocumented"`
+	/*
+	 * Information describing the molecular or antigenic specificity of the antibody, including its recognized target(s), cross-reactivity with related antigens, and any contextual information supporting its selectivity.
+	 */
+	AntibodySpecificity string `json:"antibodySpecificity"`
 	/*
 	 * Specific molecular structure or epitope recognized and bound by an antibody.
 	 */

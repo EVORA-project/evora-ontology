@@ -45,6 +45,8 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
         
       Antibody : antibodyPurifiedByAffinity
         
+      Antibody : antibodySpecificity
+        
       Antibody : antibodyType
         
       Antibody : availability
@@ -289,6 +291,7 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
 | [productionSystem](productionSystem.md) | 0..1 _recommended_ <br/> [String](String.md) | The biological and technological methods and processes used to produce the an... | direct |
 | [antibodyPurifiedByAffinity](antibodyPurifiedByAffinity.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates whether or not if the antibody was purified by affinity | direct |
 | [specificityDocumented](specificityDocumented.md) | 1 <br/> [Boolean](Boolean.md) | Boolean value indicating whether the specificity of the product has been form... | direct |
+| [antibodySpecificity](antibodySpecificity.md) | 0..1 <br/> [String](String.md) | Information describing the molecular or antigenic specificity of the antibody... | direct |
 | [targetedAntigen](targetedAntigen.md) | 1 <br/> [String](String.md) | Specific molecular structure or epitope recognized and bound by an antibody | direct |
 | [sequenceReference](sequenceReference.md) | * _recommended_ <br/> [SequenceReference](SequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... | direct |
 | [antibodyType](antibodyType.md) | 0..1 _recommended_ <br/> [String](String.md) | The specification of the class of antibody based on its production method or ... | direct |
@@ -401,6 +404,7 @@ slots:
 - productionSystem
 - antibodyPurifiedByAffinity
 - specificityDocumented
+- antibodySpecificity
 - targetedAntigen
 - sequenceReference
 - antibodyType
@@ -438,6 +442,17 @@ slot_usage:
     - DetectionKit
     range: boolean
     required: true
+    multivalued: false
+  antibodySpecificity:
+    name: antibodySpecificity
+    description: Information describing the molecular or antigenic specificity of
+      the antibody, including its recognized target(s), cross-reactivity with related
+      antigens, and any contextual information supporting its selectivity.
+    title: antibody specificity
+    domain_of:
+    - Antibody
+    range: string
+    required: false
     multivalued: false
   targetedAntigen:
     name: targetedAntigen
@@ -549,6 +564,17 @@ slot_usage:
     range: boolean
     required: true
     multivalued: false
+  antibodySpecificity:
+    name: antibodySpecificity
+    description: Information describing the molecular or antigenic specificity of
+      the antibody, including its recognized target(s), cross-reactivity with related
+      antigens, and any contextual information supporting its selectivity.
+    title: antibody specificity
+    domain_of:
+    - Antibody
+    range: string
+    required: false
+    multivalued: false
   targetedAntigen:
     name: targetedAntigen
     description: Specific molecular structure or epitope recognized and bound by an
@@ -650,6 +676,21 @@ attributes:
     - DetectionKit
     range: boolean
     required: true
+    multivalued: false
+  antibodySpecificity:
+    name: antibodySpecificity
+    description: Information describing the molecular or antigenic specificity of
+      the antibody, including its recognized target(s), cross-reactivity with related
+      antigens, and any contextual information supporting its selectivity.
+    title: antibody specificity
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    alias: antibodySpecificity
+    owner: Antibody
+    domain_of:
+    - Antibody
+    range: string
+    required: false
     multivalued: false
   targetedAntigen:
     name: targetedAntigen

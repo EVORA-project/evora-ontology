@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10727",
+  "version": "1.0.10742",
   "imports": [
     "linkml:types"
   ],
@@ -3159,6 +3159,20 @@
       ],
       "range": "boolean",
       "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "antibodySpecificity",
+      "definition_uri": "https://w3id.org/evorao/antibodySpecificity",
+      "description": "Information describing the molecular or antigenic specificity of the antibody, including its recognized target(s), cross-reactivity with related antigens, and any contextual information supporting its selectivity.",
+      "title": "antibody specificity",
+      "from_schema": "https://w3id.org/evorao/",
+      "slot_uri": "https://w3id.org/evorao/antibodySpecificity",
+      "owner": "Antibody",
+      "domain_of": [
+        "Antibody"
+      ],
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -8373,6 +8387,25 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "Antibody_antibodySpecificity",
+      "definition_uri": "https://w3id.org/evorao/antibodySpecificity",
+      "description": "Information describing the molecular or antigenic specificity of the antibody, including its recognized target(s), cross-reactivity with related antigens, and any contextual information supporting its selectivity.",
+      "title": "antibody specificity",
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "antibodySpecificity",
+      "domain": "Antibody",
+      "slot_uri": "https://w3id.org/evorao/antibodySpecificity",
+      "alias": "antibodySpecificity",
+      "owner": "Antibody",
+      "domain_of": [
+        "Antibody"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "antibodySpecificity",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "Antibody_targetedAntigen",
       "definition_uri": "https://w3id.org/evorao/targetedAntigen",
       "description": "Specific molecular structure or epitope recognized and bound by an antibody.",
@@ -12967,6 +13000,7 @@
         "Antibody_productionSystem",
         "Antibody_antibodyPurifiedByAffinity",
         "Antibody_specificityDocumented",
+        "Antibody_antibodySpecificity",
         "Antibody_targetedAntigen",
         "Antibody_sequenceReference",
         "Antibody_antibodyType",
@@ -13044,6 +13078,7 @@
         "Antibody_productionSystem",
         "Antibody_antibodyPurifiedByAffinity",
         "Antibody_specificityDocumented",
+        "Antibody_antibodySpecificity",
         "Antibody_targetedAntigen",
         "Antibody_sequenceReference",
         "Antibody_antibodyType",
@@ -14444,9 +14479,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-11-12T15:24:10",
-  "source_file_size": 243714,
-  "generation_date": "2025-11-12T15:24:27",
+  "source_file_date": "2025-11-12T15:33:45",
+  "source_file_size": 244600,
+  "generation_date": "2025-11-12T15:34:02",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

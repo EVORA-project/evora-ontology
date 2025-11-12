@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-12T15:24:32
+# Generation date: 2025-11-12T15:34:07
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10727"
+version = "1.0.10742"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1864,6 +1864,7 @@ class Antibody(Product):
     availability: str = "on request"
     productionSystem: Optional[str] = None
     antibodyPurifiedByAffinity: Optional[Union[bool, Bool]] = None
+    antibodySpecificity: Optional[str] = None
     sequenceReference: Optional[Union[Union[dict, SequenceReference], list[Union[dict, SequenceReference]]]] = empty_list()
     antibodyType: Optional[str] = None
     antibodyCharacterizationMethod: Optional[Union[str, list[str]]] = empty_list()
@@ -1885,6 +1886,9 @@ class Antibody(Product):
 
         if self.antibodyPurifiedByAffinity is not None and not isinstance(self.antibodyPurifiedByAffinity, Bool):
             self.antibodyPurifiedByAffinity = Bool(self.antibodyPurifiedByAffinity)
+
+        if self.antibodySpecificity is not None and not isinstance(self.antibodySpecificity, str):
+            self.antibodySpecificity = str(self.antibodySpecificity)
 
         self._normalize_inlined_as_dict(slot_name="sequenceReference", slot_type=SequenceReference, key_name="accessionNumber", keyed=False)
 
@@ -3379,6 +3383,9 @@ slots.antibodyPurifiedByAffinity = Slot(uri=EVORAO.antibodyPurifiedByAffinity, n
 slots.specificityDocumented = Slot(uri=EVORAO.specificityDocumented, name="specificityDocumented", curie=EVORAO.curie('specificityDocumented'),
                    model_uri=EVORAO.specificityDocumented, domain=None, range=Union[bool, Bool])
 
+slots.antibodySpecificity = Slot(uri=EVORAO.antibodySpecificity, name="antibodySpecificity", curie=EVORAO.curie('antibodySpecificity'),
+                   model_uri=EVORAO.antibodySpecificity, domain=None, range=Optional[str])
+
 slots.targetedAntigen = Slot(uri=EVORAO.targetedAntigen, name="targetedAntigen", curie=EVORAO.curie('targetedAntigen'),
                    model_uri=EVORAO.targetedAntigen, domain=None, range=str)
 
@@ -4056,6 +4063,9 @@ slots.Antibody_antibodyPurifiedByAffinity = Slot(uri=EVORAO.antibodyPurifiedByAf
 
 slots.Antibody_specificityDocumented = Slot(uri=EVORAO.specificityDocumented, name="Antibody_specificityDocumented", curie=EVORAO.curie('specificityDocumented'),
                    model_uri=EVORAO.Antibody_specificityDocumented, domain=Antibody, range=Union[bool, Bool])
+
+slots.Antibody_antibodySpecificity = Slot(uri=EVORAO.antibodySpecificity, name="Antibody_antibodySpecificity", curie=EVORAO.curie('antibodySpecificity'),
+                   model_uri=EVORAO.Antibody_antibodySpecificity, domain=Antibody, range=Optional[str])
 
 slots.Antibody_targetedAntigen = Slot(uri=EVORAO.targetedAntigen, name="Antibody_targetedAntigen", curie=EVORAO.curie('targetedAntigen'),
                    model_uri=EVORAO.Antibody_targetedAntigen, domain=Antibody, range=str)

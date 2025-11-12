@@ -113,6 +113,7 @@ Name: EVORAO
 | [antibodyCharacterizationMethod](antibodyCharacterizationMethod.md) | A method used to determine the specificity, affinity, or functionality of an ... |
 | [antibodyCharacterizationObservation](antibodyCharacterizationObservation.md) | A statement summarizing observed characteristics, behaviors, or findings deri... |
 | [antibodyPurifiedByAffinity](antibodyPurifiedByAffinity.md) | Indicates whether or not if the antibody was purified by affinity |
+| [antibodySpecificity](antibodySpecificity.md) | Information describing the molecular or antigenic specificity of the antibody... |
 | [antibodyType](antibodyType.md) | The specification of the class of antibody based on its production method or ... |
 | [authors](authors.md) | The list of authors |
 | [availability](availability.md) | The state or condition in which this item is accessible and ready for use or ... |

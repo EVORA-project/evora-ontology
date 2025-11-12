@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10727"
+version = "1.0.10742"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-11-12T16:23:44',
+     'generation_date': '2025-11-12T16:33:17',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -7734,6 +7734,23 @@ class Antibody(Product):
                                                        'required': False,
                                                        'title': 'antibody purified by '
                                                                 'affinity'},
+                        'antibodySpecificity': {'description': 'Information describing '
+                                                               'the molecular or '
+                                                               'antigenic specificity '
+                                                               'of the antibody, '
+                                                               'including its '
+                                                               'recognized target(s), '
+                                                               'cross-reactivity with '
+                                                               'related antigens, and '
+                                                               'any contextual '
+                                                               'information supporting '
+                                                               'its selectivity.',
+                                                'domain_of': ['Antibody'],
+                                                'multivalued': False,
+                                                'name': 'antibodySpecificity',
+                                                'range': 'string',
+                                                'required': False,
+                                                'title': 'antibody specificity'},
                         'antibodyType': {'description': 'The specification of the '
                                                         'class of antibody based on '
                                                         'its production method or '
@@ -7800,6 +7817,7 @@ class Antibody(Product):
          'domain_of': ['Antibody'],
          'recommended': True} })
     specificityDocumented: bool = Field(default=..., title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented.""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented', 'domain_of': ['Antibody', 'DetectionKit']} })
+    antibodySpecificity: Optional[str] = Field(default=None, title="antibody specificity", description="""Information describing the molecular or antigenic specificity of the antibody, including its recognized target(s), cross-reactivity with related antigens, and any contextual information supporting its selectivity.""", json_schema_extra = { "linkml_meta": {'alias': 'antibodySpecificity', 'domain_of': ['Antibody']} })
     targetedAntigen: str = Field(default=..., title="targeted antigen", description="""Specific molecular structure or epitope recognized and bound by an antibody.""", json_schema_extra = { "linkml_meta": {'alias': 'targetedAntigen', 'domain_of': ['Antibody']} })
     sequenceReference: Optional[list[SequenceReference]] = Field(default=None, title="sequence reference", description="""A reference that permits to retrieve the sequence information from a sequence provider.""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceReference',
          'domain_of': ['Antibody', 'Sequence'],
@@ -8077,6 +8095,7 @@ class Hybridoma(Antibody):
          'domain_of': ['Antibody'],
          'recommended': True} })
     specificityDocumented: bool = Field(default=..., title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented.""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented', 'domain_of': ['Antibody', 'DetectionKit']} })
+    antibodySpecificity: Optional[str] = Field(default=None, title="antibody specificity", description="""Information describing the molecular or antigenic specificity of the antibody, including its recognized target(s), cross-reactivity with related antigens, and any contextual information supporting its selectivity.""", json_schema_extra = { "linkml_meta": {'alias': 'antibodySpecificity', 'domain_of': ['Antibody']} })
     targetedAntigen: str = Field(default=..., title="targeted antigen", description="""Specific molecular structure or epitope recognized and bound by an antibody.""", json_schema_extra = { "linkml_meta": {'alias': 'targetedAntigen', 'domain_of': ['Antibody']} })
     sequenceReference: Optional[list[SequenceReference]] = Field(default=None, title="sequence reference", description="""A reference that permits to retrieve the sequence information from a sequence provider.""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceReference',
          'domain_of': ['Antibody', 'Sequence'],

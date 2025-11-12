@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10727
+version: 1.0.10742
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1880,6 +1880,17 @@ slots:
     - DetectionKit
     range: boolean
     required: true
+    multivalued: false
+  antibodySpecificity:
+    description: Information describing the molecular or antigenic specificity of
+      the antibody, including its recognized target(s), cross-reactivity with related
+      antigens, and any contextual information supporting its selectivity.
+    title: antibody specificity
+    from_schema: https://w3id.org/evorao/
+    domain_of:
+    - Antibody
+    range: string
+    required: false
     multivalued: false
   targetedAntigen:
     description: Specific molecular structure or epitope recognized and bound by an
@@ -5822,6 +5833,7 @@ classes:
     - productionSystem
     - antibodyPurifiedByAffinity
     - specificityDocumented
+    - antibodySpecificity
     - targetedAntigen
     - sequenceReference
     - antibodyType
@@ -5855,6 +5867,16 @@ classes:
         - Antibody
         range: boolean
         required: true
+        multivalued: false
+      antibodySpecificity:
+        description: Information describing the molecular or antigenic specificity
+          of the antibody, including its recognized target(s), cross-reactivity with
+          related antigens, and any contextual information supporting its selectivity.
+        title: antibody specificity
+        domain_of:
+        - Antibody
+        range: string
+        required: false
         multivalued: false
       targetedAntigen:
         description: Specific molecular structure or epitope recognized and bound
@@ -7706,4 +7728,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-11-12T16:23:44'
+generation_date: '2025-11-12T16:33:17'
