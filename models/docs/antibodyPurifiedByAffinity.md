@@ -22,8 +22,8 @@ Alias: antibodyPurifiedByAffinity
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
+| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
 
 
 
@@ -35,7 +35,7 @@ Alias: antibodyPurifiedByAffinity
 
 * Range: [Boolean](Boolean.md)
 
-* Required: True
+* Recommended: True
 
 
 
@@ -80,7 +80,8 @@ alias: antibodyPurifiedByAffinity
 domain_of:
 - Antibody
 range: boolean
-required: true
+required: false
+recommended: true
 multivalued: false
 
 ```

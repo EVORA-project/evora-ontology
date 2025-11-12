@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10720",
+  "version": "1.0.10727",
   "imports": [
     "linkml:types"
   ],
@@ -3142,7 +3142,7 @@
         "Antibody"
       ],
       "range": "boolean",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8349,7 +8349,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "antibodyPurifiedByAffinity",
       "range": "boolean",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -14444,9 +14444,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-11-12T14:12:19",
-  "source_file_size": 243664,
-  "generation_date": "2025-11-12T14:12:35",
+  "source_file_date": "2025-11-12T15:24:10",
+  "source_file_size": 243714,
+  "generation_date": "2025-11-12T15:24:27",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

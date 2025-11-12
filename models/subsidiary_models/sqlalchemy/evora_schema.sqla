@@ -12193,7 +12193,7 @@ class Antibody(Product):
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     productionSystem = Column(Text())
-    antibodyPurifiedByAffinity = Column(Boolean(), nullable=False )
+    antibodyPurifiedByAffinity = Column(Boolean())
     specificityDocumented = Column(Boolean(), nullable=False )
     targetedAntigen = Column(Text(), nullable=False )
     antibodyType = Column(Text())
@@ -13042,7 +13042,7 @@ class Hybridoma(Antibody):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     hybridomaDescription = Column(Text(), nullable=False )
     productionSystem = Column(Text())
-    antibodyPurifiedByAffinity = Column(Boolean(), nullable=False )
+    antibodyPurifiedByAffinity = Column(Boolean())
     specificityDocumented = Column(Boolean(), nullable=False )
     targetedAntigen = Column(Text(), nullable=False )
     antibodyType = Column(Text())

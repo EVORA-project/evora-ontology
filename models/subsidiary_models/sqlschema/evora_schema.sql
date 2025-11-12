@@ -4650,7 +4650,7 @@ CREATE TABLE "Product" (
 CREATE TABLE "Antibody" (
 	id INTEGER NOT NULL, 
 	"productionSystem" TEXT, 
-	"antibodyPurifiedByAffinity" BOOLEAN NOT NULL, 
+	"antibodyPurifiedByAffinity" BOOLEAN, 
 	"specificityDocumented" BOOLEAN NOT NULL, 
 	"targetedAntigen" TEXT NOT NULL, 
 	"antibodyType" TEXT, 
@@ -4700,7 +4700,7 @@ CREATE TABLE "Hybridoma" (
 	id INTEGER NOT NULL, 
 	"hybridomaDescription" TEXT NOT NULL, 
 	"productionSystem" TEXT, 
-	"antibodyPurifiedByAffinity" BOOLEAN NOT NULL, 
+	"antibodyPurifiedByAffinity" BOOLEAN, 
 	"specificityDocumented" BOOLEAN NOT NULL, 
 	"targetedAntigen" TEXT NOT NULL, 
 	"antibodyType" TEXT, 
