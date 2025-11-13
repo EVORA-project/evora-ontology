@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10742"
+version = "1.0.10759"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-11-12T16:33:17',
+     'generation_date': '2025-11-13T14:51:35',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -321,7 +321,20 @@ class Resource(ConfiguredBaseModel):
                                     'range': 'string',
                                     'required': False,
                                     'slot_uri': 'dcat:keyword',
-                                    'title': 'keyword'}},
+                                    'title': 'keyword'},
+                        'publisher': {'comments': ['Resources of type foaf:Agent like '
+                                                   'EVORAO:PersonOrOrganization are '
+                                                   'recommended as values for this '
+                                                   'property.'],
+                                      'description': 'The entity responsible for '
+                                                     'making the resource available.',
+                                      'domain_of': ['Resource'],
+                                      'multivalued': False,
+                                      'name': 'publisher',
+                                      'range': 'PersonOrOrganization',
+                                      'required': False,
+                                      'slot_uri': 'dct:publisher',
+                                      'title': 'publisher'}},
          'title': 'Resource'})
 
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
@@ -356,6 +369,11 @@ class Resource(ConfiguredBaseModel):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Dataset(Resource):
@@ -503,6 +521,11 @@ class Dataset(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class DataService(Resource):
@@ -670,6 +693,11 @@ class DataService(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Version(Resource):
@@ -760,6 +788,11 @@ class Version(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Catalogue(Dataset):
@@ -847,6 +880,11 @@ class Catalogue(Dataset):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Taxonomy(Catalogue):
@@ -1017,6 +1055,11 @@ class Taxonomy(Catalogue):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class DataProvider(DataService):
@@ -1290,6 +1333,11 @@ class DataProvider(DataService):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class PathogenIdentification(Resource):
@@ -1488,6 +1536,11 @@ class PathogenIdentification(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Publication(Resource):
@@ -1634,6 +1687,11 @@ class Publication(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Vocabulary(Catalogue):
@@ -1750,6 +1808,11 @@ class Vocabulary(Catalogue):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Term(Resource):
@@ -1919,6 +1982,11 @@ class Term(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class CommonName(Term):
@@ -2065,6 +2133,11 @@ class CommonName(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class VirusName(CommonName):
@@ -2170,6 +2243,11 @@ class VirusName(CommonName):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class AlternateName(Term):
@@ -2314,6 +2392,11 @@ class AlternateName(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class RiskGroup(Term):
@@ -2421,6 +2504,11 @@ class RiskGroup(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class BiosafetyLevel(Term):
@@ -2525,6 +2613,11 @@ class BiosafetyLevel(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Doi(Term):
@@ -2619,6 +2712,11 @@ class Doi(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Journal(Term):
@@ -2713,6 +2811,11 @@ class Journal(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class PdbReference(Term):
@@ -2801,6 +2904,11 @@ class PdbReference(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Keyword(Term):
@@ -2895,6 +3003,11 @@ class Keyword(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class TagSequence(Term):
@@ -2985,6 +3098,11 @@ class TagSequence(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class SpecialFeature(Term):
@@ -3075,6 +3193,11 @@ class SpecialFeature(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class ExpressionVector(Term):
@@ -3166,6 +3289,11 @@ class ExpressionVector(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class PlasmidSelection(Term):
@@ -3253,6 +3381,11 @@ class PlasmidSelection(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class PropagationHost(Term):
@@ -3340,6 +3473,11 @@ class PropagationHost(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class TransmissionMethod(Term):
@@ -3428,6 +3566,11 @@ class TransmissionMethod(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class ProductionCellLine(Term):
@@ -3519,6 +3662,11 @@ class ProductionCellLine(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class ProductCategory(Term):
@@ -3630,6 +3778,11 @@ class ProductCategory(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class IsolationHost(Term):
@@ -3715,6 +3868,11 @@ class IsolationHost(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class GeographicalOrigin(Term):
@@ -3811,6 +3969,11 @@ class GeographicalOrigin(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class IplcOrigin(GeographicalOrigin):
@@ -3905,6 +4068,11 @@ class IplcOrigin(GeographicalOrigin):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Country(Term):
@@ -4023,6 +4191,11 @@ class Country(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class IataClassification(Term):
@@ -4110,6 +4283,11 @@ class IataClassification(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Variant(CommonName):
@@ -4214,6 +4392,11 @@ class Variant(CommonName):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class TaxonomicRank(Term):
@@ -4322,6 +4505,11 @@ class TaxonomicRank(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Taxon(Term):
@@ -4623,6 +4811,11 @@ class Taxon(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class ClinicalGroup(Term):
@@ -4768,6 +4961,11 @@ class ClinicalGroup(Term):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class ExternalRelatedReference(Resource):
@@ -4870,6 +5068,11 @@ class ExternalRelatedReference(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Sequence(Resource):
@@ -4963,6 +5166,11 @@ class Sequence(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class SequenceReference(Resource):
@@ -5043,6 +5251,11 @@ class SequenceReference(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class PersonOrOrganization(Resource):
@@ -5195,6 +5408,11 @@ class PersonOrOrganization(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Person(PersonOrOrganization):
@@ -5298,6 +5516,11 @@ class Person(PersonOrOrganization):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Organization(PersonOrOrganization):
@@ -5447,6 +5670,11 @@ class Organization(PersonOrOrganization):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class ReasearchInfrastructure(Organization):
@@ -5549,6 +5777,11 @@ class ReasearchInfrastructure(Organization):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Provider(Organization):
@@ -5664,6 +5897,11 @@ class Provider(Organization):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Originator(PersonOrOrganization):
@@ -5746,6 +5984,11 @@ class Originator(PersonOrOrganization):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class BiologicalMaterialOrigin(Resource):
@@ -5854,6 +6097,11 @@ class BiologicalMaterialOrigin(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class BiologicalPartOrigin(Resource):
@@ -5941,6 +6189,11 @@ class BiologicalPartOrigin(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class NaturalPartOrigin(BiologicalPartOrigin):
@@ -6100,6 +6353,11 @@ class NaturalPartOrigin(BiologicalPartOrigin):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class SyntheticPartOrigin(BiologicalPartOrigin):
@@ -6203,6 +6461,11 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class RecombinantPartIdentification(Resource):
@@ -6278,6 +6541,11 @@ class RecombinantPartIdentification(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Collection(Catalogue):
@@ -6389,6 +6657,11 @@ class Collection(Catalogue):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class ProductOrService(Dataset):
@@ -7041,6 +7314,11 @@ class ProductOrService(Dataset):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Service(ProductOrService):
@@ -7286,6 +7564,11 @@ class Service(ProductOrService):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Product(ProductOrService):
@@ -7667,6 +7950,11 @@ class Product(ProductOrService):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Antibody(Product):
@@ -8062,6 +8350,11 @@ class Antibody(Product):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Hybridoma(Antibody):
@@ -8340,6 +8633,11 @@ class Hybridoma(Antibody):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Protein(Product):
@@ -8962,6 +9260,11 @@ class Protein(Product):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class NucleicAcid(Product):
@@ -9463,6 +9766,11 @@ class NucleicAcid(Product):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class DetectionKit(Product):
@@ -9754,6 +10062,11 @@ class DetectionKit(Product):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Bundle(Product):
@@ -10006,6 +10319,11 @@ class Bundle(Product):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Pathogen(Product):
@@ -10600,6 +10918,11 @@ class Pathogen(Product):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Virus(Pathogen):
@@ -10969,6 +11292,11 @@ class Virus(Pathogen):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Bacterium(Pathogen):
@@ -11279,6 +11607,11 @@ class Bacterium(Pathogen):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Fungus(Pathogen):
@@ -11587,6 +11920,11 @@ class Fungus(Pathogen):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Protozoan(Pathogen):
@@ -11891,6 +12229,11 @@ class Protozoan(Pathogen):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Viroid(Pathogen):
@@ -12187,6 +12530,11 @@ class Viroid(Pathogen):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Prion(Pathogen):
@@ -12491,6 +12839,11 @@ class Prion(Pathogen):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class MaterialSafetyDataSheet(Resource):
@@ -12912,6 +13265,11 @@ class MaterialSafetyDataSheet(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class File(Resource):
@@ -13069,6 +13427,11 @@ class File(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Data(File):
@@ -13151,6 +13514,11 @@ class Data(File):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Document(File):
@@ -13235,6 +13603,11 @@ class Document(File):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Audio(File):
@@ -13317,6 +13690,11 @@ class Audio(File):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Video(File):
@@ -13397,6 +13775,11 @@ class Video(File):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Image(File):
@@ -13497,6 +13880,11 @@ class Image(File):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class ContactPoint(Resource):
@@ -13730,6 +14118,11 @@ class ContactPoint(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class License(Resource):
@@ -13910,6 +14303,11 @@ class License(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class Certification(Resource):
@@ -14093,6 +14491,11 @@ class Certification(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 class FundingSource(Resource):
@@ -14329,6 +14732,11 @@ class FundingSource(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['schema:url'],
          'related_mappings': ['mi:url']} })
+    publisher: Optional[PersonOrOrganization] = Field(default=None, title="publisher", description="""The entity responsible for making the resource available.""", json_schema_extra = { "linkml_meta": {'alias': 'publisher',
+         'comments': ['Resources of type foaf:Agent like EVORAO:PersonOrOrganization '
+                      'are recommended as values for this property.'],
+         'domain_of': ['Resource'],
+         'slot_uri': 'dct:publisher'} })
 
 
 # Model rebuild

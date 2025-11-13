@@ -22,28 +22,28 @@ Alias: version
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
-| [Catalogue](Catalogue.md) | A curated collection of metadata about resources |  no  |
-| [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  no  |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
-| [Taxonomy](Taxonomy.md) | A structured representation of data about the classification and naming of bi... |  yes  |
-| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Version](Version.md) | Numeric code assigned to identify a particular historical version of a work (... |  yes  |
-| [Vocabulary](Vocabulary.md) | A subset of words or phrases specific to a particular subject or field |  no  |
-| [Collection](Collection.md) | Set of products and services with some common characteristics |  no  |
-| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [ProductOrService](ProductOrService.md) | An offering provided by a provider, which may be tangible (a product) or inta... |  no  |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
+| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
 | [Dataset](Dataset.md) | A collection of data, published or curated by a single agent, and available f... |  yes  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
+| [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  no  |
+| [Vocabulary](Vocabulary.md) | A subset of words or phrases specific to a particular subject or field |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Collection](Collection.md) | Set of products and services with some common characteristics |  no  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
+| [Taxonomy](Taxonomy.md) | A structured representation of data about the classification and naming of bi... |  yes  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
+| [Version](Version.md) | Numeric code assigned to identify a particular historical version of a work (... |  yes  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Catalogue](Catalogue.md) | A curated collection of metadata about resources |  no  |
+| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
 
 
 

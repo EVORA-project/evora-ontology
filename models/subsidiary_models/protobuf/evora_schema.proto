@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.10742
+// version: 1.0.10759
 // List of other names for things.
 message AlternateName
  {
@@ -9,6 +9,7 @@ message AlternateName
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -24,6 +25,7 @@ message Antibody
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -81,6 +83,7 @@ message Audio
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
   string description = 0
@@ -95,6 +98,7 @@ message Bacterium
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -161,6 +165,7 @@ message BiologicalMaterialOrigin
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   boolean recombinantMaterial = 0
   boolean biologicalSourceType = 0
@@ -173,6 +178,7 @@ message BiosafetyLevel
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -186,6 +192,7 @@ message Bundle
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -235,6 +242,7 @@ message Certification
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -249,6 +257,7 @@ message ClinicalGroup
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -264,6 +273,7 @@ message Collection
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -278,6 +288,7 @@ message CommonName
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -293,6 +304,7 @@ message ContactPoint
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
   string description = 0
@@ -312,6 +324,7 @@ message Country
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -326,6 +339,7 @@ message Data
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
   string description = 0
@@ -340,6 +354,7 @@ message DataProvider
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -361,6 +376,7 @@ message DetectionKit
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -413,6 +429,7 @@ message Document
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
   string description = 0
@@ -427,6 +444,7 @@ message Doi
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -440,6 +458,7 @@ message ExpressionVector
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -453,6 +472,7 @@ message ExternalRelatedReference
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string reference = 0
   string referenceLabel = 0
@@ -466,6 +486,7 @@ message FundingSource
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -484,6 +505,7 @@ message Fungus
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -550,6 +572,7 @@ message GeographicalOrigin
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -563,6 +586,7 @@ message Hybridoma
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -621,6 +645,7 @@ message IataClassification
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -634,6 +659,7 @@ message Image
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
   string description = 0
@@ -649,6 +675,7 @@ message IplcOrigin
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -662,6 +689,7 @@ message IsolationHost
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -675,6 +703,7 @@ message Journal
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -688,6 +717,7 @@ message Keyword
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -701,6 +731,7 @@ message License
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -715,6 +746,7 @@ message MaterialSafetyDataSheet
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   contactPoint materialSafetyContact = 0
   string physicalChemicalProperties = 0
@@ -739,6 +771,7 @@ message NaturalPartOrigin
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   recombinantPartIdentification recombinantPartIdentification = 0
   boolean accessToPhysicalGeneticResource = 0
@@ -755,6 +788,7 @@ message NucleicAcid
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -817,6 +851,7 @@ message Organization
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
   string description = 0
@@ -834,6 +869,7 @@ message Originator
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
   string description = 0
@@ -848,6 +884,7 @@ message PathogenIdentification
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   taxon taxon = 0
   commonName pathogenName = 0
@@ -867,6 +904,7 @@ message PdbReference
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -880,6 +918,7 @@ message Person
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
   string description = 0
@@ -895,6 +934,7 @@ message PersonOrOrganization
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
   string description = 0
@@ -909,6 +949,7 @@ message PlasmidSelection
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -922,6 +963,7 @@ message Prion
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -988,6 +1030,7 @@ message Product
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1036,6 +1079,7 @@ message ProductCategory
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1050,6 +1094,7 @@ message ProductionCellLine
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1063,6 +1108,7 @@ message PropagationHost
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1076,6 +1122,7 @@ message Protein
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1138,6 +1185,7 @@ message Protozoan
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1204,6 +1252,7 @@ message Provider
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
   string description = 0
@@ -1222,6 +1271,7 @@ message Publication
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string authors = 0
@@ -1236,6 +1286,7 @@ message ReasearchInfrastructure
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
   string description = 0
@@ -1253,6 +1304,7 @@ message RecombinantPartIdentification
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string partIdentification = 0
  repeated  sequence sequence = 0
@@ -1264,6 +1316,7 @@ message RiskGroup
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1277,6 +1330,7 @@ message Sequence
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
  repeated  sequenceReference sequenceReference = 0
   string sequenceFasta = 0
@@ -1288,6 +1342,7 @@ message SequenceReference
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string accessionNumber = 0
   string sequenceProvider = 0
@@ -1299,6 +1354,7 @@ message Service
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1341,6 +1397,7 @@ message SpecialFeature
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1354,6 +1411,7 @@ message SyntheticPartOrigin
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   recombinantPartIdentification recombinantPartIdentification = 0
   boolean accessToPhysicalGeneticResource = 0
@@ -1367,6 +1425,7 @@ message TagSequence
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1380,6 +1439,7 @@ message Taxon
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1401,6 +1461,7 @@ message TaxonomicRank
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1415,6 +1476,7 @@ message Taxonomy
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1432,6 +1494,7 @@ message TransmissionMethod
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1445,6 +1508,7 @@ message Variant
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1460,6 +1524,7 @@ message Version
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string version = 0
   string versionOf = 0
@@ -1472,6 +1537,7 @@ message Video
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
   string description = 0
@@ -1486,6 +1552,7 @@ message Viroid
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1552,6 +1619,7 @@ message Virus
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1621,6 +1689,7 @@ message VirusName
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0
@@ -1636,6 +1705,7 @@ message Vocabulary
   datetime dateIssued = 0
   datetime dateModified = 0
  repeated  string identifier = 0
+  personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
   string description = 0

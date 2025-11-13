@@ -71,6 +71,7 @@ SELECT ?g ?s ?p WHERE {
    dct:modified,
    dct:identifier,
    EVORAO:iri,
+   dct:publisher,
    rdf:type ))
  }
  

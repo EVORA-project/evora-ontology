@@ -2,6 +2,7 @@
 --     * Slot: id Description: 
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Dataset" Description: "A collection of data, published or curated by a single agent, and available for access."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -9,6 +10,7 @@
 --     * Slot: version Description: The version indicator (name or identifier) of a resource.
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "DataService" Description: "A collection of operations that provides access to one or more datasets or data processing functions."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -16,12 +18,14 @@
 --     * Slot: endpointUrl Description: The URL template that allows to get the content.
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Version" Description: "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)."
 --     * Slot: id Description: 
 --     * Slot: version Description: The version indicator (name or identifier) of a resource.
 --     * Slot: versionOf Description: Identifier of what type of entities the version qualifies.
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Catalogue" Description: "A curated collection of metadata about resources."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -29,6 +33,7 @@
 --     * Slot: version Description: The version indicator (name or identifier) of a resource.
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Taxonomy" Description: "A structured representation of data about the classification and naming of biological organisms into groups according to shared characteristics."
 --     * Slot: id Description: 
 --     * Slot: version Description: The version indicator (name or identifier) of a resource.
@@ -39,6 +44,7 @@
 --     * Slot: taxonDataProvider_id Description: The data provider for the taxons of the taxonomy.
 --     * Slot: versionDataProvider_id Description: The data provider for the Version ID of this taxonomy.
 --     * Slot: rankDataProvider_id Description: The data provider for the description of the taxonomic ranks used in this taxonomy.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "DataProvider" Description: "An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources."
 --     * Slot: id Description: 
 --     * Slot: loginRequestMethod Description: The http request method used to acces the login request url.
@@ -53,6 +59,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "PathogenIdentification" Description: "A collection of distinguishing information that enables the differentiation of a pathogen from another."
 --     * Slot: id Description: 
 --     * Slot: pathogenType Description: Identification of the specific type of pathogen among the listed categories e.g. 'Virus','Viroid','Bacterium'...
@@ -66,6 +73,7 @@
 --     * Slot: taxon_id Description: Scientifically classified group or entity within the reference taxonomy.
 --     * Slot: pathogenName_id Description: A pathogen common name or a name that describes a group of pathogens.
 --     * Slot: variant_id Description: An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Publication" Description: "A scientific publication."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -75,6 +83,7 @@
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: doi_id Description: A Digital Object Identifier (DOI) that can be related.
 --     * Slot: journal_id Description: The scientific journal in which the publication was published.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Vocabulary" Description: "A subset of words or phrases specific to a particular subject or field."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -83,6 +92,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: termDataProvider_id Description: An external API or Endpoint that permits to retrieve the terms of this vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Term" Description: "Word or phrase from a specialized area of knowledge."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -91,6 +101,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "CommonName" Description: "Vernacular name that is the name used in everyday language to refer to something like an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific or technical name."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -99,6 +110,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "VirusName" Description: "A virus vernacular name or a name that describes a group of viruses."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -107,6 +119,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "AlternateName" Description: "List of other names for things."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -115,6 +128,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "RiskGroup" Description: "Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -123,6 +137,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "BiosafetyLevel" Description: "The level of biocontainment required or applied in the facility where the biological agent is manipulated."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -131,6 +146,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Doi" Description: "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -139,6 +155,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Journal" Description: "Periodical journal publishing scientific research."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -147,6 +164,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "PdbReference" Description: "Identifier for 3D structural data as per the PDB (Protein Data Bank) database."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -155,6 +173,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Keyword" Description: "A term or phrase used to tag and categorize content."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -163,6 +182,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "TagSequence" Description: "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -171,6 +191,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "SpecialFeature" Description: "Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ..."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -179,6 +200,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "ExpressionVector" Description: "A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -187,6 +209,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "PlasmidSelection" Description: "The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -195,6 +218,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "PropagationHost" Description: "The organism used to grow and multiply the pathogen under controlled conditions."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -203,6 +227,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "TransmissionMethod" Description: "The process by which the pathogen spreads between hosts."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -211,6 +236,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "ProductionCellLine" Description: "A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -219,6 +245,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "ProductCategory" Description: "A term used to classify a group of products that share common characteristics or functions, which helps in their organization."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -228,6 +255,7 @@
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: parentCategory_id Description: An overarching category that encompasses the current category within a hierarchical classification system. It serves as the top-level classification, organizing related subcategories under its umbrella to create a structured and logical order.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "IsolationHost" Description: "Host organism from which the pathogen was isolated."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -236,6 +264,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "GeographicalOrigin" Description: "The specific location or region where a physical item, originates or is naturally found."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -244,6 +273,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "IplcOrigin" Description: "The IPLC area (Indigenous People and Local Communities) from which a physical item originates."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -252,6 +282,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Country" Description: "The country as of ISO3166."
 --     * Slot: id Description: 
 --     * Slot: alpha2Code Description: Two-letter country codes from ISO 3166-1 alpha-2.
@@ -261,6 +292,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "IataClassification" Description: "The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -269,6 +301,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Variant" Description: "An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -277,6 +310,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "TaxonomicRank" Description: "The possible taxonomic ranks and their description."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -285,6 +319,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Taxon" Description: "Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit."
 --     * Slot: id Description: 
 --     * Slot: taxonomicId Description: The taxonomic identifier as a persistent identifier accross releases.
@@ -297,6 +332,7 @@
 --     * Slot: parentTaxon_id Description: The parent taxon of the current taxon.
 --     * Slot: rank_id Description: Relative level or position of the identified taxon in the taxonomy.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "ClinicalGroup" Description: "A syndromic grouping of pathogens, based on typical disease manifestation, clinical syndrome, or primary system affected. Examples include Respiratory viruses, Hemorrhagic viruses, and Gastroenteritis viruses. Clinical groups are not taxonomic categories but practical classifications used in medicine, epidemiology, and public health."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -305,6 +341,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "ExternalRelatedReference" Description: "A reference that permits to retrieve an item from an external provider."
 --     * Slot: id Description: 
 --     * Slot: reference Description: The identifier reference of the connected external item.
@@ -313,17 +350,20 @@
 --     * Slot: referenceProviderName Description: The name for the reference provider.
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Sequence" Description: "A nucleic acid or protein sequence information."
 --     * Slot: id Description: 
 --     * Slot: sequenceFasta Description: Textual encoding of a biological sequence information in FASTA format.
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "SequenceReference" Description: "A reference that permits to retrieve the sequence information from a sequence provider."
 --     * Slot: id Description: 
 --     * Slot: accessionNumber Description: The sequence ID that permits to retrieve the sequence information from the sequence provider.
 --     * Slot: sequenceProvider Description: The name of the sequence provider within the list of accepted sequence providers.
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "PersonOrOrganization" Description: "A person or an organization."
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity.
@@ -333,6 +373,7 @@
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
 --     * Slot: logo_id Description: A path or URL to the related logo.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Person" Description: "An individual."
 --     * Slot: id Description: 
 --     * Slot: orcidId Description: Unique persistent identifier for a person, provided by the Open Researcher and Contributor ID (ORCID) organisation.
@@ -343,6 +384,7 @@
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
 --     * Slot: logo_id Description: A path or URL to the related logo.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Organization" Description: "A social entity established to meet needs or pursue specific goals."
 --     * Slot: id Description: 
 --     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR).
@@ -354,6 +396,7 @@
 --     * Slot: country_id Description: The country of the organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
 --     * Slot: logo_id Description: A path or URL to the related logo.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "ReasearchInfrastructure" Description: "A research infrastructure (RI)."
 --     * Slot: id Description: 
 --     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR).
@@ -365,6 +408,7 @@
 --     * Slot: country_id Description: The country of the organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
 --     * Slot: logo_id Description: A path or URL to the related logo.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Provider" Description: "A provider of products or services, as a specific organization."
 --     * Slot: id Description: 
 --     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR).
@@ -376,6 +420,7 @@
 --     * Slot: country_id Description: The country of the organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
 --     * Slot: logo_id Description: A path or URL to the related logo.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Originator" Description: "The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample."
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity.
@@ -385,18 +430,21 @@
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
 --     * Slot: logo_id Description: A path or URL to the related logo.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "BiologicalMaterialOrigin" Description: "Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol."
 --     * Slot: id Description: 
 --     * Slot: recombinantMaterial Description: Indicates if this biological material is a recombinant biological material.
 --     * Slot: biologicalSourceType Description: Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "BiologicalPartOrigin" Description: "Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material."
 --     * Slot: id Description: 
 --     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource.
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "NaturalPartOrigin" Description: "Information on the origin of a natural part that composes the biological material."
 --     * Slot: id Description: 
 --     * Slot: collectionDate Description: The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property.
@@ -408,6 +456,7 @@
 --     * Slot: countryOfCollection_id Description: The geographical location where the sample was collected in situ. Used for Nagoya/CBD; equivalent to 'country of origin'.
 --     * Slot: indigenousPeopleAndLocalCommunityOrigin_id Description: The specific IPLC area (Indigenous People and Local Communities) from which this sample/element was sampled, if relevant.
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "SyntheticPartOrigin" Description: "Information on the origin of a synthetic part that composes the biological material."
 --     * Slot: id Description: 
 --     * Slot: modificationsFromTheReferenceSequences Description: Set to TRUE if there was is any modification made from the reference sequence.
@@ -416,11 +465,13 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: recombinantPartIdentification_id Description: Identification of a recombinant part.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "RecombinantPartIdentification" Description: "Identification of a recombinant part."
 --     * Slot: id Description: 
 --     * Slot: partIdentification Description: A short designation of this recombinant part of the related biological material.
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Collection" Description: "Set of products and services with some common characteristics."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -429,6 +480,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: collectionDataProvider_id Description: The provider of the data of the collection.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "ProductOrService" Description: "An offering provided by a provider, which may be tangible (a product) or intangible (a service)."
 --     * Slot: id Description: 
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
@@ -454,6 +506,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Service" Description: "An intangible offering characterized by an activity, performance, or facilitation carried out by a provider to fulfill a user’s need."
 --     * Slot: id Description: 
 --     * Slot: modelSpecies Description: The species of the infected organism in the experiment.
@@ -481,6 +534,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Product" Description: "A tangible, physical item made available by a provider for use, consumption, or ownership transfer."
 --     * Slot: id Description: 
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
@@ -514,6 +568,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Antibody" Description: "Protein that can bind to certain types of foreign bodies, such as pathogens."
 --     * Slot: id Description: 
 --     * Slot: productionSystem Description: The biological and technological methods and processes used to produce the antibody.
@@ -554,6 +609,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Hybridoma" Description: "An hybridoma that provides antibodies that can be related to a pathogen."
 --     * Slot: id Description: 
 --     * Slot: hybridomaDescription Description: The description of the hybridoma.
@@ -595,6 +651,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Protein" Description: "A protein as a derived product from a pathogen."
 --     * Slot: id Description: 
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
@@ -629,6 +686,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "NucleicAcid" Description: "Nucleic acid related to a pathogen. It can be extracted or synthetic."
 --     * Slot: id Description: 
 --     * Slot: clonedNucleicAcid Description: Specification of the terms and parameters for transporting.
@@ -673,6 +731,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "DetectionKit" Description: "A detection kit for specific pathogens."
 --     * Slot: id Description: 
 --     * Slot: specificityDocumented Description: Boolean value indicating whether the specificity of the product has been formally documented.
@@ -709,6 +768,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Bundle" Description: "A grouping of products and/or services intentionally combined into a single offering, typically to provide added value, convenience, or specific experimental utility."
 --     * Slot: id Description: 
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
@@ -742,6 +802,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Pathogen" Description: "Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such as a virus, bacterium, protozoan, prion, viroid, or fungus."
 --     * Slot: id Description: 
 --     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
@@ -787,6 +848,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Virus" Description: "The virus as a biological material."
 --     * Slot: id Description: 
 --     * Slot: contaminationWithCoInfectingViruses Description: A boolean value indicating whether there is contamination with co-infecting viruses.
@@ -834,6 +896,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Bacterium" Description: "The bacterium as a biological material."
 --     * Slot: id Description: 
 --     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
@@ -879,6 +942,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Fungus" Description: "The fungus as a biological material."
 --     * Slot: id Description: 
 --     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
@@ -924,6 +988,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Protozoan" Description: "The protozoan as a biological material."
 --     * Slot: id Description: 
 --     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
@@ -969,6 +1034,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Viroid" Description: "The viroid as a biological material."
 --     * Slot: id Description: 
 --     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
@@ -1014,6 +1080,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Prion" Description: "The prion as a biological material."
 --     * Slot: id Description: 
 --     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
@@ -1059,6 +1126,7 @@
 --     * Slot: biosafetyLevel_id Description: The level of biocontainment required or applied in the facility where the biological agent is manipulated.
 --     * Slot: provider_id Description: A provider of this product or service, as a specific organization.
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "MaterialSafetyDataSheet" Description: "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product."
 --     * Slot: id Description: 
 --     * Slot: physicalChemicalProperties Description: Key characteristics of the product, such as physical state, appearance, solubility, pH, chemical composition, and molecular weight, essential for safe handling and storage.
@@ -1078,6 +1146,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: materialSafetyContact_id Description: The designated contact point responsible for providing information related to the safety, handling, and regulatory compliance of the biological product.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "File" Description: "Digital document or record stored in a specific format that contains data or information."
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity.
@@ -1087,6 +1156,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Data" Description: "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information."
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity.
@@ -1096,6 +1166,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Document" Description: "Subclass of File representing textual or written files such as reports, manuals, or forms."
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity.
@@ -1105,6 +1176,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Audio" Description: "Subclass of File representing sound recordings or audio tracks."
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity.
@@ -1114,6 +1186,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Video" Description: "Subclass of File representing moving visual media, such as recordings, presentations, or movies."
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity.
@@ -1123,6 +1196,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Image" Description: "Subclass of File representing visual content such as pictures, diagrams, or illustrations."
 --     * Slot: id Description: 
 --     * Slot: altText Description: An alternate text for the image, if the image cannot be displayed.
@@ -1133,6 +1207,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: license_id Description: Information about terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "ContactPoint" Description: "Entity serving as focal point of information."
 --     * Slot: id Description: 
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity.
@@ -1147,6 +1222,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: addressCountry_id Description: The country as of  ISO 3166.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "License" Description: "The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -1156,6 +1232,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: logo_id Description: A path or URL to the related logo.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Certification" Description: "Assurance given by an independent certification body that a product, service or system meets the requirements of a standard."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -1164,6 +1241,7 @@
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: logo_id Description: A path or URL to the related logo.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "FundingSource" Description: "A program, grant, or project providing financial support for the access or use of a product or service, either fully or partially."
 --     * Slot: id Description: 
 --     * Slot: title Description: A name given to the resource.
@@ -1177,6 +1255,7 @@
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: funder_id Description: The organization providing the financial support.
 --     * Slot: logo_id Description: A path or URL to the related logo.
+--     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Resource_keyword" Description: ""
 --     * Slot: Resource_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource.
@@ -2660,112 +2739,6 @@
 --     * Slot: FundingSource_id Description: Autocreated FK slot
 --     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 
-CREATE TABLE "Resource" (
-	id INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE "Dataset" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE "DataService" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	"endpointUrl" TEXT NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE "Version" (
-	id INTEGER NOT NULL, 
-	version TEXT NOT NULL, 
-	"versionOf" TEXT NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE "Catalogue" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE "ExternalRelatedReference" (
-	id INTEGER NOT NULL, 
-	reference TEXT NOT NULL, 
-	"referenceLabel" TEXT NOT NULL, 
-	"referenceProviderPrefix" TEXT NOT NULL, 
-	"referenceProviderName" TEXT NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE "Sequence" (
-	id INTEGER NOT NULL, 
-	"sequenceFasta" TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE "SequenceReference" (
-	id INTEGER NOT NULL, 
-	"accessionNumber" TEXT NOT NULL, 
-	"sequenceProvider" TEXT NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE "BiologicalMaterialOrigin" (
-	id INTEGER NOT NULL, 
-	"recombinantMaterial" BOOLEAN NOT NULL, 
-	"biologicalSourceType" BOOLEAN NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE "RecombinantPartIdentification" (
-	id INTEGER NOT NULL, 
-	"partIdentification" TEXT NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE "Image" (
-	id INTEGER NOT NULL, 
-	"altText" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
-	"contentUrl" TEXT NOT NULL, 
-	format TEXT NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	license_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(license_id) REFERENCES "License" (id)
-);
-CREATE TABLE "License" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	"resourceUrl" TEXT, 
-	"licensingOrAttribution" TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	logo_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
-);
 CREATE TABLE "DataProvider" (
 	id INTEGER NOT NULL, 
 	"loginRequestMethod" TEXT, 
@@ -2780,28 +2753,667 @@ CREATE TABLE "DataProvider" (
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
 	license_id INTEGER, 
+	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(license_id) REFERENCES "License" (id)
+	FOREIGN KEY(license_id) REFERENCES "License" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
 );
-CREATE TABLE "BiologicalPartOrigin" (
+CREATE TABLE "Vocabulary" (
 	id INTEGER NOT NULL, 
-	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
-	"recombinantPartIdentification_id" INTEGER, 
+	"termDataProvider_id" INTEGER, 
+	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY("recombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
+	FOREIGN KEY("termDataProvider_id") REFERENCES "DataProvider" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
 );
-CREATE TABLE "SyntheticPartOrigin" (
+CREATE TABLE "Country" (
 	id INTEGER NOT NULL, 
-	"modificationsFromTheReferenceSequences" BOOLEAN NOT NULL, 
-	"descriptionOfModificationsMadeFromTheReferenceSequences" TEXT, 
-	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
+	"alpha2Code" TEXT NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
-	"recombinantPartIdentification_id" INTEGER, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY("recombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "PersonOrOrganization" (
+	id INTEGER NOT NULL, 
+	name TEXT NOT NULL, 
+	description TEXT, 
+	"homePage" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"contactPoint_id" INTEGER, 
+	logo_id INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(logo_id) REFERENCES "Image" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Image" (
+	id INTEGER NOT NULL, 
+	"altText" TEXT, 
+	name TEXT NOT NULL, 
+	description TEXT, 
+	"contentUrl" TEXT NOT NULL, 
+	format TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	license_id INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(license_id) REFERENCES "License" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "ContactPoint" (
+	id INTEGER NOT NULL, 
+	name TEXT NOT NULL, 
+	description TEXT, 
+	email TEXT, 
+	telephone TEXT, 
+	"streetAddress" TEXT, 
+	"addressLocality" TEXT, 
+	"addressRegion" TEXT, 
+	"postalCode" TEXT, 
+	"orcidId" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"addressCountry_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("addressCountry_id") REFERENCES "Country" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "License" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	"resourceUrl" TEXT, 
+	"licensingOrAttribution" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	logo_id INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(logo_id) REFERENCES "Image" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Resource" (
+	id INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Dataset" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "DataService" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	"endpointUrl" TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Version" (
+	id INTEGER NOT NULL, 
+	version TEXT NOT NULL, 
+	"versionOf" TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Catalogue" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Taxonomy" (
+	id INTEGER NOT NULL, 
+	version TEXT NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"taxonDataProvider_id" INTEGER, 
+	"versionDataProvider_id" INTEGER NOT NULL, 
+	"rankDataProvider_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("taxonDataProvider_id") REFERENCES "DataProvider" (id), 
+	FOREIGN KEY("versionDataProvider_id") REFERENCES "DataProvider" (id), 
+	FOREIGN KEY("rankDataProvider_id") REFERENCES "DataProvider" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Term" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "CommonName" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "VirusName" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "AlternateName" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "RiskGroup" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "BiosafetyLevel" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Doi" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Journal" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "PdbReference" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Keyword" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "TagSequence" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "SpecialFeature" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "ExpressionVector" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "PlasmidSelection" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "PropagationHost" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "TransmissionMethod" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "ProductionCellLine" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "ProductCategory" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"parentCategory_id" INTEGER, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("parentCategory_id") REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "IsolationHost" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "GeographicalOrigin" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "IplcOrigin" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "IataClassification" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Variant" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "TaxonomicRank" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "ClinicalGroup" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "ExternalRelatedReference" (
+	id INTEGER NOT NULL, 
+	reference TEXT NOT NULL, 
+	"referenceLabel" TEXT NOT NULL, 
+	"referenceProviderPrefix" TEXT NOT NULL, 
+	"referenceProviderName" TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Sequence" (
+	id INTEGER NOT NULL, 
+	"sequenceFasta" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "SequenceReference" (
+	id INTEGER NOT NULL, 
+	"accessionNumber" TEXT NOT NULL, 
+	"sequenceProvider" TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Person" (
+	id INTEGER NOT NULL, 
+	"orcidId" TEXT, 
+	name TEXT NOT NULL, 
+	description TEXT, 
+	"homePage" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"contactPoint_id" INTEGER, 
+	logo_id INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(logo_id) REFERENCES "Image" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Organization" (
+	id INTEGER NOT NULL, 
+	"rorId" TEXT, 
+	name TEXT NOT NULL, 
+	description TEXT, 
+	"homePage" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	country_id INTEGER, 
+	"contactPoint_id" INTEGER, 
+	logo_id INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(country_id) REFERENCES "Country" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(logo_id) REFERENCES "Image" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "ReasearchInfrastructure" (
+	id INTEGER NOT NULL, 
+	"rorId" TEXT, 
+	name TEXT NOT NULL, 
+	description TEXT, 
+	"homePage" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	country_id INTEGER, 
+	"contactPoint_id" INTEGER, 
+	logo_id INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(country_id) REFERENCES "Country" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(logo_id) REFERENCES "Image" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Provider" (
+	id INTEGER NOT NULL, 
+	"rorId" TEXT, 
+	name TEXT NOT NULL, 
+	description TEXT, 
+	"homePage" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	country_id INTEGER, 
+	"contactPoint_id" INTEGER, 
+	logo_id INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(country_id) REFERENCES "Country" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(logo_id) REFERENCES "Image" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Originator" (
+	id INTEGER NOT NULL, 
+	name TEXT NOT NULL, 
+	description TEXT, 
+	"homePage" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"contactPoint_id" INTEGER, 
+	logo_id INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(logo_id) REFERENCES "Image" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "BiologicalMaterialOrigin" (
+	id INTEGER NOT NULL, 
+	"recombinantMaterial" BOOLEAN NOT NULL, 
+	"biologicalSourceType" BOOLEAN NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "RecombinantPartIdentification" (
+	id INTEGER NOT NULL, 
+	"partIdentification" TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Collection" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"collectionDataProvider_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("collectionDataProvider_id") REFERENCES "DataProvider" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "MaterialSafetyDataSheet" (
+	id INTEGER NOT NULL, 
+	"physicalChemicalProperties" TEXT, 
+	"hazardsIdentification" TEXT, 
+	"firstAidMeasures" TEXT, 
+	"fireFightingMeasures" TEXT, 
+	"accidentalReleaseMeasures" TEXT, 
+	"handlingAndStorage" TEXT, 
+	"exposureControlsPersonalProtection" TEXT, 
+	"stabilityAndReactivity" TEXT, 
+	"toxicologicalInformation" TEXT, 
+	"ecologicalInformation" TEXT, 
+	"disposalConsiderations" TEXT, 
+	"transportInformation" TEXT, 
+	"regulatoryInformation" TEXT, 
+	"furtherInformation" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"materialSafetyContact_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("materialSafetyContact_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
 );
 CREATE TABLE "File" (
 	id INTEGER NOT NULL, 
@@ -2812,8 +3424,10 @@ CREATE TABLE "File" (
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
 	license_id INTEGER, 
+	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(license_id) REFERENCES "License" (id)
+	FOREIGN KEY(license_id) REFERENCES "License" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
 );
 CREATE TABLE "Data" (
 	id INTEGER NOT NULL, 
@@ -2824,8 +3438,10 @@ CREATE TABLE "Data" (
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
 	license_id INTEGER, 
+	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(license_id) REFERENCES "License" (id)
+	FOREIGN KEY(license_id) REFERENCES "License" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
 );
 CREATE TABLE "Document" (
 	id INTEGER NOT NULL, 
@@ -2836,8 +3452,10 @@ CREATE TABLE "Document" (
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
 	license_id INTEGER, 
+	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(license_id) REFERENCES "License" (id)
+	FOREIGN KEY(license_id) REFERENCES "License" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
 );
 CREATE TABLE "Audio" (
 	id INTEGER NOT NULL, 
@@ -2848,8 +3466,10 @@ CREATE TABLE "Audio" (
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
 	license_id INTEGER, 
+	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(license_id) REFERENCES "License" (id)
+	FOREIGN KEY(license_id) REFERENCES "License" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
 );
 CREATE TABLE "Video" (
 	id INTEGER NOT NULL, 
@@ -2860,8 +3480,10 @@ CREATE TABLE "Video" (
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
 	license_id INTEGER, 
+	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(license_id) REFERENCES "License" (id)
+	FOREIGN KEY(license_id) REFERENCES "License" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
 );
 CREATE TABLE "Certification" (
 	id INTEGER NOT NULL, 
@@ -2871,8 +3493,1064 @@ CREATE TABLE "Certification" (
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
 	logo_id INTEGER, 
+	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
+	FOREIGN KEY(logo_id) REFERENCES "Image" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "DataProvider_providedEntityType" (
+	"DataProvider_id" INTEGER, 
+	"providedEntityType" TEXT NOT NULL, 
+	PRIMARY KEY ("DataProvider_id", "providedEntityType"), 
+	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
+);
+CREATE TABLE "DataProvider_keyword" (
+	"DataProvider_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("DataProvider_id", keyword), 
+	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
+);
+CREATE TABLE "DataProvider_identifier" (
+	"DataProvider_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("DataProvider_id", identifier), 
+	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
+);
+CREATE TABLE "DataProvider_iri" (
+	"DataProvider_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("DataProvider_id", iri), 
+	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
+);
+CREATE TABLE "Vocabulary_keyword" (
+	"Vocabulary_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Vocabulary_id", keyword), 
+	FOREIGN KEY("Vocabulary_id") REFERENCES "Vocabulary" (id)
+);
+CREATE TABLE "Vocabulary_identifier" (
+	"Vocabulary_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Vocabulary_id", identifier), 
+	FOREIGN KEY("Vocabulary_id") REFERENCES "Vocabulary" (id)
+);
+CREATE TABLE "Vocabulary_iri" (
+	"Vocabulary_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Vocabulary_id", iri), 
+	FOREIGN KEY("Vocabulary_id") REFERENCES "Vocabulary" (id)
+);
+CREATE TABLE "Country_keyword" (
+	"Country_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Country_id", keyword), 
+	FOREIGN KEY("Country_id") REFERENCES "Country" (id)
+);
+CREATE TABLE "Country_identifier" (
+	"Country_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Country_id", identifier), 
+	FOREIGN KEY("Country_id") REFERENCES "Country" (id)
+);
+CREATE TABLE "Country_iri" (
+	"Country_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Country_id", iri), 
+	FOREIGN KEY("Country_id") REFERENCES "Country" (id)
+);
+CREATE TABLE "PersonOrOrganization_keyword" (
+	"PersonOrOrganization_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("PersonOrOrganization_id", keyword), 
+	FOREIGN KEY("PersonOrOrganization_id") REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "PersonOrOrganization_identifier" (
+	"PersonOrOrganization_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("PersonOrOrganization_id", identifier), 
+	FOREIGN KEY("PersonOrOrganization_id") REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "PersonOrOrganization_iri" (
+	"PersonOrOrganization_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("PersonOrOrganization_id", iri), 
+	FOREIGN KEY("PersonOrOrganization_id") REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Image_keyword" (
+	"Image_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Image_id", keyword), 
+	FOREIGN KEY("Image_id") REFERENCES "Image" (id)
+);
+CREATE TABLE "Image_identifier" (
+	"Image_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Image_id", identifier), 
+	FOREIGN KEY("Image_id") REFERENCES "Image" (id)
+);
+CREATE TABLE "Image_iri" (
+	"Image_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Image_id", iri), 
+	FOREIGN KEY("Image_id") REFERENCES "Image" (id)
+);
+CREATE TABLE "ContactPoint_keyword" (
+	"ContactPoint_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("ContactPoint_id", keyword), 
+	FOREIGN KEY("ContactPoint_id") REFERENCES "ContactPoint" (id)
+);
+CREATE TABLE "ContactPoint_identifier" (
+	"ContactPoint_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("ContactPoint_id", identifier), 
+	FOREIGN KEY("ContactPoint_id") REFERENCES "ContactPoint" (id)
+);
+CREATE TABLE "ContactPoint_iri" (
+	"ContactPoint_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("ContactPoint_id", iri), 
+	FOREIGN KEY("ContactPoint_id") REFERENCES "ContactPoint" (id)
+);
+CREATE TABLE "License_keyword" (
+	"License_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("License_id", keyword), 
+	FOREIGN KEY("License_id") REFERENCES "License" (id)
+);
+CREATE TABLE "License_identifier" (
+	"License_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("License_id", identifier), 
+	FOREIGN KEY("License_id") REFERENCES "License" (id)
+);
+CREATE TABLE "License_iri" (
+	"License_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("License_id", iri), 
+	FOREIGN KEY("License_id") REFERENCES "License" (id)
+);
+CREATE TABLE "Publication" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	authors TEXT NOT NULL, 
+	abstract TEXT NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	doi_id INTEGER NOT NULL, 
+	journal_id INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(doi_id) REFERENCES "Doi" (id), 
+	FOREIGN KEY(journal_id) REFERENCES "Journal" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Taxon" (
+	id INTEGER NOT NULL, 
+	"taxonomicId" TEXT NOT NULL, 
+	"taxonomicNodeId" TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	weight INTEGER NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"parentTaxon_id" INTEGER, 
+	rank_id INTEGER, 
+	"inVocabulary_id" INTEGER NOT NULL, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("parentTaxon_id") REFERENCES "Taxon" (id), 
+	FOREIGN KEY(rank_id) REFERENCES "TaxonomicRank" (id), 
+	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "BiologicalPartOrigin" (
+	id INTEGER NOT NULL, 
+	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"recombinantPartIdentification_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("recombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "NaturalPartOrigin" (
+	id INTEGER NOT NULL, 
+	"collectionDate" DATETIME NOT NULL, 
+	"beforeDate" BOOLEAN NOT NULL, 
+	"permitIdentifierForAbs" TEXT, 
+	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"countryOfCollection_id" INTEGER NOT NULL, 
+	"indigenousPeopleAndLocalCommunityOrigin_id" INTEGER, 
+	"recombinantPartIdentification_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("countryOfCollection_id") REFERENCES "Country" (id), 
+	FOREIGN KEY("indigenousPeopleAndLocalCommunityOrigin_id") REFERENCES "IplcOrigin" (id), 
+	FOREIGN KEY("recombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "SyntheticPartOrigin" (
+	id INTEGER NOT NULL, 
+	"modificationsFromTheReferenceSequences" BOOLEAN NOT NULL, 
+	"descriptionOfModificationsMadeFromTheReferenceSequences" TEXT, 
+	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"recombinantPartIdentification_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("recombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "ProductOrService" (
+	id INTEGER NOT NULL, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Service" (
+	id INTEGER NOT NULL, 
+	"modelSpecies" TEXT, 
+	"modelType" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Product" (
+	id INTEGER NOT NULL, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Antibody" (
+	id INTEGER NOT NULL, 
+	"productionSystem" TEXT, 
+	"antibodyPurifiedByAffinity" BOOLEAN, 
+	"specificityDocumented" BOOLEAN NOT NULL, 
+	"antibodySpecificity" TEXT, 
+	"targetedAntigen" TEXT NOT NULL, 
+	"antibodyType" TEXT, 
+	"antibodyCharacterizationObservation" TEXT, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Hybridoma" (
+	id INTEGER NOT NULL, 
+	"hybridomaDescription" TEXT NOT NULL, 
+	"productionSystem" TEXT, 
+	"antibodyPurifiedByAffinity" BOOLEAN, 
+	"specificityDocumented" BOOLEAN NOT NULL, 
+	"antibodySpecificity" TEXT, 
+	"targetedAntigen" TEXT NOT NULL, 
+	"antibodyType" TEXT, 
+	"antibodyCharacterizationObservation" TEXT, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Protein" (
+	id INTEGER NOT NULL, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "NucleicAcid" (
+	id INTEGER NOT NULL, 
+	"clonedNucleicAcid" BOOLEAN NOT NULL, 
+	"regionEncompassedInThisProduct" TEXT NOT NULL, 
+	"mutationObserved" BOOLEAN NOT NULL, 
+	"observedMutations" TEXT, 
+	"identificationTechnique" TEXT, 
+	sequencing TEXT NOT NULL, 
+	titer TEXT, 
+	"sequenceChecked" BOOLEAN NOT NULL, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
+	"clonedIntoPlasmid_id" INTEGER, 
+	"tagSequence_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
+	FOREIGN KEY("clonedIntoPlasmid_id") REFERENCES "ExpressionVector" (id), 
+	FOREIGN KEY("tagSequence_id") REFERENCES "TagSequence" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "DetectionKit" (
+	id INTEGER NOT NULL, 
+	"specificityDocumented" BOOLEAN NOT NULL, 
+	specificity TEXT, 
+	"targetedRegion" TEXT, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Bundle" (
+	id INTEGER NOT NULL, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Pathogen" (
+	id INTEGER NOT NULL, 
+	cultivability TEXT NOT NULL, 
+	"clinicalInformation" TEXT, 
+	"identificationTechnique" TEXT, 
+	infectivity TEXT NOT NULL, 
+	"infectivityTest" TEXT, 
+	"isolationTechnique" TEXT, 
+	"isolationConditions" TEXT, 
+	"letterOfAuthority" TEXT NOT NULL, 
+	passage TEXT, 
+	"genomeSequencing" TEXT NOT NULL, 
+	titer TEXT NOT NULL, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Virus" (
+	id INTEGER NOT NULL, 
+	"contaminationWithCoInfectingViruses" BOOLEAN NOT NULL, 
+	"mycoplasmicContent" BOOLEAN NOT NULL, 
+	cultivability TEXT NOT NULL, 
+	"clinicalInformation" TEXT, 
+	"identificationTechnique" TEXT, 
+	infectivity TEXT NOT NULL, 
+	"infectivityTest" TEXT, 
+	"isolationTechnique" TEXT, 
+	"isolationConditions" TEXT, 
+	"letterOfAuthority" TEXT NOT NULL, 
+	passage TEXT, 
+	"genomeSequencing" TEXT NOT NULL, 
+	titer TEXT NOT NULL, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Bacterium" (
+	id INTEGER NOT NULL, 
+	cultivability TEXT NOT NULL, 
+	"clinicalInformation" TEXT, 
+	"identificationTechnique" TEXT, 
+	infectivity TEXT NOT NULL, 
+	"infectivityTest" TEXT, 
+	"isolationTechnique" TEXT, 
+	"isolationConditions" TEXT, 
+	"letterOfAuthority" TEXT NOT NULL, 
+	passage TEXT, 
+	"genomeSequencing" TEXT NOT NULL, 
+	titer TEXT NOT NULL, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Fungus" (
+	id INTEGER NOT NULL, 
+	cultivability TEXT NOT NULL, 
+	"clinicalInformation" TEXT, 
+	"identificationTechnique" TEXT, 
+	infectivity TEXT NOT NULL, 
+	"infectivityTest" TEXT, 
+	"isolationTechnique" TEXT, 
+	"isolationConditions" TEXT, 
+	"letterOfAuthority" TEXT NOT NULL, 
+	passage TEXT, 
+	"genomeSequencing" TEXT NOT NULL, 
+	titer TEXT NOT NULL, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Protozoan" (
+	id INTEGER NOT NULL, 
+	cultivability TEXT NOT NULL, 
+	"clinicalInformation" TEXT, 
+	"identificationTechnique" TEXT, 
+	infectivity TEXT NOT NULL, 
+	"infectivityTest" TEXT, 
+	"isolationTechnique" TEXT, 
+	"isolationConditions" TEXT, 
+	"letterOfAuthority" TEXT NOT NULL, 
+	passage TEXT, 
+	"genomeSequencing" TEXT NOT NULL, 
+	titer TEXT NOT NULL, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Viroid" (
+	id INTEGER NOT NULL, 
+	cultivability TEXT NOT NULL, 
+	"clinicalInformation" TEXT, 
+	"identificationTechnique" TEXT, 
+	infectivity TEXT NOT NULL, 
+	"infectivityTest" TEXT, 
+	"isolationTechnique" TEXT, 
+	"isolationConditions" TEXT, 
+	"letterOfAuthority" TEXT NOT NULL, 
+	passage TEXT, 
+	"genomeSequencing" TEXT NOT NULL, 
+	titer TEXT NOT NULL, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Prion" (
+	id INTEGER NOT NULL, 
+	cultivability TEXT NOT NULL, 
+	"clinicalInformation" TEXT, 
+	"identificationTechnique" TEXT, 
+	infectivity TEXT NOT NULL, 
+	"infectivityTest" TEXT, 
+	"isolationTechnique" TEXT, 
+	"isolationConditions" TEXT, 
+	"letterOfAuthority" TEXT NOT NULL, 
+	passage TEXT, 
+	"genomeSequencing" TEXT NOT NULL, 
+	titer TEXT NOT NULL, 
+	"shippingConditions" TEXT NOT NULL, 
+	"storageConditions" TEXT NOT NULL, 
+	"thirdPartyDistributionConsent" BOOLEAN, 
+	"usageRestrictions" TEXT, 
+	"preparationTechnique" TEXT, 
+	"accessPointUrl" TEXT NOT NULL, 
+	"refSku" TEXT NOT NULL, 
+	"unitDefinition" TEXT, 
+	"unitCost" INTEGER, 
+	"unitCostCurrency" TEXT, 
+	"unitCostNote" TEXT, 
+	"qualityGrading" TEXT, 
+	"biosafetyRestrictions" TEXT, 
+	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
+	availability TEXT NOT NULL, 
+	"technicalRecommendation" TEXT, 
+	"internalReference" TEXT, 
+	note TEXT, 
+	title TEXT NOT NULL, 
+	description TEXT NOT NULL, 
+	version TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
+	"iataClassification_id" INTEGER NOT NULL, 
+	"materialSafetyDataSheet_id" INTEGER, 
+	originator_id INTEGER, 
+	category_id INTEGER NOT NULL, 
+	"riskGroup_id" INTEGER, 
+	"biosafetyLevel_id" INTEGER, 
+	provider_id INTEGER NOT NULL, 
+	"contactPoint_id" INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
+	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
+	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
+	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
+	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
+	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
+	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "FundingSource" (
+	id INTEGER NOT NULL, 
+	title TEXT NOT NULL, 
+	description TEXT, 
+	"fundingProgram" TEXT, 
+	"grantNumber" TEXT, 
+	"fundingPeriodStart" DATE, 
+	"fundingPeriodEnd" DATE, 
+	"eligibilityCriteria" TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	funder_id INTEGER, 
+	logo_id INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(funder_id) REFERENCES "Organization" (id), 
+	FOREIGN KEY(logo_id) REFERENCES "Image" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
 );
 CREATE TABLE "Resource_keyword" (
 	"Resource_id" INTEGER, 
@@ -2978,660 +4656,12 @@ CREATE TABLE "Catalogue_iri" (
 	PRIMARY KEY ("Catalogue_id", iri), 
 	FOREIGN KEY("Catalogue_id") REFERENCES "Catalogue" (id)
 );
-CREATE TABLE "ExternalRelatedReference_keyword" (
-	"ExternalRelatedReference_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("ExternalRelatedReference_id", keyword), 
-	FOREIGN KEY("ExternalRelatedReference_id") REFERENCES "ExternalRelatedReference" (id)
-);
-CREATE TABLE "ExternalRelatedReference_identifier" (
-	"ExternalRelatedReference_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("ExternalRelatedReference_id", identifier), 
-	FOREIGN KEY("ExternalRelatedReference_id") REFERENCES "ExternalRelatedReference" (id)
-);
-CREATE TABLE "ExternalRelatedReference_iri" (
-	"ExternalRelatedReference_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("ExternalRelatedReference_id", iri), 
-	FOREIGN KEY("ExternalRelatedReference_id") REFERENCES "ExternalRelatedReference" (id)
-);
-CREATE TABLE "Sequence_sequenceReference" (
-	"Sequence_id" INTEGER, 
-	"sequenceReference_id" INTEGER, 
-	PRIMARY KEY ("Sequence_id", "sequenceReference_id"), 
-	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id), 
-	FOREIGN KEY("sequenceReference_id") REFERENCES "SequenceReference" (id)
-);
-CREATE TABLE "Sequence_keyword" (
-	"Sequence_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("Sequence_id", keyword), 
-	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id)
-);
-CREATE TABLE "Sequence_identifier" (
-	"Sequence_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("Sequence_id", identifier), 
-	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id)
-);
-CREATE TABLE "Sequence_iri" (
-	"Sequence_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("Sequence_id", iri), 
-	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id)
-);
-CREATE TABLE "SequenceReference_keyword" (
-	"SequenceReference_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("SequenceReference_id", keyword), 
-	FOREIGN KEY("SequenceReference_id") REFERENCES "SequenceReference" (id)
-);
-CREATE TABLE "SequenceReference_identifier" (
-	"SequenceReference_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("SequenceReference_id", identifier), 
-	FOREIGN KEY("SequenceReference_id") REFERENCES "SequenceReference" (id)
-);
-CREATE TABLE "SequenceReference_iri" (
-	"SequenceReference_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("SequenceReference_id", iri), 
-	FOREIGN KEY("SequenceReference_id") REFERENCES "SequenceReference" (id)
-);
-CREATE TABLE "BiologicalMaterialOrigin_keyword" (
-	"BiologicalMaterialOrigin_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("BiologicalMaterialOrigin_id", keyword), 
-	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id)
-);
-CREATE TABLE "BiologicalMaterialOrigin_identifier" (
-	"BiologicalMaterialOrigin_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("BiologicalMaterialOrigin_id", identifier), 
-	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id)
-);
-CREATE TABLE "BiologicalMaterialOrigin_iri" (
-	"BiologicalMaterialOrigin_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("BiologicalMaterialOrigin_id", iri), 
-	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id)
-);
-CREATE TABLE "RecombinantPartIdentification_sequence" (
-	"RecombinantPartIdentification_id" INTEGER, 
-	sequence_id INTEGER NOT NULL, 
-	PRIMARY KEY ("RecombinantPartIdentification_id", sequence_id), 
-	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id), 
-	FOREIGN KEY(sequence_id) REFERENCES "Sequence" (id)
-);
-CREATE TABLE "RecombinantPartIdentification_keyword" (
-	"RecombinantPartIdentification_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("RecombinantPartIdentification_id", keyword), 
-	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
-);
-CREATE TABLE "RecombinantPartIdentification_identifier" (
-	"RecombinantPartIdentification_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("RecombinantPartIdentification_id", identifier), 
-	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
-);
-CREATE TABLE "RecombinantPartIdentification_iri" (
-	"RecombinantPartIdentification_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("RecombinantPartIdentification_id", iri), 
-	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
-);
-CREATE TABLE "Image_keyword" (
-	"Image_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("Image_id", keyword), 
-	FOREIGN KEY("Image_id") REFERENCES "Image" (id)
-);
-CREATE TABLE "Image_identifier" (
-	"Image_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("Image_id", identifier), 
-	FOREIGN KEY("Image_id") REFERENCES "Image" (id)
-);
-CREATE TABLE "Image_iri" (
-	"Image_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("Image_id", iri), 
-	FOREIGN KEY("Image_id") REFERENCES "Image" (id)
-);
-CREATE TABLE "License_keyword" (
-	"License_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("License_id", keyword), 
-	FOREIGN KEY("License_id") REFERENCES "License" (id)
-);
-CREATE TABLE "License_identifier" (
-	"License_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("License_id", identifier), 
-	FOREIGN KEY("License_id") REFERENCES "License" (id)
-);
-CREATE TABLE "License_iri" (
-	"License_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("License_id", iri), 
-	FOREIGN KEY("License_id") REFERENCES "License" (id)
-);
-CREATE TABLE "Taxonomy" (
-	id INTEGER NOT NULL, 
-	version TEXT NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"taxonDataProvider_id" INTEGER, 
-	"versionDataProvider_id" INTEGER NOT NULL, 
-	"rankDataProvider_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("taxonDataProvider_id") REFERENCES "DataProvider" (id), 
-	FOREIGN KEY("versionDataProvider_id") REFERENCES "DataProvider" (id), 
-	FOREIGN KEY("rankDataProvider_id") REFERENCES "DataProvider" (id)
-);
-CREATE TABLE "Vocabulary" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"termDataProvider_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("termDataProvider_id") REFERENCES "DataProvider" (id)
-);
-CREATE TABLE "Collection" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"collectionDataProvider_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("collectionDataProvider_id") REFERENCES "DataProvider" (id)
-);
-CREATE TABLE "DataProvider_providedEntityType" (
-	"DataProvider_id" INTEGER, 
-	"providedEntityType" TEXT NOT NULL, 
-	PRIMARY KEY ("DataProvider_id", "providedEntityType"), 
-	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
-);
-CREATE TABLE "DataProvider_servesDataset" (
-	"DataProvider_id" INTEGER, 
-	"servesDataset_id" INTEGER, 
-	PRIMARY KEY ("DataProvider_id", "servesDataset_id"), 
-	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id), 
-	FOREIGN KEY("servesDataset_id") REFERENCES "Dataset" (id)
-);
-CREATE TABLE "DataProvider_keyword" (
-	"DataProvider_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("DataProvider_id", keyword), 
-	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
-);
-CREATE TABLE "DataProvider_identifier" (
-	"DataProvider_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("DataProvider_id", identifier), 
-	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
-);
-CREATE TABLE "DataProvider_iri" (
-	"DataProvider_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("DataProvider_id", iri), 
-	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id)
-);
-CREATE TABLE "BiologicalMaterialOrigin_biologicalPartOrigin" (
-	"BiologicalMaterialOrigin_id" INTEGER, 
-	"biologicalPartOrigin_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("BiologicalMaterialOrigin_id", "biologicalPartOrigin_id"), 
-	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("biologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
-);
-CREATE TABLE "BiologicalPartOrigin_keyword" (
-	"BiologicalPartOrigin_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("BiologicalPartOrigin_id", keyword), 
-	FOREIGN KEY("BiologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
-);
-CREATE TABLE "BiologicalPartOrigin_identifier" (
-	"BiologicalPartOrigin_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("BiologicalPartOrigin_id", identifier), 
-	FOREIGN KEY("BiologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
-);
-CREATE TABLE "BiologicalPartOrigin_iri" (
-	"BiologicalPartOrigin_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("BiologicalPartOrigin_id", iri), 
-	FOREIGN KEY("BiologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
-);
-CREATE TABLE "SyntheticPartOrigin_keyword" (
-	"SyntheticPartOrigin_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("SyntheticPartOrigin_id", keyword), 
-	FOREIGN KEY("SyntheticPartOrigin_id") REFERENCES "SyntheticPartOrigin" (id)
-);
-CREATE TABLE "SyntheticPartOrigin_identifier" (
-	"SyntheticPartOrigin_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("SyntheticPartOrigin_id", identifier), 
-	FOREIGN KEY("SyntheticPartOrigin_id") REFERENCES "SyntheticPartOrigin" (id)
-);
-CREATE TABLE "SyntheticPartOrigin_iri" (
-	"SyntheticPartOrigin_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("SyntheticPartOrigin_id", iri), 
-	FOREIGN KEY("SyntheticPartOrigin_id") REFERENCES "SyntheticPartOrigin" (id)
-);
-CREATE TABLE "File_keyword" (
-	"File_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("File_id", keyword), 
-	FOREIGN KEY("File_id") REFERENCES "File" (id)
-);
-CREATE TABLE "File_identifier" (
-	"File_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("File_id", identifier), 
-	FOREIGN KEY("File_id") REFERENCES "File" (id)
-);
-CREATE TABLE "File_iri" (
-	"File_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("File_id", iri), 
-	FOREIGN KEY("File_id") REFERENCES "File" (id)
-);
-CREATE TABLE "Data_keyword" (
-	"Data_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("Data_id", keyword), 
-	FOREIGN KEY("Data_id") REFERENCES "Data" (id)
-);
-CREATE TABLE "Data_identifier" (
-	"Data_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("Data_id", identifier), 
-	FOREIGN KEY("Data_id") REFERENCES "Data" (id)
-);
-CREATE TABLE "Data_iri" (
-	"Data_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("Data_id", iri), 
-	FOREIGN KEY("Data_id") REFERENCES "Data" (id)
-);
-CREATE TABLE "Document_keyword" (
-	"Document_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("Document_id", keyword), 
-	FOREIGN KEY("Document_id") REFERENCES "Document" (id)
-);
-CREATE TABLE "Document_identifier" (
-	"Document_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("Document_id", identifier), 
-	FOREIGN KEY("Document_id") REFERENCES "Document" (id)
-);
-CREATE TABLE "Document_iri" (
-	"Document_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("Document_id", iri), 
-	FOREIGN KEY("Document_id") REFERENCES "Document" (id)
-);
-CREATE TABLE "Audio_keyword" (
-	"Audio_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("Audio_id", keyword), 
-	FOREIGN KEY("Audio_id") REFERENCES "Audio" (id)
-);
-CREATE TABLE "Audio_identifier" (
-	"Audio_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("Audio_id", identifier), 
-	FOREIGN KEY("Audio_id") REFERENCES "Audio" (id)
-);
-CREATE TABLE "Audio_iri" (
-	"Audio_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("Audio_id", iri), 
-	FOREIGN KEY("Audio_id") REFERENCES "Audio" (id)
-);
-CREATE TABLE "Video_keyword" (
-	"Video_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("Video_id", keyword), 
-	FOREIGN KEY("Video_id") REFERENCES "Video" (id)
-);
-CREATE TABLE "Video_identifier" (
-	"Video_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("Video_id", identifier), 
-	FOREIGN KEY("Video_id") REFERENCES "Video" (id)
-);
-CREATE TABLE "Video_iri" (
-	"Video_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("Video_id", iri), 
-	FOREIGN KEY("Video_id") REFERENCES "Video" (id)
-);
-CREATE TABLE "Certification_certificationDocument" (
-	"Certification_id" INTEGER, 
-	"certificationDocument_id" INTEGER, 
-	PRIMARY KEY ("Certification_id", "certificationDocument_id"), 
-	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id), 
-	FOREIGN KEY("certificationDocument_id") REFERENCES "Document" (id)
-);
-CREATE TABLE "Certification_keyword" (
-	"Certification_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("Certification_id", keyword), 
-	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id)
-);
-CREATE TABLE "Certification_identifier" (
-	"Certification_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("Certification_id", identifier), 
-	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id)
-);
-CREATE TABLE "Certification_iri" (
-	"Certification_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("Certification_id", iri), 
-	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id)
-);
-CREATE TABLE "Term" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "CommonName" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "VirusName" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "AlternateName" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "RiskGroup" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "BiosafetyLevel" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "Doi" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "Journal" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "PdbReference" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "Keyword" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "TagSequence" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "SpecialFeature" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "ExpressionVector" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "PlasmidSelection" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "PropagationHost" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "TransmissionMethod" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "ProductionCellLine" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "ProductCategory" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"parentCategory_id" INTEGER, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("parentCategory_id") REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "IsolationHost" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "GeographicalOrigin" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "IplcOrigin" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "Country" (
-	id INTEGER NOT NULL, 
-	"alpha2Code" TEXT NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "IataClassification" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "Variant" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "TaxonomicRank" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "ClinicalGroup" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
+CREATE TABLE "Taxonomy_rank" (
+	"Taxonomy_id" INTEGER, 
+	rank_id INTEGER, 
+	PRIMARY KEY ("Taxonomy_id", rank_id), 
+	FOREIGN KEY("Taxonomy_id") REFERENCES "Taxonomy" (id), 
+	FOREIGN KEY(rank_id) REFERENCES "TaxonomicRank" (id)
 );
 CREATE TABLE "Taxonomy_keyword" (
 	"Taxonomy_id" INTEGER, 
@@ -3651,111 +4681,12 @@ CREATE TABLE "Taxonomy_iri" (
 	PRIMARY KEY ("Taxonomy_id", iri), 
 	FOREIGN KEY("Taxonomy_id") REFERENCES "Taxonomy" (id)
 );
-CREATE TABLE "Vocabulary_keyword" (
-	"Vocabulary_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("Vocabulary_id", keyword), 
-	FOREIGN KEY("Vocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "Vocabulary_identifier" (
-	"Vocabulary_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("Vocabulary_id", identifier), 
-	FOREIGN KEY("Vocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "Vocabulary_iri" (
-	"Vocabulary_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("Vocabulary_id", iri), 
-	FOREIGN KEY("Vocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "Collection_keyword" (
-	"Collection_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("Collection_id", keyword), 
-	FOREIGN KEY("Collection_id") REFERENCES "Collection" (id)
-);
-CREATE TABLE "Collection_identifier" (
-	"Collection_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("Collection_id", identifier), 
-	FOREIGN KEY("Collection_id") REFERENCES "Collection" (id)
-);
-CREATE TABLE "Collection_iri" (
-	"Collection_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("Collection_id", iri), 
-	FOREIGN KEY("Collection_id") REFERENCES "Collection" (id)
-);
-CREATE TABLE "Publication" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	authors TEXT NOT NULL, 
-	abstract TEXT NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	doi_id INTEGER NOT NULL, 
-	journal_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(doi_id) REFERENCES "Doi" (id), 
-	FOREIGN KEY(journal_id) REFERENCES "Journal" (id)
-);
-CREATE TABLE "Taxon" (
-	id INTEGER NOT NULL, 
-	"taxonomicId" TEXT NOT NULL, 
-	"taxonomicNodeId" TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	weight INTEGER NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"parentTaxon_id" INTEGER, 
-	rank_id INTEGER, 
-	"inVocabulary_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("parentTaxon_id") REFERENCES "Taxon" (id), 
-	FOREIGN KEY(rank_id) REFERENCES "TaxonomicRank" (id), 
-	FOREIGN KEY("inVocabulary_id") REFERENCES "Vocabulary" (id)
-);
-CREATE TABLE "NaturalPartOrigin" (
-	id INTEGER NOT NULL, 
-	"collectionDate" DATETIME NOT NULL, 
-	"beforeDate" BOOLEAN NOT NULL, 
-	"permitIdentifierForAbs" TEXT, 
-	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"countryOfCollection_id" INTEGER NOT NULL, 
-	"indigenousPeopleAndLocalCommunityOrigin_id" INTEGER, 
-	"recombinantPartIdentification_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("countryOfCollection_id") REFERENCES "Country" (id), 
-	FOREIGN KEY("indigenousPeopleAndLocalCommunityOrigin_id") REFERENCES "IplcOrigin" (id), 
-	FOREIGN KEY("recombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
-);
-CREATE TABLE "ContactPoint" (
-	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
-	description TEXT, 
-	email TEXT, 
-	telephone TEXT, 
-	"streetAddress" TEXT, 
-	"addressLocality" TEXT, 
-	"addressRegion" TEXT, 
-	"postalCode" TEXT, 
-	"orcidId" TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"addressCountry_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("addressCountry_id") REFERENCES "Country" (id)
-);
-CREATE TABLE "Taxonomy_rank" (
-	"Taxonomy_id" INTEGER, 
-	rank_id INTEGER, 
-	PRIMARY KEY ("Taxonomy_id", rank_id), 
-	FOREIGN KEY("Taxonomy_id") REFERENCES "Taxonomy" (id), 
-	FOREIGN KEY(rank_id) REFERENCES "TaxonomicRank" (id)
+CREATE TABLE "DataProvider_servesDataset" (
+	"DataProvider_id" INTEGER, 
+	"servesDataset_id" INTEGER, 
+	PRIMARY KEY ("DataProvider_id", "servesDataset_id"), 
+	FOREIGN KEY("DataProvider_id") REFERENCES "DataProvider" (id), 
+	FOREIGN KEY("servesDataset_id") REFERENCES "Dataset" (id)
 );
 CREATE TABLE "Vocabulary_term" (
 	"Vocabulary_id" INTEGER, 
@@ -4181,24 +5112,6 @@ CREATE TABLE "IplcOrigin_iri" (
 	PRIMARY KEY ("IplcOrigin_id", iri), 
 	FOREIGN KEY("IplcOrigin_id") REFERENCES "IplcOrigin" (id)
 );
-CREATE TABLE "Country_keyword" (
-	"Country_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("Country_id", keyword), 
-	FOREIGN KEY("Country_id") REFERENCES "Country" (id)
-);
-CREATE TABLE "Country_identifier" (
-	"Country_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("Country_id", identifier), 
-	FOREIGN KEY("Country_id") REFERENCES "Country" (id)
-);
-CREATE TABLE "Country_iri" (
-	"Country_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("Country_id", iri), 
-	FOREIGN KEY("Country_id") REFERENCES "Country" (id)
-);
 CREATE TABLE "IataClassification_keyword" (
 	"IataClassification_id" INTEGER, 
 	keyword TEXT, 
@@ -4298,1101 +5211,66 @@ CREATE TABLE "ClinicalGroup_iri" (
 	PRIMARY KEY ("ClinicalGroup_id", iri), 
 	FOREIGN KEY("ClinicalGroup_id") REFERENCES "ClinicalGroup" (id)
 );
-CREATE TABLE "PathogenIdentification" (
-	id INTEGER NOT NULL, 
-	"pathogenType" TEXT NOT NULL, 
-	subspecies TEXT, 
-	strain TEXT, 
-	isolate TEXT, 
-	genotype TEXT, 
-	serotype TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	taxon_id INTEGER NOT NULL, 
-	"pathogenName_id" INTEGER NOT NULL, 
-	variant_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(taxon_id) REFERENCES "Taxon" (id), 
-	FOREIGN KEY("pathogenName_id") REFERENCES "CommonName" (id), 
-	FOREIGN KEY(variant_id) REFERENCES "Variant" (id)
-);
-CREATE TABLE "PersonOrOrganization" (
-	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
-	description TEXT, 
-	"homePage" TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"contactPoint_id" INTEGER, 
-	logo_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
-	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
-);
-CREATE TABLE "Person" (
-	id INTEGER NOT NULL, 
-	"orcidId" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
-	"homePage" TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"contactPoint_id" INTEGER, 
-	logo_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
-	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
-);
-CREATE TABLE "Organization" (
-	id INTEGER NOT NULL, 
-	"rorId" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
-	"homePage" TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	country_id INTEGER, 
-	"contactPoint_id" INTEGER, 
-	logo_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(country_id) REFERENCES "Country" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
-	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
-);
-CREATE TABLE "ReasearchInfrastructure" (
-	id INTEGER NOT NULL, 
-	"rorId" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
-	"homePage" TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	country_id INTEGER, 
-	"contactPoint_id" INTEGER, 
-	logo_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(country_id) REFERENCES "Country" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
-	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
-);
-CREATE TABLE "Provider" (
-	id INTEGER NOT NULL, 
-	"rorId" TEXT, 
-	name TEXT NOT NULL, 
-	description TEXT, 
-	"homePage" TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	country_id INTEGER, 
-	"contactPoint_id" INTEGER, 
-	logo_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(country_id) REFERENCES "Country" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
-	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
-);
-CREATE TABLE "Originator" (
-	id INTEGER NOT NULL, 
-	name TEXT NOT NULL, 
-	description TEXT, 
-	"homePage" TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"contactPoint_id" INTEGER, 
-	logo_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id), 
-	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
-);
-CREATE TABLE "MaterialSafetyDataSheet" (
-	id INTEGER NOT NULL, 
-	"physicalChemicalProperties" TEXT, 
-	"hazardsIdentification" TEXT, 
-	"firstAidMeasures" TEXT, 
-	"fireFightingMeasures" TEXT, 
-	"accidentalReleaseMeasures" TEXT, 
-	"handlingAndStorage" TEXT, 
-	"exposureControlsPersonalProtection" TEXT, 
-	"stabilityAndReactivity" TEXT, 
-	"toxicologicalInformation" TEXT, 
-	"ecologicalInformation" TEXT, 
-	"disposalConsiderations" TEXT, 
-	"transportInformation" TEXT, 
-	"regulatoryInformation" TEXT, 
-	"furtherInformation" TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"materialSafetyContact_id" INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("materialSafetyContact_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Taxonomy_taxon" (
-	"Taxonomy_id" INTEGER, 
-	taxon_id INTEGER, 
-	PRIMARY KEY ("Taxonomy_id", taxon_id), 
-	FOREIGN KEY("Taxonomy_id") REFERENCES "Taxonomy" (id), 
-	FOREIGN KEY(taxon_id) REFERENCES "Taxon" (id)
-);
-CREATE TABLE "Publication_keyword" (
-	"Publication_id" INTEGER, 
+CREATE TABLE "ExternalRelatedReference_keyword" (
+	"ExternalRelatedReference_id" INTEGER, 
 	keyword TEXT, 
-	PRIMARY KEY ("Publication_id", keyword), 
-	FOREIGN KEY("Publication_id") REFERENCES "Publication" (id)
+	PRIMARY KEY ("ExternalRelatedReference_id", keyword), 
+	FOREIGN KEY("ExternalRelatedReference_id") REFERENCES "ExternalRelatedReference" (id)
 );
-CREATE TABLE "Publication_identifier" (
-	"Publication_id" INTEGER, 
+CREATE TABLE "ExternalRelatedReference_identifier" (
+	"ExternalRelatedReference_id" INTEGER, 
 	identifier TEXT, 
-	PRIMARY KEY ("Publication_id", identifier), 
-	FOREIGN KEY("Publication_id") REFERENCES "Publication" (id)
+	PRIMARY KEY ("ExternalRelatedReference_id", identifier), 
+	FOREIGN KEY("ExternalRelatedReference_id") REFERENCES "ExternalRelatedReference" (id)
 );
-CREATE TABLE "Publication_iri" (
-	"Publication_id" INTEGER, 
+CREATE TABLE "ExternalRelatedReference_iri" (
+	"ExternalRelatedReference_id" INTEGER, 
 	iri TEXT, 
-	PRIMARY KEY ("Publication_id", iri), 
-	FOREIGN KEY("Publication_id") REFERENCES "Publication" (id)
+	PRIMARY KEY ("ExternalRelatedReference_id", iri), 
+	FOREIGN KEY("ExternalRelatedReference_id") REFERENCES "ExternalRelatedReference" (id)
 );
-CREATE TABLE "Taxon_taxonomy" (
-	"Taxon_id" INTEGER, 
-	taxonomy_id INTEGER, 
-	PRIMARY KEY ("Taxon_id", taxonomy_id), 
-	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
-	FOREIGN KEY(taxonomy_id) REFERENCES "Taxonomy" (id)
+CREATE TABLE "Sequence_sequenceReference" (
+	"Sequence_id" INTEGER, 
+	"sequenceReference_id" INTEGER, 
+	PRIMARY KEY ("Sequence_id", "sequenceReference_id"), 
+	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id), 
+	FOREIGN KEY("sequenceReference_id") REFERENCES "SequenceReference" (id)
 );
-CREATE TABLE "Taxon_externalEquivalentTaxon" (
-	"Taxon_id" INTEGER, 
-	"externalEquivalentTaxon_id" INTEGER, 
-	PRIMARY KEY ("Taxon_id", "externalEquivalentTaxon_id"), 
-	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
-	FOREIGN KEY("externalEquivalentTaxon_id") REFERENCES "Taxon" (id)
-);
-CREATE TABLE "Taxon_alternateName" (
-	"Taxon_id" INTEGER, 
-	"alternateName_id" INTEGER, 
-	PRIMARY KEY ("Taxon_id", "alternateName_id"), 
-	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
-	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
-);
-CREATE TABLE "Taxon_previouslyKnownAs" (
-	"Taxon_id" INTEGER, 
-	"previouslyKnownAs_id" INTEGER, 
-	PRIMARY KEY ("Taxon_id", "previouslyKnownAs_id"), 
-	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
-	FOREIGN KEY("previouslyKnownAs_id") REFERENCES "Taxon" (id)
-);
-CREATE TABLE "Taxon_keyword" (
-	"Taxon_id" INTEGER, 
+CREATE TABLE "Sequence_keyword" (
+	"Sequence_id" INTEGER, 
 	keyword TEXT, 
-	PRIMARY KEY ("Taxon_id", keyword), 
-	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id)
+	PRIMARY KEY ("Sequence_id", keyword), 
+	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id)
 );
-CREATE TABLE "Taxon_identifier" (
-	"Taxon_id" INTEGER, 
+CREATE TABLE "Sequence_identifier" (
+	"Sequence_id" INTEGER, 
 	identifier TEXT, 
-	PRIMARY KEY ("Taxon_id", identifier), 
-	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id)
+	PRIMARY KEY ("Sequence_id", identifier), 
+	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id)
 );
-CREATE TABLE "Taxon_iri" (
-	"Taxon_id" INTEGER, 
+CREATE TABLE "Sequence_iri" (
+	"Sequence_id" INTEGER, 
 	iri TEXT, 
-	PRIMARY KEY ("Taxon_id", iri), 
-	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id)
+	PRIMARY KEY ("Sequence_id", iri), 
+	FOREIGN KEY("Sequence_id") REFERENCES "Sequence" (id)
 );
-CREATE TABLE "ClinicalGroup_taxon" (
-	"ClinicalGroup_id" INTEGER, 
-	taxon_id INTEGER, 
-	PRIMARY KEY ("ClinicalGroup_id", taxon_id), 
-	FOREIGN KEY("ClinicalGroup_id") REFERENCES "ClinicalGroup" (id), 
-	FOREIGN KEY(taxon_id) REFERENCES "Taxon" (id)
-);
-CREATE TABLE "NaturalPartOrigin_keyword" (
-	"NaturalPartOrigin_id" INTEGER, 
+CREATE TABLE "SequenceReference_keyword" (
+	"SequenceReference_id" INTEGER, 
 	keyword TEXT, 
-	PRIMARY KEY ("NaturalPartOrigin_id", keyword), 
-	FOREIGN KEY("NaturalPartOrigin_id") REFERENCES "NaturalPartOrigin" (id)
+	PRIMARY KEY ("SequenceReference_id", keyword), 
+	FOREIGN KEY("SequenceReference_id") REFERENCES "SequenceReference" (id)
 );
-CREATE TABLE "NaturalPartOrigin_identifier" (
-	"NaturalPartOrigin_id" INTEGER, 
+CREATE TABLE "SequenceReference_identifier" (
+	"SequenceReference_id" INTEGER, 
 	identifier TEXT, 
-	PRIMARY KEY ("NaturalPartOrigin_id", identifier), 
-	FOREIGN KEY("NaturalPartOrigin_id") REFERENCES "NaturalPartOrigin" (id)
+	PRIMARY KEY ("SequenceReference_id", identifier), 
+	FOREIGN KEY("SequenceReference_id") REFERENCES "SequenceReference" (id)
 );
-CREATE TABLE "NaturalPartOrigin_iri" (
-	"NaturalPartOrigin_id" INTEGER, 
+CREATE TABLE "SequenceReference_iri" (
+	"SequenceReference_id" INTEGER, 
 	iri TEXT, 
-	PRIMARY KEY ("NaturalPartOrigin_id", iri), 
-	FOREIGN KEY("NaturalPartOrigin_id") REFERENCES "NaturalPartOrigin" (id)
-);
-CREATE TABLE "ContactPoint_keyword" (
-	"ContactPoint_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("ContactPoint_id", keyword), 
-	FOREIGN KEY("ContactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "ContactPoint_identifier" (
-	"ContactPoint_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("ContactPoint_id", identifier), 
-	FOREIGN KEY("ContactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "ContactPoint_iri" (
-	"ContactPoint_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("ContactPoint_id", iri), 
-	FOREIGN KEY("ContactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "ProductOrService" (
-	id INTEGER NOT NULL, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Service" (
-	id INTEGER NOT NULL, 
-	"modelSpecies" TEXT, 
-	"modelType" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Product" (
-	id INTEGER NOT NULL, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Antibody" (
-	id INTEGER NOT NULL, 
-	"productionSystem" TEXT, 
-	"antibodyPurifiedByAffinity" BOOLEAN, 
-	"specificityDocumented" BOOLEAN NOT NULL, 
-	"antibodySpecificity" TEXT, 
-	"targetedAntigen" TEXT NOT NULL, 
-	"antibodyType" TEXT, 
-	"antibodyCharacterizationObservation" TEXT, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Hybridoma" (
-	id INTEGER NOT NULL, 
-	"hybridomaDescription" TEXT NOT NULL, 
-	"productionSystem" TEXT, 
-	"antibodyPurifiedByAffinity" BOOLEAN, 
-	"specificityDocumented" BOOLEAN NOT NULL, 
-	"antibodySpecificity" TEXT, 
-	"targetedAntigen" TEXT NOT NULL, 
-	"antibodyType" TEXT, 
-	"antibodyCharacterizationObservation" TEXT, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Protein" (
-	id INTEGER NOT NULL, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "NucleicAcid" (
-	id INTEGER NOT NULL, 
-	"clonedNucleicAcid" BOOLEAN NOT NULL, 
-	"regionEncompassedInThisProduct" TEXT NOT NULL, 
-	"mutationObserved" BOOLEAN NOT NULL, 
-	"observedMutations" TEXT, 
-	"identificationTechnique" TEXT, 
-	sequencing TEXT NOT NULL, 
-	titer TEXT, 
-	"sequenceChecked" BOOLEAN NOT NULL, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"clonedIntoPlasmid_id" INTEGER, 
-	"tagSequence_id" INTEGER NOT NULL, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("clonedIntoPlasmid_id") REFERENCES "ExpressionVector" (id), 
-	FOREIGN KEY("tagSequence_id") REFERENCES "TagSequence" (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "DetectionKit" (
-	id INTEGER NOT NULL, 
-	"specificityDocumented" BOOLEAN NOT NULL, 
-	specificity TEXT, 
-	"targetedRegion" TEXT, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Bundle" (
-	id INTEGER NOT NULL, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Pathogen" (
-	id INTEGER NOT NULL, 
-	cultivability TEXT NOT NULL, 
-	"clinicalInformation" TEXT, 
-	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
-	"infectivityTest" TEXT, 
-	"isolationTechnique" TEXT, 
-	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
-	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
-	titer TEXT NOT NULL, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Virus" (
-	id INTEGER NOT NULL, 
-	"contaminationWithCoInfectingViruses" BOOLEAN NOT NULL, 
-	"mycoplasmicContent" BOOLEAN NOT NULL, 
-	cultivability TEXT NOT NULL, 
-	"clinicalInformation" TEXT, 
-	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
-	"infectivityTest" TEXT, 
-	"isolationTechnique" TEXT, 
-	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
-	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
-	titer TEXT NOT NULL, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Bacterium" (
-	id INTEGER NOT NULL, 
-	cultivability TEXT NOT NULL, 
-	"clinicalInformation" TEXT, 
-	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
-	"infectivityTest" TEXT, 
-	"isolationTechnique" TEXT, 
-	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
-	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
-	titer TEXT NOT NULL, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Fungus" (
-	id INTEGER NOT NULL, 
-	cultivability TEXT NOT NULL, 
-	"clinicalInformation" TEXT, 
-	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
-	"infectivityTest" TEXT, 
-	"isolationTechnique" TEXT, 
-	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
-	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
-	titer TEXT NOT NULL, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Protozoan" (
-	id INTEGER NOT NULL, 
-	cultivability TEXT NOT NULL, 
-	"clinicalInformation" TEXT, 
-	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
-	"infectivityTest" TEXT, 
-	"isolationTechnique" TEXT, 
-	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
-	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
-	titer TEXT NOT NULL, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Viroid" (
-	id INTEGER NOT NULL, 
-	cultivability TEXT NOT NULL, 
-	"clinicalInformation" TEXT, 
-	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
-	"infectivityTest" TEXT, 
-	"isolationTechnique" TEXT, 
-	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
-	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
-	titer TEXT NOT NULL, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "Prion" (
-	id INTEGER NOT NULL, 
-	cultivability TEXT NOT NULL, 
-	"clinicalInformation" TEXT, 
-	"identificationTechnique" TEXT, 
-	infectivity TEXT NOT NULL, 
-	"infectivityTest" TEXT, 
-	"isolationTechnique" TEXT, 
-	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
-	passage TEXT, 
-	"genomeSequencing" TEXT NOT NULL, 
-	titer TEXT NOT NULL, 
-	"shippingConditions" TEXT NOT NULL, 
-	"storageConditions" TEXT NOT NULL, 
-	"thirdPartyDistributionConsent" BOOLEAN, 
-	"usageRestrictions" TEXT, 
-	"preparationTechnique" TEXT, 
-	"accessPointUrl" TEXT NOT NULL, 
-	"refSku" TEXT NOT NULL, 
-	"unitDefinition" TEXT, 
-	"unitCost" INTEGER, 
-	"unitCostCurrency" TEXT, 
-	"unitCostNote" TEXT, 
-	"qualityGrading" TEXT, 
-	"biosafetyRestrictions" TEXT, 
-	"canBeUsedToProduceGmo" BOOLEAN NOT NULL, 
-	availability TEXT NOT NULL, 
-	"technicalRecommendation" TEXT, 
-	"internalReference" TEXT, 
-	note TEXT, 
-	title TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	version TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	"biologicalMaterialOrigin_id" INTEGER NOT NULL, 
-	"iataClassification_id" INTEGER NOT NULL, 
-	"materialSafetyDataSheet_id" INTEGER, 
-	originator_id INTEGER, 
-	category_id INTEGER NOT NULL, 
-	"riskGroup_id" INTEGER, 
-	"biosafetyLevel_id" INTEGER, 
-	provider_id INTEGER NOT NULL, 
-	"contactPoint_id" INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
-	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
-	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
-	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
-	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
-	FOREIGN KEY("biosafetyLevel_id") REFERENCES "BiosafetyLevel" (id), 
-	FOREIGN KEY(provider_id) REFERENCES "Provider" (id), 
-	FOREIGN KEY("contactPoint_id") REFERENCES "ContactPoint" (id)
-);
-CREATE TABLE "FundingSource" (
-	id INTEGER NOT NULL, 
-	title TEXT NOT NULL, 
-	description TEXT, 
-	"fundingProgram" TEXT, 
-	"grantNumber" TEXT, 
-	"fundingPeriodStart" DATE, 
-	"fundingPeriodEnd" DATE, 
-	"eligibilityCriteria" TEXT, 
-	"dateIssued" DATETIME, 
-	"dateModified" DATETIME, 
-	funder_id INTEGER, 
-	logo_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(funder_id) REFERENCES "Organization" (id), 
-	FOREIGN KEY(logo_id) REFERENCES "Image" (id)
-);
-CREATE TABLE "PathogenIdentification_hostType" (
-	"PathogenIdentification_id" INTEGER, 
-	"hostType" TEXT, 
-	PRIMARY KEY ("PathogenIdentification_id", "hostType"), 
-	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
-CREATE TABLE "PathogenIdentification_keyword" (
-	"PathogenIdentification_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("PathogenIdentification_id", keyword), 
-	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
-CREATE TABLE "PathogenIdentification_identifier" (
-	"PathogenIdentification_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("PathogenIdentification_id", identifier), 
-	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
-CREATE TABLE "PathogenIdentification_iri" (
-	"PathogenIdentification_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("PathogenIdentification_id", iri), 
-	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
-CREATE TABLE "PersonOrOrganization_keyword" (
-	"PersonOrOrganization_id" INTEGER, 
-	keyword TEXT, 
-	PRIMARY KEY ("PersonOrOrganization_id", keyword), 
-	FOREIGN KEY("PersonOrOrganization_id") REFERENCES "PersonOrOrganization" (id)
-);
-CREATE TABLE "PersonOrOrganization_identifier" (
-	"PersonOrOrganization_id" INTEGER, 
-	identifier TEXT, 
-	PRIMARY KEY ("PersonOrOrganization_id", identifier), 
-	FOREIGN KEY("PersonOrOrganization_id") REFERENCES "PersonOrOrganization" (id)
-);
-CREATE TABLE "PersonOrOrganization_iri" (
-	"PersonOrOrganization_id" INTEGER, 
-	iri TEXT, 
-	PRIMARY KEY ("PersonOrOrganization_id", iri), 
-	FOREIGN KEY("PersonOrOrganization_id") REFERENCES "PersonOrOrganization" (id)
+	PRIMARY KEY ("SequenceReference_id", iri), 
+	FOREIGN KEY("SequenceReference_id") REFERENCES "SequenceReference" (id)
 );
 CREATE TABLE "Person_keyword" (
 	"Person_id" INTEGER, 
@@ -5512,6 +5390,67 @@ CREATE TABLE "Originator_iri" (
 	PRIMARY KEY ("Originator_id", iri), 
 	FOREIGN KEY("Originator_id") REFERENCES "Originator" (id)
 );
+CREATE TABLE "BiologicalMaterialOrigin_keyword" (
+	"BiologicalMaterialOrigin_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("BiologicalMaterialOrigin_id", keyword), 
+	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id)
+);
+CREATE TABLE "BiologicalMaterialOrigin_identifier" (
+	"BiologicalMaterialOrigin_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("BiologicalMaterialOrigin_id", identifier), 
+	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id)
+);
+CREATE TABLE "BiologicalMaterialOrigin_iri" (
+	"BiologicalMaterialOrigin_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("BiologicalMaterialOrigin_id", iri), 
+	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id)
+);
+CREATE TABLE "RecombinantPartIdentification_sequence" (
+	"RecombinantPartIdentification_id" INTEGER, 
+	sequence_id INTEGER NOT NULL, 
+	PRIMARY KEY ("RecombinantPartIdentification_id", sequence_id), 
+	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id), 
+	FOREIGN KEY(sequence_id) REFERENCES "Sequence" (id)
+);
+CREATE TABLE "RecombinantPartIdentification_keyword" (
+	"RecombinantPartIdentification_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("RecombinantPartIdentification_id", keyword), 
+	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
+);
+CREATE TABLE "RecombinantPartIdentification_identifier" (
+	"RecombinantPartIdentification_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("RecombinantPartIdentification_id", identifier), 
+	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
+);
+CREATE TABLE "RecombinantPartIdentification_iri" (
+	"RecombinantPartIdentification_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("RecombinantPartIdentification_id", iri), 
+	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id)
+);
+CREATE TABLE "Collection_keyword" (
+	"Collection_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Collection_id", keyword), 
+	FOREIGN KEY("Collection_id") REFERENCES "Collection" (id)
+);
+CREATE TABLE "Collection_identifier" (
+	"Collection_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Collection_id", identifier), 
+	FOREIGN KEY("Collection_id") REFERENCES "Collection" (id)
+);
+CREATE TABLE "Collection_iri" (
+	"Collection_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Collection_id", iri), 
+	FOREIGN KEY("Collection_id") REFERENCES "Collection" (id)
+);
 CREATE TABLE "MaterialSafetyDataSheet_keyword" (
 	"MaterialSafetyDataSheet_id" INTEGER, 
 	keyword TEXT, 
@@ -5530,6 +5469,280 @@ CREATE TABLE "MaterialSafetyDataSheet_iri" (
 	PRIMARY KEY ("MaterialSafetyDataSheet_id", iri), 
 	FOREIGN KEY("MaterialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id)
 );
+CREATE TABLE "File_keyword" (
+	"File_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("File_id", keyword), 
+	FOREIGN KEY("File_id") REFERENCES "File" (id)
+);
+CREATE TABLE "File_identifier" (
+	"File_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("File_id", identifier), 
+	FOREIGN KEY("File_id") REFERENCES "File" (id)
+);
+CREATE TABLE "File_iri" (
+	"File_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("File_id", iri), 
+	FOREIGN KEY("File_id") REFERENCES "File" (id)
+);
+CREATE TABLE "Data_keyword" (
+	"Data_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Data_id", keyword), 
+	FOREIGN KEY("Data_id") REFERENCES "Data" (id)
+);
+CREATE TABLE "Data_identifier" (
+	"Data_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Data_id", identifier), 
+	FOREIGN KEY("Data_id") REFERENCES "Data" (id)
+);
+CREATE TABLE "Data_iri" (
+	"Data_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Data_id", iri), 
+	FOREIGN KEY("Data_id") REFERENCES "Data" (id)
+);
+CREATE TABLE "Document_keyword" (
+	"Document_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Document_id", keyword), 
+	FOREIGN KEY("Document_id") REFERENCES "Document" (id)
+);
+CREATE TABLE "Document_identifier" (
+	"Document_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Document_id", identifier), 
+	FOREIGN KEY("Document_id") REFERENCES "Document" (id)
+);
+CREATE TABLE "Document_iri" (
+	"Document_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Document_id", iri), 
+	FOREIGN KEY("Document_id") REFERENCES "Document" (id)
+);
+CREATE TABLE "Audio_keyword" (
+	"Audio_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Audio_id", keyword), 
+	FOREIGN KEY("Audio_id") REFERENCES "Audio" (id)
+);
+CREATE TABLE "Audio_identifier" (
+	"Audio_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Audio_id", identifier), 
+	FOREIGN KEY("Audio_id") REFERENCES "Audio" (id)
+);
+CREATE TABLE "Audio_iri" (
+	"Audio_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Audio_id", iri), 
+	FOREIGN KEY("Audio_id") REFERENCES "Audio" (id)
+);
+CREATE TABLE "Video_keyword" (
+	"Video_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Video_id", keyword), 
+	FOREIGN KEY("Video_id") REFERENCES "Video" (id)
+);
+CREATE TABLE "Video_identifier" (
+	"Video_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Video_id", identifier), 
+	FOREIGN KEY("Video_id") REFERENCES "Video" (id)
+);
+CREATE TABLE "Video_iri" (
+	"Video_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Video_id", iri), 
+	FOREIGN KEY("Video_id") REFERENCES "Video" (id)
+);
+CREATE TABLE "Certification_certificationDocument" (
+	"Certification_id" INTEGER, 
+	"certificationDocument_id" INTEGER, 
+	PRIMARY KEY ("Certification_id", "certificationDocument_id"), 
+	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id), 
+	FOREIGN KEY("certificationDocument_id") REFERENCES "Document" (id)
+);
+CREATE TABLE "Certification_keyword" (
+	"Certification_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Certification_id", keyword), 
+	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id)
+);
+CREATE TABLE "Certification_identifier" (
+	"Certification_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Certification_id", identifier), 
+	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id)
+);
+CREATE TABLE "Certification_iri" (
+	"Certification_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Certification_id", iri), 
+	FOREIGN KEY("Certification_id") REFERENCES "Certification" (id)
+);
+CREATE TABLE "PathogenIdentification" (
+	id INTEGER NOT NULL, 
+	"pathogenType" TEXT NOT NULL, 
+	subspecies TEXT, 
+	strain TEXT, 
+	isolate TEXT, 
+	genotype TEXT, 
+	serotype TEXT, 
+	"dateIssued" DATETIME, 
+	"dateModified" DATETIME, 
+	taxon_id INTEGER NOT NULL, 
+	"pathogenName_id" INTEGER NOT NULL, 
+	variant_id INTEGER, 
+	publisher_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(taxon_id) REFERENCES "Taxon" (id), 
+	FOREIGN KEY("pathogenName_id") REFERENCES "CommonName" (id), 
+	FOREIGN KEY(variant_id) REFERENCES "Variant" (id), 
+	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
+);
+CREATE TABLE "Taxonomy_taxon" (
+	"Taxonomy_id" INTEGER, 
+	taxon_id INTEGER, 
+	PRIMARY KEY ("Taxonomy_id", taxon_id), 
+	FOREIGN KEY("Taxonomy_id") REFERENCES "Taxonomy" (id), 
+	FOREIGN KEY(taxon_id) REFERENCES "Taxon" (id)
+);
+CREATE TABLE "Publication_keyword" (
+	"Publication_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Publication_id", keyword), 
+	FOREIGN KEY("Publication_id") REFERENCES "Publication" (id)
+);
+CREATE TABLE "Publication_identifier" (
+	"Publication_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Publication_id", identifier), 
+	FOREIGN KEY("Publication_id") REFERENCES "Publication" (id)
+);
+CREATE TABLE "Publication_iri" (
+	"Publication_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Publication_id", iri), 
+	FOREIGN KEY("Publication_id") REFERENCES "Publication" (id)
+);
+CREATE TABLE "Taxon_taxonomy" (
+	"Taxon_id" INTEGER, 
+	taxonomy_id INTEGER, 
+	PRIMARY KEY ("Taxon_id", taxonomy_id), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
+	FOREIGN KEY(taxonomy_id) REFERENCES "Taxonomy" (id)
+);
+CREATE TABLE "Taxon_externalEquivalentTaxon" (
+	"Taxon_id" INTEGER, 
+	"externalEquivalentTaxon_id" INTEGER, 
+	PRIMARY KEY ("Taxon_id", "externalEquivalentTaxon_id"), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
+	FOREIGN KEY("externalEquivalentTaxon_id") REFERENCES "Taxon" (id)
+);
+CREATE TABLE "Taxon_alternateName" (
+	"Taxon_id" INTEGER, 
+	"alternateName_id" INTEGER, 
+	PRIMARY KEY ("Taxon_id", "alternateName_id"), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
+	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
+);
+CREATE TABLE "Taxon_previouslyKnownAs" (
+	"Taxon_id" INTEGER, 
+	"previouslyKnownAs_id" INTEGER, 
+	PRIMARY KEY ("Taxon_id", "previouslyKnownAs_id"), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
+	FOREIGN KEY("previouslyKnownAs_id") REFERENCES "Taxon" (id)
+);
+CREATE TABLE "Taxon_keyword" (
+	"Taxon_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("Taxon_id", keyword), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id)
+);
+CREATE TABLE "Taxon_identifier" (
+	"Taxon_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("Taxon_id", identifier), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id)
+);
+CREATE TABLE "Taxon_iri" (
+	"Taxon_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("Taxon_id", iri), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id)
+);
+CREATE TABLE "ClinicalGroup_taxon" (
+	"ClinicalGroup_id" INTEGER, 
+	taxon_id INTEGER, 
+	PRIMARY KEY ("ClinicalGroup_id", taxon_id), 
+	FOREIGN KEY("ClinicalGroup_id") REFERENCES "ClinicalGroup" (id), 
+	FOREIGN KEY(taxon_id) REFERENCES "Taxon" (id)
+);
+CREATE TABLE "BiologicalMaterialOrigin_biologicalPartOrigin" (
+	"BiologicalMaterialOrigin_id" INTEGER, 
+	"biologicalPartOrigin_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("BiologicalMaterialOrigin_id", "biologicalPartOrigin_id"), 
+	FOREIGN KEY("BiologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
+	FOREIGN KEY("biologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
+);
+CREATE TABLE "BiologicalPartOrigin_keyword" (
+	"BiologicalPartOrigin_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("BiologicalPartOrigin_id", keyword), 
+	FOREIGN KEY("BiologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
+);
+CREATE TABLE "BiologicalPartOrigin_identifier" (
+	"BiologicalPartOrigin_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("BiologicalPartOrigin_id", identifier), 
+	FOREIGN KEY("BiologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
+);
+CREATE TABLE "BiologicalPartOrigin_iri" (
+	"BiologicalPartOrigin_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("BiologicalPartOrigin_id", iri), 
+	FOREIGN KEY("BiologicalPartOrigin_id") REFERENCES "BiologicalPartOrigin" (id)
+);
+CREATE TABLE "NaturalPartOrigin_keyword" (
+	"NaturalPartOrigin_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("NaturalPartOrigin_id", keyword), 
+	FOREIGN KEY("NaturalPartOrigin_id") REFERENCES "NaturalPartOrigin" (id)
+);
+CREATE TABLE "NaturalPartOrigin_identifier" (
+	"NaturalPartOrigin_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("NaturalPartOrigin_id", identifier), 
+	FOREIGN KEY("NaturalPartOrigin_id") REFERENCES "NaturalPartOrigin" (id)
+);
+CREATE TABLE "NaturalPartOrigin_iri" (
+	"NaturalPartOrigin_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("NaturalPartOrigin_id", iri), 
+	FOREIGN KEY("NaturalPartOrigin_id") REFERENCES "NaturalPartOrigin" (id)
+);
+CREATE TABLE "SyntheticPartOrigin_keyword" (
+	"SyntheticPartOrigin_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("SyntheticPartOrigin_id", keyword), 
+	FOREIGN KEY("SyntheticPartOrigin_id") REFERENCES "SyntheticPartOrigin" (id)
+);
+CREATE TABLE "SyntheticPartOrigin_identifier" (
+	"SyntheticPartOrigin_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("SyntheticPartOrigin_id", identifier), 
+	FOREIGN KEY("SyntheticPartOrigin_id") REFERENCES "SyntheticPartOrigin" (id)
+);
+CREATE TABLE "SyntheticPartOrigin_iri" (
+	"SyntheticPartOrigin_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("SyntheticPartOrigin_id", iri), 
+	FOREIGN KEY("SyntheticPartOrigin_id") REFERENCES "SyntheticPartOrigin" (id)
+);
 CREATE TABLE "Collection_collectionItem" (
 	"Collection_id" INTEGER, 
 	"collectionItem_id" INTEGER, 
@@ -5543,13 +5756,6 @@ CREATE TABLE "ProductOrService_additionalCategory" (
 	PRIMARY KEY ("ProductOrService_id", "additionalCategory_id"), 
 	FOREIGN KEY("ProductOrService_id") REFERENCES "ProductOrService" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
-);
-CREATE TABLE "ProductOrService_pathogenIdentification" (
-	"ProductOrService_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("ProductOrService_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("ProductOrService_id") REFERENCES "ProductOrService" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
 CREATE TABLE "ProductOrService_doi" (
 	"ProductOrService_id" INTEGER, 
@@ -5632,13 +5838,6 @@ CREATE TABLE "Service_additionalCategory" (
 	FOREIGN KEY("Service_id") REFERENCES "Service" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
 );
-CREATE TABLE "Service_pathogenIdentification" (
-	"Service_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Service_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Service_id") REFERENCES "Service" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
 CREATE TABLE "Service_doi" (
 	"Service_id" INTEGER, 
 	doi_id INTEGER, 
@@ -5719,13 +5918,6 @@ CREATE TABLE "Product_additionalCategory" (
 	PRIMARY KEY ("Product_id", "additionalCategory_id"), 
 	FOREIGN KEY("Product_id") REFERENCES "Product" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
-);
-CREATE TABLE "Product_pathogenIdentification" (
-	"Product_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Product_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Product_id") REFERENCES "Product" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
 CREATE TABLE "Product_doi" (
 	"Product_id" INTEGER, 
@@ -5821,13 +6013,6 @@ CREATE TABLE "Antibody_additionalCategory" (
 	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
 );
-CREATE TABLE "Antibody_pathogenIdentification" (
-	"Antibody_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Antibody_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
 CREATE TABLE "Antibody_doi" (
 	"Antibody_id" INTEGER, 
 	doi_id INTEGER, 
@@ -5921,13 +6106,6 @@ CREATE TABLE "Hybridoma_additionalCategory" (
 	PRIMARY KEY ("Hybridoma_id", "additionalCategory_id"), 
 	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
-);
-CREATE TABLE "Hybridoma_pathogenIdentification" (
-	"Hybridoma_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Hybridoma_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
 CREATE TABLE "Hybridoma_doi" (
 	"Hybridoma_id" INTEGER, 
@@ -6092,13 +6270,6 @@ CREATE TABLE "Protein_additionalCategory" (
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
 );
-CREATE TABLE "Protein_pathogenIdentification" (
-	"Protein_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Protein_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
 CREATE TABLE "Protein_doi" (
 	"Protein_id" INTEGER, 
 	doi_id INTEGER, 
@@ -6201,13 +6372,6 @@ CREATE TABLE "NucleicAcid_additionalCategory" (
 	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
 );
-CREATE TABLE "NucleicAcid_pathogenIdentification" (
-	"NucleicAcid_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("NucleicAcid_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
 CREATE TABLE "NucleicAcid_doi" (
 	"NucleicAcid_id" INTEGER, 
 	doi_id INTEGER, 
@@ -6296,13 +6460,6 @@ CREATE TABLE "DetectionKit_additionalCategory" (
 	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
 );
-CREATE TABLE "DetectionKit_pathogenIdentification" (
-	"DetectionKit_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("DetectionKit_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
 CREATE TABLE "DetectionKit_doi" (
 	"DetectionKit_id" INTEGER, 
 	doi_id INTEGER, 
@@ -6390,13 +6547,6 @@ CREATE TABLE "Bundle_additionalCategory" (
 	PRIMARY KEY ("Bundle_id", "additionalCategory_id"), 
 	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
-);
-CREATE TABLE "Bundle_pathogenIdentification" (
-	"Bundle_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Bundle_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
 CREATE TABLE "Bundle_doi" (
 	"Bundle_id" INTEGER, 
@@ -6520,13 +6670,6 @@ CREATE TABLE "Pathogen_additionalCategory" (
 	PRIMARY KEY ("Pathogen_id", "additionalCategory_id"), 
 	FOREIGN KEY("Pathogen_id") REFERENCES "Pathogen" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
-);
-CREATE TABLE "Pathogen_pathogenIdentification" (
-	"Pathogen_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Pathogen_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Pathogen_id") REFERENCES "Pathogen" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
 CREATE TABLE "Pathogen_doi" (
 	"Pathogen_id" INTEGER, 
@@ -6658,13 +6801,6 @@ CREATE TABLE "Virus_additionalCategory" (
 	FOREIGN KEY("Virus_id") REFERENCES "Virus" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
 );
-CREATE TABLE "Virus_pathogenIdentification" (
-	"Virus_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Virus_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Virus_id") REFERENCES "Virus" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
 CREATE TABLE "Virus_doi" (
 	"Virus_id" INTEGER, 
 	doi_id INTEGER, 
@@ -6787,13 +6923,6 @@ CREATE TABLE "Bacterium_additionalCategory" (
 	PRIMARY KEY ("Bacterium_id", "additionalCategory_id"), 
 	FOREIGN KEY("Bacterium_id") REFERENCES "Bacterium" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
-);
-CREATE TABLE "Bacterium_pathogenIdentification" (
-	"Bacterium_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Bacterium_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Bacterium_id") REFERENCES "Bacterium" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
 CREATE TABLE "Bacterium_doi" (
 	"Bacterium_id" INTEGER, 
@@ -6918,13 +7047,6 @@ CREATE TABLE "Fungus_additionalCategory" (
 	FOREIGN KEY("Fungus_id") REFERENCES "Fungus" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
 );
-CREATE TABLE "Fungus_pathogenIdentification" (
-	"Fungus_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Fungus_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Fungus_id") REFERENCES "Fungus" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
 CREATE TABLE "Fungus_doi" (
 	"Fungus_id" INTEGER, 
 	doi_id INTEGER, 
@@ -7047,13 +7169,6 @@ CREATE TABLE "Protozoan_additionalCategory" (
 	PRIMARY KEY ("Protozoan_id", "additionalCategory_id"), 
 	FOREIGN KEY("Protozoan_id") REFERENCES "Protozoan" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
-);
-CREATE TABLE "Protozoan_pathogenIdentification" (
-	"Protozoan_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Protozoan_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Protozoan_id") REFERENCES "Protozoan" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );
 CREATE TABLE "Protozoan_doi" (
 	"Protozoan_id" INTEGER, 
@@ -7178,13 +7293,6 @@ CREATE TABLE "Viroid_additionalCategory" (
 	FOREIGN KEY("Viroid_id") REFERENCES "Viroid" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
 );
-CREATE TABLE "Viroid_pathogenIdentification" (
-	"Viroid_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Viroid_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Viroid_id") REFERENCES "Viroid" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
 CREATE TABLE "Viroid_doi" (
 	"Viroid_id" INTEGER, 
 	doi_id INTEGER, 
@@ -7308,13 +7416,6 @@ CREATE TABLE "Prion_additionalCategory" (
 	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id), 
 	FOREIGN KEY("additionalCategory_id") REFERENCES "ProductCategory" (id)
 );
-CREATE TABLE "Prion_pathogenIdentification" (
-	"Prion_id" INTEGER, 
-	"pathogenIdentification_id" INTEGER NOT NULL, 
-	PRIMARY KEY ("Prion_id", "pathogenIdentification_id"), 
-	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id), 
-	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
-);
 CREATE TABLE "Prion_doi" (
 	"Prion_id" INTEGER, 
 	doi_id INTEGER, 
@@ -7406,4 +7507,140 @@ CREATE TABLE "FundingSource_iri" (
 	iri TEXT, 
 	PRIMARY KEY ("FundingSource_id", iri), 
 	FOREIGN KEY("FundingSource_id") REFERENCES "FundingSource" (id)
+);
+CREATE TABLE "PathogenIdentification_hostType" (
+	"PathogenIdentification_id" INTEGER, 
+	"hostType" TEXT, 
+	PRIMARY KEY ("PathogenIdentification_id", "hostType"), 
+	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "PathogenIdentification_keyword" (
+	"PathogenIdentification_id" INTEGER, 
+	keyword TEXT, 
+	PRIMARY KEY ("PathogenIdentification_id", keyword), 
+	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "PathogenIdentification_identifier" (
+	"PathogenIdentification_id" INTEGER, 
+	identifier TEXT, 
+	PRIMARY KEY ("PathogenIdentification_id", identifier), 
+	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "PathogenIdentification_iri" (
+	"PathogenIdentification_id" INTEGER, 
+	iri TEXT, 
+	PRIMARY KEY ("PathogenIdentification_id", iri), 
+	FOREIGN KEY("PathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "ProductOrService_pathogenIdentification" (
+	"ProductOrService_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("ProductOrService_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("ProductOrService_id") REFERENCES "ProductOrService" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Service_pathogenIdentification" (
+	"Service_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Service_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Service_id") REFERENCES "Service" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Product_pathogenIdentification" (
+	"Product_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Product_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Product_id") REFERENCES "Product" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Antibody_pathogenIdentification" (
+	"Antibody_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Antibody_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Antibody_id") REFERENCES "Antibody" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Hybridoma_pathogenIdentification" (
+	"Hybridoma_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Hybridoma_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Hybridoma_id") REFERENCES "Hybridoma" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Protein_pathogenIdentification" (
+	"Protein_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Protein_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "NucleicAcid_pathogenIdentification" (
+	"NucleicAcid_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("NucleicAcid_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "DetectionKit_pathogenIdentification" (
+	"DetectionKit_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("DetectionKit_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("DetectionKit_id") REFERENCES "DetectionKit" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Bundle_pathogenIdentification" (
+	"Bundle_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Bundle_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Pathogen_pathogenIdentification" (
+	"Pathogen_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Pathogen_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Pathogen_id") REFERENCES "Pathogen" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Virus_pathogenIdentification" (
+	"Virus_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Virus_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Virus_id") REFERENCES "Virus" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Bacterium_pathogenIdentification" (
+	"Bacterium_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Bacterium_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Bacterium_id") REFERENCES "Bacterium" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Fungus_pathogenIdentification" (
+	"Fungus_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Fungus_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Fungus_id") REFERENCES "Fungus" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Protozoan_pathogenIdentification" (
+	"Protozoan_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Protozoan_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Protozoan_id") REFERENCES "Protozoan" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Viroid_pathogenIdentification" (
+	"Viroid_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Viroid_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Viroid_id") REFERENCES "Viroid" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
+);
+CREATE TABLE "Prion_pathogenIdentification" (
+	"Prion_id" INTEGER, 
+	"pathogenIdentification_id" INTEGER NOT NULL, 
+	PRIMARY KEY ("Prion_id", "pathogenIdentification_id"), 
+	FOREIGN KEY("Prion_id") REFERENCES "Prion" (id), 
+	FOREIGN KEY("pathogenIdentification_id") REFERENCES "PathogenIdentification" (id)
 );

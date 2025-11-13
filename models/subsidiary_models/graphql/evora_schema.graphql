@@ -1,11 +1,12 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10742
+# version: 1.0.10759
 type AlternateName
   {
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -21,6 +22,7 @@ type Antibody
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -78,6 +80,7 @@ type Audio
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -92,6 +95,7 @@ type Bacterium
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -158,6 +162,7 @@ type BiologicalMaterialOrigin
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     recombinantMaterial: Boolean!
     biologicalSourceType: Boolean!
@@ -170,6 +175,7 @@ interface BiologicalPartOrigin
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     recombinantPartIdentification: RecombinantPartIdentification
     accessToPhysicalGeneticResource: Boolean!
@@ -181,6 +187,7 @@ type BiosafetyLevel
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -194,6 +201,7 @@ type Bundle
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -243,6 +251,7 @@ interface Catalogue
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -255,6 +264,7 @@ type Certification
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -269,6 +279,7 @@ type ClinicalGroup
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -284,6 +295,7 @@ type Collection
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -298,6 +310,7 @@ type CommonName
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -313,6 +326,7 @@ type ContactPoint
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -332,6 +346,7 @@ type Country
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -346,6 +361,7 @@ type Data
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -360,6 +376,7 @@ type DataProvider
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -381,6 +398,7 @@ interface DataService
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -394,6 +412,7 @@ interface Dataset
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -406,6 +425,7 @@ type DetectionKit
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -458,6 +478,7 @@ type Document
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -472,6 +493,7 @@ type Doi
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -485,6 +507,7 @@ type ExpressionVector
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -498,6 +521,7 @@ type ExternalRelatedReference
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     reference: String!
     referenceLabel: String!
@@ -511,6 +535,7 @@ interface File
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -525,6 +550,7 @@ type FundingSource
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -543,6 +569,7 @@ type Fungus
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -609,6 +636,7 @@ type GeographicalOrigin
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -622,6 +650,7 @@ type Hybridoma
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -680,6 +709,7 @@ type IataClassification
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -693,6 +723,7 @@ type Image
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -708,6 +739,7 @@ type IplcOrigin
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -721,6 +753,7 @@ type IsolationHost
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -734,6 +767,7 @@ type Journal
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -747,6 +781,7 @@ type Keyword
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -760,6 +795,7 @@ type License
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -774,6 +810,7 @@ type MaterialSafetyDataSheet
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     materialSafetyContact: ContactPoint!
     physicalChemicalProperties: String
@@ -798,6 +835,7 @@ type NaturalPartOrigin
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     recombinantPartIdentification: RecombinantPartIdentification
     accessToPhysicalGeneticResource: Boolean!
@@ -814,6 +852,7 @@ type NucleicAcid
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -876,6 +915,7 @@ type Organization
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -893,6 +933,7 @@ type Originator
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -907,6 +948,7 @@ interface Pathogen
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -973,6 +1015,7 @@ type PathogenIdentification
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     taxon: Taxon!
     pathogenName: CommonName!
@@ -992,6 +1035,7 @@ type PdbReference
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1005,6 +1049,7 @@ type Person
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -1020,6 +1065,7 @@ type PersonOrOrganization
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -1034,6 +1080,7 @@ type PlasmidSelection
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1047,6 +1094,7 @@ type Prion
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -1113,6 +1161,7 @@ type Product
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -1161,6 +1210,7 @@ type ProductCategory
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1175,6 +1225,7 @@ type ProductionCellLine
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1188,6 +1239,7 @@ interface ProductOrService
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -1228,6 +1280,7 @@ type PropagationHost
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1241,6 +1294,7 @@ type Protein
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -1303,6 +1357,7 @@ type Protozoan
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -1369,6 +1424,7 @@ type Provider
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -1387,6 +1443,7 @@ type Publication
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     authors: String!
@@ -1401,6 +1458,7 @@ type ReasearchInfrastructure
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -1418,6 +1476,7 @@ type RecombinantPartIdentification
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     partIdentification: String!
     sequence: [Sequence]!
@@ -1430,6 +1489,7 @@ interface Resource
     dateModified: Datetime
     identifier: [String]
     iri: [Uri]
+    publisher: PersonOrOrganization
   }
 
 type RiskGroup
@@ -1438,6 +1498,7 @@ type RiskGroup
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1451,6 +1512,7 @@ type Sequence
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     sequenceReference: [SequenceReference]
     sequenceFasta: String
@@ -1462,6 +1524,7 @@ type SequenceReference
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     accessionNumber: String!
     sequenceProvider: String!
@@ -1473,6 +1536,7 @@ type Service
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -1515,6 +1579,7 @@ type SpecialFeature
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1528,6 +1593,7 @@ type SyntheticPartOrigin
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     recombinantPartIdentification: RecombinantPartIdentification
     accessToPhysicalGeneticResource: Boolean!
@@ -1541,6 +1607,7 @@ type TagSequence
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1554,6 +1621,7 @@ type Taxon
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1575,6 +1643,7 @@ type TaxonomicRank
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1589,6 +1658,7 @@ type Taxonomy
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -1606,6 +1676,7 @@ interface Term
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1619,6 +1690,7 @@ type TransmissionMethod
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1632,6 +1704,7 @@ type Variant
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1647,6 +1720,7 @@ type Version
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     version: String!
     versionOf: String!
@@ -1659,6 +1733,7 @@ type Video
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
     description: String
@@ -1673,6 +1748,7 @@ type Viroid
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -1739,6 +1815,7 @@ type Virus
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!
@@ -1808,6 +1885,7 @@ type VirusName
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String
@@ -1823,6 +1901,7 @@ type Vocabulary
     dateIssued: Datetime
     dateModified: Datetime
     identifier: [String]
+    publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
     description: String!

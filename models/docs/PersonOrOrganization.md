@@ -66,6 +66,15 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
         
       PersonOrOrganization : name
         
+      PersonOrOrganization : publisher
+        
+          
+    
+    
+    PersonOrOrganization --> "0..1" PersonOrOrganization : publisher
+    click PersonOrOrganization href "../PersonOrOrganization"
+
+        
       
 ```
 
@@ -96,9 +105,95 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
 | [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
 | [identifier](identifier.md) | * <br/> [String](String.md) | A unique identifier of the resource being described or cataloged | [Resource](Resource.md) |
 | [iri](iri.md) | * <br/> [Uri](Uri.md) | International Resource Identifier (IRI) that uniquely identifies or refers to... | [Resource](Resource.md) |
+| [publisher](publisher.md) | 0..1 <br/> [PersonOrOrganization](PersonOrOrganization.md) | The entity responsible for making the resource available | [Resource](Resource.md) |
 
 
 
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Resource](Resource.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Dataset](Dataset.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [DataService](DataService.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Version](Version.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Catalogue](Catalogue.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Taxonomy](Taxonomy.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [DataProvider](DataProvider.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [PathogenIdentification](PathogenIdentification.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Publication](Publication.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Vocabulary](Vocabulary.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Term](Term.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [CommonName](CommonName.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [VirusName](VirusName.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [AlternateName](AlternateName.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [RiskGroup](RiskGroup.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [BiosafetyLevel](BiosafetyLevel.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Doi](Doi.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Journal](Journal.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [PdbReference](PdbReference.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Keyword](Keyword.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [TagSequence](TagSequence.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [SpecialFeature](SpecialFeature.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [ExpressionVector](ExpressionVector.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [PlasmidSelection](PlasmidSelection.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [PropagationHost](PropagationHost.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [TransmissionMethod](TransmissionMethod.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [ProductionCellLine](ProductionCellLine.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [ProductCategory](ProductCategory.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [IsolationHost](IsolationHost.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [GeographicalOrigin](GeographicalOrigin.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [IplcOrigin](IplcOrigin.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Country](Country.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [IataClassification](IataClassification.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Variant](Variant.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [TaxonomicRank](TaxonomicRank.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Taxon](Taxon.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [ClinicalGroup](ClinicalGroup.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [ExternalRelatedReference](ExternalRelatedReference.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Sequence](Sequence.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [SequenceReference](SequenceReference.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [PersonOrOrganization](PersonOrOrganization.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Person](Person.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Organization](Organization.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [ReasearchInfrastructure](ReasearchInfrastructure.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Provider](Provider.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Originator](Originator.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [BiologicalPartOrigin](BiologicalPartOrigin.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [NaturalPartOrigin](NaturalPartOrigin.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [SyntheticPartOrigin](SyntheticPartOrigin.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [RecombinantPartIdentification](RecombinantPartIdentification.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Collection](Collection.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [ProductOrService](ProductOrService.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Service](Service.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Product](Product.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Antibody](Antibody.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Hybridoma](Hybridoma.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Protein](Protein.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [NucleicAcid](NucleicAcid.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [DetectionKit](DetectionKit.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Bundle](Bundle.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Pathogen](Pathogen.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Virus](Virus.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Bacterium](Bacterium.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Fungus](Fungus.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Protozoan](Protozoan.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Viroid](Viroid.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Prion](Prion.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [File](File.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Data](Data.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Document](Document.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Audio](Audio.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Video](Video.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Image](Image.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [ContactPoint](ContactPoint.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [License](License.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [Certification](Certification.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [FundingSource](FundingSource.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
 
 
 
@@ -559,6 +654,23 @@ attributes:
     range: uri
     required: false
     multivalued: true
+  publisher:
+    name: publisher
+    description: The entity responsible for making the resource available.
+    title: publisher
+    comments:
+    - Resources of type foaf:Agent like EVORAO:PersonOrOrganization are recommended
+      as values for this property.
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dct:publisher
+    alias: publisher
+    owner: PersonOrOrganization
+    domain_of:
+    - Resource
+    range: PersonOrOrganization
+    required: false
+    multivalued: false
 class_uri: foaf:Agent
 
 ```

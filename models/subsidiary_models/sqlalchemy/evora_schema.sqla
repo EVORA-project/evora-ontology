@@ -18,6 +18,8 @@ class Resource(Base):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "ResourceKeyword" )
@@ -36,7 +38,7 @@ class Resource(Base):
     
 
     def __repr__(self):
-        return f"Resource(id={self.id},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
+        return f"Resource(id={self.id},dateIssued={self.dateIssued},dateModified={self.dateModified},publisher_id={self.publisher_id},)"
 
 
 
@@ -8947,6 +8949,8 @@ class Dataset(Resource):
     version = Column(Text())
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "DatasetKeyword" )
@@ -8965,7 +8969,7 @@ class Dataset(Resource):
     
 
     def __repr__(self):
-        return f"Dataset(id={self.id},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
+        return f"Dataset(id={self.id},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},publisher_id={self.publisher_id},)"
 
 
 
@@ -8989,6 +8993,8 @@ class DataService(Resource):
     endpointUrl = Column(Text(), nullable=False )
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -9011,7 +9017,7 @@ class DataService(Resource):
     
 
     def __repr__(self):
-        return f"DataService(id={self.id},title={self.title},description={self.description},endpointUrl={self.endpointUrl},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
+        return f"DataService(id={self.id},title={self.title},description={self.description},endpointUrl={self.endpointUrl},dateIssued={self.dateIssued},dateModified={self.dateModified},publisher_id={self.publisher_id},)"
 
 
 
@@ -9034,6 +9040,8 @@ class Version(Resource):
     versionOf = Column(Text(), nullable=False )
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -9056,7 +9064,7 @@ class Version(Resource):
     
 
     def __repr__(self):
-        return f"Version(id={self.id},version={self.version},versionOf={self.versionOf},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
+        return f"Version(id={self.id},version={self.version},versionOf={self.versionOf},dateIssued={self.dateIssued},dateModified={self.dateModified},publisher_id={self.publisher_id},)"
 
 
 
@@ -9089,6 +9097,8 @@ class PathogenIdentification(Resource):
     pathogenName = relationship("CommonName", uselist=False, foreign_keys=[pathogenName_id])
     variant_id = Column(Integer(), ForeignKey('Variant.id'))
     variant = relationship("Variant", uselist=False, foreign_keys=[variant_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     hostType_rel = relationship( "PathogenIdentificationHostType" )
@@ -9112,7 +9122,7 @@ class PathogenIdentification(Resource):
     
 
     def __repr__(self):
-        return f"PathogenIdentification(id={self.id},pathogenType={self.pathogenType},subspecies={self.subspecies},strain={self.strain},isolate={self.isolate},genotype={self.genotype},serotype={self.serotype},dateIssued={self.dateIssued},dateModified={self.dateModified},taxon_id={self.taxon_id},pathogenName_id={self.pathogenName_id},variant_id={self.variant_id},)"
+        return f"PathogenIdentification(id={self.id},pathogenType={self.pathogenType},subspecies={self.subspecies},strain={self.strain},isolate={self.isolate},genotype={self.genotype},serotype={self.serotype},dateIssued={self.dateIssued},dateModified={self.dateModified},taxon_id={self.taxon_id},pathogenName_id={self.pathogenName_id},variant_id={self.variant_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9140,6 +9150,8 @@ class Publication(Resource):
     doi = relationship("Doi", uselist=False, foreign_keys=[doi_id])
     journal_id = Column(Integer(), ForeignKey('Journal.id'))
     journal = relationship("Journal", uselist=False, foreign_keys=[journal_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "PublicationKeyword" )
@@ -9158,7 +9170,7 @@ class Publication(Resource):
     
 
     def __repr__(self):
-        return f"Publication(id={self.id},title={self.title},authors={self.authors},abstract={self.abstract},dateIssued={self.dateIssued},dateModified={self.dateModified},doi_id={self.doi_id},journal_id={self.journal_id},)"
+        return f"Publication(id={self.id},title={self.title},authors={self.authors},abstract={self.abstract},dateIssued={self.dateIssued},dateModified={self.dateModified},doi_id={self.doi_id},journal_id={self.journal_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9184,6 +9196,8 @@ class Term(Resource):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "TermKeyword" )
@@ -9202,7 +9216,7 @@ class Term(Resource):
     
 
     def __repr__(self):
-        return f"Term(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"Term(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9227,6 +9241,8 @@ class ExternalRelatedReference(Resource):
     referenceProviderName = Column(Text(), nullable=False )
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "ExternalRelatedReferenceKeyword" )
@@ -9245,7 +9261,7 @@ class ExternalRelatedReference(Resource):
     
 
     def __repr__(self):
-        return f"ExternalRelatedReference(id={self.id},reference={self.reference},referenceLabel={self.referenceLabel},referenceProviderPrefix={self.referenceProviderPrefix},referenceProviderName={self.referenceProviderName},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
+        return f"ExternalRelatedReference(id={self.id},reference={self.reference},referenceLabel={self.referenceLabel},referenceProviderPrefix={self.referenceProviderPrefix},referenceProviderName={self.referenceProviderName},dateIssued={self.dateIssued},dateModified={self.dateModified},publisher_id={self.publisher_id},)"
 
 
 
@@ -9267,6 +9283,8 @@ class Sequence(Resource):
     sequenceFasta = Column(Text())
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -9289,7 +9307,7 @@ class Sequence(Resource):
     
 
     def __repr__(self):
-        return f"Sequence(id={self.id},sequenceFasta={self.sequenceFasta},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
+        return f"Sequence(id={self.id},sequenceFasta={self.sequenceFasta},dateIssued={self.dateIssued},dateModified={self.dateModified},publisher_id={self.publisher_id},)"
 
 
 
@@ -9312,6 +9330,8 @@ class SequenceReference(Resource):
     sequenceProvider = Column(Text(), nullable=False )
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "SequenceReferenceKeyword" )
@@ -9330,7 +9350,7 @@ class SequenceReference(Resource):
     
 
     def __repr__(self):
-        return f"SequenceReference(id={self.id},accessionNumber={self.accessionNumber},sequenceProvider={self.sequenceProvider},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
+        return f"SequenceReference(id={self.id},accessionNumber={self.accessionNumber},sequenceProvider={self.sequenceProvider},dateIssued={self.dateIssued},dateModified={self.dateModified},publisher_id={self.publisher_id},)"
 
 
 
@@ -9358,6 +9378,8 @@ class PersonOrOrganization(Resource):
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "PersonOrOrganizationKeyword" )
@@ -9376,7 +9398,7 @@ class PersonOrOrganization(Resource):
     
 
     def __repr__(self):
-        return f"PersonOrOrganization(id={self.id},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"PersonOrOrganization(id={self.id},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9399,6 +9421,8 @@ class BiologicalMaterialOrigin(Resource):
     biologicalSourceType = Column(Boolean(), nullable=False )
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -9421,7 +9445,7 @@ class BiologicalMaterialOrigin(Resource):
     
 
     def __repr__(self):
-        return f"BiologicalMaterialOrigin(id={self.id},recombinantMaterial={self.recombinantMaterial},biologicalSourceType={self.biologicalSourceType},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
+        return f"BiologicalMaterialOrigin(id={self.id},recombinantMaterial={self.recombinantMaterial},biologicalSourceType={self.biologicalSourceType},dateIssued={self.dateIssued},dateModified={self.dateModified},publisher_id={self.publisher_id},)"
 
 
 
@@ -9445,6 +9469,8 @@ class BiologicalPartOrigin(Resource):
     dateModified = Column(DateTime())
     recombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'))
     recombinantPartIdentification = relationship("RecombinantPartIdentification", uselist=False, foreign_keys=[recombinantPartIdentification_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "BiologicalPartOriginKeyword" )
@@ -9463,7 +9489,7 @@ class BiologicalPartOrigin(Resource):
     
 
     def __repr__(self):
-        return f"BiologicalPartOrigin(id={self.id},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},dateIssued={self.dateIssued},dateModified={self.dateModified},recombinantPartIdentification_id={self.recombinantPartIdentification_id},)"
+        return f"BiologicalPartOrigin(id={self.id},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},dateIssued={self.dateIssued},dateModified={self.dateModified},recombinantPartIdentification_id={self.recombinantPartIdentification_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9485,6 +9511,8 @@ class RecombinantPartIdentification(Resource):
     partIdentification = Column(Text(), nullable=False )
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -9507,7 +9535,7 @@ class RecombinantPartIdentification(Resource):
     
 
     def __repr__(self):
-        return f"RecombinantPartIdentification(id={self.id},partIdentification={self.partIdentification},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
+        return f"RecombinantPartIdentification(id={self.id},partIdentification={self.partIdentification},dateIssued={self.dateIssued},dateModified={self.dateModified},publisher_id={self.publisher_id},)"
 
 
 
@@ -9544,6 +9572,8 @@ class MaterialSafetyDataSheet(Resource):
     dateModified = Column(DateTime())
     materialSafetyContact_id = Column(Integer(), ForeignKey('ContactPoint.id'), nullable=False )
     materialSafetyContact = relationship("ContactPoint", uselist=False, foreign_keys=[materialSafetyContact_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "MaterialSafetyDataSheetKeyword" )
@@ -9562,7 +9592,7 @@ class MaterialSafetyDataSheet(Resource):
     
 
     def __repr__(self):
-        return f"MaterialSafetyDataSheet(id={self.id},physicalChemicalProperties={self.physicalChemicalProperties},hazardsIdentification={self.hazardsIdentification},firstAidMeasures={self.firstAidMeasures},fireFightingMeasures={self.fireFightingMeasures},accidentalReleaseMeasures={self.accidentalReleaseMeasures},handlingAndStorage={self.handlingAndStorage},exposureControlsPersonalProtection={self.exposureControlsPersonalProtection},stabilityAndReactivity={self.stabilityAndReactivity},toxicologicalInformation={self.toxicologicalInformation},ecologicalInformation={self.ecologicalInformation},disposalConsiderations={self.disposalConsiderations},transportInformation={self.transportInformation},regulatoryInformation={self.regulatoryInformation},furtherInformation={self.furtherInformation},dateIssued={self.dateIssued},dateModified={self.dateModified},materialSafetyContact_id={self.materialSafetyContact_id},)"
+        return f"MaterialSafetyDataSheet(id={self.id},physicalChemicalProperties={self.physicalChemicalProperties},hazardsIdentification={self.hazardsIdentification},firstAidMeasures={self.firstAidMeasures},fireFightingMeasures={self.fireFightingMeasures},accidentalReleaseMeasures={self.accidentalReleaseMeasures},handlingAndStorage={self.handlingAndStorage},exposureControlsPersonalProtection={self.exposureControlsPersonalProtection},stabilityAndReactivity={self.stabilityAndReactivity},toxicologicalInformation={self.toxicologicalInformation},ecologicalInformation={self.ecologicalInformation},disposalConsiderations={self.disposalConsiderations},transportInformation={self.transportInformation},regulatoryInformation={self.regulatoryInformation},furtherInformation={self.furtherInformation},dateIssued={self.dateIssued},dateModified={self.dateModified},materialSafetyContact_id={self.materialSafetyContact_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9589,6 +9619,8 @@ class File(Resource):
     dateModified = Column(DateTime())
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "FileKeyword" )
@@ -9607,7 +9639,7 @@ class File(Resource):
     
 
     def __repr__(self):
-        return f"File(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},)"
+        return f"File(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9639,6 +9671,8 @@ class ContactPoint(Resource):
     dateModified = Column(DateTime())
     addressCountry_id = Column(Integer(), ForeignKey('Country.id'))
     addressCountry = relationship("Country", uselist=False, foreign_keys=[addressCountry_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "ContactPointKeyword" )
@@ -9657,7 +9691,7 @@ class ContactPoint(Resource):
     
 
     def __repr__(self):
-        return f"ContactPoint(id={self.id},name={self.name},description={self.description},email={self.email},telephone={self.telephone},streetAddress={self.streetAddress},addressLocality={self.addressLocality},addressRegion={self.addressRegion},postalCode={self.postalCode},orcidId={self.orcidId},dateIssued={self.dateIssued},dateModified={self.dateModified},addressCountry_id={self.addressCountry_id},)"
+        return f"ContactPoint(id={self.id},name={self.name},description={self.description},email={self.email},telephone={self.telephone},streetAddress={self.streetAddress},addressLocality={self.addressLocality},addressRegion={self.addressRegion},postalCode={self.postalCode},orcidId={self.orcidId},dateIssued={self.dateIssued},dateModified={self.dateModified},addressCountry_id={self.addressCountry_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9684,6 +9718,8 @@ class License(Resource):
     dateModified = Column(DateTime())
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "LicenseKeyword" )
@@ -9702,7 +9738,7 @@ class License(Resource):
     
 
     def __repr__(self):
-        return f"License(id={self.id},title={self.title},description={self.description},resourceUrl={self.resourceUrl},licensingOrAttribution={self.licensingOrAttribution},dateIssued={self.dateIssued},dateModified={self.dateModified},logo_id={self.logo_id},)"
+        return f"License(id={self.id},title={self.title},description={self.description},resourceUrl={self.resourceUrl},licensingOrAttribution={self.licensingOrAttribution},dateIssued={self.dateIssued},dateModified={self.dateModified},logo_id={self.logo_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9728,6 +9764,8 @@ class Certification(Resource):
     dateModified = Column(DateTime())
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -9750,7 +9788,7 @@ class Certification(Resource):
     
 
     def __repr__(self):
-        return f"Certification(id={self.id},title={self.title},description={self.description},resourceUrl={self.resourceUrl},dateIssued={self.dateIssued},dateModified={self.dateModified},logo_id={self.logo_id},)"
+        return f"Certification(id={self.id},title={self.title},description={self.description},resourceUrl={self.resourceUrl},dateIssued={self.dateIssued},dateModified={self.dateModified},logo_id={self.logo_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9782,6 +9820,8 @@ class FundingSource(Resource):
     funder = relationship("Organization", uselist=False, foreign_keys=[funder_id])
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "FundingSourceKeyword" )
@@ -9800,7 +9840,7 @@ class FundingSource(Resource):
     
 
     def __repr__(self):
-        return f"FundingSource(id={self.id},title={self.title},description={self.description},fundingProgram={self.fundingProgram},grantNumber={self.grantNumber},fundingPeriodStart={self.fundingPeriodStart},fundingPeriodEnd={self.fundingPeriodEnd},eligibilityCriteria={self.eligibilityCriteria},dateIssued={self.dateIssued},dateModified={self.dateModified},funder_id={self.funder_id},logo_id={self.logo_id},)"
+        return f"FundingSource(id={self.id},title={self.title},description={self.description},fundingProgram={self.fundingProgram},grantNumber={self.grantNumber},fundingPeriodStart={self.fundingPeriodStart},fundingPeriodEnd={self.fundingPeriodEnd},eligibilityCriteria={self.eligibilityCriteria},dateIssued={self.dateIssued},dateModified={self.dateModified},funder_id={self.funder_id},logo_id={self.logo_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9824,6 +9864,8 @@ class Catalogue(Dataset):
     version = Column(Text())
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "CatalogueKeyword" )
@@ -9842,7 +9884,7 @@ class Catalogue(Dataset):
     
 
     def __repr__(self):
-        return f"Catalogue(id={self.id},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},)"
+        return f"Catalogue(id={self.id},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},publisher_id={self.publisher_id},)"
 
 
 
@@ -9874,6 +9916,8 @@ class DataProvider(DataService):
     dateModified = Column(DateTime())
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     providedEntityType_rel = relationship( "DataProviderProvidedEntityType" )
@@ -9901,7 +9945,7 @@ class DataProvider(DataService):
     
 
     def __repr__(self):
-        return f"DataProvider(id={self.id},loginRequestMethod={self.loginRequestMethod},loginUrl={self.loginUrl},loginTokenName={self.loginTokenName},queryMethod={self.queryMethod},contentType={self.contentType},weight={self.weight},title={self.title},description={self.description},endpointUrl={self.endpointUrl},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},)"
+        return f"DataProvider(id={self.id},loginRequestMethod={self.loginRequestMethod},loginUrl={self.loginUrl},loginTokenName={self.loginTokenName},queryMethod={self.queryMethod},contentType={self.contentType},weight={self.weight},title={self.title},description={self.description},endpointUrl={self.endpointUrl},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9927,6 +9971,8 @@ class CommonName(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -9954,7 +10000,7 @@ class CommonName(Term):
     
 
     def __repr__(self):
-        return f"CommonName(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"CommonName(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -9980,6 +10026,8 @@ class AlternateName(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -10007,7 +10055,7 @@ class AlternateName(Term):
     
 
     def __repr__(self):
-        return f"AlternateName(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"AlternateName(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10033,6 +10081,8 @@ class RiskGroup(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "RiskGroupKeyword" )
@@ -10051,7 +10101,7 @@ class RiskGroup(Term):
     
 
     def __repr__(self):
-        return f"RiskGroup(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"RiskGroup(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10077,6 +10127,8 @@ class BiosafetyLevel(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "BiosafetyLevelKeyword" )
@@ -10095,7 +10147,7 @@ class BiosafetyLevel(Term):
     
 
     def __repr__(self):
-        return f"BiosafetyLevel(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"BiosafetyLevel(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10121,6 +10173,8 @@ class Doi(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "DoiKeyword" )
@@ -10139,7 +10193,7 @@ class Doi(Term):
     
 
     def __repr__(self):
-        return f"Doi(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"Doi(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10165,6 +10219,8 @@ class Journal(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "JournalKeyword" )
@@ -10183,7 +10239,7 @@ class Journal(Term):
     
 
     def __repr__(self):
-        return f"Journal(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"Journal(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10209,6 +10265,8 @@ class PdbReference(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "PdbReferenceKeyword" )
@@ -10227,7 +10285,7 @@ class PdbReference(Term):
     
 
     def __repr__(self):
-        return f"PdbReference(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"PdbReference(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10253,6 +10311,8 @@ class Keyword(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "KeywordKeyword" )
@@ -10271,7 +10331,7 @@ class Keyword(Term):
     
 
     def __repr__(self):
-        return f"Keyword(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"Keyword(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10297,6 +10357,8 @@ class TagSequence(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "TagSequenceKeyword" )
@@ -10315,7 +10377,7 @@ class TagSequence(Term):
     
 
     def __repr__(self):
-        return f"TagSequence(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"TagSequence(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10341,6 +10403,8 @@ class SpecialFeature(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "SpecialFeatureKeyword" )
@@ -10359,7 +10423,7 @@ class SpecialFeature(Term):
     
 
     def __repr__(self):
-        return f"SpecialFeature(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"SpecialFeature(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10385,6 +10449,8 @@ class ExpressionVector(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "ExpressionVectorKeyword" )
@@ -10403,7 +10469,7 @@ class ExpressionVector(Term):
     
 
     def __repr__(self):
-        return f"ExpressionVector(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"ExpressionVector(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10429,6 +10495,8 @@ class PlasmidSelection(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "PlasmidSelectionKeyword" )
@@ -10447,7 +10515,7 @@ class PlasmidSelection(Term):
     
 
     def __repr__(self):
-        return f"PlasmidSelection(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"PlasmidSelection(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10473,6 +10541,8 @@ class PropagationHost(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "PropagationHostKeyword" )
@@ -10491,7 +10561,7 @@ class PropagationHost(Term):
     
 
     def __repr__(self):
-        return f"PropagationHost(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"PropagationHost(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10517,6 +10587,8 @@ class TransmissionMethod(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "TransmissionMethodKeyword" )
@@ -10535,7 +10607,7 @@ class TransmissionMethod(Term):
     
 
     def __repr__(self):
-        return f"TransmissionMethod(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"TransmissionMethod(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10561,6 +10633,8 @@ class ProductionCellLine(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "ProductionCellLineKeyword" )
@@ -10579,7 +10653,7 @@ class ProductionCellLine(Term):
     
 
     def __repr__(self):
-        return f"ProductionCellLine(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"ProductionCellLine(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10607,6 +10681,8 @@ class ProductCategory(Term):
     parentCategory = relationship("ProductCategory", uselist=False, foreign_keys=[parentCategory_id])
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "ProductCategoryKeyword" )
@@ -10625,7 +10701,7 @@ class ProductCategory(Term):
     
 
     def __repr__(self):
-        return f"ProductCategory(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},parentCategory_id={self.parentCategory_id},inVocabulary_id={self.inVocabulary_id},)"
+        return f"ProductCategory(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},parentCategory_id={self.parentCategory_id},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10651,6 +10727,8 @@ class IsolationHost(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "IsolationHostKeyword" )
@@ -10669,7 +10747,7 @@ class IsolationHost(Term):
     
 
     def __repr__(self):
-        return f"IsolationHost(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"IsolationHost(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10695,6 +10773,8 @@ class GeographicalOrigin(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "GeographicalOriginKeyword" )
@@ -10713,7 +10793,7 @@ class GeographicalOrigin(Term):
     
 
     def __repr__(self):
-        return f"GeographicalOrigin(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"GeographicalOrigin(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10740,6 +10820,8 @@ class Country(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "CountryKeyword" )
@@ -10758,7 +10840,7 @@ class Country(Term):
     
 
     def __repr__(self):
-        return f"Country(id={self.id},alpha2Code={self.alpha2Code},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"Country(id={self.id},alpha2Code={self.alpha2Code},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10784,6 +10866,8 @@ class IataClassification(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "IataClassificationKeyword" )
@@ -10802,7 +10886,7 @@ class IataClassification(Term):
     
 
     def __repr__(self):
-        return f"IataClassification(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"IataClassification(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10828,6 +10912,8 @@ class TaxonomicRank(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -10850,7 +10936,7 @@ class TaxonomicRank(Term):
     
 
     def __repr__(self):
-        return f"TaxonomicRank(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"TaxonomicRank(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10882,6 +10968,8 @@ class Taxon(Term):
     rank = relationship("TaxonomicRank", uselist=False, foreign_keys=[rank_id])
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -10916,7 +11004,7 @@ class Taxon(Term):
     
 
     def __repr__(self):
-        return f"Taxon(id={self.id},taxonomicId={self.taxonomicId},taxonomicNodeId={self.taxonomicNodeId},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},parentTaxon_id={self.parentTaxon_id},rank_id={self.rank_id},inVocabulary_id={self.inVocabulary_id},)"
+        return f"Taxon(id={self.id},taxonomicId={self.taxonomicId},taxonomicNodeId={self.taxonomicNodeId},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},parentTaxon_id={self.parentTaxon_id},rank_id={self.rank_id},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10942,6 +11030,8 @@ class ClinicalGroup(Term):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -10968,7 +11058,7 @@ class ClinicalGroup(Term):
     
 
     def __repr__(self):
-        return f"ClinicalGroup(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"ClinicalGroup(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -10997,6 +11087,8 @@ class Person(PersonOrOrganization):
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "PersonKeyword" )
@@ -11015,7 +11107,7 @@ class Person(PersonOrOrganization):
     
 
     def __repr__(self):
-        return f"Person(id={self.id},orcidId={self.orcidId},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Person(id={self.id},orcidId={self.orcidId},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11046,6 +11138,8 @@ class Organization(PersonOrOrganization):
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -11068,7 +11162,7 @@ class Organization(PersonOrOrganization):
     
 
     def __repr__(self):
-        return f"Organization(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Organization(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11096,6 +11190,8 @@ class Originator(PersonOrOrganization):
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "OriginatorKeyword" )
@@ -11114,7 +11210,7 @@ class Originator(PersonOrOrganization):
     
 
     def __repr__(self):
-        return f"Originator(id={self.id},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Originator(id={self.id},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11145,6 +11241,8 @@ class NaturalPartOrigin(BiologicalPartOrigin):
     indigenousPeopleAndLocalCommunityOrigin = relationship("IplcOrigin", uselist=False, foreign_keys=[indigenousPeopleAndLocalCommunityOrigin_id])
     recombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'))
     recombinantPartIdentification = relationship("RecombinantPartIdentification", uselist=False, foreign_keys=[recombinantPartIdentification_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "NaturalPartOriginKeyword" )
@@ -11163,7 +11261,7 @@ class NaturalPartOrigin(BiologicalPartOrigin):
     
 
     def __repr__(self):
-        return f"NaturalPartOrigin(id={self.id},collectionDate={self.collectionDate},beforeDate={self.beforeDate},permitIdentifierForAbs={self.permitIdentifierForAbs},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},dateIssued={self.dateIssued},dateModified={self.dateModified},countryOfCollection_id={self.countryOfCollection_id},indigenousPeopleAndLocalCommunityOrigin_id={self.indigenousPeopleAndLocalCommunityOrigin_id},recombinantPartIdentification_id={self.recombinantPartIdentification_id},)"
+        return f"NaturalPartOrigin(id={self.id},collectionDate={self.collectionDate},beforeDate={self.beforeDate},permitIdentifierForAbs={self.permitIdentifierForAbs},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},dateIssued={self.dateIssued},dateModified={self.dateModified},countryOfCollection_id={self.countryOfCollection_id},indigenousPeopleAndLocalCommunityOrigin_id={self.indigenousPeopleAndLocalCommunityOrigin_id},recombinantPartIdentification_id={self.recombinantPartIdentification_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11189,6 +11287,8 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
     dateModified = Column(DateTime())
     recombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'))
     recombinantPartIdentification = relationship("RecombinantPartIdentification", uselist=False, foreign_keys=[recombinantPartIdentification_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "SyntheticPartOriginKeyword" )
@@ -11207,7 +11307,7 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
     
 
     def __repr__(self):
-        return f"SyntheticPartOrigin(id={self.id},modificationsFromTheReferenceSequences={self.modificationsFromTheReferenceSequences},descriptionOfModificationsMadeFromTheReferenceSequences={self.descriptionOfModificationsMadeFromTheReferenceSequences},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},dateIssued={self.dateIssued},dateModified={self.dateModified},recombinantPartIdentification_id={self.recombinantPartIdentification_id},)"
+        return f"SyntheticPartOrigin(id={self.id},modificationsFromTheReferenceSequences={self.modificationsFromTheReferenceSequences},descriptionOfModificationsMadeFromTheReferenceSequences={self.descriptionOfModificationsMadeFromTheReferenceSequences},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},dateIssued={self.dateIssued},dateModified={self.dateModified},recombinantPartIdentification_id={self.recombinantPartIdentification_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11254,6 +11354,8 @@ class ProductOrService(Dataset):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -11312,7 +11414,7 @@ class ProductOrService(Dataset):
     
 
     def __repr__(self):
-        return f"ProductOrService(id={self.id},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"ProductOrService(id={self.id},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11339,6 +11441,8 @@ class Data(File):
     dateModified = Column(DateTime())
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "DataKeyword" )
@@ -11357,7 +11461,7 @@ class Data(File):
     
 
     def __repr__(self):
-        return f"Data(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},)"
+        return f"Data(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11384,6 +11488,8 @@ class Document(File):
     dateModified = Column(DateTime())
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "DocumentKeyword" )
@@ -11402,7 +11508,7 @@ class Document(File):
     
 
     def __repr__(self):
-        return f"Document(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},)"
+        return f"Document(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11429,6 +11535,8 @@ class Audio(File):
     dateModified = Column(DateTime())
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "AudioKeyword" )
@@ -11447,7 +11555,7 @@ class Audio(File):
     
 
     def __repr__(self):
-        return f"Audio(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},)"
+        return f"Audio(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11474,6 +11582,8 @@ class Video(File):
     dateModified = Column(DateTime())
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "VideoKeyword" )
@@ -11492,7 +11602,7 @@ class Video(File):
     
 
     def __repr__(self):
-        return f"Video(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},)"
+        return f"Video(id={self.id},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11520,6 +11630,8 @@ class Image(File):
     dateModified = Column(DateTime())
     license_id = Column(Integer(), ForeignKey('License.id'))
     license = relationship("License", uselist=False, foreign_keys=[license_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "ImageKeyword" )
@@ -11538,7 +11650,7 @@ class Image(File):
     
 
     def __repr__(self):
-        return f"Image(id={self.id},altText={self.altText},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},)"
+        return f"Image(id={self.id},altText={self.altText},name={self.name},description={self.description},contentUrl={self.contentUrl},format={self.format},dateIssued={self.dateIssued},dateModified={self.dateModified},license_id={self.license_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11568,6 +11680,8 @@ class Taxonomy(Catalogue):
     versionDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[versionDataProvider_id])
     rankDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
     rankDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[rankDataProvider_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -11594,7 +11708,7 @@ class Taxonomy(Catalogue):
     
 
     def __repr__(self):
-        return f"Taxonomy(id={self.id},version={self.version},title={self.title},description={self.description},dateIssued={self.dateIssued},dateModified={self.dateModified},taxonDataProvider_id={self.taxonDataProvider_id},versionDataProvider_id={self.versionDataProvider_id},rankDataProvider_id={self.rankDataProvider_id},)"
+        return f"Taxonomy(id={self.id},version={self.version},title={self.title},description={self.description},dateIssued={self.dateIssued},dateModified={self.dateModified},taxonDataProvider_id={self.taxonDataProvider_id},versionDataProvider_id={self.versionDataProvider_id},rankDataProvider_id={self.rankDataProvider_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11620,6 +11734,8 @@ class Vocabulary(Catalogue):
     dateModified = Column(DateTime())
     termDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
     termDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[termDataProvider_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -11642,7 +11758,7 @@ class Vocabulary(Catalogue):
     
 
     def __repr__(self):
-        return f"Vocabulary(id={self.id},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},termDataProvider_id={self.termDataProvider_id},)"
+        return f"Vocabulary(id={self.id},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},termDataProvider_id={self.termDataProvider_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11668,6 +11784,8 @@ class VirusName(CommonName):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -11695,7 +11813,7 @@ class VirusName(CommonName):
     
 
     def __repr__(self):
-        return f"VirusName(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"VirusName(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11721,6 +11839,8 @@ class IplcOrigin(GeographicalOrigin):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     keyword_rel = relationship( "IplcOriginKeyword" )
@@ -11739,7 +11859,7 @@ class IplcOrigin(GeographicalOrigin):
     
 
     def __repr__(self):
-        return f"IplcOrigin(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"IplcOrigin(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11765,6 +11885,8 @@ class Variant(CommonName):
     dateModified = Column(DateTime())
     inVocabulary_id = Column(Integer(), ForeignKey('Vocabulary.id'), nullable=False )
     inVocabulary = relationship("Vocabulary", uselist=False, foreign_keys=[inVocabulary_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -11792,7 +11914,7 @@ class Variant(CommonName):
     
 
     def __repr__(self):
-        return f"Variant(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},)"
+        return f"Variant(id={self.id},title={self.title},description={self.description},weight={self.weight},dateIssued={self.dateIssued},dateModified={self.dateModified},inVocabulary_id={self.inVocabulary_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11823,6 +11945,8 @@ class ReasearchInfrastructure(Organization):
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -11845,7 +11969,7 @@ class ReasearchInfrastructure(Organization):
     
 
     def __repr__(self):
-        return f"ReasearchInfrastructure(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"ReasearchInfrastructure(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11876,6 +12000,8 @@ class Provider(Organization):
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
     logo_id = Column(Integer(), ForeignKey('Image.id'))
     logo = relationship("Image", uselist=False, foreign_keys=[logo_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -11902,7 +12028,7 @@ class Provider(Organization):
     
 
     def __repr__(self):
-        return f"Provider(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},)"
+        return f"Provider(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11928,6 +12054,8 @@ class Collection(Catalogue):
     dateModified = Column(DateTime())
     collectionDataProvider_id = Column(Integer(), ForeignKey('DataProvider.id'))
     collectionDataProvider = relationship("DataProvider", uselist=False, foreign_keys=[collectionDataProvider_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -11950,7 +12078,7 @@ class Collection(Catalogue):
     
 
     def __repr__(self):
-        return f"Collection(id={self.id},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},collectionDataProvider_id={self.collectionDataProvider_id},)"
+        return f"Collection(id={self.id},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},collectionDataProvider_id={self.collectionDataProvider_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11999,6 +12127,8 @@ class Service(ProductOrService):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -12057,7 +12187,7 @@ class Service(ProductOrService):
     
 
     def __repr__(self):
-        return f"Service(id={self.id},modelSpecies={self.modelSpecies},modelType={self.modelType},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Service(id={self.id},modelSpecies={self.modelSpecies},modelType={self.modelType},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -12115,6 +12245,8 @@ class Product(ProductOrService):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -12173,7 +12305,7 @@ class Product(ProductOrService):
     
 
     def __repr__(self):
-        return f"Product(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Product(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -12238,6 +12370,8 @@ class Antibody(Product):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -12305,7 +12439,7 @@ class Antibody(Product):
     
 
     def __repr__(self):
-        return f"Antibody(id={self.id},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},antibodySpecificity={self.antibodySpecificity},targetedAntigen={self.targetedAntigen},antibodyType={self.antibodyType},antibodyCharacterizationObservation={self.antibodyCharacterizationObservation},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Antibody(id={self.id},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},antibodySpecificity={self.antibodySpecificity},targetedAntigen={self.targetedAntigen},antibodyType={self.antibodyType},antibodyCharacterizationObservation={self.antibodyCharacterizationObservation},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -12365,6 +12499,8 @@ class Protein(Product):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -12484,7 +12620,7 @@ class Protein(Product):
     
 
     def __repr__(self):
-        return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -12556,6 +12692,8 @@ class NucleicAcid(Product):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -12626,7 +12764,7 @@ class NucleicAcid(Product):
     
 
     def __repr__(self):
-        return f"NucleicAcid(id={self.id},clonedNucleicAcid={self.clonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},tagSequence_id={self.tagSequence_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"NucleicAcid(id={self.id},clonedNucleicAcid={self.clonedNucleicAcid},regionEncompassedInThisProduct={self.regionEncompassedInThisProduct},mutationObserved={self.mutationObserved},observedMutations={self.observedMutations},identificationTechnique={self.identificationTechnique},sequencing={self.sequencing},titer={self.titer},sequenceChecked={self.sequenceChecked},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},clonedIntoPlasmid_id={self.clonedIntoPlasmid_id},tagSequence_id={self.tagSequence_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -12687,6 +12825,8 @@ class DetectionKit(Product):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -12749,7 +12889,7 @@ class DetectionKit(Product):
     
 
     def __repr__(self):
-        return f"DetectionKit(id={self.id},specificityDocumented={self.specificityDocumented},specificity={self.specificity},targetedRegion={self.targetedRegion},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"DetectionKit(id={self.id},specificityDocumented={self.specificityDocumented},specificity={self.specificity},targetedRegion={self.targetedRegion},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -12807,6 +12947,8 @@ class Bundle(Product):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -12869,7 +13011,7 @@ class Bundle(Product):
     
 
     def __repr__(self):
-        return f"Bundle(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Bundle(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -12940,6 +13082,8 @@ class Pathogen(Product):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -13022,7 +13166,7 @@ class Pathogen(Product):
     
 
     def __repr__(self):
-        return f"Pathogen(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Pathogen(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -13088,6 +13232,8 @@ class Hybridoma(Antibody):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -13155,7 +13301,7 @@ class Hybridoma(Antibody):
     
 
     def __repr__(self):
-        return f"Hybridoma(id={self.id},hybridomaDescription={self.hybridomaDescription},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},antibodySpecificity={self.antibodySpecificity},targetedAntigen={self.targetedAntigen},antibodyType={self.antibodyType},antibodyCharacterizationObservation={self.antibodyCharacterizationObservation},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Hybridoma(id={self.id},hybridomaDescription={self.hybridomaDescription},productionSystem={self.productionSystem},antibodyPurifiedByAffinity={self.antibodyPurifiedByAffinity},specificityDocumented={self.specificityDocumented},antibodySpecificity={self.antibodySpecificity},targetedAntigen={self.targetedAntigen},antibodyType={self.antibodyType},antibodyCharacterizationObservation={self.antibodyCharacterizationObservation},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -13228,6 +13374,8 @@ class Virus(Pathogen):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -13314,7 +13462,7 @@ class Virus(Pathogen):
     
 
     def __repr__(self):
-        return f"Virus(id={self.id},contaminationWithCoInfectingViruses={self.contaminationWithCoInfectingViruses},mycoplasmicContent={self.mycoplasmicContent},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Virus(id={self.id},contaminationWithCoInfectingViruses={self.contaminationWithCoInfectingViruses},mycoplasmicContent={self.mycoplasmicContent},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -13385,6 +13533,8 @@ class Bacterium(Pathogen):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -13467,7 +13617,7 @@ class Bacterium(Pathogen):
     
 
     def __repr__(self):
-        return f"Bacterium(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Bacterium(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -13538,6 +13688,8 @@ class Fungus(Pathogen):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -13620,7 +13772,7 @@ class Fungus(Pathogen):
     
 
     def __repr__(self):
-        return f"Fungus(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Fungus(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -13691,6 +13843,8 @@ class Protozoan(Pathogen):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -13773,7 +13927,7 @@ class Protozoan(Pathogen):
     
 
     def __repr__(self):
-        return f"Protozoan(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Protozoan(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -13844,6 +13998,8 @@ class Viroid(Pathogen):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -13926,7 +14082,7 @@ class Viroid(Pathogen):
     
 
     def __repr__(self):
-        return f"Viroid(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Viroid(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -13997,6 +14153,8 @@ class Prion(Pathogen):
     provider = relationship("Provider", uselist=False, foreign_keys=[provider_id])
     contactPoint_id = Column(Integer(), ForeignKey('ContactPoint.id'))
     contactPoint = relationship("ContactPoint", uselist=False, foreign_keys=[contactPoint_id])
+    publisher_id = Column(Integer(), ForeignKey('PersonOrOrganization.id'))
+    publisher = relationship("PersonOrOrganization", uselist=False, foreign_keys=[publisher_id])
     
     
     # ManyToMany
@@ -14079,7 +14237,7 @@ class Prion(Pathogen):
     
 
     def __repr__(self):
-        return f"Prion(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},)"
+        return f"Prion(id={self.id},cultivability={self.cultivability},clinicalInformation={self.clinicalInformation},identificationTechnique={self.identificationTechnique},infectivity={self.infectivity},infectivityTest={self.infectivityTest},isolationTechnique={self.isolationTechnique},isolationConditions={self.isolationConditions},letterOfAuthority={self.letterOfAuthority},passage={self.passage},genomeSequencing={self.genomeSequencing},titer={self.titer},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 

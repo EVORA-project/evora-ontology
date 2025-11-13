@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10742
+# version: 1.0.10759
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -783,7 +783,8 @@ linkml:Sparqlpath xsd:string
           dct:issued @linkml:Datetime ? ;
           dct:modified @linkml:Datetime ? ;
           dct:identifier @linkml:String * ;
-          <iri> @linkml:Uri *
+          <iri> @linkml:Uri * ;
+          dct:publisher @<PersonOrOrganization> ?
        ) ;
        rdf:type [ dcat:Resource ] ?
     )

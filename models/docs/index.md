@@ -237,6 +237,7 @@ Name: EVORAO
 | [proteinPurification](proteinPurification.md) | Refers to the degree of purity achieved for a protein sample |
 | [providedEntityType](providedEntityType.md) | Identifies the type of entity (ontology class) described by the response to a... |
 | [provider](provider.md) | A provider of this product or service, as a specific organization |
+| [publisher](publisher.md) | The entity responsible for making the resource available |
 | [qualityGrading](qualityGrading.md) | Information that permits to assess the quality level of what will be provided |
 | [queryMethod](queryMethod.md) | The http request method used to access the requested query url |
 | [rank](rank.md) | Relative level or position of the identified taxon in the taxonomy |

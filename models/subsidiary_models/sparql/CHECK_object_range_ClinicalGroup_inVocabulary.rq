@@ -93,10 +93,3 @@ WHERE {
 
 
 
-## -- End of checks for ClinicalGroup
-
-
-## --
-## Checks for ExternalRelatedReference
-## --
-

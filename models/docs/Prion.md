@@ -258,6 +258,15 @@ URI: [EVORAO:Prion](https://w3id.org/evorao/Prion)
     click Provider href "../Provider"
 
         
+      Prion : publisher
+        
+          
+    
+    
+    Prion --> "0..1" PersonOrOrganization : publisher
+    click PersonOrOrganization href "../PersonOrOrganization"
+
+        
       Prion : qualityGrading
         
       Prion : refSku
@@ -405,6 +414,7 @@ URI: [EVORAO:Prion](https://w3id.org/evorao/Prion)
 | [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
 | [identifier](identifier.md) | * <br/> [String](String.md) | A unique identifier of the resource being described or cataloged | [Resource](Resource.md) |
 | [iri](iri.md) | * <br/> [Uri](Uri.md) | International Resource Identifier (IRI) that uniquely identifies or refers to... | [Resource](Resource.md) |
+| [publisher](publisher.md) | 0..1 <br/> [PersonOrOrganization](PersonOrOrganization.md) | The entity responsible for making the resource available | [Resource](Resource.md) |
 
 
 
@@ -1640,6 +1650,23 @@ attributes:
     range: uri
     required: false
     multivalued: true
+  publisher:
+    name: publisher
+    description: The entity responsible for making the resource available.
+    title: publisher
+    comments:
+    - Resources of type foaf:Agent like EVORAO:PersonOrOrganization are recommended
+      as values for this property.
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dct:publisher
+    alias: publisher
+    owner: Prion
+    domain_of:
+    - Resource
+    range: PersonOrOrganization
+    required: false
+    multivalued: false
 
 ```
 </details>

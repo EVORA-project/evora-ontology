@@ -24,6 +24,10 @@ type Resource struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -66,6 +70,10 @@ type Dataset struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -112,6 +120,10 @@ type DataService struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -154,6 +166,10 @@ type Version struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -196,6 +212,10 @@ type Catalogue struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -258,6 +278,10 @@ type Taxonomy struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -336,6 +360,10 @@ type DataProvider struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -406,6 +434,10 @@ type PathogenIdentification struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -456,6 +488,10 @@ type Publication struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -506,6 +542,10 @@ type Vocabulary struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -552,6 +592,10 @@ type Term struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -606,6 +650,10 @@ type CommonName struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -660,6 +708,10 @@ type VirusName struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -714,6 +766,10 @@ type AlternateName struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -760,6 +816,10 @@ type RiskGroup struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -806,6 +866,10 @@ type BiosafetyLevel struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -852,6 +916,10 @@ type Doi struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -898,6 +966,10 @@ type Journal struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -944,6 +1016,10 @@ type PdbReference struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -990,6 +1066,10 @@ type Keyword struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1036,6 +1116,10 @@ type TagSequence struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1082,6 +1166,10 @@ type SpecialFeature struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1128,6 +1216,10 @@ type ExpressionVector struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1174,6 +1266,10 @@ type PlasmidSelection struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1220,6 +1316,10 @@ type PropagationHost struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1266,6 +1366,10 @@ type TransmissionMethod struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1312,6 +1416,10 @@ type ProductionCellLine struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1362,6 +1470,10 @@ type ProductCategory struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1408,6 +1520,10 @@ type IsolationHost struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1454,6 +1570,10 @@ type GeographicalOrigin struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1500,6 +1620,10 @@ type IplcOrigin struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1550,6 +1674,10 @@ type Country struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1596,6 +1724,10 @@ type IataClassification struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1650,6 +1782,10 @@ type Variant struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1700,6 +1836,10 @@ type TaxonomicRank struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1778,6 +1918,10 @@ type Taxon struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1832,6 +1976,10 @@ type ClinicalGroup struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1878,6 +2026,10 @@ type ExternalRelatedReference struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1916,6 +2068,10 @@ type Sequence struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -1954,6 +2110,10 @@ type SequenceReference struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2004,6 +2164,10 @@ type PersonOrOrganization struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2058,6 +2222,10 @@ type Person struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2120,6 +2288,10 @@ type Organization struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2182,6 +2354,10 @@ type ReasearchInfrastructure struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2248,6 +2424,10 @@ type Provider struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2298,6 +2478,10 @@ type Originator struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2340,6 +2524,10 @@ type BiologicalMaterialOrigin struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2378,6 +2566,10 @@ type BiologicalPartOrigin struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2436,6 +2628,10 @@ type NaturalPartOrigin struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2482,6 +2678,10 @@ type SyntheticPartOrigin struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2520,6 +2720,10 @@ type RecombinantPartIdentification struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2570,6 +2774,10 @@ type Collection struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2724,6 +2932,10 @@ type ProductOrService struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -2886,6 +3098,10 @@ type Service struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -3072,6 +3288,10 @@ type Product struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -3294,6 +3514,10 @@ type Antibody struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -3520,6 +3744,10 @@ type Hybridoma struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -3762,6 +3990,10 @@ type Protein struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -4004,6 +4236,10 @@ type NucleicAcid struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -4206,6 +4442,10 @@ type DetectionKit struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -4396,6 +4636,10 @@ type Bundle struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -4654,6 +4898,10 @@ type Pathogen struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -4924,6 +5172,10 @@ type Virus struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -5182,6 +5434,10 @@ type Bacterium struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -5440,6 +5696,10 @@ type Fungus struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -5698,6 +5958,10 @@ type Protozoan struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -5956,6 +6220,10 @@ type Viroid struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -6214,6 +6482,10 @@ type Prion struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -6304,6 +6576,10 @@ type MaterialSafetyDataSheet struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -6354,6 +6630,10 @@ type File struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -6404,6 +6684,10 @@ type Data struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -6454,6 +6738,10 @@ type Document struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -6504,6 +6792,10 @@ type Audio struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -6554,6 +6846,10 @@ type Video struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -6608,6 +6904,10 @@ type Image struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -6678,6 +6978,10 @@ type ContactPoint struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -6728,6 +7032,10 @@ type License struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -6778,6 +7086,10 @@ type Certification struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 /*
@@ -6844,6 +7156,10 @@ type FundingSource struct {
 	 * International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 	 */
 	Iri string `json:"iri"`
+	/*
+	 * The entity responsible for making the resource available.
+	 */
+	Publisher PersonOrOrganization `json:"publisher"`
 }
 
 

@@ -71,6 +71,15 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
         
       Resource : keyword
         
+      Resource : publisher
+        
+          
+    
+    
+    Resource --> "0..1" PersonOrOrganization : publisher
+    click PersonOrOrganization href "../PersonOrOrganization"
+
+        
       
 ```
 
@@ -111,6 +120,7 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
 | [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | direct |
 | [identifier](identifier.md) | * <br/> [String](String.md) | A unique identifier of the resource being described or cataloged | direct |
 | [iri](iri.md) | * <br/> [Uri](Uri.md) | International Resource Identifier (IRI) that uniquely identifies or refers to... | direct |
+| [publisher](publisher.md) | 0..1 <br/> [PersonOrOrganization](PersonOrOrganization.md) | The entity responsible for making the resource available | direct |
 
 
 
@@ -175,6 +185,7 @@ slots:
 - dateModified
 - identifier
 - iri
+- publisher
 slot_usage:
   keyword:
     name: keyword
@@ -255,6 +266,19 @@ slot_usage:
     range: uri
     required: false
     multivalued: true
+  publisher:
+    name: publisher
+    description: The entity responsible for making the resource available.
+    title: publisher
+    comments:
+    - Resources of type foaf:Agent like EVORAO:PersonOrOrganization are recommended
+      as values for this property.
+    slot_uri: dct:publisher
+    domain_of:
+    - Resource
+    range: PersonOrOrganization
+    required: false
+    multivalued: false
 class_uri: dcat:Resource
 
 ```
@@ -349,6 +373,19 @@ slot_usage:
     range: uri
     required: false
     multivalued: true
+  publisher:
+    name: publisher
+    description: The entity responsible for making the resource available.
+    title: publisher
+    comments:
+    - Resources of type foaf:Agent like EVORAO:PersonOrOrganization are recommended
+      as values for this property.
+    slot_uri: dct:publisher
+    domain_of:
+    - Resource
+    range: PersonOrOrganization
+    required: false
+    multivalued: false
 attributes:
   keyword:
     name: keyword
@@ -449,6 +486,23 @@ attributes:
     range: uri
     required: false
     multivalued: true
+  publisher:
+    name: publisher
+    description: The entity responsible for making the resource available.
+    title: publisher
+    comments:
+    - Resources of type foaf:Agent like EVORAO:PersonOrOrganization are recommended
+      as values for this property.
+    from_schema: https://w3id.org/evorao/
+    rank: 1000
+    slot_uri: dct:publisher
+    alias: publisher
+    owner: Resource
+    domain_of:
+    - Resource
+    range: PersonOrOrganization
+    required: false
+    multivalued: false
 class_uri: dcat:Resource
 
 ```

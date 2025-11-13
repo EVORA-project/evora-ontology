@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10742
+version: 1.0.10759
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -194,6 +194,19 @@ slots:
     range: uri
     required: false
     multivalued: true
+  publisher:
+    description: The entity responsible for making the resource available.
+    title: publisher
+    comments:
+    - Resources of type foaf:Agent like EVORAO:PersonOrOrganization are recommended
+      as values for this property.
+    from_schema: https://w3id.org/evorao/
+    slot_uri: dct:publisher
+    domain_of:
+    - Resource
+    range: PersonOrOrganization
+    required: false
+    multivalued: false
   title:
     description: A name given to the resource.
     title: title
@@ -2992,6 +3005,7 @@ classes:
     - dateModified
     - identifier
     - iri
+    - publisher
     slot_usage:
       keyword:
         description: A keyword or tag describing the resource.
@@ -3068,6 +3082,18 @@ classes:
         range: uri
         required: false
         multivalued: true
+      publisher:
+        description: The entity responsible for making the resource available.
+        title: publisher
+        comments:
+        - Resources of type foaf:Agent like EVORAO:PersonOrOrganization are recommended
+          as values for this property.
+        slot_uri: dct:publisher
+        domain_of:
+        - Resource
+        range: PersonOrOrganization
+        required: false
+        multivalued: false
     class_uri: dcat:Resource
   Dataset:
     description: A collection of data, published or curated by a single agent, and
@@ -7728,4 +7754,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-11-12T16:33:17'
+generation_date: '2025-11-13T14:51:35'

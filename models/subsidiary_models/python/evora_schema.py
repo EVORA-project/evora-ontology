@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-12T15:34:07
+# Generation date: 2025-11-13T13:52:20
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10742"
+version = "1.0.10759"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -148,6 +148,7 @@ class Resource(YAMLRoot):
     dateModified: Optional[Union[str, XSDDateTime]] = None
     identifier: Optional[Union[str, list[str]]] = empty_list()
     iri: Optional[Union[Union[str, URI], list[Union[str, URI]]]] = empty_list()
+    publisher: Optional[Union[dict, "PersonOrOrganization"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.keyword, list):
@@ -167,6 +168,9 @@ class Resource(YAMLRoot):
         if not isinstance(self.iri, list):
             self.iri = [self.iri] if self.iri is not None else []
         self.iri = [v if isinstance(v, URI) else URI(v) for v in self.iri]
+
+        if self.publisher is not None and not isinstance(self.publisher, PersonOrOrganization):
+            self.publisher = PersonOrOrganization(**as_dict(self.publisher))
 
         if not isinstance(self.iri, list):
             self.iri = [self.iri] if self.iri is not None else []
@@ -3032,6 +3036,9 @@ slots.identifier = Slot(uri=DCT.identifier, name="identifier", curie=DCT.curie('
 slots.iri = Slot(uri=EVORAO.iri, name="iri", curie=EVORAO.curie('iri'),
                    model_uri=EVORAO.iri, domain=None, range=Optional[Union[Union[str, URI], list[Union[str, URI]]]])
 
+slots.publisher = Slot(uri=DCT.publisher, name="publisher", curie=DCT.curie('publisher'),
+                   model_uri=EVORAO.publisher, domain=None, range=Optional[Union[dict, PersonOrOrganization]])
+
 slots.title = Slot(uri=DCT.title, name="title", curie=DCT.curie('title'),
                    model_uri=EVORAO.title, domain=None, range=str)
 
@@ -3652,6 +3659,9 @@ slots.Resource_identifier = Slot(uri=DCT.identifier, name="Resource_identifier",
 
 slots.Resource_iri = Slot(uri=EVORAO.iri, name="Resource_iri", curie=EVORAO.curie('iri'),
                    model_uri=EVORAO.Resource_iri, domain=Resource, range=Optional[Union[Union[str, URI], list[Union[str, URI]]]])
+
+slots.Resource_publisher = Slot(uri=DCT.publisher, name="Resource_publisher", curie=DCT.curie('publisher'),
+                   model_uri=EVORAO.Resource_publisher, domain=Resource, range=Optional[Union[dict, "PersonOrOrganization"]])
 
 slots.Dataset_title = Slot(uri=DCT.title, name="Dataset_title", curie=DCT.curie('title'),
                    model_uri=EVORAO.Dataset_title, domain=Dataset, range=str)
