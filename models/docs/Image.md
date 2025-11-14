@@ -103,7 +103,7 @@ URI: [EVORAO:Image](https://w3id.org/evorao/Image)
 | [PersonOrOrganization](PersonOrOrganization.md) | [logo](logo.md) | range | [Image](Image.md) |
 | [Person](Person.md) | [logo](logo.md) | range | [Image](Image.md) |
 | [Organization](Organization.md) | [logo](logo.md) | range | [Image](Image.md) |
-| [ReasearchInfrastructure](ReasearchInfrastructure.md) | [logo](logo.md) | range | [Image](Image.md) |
+| [ResearchInfrastructure](ResearchInfrastructure.md) | [logo](logo.md) | range | [Image](Image.md) |
 | [Provider](Provider.md) | [logo](logo.md) | range | [Image](Image.md) |
 | [Originator](Originator.md) | [logo](logo.md) | range | [Image](Image.md) |
 | [ProductOrService](ProductOrService.md) | [productPicture](productPicture.md) | range | [Image](Image.md) |

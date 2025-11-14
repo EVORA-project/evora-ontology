@@ -2297,7 +2297,7 @@ type Organization struct {
 /*
  * A research infrastructure (RI).
  */
-type ReasearchInfrastructure struct {
+type ResearchInfrastructure struct {
 	/*
 	 * parent types
 	 */
@@ -2371,7 +2371,7 @@ type Provider struct {
 	/*
 	 * The research infrastructure of which this organization is a member.
 	 */
-	MemberOfRi []ReasearchInfrastructure `json:"memberOfRi"`
+	MemberOfRi []ResearchInfrastructure `json:"memberOfRi"`
 	/*
 	 * Any other name under which the entity can be known.
 	 */
@@ -3123,7 +3123,7 @@ type Product struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -3349,7 +3349,7 @@ type Antibody struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -3579,7 +3579,7 @@ type Hybridoma struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -3825,7 +3825,7 @@ type Protein struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -4071,7 +4071,7 @@ type NucleicAcid struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -4277,7 +4277,7 @@ type DetectionKit struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -4471,7 +4471,7 @@ type Bundle struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -4733,7 +4733,7 @@ type Pathogen struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -5007,7 +5007,7 @@ type Virus struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -5269,7 +5269,7 @@ type Bacterium struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -5531,7 +5531,7 @@ type Fungus struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -5793,7 +5793,7 @@ type Protozoan struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -6055,7 +6055,7 @@ type Viroid struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */
@@ -6317,7 +6317,7 @@ type Prion struct {
 	/*
 	 * A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.
 	 */
-	MaterialSafetyDataSheet ReasearchInfrastructure `json:"materialSafetyDataSheet"`
+	MaterialSafetyDataSheet MaterialSafetyDataSheet `json:"materialSafetyDataSheet"`
 	/*
 	 * The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample.
 	 */

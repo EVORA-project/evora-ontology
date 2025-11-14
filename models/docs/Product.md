@@ -173,8 +173,8 @@ URI: [EVORAO:Product](https://w3id.org/evorao/Product)
           
     
     
-    Product --> "0..1" ReasearchInfrastructure : materialSafetyDataSheet
-    click ReasearchInfrastructure href "../ReasearchInfrastructure"
+    Product --> "0..1" MaterialSafetyDataSheet : materialSafetyDataSheet
+    click MaterialSafetyDataSheet href "../MaterialSafetyDataSheet"
 
         
       Product : note
@@ -288,7 +288,7 @@ URI: [EVORAO:Product](https://w3id.org/evorao/Product)
 | ---  | --- | --- | --- |
 | [iataClassification](iataClassification.md) | 1 <br/> [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | direct |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | direct |
-| [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [ReasearchInfrastructure](ReasearchInfrastructure.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | direct |
+| [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | direct |
 | [originator](originator.md) | 0..1 <br/> [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... | direct |
 | [storageConditions](storageConditions.md) | 1 <br/> [String](String.md) | Specifies the conditions under which the product has to be stored to maintain... | direct |
 | [thirdPartyDistributionConsent](thirdPartyDistributionConsent.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the biological material can be distributed without restrict... | direct |
@@ -448,7 +448,7 @@ slot_usage:
       chemical or substance.
     domain_of:
     - Product
-    range: ReasearchInfrastructure
+    range: MaterialSafetyDataSheet
     required: false
     multivalued: false
   originator:
@@ -571,7 +571,7 @@ slot_usage:
       chemical or substance.
     domain_of:
     - Product
-    range: ReasearchInfrastructure
+    range: MaterialSafetyDataSheet
     required: false
     multivalued: false
   originator:
@@ -683,7 +683,7 @@ attributes:
     owner: Product
     domain_of:
     - Product
-    range: ReasearchInfrastructure
+    range: MaterialSafetyDataSheet
     required: false
     multivalued: false
   originator:

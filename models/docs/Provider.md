@@ -78,8 +78,8 @@ URI: [EVORAO:Provider](https://w3id.org/evorao/Provider)
           
     
     
-    Provider --> "*" ReasearchInfrastructure : memberOfRi
-    click ReasearchInfrastructure href "../ReasearchInfrastructure"
+    Provider --> "*" ResearchInfrastructure : memberOfRi
+    click ResearchInfrastructure href "../ResearchInfrastructure"
 
         
       Provider : name
@@ -114,7 +114,7 @@ URI: [EVORAO:Provider](https://w3id.org/evorao/Provider)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [memberOfRi](memberOfRi.md) | * <br/> [ReasearchInfrastructure](ReasearchInfrastructure.md) | The research infrastructure of which this organization is a member | direct |
+| [memberOfRi](memberOfRi.md) | * <br/> [ResearchInfrastructure](ResearchInfrastructure.md) | The research infrastructure of which this organization is a member | direct |
 | [alternateName](alternateName.md) | * <br/> [AlternateName](AlternateName.md) | Any other name under which the entity can be known | [Organization](Organization.md) |
 | [country](country.md) | 0..1 _recommended_ <br/> [Country](Country.md) | The country of the organization | [Organization](Organization.md) |
 | [rorId](rorId.md) | 0..1 _recommended_ <br/> [String](String.md) | The corresponding organization's persistent identifier from the Research Orga... | [Organization](Organization.md) |
@@ -223,7 +223,7 @@ slot_usage:
     - schema:memberOf
     domain_of:
     - Provider
-    range: ReasearchInfrastructure
+    range: ResearchInfrastructure
     required: false
     multivalued: true
 
@@ -256,7 +256,7 @@ slot_usage:
     - schema:memberOf
     domain_of:
     - Provider
-    range: ReasearchInfrastructure
+    range: ResearchInfrastructure
     required: false
     multivalued: true
 attributes:
@@ -272,7 +272,7 @@ attributes:
     owner: Provider
     domain_of:
     - Provider
-    range: ReasearchInfrastructure
+    range: ResearchInfrastructure
     required: false
     multivalued: true
   alternateName:

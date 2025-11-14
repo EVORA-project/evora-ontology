@@ -24,8 +24,8 @@ URI: [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
         click PersonOrOrganization href "../PersonOrOrganization"
       
 
-      Organization <|-- ReasearchInfrastructure
-        click ReasearchInfrastructure href "../ReasearchInfrastructure"
+      Organization <|-- ResearchInfrastructure
+        click ResearchInfrastructure href "../ResearchInfrastructure"
       Organization <|-- Provider
         click Provider href "../Provider"
       
@@ -104,7 +104,7 @@ URI: [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
 * [Resource](Resource.md)
     * [PersonOrOrganization](PersonOrOrganization.md)
         * **Organization**
-            * [ReasearchInfrastructure](ReasearchInfrastructure.md)
+            * [ResearchInfrastructure](ResearchInfrastructure.md)
             * [Provider](Provider.md)
 
 

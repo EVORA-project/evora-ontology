@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10759 */
+/* version: 1.0.10769 */
 
 
 /**
@@ -17,7 +17,7 @@ public class Product extends ProductOrService {
 
   private IataClassification iataClassification;
   private String shippingConditions;
-  private ReasearchInfrastructure materialSafetyDataSheet;
+  private MaterialSafetyDataSheet materialSafetyDataSheet;
   private Originator originator;
   private String storageConditions;
   private boolean thirdPartyDistributionConsent;

@@ -158,7 +158,7 @@ URI: [foaf:Agent](http://xmlns.com/foaf/0.1/Agent)
 | [PersonOrOrganization](PersonOrOrganization.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
 | [Person](Person.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
 | [Organization](Organization.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
-| [ReasearchInfrastructure](ReasearchInfrastructure.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
+| [ResearchInfrastructure](ResearchInfrastructure.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
 | [Provider](Provider.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
 | [Originator](Originator.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |
 | [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md) | [publisher](publisher.md) | range | [PersonOrOrganization](PersonOrOrganization.md) |

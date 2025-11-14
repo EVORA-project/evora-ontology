@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10759"
+version = "1.0.10769"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-11-13T14:51:35',
+     'generation_date': '2025-11-14T10:48:21',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -5677,7 +5677,7 @@ class Organization(PersonOrOrganization):
          'slot_uri': 'dct:publisher'} })
 
 
-class ReasearchInfrastructure(Organization):
+class ResearchInfrastructure(Organization):
     """
     A research infrastructure (RI).
     """
@@ -5687,7 +5687,7 @@ class ReasearchInfrastructure(Organization):
                               'ncit:C19158',
                               'foaf:Organization',
                               'ncit:C19158'],
-         'title': 'Reasearch infrastructure'})
+         'title': 'Research infrastructure'})
 
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known.""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
          'close_mappings': ['wdp:P4970'],
@@ -5801,12 +5801,12 @@ class Provider(Organization):
                                        'domain_of': ['Provider'],
                                        'multivalued': True,
                                        'name': 'memberOfRi',
-                                       'range': 'ReasearchInfrastructure',
+                                       'range': 'ResearchInfrastructure',
                                        'required': False,
                                        'title': 'member of RI'}},
          'title': 'Provider'})
 
-    memberOfRi: Optional[list[ReasearchInfrastructure]] = Field(default=None, title="member of RI", description="""The research infrastructure of which this organization is a member.""", json_schema_extra = { "linkml_meta": {'alias': 'memberOfRi',
+    memberOfRi: Optional[list[ResearchInfrastructure]] = Field(default=None, title="member of RI", description="""The research infrastructure of which this organization is a member.""", json_schema_extra = { "linkml_meta": {'alias': 'memberOfRi',
          'broad_mappings': ['schema:memberOf'],
          'domain_of': ['Provider']} })
     alternateName: Optional[list[AlternateName]] = Field(default=None, title="alternate name", description="""Any other name under which the entity can be known.""", json_schema_extra = { "linkml_meta": {'alias': 'alternateName',
@@ -7618,7 +7618,7 @@ class Product(ProductOrService):
                                                     'domain_of': ['Product'],
                                                     'multivalued': False,
                                                     'name': 'materialSafetyDataSheet',
-                                                    'range': 'ReasearchInfrastructure',
+                                                    'range': 'MaterialSafetyDataSheet',
                                                     'required': False,
                                                     'title': 'material safety data '
                                                              'sheet'},
@@ -7730,7 +7730,7 @@ class Product(ProductOrService):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -8130,7 +8130,7 @@ class Antibody(Product):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -8413,7 +8413,7 @@ class Hybridoma(Antibody):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -9040,7 +9040,7 @@ class Protein(Product):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -9546,7 +9546,7 @@ class NucleicAcid(Product):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -9842,7 +9842,7 @@ class DetectionKit(Product):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -10099,7 +10099,7 @@ class Bundle(Product):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -10698,7 +10698,7 @@ class Pathogen(Product):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -11072,7 +11072,7 @@ class Virus(Pathogen):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -11387,7 +11387,7 @@ class Bacterium(Pathogen):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -11700,7 +11700,7 @@ class Fungus(Pathogen):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -12009,7 +12009,7 @@ class Protozoan(Pathogen):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -12310,7 +12310,7 @@ class Viroid(Pathogen):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -12619,7 +12619,7 @@ class Prion(Pathogen):
     shippingConditions: str = Field(default=..., title="shipping conditions", description="""Specification of the terms and parameters for transporting.""", json_schema_extra = { "linkml_meta": {'alias': 'shippingConditions',
          'close_mappings': ['schema:shippingConditions'],
          'domain_of': ['Product']} })
-    materialSafetyDataSheet: Optional[ReasearchInfrastructure] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
+    materialSafetyDataSheet: Optional[MaterialSafetyDataSheet] = Field(default=None, title="material safety data sheet", description="""A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product.""", json_schema_extra = { "linkml_meta": {'alias': 'materialSafetyDataSheet',
          'comments': ['The MSD  is a document that provides detailed information about '
                       'the properties, hazards, handling, storage, and emergency '
                       'procedures related to the use of a chemical or substance.'],
@@ -14784,7 +14784,7 @@ SequenceReference.model_rebuild()
 PersonOrOrganization.model_rebuild()
 Person.model_rebuild()
 Organization.model_rebuild()
-ReasearchInfrastructure.model_rebuild()
+ResearchInfrastructure.model_rebuild()
 Provider.model_rebuild()
 Originator.model_rebuild()
 BiologicalMaterialOrigin.model_rebuild()

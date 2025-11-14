@@ -2817,72 +2817,72 @@ class OrganizationIri(Base):
     
 
 
-class ReasearchInfrastructureAlternateName(Base):
+class ResearchInfrastructureAlternateName(Base):
     """
     
     """
-    __tablename__ = 'ReasearchInfrastructure_alternateName'
+    __tablename__ = 'ResearchInfrastructure_alternateName'
 
-    ReasearchInfrastructure_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'), primary_key=True)
+    ResearchInfrastructure_id = Column(Integer(), ForeignKey('ResearchInfrastructure.id'), primary_key=True)
     alternateName_id = Column(Integer(), ForeignKey('AlternateName.id'), primary_key=True)
     
 
     def __repr__(self):
-        return f"ReasearchInfrastructure_alternateName(ReasearchInfrastructure_id={self.ReasearchInfrastructure_id},alternateName_id={self.alternateName_id},)"
+        return f"ResearchInfrastructure_alternateName(ResearchInfrastructure_id={self.ResearchInfrastructure_id},alternateName_id={self.alternateName_id},)"
 
 
 
     
 
 
-class ReasearchInfrastructureKeyword(Base):
+class ResearchInfrastructureKeyword(Base):
     """
     
     """
-    __tablename__ = 'ReasearchInfrastructure_keyword'
+    __tablename__ = 'ResearchInfrastructure_keyword'
 
-    ReasearchInfrastructure_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'), primary_key=True)
+    ResearchInfrastructure_id = Column(Integer(), ForeignKey('ResearchInfrastructure.id'), primary_key=True)
     keyword = Column(Text(), primary_key=True)
     
 
     def __repr__(self):
-        return f"ReasearchInfrastructure_keyword(ReasearchInfrastructure_id={self.ReasearchInfrastructure_id},keyword={self.keyword},)"
+        return f"ResearchInfrastructure_keyword(ResearchInfrastructure_id={self.ResearchInfrastructure_id},keyword={self.keyword},)"
 
 
 
     
 
 
-class ReasearchInfrastructureIdentifier(Base):
+class ResearchInfrastructureIdentifier(Base):
     """
     
     """
-    __tablename__ = 'ReasearchInfrastructure_identifier'
+    __tablename__ = 'ResearchInfrastructure_identifier'
 
-    ReasearchInfrastructure_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'), primary_key=True)
+    ResearchInfrastructure_id = Column(Integer(), ForeignKey('ResearchInfrastructure.id'), primary_key=True)
     identifier = Column(Text(), primary_key=True)
     
 
     def __repr__(self):
-        return f"ReasearchInfrastructure_identifier(ReasearchInfrastructure_id={self.ReasearchInfrastructure_id},identifier={self.identifier},)"
+        return f"ResearchInfrastructure_identifier(ResearchInfrastructure_id={self.ResearchInfrastructure_id},identifier={self.identifier},)"
 
 
 
     
 
 
-class ReasearchInfrastructureIri(Base):
+class ResearchInfrastructureIri(Base):
     """
     
     """
-    __tablename__ = 'ReasearchInfrastructure_iri'
+    __tablename__ = 'ResearchInfrastructure_iri'
 
-    ReasearchInfrastructure_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'), primary_key=True)
+    ResearchInfrastructure_id = Column(Integer(), ForeignKey('ResearchInfrastructure.id'), primary_key=True)
     iri = Column(Text(), primary_key=True)
     
 
     def __repr__(self):
-        return f"ReasearchInfrastructure_iri(ReasearchInfrastructure_id={self.ReasearchInfrastructure_id},iri={self.iri},)"
+        return f"ResearchInfrastructure_iri(ResearchInfrastructure_id={self.ResearchInfrastructure_id},iri={self.iri},)"
 
 
 
@@ -2896,7 +2896,7 @@ class ProviderMemberOfRi(Base):
     __tablename__ = 'Provider_memberOfRi'
 
     Provider_id = Column(Integer(), ForeignKey('Provider.id'), primary_key=True)
-    memberOfRi_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'), primary_key=True)
+    memberOfRi_id = Column(Integer(), ForeignKey('ResearchInfrastructure.id'), primary_key=True)
     
 
     def __repr__(self):
@@ -11926,11 +11926,11 @@ class Variant(CommonName):
     
 
 
-class ReasearchInfrastructure(Organization):
+class ResearchInfrastructure(Organization):
     """
     A research infrastructure (RI).
     """
-    __tablename__ = 'ReasearchInfrastructure'
+    __tablename__ = 'ResearchInfrastructure'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     rorId = Column(Text())
@@ -11950,26 +11950,26 @@ class ReasearchInfrastructure(Organization):
     
     
     # ManyToMany
-    alternateName = relationship( "AlternateName", secondary="ReasearchInfrastructure_alternateName")
+    alternateName = relationship( "AlternateName", secondary="ResearchInfrastructure_alternateName")
     
     
-    keyword_rel = relationship( "ReasearchInfrastructureKeyword" )
+    keyword_rel = relationship( "ResearchInfrastructureKeyword" )
     keyword = association_proxy("keyword_rel", "keyword",
-                                  creator=lambda x_: ReasearchInfrastructureKeyword(keyword=x_))
+                                  creator=lambda x_: ResearchInfrastructureKeyword(keyword=x_))
     
     
-    identifier_rel = relationship( "ReasearchInfrastructureIdentifier" )
+    identifier_rel = relationship( "ResearchInfrastructureIdentifier" )
     identifier = association_proxy("identifier_rel", "identifier",
-                                  creator=lambda x_: ReasearchInfrastructureIdentifier(identifier=x_))
+                                  creator=lambda x_: ResearchInfrastructureIdentifier(identifier=x_))
     
     
-    iri_rel = relationship( "ReasearchInfrastructureIri" )
+    iri_rel = relationship( "ResearchInfrastructureIri" )
     iri = association_proxy("iri_rel", "iri",
-                                  creator=lambda x_: ReasearchInfrastructureIri(iri=x_))
+                                  creator=lambda x_: ResearchInfrastructureIri(iri=x_))
     
 
     def __repr__(self):
-        return f"ReasearchInfrastructure(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},publisher_id={self.publisher_id},)"
+        return f"ResearchInfrastructure(id={self.id},rorId={self.rorId},name={self.name},description={self.description},homePage={self.homePage},dateIssued={self.dateIssued},dateModified={self.dateModified},country_id={self.country_id},contactPoint_id={self.contactPoint_id},logo_id={self.logo_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -12005,7 +12005,7 @@ class Provider(Organization):
     
     
     # ManyToMany
-    memberOfRi = relationship( "ReasearchInfrastructure", secondary="Provider_memberOfRi")
+    memberOfRi = relationship( "ResearchInfrastructure", secondary="Provider_memberOfRi")
     
     
     # ManyToMany
@@ -12231,8 +12231,8 @@ class Product(ProductOrService):
     dateModified = Column(DateTime())
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -12356,8 +12356,8 @@ class Antibody(Product):
     dateModified = Column(DateTime())
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -12485,8 +12485,8 @@ class Protein(Product):
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -12678,8 +12678,8 @@ class NucleicAcid(Product):
     tagSequence = relationship("TagSequence", uselist=False, foreign_keys=[tagSequence_id])
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -12811,8 +12811,8 @@ class DetectionKit(Product):
     dateModified = Column(DateTime())
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -12933,8 +12933,8 @@ class Bundle(Product):
     dateModified = Column(DateTime())
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -13068,8 +13068,8 @@ class Pathogen(Product):
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -13218,8 +13218,8 @@ class Hybridoma(Antibody):
     dateModified = Column(DateTime())
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -13360,8 +13360,8 @@ class Virus(Pathogen):
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -13519,8 +13519,8 @@ class Bacterium(Pathogen):
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -13674,8 +13674,8 @@ class Fungus(Pathogen):
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -13829,8 +13829,8 @@ class Protozoan(Pathogen):
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -13984,8 +13984,8 @@ class Viroid(Pathogen):
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )
@@ -14139,8 +14139,8 @@ class Prion(Pathogen):
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
-    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('ReasearchInfrastructure.id'))
-    materialSafetyDataSheet = relationship("ReasearchInfrastructure", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
+    materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
+    materialSafetyDataSheet = relationship("MaterialSafetyDataSheet", uselist=False, foreign_keys=[materialSafetyDataSheet_id])
     originator_id = Column(Integer(), ForeignKey('Originator.id'))
     originator = relationship("Originator", uselist=False, foreign_keys=[originator_id])
     category_id = Column(Integer(), ForeignKey('ProductCategory.id'), nullable=False )

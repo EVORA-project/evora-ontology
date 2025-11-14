@@ -1,6 +1,6 @@
 
 
-# Class: Reasearch infrastructure (ReasearchInfrastructure) 
+# Class: Research infrastructure (ResearchInfrastructure) 
 
 
 _A research infrastructure (RI)._
@@ -9,7 +9,7 @@ _A research infrastructure (RI)._
 
 
 
-URI: [EVORAO:ReasearchInfrastructure](https://w3id.org/evorao/ReasearchInfrastructure)
+URI: [EVORAO:ResearchInfrastructure](https://w3id.org/evorao/ResearchInfrastructure)
 
 
 
@@ -18,73 +18,73 @@ URI: [EVORAO:ReasearchInfrastructure](https://w3id.org/evorao/ReasearchInfrastru
 
 ```mermaid
  classDiagram
-    class ReasearchInfrastructure
-    click ReasearchInfrastructure href "../ReasearchInfrastructure"
-      Organization <|-- ReasearchInfrastructure
+    class ResearchInfrastructure
+    click ResearchInfrastructure href "../ResearchInfrastructure"
+      Organization <|-- ResearchInfrastructure
         click Organization href "../Organization"
       
-      ReasearchInfrastructure : alternateName
+      ResearchInfrastructure : alternateName
         
           
     
     
-    ReasearchInfrastructure --> "*" AlternateName : alternateName
+    ResearchInfrastructure --> "*" AlternateName : alternateName
     click AlternateName href "../AlternateName"
 
         
-      ReasearchInfrastructure : contactPoint
+      ResearchInfrastructure : contactPoint
         
           
     
     
-    ReasearchInfrastructure --> "0..1 _recommended_" ContactPoint : contactPoint
+    ResearchInfrastructure --> "0..1 _recommended_" ContactPoint : contactPoint
     click ContactPoint href "../ContactPoint"
 
         
-      ReasearchInfrastructure : country
+      ResearchInfrastructure : country
         
           
     
     
-    ReasearchInfrastructure --> "0..1 _recommended_" Country : country
+    ResearchInfrastructure --> "0..1 _recommended_" Country : country
     click Country href "../Country"
 
         
-      ReasearchInfrastructure : dateIssued
+      ResearchInfrastructure : dateIssued
         
-      ReasearchInfrastructure : dateModified
+      ResearchInfrastructure : dateModified
         
-      ReasearchInfrastructure : description
+      ResearchInfrastructure : description
         
-      ReasearchInfrastructure : homePage
+      ResearchInfrastructure : homePage
         
-      ReasearchInfrastructure : identifier
+      ResearchInfrastructure : identifier
         
-      ReasearchInfrastructure : iri
+      ResearchInfrastructure : iri
         
-      ReasearchInfrastructure : keyword
+      ResearchInfrastructure : keyword
         
-      ReasearchInfrastructure : logo
+      ResearchInfrastructure : logo
         
           
     
     
-    ReasearchInfrastructure --> "0..1" Image : logo
+    ResearchInfrastructure --> "0..1" Image : logo
     click Image href "../Image"
 
         
-      ReasearchInfrastructure : name
+      ResearchInfrastructure : name
         
-      ReasearchInfrastructure : publisher
+      ResearchInfrastructure : publisher
         
           
     
     
-    ReasearchInfrastructure --> "0..1" PersonOrOrganization : publisher
+    ResearchInfrastructure --> "0..1" PersonOrOrganization : publisher
     click PersonOrOrganization href "../PersonOrOrganization"
 
         
-      ReasearchInfrastructure : rorId
+      ResearchInfrastructure : rorId
         
       
 ```
@@ -97,7 +97,7 @@ URI: [EVORAO:ReasearchInfrastructure](https://w3id.org/evorao/ReasearchInfrastru
 * [Resource](Resource.md)
     * [PersonOrOrganization](PersonOrOrganization.md)
         * [Organization](Organization.md)
-            * **ReasearchInfrastructure**
+            * **ResearchInfrastructure**
 
 
 
@@ -128,21 +128,7 @@ URI: [EVORAO:ReasearchInfrastructure](https://w3id.org/evorao/ReasearchInfrastru
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Provider](Provider.md) | [memberOfRi](memberOfRi.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [Product](Product.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [Antibody](Antibody.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [Hybridoma](Hybridoma.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [Protein](Protein.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [NucleicAcid](NucleicAcid.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [DetectionKit](DetectionKit.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [Bundle](Bundle.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [Pathogen](Pathogen.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [Virus](Virus.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [Bacterium](Bacterium.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [Fungus](Fungus.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [Protozoan](Protozoan.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [Viroid](Viroid.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
-| [Prion](Prion.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [ReasearchInfrastructure](ReasearchInfrastructure.md) |
+| [Provider](Provider.md) | [memberOfRi](memberOfRi.md) | range | [ResearchInfrastructure](ResearchInfrastructure.md) |
 
 
 
@@ -169,8 +155,8 @@ URI: [EVORAO:ReasearchInfrastructure](https://w3id.org/evorao/ReasearchInfrastru
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORAO:ReasearchInfrastructure |
-| native | EVORAO:ReasearchInfrastructure |
+| self | EVORAO:ResearchInfrastructure |
+| native | EVORAO:ResearchInfrastructure |
 | related | foaf:Organization, ncit:C19158, foaf:Organization, ncit:C19158 |
 | close | wd:Q1438053, wd:Q1438053 |
 
@@ -188,9 +174,9 @@ URI: [EVORAO:ReasearchInfrastructure](https://w3id.org/evorao/ReasearchInfrastru
 
 <details>
 ```yaml
-name: ReasearchInfrastructure
+name: ResearchInfrastructure
 description: A research infrastructure (RI).
-title: Reasearch infrastructure
+title: Research infrastructure
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q1438053
@@ -209,9 +195,9 @@ is_a: Organization
 
 <details>
 ```yaml
-name: ReasearchInfrastructure
+name: ResearchInfrastructure
 description: A research infrastructure (RI).
-title: Reasearch infrastructure
+title: Research infrastructure
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - wd:Q1438053
@@ -240,7 +226,7 @@ attributes:
     - wdp:P4970
     rank: 1000
     alias: alternateName
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - Organization
     - CommonName
@@ -257,7 +243,7 @@ attributes:
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: country
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - Organization
     range: Country
@@ -277,7 +263,7 @@ attributes:
     rank: 1000
     is_a: identifier
     alias: rorId
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - Organization
     range: string
@@ -298,7 +284,7 @@ attributes:
     rank: 1000
     slot_uri: foaf:name
     alias: name
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - PersonOrOrganization
     - File
@@ -320,7 +306,7 @@ attributes:
     rank: 1000
     slot_uri: dct:description
     alias: description
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - PersonOrOrganization
     - Dataset
@@ -346,7 +332,7 @@ attributes:
     is_a: iri
     slot_uri: foaf:homepage
     alias: homePage
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - PersonOrOrganization
     range: uri
@@ -362,7 +348,7 @@ attributes:
     rank: 1000
     slot_uri: dcat:contactPoint
     alias: contactPoint
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - PersonOrOrganization
     - ProductOrService
@@ -379,7 +365,7 @@ attributes:
     - schema:logo
     rank: 1000
     alias: logo
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - PersonOrOrganization
     - License
@@ -396,7 +382,7 @@ attributes:
     rank: 1000
     slot_uri: dcat:keyword
     alias: keyword
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - Resource
     range: string
@@ -417,7 +403,7 @@ attributes:
     rank: 1000
     slot_uri: dct:issued
     alias: dateIssued
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - Resource
     range: datetime
@@ -437,7 +423,7 @@ attributes:
     rank: 1000
     slot_uri: dct:modified
     alias: dateModified
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - Resource
     range: datetime
@@ -457,7 +443,7 @@ attributes:
     rank: 1000
     slot_uri: dct:identifier
     alias: identifier
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - Resource
     range: string
@@ -481,7 +467,7 @@ attributes:
     rank: 1000
     is_a: identifier
     alias: iri
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - Resource
     range: uri
@@ -498,7 +484,7 @@ attributes:
     rank: 1000
     slot_uri: dct:publisher
     alias: publisher
-    owner: ReasearchInfrastructure
+    owner: ResearchInfrastructure
     domain_of:
     - Resource
     range: PersonOrOrganization

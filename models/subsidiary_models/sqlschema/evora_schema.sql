@@ -397,7 +397,7 @@
 --     * Slot: contactPoint_id Description: An information that allows someone to establish communication.
 --     * Slot: logo_id Description: A path or URL to the related logo.
 --     * Slot: publisher_id Description: The entity responsible for making the resource available.
--- # Class: "ReasearchInfrastructure" Description: "A research infrastructure (RI)."
+-- # Class: "ResearchInfrastructure" Description: "A research infrastructure (RI)."
 --     * Slot: id Description: 
 --     * Slot: rorId Description: The corresponding organization's persistent identifier from the Research Organization Registry (ROR).
 --     * Slot: name Description: A word or set of words used to identify and refer to an entity.
@@ -1718,17 +1718,17 @@
 -- # Class: "Organization_iri" Description: ""
 --     * Slot: Organization_id Description: Autocreated FK slot
 --     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
--- # Class: "ReasearchInfrastructure_alternateName" Description: ""
---     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
+-- # Class: "ResearchInfrastructure_alternateName" Description: ""
+--     * Slot: ResearchInfrastructure_id Description: Autocreated FK slot
 --     * Slot: alternateName_id Description: Any other name under which the entity can be known.
--- # Class: "ReasearchInfrastructure_keyword" Description: ""
---     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
+-- # Class: "ResearchInfrastructure_keyword" Description: ""
+--     * Slot: ResearchInfrastructure_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource.
--- # Class: "ReasearchInfrastructure_identifier" Description: ""
---     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
+-- # Class: "ResearchInfrastructure_identifier" Description: ""
+--     * Slot: ResearchInfrastructure_id Description: Autocreated FK slot
 --     * Slot: identifier Description: A unique identifier of the resource being described or cataloged.
--- # Class: "ReasearchInfrastructure_iri" Description: ""
---     * Slot: ReasearchInfrastructure_id Description: Autocreated FK slot
+-- # Class: "ResearchInfrastructure_iri" Description: ""
+--     * Slot: ResearchInfrastructure_id Description: Autocreated FK slot
 --     * Slot: iri Description: International Resource Identifier (IRI) that uniquely identifies or refers to the resource. IRIs include URIs, and URIs include URLs.
 -- # Class: "Provider_memberOfRi" Description: ""
 --     * Slot: Provider_id Description: Autocreated FK slot
@@ -3308,7 +3308,7 @@ CREATE TABLE "Organization" (
 	FOREIGN KEY(logo_id) REFERENCES "Image" (id), 
 	FOREIGN KEY(publisher_id) REFERENCES "PersonOrOrganization" (id)
 );
-CREATE TABLE "ReasearchInfrastructure" (
+CREATE TABLE "ResearchInfrastructure" (
 	id INTEGER NOT NULL, 
 	"rorId" TEXT, 
 	name TEXT NOT NULL, 
@@ -3812,7 +3812,7 @@ CREATE TABLE "Product" (
 	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -3864,7 +3864,7 @@ CREATE TABLE "Antibody" (
 	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -3917,7 +3917,7 @@ CREATE TABLE "Hybridoma" (
 	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -3964,7 +3964,7 @@ CREATE TABLE "Protein" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -4023,7 +4023,7 @@ CREATE TABLE "NucleicAcid" (
 	FOREIGN KEY("clonedIntoPlasmid_id") REFERENCES "ExpressionVector" (id), 
 	FOREIGN KEY("tagSequence_id") REFERENCES "TagSequence" (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -4071,7 +4071,7 @@ CREATE TABLE "DetectionKit" (
 	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -4116,7 +4116,7 @@ CREATE TABLE "Bundle" (
 	publisher_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -4174,7 +4174,7 @@ CREATE TABLE "Pathogen" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -4234,7 +4234,7 @@ CREATE TABLE "Virus" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -4292,7 +4292,7 @@ CREATE TABLE "Bacterium" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -4350,7 +4350,7 @@ CREATE TABLE "Fungus" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -4408,7 +4408,7 @@ CREATE TABLE "Protozoan" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -4466,7 +4466,7 @@ CREATE TABLE "Viroid" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -4524,7 +4524,7 @@ CREATE TABLE "Prion" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY("biologicalMaterialOrigin_id") REFERENCES "BiologicalMaterialOrigin" (id), 
 	FOREIGN KEY("iataClassification_id") REFERENCES "IataClassification" (id), 
-	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "ReasearchInfrastructure" (id), 
+	FOREIGN KEY("materialSafetyDataSheet_id") REFERENCES "MaterialSafetyDataSheet" (id), 
 	FOREIGN KEY(originator_id) REFERENCES "Originator" (id), 
 	FOREIGN KEY(category_id) REFERENCES "ProductCategory" (id), 
 	FOREIGN KEY("riskGroup_id") REFERENCES "RiskGroup" (id), 
@@ -5315,37 +5315,37 @@ CREATE TABLE "Organization_iri" (
 	PRIMARY KEY ("Organization_id", iri), 
 	FOREIGN KEY("Organization_id") REFERENCES "Organization" (id)
 );
-CREATE TABLE "ReasearchInfrastructure_alternateName" (
-	"ReasearchInfrastructure_id" INTEGER, 
+CREATE TABLE "ResearchInfrastructure_alternateName" (
+	"ResearchInfrastructure_id" INTEGER, 
 	"alternateName_id" INTEGER, 
-	PRIMARY KEY ("ReasearchInfrastructure_id", "alternateName_id"), 
-	FOREIGN KEY("ReasearchInfrastructure_id") REFERENCES "ReasearchInfrastructure" (id), 
+	PRIMARY KEY ("ResearchInfrastructure_id", "alternateName_id"), 
+	FOREIGN KEY("ResearchInfrastructure_id") REFERENCES "ResearchInfrastructure" (id), 
 	FOREIGN KEY("alternateName_id") REFERENCES "AlternateName" (id)
 );
-CREATE TABLE "ReasearchInfrastructure_keyword" (
-	"ReasearchInfrastructure_id" INTEGER, 
+CREATE TABLE "ResearchInfrastructure_keyword" (
+	"ResearchInfrastructure_id" INTEGER, 
 	keyword TEXT, 
-	PRIMARY KEY ("ReasearchInfrastructure_id", keyword), 
-	FOREIGN KEY("ReasearchInfrastructure_id") REFERENCES "ReasearchInfrastructure" (id)
+	PRIMARY KEY ("ResearchInfrastructure_id", keyword), 
+	FOREIGN KEY("ResearchInfrastructure_id") REFERENCES "ResearchInfrastructure" (id)
 );
-CREATE TABLE "ReasearchInfrastructure_identifier" (
-	"ReasearchInfrastructure_id" INTEGER, 
+CREATE TABLE "ResearchInfrastructure_identifier" (
+	"ResearchInfrastructure_id" INTEGER, 
 	identifier TEXT, 
-	PRIMARY KEY ("ReasearchInfrastructure_id", identifier), 
-	FOREIGN KEY("ReasearchInfrastructure_id") REFERENCES "ReasearchInfrastructure" (id)
+	PRIMARY KEY ("ResearchInfrastructure_id", identifier), 
+	FOREIGN KEY("ResearchInfrastructure_id") REFERENCES "ResearchInfrastructure" (id)
 );
-CREATE TABLE "ReasearchInfrastructure_iri" (
-	"ReasearchInfrastructure_id" INTEGER, 
+CREATE TABLE "ResearchInfrastructure_iri" (
+	"ResearchInfrastructure_id" INTEGER, 
 	iri TEXT, 
-	PRIMARY KEY ("ReasearchInfrastructure_id", iri), 
-	FOREIGN KEY("ReasearchInfrastructure_id") REFERENCES "ReasearchInfrastructure" (id)
+	PRIMARY KEY ("ResearchInfrastructure_id", iri), 
+	FOREIGN KEY("ResearchInfrastructure_id") REFERENCES "ResearchInfrastructure" (id)
 );
 CREATE TABLE "Provider_memberOfRi" (
 	"Provider_id" INTEGER, 
 	"memberOfRi_id" INTEGER, 
 	PRIMARY KEY ("Provider_id", "memberOfRi_id"), 
 	FOREIGN KEY("Provider_id") REFERENCES "Provider" (id), 
-	FOREIGN KEY("memberOfRi_id") REFERENCES "ReasearchInfrastructure" (id)
+	FOREIGN KEY("memberOfRi_id") REFERENCES "ResearchInfrastructure" (id)
 );
 CREATE TABLE "Provider_alternateName" (
 	"Provider_id" INTEGER, 

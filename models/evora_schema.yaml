@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10759
+version: 1.0.10769
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1150,7 +1150,7 @@ slots:
     - schema:memberOf
     domain_of:
     - Provider
-    range: ReasearchInfrastructure
+    range: ResearchInfrastructure
     required: false
     multivalued: true
   recombinantMaterial:
@@ -1799,7 +1799,7 @@ slots:
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Product
-    range: ReasearchInfrastructure
+    range: MaterialSafetyDataSheet
     required: false
     multivalued: false
   originator:
@@ -4933,9 +4933,9 @@ classes:
         recommended: true
         multivalued: false
     class_uri: foaf:Organization
-  ReasearchInfrastructure:
+  ResearchInfrastructure:
     description: A research infrastructure (RI).
-    title: Reasearch infrastructure
+    title: Research infrastructure
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - wd:Q1438053
@@ -4969,7 +4969,7 @@ classes:
         - schema:memberOf
         domain_of:
         - Provider
-        range: ReasearchInfrastructure
+        range: ResearchInfrastructure
         required: false
         multivalued: true
   Originator:
@@ -5784,7 +5784,7 @@ classes:
           of a chemical or substance.
         domain_of:
         - Product
-        range: ReasearchInfrastructure
+        range: MaterialSafetyDataSheet
         required: false
         multivalued: false
       originator:
@@ -7754,4 +7754,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-11-13T14:51:35'
+generation_date: '2025-11-14T10:48:21'

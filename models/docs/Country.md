@@ -98,7 +98,7 @@ URI: [EVORAO:Country](https://w3id.org/evorao/Country)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Organization](Organization.md) | [country](country.md) | range | [Country](Country.md) |
-| [ReasearchInfrastructure](ReasearchInfrastructure.md) | [country](country.md) | range | [Country](Country.md) |
+| [ResearchInfrastructure](ResearchInfrastructure.md) | [country](country.md) | range | [Country](Country.md) |
 | [Provider](Provider.md) | [country](country.md) | range | [Country](Country.md) |
 | [NaturalPartOrigin](NaturalPartOrigin.md) | [countryOfCollection](countryOfCollection.md) | range | [Country](Country.md) |
 | [ContactPoint](ContactPoint.md) | [addressCountry](addressCountry.md) | range | [Country](Country.md) |

@@ -32,7 +32,7 @@ Alias: memberOfRi
 
 ## Properties
 
-* Range: [ReasearchInfrastructure](ReasearchInfrastructure.md)
+* Range: [ResearchInfrastructure](ResearchInfrastructure.md)
 
 * Multivalued: True
 
@@ -81,7 +81,7 @@ rank: 1000
 alias: memberOfRi
 domain_of:
 - Provider
-range: ReasearchInfrastructure
+range: ResearchInfrastructure
 required: false
 multivalued: true
 

@@ -66,20 +66,37 @@ SELECT
   ?object
 WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:ReasearchInfrastructure ;
+  ?subject rdf:type EVORAO:ResearchInfrastructure ;
      ?predicate ?object .
   FILTER NOT EXISTS {
     ?object rdf:type ?otype .
     FILTER ( ?otype IN (
-      EVORAO:ContactPoint
+      foaf:Agent
+      , 
+      foaf:Person
+      , 
+      foaf:Organization
+      , 
+      EVORAO:Originator
+      , 
+      EVORAO:ResearchInfrastructure
+      , 
+      EVORAO:Provider
       
       ))
   }
  }
  VALUES ?check { linkml:range }
- VALUES ?predicate { dcat:contactPoint  }
+ VALUES ?predicate { dct:publisher  }
  
 }  
 
 
+
+## -- End of checks for ResearchInfrastructure
+
+
+## --
+## Checks for Provider
+## --
 

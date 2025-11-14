@@ -114,7 +114,7 @@ URI: [EVORAO:AlternateName](https://w3id.org/evorao/AlternateName)
 | [Taxon](Taxon.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 | [ClinicalGroup](ClinicalGroup.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 | [Organization](Organization.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
-| [ReasearchInfrastructure](ReasearchInfrastructure.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
+| [ResearchInfrastructure](ResearchInfrastructure.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 | [Provider](Provider.md) | [alternateName](alternateName.md) | range | [AlternateName](AlternateName.md) |
 
 

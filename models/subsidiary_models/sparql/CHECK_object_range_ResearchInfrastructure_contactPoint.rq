@@ -66,30 +66,20 @@ SELECT
   ?object
 WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:ReasearchInfrastructure ;
+  ?subject rdf:type EVORAO:ResearchInfrastructure ;
      ?predicate ?object .
   FILTER NOT EXISTS {
     ?object rdf:type ?otype .
     FILTER ( ?otype IN (
-      EVORAO:Image
+      EVORAO:ContactPoint
       
       ))
   }
  }
  VALUES ?check { linkml:range }
- VALUES ?predicate { EVORAO:logo  }
+ VALUES ?predicate { dcat:contactPoint  }
  
 }  
-
-
-
-
-
-
-
-
-
-
 
 
 

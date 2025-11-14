@@ -114,7 +114,7 @@ URI: [EVORAO:ContactPoint](https://w3id.org/evorao/ContactPoint)
 | [PersonOrOrganization](PersonOrOrganization.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [Person](Person.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [Organization](Organization.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
-| [ReasearchInfrastructure](ReasearchInfrastructure.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
+| [ResearchInfrastructure](ResearchInfrastructure.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [Provider](Provider.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [Originator](Originator.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |
 | [ProductOrService](ProductOrService.md) | [contactPoint](contactPoint.md) | range | [ContactPoint](ContactPoint.md) |

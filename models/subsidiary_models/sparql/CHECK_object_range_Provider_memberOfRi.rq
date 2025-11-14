@@ -71,7 +71,7 @@ WHERE {
   FILTER NOT EXISTS {
     ?object rdf:type ?otype .
     FILTER ( ?otype IN (
-      EVORAO:ReasearchInfrastructure
+      EVORAO:ResearchInfrastructure
       
       ))
   }

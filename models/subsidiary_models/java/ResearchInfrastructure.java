@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10759 */
+/* version: 1.0.10769 */
 
 
 /**
@@ -13,7 +13,7 @@ import lombok.*;
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class ReasearchInfrastructure extends Organization {
+public class ResearchInfrastructure extends Organization {
 
 
 }

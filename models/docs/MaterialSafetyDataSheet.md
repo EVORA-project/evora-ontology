@@ -122,6 +122,26 @@ URI: [EVORAO:MaterialSafetyDataSheet](https://w3id.org/evorao/MaterialSafetyData
 
 
 
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Product](Product.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [Antibody](Antibody.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [Hybridoma](Hybridoma.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [Protein](Protein.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [NucleicAcid](NucleicAcid.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [DetectionKit](DetectionKit.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [Bundle](Bundle.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [Pathogen](Pathogen.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [Virus](Virus.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [Bacterium](Bacterium.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [Fungus](Fungus.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [Protozoan](Protozoan.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [Viroid](Viroid.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+| [Prion](Prion.md) | [materialSafetyDataSheet](materialSafetyDataSheet.md) | range | [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) |
+
+
 
 
 

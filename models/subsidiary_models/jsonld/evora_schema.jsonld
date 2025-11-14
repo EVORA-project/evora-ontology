@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10759",
+  "version": "1.0.10769",
   "imports": [
     "linkml:types"
   ],
@@ -2114,7 +2114,7 @@
       "domain_of": [
         "Provider"
       ],
-      "range": "ReasearchInfrastructure",
+      "range": "ResearchInfrastructure",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -3054,7 +3054,7 @@
       "domain_of": [
         "Product"
       ],
-      "range": "ReasearchInfrastructure",
+      "range": "MaterialSafetyDataSheet",
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -7044,7 +7044,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "memberOfRi",
-      "range": "ReasearchInfrastructure",
+      "range": "ResearchInfrastructure",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -8266,7 +8266,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "materialSafetyDataSheet",
-      "range": "ReasearchInfrastructure",
+      "range": "MaterialSafetyDataSheet",
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -12564,10 +12564,10 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ReasearchInfrastructure",
-      "definition_uri": "https://w3id.org/evorao/ReasearchInfrastructure",
+      "name": "ResearchInfrastructure",
+      "definition_uri": "https://w3id.org/evorao/ResearchInfrastructure",
       "description": "A research infrastructure (RI).",
-      "title": "Reasearch infrastructure",
+      "title": "Research infrastructure",
       "from_schema": "https://w3id.org/evorao/",
       "close_mappings": [
         "wd:Q1438053",
@@ -12597,7 +12597,7 @@
         "Organization_rorId"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/evorao/ReasearchInfrastructure",
+      "class_uri": "https://w3id.org/evorao/ResearchInfrastructure",
       "@type": "ClassDefinition"
     },
     {
@@ -14605,9 +14605,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-11-13T13:52:00",
-  "source_file_size": 245456,
-  "generation_date": "2025-11-13T13:52:16",
+  "source_file_date": "2025-11-14T09:48:41",
+  "source_file_size": 245452,
+  "generation_date": "2025-11-14T09:48:57",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

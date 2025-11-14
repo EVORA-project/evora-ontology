@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10759
+# version: 1.0.10769
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -511,7 +511,7 @@ linkml:Sparqlpath xsd:string
           ) ;
           rdf:type [ foaf:Organization ] ?
        )
-    } OR @<Provider> OR @<ReasearchInfrastructure>
+    } OR @<Provider> OR @<ResearchInfrastructure>
 )
 
 <Originator> CLOSED {
@@ -624,7 +624,7 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <ProductOrService> ] ? ;
              <iataClassification> @<IataClassification> ;
              <shippingConditions> @linkml:String ;
-             <materialSafetyDataSheet> @<ReasearchInfrastructure> ? ;
+             <materialSafetyDataSheet> @<MaterialSafetyDataSheet> ? ;
              <originator> @<Originator> ? ;
              <storageConditions> @linkml:String ;
              <thirdPartyDistributionConsent> @linkml:Boolean ? ;
@@ -734,7 +734,7 @@ linkml:Sparqlpath xsd:string
 <Provider> CLOSED {
     (  $<Provider_tes> (  &<Organization_tes> ;
           rdf:type [ foaf:Organization ] ? ;
-          <memberOfRi> @<ReasearchInfrastructure> *
+          <memberOfRi> @<ResearchInfrastructure> *
        ) ;
        rdf:type [ <Provider> ] ?
     )
@@ -753,14 +753,6 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<ReasearchInfrastructure> CLOSED {
-    (  $<ReasearchInfrastructure_tes> (  &<Organization_tes> ;
-          rdf:type [ foaf:Organization ] ?
-       ) ;
-       rdf:type [ <ReasearchInfrastructure> ] ?
-    )
-}
-
 <RecombinantPartIdentification> CLOSED {
     (  $<RecombinantPartIdentification_tes> (  &<Resource_tes> ;
           rdf:type [ dcat:Resource ] ? ;
@@ -768,6 +760,14 @@ linkml:Sparqlpath xsd:string
           <sequence> @<Sequence> +
        ) ;
        rdf:type [ <RecombinantPartIdentification> ] ?
+    )
+}
+
+<ResearchInfrastructure> CLOSED {
+    (  $<ResearchInfrastructure_tes> (  &<Organization_tes> ;
+          rdf:type [ foaf:Organization ] ?
+       ) ;
+       rdf:type [ <ResearchInfrastructure> ] ?
     )
 }
 

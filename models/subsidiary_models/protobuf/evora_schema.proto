@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.10759
+// version: 1.0.10769
 // List of other names for things.
 message AlternateName
  {
@@ -60,7 +60,7 @@ message Antibody
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -133,7 +133,7 @@ message Bacterium
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -227,7 +227,7 @@ message Bundle
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -411,7 +411,7 @@ message DetectionKit
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -540,7 +540,7 @@ message Fungus
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -621,7 +621,7 @@ message Hybridoma
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -823,7 +823,7 @@ message NucleicAcid
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -998,7 +998,7 @@ message Prion
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -1065,7 +1065,7 @@ message Product
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -1157,7 +1157,7 @@ message Protein
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -1220,7 +1220,7 @@ message Protozoan
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -1262,7 +1262,7 @@ message Provider
  repeated  alternateName alternateName = 0
   country country = 0
   string rorId = 0
- repeated  reasearchInfrastructure memberOfRi = 0
+ repeated  researchInfrastructure memberOfRi = 0
  }
 // A scientific publication.
 message Publication
@@ -1279,8 +1279,20 @@ message Publication
  repeated  doi doi = 0
   journal journal = 0
  }
+// Identification of a recombinant part.
+message RecombinantPartIdentification
+ {
+ repeated  string keyword = 0
+  datetime dateIssued = 0
+  datetime dateModified = 0
+ repeated  string identifier = 0
+  personOrOrganization publisher = 0
+ repeated  uri iri = 0
+  string partIdentification = 0
+ repeated  sequence sequence = 0
+ }
 // A research infrastructure (RI).
-message ReasearchInfrastructure
+message ResearchInfrastructure
  {
  repeated  string keyword = 0
   datetime dateIssued = 0
@@ -1296,18 +1308,6 @@ message ReasearchInfrastructure
  repeated  alternateName alternateName = 0
   country country = 0
   string rorId = 0
- }
-// Identification of a recombinant part.
-message RecombinantPartIdentification
- {
- repeated  string keyword = 0
-  datetime dateIssued = 0
-  datetime dateModified = 0
- repeated  string identifier = 0
-  personOrOrganization publisher = 0
- repeated  uri iri = 0
-  string partIdentification = 0
- repeated  sequence sequence = 0
  }
 // Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence.
 message RiskGroup
@@ -1587,7 +1587,7 @@ message Viroid
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0
@@ -1654,7 +1654,7 @@ message Virus
  repeated  productCategory additionalCategory = 0
   iataClassification iataClassification = 0
   string shippingConditions = 0
-  reasearchInfrastructure materialSafetyDataSheet = 0
+  materialSafetyDataSheet materialSafetyDataSheet = 0
   originator originator = 0
   string storageConditions = 0
   boolean thirdPartyDistributionConsent = 0

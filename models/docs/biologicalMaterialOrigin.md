@@ -22,15 +22,15 @@ Alias: biologicalMaterialOrigin
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
 | [Protein](Protein.md) | A protein as a derived product from a pathogen |  yes  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
 | [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
 
 
 

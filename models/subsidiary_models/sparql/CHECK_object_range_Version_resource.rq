@@ -131,7 +131,7 @@ WHERE {
       , 
       EVORAO:Originator
       , 
-      EVORAO:ReasearchInfrastructure
+      EVORAO:ResearchInfrastructure
       , 
       EVORAO:Provider
       , 

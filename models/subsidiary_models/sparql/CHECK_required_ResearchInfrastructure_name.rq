@@ -62,24 +62,21 @@ SELECT
   ?check
   ?graph
   ?subject
-  ?predicate
-  ?object
-WHERE {
+  ?predicate WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:ReasearchInfrastructure ;
-     ?predicate ?object .
-  FILTER NOT EXISTS {
-    ?object rdf:type ?otype .
-    FILTER ( ?otype IN (
-      EVORAO:Country
-      
-      ))
-  }
+  ?subject rdf:type EVORAO:ResearchInfrastructure .
+  FILTER NOT EXISTS { ?subject  foaf:name ?o  }
  }
- VALUES ?check { linkml:range }
- VALUES ?predicate { EVORAO:country  }
+ VALUES ?check { linkml:required }
+ VALUES ?predicate { foaf:name }
  
 }  
+
+
+
+
+
+
 
 
 

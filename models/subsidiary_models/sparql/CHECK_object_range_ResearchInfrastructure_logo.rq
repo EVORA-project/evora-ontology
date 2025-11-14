@@ -62,15 +62,28 @@ SELECT
   ?check
   ?graph
   ?subject
-  ?predicate WHERE {
+  ?predicate
+  ?object
+WHERE {
  GRAPH ?graph {
-  ?subject rdf:type EVORAO:ReasearchInfrastructure .
-  FILTER NOT EXISTS { ?subject  foaf:name ?o  }
+  ?subject rdf:type EVORAO:ResearchInfrastructure ;
+     ?predicate ?object .
+  FILTER NOT EXISTS {
+    ?object rdf:type ?otype .
+    FILTER ( ?otype IN (
+      EVORAO:Image
+      
+      ))
+  }
  }
- VALUES ?check { linkml:required }
- VALUES ?predicate { foaf:name }
+ VALUES ?check { linkml:range }
+ VALUES ?predicate { EVORAO:logo  }
  
 }  
+
+
+
+
 
 
 

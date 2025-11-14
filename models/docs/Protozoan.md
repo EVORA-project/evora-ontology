@@ -194,8 +194,8 @@ URI: [EVORAO:Protozoan](https://w3id.org/evorao/Protozoan)
           
     
     
-    Protozoan --> "0..1" ReasearchInfrastructure : materialSafetyDataSheet
-    click ReasearchInfrastructure href "../ReasearchInfrastructure"
+    Protozoan --> "0..1" MaterialSafetyDataSheet : materialSafetyDataSheet
+    click MaterialSafetyDataSheet href "../MaterialSafetyDataSheet"
 
         
       Protozoan : note
@@ -372,7 +372,7 @@ URI: [EVORAO:Protozoan](https://w3id.org/evorao/Protozoan)
 | [titer](titer.md) | 1 <br/> [String](String.md) | The titer value, its corresponding unit, and the method of quantification (e | [Pathogen](Pathogen.md) |
 | [iataClassification](iataClassification.md) | 1 <br/> [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
-| [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [ReasearchInfrastructure](ReasearchInfrastructure.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
+| [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
 | [originator](originator.md) | 0..1 <br/> [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... | [Product](Product.md) |
 | [storageConditions](storageConditions.md) | 1 <br/> [String](String.md) | Specifies the conditions under which the product has to be stored to maintain... | [Product](Product.md) |
 | [thirdPartyDistributionConsent](thirdPartyDistributionConsent.md) | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the biological material can be distributed without restrict... | [Product](Product.md) |
@@ -870,7 +870,7 @@ attributes:
     owner: Protozoan
     domain_of:
     - Product
-    range: ReasearchInfrastructure
+    range: MaterialSafetyDataSheet
     required: false
     multivalued: false
   originator:

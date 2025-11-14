@@ -79,7 +79,7 @@ WHERE {
       , 
       EVORAO:Originator
       , 
-      EVORAO:ReasearchInfrastructure
+      EVORAO:ResearchInfrastructure
       , 
       EVORAO:Provider
       
@@ -97,6 +97,6 @@ WHERE {
 
 
 ## --
-## Checks for ReasearchInfrastructure
+## Checks for ResearchInfrastructure
 ## --
 

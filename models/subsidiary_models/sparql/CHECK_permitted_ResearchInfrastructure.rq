@@ -58,28 +58,31 @@ PREFIX gr: <http://purl.org/goodrelations/v1#>
 PREFIX vo: <http://purl.obolibrary.org/obo/VO_>
 PREFIX linkml: <https://w3id.org/linkml/>
 
-SELECT
-  ?check
-  ?graph
-  ?subject
-  ?predicate
-  ?object
-WHERE {
- GRAPH ?graph {
-  ?subject rdf:type EVORAO:ReasearchInfrastructure ;
-     ?predicate ?object .
-  FILTER NOT EXISTS {
-    ?object rdf:type ?otype .
-    FILTER ( ?otype IN (
-      EVORAO:AlternateName
-      
-      ))
-  }
+SELECT ?g ?s ?p WHERE {
+ GRAPH ?g {
+  ?s rdf:type EVORAO:ResearchInfrastructure ;
+     ?p ?o .
+  FILTER ( ?p NOT IN (
+   EVORAO:alternateName,
+   EVORAO:country,
+   EVORAO:rorId,
+   foaf:name,
+   dct:description,
+   foaf:homepage,
+   dcat:contactPoint,
+   EVORAO:logo,
+   dcat:keyword,
+   dct:issued,
+   dct:modified,
+   dct:identifier,
+   EVORAO:iri,
+   dct:publisher,
+   rdf:type ))
  }
- VALUES ?check { linkml:range }
- VALUES ?predicate { EVORAO:alternateName  }
  
-}  
+} 
+
+
 
 
 

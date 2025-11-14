@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-13T13:52:20
+# Generation date: 2025-11-14T09:49:02
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10759"
+version = "1.0.10769"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1339,16 +1339,16 @@ class Organization(PersonOrOrganization):
 
 
 @dataclass(repr=False)
-class ReasearchInfrastructure(Organization):
+class ResearchInfrastructure(Organization):
     """
     A research infrastructure (RI).
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = EVORAO["ReasearchInfrastructure"]
-    class_class_curie: ClassVar[str] = "EVORAO:ReasearchInfrastructure"
-    class_name: ClassVar[str] = "ReasearchInfrastructure"
-    class_model_uri: ClassVar[URIRef] = EVORAO.ReasearchInfrastructure
+    class_class_uri: ClassVar[URIRef] = EVORAO["ResearchInfrastructure"]
+    class_class_curie: ClassVar[str] = "EVORAO:ResearchInfrastructure"
+    class_name: ClassVar[str] = "ResearchInfrastructure"
+    class_model_uri: ClassVar[URIRef] = EVORAO.ResearchInfrastructure
 
     name: str = None
 
@@ -1365,10 +1365,10 @@ class Provider(Organization):
     class_model_uri: ClassVar[URIRef] = EVORAO.Provider
 
     name: str = None
-    memberOfRi: Optional[Union[Union[dict, ReasearchInfrastructure], list[Union[dict, ReasearchInfrastructure]]]] = empty_list()
+    memberOfRi: Optional[Union[Union[dict, ResearchInfrastructure], list[Union[dict, ResearchInfrastructure]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        self._normalize_inlined_as_dict(slot_name="memberOfRi", slot_type=ReasearchInfrastructure, key_name="name", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="memberOfRi", slot_type=ResearchInfrastructure, key_name="name", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -1797,7 +1797,7 @@ class Product(ProductOrService):
     shippingConditions: str = None
     storageConditions: str = None
     availability: str = "on request"
-    materialSafetyDataSheet: Optional[Union[dict, ReasearchInfrastructure]] = None
+    materialSafetyDataSheet: Optional[Union[dict, "MaterialSafetyDataSheet"]] = None
     originator: Optional[Union[dict, Originator]] = None
     thirdPartyDistributionConsent: Optional[Union[bool, Bool]] = None
     usageRestrictions: Optional[str] = None
@@ -1819,8 +1819,8 @@ class Product(ProductOrService):
         if not isinstance(self.storageConditions, str):
             self.storageConditions = str(self.storageConditions)
 
-        if self.materialSafetyDataSheet is not None and not isinstance(self.materialSafetyDataSheet, ReasearchInfrastructure):
-            self.materialSafetyDataSheet = ReasearchInfrastructure(**as_dict(self.materialSafetyDataSheet))
+        if self.materialSafetyDataSheet is not None and not isinstance(self.materialSafetyDataSheet, MaterialSafetyDataSheet):
+            self.materialSafetyDataSheet = MaterialSafetyDataSheet(**as_dict(self.materialSafetyDataSheet))
 
         if self.originator is not None and not isinstance(self.originator, Originator):
             self.originator = Originator(**as_dict(self.originator))
@@ -3223,7 +3223,7 @@ slots.rorId = Slot(uri=EVORAO.rorId, name="rorId", curie=EVORAO.curie('rorId'),
                    model_uri=EVORAO.rorId, domain=None, range=Optional[str])
 
 slots.memberOfRi = Slot(uri=EVORAO.memberOfRi, name="memberOfRi", curie=EVORAO.curie('memberOfRi'),
-                   model_uri=EVORAO.memberOfRi, domain=None, range=Optional[Union[Union[dict, ReasearchInfrastructure], list[Union[dict, ReasearchInfrastructure]]]])
+                   model_uri=EVORAO.memberOfRi, domain=None, range=Optional[Union[Union[dict, ResearchInfrastructure], list[Union[dict, ResearchInfrastructure]]]])
 
 slots.recombinantMaterial = Slot(uri=EVORAO.recombinantMaterial, name="recombinantMaterial", curie=EVORAO.curie('recombinantMaterial'),
                    model_uri=EVORAO.recombinantMaterial, domain=None, range=Union[bool, Bool])
@@ -3364,7 +3364,7 @@ slots.shippingConditions = Slot(uri=EVORAO.shippingConditions, name="shippingCon
                    model_uri=EVORAO.shippingConditions, domain=None, range=str)
 
 slots.materialSafetyDataSheet = Slot(uri=EVORAO.materialSafetyDataSheet, name="materialSafetyDataSheet", curie=EVORAO.curie('materialSafetyDataSheet'),
-                   model_uri=EVORAO.materialSafetyDataSheet, domain=None, range=Optional[Union[dict, ReasearchInfrastructure]])
+                   model_uri=EVORAO.materialSafetyDataSheet, domain=None, range=Optional[Union[dict, MaterialSafetyDataSheet]])
 
 slots.originator = Slot(uri=EVORAO.originator, name="originator", curie=EVORAO.curie('originator'),
                    model_uri=EVORAO.originator, domain=None, range=Optional[Union[dict, Originator]])
@@ -3901,7 +3901,7 @@ slots.Organization_rorId = Slot(uri=EVORAO.rorId, name="Organization_rorId", cur
                    model_uri=EVORAO.Organization_rorId, domain=Organization, range=Optional[str])
 
 slots.Provider_memberOfRi = Slot(uri=EVORAO.memberOfRi, name="Provider_memberOfRi", curie=EVORAO.curie('memberOfRi'),
-                   model_uri=EVORAO.Provider_memberOfRi, domain=Provider, range=Optional[Union[Union[dict, ReasearchInfrastructure], list[Union[dict, ReasearchInfrastructure]]]])
+                   model_uri=EVORAO.Provider_memberOfRi, domain=Provider, range=Optional[Union[Union[dict, ResearchInfrastructure], list[Union[dict, ResearchInfrastructure]]]])
 
 slots.BiologicalMaterialOrigin_recombinantMaterial = Slot(uri=EVORAO.recombinantMaterial, name="BiologicalMaterialOrigin_recombinantMaterial", curie=EVORAO.curie('recombinantMaterial'),
                    model_uri=EVORAO.BiologicalMaterialOrigin_recombinantMaterial, domain=BiologicalMaterialOrigin, range=Union[bool, Bool])
@@ -4048,7 +4048,7 @@ slots.Product_shippingConditions = Slot(uri=EVORAO.shippingConditions, name="Pro
                    model_uri=EVORAO.Product_shippingConditions, domain=Product, range=str)
 
 slots.Product_materialSafetyDataSheet = Slot(uri=EVORAO.materialSafetyDataSheet, name="Product_materialSafetyDataSheet", curie=EVORAO.curie('materialSafetyDataSheet'),
-                   model_uri=EVORAO.Product_materialSafetyDataSheet, domain=Product, range=Optional[Union[dict, ReasearchInfrastructure]])
+                   model_uri=EVORAO.Product_materialSafetyDataSheet, domain=Product, range=Optional[Union[dict, "MaterialSafetyDataSheet"]])
 
 slots.Product_originator = Slot(uri=EVORAO.originator, name="Product_originator", curie=EVORAO.curie('originator'),
                    model_uri=EVORAO.Product_originator, domain=Product, range=Optional[Union[dict, Originator]])
