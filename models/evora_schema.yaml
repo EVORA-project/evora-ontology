@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10773
+version: 1.0.10787
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1215,7 +1215,8 @@ slots:
     domain_of:
     - BiologicalPartOrigin
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   countryOfCollection:
     description: The geographical location where the sample was collected in situ.
@@ -1264,9 +1265,9 @@ slots:
     range: datetime
     required: true
     multivalued: false
-  beforeDate:
+  collectedBeforeDate:
     description: Set to TRUE if a proxy date for the collection date is used.
-    title: before date
+    title: collected before date
     from_schema: https://w3id.org/evorao/
     related_mappings:
     - sepio:0000105
@@ -1275,7 +1276,8 @@ slots:
     domain_of:
     - NaturalPartOrigin
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   permitIdentifierForAbs:
     description: Reference of the permit identifiers for access to the genetic resource,
@@ -5079,7 +5081,8 @@ classes:
         domain_of:
         - BiologicalPartOrigin
         range: boolean
-        required: true
+        required: false
+        recommended: true
         multivalued: false
   NaturalPartOrigin:
     description: Information on the origin of a natural part that composes the biological
@@ -5099,7 +5102,7 @@ classes:
     - countryOfCollection
     - indigenousPeopleAndLocalCommunityOrigin
     - collectionDate
-    - beforeDate
+    - collectedBeforeDate
     - permitIdentifierForAbs
     slot_usage:
       countryOfCollection:
@@ -5146,9 +5149,9 @@ classes:
         range: datetime
         required: true
         multivalued: false
-      beforeDate:
+      collectedBeforeDate:
         description: Set to TRUE if a proxy date for the collection date is used.
-        title: before date
+        title: collected before date
         related_mappings:
         - sepio:0000105
         - ro:0002089
@@ -5156,7 +5159,8 @@ classes:
         domain_of:
         - NaturalPartOrigin
         range: boolean
-        required: true
+        required: false
+        recommended: true
         multivalued: false
       permitIdentifierForAbs:
         description: Reference of the permit identifiers for access to the genetic
@@ -7758,4 +7762,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-12-04T11:39:04'
+generation_date: '2025-12-04T14:51:56'

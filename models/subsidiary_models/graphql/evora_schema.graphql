@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10773
+# version: 1.0.10787
 type AlternateName
   {
     keyword: [String]
@@ -178,7 +178,7 @@ interface BiologicalPartOrigin
     publisher: PersonOrOrganization
     iri: [Uri]
     recombinantPartIdentification: RecombinantPartIdentification
-    accessToPhysicalGeneticResource: Boolean!
+    accessToPhysicalGeneticResource: Boolean
   }
 
 type BiosafetyLevel
@@ -838,11 +838,11 @@ type NaturalPartOrigin
     publisher: PersonOrOrganization
     iri: [Uri]
     recombinantPartIdentification: RecombinantPartIdentification
-    accessToPhysicalGeneticResource: Boolean!
+    accessToPhysicalGeneticResource: Boolean
     countryOfCollection: Country!
     indigenousPeopleAndLocalCommunityOrigin: IplcOrigin
     collectionDate: Datetime!
-    beforeDate: Boolean!
+    collectedBeforeDate: Boolean
     permitIdentifierForAbs: String
   }
 
@@ -1596,7 +1596,7 @@ type SyntheticPartOrigin
     publisher: PersonOrOrganization
     iri: [Uri]
     recombinantPartIdentification: RecombinantPartIdentification
-    accessToPhysicalGeneticResource: Boolean!
+    accessToPhysicalGeneticResource: Boolean
     modificationsFromTheReferenceSequences: Boolean!
     descriptionOfModificationsMadeFromTheReferenceSequences: String
   }

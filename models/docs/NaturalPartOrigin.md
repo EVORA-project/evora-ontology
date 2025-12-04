@@ -25,7 +25,7 @@ URI: [EVORAO:NaturalPartOrigin](https://w3id.org/evorao/NaturalPartOrigin)
       
       NaturalPartOrigin : accessToPhysicalGeneticResource
         
-      NaturalPartOrigin : beforeDate
+      NaturalPartOrigin : collectedBeforeDate
         
       NaturalPartOrigin : collectionDate
         
@@ -98,10 +98,10 @@ URI: [EVORAO:NaturalPartOrigin](https://w3id.org/evorao/NaturalPartOrigin)
 | [countryOfCollection](countryOfCollection.md) | 1 <br/> [Country](Country.md) | The geographical location where the sample was collected in situ | direct |
 | [indigenousPeopleAndLocalCommunityOrigin](indigenousPeopleAndLocalCommunityOrigin.md) | 0..1 <br/> [IplcOrigin](IplcOrigin.md) | The specific IPLC area (Indigenous People and Local Communities) from which t... | direct |
 | [collectionDate](collectionDate.md) | 1 <br/> [Datetime](Datetime.md) | The date when the sample was collected in situ | direct |
-| [beforeDate](beforeDate.md) | 1 <br/> [Boolean](Boolean.md) | Set to TRUE if a proxy date for the collection date is used | direct |
+| [collectedBeforeDate](collectedBeforeDate.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Set to TRUE if a proxy date for the collection date is used | direct |
 | [permitIdentifierForAbs](permitIdentifierForAbs.md) | 0..1 <br/> [String](String.md) | Reference of the permit identifiers for access to the genetic resource, appli... | direct |
 | [recombinantPartIdentification](recombinantPartIdentification.md) | 0..1 <br/> [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part | [BiologicalPartOrigin](BiologicalPartOrigin.md) |
-| [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | 1 <br/> [Boolean](Boolean.md) | Indicate if the biological part was produced with access to a physical geneti... | [BiologicalPartOrigin](BiologicalPartOrigin.md) |
+| [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Indicate if the biological part was produced with access to a physical geneti... | [BiologicalPartOrigin](BiologicalPartOrigin.md) |
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 | [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | [Resource](Resource.md) |
 | [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
@@ -174,7 +174,7 @@ slots:
 - countryOfCollection
 - indigenousPeopleAndLocalCommunityOrigin
 - collectionDate
-- beforeDate
+- collectedBeforeDate
 - permitIdentifierForAbs
 slot_usage:
   countryOfCollection:
@@ -224,10 +224,10 @@ slot_usage:
     range: datetime
     required: true
     multivalued: false
-  beforeDate:
-    name: beforeDate
+  collectedBeforeDate:
+    name: collectedBeforeDate
     description: Set to TRUE if a proxy date for the collection date is used.
-    title: before date
+    title: collected before date
     related_mappings:
     - sepio:0000105
     - ro:0002089
@@ -235,7 +235,8 @@ slot_usage:
     domain_of:
     - NaturalPartOrigin
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   permitIdentifierForAbs:
     name: permitIdentifierForAbs
@@ -317,10 +318,10 @@ slot_usage:
     range: datetime
     required: true
     multivalued: false
-  beforeDate:
-    name: beforeDate
+  collectedBeforeDate:
+    name: collectedBeforeDate
     description: Set to TRUE if a proxy date for the collection date is used.
-    title: before date
+    title: collected before date
     related_mappings:
     - sepio:0000105
     - ro:0002089
@@ -328,7 +329,8 @@ slot_usage:
     domain_of:
     - NaturalPartOrigin
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   permitIdentifierForAbs:
     name: permitIdentifierForAbs
@@ -400,22 +402,23 @@ attributes:
     range: datetime
     required: true
     multivalued: false
-  beforeDate:
-    name: beforeDate
+  collectedBeforeDate:
+    name: collectedBeforeDate
     description: Set to TRUE if a proxy date for the collection date is used.
-    title: before date
+    title: collected before date
     from_schema: https://w3id.org/evorao/
     related_mappings:
     - sepio:0000105
     - ro:0002089
     rank: 1000
     ifabsent: 'false'
-    alias: beforeDate
+    alias: collectedBeforeDate
     owner: NaturalPartOrigin
     domain_of:
     - NaturalPartOrigin
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   permitIdentifierForAbs:
     name: permitIdentifierForAbs
@@ -460,7 +463,8 @@ attributes:
     domain_of:
     - BiologicalPartOrigin
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   keyword:
     name: keyword

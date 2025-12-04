@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10773",
+  "version": "1.0.10787",
   "imports": [
     "linkml:types"
   ],
@@ -2206,7 +2206,7 @@
         "BiologicalPartOrigin"
       ],
       "range": "boolean",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2278,23 +2278,23 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "beforeDate",
-      "definition_uri": "https://w3id.org/evorao/beforeDate",
+      "name": "collectedBeforeDate",
+      "definition_uri": "https://w3id.org/evorao/collectedBeforeDate",
       "description": "Set to TRUE if a proxy date for the collection date is used.",
-      "title": "before date",
+      "title": "collected before date",
       "from_schema": "https://w3id.org/evorao/",
       "related_mappings": [
         "http://purl.obolibrary.org/obo/SEPIO_0000105",
         "http://purl.obolibrary.org/obo/RO_0002089"
       ],
-      "slot_uri": "https://w3id.org/evorao/beforeDate",
+      "slot_uri": "https://w3id.org/evorao/collectedBeforeDate",
       "ifabsent": "false",
       "owner": "NaturalPartOrigin",
       "domain_of": [
         "NaturalPartOrigin"
       ],
       "range": "boolean",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7161,7 +7161,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "accessToPhysicalGeneticResource",
       "range": "boolean",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7248,28 +7248,28 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "NaturalPartOrigin_beforeDate",
-      "definition_uri": "https://w3id.org/evorao/beforeDate",
+      "name": "NaturalPartOrigin_collectedBeforeDate",
+      "definition_uri": "https://w3id.org/evorao/collectedBeforeDate",
       "description": "Set to TRUE if a proxy date for the collection date is used.",
-      "title": "before date",
+      "title": "collected before date",
       "from_schema": "https://w3id.org/evorao/",
       "related_mappings": [
         "http://purl.obolibrary.org/obo/SEPIO_0000105",
         "http://purl.obolibrary.org/obo/RO_0002089"
       ],
-      "is_a": "beforeDate",
+      "is_a": "collectedBeforeDate",
       "domain": "NaturalPartOrigin",
-      "slot_uri": "https://w3id.org/evorao/beforeDate",
+      "slot_uri": "https://w3id.org/evorao/collectedBeforeDate",
       "ifabsent": "false",
-      "alias": "beforeDate",
+      "alias": "collectedBeforeDate",
       "owner": "NaturalPartOrigin",
       "domain_of": [
         "NaturalPartOrigin"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "beforeDate",
+      "usage_slot_name": "collectedBeforeDate",
       "range": "boolean",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12757,7 +12757,7 @@
         "NaturalPartOrigin_countryOfCollection",
         "NaturalPartOrigin_indigenousPeopleAndLocalCommunityOrigin",
         "NaturalPartOrigin_collectionDate",
-        "NaturalPartOrigin_beforeDate",
+        "NaturalPartOrigin_collectedBeforeDate",
         "NaturalPartOrigin_permitIdentifierForAbs"
       ],
       "slot_usage": {},
@@ -14605,9 +14605,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-12-04T10:39:29",
-  "source_file_size": 245898,
-  "generation_date": "2025-12-04T10:39:47",
+  "source_file_date": "2025-12-04T13:52:20",
+  "source_file_size": 246045,
+  "generation_date": "2025-12-04T13:52:39",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

@@ -2595,7 +2595,7 @@ type NaturalPartOrigin struct {
 	/*
 	 * Set to TRUE if a proxy date for the collection date is used.
 	 */
-	BeforeDate bool `json:"beforeDate"`
+	CollectedBeforeDate bool `json:"collectedBeforeDate"`
 	/*
 	 * Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations.
 	 */

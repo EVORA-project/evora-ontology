@@ -9464,7 +9464,7 @@ class BiologicalPartOrigin(Resource):
     __tablename__ = 'BiologicalPartOrigin'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    accessToPhysicalGeneticResource = Column(Boolean(), nullable=False )
+    accessToPhysicalGeneticResource = Column(Boolean())
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
     recombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'))
@@ -11230,9 +11230,9 @@ class NaturalPartOrigin(BiologicalPartOrigin):
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     collectionDate = Column(DateTime(), nullable=False )
-    beforeDate = Column(Boolean(), nullable=False )
+    collectedBeforeDate = Column(Boolean())
     permitIdentifierForAbs = Column(Text())
-    accessToPhysicalGeneticResource = Column(Boolean(), nullable=False )
+    accessToPhysicalGeneticResource = Column(Boolean())
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
     countryOfCollection_id = Column(Integer(), ForeignKey('Country.id'), nullable=False )
@@ -11261,7 +11261,7 @@ class NaturalPartOrigin(BiologicalPartOrigin):
     
 
     def __repr__(self):
-        return f"NaturalPartOrigin(id={self.id},collectionDate={self.collectionDate},beforeDate={self.beforeDate},permitIdentifierForAbs={self.permitIdentifierForAbs},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},dateIssued={self.dateIssued},dateModified={self.dateModified},countryOfCollection_id={self.countryOfCollection_id},indigenousPeopleAndLocalCommunityOrigin_id={self.indigenousPeopleAndLocalCommunityOrigin_id},recombinantPartIdentification_id={self.recombinantPartIdentification_id},publisher_id={self.publisher_id},)"
+        return f"NaturalPartOrigin(id={self.id},collectionDate={self.collectionDate},collectedBeforeDate={self.collectedBeforeDate},permitIdentifierForAbs={self.permitIdentifierForAbs},accessToPhysicalGeneticResource={self.accessToPhysicalGeneticResource},dateIssued={self.dateIssued},dateModified={self.dateModified},countryOfCollection_id={self.countryOfCollection_id},indigenousPeopleAndLocalCommunityOrigin_id={self.indigenousPeopleAndLocalCommunityOrigin_id},recombinantPartIdentification_id={self.recombinantPartIdentification_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -11282,7 +11282,7 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     modificationsFromTheReferenceSequences = Column(Boolean(), nullable=False )
     descriptionOfModificationsMadeFromTheReferenceSequences = Column(Text())
-    accessToPhysicalGeneticResource = Column(Boolean(), nullable=False )
+    accessToPhysicalGeneticResource = Column(Boolean())
     dateIssued = Column(DateTime())
     dateModified = Column(DateTime())
     recombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'))

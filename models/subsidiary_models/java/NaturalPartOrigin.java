@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10773 */
+/* version: 1.0.10787 */
 
 
 /**
@@ -18,7 +18,7 @@ public class NaturalPartOrigin extends BiologicalPartOrigin {
   private Country countryOfCollection;
   private IplcOrigin indigenousPeopleAndLocalCommunityOrigin;
   private ZonedDateTime collectionDate;
-  private boolean beforeDate;
+  private boolean collectedBeforeDate;
   private String permitIdentifierForAbs;
 
 }

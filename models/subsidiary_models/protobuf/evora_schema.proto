@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.10773
+// version: 1.0.10787
 // List of other names for things.
 message AlternateName
  {
@@ -778,7 +778,7 @@ message NaturalPartOrigin
   country countryOfCollection = 0
   iplcOrigin indigenousPeopleAndLocalCommunityOrigin = 0
   datetime collectionDate = 0
-  boolean beforeDate = 0
+  boolean collectedBeforeDate = 0
   string permitIdentifierForAbs = 0
  }
 // Nucleic acid related to a pathogen. It can be extracted or synthetic.

@@ -117,7 +117,6 @@ Name: EVORAO
 | [antibodyType](antibodyType.md) | The specification of the class of antibody based on its production method or ... |
 | [authors](authors.md) | The list of authors |
 | [availability](availability.md) | The state or condition in which this item is accessible and ready for use or ... |
-| [beforeDate](beforeDate.md) | Set to TRUE if a proxy date for the collection date is used |
 | [biologicalMaterialOrigin](biologicalMaterialOrigin.md) | Information about the origin of the biological material, essential for access... |
 | [biologicalPartOrigin](biologicalPartOrigin.md) | Details the origin of one or more unitary parts that make up the biological m... |
 | [biologicalSourceType](biologicalSourceType.md) | Indicates whether the biological material includes any part originally collec... |
@@ -131,6 +130,7 @@ Name: EVORAO
 | [clonedIntoPlasmid](clonedIntoPlasmid.md) | The plasmid into which the nucleic acid has been cloned |
 | [clonedNucleicAcid](clonedNucleicAcid.md) | Specification of the terms and parameters for transporting |
 | [coInfectingViruses](coInfectingViruses.md) | Identifies other viruses that may co-infect the host organism along with the ... |
+| [collectedBeforeDate](collectedBeforeDate.md) | Set to TRUE if a proxy date for the collection date is used |
 | [collection](collection.md) | The collection(s) to which belongs this item |
 | [collectionDataProvider](collectionDataProvider.md) | The provider of the data of the collection |
 | [collectionDate](collectionDate.md) | The date when the sample was collected in situ |

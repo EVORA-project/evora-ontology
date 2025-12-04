@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-12-04T10:39:53
+# Generation date: 2025-12-04T13:52:44
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10773"
+version = "1.0.10787"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1418,7 +1418,9 @@ class BiologicalMaterialOrigin(Resource):
 
         if self._is_empty(self.biologicalPartOrigin):
             self.MissingRequiredField("biologicalPartOrigin")
-        self._normalize_inlined_as_dict(slot_name="biologicalPartOrigin", slot_type=BiologicalPartOrigin, key_name="accessToPhysicalGeneticResource", keyed=False)
+        if not isinstance(self.biologicalPartOrigin, list):
+            self.biologicalPartOrigin = [self.biologicalPartOrigin] if self.biologicalPartOrigin is not None else []
+        self.biologicalPartOrigin = [v if isinstance(v, BiologicalPartOrigin) else BiologicalPartOrigin(**as_dict(v)) for v in self.biologicalPartOrigin]
 
         super().__post_init__(**kwargs)
 
@@ -1436,17 +1438,15 @@ class BiologicalPartOrigin(Resource):
     class_name: ClassVar[str] = "BiologicalPartOrigin"
     class_model_uri: ClassVar[URIRef] = EVORAO.BiologicalPartOrigin
 
-    accessToPhysicalGeneticResource: Union[bool, Bool] = None
     recombinantPartIdentification: Optional[Union[dict, "RecombinantPartIdentification"]] = None
+    accessToPhysicalGeneticResource: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.accessToPhysicalGeneticResource):
-            self.MissingRequiredField("accessToPhysicalGeneticResource")
-        if not isinstance(self.accessToPhysicalGeneticResource, Bool):
-            self.accessToPhysicalGeneticResource = Bool(self.accessToPhysicalGeneticResource)
-
         if self.recombinantPartIdentification is not None and not isinstance(self.recombinantPartIdentification, RecombinantPartIdentification):
             self.recombinantPartIdentification = RecombinantPartIdentification(**as_dict(self.recombinantPartIdentification))
+
+        if self.accessToPhysicalGeneticResource is not None and not isinstance(self.accessToPhysicalGeneticResource, Bool):
+            self.accessToPhysicalGeneticResource = Bool(self.accessToPhysicalGeneticResource)
 
         super().__post_init__(**kwargs)
 
@@ -1463,11 +1463,10 @@ class NaturalPartOrigin(BiologicalPartOrigin):
     class_name: ClassVar[str] = "NaturalPartOrigin"
     class_model_uri: ClassVar[URIRef] = EVORAO.NaturalPartOrigin
 
-    accessToPhysicalGeneticResource: Union[bool, Bool] = None
     countryOfCollection: Union[dict, Country] = None
     collectionDate: Union[str, XSDDateTime] = None
-    beforeDate: Union[bool, Bool] = False
     indigenousPeopleAndLocalCommunityOrigin: Optional[Union[dict, IplcOrigin]] = None
+    collectedBeforeDate: Optional[Union[bool, Bool]] = False
     permitIdentifierForAbs: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1481,13 +1480,11 @@ class NaturalPartOrigin(BiologicalPartOrigin):
         if not isinstance(self.collectionDate, XSDDateTime):
             self.collectionDate = XSDDateTime(self.collectionDate)
 
-        if self._is_empty(self.beforeDate):
-            self.MissingRequiredField("beforeDate")
-        if not isinstance(self.beforeDate, Bool):
-            self.beforeDate = Bool(self.beforeDate)
-
         if self.indigenousPeopleAndLocalCommunityOrigin is not None and not isinstance(self.indigenousPeopleAndLocalCommunityOrigin, IplcOrigin):
             self.indigenousPeopleAndLocalCommunityOrigin = IplcOrigin(**as_dict(self.indigenousPeopleAndLocalCommunityOrigin))
+
+        if self.collectedBeforeDate is not None and not isinstance(self.collectedBeforeDate, Bool):
+            self.collectedBeforeDate = Bool(self.collectedBeforeDate)
 
         if self.permitIdentifierForAbs is not None and not isinstance(self.permitIdentifierForAbs, str):
             self.permitIdentifierForAbs = str(self.permitIdentifierForAbs)
@@ -1507,7 +1504,6 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
     class_name: ClassVar[str] = "SyntheticPartOrigin"
     class_model_uri: ClassVar[URIRef] = EVORAO.SyntheticPartOrigin
 
-    accessToPhysicalGeneticResource: Union[bool, Bool] = None
     modificationsFromTheReferenceSequences: Union[bool, Bool] = None
     descriptionOfModificationsMadeFromTheReferenceSequences: Optional[str] = None
 
@@ -3238,7 +3234,7 @@ slots.recombinantPartIdentification = Slot(uri=EVORAO.recombinantPartIdentificat
                    model_uri=EVORAO.recombinantPartIdentification, domain=None, range=Optional[Union[dict, RecombinantPartIdentification]])
 
 slots.accessToPhysicalGeneticResource = Slot(uri=EVORAO.accessToPhysicalGeneticResource, name="accessToPhysicalGeneticResource", curie=EVORAO.curie('accessToPhysicalGeneticResource'),
-                   model_uri=EVORAO.accessToPhysicalGeneticResource, domain=None, range=Union[bool, Bool])
+                   model_uri=EVORAO.accessToPhysicalGeneticResource, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.countryOfCollection = Slot(uri=EVORAO.countryOfCollection, name="countryOfCollection", curie=EVORAO.curie('countryOfCollection'),
                    model_uri=EVORAO.countryOfCollection, domain=None, range=Union[dict, Country])
@@ -3249,8 +3245,8 @@ slots.indigenousPeopleAndLocalCommunityOrigin = Slot(uri=EVORAO.indigenousPeople
 slots.collectionDate = Slot(uri=EVORAO.collectionDate, name="collectionDate", curie=EVORAO.curie('collectionDate'),
                    model_uri=EVORAO.collectionDate, domain=None, range=Union[str, XSDDateTime])
 
-slots.beforeDate = Slot(uri=EVORAO.beforeDate, name="beforeDate", curie=EVORAO.curie('beforeDate'),
-                   model_uri=EVORAO.beforeDate, domain=None, range=Union[bool, Bool])
+slots.collectedBeforeDate = Slot(uri=EVORAO.collectedBeforeDate, name="collectedBeforeDate", curie=EVORAO.curie('collectedBeforeDate'),
+                   model_uri=EVORAO.collectedBeforeDate, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.permitIdentifierForAbs = Slot(uri=EVORAO.permitIdentifierForAbs, name="permitIdentifierForAbs", curie=EVORAO.curie('permitIdentifierForAbs'),
                    model_uri=EVORAO.permitIdentifierForAbs, domain=None, range=Optional[str])
@@ -3916,7 +3912,7 @@ slots.BiologicalPartOrigin_recombinantPartIdentification = Slot(uri=EVORAO.recom
                    model_uri=EVORAO.BiologicalPartOrigin_recombinantPartIdentification, domain=BiologicalPartOrigin, range=Optional[Union[dict, "RecombinantPartIdentification"]])
 
 slots.BiologicalPartOrigin_accessToPhysicalGeneticResource = Slot(uri=EVORAO.accessToPhysicalGeneticResource, name="BiologicalPartOrigin_accessToPhysicalGeneticResource", curie=EVORAO.curie('accessToPhysicalGeneticResource'),
-                   model_uri=EVORAO.BiologicalPartOrigin_accessToPhysicalGeneticResource, domain=BiologicalPartOrigin, range=Union[bool, Bool])
+                   model_uri=EVORAO.BiologicalPartOrigin_accessToPhysicalGeneticResource, domain=BiologicalPartOrigin, range=Optional[Union[bool, Bool]])
 
 slots.NaturalPartOrigin_countryOfCollection = Slot(uri=EVORAO.countryOfCollection, name="NaturalPartOrigin_countryOfCollection", curie=EVORAO.curie('countryOfCollection'),
                    model_uri=EVORAO.NaturalPartOrigin_countryOfCollection, domain=NaturalPartOrigin, range=Union[dict, Country])
@@ -3927,8 +3923,8 @@ slots.NaturalPartOrigin_indigenousPeopleAndLocalCommunityOrigin = Slot(uri=EVORA
 slots.NaturalPartOrigin_collectionDate = Slot(uri=EVORAO.collectionDate, name="NaturalPartOrigin_collectionDate", curie=EVORAO.curie('collectionDate'),
                    model_uri=EVORAO.NaturalPartOrigin_collectionDate, domain=NaturalPartOrigin, range=Union[str, XSDDateTime])
 
-slots.NaturalPartOrigin_beforeDate = Slot(uri=EVORAO.beforeDate, name="NaturalPartOrigin_beforeDate", curie=EVORAO.curie('beforeDate'),
-                   model_uri=EVORAO.NaturalPartOrigin_beforeDate, domain=NaturalPartOrigin, range=Union[bool, Bool])
+slots.NaturalPartOrigin_collectedBeforeDate = Slot(uri=EVORAO.collectedBeforeDate, name="NaturalPartOrigin_collectedBeforeDate", curie=EVORAO.curie('collectedBeforeDate'),
+                   model_uri=EVORAO.NaturalPartOrigin_collectedBeforeDate, domain=NaturalPartOrigin, range=Optional[Union[bool, Bool]])
 
 slots.NaturalPartOrigin_permitIdentifierForAbs = Slot(uri=EVORAO.permitIdentifierForAbs, name="NaturalPartOrigin_permitIdentifierForAbs", curie=EVORAO.curie('permitIdentifierForAbs'),
                    model_uri=EVORAO.NaturalPartOrigin_permitIdentifierForAbs, domain=NaturalPartOrigin, range=Optional[str])

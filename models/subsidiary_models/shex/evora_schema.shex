@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10773
+# version: 1.0.10787
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -112,7 +112,7 @@ linkml:Sparqlpath xsd:string
     (  $<BiologicalPartOrigin_tes> (  &<Resource_tes> ;
           rdf:type [ dcat:Resource ] ? ;
           <recombinantPartIdentification> @<RecombinantPartIdentification> ? ;
-          <accessToPhysicalGeneticResource> @linkml:Boolean
+          <accessToPhysicalGeneticResource> @linkml:Boolean ?
        ) ;
        rdf:type [ <BiologicalPartOrigin> ] ?
     )
@@ -472,7 +472,7 @@ linkml:Sparqlpath xsd:string
           <countryOfCollection> @<Country> ;
           <indigenousPeopleAndLocalCommunityOrigin> @<IplcOrigin> ? ;
           <collectionDate> @linkml:Datetime ;
-          <beforeDate> @linkml:Boolean ;
+          <collectedBeforeDate> @linkml:Boolean ? ;
           <permitIdentifierForAbs> @linkml:String ?
        ) ;
        rdf:type [ <NaturalPartOrigin> ] ?

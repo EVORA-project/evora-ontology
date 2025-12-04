@@ -448,7 +448,7 @@
 -- # Class: "NaturalPartOrigin" Description: "Information on the origin of a natural part that composes the biological material."
 --     * Slot: id Description: 
 --     * Slot: collectionDate Description: The date when the sample was collected in situ. If unknown/private, use a proxy date such as 'date received' and indicate this by setting to true the before date property.
---     * Slot: beforeDate Description: Set to TRUE if a proxy date for the collection date is used.
+--     * Slot: collectedBeforeDate Description: Set to TRUE if a proxy date for the collection date is used.
 --     * Slot: permitIdentifierForAbs Description: Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations.
 --     * Slot: accessToPhysicalGeneticResource Description: Indicate if the biological part was produced with access to a physical genetic resource.
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
@@ -3666,7 +3666,7 @@ CREATE TABLE "Taxon" (
 );
 CREATE TABLE "BiologicalPartOrigin" (
 	id INTEGER NOT NULL, 
-	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
+	"accessToPhysicalGeneticResource" BOOLEAN, 
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
 	"recombinantPartIdentification_id" INTEGER, 
@@ -3678,9 +3678,9 @@ CREATE TABLE "BiologicalPartOrigin" (
 CREATE TABLE "NaturalPartOrigin" (
 	id INTEGER NOT NULL, 
 	"collectionDate" DATETIME NOT NULL, 
-	"beforeDate" BOOLEAN NOT NULL, 
+	"collectedBeforeDate" BOOLEAN, 
 	"permitIdentifierForAbs" TEXT, 
-	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
+	"accessToPhysicalGeneticResource" BOOLEAN, 
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
 	"countryOfCollection_id" INTEGER NOT NULL, 
@@ -3697,7 +3697,7 @@ CREATE TABLE "SyntheticPartOrigin" (
 	id INTEGER NOT NULL, 
 	"modificationsFromTheReferenceSequences" BOOLEAN NOT NULL, 
 	"descriptionOfModificationsMadeFromTheReferenceSequences" TEXT, 
-	"accessToPhysicalGeneticResource" BOOLEAN NOT NULL, 
+	"accessToPhysicalGeneticResource" BOOLEAN, 
 	"dateIssued" DATETIME, 
 	"dateModified" DATETIME, 
 	"recombinantPartIdentification_id" INTEGER, 

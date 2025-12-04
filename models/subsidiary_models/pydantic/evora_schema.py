@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10773"
+version = "1.0.10787"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-12-04T11:39:04',
+     'generation_date': '2025-12-04T14:51:56',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -6140,7 +6140,8 @@ class BiologicalPartOrigin(Resource):
                                                             'multivalued': False,
                                                             'name': 'accessToPhysicalGeneticResource',
                                                             'range': 'boolean',
-                                                            'required': True,
+                                                            'recommended': True,
+                                                            'required': False,
                                                             'title': 'access to '
                                                                      'physical genetic '
                                                                      'resource'},
@@ -6170,8 +6171,9 @@ class BiologicalPartOrigin(Resource):
          'comments': ['Information not required if the current biological part '
                       'constitutes the complete biological material.'],
          'domain_of': ['BiologicalPartOrigin']} })
-    accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource.""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
-         'domain_of': ['BiologicalPartOrigin']} })
+    accessToPhysicalGeneticResource: Optional[bool] = Field(default=None, title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource.""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
+         'domain_of': ['BiologicalPartOrigin'],
+         'recommended': True} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
          'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
@@ -6221,17 +6223,20 @@ class NaturalPartOrigin(BiologicalPartOrigin):
                               'ncit:C43581',
                               'ncit:C87913',
                               'ncit:C43581'],
-         'slot_usage': {'beforeDate': {'description': 'Set to TRUE if a proxy date for '
-                                                      'the collection date is used.',
-                                       'domain_of': ['NaturalPartOrigin'],
-                                       'ifabsent': 'false',
-                                       'multivalued': False,
-                                       'name': 'beforeDate',
-                                       'range': 'boolean',
-                                       'related_mappings': ['sepio:0000105',
-                                                            'ro:0002089'],
-                                       'required': True,
-                                       'title': 'before date'},
+         'slot_usage': {'collectedBeforeDate': {'description': 'Set to TRUE if a proxy '
+                                                               'date for the '
+                                                               'collection date is '
+                                                               'used.',
+                                                'domain_of': ['NaturalPartOrigin'],
+                                                'ifabsent': 'false',
+                                                'multivalued': False,
+                                                'name': 'collectedBeforeDate',
+                                                'range': 'boolean',
+                                                'recommended': True,
+                                                'related_mappings': ['sepio:0000105',
+                                                                     'ro:0002089'],
+                                                'required': False,
+                                                'title': 'collected before date'},
                         'collectionDate': {'broad_mappings': ['dct:date'],
                                            'description': 'The date when the sample '
                                                           'was collected in situ. If '
@@ -6325,17 +6330,19 @@ class NaturalPartOrigin(BiologicalPartOrigin):
          'broad_mappings': ['dct:date'],
          'domain_of': ['NaturalPartOrigin'],
          'related_mappings': ['obib:0000714']} })
-    beforeDate: bool = Field(default=False, title="before date", description="""Set to TRUE if a proxy date for the collection date is used.""", json_schema_extra = { "linkml_meta": {'alias': 'beforeDate',
+    collectedBeforeDate: Optional[bool] = Field(default=False, title="collected before date", description="""Set to TRUE if a proxy date for the collection date is used.""", json_schema_extra = { "linkml_meta": {'alias': 'collectedBeforeDate',
          'domain_of': ['NaturalPartOrigin'],
          'ifabsent': 'false',
+         'recommended': True,
          'related_mappings': ['sepio:0000105', 'ro:0002089']} })
     permitIdentifierForAbs: Optional[str] = Field(default=None, title="permit identifier for ABS", description="""Reference of the permit identifiers for access to the genetic resource, applicable if the genetic resource falls under Access and Benefit-Sharing (ABS) regulations.""", json_schema_extra = { "linkml_meta": {'alias': 'permitIdentifierForAbs', 'domain_of': ['NaturalPartOrigin']} })
     recombinantPartIdentification: Optional[RecombinantPartIdentification] = Field(default=None, title="recombinant part identification", description="""Identification of a recombinant part.""", json_schema_extra = { "linkml_meta": {'alias': 'recombinantPartIdentification',
          'comments': ['Information not required if the current biological part '
                       'constitutes the complete biological material.'],
          'domain_of': ['BiologicalPartOrigin']} })
-    accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource.""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
-         'domain_of': ['BiologicalPartOrigin']} })
+    accessToPhysicalGeneticResource: Optional[bool] = Field(default=None, title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource.""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
+         'domain_of': ['BiologicalPartOrigin'],
+         'recommended': True} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
          'close_mappings': ['schema:datePublished', 'schema:dateCreated'],
@@ -6442,8 +6449,9 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
          'comments': ['Information not required if the current biological part '
                       'constitutes the complete biological material.'],
          'domain_of': ['BiologicalPartOrigin']} })
-    accessToPhysicalGeneticResource: bool = Field(default=..., title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource.""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
-         'domain_of': ['BiologicalPartOrigin']} })
+    accessToPhysicalGeneticResource: Optional[bool] = Field(default=None, title="access to physical genetic resource", description="""Indicate if the biological part was produced with access to a physical genetic resource.""", json_schema_extra = { "linkml_meta": {'alias': 'accessToPhysicalGeneticResource',
+         'domain_of': ['BiologicalPartOrigin'],
+         'recommended': True} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
          'close_mappings': ['schema:datePublished', 'schema:dateCreated'],

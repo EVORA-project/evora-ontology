@@ -1,6 +1,6 @@
 
 
-# Slot: before date (beforeDate) 
+# Slot: collected before date (collectedBeforeDate) 
 
 
 _Set to TRUE if a proxy date for the collection date is used._
@@ -9,8 +9,8 @@ _Set to TRUE if a proxy date for the collection date is used._
 
 
 
-URI: [EVORAO:beforeDate](https://w3id.org/evorao/beforeDate)
-Alias: beforeDate
+URI: [EVORAO:collectedBeforeDate](https://w3id.org/evorao/collectedBeforeDate)
+Alias: collectedBeforeDate
 
 <!-- no inheritance hierarchy -->
 
@@ -34,7 +34,7 @@ Alias: beforeDate
 
 * Range: [Boolean](Boolean.md)
 
-* Required: True
+* Recommended: True
 
 
 
@@ -60,8 +60,8 @@ Alias: beforeDate
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORAO:beforeDate |
-| native | EVORAO:beforeDate |
+| self | EVORAO:collectedBeforeDate |
+| native | EVORAO:collectedBeforeDate |
 | related | sepio:0000105, ro:0002089 |
 
 
@@ -71,20 +71,21 @@ Alias: beforeDate
 
 <details>
 ```yaml
-name: beforeDate
+name: collectedBeforeDate
 description: Set to TRUE if a proxy date for the collection date is used.
-title: before date
+title: collected before date
 from_schema: https://w3id.org/evorao/
 related_mappings:
 - sepio:0000105
 - ro:0002089
 rank: 1000
 ifabsent: 'false'
-alias: beforeDate
+alias: collectedBeforeDate
 domain_of:
 - NaturalPartOrigin
 range: boolean
-required: true
+required: false
+recommended: true
 multivalued: false
 
 ```

@@ -82,7 +82,7 @@ URI: [EVORAO:BiologicalPartOrigin](https://w3id.org/evorao/BiologicalPartOrigin)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [recombinantPartIdentification](recombinantPartIdentification.md) | 0..1 <br/> [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part | direct |
-| [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | 1 <br/> [Boolean](Boolean.md) | Indicate if the biological part was produced with access to a physical geneti... | direct |
+| [accessToPhysicalGeneticResource](accessToPhysicalGeneticResource.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Indicate if the biological part was produced with access to a physical geneti... | direct |
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 | [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | [Resource](Resource.md) |
 | [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
@@ -178,7 +178,8 @@ slot_usage:
     domain_of:
     - BiologicalPartOrigin
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -220,7 +221,8 @@ slot_usage:
     domain_of:
     - BiologicalPartOrigin
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
 attributes:
   recombinantPartIdentification:
@@ -251,7 +253,8 @@ attributes:
     domain_of:
     - BiologicalPartOrigin
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   keyword:
     name: keyword
