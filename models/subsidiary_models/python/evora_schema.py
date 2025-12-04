@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-12-04T13:52:44
+# Generation date: 2025-12-04T14:46:17
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10787"
+version = "1.0.10806"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -575,9 +575,9 @@ class Term(Resource):
     class_model_uri: ClassVar[URIRef] = EVORAO.Term
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
     description: Optional[str] = None
+    weight: Optional[int] = 0
+    inVocabulary: Optional[Union[dict, Vocabulary]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.title):
@@ -585,18 +585,14 @@ class Term(Resource):
         if not isinstance(self.title, str):
             self.title = str(self.title)
 
-        if self._is_empty(self.weight):
-            self.MissingRequiredField("weight")
-        if not isinstance(self.weight, int):
-            self.weight = int(self.weight)
-
-        if self._is_empty(self.inVocabulary):
-            self.MissingRequiredField("inVocabulary")
-        if not isinstance(self.inVocabulary, Vocabulary):
-            self.inVocabulary = Vocabulary(**as_dict(self.inVocabulary))
-
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
+
+        if self.weight is not None and not isinstance(self.weight, int):
+            self.weight = int(self.weight)
+
+        if self.inVocabulary is not None and not isinstance(self.inVocabulary, Vocabulary):
+            self.inVocabulary = Vocabulary(**as_dict(self.inVocabulary))
 
         super().__post_init__(**kwargs)
 
@@ -615,8 +611,6 @@ class CommonName(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.CommonName
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
     alternateName: Optional[Union[Union[dict, "AlternateName"], list[Union[dict, "AlternateName"]]]] = empty_list()
     sourceOfInformation: Optional[Union[str, list[str]]] = empty_list()
 
@@ -643,8 +637,6 @@ class VirusName(CommonName):
     class_model_uri: ClassVar[URIRef] = EVORAO.VirusName
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class AlternateName(Term):
@@ -659,8 +651,6 @@ class AlternateName(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.AlternateName
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
     alternateName: Optional[Union[Union[dict, "AlternateName"], list[Union[dict, "AlternateName"]]]] = empty_list()
     sourceOfInformation: Optional[Union[str, list[str]]] = empty_list()
 
@@ -688,8 +678,6 @@ class RiskGroup(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.RiskGroup
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class BiosafetyLevel(Term):
@@ -704,8 +692,6 @@ class BiosafetyLevel(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.BiosafetyLevel
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class Doi(Term):
@@ -721,8 +707,6 @@ class Doi(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.Doi
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class Journal(Term):
@@ -737,8 +721,6 @@ class Journal(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.Journal
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class PdbReference(Term):
@@ -753,8 +735,6 @@ class PdbReference(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.PdbReference
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class Keyword(Term):
@@ -769,8 +749,6 @@ class Keyword(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.Keyword
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class TagSequence(Term):
@@ -787,8 +765,6 @@ class TagSequence(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.TagSequence
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class SpecialFeature(Term):
@@ -804,8 +780,6 @@ class SpecialFeature(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.SpecialFeature
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class ExpressionVector(Term):
@@ -821,8 +795,6 @@ class ExpressionVector(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.ExpressionVector
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class PlasmidSelection(Term):
@@ -838,8 +810,6 @@ class PlasmidSelection(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.PlasmidSelection
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class PropagationHost(Term):
@@ -854,8 +824,6 @@ class PropagationHost(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.PropagationHost
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class TransmissionMethod(Term):
@@ -870,8 +838,6 @@ class TransmissionMethod(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.TransmissionMethod
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class ProductionCellLine(Term):
@@ -887,8 +853,6 @@ class ProductionCellLine(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.ProductionCellLine
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class ProductCategory(Term):
@@ -904,8 +868,6 @@ class ProductCategory(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.ProductCategory
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
     parentCategory: Optional[Union[dict, "ProductCategory"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -928,8 +890,6 @@ class IsolationHost(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.IsolationHost
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class GeographicalOrigin(Term):
@@ -944,8 +904,6 @@ class GeographicalOrigin(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.GeographicalOrigin
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class IplcOrigin(GeographicalOrigin):
@@ -960,8 +918,6 @@ class IplcOrigin(GeographicalOrigin):
     class_model_uri: ClassVar[URIRef] = EVORAO.IplcOrigin
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class Country(Term):
@@ -976,9 +932,7 @@ class Country(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.Country
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
     alpha2Code: str = None
-    weight: int = 0
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.alpha2Code):
@@ -1003,8 +957,6 @@ class IataClassification(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.IataClassification
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class Variant(CommonName):
@@ -1020,8 +972,6 @@ class Variant(CommonName):
     class_model_uri: ClassVar[URIRef] = EVORAO.Variant
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
 
 @dataclass(repr=False)
 class TaxonomicRank(Term):
@@ -1036,8 +986,6 @@ class TaxonomicRank(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.TaxonomicRank
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
-    weight: int = 0
     taxonomy: Optional[Union[Union[dict, Taxonomy], list[Union[dict, Taxonomy]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1060,9 +1008,7 @@ class Taxon(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.Taxon
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
     taxonomicId: str = None
-    weight: int = 0
     taxonomy: Optional[Union[Union[dict, Taxonomy], list[Union[dict, Taxonomy]]]] = empty_list()
     parentTaxon: Optional[Union[dict, "Taxon"]] = None
     rank: Optional[Union[dict, TaxonomicRank]] = None
@@ -1120,9 +1066,7 @@ class ClinicalGroup(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.ClinicalGroup
 
     title: str = None
-    inVocabulary: Union[dict, Vocabulary] = None
     taxon: Union[Union[dict, Taxon], list[Union[dict, Taxon]]] = None
-    weight: int = 0
     alternateName: Optional[Union[Union[dict, AlternateName], list[Union[dict, AlternateName]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -3093,7 +3037,7 @@ slots.providedEntityType = Slot(uri=EVORAO.providedEntityType, name="providedEnt
                    model_uri=EVORAO.providedEntityType, domain=None, range=Union[Union[str, URI], list[Union[str, URI]]])
 
 slots.weight = Slot(uri=EVORAO.weight, name="weight", curie=EVORAO.curie('weight'),
-                   model_uri=EVORAO.weight, domain=None, range=int)
+                   model_uri=EVORAO.weight, domain=None, range=Optional[int])
 
 slots.pathogenName = Slot(uri=EVORAO.pathogenName, name="pathogenName", curie=EVORAO.curie('pathogenName'),
                    model_uri=EVORAO.pathogenName, domain=None, range=Union[dict, CommonName])
@@ -3141,7 +3085,7 @@ slots.term = Slot(uri=EVORAO.term, name="term", curie=EVORAO.curie('term'),
                    model_uri=EVORAO.term, domain=None, range=Optional[Union[Union[dict, Term], list[Union[dict, Term]]]])
 
 slots.inVocabulary = Slot(uri=EVORAO.inVocabulary, name="inVocabulary", curie=EVORAO.curie('inVocabulary'),
-                   model_uri=EVORAO.inVocabulary, domain=None, range=Union[dict, Vocabulary])
+                   model_uri=EVORAO.inVocabulary, domain=None, range=Optional[Union[dict, Vocabulary]])
 
 slots.alternateName = Slot(uri=EVORAO.alternateName, name="alternateName", curie=EVORAO.curie('alternateName'),
                    model_uri=EVORAO.alternateName, domain=None, range=Optional[Union[Union[dict, AlternateName], list[Union[dict, AlternateName]]]])
@@ -3789,10 +3733,10 @@ slots.Term_description = Slot(uri=DCT.description, name="Term_description", curi
                    model_uri=EVORAO.Term_description, domain=Term, range=Optional[str])
 
 slots.Term_weight = Slot(uri=EVORAO.weight, name="Term_weight", curie=EVORAO.curie('weight'),
-                   model_uri=EVORAO.Term_weight, domain=Term, range=int)
+                   model_uri=EVORAO.Term_weight, domain=Term, range=Optional[int])
 
 slots.Term_inVocabulary = Slot(uri=EVORAO.inVocabulary, name="Term_inVocabulary", curie=EVORAO.curie('inVocabulary'),
-                   model_uri=EVORAO.Term_inVocabulary, domain=Term, range=Union[dict, Vocabulary])
+                   model_uri=EVORAO.Term_inVocabulary, domain=Term, range=Optional[Union[dict, Vocabulary]])
 
 slots.CommonName_alternateName = Slot(uri=EVORAO.alternateName, name="CommonName_alternateName", curie=EVORAO.curie('alternateName'),
                    model_uri=EVORAO.CommonName_alternateName, domain=CommonName, range=Optional[Union[Union[dict, "AlternateName"], list[Union[dict, "AlternateName"]]]])

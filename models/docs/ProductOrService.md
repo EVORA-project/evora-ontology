@@ -149,7 +149,7 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
           
     
     
-    ProductOrService --> "1..* _recommended_" Keyword : keywords
+    ProductOrService --> "1..*" Keyword : keywords
     click Keyword href "../Keyword"
 
         
@@ -255,7 +255,7 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
 | [canBeUsedToProduceGmo](canBeUsedToProduceGmo.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current service or product can be used to produce GMO | direct |
 | [provider](provider.md) | 1 <br/> [Provider](Provider.md) | A provider of this product or service, as a specific organization | direct |
 | [collection](collection.md) | 1..* <br/> [Collection](Collection.md) | The collection(s) to which belongs this item | direct |
-| [keywords](keywords.md) | 1..* _recommended_ <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | direct |
+| [keywords](keywords.md) | 1..* <br/> [Keyword](Keyword.md) | List of terms used to tag and categorize this Item | direct |
 | [availability](availability.md) | 1 <br/> [String](String.md) | The state or condition in which this item is accessible and ready for use or ... | direct |
 | [complementaryDocument](complementaryDocument.md) | * <br/> [Document](Document.md) | Any additional documents that provide supplementary information, instructions... | direct |
 | [technicalRecommendation](technicalRecommendation.md) | 0..1 <br/> [String](String.md) | Expert advice or guidelines provided to ensure the optimal use, performance, ... | direct |
@@ -653,7 +653,6 @@ slot_usage:
     - ProductOrService
     range: Keyword
     required: true
-    recommended: true
     multivalued: true
   availability:
     name: availability
@@ -1078,7 +1077,6 @@ slot_usage:
     - ProductOrService
     range: Keyword
     required: true
-    recommended: true
     multivalued: true
   availability:
     name: availability
@@ -1555,7 +1553,6 @@ attributes:
     - ProductOrService
     range: Keyword
     required: true
-    recommended: true
     multivalued: true
   availability:
     name: availability

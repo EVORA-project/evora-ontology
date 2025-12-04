@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10787",
+  "version": "1.0.10806",
   "imports": [
     "linkml:types"
   ],
@@ -1227,7 +1227,7 @@
         "Term"
       ],
       "range": "integer",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1535,7 +1535,7 @@
         "Term"
       ],
       "range": "Vocabulary",
-      "required": true,
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -2800,7 +2800,6 @@
       ],
       "range": "Keyword",
       "required": true,
-      "recommended": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -5545,6 +5544,7 @@
       "usage_slot_name": "weight",
       "range": "integer",
       "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6051,7 +6051,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "weight",
       "range": "integer",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6080,7 +6080,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "inVocabulary",
       "range": "Vocabulary",
-      "required": true,
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -7915,7 +7915,6 @@
       "usage_slot_name": "keywords",
       "range": "Keyword",
       "required": true,
-      "recommended": true,
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -14605,9 +14604,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-12-04T13:52:20",
-  "source_file_size": 246045,
-  "generation_date": "2025-12-04T13:52:39",
+  "source_file_date": "2025-12-04T14:45:57",
+  "source_file_size": 246097,
+  "generation_date": "2025-12-04T14:46:12",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

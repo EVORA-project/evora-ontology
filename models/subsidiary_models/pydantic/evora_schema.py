@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10787"
+version = "1.0.10806"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-12-04T14:51:56',
+     'generation_date': '2025-12-04T15:45:32',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -1256,7 +1256,8 @@ class DataProvider(DataService):
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['DataProvider', 'Term'],
-         'ifabsent': 'int(0)'} })
+         'ifabsent': 'int(0)',
+         'recommended': True} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '
                       'possible.',
@@ -1860,8 +1861,9 @@ class Term(Resource):
                                          'multivalued': False,
                                          'name': 'inVocabulary',
                                          'range': 'Vocabulary',
+                                         'recommended': True,
                                          'related_mappings': ['dct:isReferencedBy'],
-                                         'required': True,
+                                         'required': False,
                                          'title': 'in Vocabulary'},
                         'title': {'comments': ['The title of the item should be as '
                                                'short and descriptive as possible.',
@@ -1901,7 +1903,8 @@ class Term(Resource):
                                    'multivalued': False,
                                    'name': 'weight',
                                    'range': 'integer',
-                                   'required': True,
+                                   'recommended': True,
+                                   'required': False,
                                    'title': 'weight'}},
          'title': 'Term'})
 
@@ -1937,18 +1940,20 @@ class Term(Resource):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -2088,18 +2093,20 @@ class CommonName(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -2198,18 +2205,20 @@ class VirusName(CommonName):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -2347,18 +2356,20 @@ class AlternateName(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -2459,18 +2470,20 @@ class RiskGroup(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -2568,18 +2581,20 @@ class BiosafetyLevel(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -2667,18 +2682,20 @@ class Doi(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -2766,18 +2783,20 @@ class Journal(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -2859,18 +2878,20 @@ class PdbReference(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -2958,18 +2979,20 @@ class Keyword(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -3053,18 +3076,20 @@ class TagSequence(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -3148,18 +3173,20 @@ class SpecialFeature(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -3244,18 +3271,20 @@ class ExpressionVector(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -3336,18 +3365,20 @@ class PlasmidSelection(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -3428,18 +3459,20 @@ class PropagationHost(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -3521,18 +3554,20 @@ class TransmissionMethod(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -3617,18 +3652,20 @@ class ProductionCellLine(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -3733,18 +3770,20 @@ class ProductCategory(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -3823,18 +3862,20 @@ class IsolationHost(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -3924,18 +3965,20 @@ class GeographicalOrigin(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -4023,18 +4066,20 @@ class IplcOrigin(GeographicalOrigin):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -4146,18 +4191,20 @@ class Country(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -4238,18 +4285,20 @@ class IataClassification(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -4347,18 +4396,20 @@ class Variant(CommonName):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -4460,18 +4511,20 @@ class TaxonomicRank(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -4766,18 +4819,20 @@ class Taxon(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -4916,18 +4971,20 @@ class ClinicalGroup(Term):
          'exact_mappings': ['schema:description'],
          'recommended': True,
          'slot_uri': 'dct:description'} })
-    weight: int = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
+    weight: Optional[int] = Field(default=0, title="weight", description="""A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.""", json_schema_extra = { "linkml_meta": {'alias': 'weight',
          'close_mappings': ['adms:status'],
          'comments': ['The lowest weighted Data providers are triggered first.',
                       'This property may be usefull to populate at first entities that '
                       'are referenced by others (e.g. Version ahead of Rank ahead of '
                       'Taxon).'],
          'domain_of': ['Term', 'DataProvider'],
-         'ifabsent': 'int(0)'} })
-    inVocabulary: Vocabulary = Field(default=..., title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
+         'ifabsent': 'int(0)',
+         'recommended': True} })
+    inVocabulary: Optional[Vocabulary] = Field(default=None, title="in Vocabulary", description="""Terms belong to a specific vocabulary.""", json_schema_extra = { "linkml_meta": {'alias': 'inVocabulary',
          'broad_mappings': ['dct:isPartOf'],
          'close_mappings': ['wdp:P972'],
          'domain_of': ['Term'],
+         'recommended': True,
          'related_mappings': ['dct:isReferencedBy']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
@@ -6931,7 +6988,6 @@ class ProductOrService(Dataset):
                                      'multivalued': True,
                                      'name': 'keywords',
                                      'range': 'Keyword',
-                                     'recommended': True,
                                      'required': True,
                                      'title': 'keywords'},
                         'note': {'description': 'An aditional information as a textual '
@@ -7232,8 +7288,7 @@ class ProductOrService(Dataset):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -7482,8 +7537,7 @@ class Service(ProductOrService):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -7868,8 +7922,7 @@ class Product(ProductOrService):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -8268,8 +8321,7 @@ class Antibody(Product):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -8551,8 +8603,7 @@ class Hybridoma(Antibody):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -9178,8 +9229,7 @@ class Protein(Product):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -9684,8 +9734,7 @@ class NucleicAcid(Product):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -9980,8 +10029,7 @@ class DetectionKit(Product):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -10237,8 +10285,7 @@ class Bundle(Product):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -10836,8 +10883,7 @@ class Pathogen(Product):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -11210,8 +11256,7 @@ class Virus(Pathogen):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -11525,8 +11570,7 @@ class Bacterium(Pathogen):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -11838,8 +11882,7 @@ class Fungus(Pathogen):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -12147,8 +12190,7 @@ class Protozoan(Pathogen):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -12448,8 +12490,7 @@ class Viroid(Pathogen):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],
@@ -12757,8 +12798,7 @@ class Prion(Pathogen):
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
          'domain_of': ['ProductOrService'],
-         'exact_mappings': ['schema:keywords'],
-         'recommended': True} })
+         'exact_mappings': ['schema:keywords']} })
     availability: str = Field(default="on request", title="availability", description="""The state or condition in which this item is accessible and ready for use or can be obtained.""", json_schema_extra = { "linkml_meta": {'alias': 'availability',
          'close_mappings': ['schema:availability', 'dct:available'],
          'comments': ['Possible availabilities may differ from a project to another.'],

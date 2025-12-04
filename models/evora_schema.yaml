@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10787
+version: 1.0.10806
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -547,7 +547,8 @@ slots:
     - DataProvider
     - Term
     range: integer
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   pathogenName:
     description: A pathogen common name or a name that describes a group of pathogens.
@@ -756,7 +757,8 @@ slots:
     domain_of:
     - Term
     range: Vocabulary
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   alternateName:
     description: Any other name under which the entity can be known.
@@ -1636,7 +1638,6 @@ slots:
     - ProductOrService
     range: Keyword
     required: true
-    recommended: true
     multivalued: true
   availability:
     description: The state or condition in which this item is accessible and ready
@@ -3900,7 +3901,8 @@ classes:
         domain_of:
         - Term
         range: integer
-        required: true
+        required: false
+        recommended: true
         multivalued: false
       inVocabulary:
         description: Terms belong to a specific vocabulary.
@@ -3914,7 +3916,8 @@ classes:
         domain_of:
         - Term
         range: Vocabulary
-        required: true
+        required: false
+        recommended: true
         multivalued: false
   CommonName:
     description: Vernacular name that is the name used in everyday language to refer
@@ -5576,7 +5579,6 @@ classes:
         - ProductOrService
         range: Keyword
         required: true
-        recommended: true
         multivalued: true
       availability:
         description: The state or condition in which this item is accessible and ready
@@ -7762,4 +7764,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2025-12-04T14:51:56'
+generation_date: '2025-12-04T15:45:32'

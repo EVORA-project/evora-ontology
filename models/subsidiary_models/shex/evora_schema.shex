@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10787
+# version: 1.0.10806
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -905,8 +905,8 @@ linkml:Sparqlpath xsd:string
           rdf:type [ dcat:Resource ] ? ;
           dct:title @linkml:String ;
           dct:description @linkml:String ? ;
-          <weight> @linkml:Integer ;
-          <inVocabulary> @<Vocabulary>
+          <weight> @linkml:Integer ? ;
+          <inVocabulary> @<Vocabulary> ?
        ) ;
        rdf:type [ <Term> ] ?
     )

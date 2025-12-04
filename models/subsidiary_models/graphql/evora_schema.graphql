@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10787
+# version: 1.0.10806
 type AlternateName
   {
     keyword: [String]
@@ -10,8 +10,8 @@ type AlternateName
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
     alternateName: [AlternateName]
     sourceOfInformation: [String]
   }
@@ -191,8 +191,8 @@ type BiosafetyLevel
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type Bundle
@@ -283,8 +283,8 @@ type ClinicalGroup
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
     alternateName: [AlternateName]
     taxon: [Taxon]!
   }
@@ -314,8 +314,8 @@ type CommonName
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
     alternateName: [AlternateName]
     sourceOfInformation: [String]
   }
@@ -350,8 +350,8 @@ type Country
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
     alpha2Code: String!
   }
 
@@ -497,8 +497,8 @@ type Doi
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type ExpressionVector
@@ -511,8 +511,8 @@ type ExpressionVector
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type ExternalRelatedReference
@@ -640,8 +640,8 @@ type GeographicalOrigin
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type Hybridoma
@@ -713,8 +713,8 @@ type IataClassification
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type Image
@@ -743,8 +743,8 @@ type IplcOrigin
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type IsolationHost
@@ -757,8 +757,8 @@ type IsolationHost
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type Journal
@@ -771,8 +771,8 @@ type Journal
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type Keyword
@@ -785,8 +785,8 @@ type Keyword
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type License
@@ -1039,8 +1039,8 @@ type PdbReference
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type Person
@@ -1084,8 +1084,8 @@ type PlasmidSelection
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type Prion
@@ -1214,8 +1214,8 @@ type ProductCategory
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
     parentCategory: ProductCategory
   }
 
@@ -1229,8 +1229,8 @@ type ProductionCellLine
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 interface ProductOrService
@@ -1284,8 +1284,8 @@ type PropagationHost
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type Protein
@@ -1502,8 +1502,8 @@ type RiskGroup
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type Sequence
@@ -1583,8 +1583,8 @@ type SpecialFeature
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type SyntheticPartOrigin
@@ -1611,8 +1611,8 @@ type TagSequence
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type Taxon
@@ -1625,8 +1625,8 @@ type Taxon
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
     taxonomy: [Taxonomy]
     parentTaxon: Taxon
     rank: TaxonomicRank
@@ -1647,8 +1647,8 @@ type TaxonomicRank
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
     taxonomy: [Taxonomy]
   }
 
@@ -1680,8 +1680,8 @@ interface Term
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type TransmissionMethod
@@ -1694,8 +1694,8 @@ type TransmissionMethod
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
   }
 
 type Variant
@@ -1708,8 +1708,8 @@ type Variant
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
     alternateName: [AlternateName]
     sourceOfInformation: [String]
   }
@@ -1889,8 +1889,8 @@ type VirusName
     iri: [Uri]
     title: String!
     description: String
-    weight: Integer!
-    inVocabulary: Vocabulary!
+    weight: Integer
+    inVocabulary: Vocabulary
     alternateName: [AlternateName]
     sourceOfInformation: [String]
   }

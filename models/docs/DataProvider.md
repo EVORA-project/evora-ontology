@@ -105,7 +105,7 @@ URI: [EVORAO:DataProvider](https://w3id.org/evorao/DataProvider)
 | [queryMethod](queryMethod.md) | 1 <br/> [String](String.md) | The http request method used to access the requested query url | direct |
 | [contentType](contentType.md) | 1 <br/> [String](String.md) | The content type of the response to queries | direct |
 | [providedEntityType](providedEntityType.md) | 1..* <br/> [Uri](Uri.md) | Identifies the type of entity (ontology class) described by the response to a... | direct |
-| [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
+| [weight](weight.md) | 1 _recommended_ <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [DataService](DataService.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [DataService](DataService.md) |
 | [endpointUrl](endpointUrl.md) | 1 <br/> [Uri](Uri.md) | The URL template that allows to get the content | [DataService](DataService.md) |
@@ -642,6 +642,7 @@ attributes:
     - Term
     range: integer
     required: true
+    recommended: true
     multivalued: false
   title:
     name: title

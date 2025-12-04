@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10787 */
+/* version: 1.0.10806 */
 
 
 /**
@@ -17,7 +17,7 @@ public abstract class Term extends Resource {
 
   private String title;
   private String description;
-  private int weight;
+  private Integer weight;
   private Vocabulary inVocabulary;
 
 }

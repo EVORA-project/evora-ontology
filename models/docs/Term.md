@@ -87,7 +87,7 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
           
     
     
-    Term --> "1" Vocabulary : inVocabulary
+    Term --> "0..1 _recommended_" Vocabulary : inVocabulary
     click Vocabulary href "../Vocabulary"
 
         
@@ -150,8 +150,8 @@ URI: [EVORAO:Term](https://w3id.org/evorao/Term)
 | ---  | --- | --- | --- |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | direct |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | direct |
-| [weight](weight.md) | 1 <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
-| [inVocabulary](inVocabulary.md) | 1 <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | direct |
+| [weight](weight.md) | 0..1 _recommended_ <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | direct |
+| [inVocabulary](inVocabulary.md) | 0..1 _recommended_ <br/> [Vocabulary](Vocabulary.md) | Terms belong to a specific vocabulary | direct |
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 | [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | [Resource](Resource.md) |
 | [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
@@ -298,7 +298,8 @@ slot_usage:
     - Term
     - DataProvider
     range: integer
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   inVocabulary:
     name: inVocabulary
@@ -313,7 +314,8 @@ slot_usage:
     domain_of:
     - Term
     range: Vocabulary
-    required: true
+    required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -403,7 +405,8 @@ slot_usage:
     - Term
     - DataProvider
     range: integer
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   inVocabulary:
     name: inVocabulary
@@ -418,7 +421,8 @@ slot_usage:
     domain_of:
     - Term
     range: Vocabulary
-    required: true
+    required: false
+    recommended: true
     multivalued: false
 attributes:
   title:
@@ -500,7 +504,8 @@ attributes:
     - Term
     - DataProvider
     range: integer
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   inVocabulary:
     name: inVocabulary
@@ -519,7 +524,8 @@ attributes:
     domain_of:
     - Term
     range: Vocabulary
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   keyword:
     name: keyword
