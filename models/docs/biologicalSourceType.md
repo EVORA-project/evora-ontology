@@ -3,7 +3,7 @@
 # Slot: biological source type (biologicalSourceType) 
 
 
-_Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!_
+_Indicates whether the biological material includes any part originally collected from a natural source (true) or is composed exclusively of synthetic parts (false)._
 
 
 
@@ -42,7 +42,7 @@ Alias: biologicalSourceType
 
 ## Comments
 
-* It makes sense that only recombinant biological materials can have a mixed material origin!
+* It makes sense that only recombinant biological materials can have a mixed material origin! Mixed origin (natural + synthetic) is represented by EVORAO:recombinantMaterial = true and EVORAO:biologicalSourceType = true, together with both EVORAO:NaturalPartOrigin and EVORAO:SyntheticPartOrigin instances linked via EVORAO:biologicalPartOrigin
 
 ## Identifier and Mapping Information
 
@@ -75,13 +75,15 @@ Alias: biologicalSourceType
 <details>
 ```yaml
 name: biologicalSourceType
-description: Defines if the current biological material is natural and was collected
-  or if it is a synthetic biological material. It makes sense that only recombinant
-  biological materials can have a mixed material origin!
+description: Indicates whether the biological material includes any part originally
+  collected from a natural source (true) or is composed exclusively of synthetic parts
+  (false).
 title: biological source type
 comments:
 - It makes sense that only recombinant biological materials can have a mixed material
-  origin!
+  origin! Mixed origin (natural + synthetic) is represented by EVORAO:recombinantMaterial
+  = true and EVORAO:biologicalSourceType = true, together with both EVORAO:NaturalPartOrigin
+  and EVORAO:SyntheticPartOrigin instances linked via EVORAO:biologicalPartOrigin
 from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: biologicalSourceType

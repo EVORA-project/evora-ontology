@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10769"
+version = "1.0.10773"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2025-11-14T10:48:21',
+     'generation_date': '2025-12-04T11:39:04',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -6022,18 +6022,29 @@ class BiologicalMaterialOrigin(Resource):
                                                               'only recombinant '
                                                               'biological materials '
                                                               'can have a mixed '
-                                                              'material origin!'],
-                                                 'description': 'Defines if the '
-                                                                'current biological '
-                                                                'material is natural '
-                                                                'and was collected or '
-                                                                'if it is a synthetic '
-                                                                'biological material. '
-                                                                'It makes sense that '
-                                                                'only recombinant '
-                                                                'biological materials '
-                                                                'can have a mixed '
-                                                                'material origin!',
+                                                              'material origin! Mixed '
+                                                              'origin (natural + '
+                                                              'synthetic) is '
+                                                              'represented by '
+                                                              'EVORAO:recombinantMaterial '
+                                                              '= true and '
+                                                              'EVORAO:biologicalSourceType '
+                                                              '= true, together with '
+                                                              'both '
+                                                              'EVORAO:NaturalPartOrigin '
+                                                              'and '
+                                                              'EVORAO:SyntheticPartOrigin '
+                                                              'instances linked via '
+                                                              'EVORAO:biologicalPartOrigin'],
+                                                 'description': 'Indicates whether the '
+                                                                'biological material '
+                                                                'includes any part '
+                                                                'originally collected '
+                                                                'from a natural source '
+                                                                '(true) or is composed '
+                                                                'exclusively of '
+                                                                'synthetic parts '
+                                                                '(false).',
                                                  'domain_of': ['BiologicalMaterialOrigin'],
                                                  'multivalued': False,
                                                  'name': 'biologicalSourceType',
@@ -6056,9 +6067,13 @@ class BiologicalMaterialOrigin(Resource):
     recombinantMaterial: bool = Field(default=False, title="recombinant material", description="""Indicates if this biological material is a recombinant biological material.""", json_schema_extra = { "linkml_meta": {'alias': 'recombinantMaterial',
          'domain_of': ['BiologicalMaterialOrigin'],
          'ifabsent': 'false'} })
-    biologicalSourceType: bool = Field(default=..., title="biological source type", description="""Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalSourceType',
+    biologicalSourceType: bool = Field(default=..., title="biological source type", description="""Indicates whether the biological material includes any part originally collected from a natural source (true) or is composed exclusively of synthetic parts (false).""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalSourceType',
          'comments': ['It makes sense that only recombinant biological materials can '
-                      'have a mixed material origin!'],
+                      'have a mixed material origin! Mixed origin (natural + '
+                      'synthetic) is represented by EVORAO:recombinantMaterial = true '
+                      'and EVORAO:biologicalSourceType = true, together with both '
+                      'EVORAO:NaturalPartOrigin and EVORAO:SyntheticPartOrigin '
+                      'instances linked via EVORAO:biologicalPartOrigin'],
          'domain_of': ['BiologicalMaterialOrigin']} })
     biologicalPartOrigin: list[BiologicalPartOrigin] = Field(default=..., title="biological part origin", description="""Details the origin of one or more unitary parts that make up the biological material. In the case of recombinant biological material, multiple parts may be involved.""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalPartOrigin',
          'comments': ['It can be multiple parts in case of a recombinant biological '

@@ -2497,7 +2497,7 @@ type BiologicalMaterialOrigin struct {
 	 */
 	RecombinantMaterial bool `json:"recombinantMaterial"`
 	/*
-	 * Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!
+	 * Indicates whether the biological material includes any part originally collected from a natural source (true) or is composed exclusively of synthetic parts (false).
 	 */
 	BiologicalSourceType bool `json:"biologicalSourceType"`
 	/*

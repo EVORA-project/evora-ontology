@@ -120,7 +120,7 @@ Name: EVORAO
 | [beforeDate](beforeDate.md) | Set to TRUE if a proxy date for the collection date is used |
 | [biologicalMaterialOrigin](biologicalMaterialOrigin.md) | Information about the origin of the biological material, essential for access... |
 | [biologicalPartOrigin](biologicalPartOrigin.md) | Details the origin of one or more unitary parts that make up the biological m... |
-| [biologicalSourceType](biologicalSourceType.md) | Defines if the current biological material is natural and was collected or if... |
+| [biologicalSourceType](biologicalSourceType.md) | Indicates whether the biological material includes any part originally collec... |
 | [biosafetyLevel](biosafetyLevel.md) | The level of biocontainment required or applied in the facility where the bio... |
 | [biosafetyRestrictions](biosafetyRestrictions.md) | Information about guidelines and regulations designed to prevent the exposure... |
 | [canBeUsedToProduceGmo](canBeUsedToProduceGmo.md) | Indicates if the current service or product can be used to produce GMO |

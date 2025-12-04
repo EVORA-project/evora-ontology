@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10769",
+  "version": "1.0.10773",
   "imports": [
     "linkml:types"
   ],
@@ -2138,10 +2138,10 @@
     {
       "name": "biologicalSourceType",
       "definition_uri": "https://w3id.org/evorao/biologicalSourceType",
-      "description": "Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!",
+      "description": "Indicates whether the biological material includes any part originally collected from a natural source (true) or is composed exclusively of synthetic parts (false).",
       "title": "biological source type",
       "comments": [
-        "It makes sense that only recombinant biological materials can have a mixed material origin!"
+        "It makes sense that only recombinant biological materials can have a mixed material origin! Mixed origin (natural + synthetic) is represented by EVORAO:recombinantMaterial = true and EVORAO:biologicalSourceType = true, together with both EVORAO:NaturalPartOrigin and EVORAO:SyntheticPartOrigin instances linked via EVORAO:biologicalPartOrigin"
       ],
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/biologicalSourceType",
@@ -7073,10 +7073,10 @@
     {
       "name": "BiologicalMaterialOrigin_biologicalSourceType",
       "definition_uri": "https://w3id.org/evorao/biologicalSourceType",
-      "description": "Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!",
+      "description": "Indicates whether the biological material includes any part originally collected from a natural source (true) or is composed exclusively of synthetic parts (false).",
       "title": "biological source type",
       "comments": [
-        "It makes sense that only recombinant biological materials can have a mixed material origin!"
+        "It makes sense that only recombinant biological materials can have a mixed material origin! Mixed origin (natural + synthetic) is represented by EVORAO:recombinantMaterial = true and EVORAO:biologicalSourceType = true, together with both EVORAO:NaturalPartOrigin and EVORAO:SyntheticPartOrigin instances linked via EVORAO:biologicalPartOrigin"
       ],
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "biologicalSourceType",
@@ -14605,9 +14605,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-11-14T09:48:41",
-  "source_file_size": 245452,
-  "generation_date": "2025-11-14T09:48:57",
+  "source_file_date": "2025-12-04T10:39:29",
+  "source_file_size": 245898,
+  "generation_date": "2025-12-04T10:39:47",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

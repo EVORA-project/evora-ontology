@@ -23,8 +23,8 @@ Alias: taxon
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Taxonomy](Taxonomy.md) | A structured representation of data about the classification and naming of bi... |  yes  |
-| [ClinicalGroup](ClinicalGroup.md) | A syndromic grouping of pathogens, based on typical disease manifestation, cl... |  yes  |
 | [PathogenIdentification](PathogenIdentification.md) | A collection of distinguishing information that enables the differentiation o... |  yes  |
+| [ClinicalGroup](ClinicalGroup.md) | A syndromic grouping of pathogens, based on typical disease manifestation, cl... |  yes  |
 
 
 

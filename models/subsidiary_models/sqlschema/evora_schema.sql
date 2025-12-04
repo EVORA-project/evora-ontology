@@ -434,7 +434,7 @@
 -- # Class: "BiologicalMaterialOrigin" Description: "Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol."
 --     * Slot: id Description: 
 --     * Slot: recombinantMaterial Description: Indicates if this biological material is a recombinant biological material.
---     * Slot: biologicalSourceType Description: Defines if the current biological material is natural and was collected or if it is a synthetic biological material. It makes sense that only recombinant biological materials can have a mixed material origin!
+--     * Slot: biologicalSourceType Description: Indicates whether the biological material includes any part originally collected from a natural source (true) or is composed exclusively of synthetic parts (false).
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
 --     * Slot: publisher_id Description: The entity responsible for making the resource available.
