@@ -297,7 +297,7 @@ URI: [EVORAO:Hybridoma](https://w3id.org/evorao/Hybridoma)
 | [hybridomaDescription](hybridomaDescription.md) | 1 <br/> [String](String.md) | The description of the hybridoma | direct |
 | [productionSystem](productionSystem.md) | 0..1 _recommended_ <br/> [String](String.md) | The biological and technological methods and processes used to produce the an... | [Antibody](Antibody.md) |
 | [antibodyPurifiedByAffinity](antibodyPurifiedByAffinity.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates whether or not if the antibody was purified by affinity | [Antibody](Antibody.md) |
-| [specificityDocumented](specificityDocumented.md) | 1 <br/> [Boolean](Boolean.md) | Boolean value indicating whether the specificity of the product has been form... | [Antibody](Antibody.md) |
+| [specificityDocumented](specificityDocumented.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Boolean value indicating whether the specificity of the product has been form... | [Antibody](Antibody.md) |
 | [antibodySpecificity](antibodySpecificity.md) | 0..1 <br/> [String](String.md) | Information describing the molecular or antigenic specificity of the antibody... | [Antibody](Antibody.md) |
 | [targetedAntigen](targetedAntigen.md) | 1 <br/> [String](String.md) | Specific molecular structure or epitope recognized and bound by an antibody | [Antibody](Antibody.md) |
 | [sequenceReference](sequenceReference.md) | * _recommended_ <br/> [SequenceReference](SequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... | [Antibody](Antibody.md) |
@@ -514,7 +514,8 @@ attributes:
     - Antibody
     - DetectionKit
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   antibodySpecificity:
     name: antibodySpecificity

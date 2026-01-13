@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10806",
+  "version": "1.0.10816",
   "imports": [
     "linkml:types"
   ],
@@ -3179,6 +3179,7 @@
       ],
       "range": "boolean",
       "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8430,6 +8431,7 @@
       "usage_slot_name": "specificityDocumented",
       "range": "boolean",
       "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9283,6 +9285,7 @@
       "usage_slot_name": "specificityDocumented",
       "range": "boolean",
       "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -14604,9 +14607,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2025-12-04T14:45:57",
-  "source_file_size": 246097,
-  "generation_date": "2025-12-04T14:46:12",
+  "source_file_date": "2026-01-13T08:59:39",
+  "source_file_size": 246146,
+  "generation_date": "2026-01-13T08:59:57",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

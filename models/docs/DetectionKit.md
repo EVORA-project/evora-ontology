@@ -282,7 +282,7 @@ URI: [EVORAO:DetectionKit](https://w3id.org/evorao/DetectionKit)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [standardOperatingProcedureFile](standardOperatingProcedureFile.md) | * <br/> [File](File.md) | The related standard operating procedure file (SOP) | direct |
-| [specificityDocumented](specificityDocumented.md) | 1 <br/> [Boolean](Boolean.md) | Boolean value indicating whether the specificity of the product has been form... | direct |
+| [specificityDocumented](specificityDocumented.md) | 1 _recommended_ <br/> [Boolean](Boolean.md) | Boolean value indicating whether the specificity of the product has been form... | direct |
 | [specificity](specificity.md) | 0..1 <br/> [String](String.md) | Details on the ability of a detection kit to correctly identify negative resu... | direct |
 | [targetedRegion](targetedRegion.md) | 0..1 <br/> [String](String.md) | The specific area or sequence within the target analyte that the detection ki... | direct |
 | [iataClassification](iataClassification.md) | 1 <br/> [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
@@ -520,6 +520,7 @@ attributes:
     - Antibody
     range: boolean
     required: true
+    recommended: true
     multivalued: false
   specificity:
     name: specificity

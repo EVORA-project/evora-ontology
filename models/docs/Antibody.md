@@ -299,7 +299,7 @@ URI: [EVORAO:Antibody](https://w3id.org/evorao/Antibody)
 | ---  | --- | --- | --- |
 | [productionSystem](productionSystem.md) | 0..1 _recommended_ <br/> [String](String.md) | The biological and technological methods and processes used to produce the an... | direct |
 | [antibodyPurifiedByAffinity](antibodyPurifiedByAffinity.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates whether or not if the antibody was purified by affinity | direct |
-| [specificityDocumented](specificityDocumented.md) | 1 <br/> [Boolean](Boolean.md) | Boolean value indicating whether the specificity of the product has been form... | direct |
+| [specificityDocumented](specificityDocumented.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Boolean value indicating whether the specificity of the product has been form... | direct |
 | [antibodySpecificity](antibodySpecificity.md) | 0..1 <br/> [String](String.md) | Information describing the molecular or antigenic specificity of the antibody... | direct |
 | [targetedAntigen](targetedAntigen.md) | 1 <br/> [String](String.md) | Specific molecular structure or epitope recognized and bound by an antibody | direct |
 | [sequenceReference](sequenceReference.md) | * _recommended_ <br/> [SequenceReference](SequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... | direct |
@@ -451,7 +451,8 @@ slot_usage:
     - Antibody
     - DetectionKit
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   antibodySpecificity:
     name: antibodySpecificity
@@ -572,7 +573,8 @@ slot_usage:
     - Antibody
     - DetectionKit
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   antibodySpecificity:
     name: antibodySpecificity
@@ -685,7 +687,8 @@ attributes:
     - Antibody
     - DetectionKit
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   antibodySpecificity:
     name: antibodySpecificity
