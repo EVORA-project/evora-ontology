@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10816"
+version = "1.0.10825"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-13T09:59:11',
+     'generation_date': '2026-01-13T11:18:44',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -8456,11 +8456,14 @@ class Hybridoma(Antibody):
                                                  'multivalued': False,
                                                  'name': 'hybridomaDescription',
                                                  'range': 'string',
-                                                 'required': True,
+                                                 'recommended': True,
+                                                 'required': False,
                                                  'title': 'hybridoma description'}},
          'title': 'Hybridoma'})
 
-    hybridomaDescription: str = Field(default=..., title="hybridoma description", description="""The description of the hybridoma.""", json_schema_extra = { "linkml_meta": {'alias': 'hybridomaDescription', 'domain_of': ['Hybridoma']} })
+    hybridomaDescription: Optional[str] = Field(default=None, title="hybridoma description", description="""The description of the hybridoma.""", json_schema_extra = { "linkml_meta": {'alias': 'hybridomaDescription',
+         'domain_of': ['Hybridoma'],
+         'recommended': True} })
     productionSystem: Optional[str] = Field(default=None, title="production system", description="""The biological and technological methods and processes used to produce the antibody.""", json_schema_extra = { "linkml_meta": {'alias': 'productionSystem', 'domain_of': ['Antibody'], 'recommended': True} })
     antibodyPurifiedByAffinity: Optional[bool] = Field(default=None, title="antibody purified by affinity", description="""Indicates whether or not if the antibody was purified by affinity.""", json_schema_extra = { "linkml_meta": {'alias': 'antibodyPurifiedByAffinity',
          'domain_of': ['Antibody'],

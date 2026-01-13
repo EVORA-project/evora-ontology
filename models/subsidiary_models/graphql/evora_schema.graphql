@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10816
+# version: 1.0.10825
 type AlternateName
   {
     keyword: [String]
@@ -700,7 +700,7 @@ type Hybridoma
     antibodyType: String
     antibodyCharacterizationMethod: [String]
     antibodyCharacterizationObservation: String
-    hybridomaDescription: String!
+    hybridomaDescription: String
   }
 
 type IataClassification

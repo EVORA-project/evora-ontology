@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10816
+version: 1.0.10825
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1974,7 +1974,8 @@ slots:
     domain_of:
     - Hybridoma
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   biologicalMaterialOrigin:
     description: Information about the origin of the biological material, essential
@@ -5992,7 +5993,8 @@ classes:
         domain_of:
         - Hybridoma
         range: string
-        required: true
+        required: false
+        recommended: true
         multivalued: false
   Protein:
     description: A protein as a derived product from a pathogen.
@@ -7766,4 +7768,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-01-13T09:59:11'
+generation_date: '2026-01-13T11:18:44'

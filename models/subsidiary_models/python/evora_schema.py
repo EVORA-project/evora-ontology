@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-13T09:00:02
+# Generation date: 2026-01-13T10:19:31
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10816"
+version = "1.0.10825"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1877,13 +1877,11 @@ class Hybridoma(Antibody):
     storageConditions: str = None
     specificityDocumented: Union[bool, Bool] = None
     targetedAntigen: str = None
-    hybridomaDescription: str = None
     availability: str = "on request"
+    hybridomaDescription: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.hybridomaDescription):
-            self.MissingRequiredField("hybridomaDescription")
-        if not isinstance(self.hybridomaDescription, str):
+        if self.hybridomaDescription is not None and not isinstance(self.hybridomaDescription, str):
             self.hybridomaDescription = str(self.hybridomaDescription)
 
         super().__post_init__(**kwargs)
@@ -3346,7 +3344,7 @@ slots.antibodyCharacterizationObservation = Slot(uri=EVORAO.antibodyCharacteriza
                    model_uri=EVORAO.antibodyCharacterizationObservation, domain=None, range=Optional[str])
 
 slots.hybridomaDescription = Slot(uri=EVORAO.hybridomaDescription, name="hybridomaDescription", curie=EVORAO.curie('hybridomaDescription'),
-                   model_uri=EVORAO.hybridomaDescription, domain=None, range=str)
+                   model_uri=EVORAO.hybridomaDescription, domain=None, range=Optional[str])
 
 slots.biologicalMaterialOrigin = Slot(uri=EVORAO.biologicalMaterialOrigin, name="biologicalMaterialOrigin", curie=EVORAO.curie('biologicalMaterialOrigin'),
                    model_uri=EVORAO.biologicalMaterialOrigin, domain=None, range=Union[dict, BiologicalMaterialOrigin])
@@ -4033,7 +4031,7 @@ slots.Antibody_antibodyCharacterizationObservation = Slot(uri=EVORAO.antibodyCha
                    model_uri=EVORAO.Antibody_antibodyCharacterizationObservation, domain=Antibody, range=Optional[str])
 
 slots.Hybridoma_hybridomaDescription = Slot(uri=EVORAO.hybridomaDescription, name="Hybridoma_hybridomaDescription", curie=EVORAO.curie('hybridomaDescription'),
-                   model_uri=EVORAO.Hybridoma_hybridomaDescription, domain=Hybridoma, range=str)
+                   model_uri=EVORAO.Hybridoma_hybridomaDescription, domain=Hybridoma, range=Optional[str])
 
 slots.Protein_biologicalMaterialOrigin = Slot(uri=EVORAO.biologicalMaterialOrigin, name="Protein_biologicalMaterialOrigin", curie=EVORAO.curie('biologicalMaterialOrigin'),
                    model_uri=EVORAO.Protein_biologicalMaterialOrigin, domain=Protein, range=Union[dict, BiologicalMaterialOrigin])

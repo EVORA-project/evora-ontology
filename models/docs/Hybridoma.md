@@ -294,7 +294,7 @@ URI: [EVORAO:Hybridoma](https://w3id.org/evorao/Hybridoma)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [hybridomaDescription](hybridomaDescription.md) | 1 <br/> [String](String.md) | The description of the hybridoma | direct |
+| [hybridomaDescription](hybridomaDescription.md) | 0..1 _recommended_ <br/> [String](String.md) | The description of the hybridoma | direct |
 | [productionSystem](productionSystem.md) | 0..1 _recommended_ <br/> [String](String.md) | The biological and technological methods and processes used to produce the an... | [Antibody](Antibody.md) |
 | [antibodyPurifiedByAffinity](antibodyPurifiedByAffinity.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates whether or not if the antibody was purified by affinity | [Antibody](Antibody.md) |
 | [specificityDocumented](specificityDocumented.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Boolean value indicating whether the specificity of the product has been form... | [Antibody](Antibody.md) |
@@ -422,7 +422,8 @@ slot_usage:
     domain_of:
     - Hybridoma
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -456,7 +457,8 @@ slot_usage:
     domain_of:
     - Hybridoma
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
 attributes:
   hybridomaDescription:
@@ -470,7 +472,8 @@ attributes:
     domain_of:
     - Hybridoma
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   productionSystem:
     name: productionSystem

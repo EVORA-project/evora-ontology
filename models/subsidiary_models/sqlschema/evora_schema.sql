@@ -3875,7 +3875,7 @@ CREATE TABLE "Antibody" (
 );
 CREATE TABLE "Hybridoma" (
 	id INTEGER NOT NULL, 
-	"hybridomaDescription" TEXT NOT NULL, 
+	"hybridomaDescription" TEXT, 
 	"productionSystem" TEXT, 
 	"antibodyPurifiedByAffinity" BOOLEAN, 
 	"specificityDocumented" BOOLEAN, 

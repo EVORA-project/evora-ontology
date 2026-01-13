@@ -22,19 +22,19 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
-| [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
-| [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
 | [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
-| [ResearchInfrastructure](ResearchInfrastructure.md) | A research infrastructure (RI) |  no  |
 | [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
-| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [Person](Person.md) | An individual |  no  |
 | [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
+| [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
 | [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
+| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
+| [ContactPoint](ContactPoint.md) | Entity serving as focal point of information |  yes  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
+| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [Person](Person.md) | An individual |  no  |
+| [ResearchInfrastructure](ResearchInfrastructure.md) | A research infrastructure (RI) |  no  |
+| [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
 
 
 

@@ -34,7 +34,7 @@ Alias: hybridomaDescription
 
 * Range: [String](String.md)
 
-* Required: True
+* Recommended: True
 
 
 
@@ -79,7 +79,8 @@ alias: hybridomaDescription
 domain_of:
 - Hybridoma
 range: string
-required: true
+required: false
+recommended: true
 multivalued: false
 
 ```

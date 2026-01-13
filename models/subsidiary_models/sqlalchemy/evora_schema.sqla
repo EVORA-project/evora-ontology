@@ -13185,7 +13185,7 @@ class Hybridoma(Antibody):
     __tablename__ = 'Hybridoma'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    hybridomaDescription = Column(Text(), nullable=False )
+    hybridomaDescription = Column(Text())
     productionSystem = Column(Text())
     antibodyPurifiedByAffinity = Column(Boolean())
     specificityDocumented = Column(Boolean())
