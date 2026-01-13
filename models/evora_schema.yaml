@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10825
+version: 1.0.10834
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1897,7 +1897,7 @@ slots:
     - Antibody
     - DetectionKit
     range: boolean
-    required: true
+    required: false
     recommended: true
     multivalued: false
   antibodySpecificity:
@@ -6410,7 +6410,8 @@ classes:
         domain_of:
         - DetectionKit
         range: boolean
-        required: true
+        required: false
+        recommended: true
         multivalued: false
       specificity:
         description: Details on the ability of a detection kit to correctly identify
@@ -7768,4 +7769,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-01-13T11:18:44'
+generation_date: '2026-01-13T14:07:46'

@@ -12783,7 +12783,7 @@ class DetectionKit(Product):
     __tablename__ = 'DetectionKit'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    specificityDocumented = Column(Boolean(), nullable=False )
+    specificityDocumented = Column(Boolean())
     specificity = Column(Text())
     targetedRegion = Column(Text())
     shippingConditions = Column(Text(), nullable=False )

@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10825
+# version: 1.0.10834
 type AlternateName
   {
     keyword: [String]
@@ -65,7 +65,7 @@ type Antibody
     preparationTechnique: String
     productionSystem: String
     antibodyPurifiedByAffinity: Boolean
-    specificityDocumented: Boolean!
+    specificityDocumented: Boolean
     antibodySpecificity: String
     targetedAntigen: String!
     sequenceReference: [SequenceReference]
@@ -467,7 +467,7 @@ type DetectionKit
     usageRestrictions: String
     preparationTechnique: String
     standardOperatingProcedureFile: [File]
-    specificityDocumented: Boolean!
+    specificityDocumented: Boolean
     specificity: String
     targetedRegion: String
   }
@@ -693,7 +693,7 @@ type Hybridoma
     preparationTechnique: String
     productionSystem: String
     antibodyPurifiedByAffinity: Boolean
-    specificityDocumented: Boolean!
+    specificityDocumented: Boolean
     antibodySpecificity: String
     targetedAntigen: String!
     sequenceReference: [SequenceReference]

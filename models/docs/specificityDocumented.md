@@ -22,9 +22,9 @@ Alias: specificityDocumented
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  yes  |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  yes  |
 
 
 
@@ -36,7 +36,7 @@ Alias: specificityDocumented
 
 * Range: [Boolean](Boolean.md)
 
-* Required: True
+* Recommended: True
 
 
 
@@ -83,7 +83,7 @@ domain_of:
 - Antibody
 - DetectionKit
 range: boolean
-required: true
+required: false
 recommended: true
 multivalued: false
 

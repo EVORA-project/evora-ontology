@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10825"
+version = "1.0.10834"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-13T11:18:44',
+     'generation_date': '2026-01-13T14:07:46',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -9882,7 +9882,8 @@ class DetectionKit(Product):
                                                   'multivalued': False,
                                                   'name': 'specificityDocumented',
                                                   'range': 'boolean',
-                                                  'required': True,
+                                                  'recommended': True,
+                                                  'required': False,
                                                   'title': 'specificity documented'},
                         'standardOperatingProcedureFile': {'description': 'The related '
                                                                           'standard '
@@ -9913,7 +9914,7 @@ class DetectionKit(Product):
          'title': 'Detection Kit'})
 
     standardOperatingProcedureFile: Optional[list[File]] = Field(default=None, title="standard operating procedure file", description="""The related standard operating procedure file (SOP).""", json_schema_extra = { "linkml_meta": {'alias': 'standardOperatingProcedureFile', 'domain_of': ['DetectionKit']} })
-    specificityDocumented: bool = Field(default=..., title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented.""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented',
+    specificityDocumented: Optional[bool] = Field(default=None, title="specificity documented", description="""Boolean value indicating whether the specificity of the product has been formally documented.""", json_schema_extra = { "linkml_meta": {'alias': 'specificityDocumented',
          'domain_of': ['DetectionKit', 'Antibody'],
          'recommended': True} })
     specificity: Optional[str] = Field(default=None, title="specificity", description="""Details on the ability of a detection kit to correctly identify negative results, distinguishing between the target analyte and other substances without cross-reacting.""", json_schema_extra = { "linkml_meta": {'alias': 'specificity', 'domain_of': ['DetectionKit']} })

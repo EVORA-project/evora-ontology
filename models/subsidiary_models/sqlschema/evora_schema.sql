@@ -4034,7 +4034,7 @@ CREATE TABLE "NucleicAcid" (
 );
 CREATE TABLE "DetectionKit" (
 	id INTEGER NOT NULL, 
-	"specificityDocumented" BOOLEAN NOT NULL, 
+	"specificityDocumented" BOOLEAN, 
 	specificity TEXT, 
 	"targetedRegion" TEXT, 
 	"shippingConditions" TEXT NOT NULL, 

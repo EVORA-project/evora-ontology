@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-13T10:19:31
+# Generation date: 2026-01-13T13:08:33
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10825"
+version = "1.0.10834"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1803,11 +1803,11 @@ class Antibody(Product):
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
-    specificityDocumented: Union[bool, Bool] = None
     targetedAntigen: str = None
     availability: str = "on request"
     productionSystem: Optional[str] = None
     antibodyPurifiedByAffinity: Optional[Union[bool, Bool]] = None
+    specificityDocumented: Optional[Union[bool, Bool]] = None
     antibodySpecificity: Optional[str] = None
     sequenceReference: Optional[Union[Union[dict, SequenceReference], list[Union[dict, SequenceReference]]]] = empty_list()
     antibodyType: Optional[str] = None
@@ -1815,11 +1815,6 @@ class Antibody(Product):
     antibodyCharacterizationObservation: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.specificityDocumented):
-            self.MissingRequiredField("specificityDocumented")
-        if not isinstance(self.specificityDocumented, Bool):
-            self.specificityDocumented = Bool(self.specificityDocumented)
-
         if self._is_empty(self.targetedAntigen):
             self.MissingRequiredField("targetedAntigen")
         if not isinstance(self.targetedAntigen, str):
@@ -1830,6 +1825,9 @@ class Antibody(Product):
 
         if self.antibodyPurifiedByAffinity is not None and not isinstance(self.antibodyPurifiedByAffinity, Bool):
             self.antibodyPurifiedByAffinity = Bool(self.antibodyPurifiedByAffinity)
+
+        if self.specificityDocumented is not None and not isinstance(self.specificityDocumented, Bool):
+            self.specificityDocumented = Bool(self.specificityDocumented)
 
         if self.antibodySpecificity is not None and not isinstance(self.antibodySpecificity, str):
             self.antibodySpecificity = str(self.antibodySpecificity)
@@ -1875,7 +1873,6 @@ class Hybridoma(Antibody):
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
-    specificityDocumented: Union[bool, Bool] = None
     targetedAntigen: str = None
     availability: str = "on request"
     hybridomaDescription: Optional[str] = None
@@ -2119,19 +2116,17 @@ class DetectionKit(Product):
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
-    specificityDocumented: Union[bool, Bool] = None
     availability: str = "on request"
     standardOperatingProcedureFile: Optional[Union[Union[dict, "File"], list[Union[dict, "File"]]]] = empty_list()
+    specificityDocumented: Optional[Union[bool, Bool]] = None
     specificity: Optional[str] = None
     targetedRegion: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.specificityDocumented):
-            self.MissingRequiredField("specificityDocumented")
-        if not isinstance(self.specificityDocumented, Bool):
-            self.specificityDocumented = Bool(self.specificityDocumented)
-
         self._normalize_inlined_as_dict(slot_name="standardOperatingProcedureFile", slot_type=File, key_name="name", keyed=False)
+
+        if self.specificityDocumented is not None and not isinstance(self.specificityDocumented, Bool):
+            self.specificityDocumented = Bool(self.specificityDocumented)
 
         if self.specificity is not None and not isinstance(self.specificity, str):
             self.specificity = str(self.specificity)
@@ -3326,7 +3321,7 @@ slots.antibodyPurifiedByAffinity = Slot(uri=EVORAO.antibodyPurifiedByAffinity, n
                    model_uri=EVORAO.antibodyPurifiedByAffinity, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.specificityDocumented = Slot(uri=EVORAO.specificityDocumented, name="specificityDocumented", curie=EVORAO.curie('specificityDocumented'),
-                   model_uri=EVORAO.specificityDocumented, domain=None, range=Union[bool, Bool])
+                   model_uri=EVORAO.specificityDocumented, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.antibodySpecificity = Slot(uri=EVORAO.antibodySpecificity, name="antibodySpecificity", curie=EVORAO.curie('antibodySpecificity'),
                    model_uri=EVORAO.antibodySpecificity, domain=None, range=Optional[str])
@@ -4010,7 +4005,7 @@ slots.Antibody_antibodyPurifiedByAffinity = Slot(uri=EVORAO.antibodyPurifiedByAf
                    model_uri=EVORAO.Antibody_antibodyPurifiedByAffinity, domain=Antibody, range=Optional[Union[bool, Bool]])
 
 slots.Antibody_specificityDocumented = Slot(uri=EVORAO.specificityDocumented, name="Antibody_specificityDocumented", curie=EVORAO.curie('specificityDocumented'),
-                   model_uri=EVORAO.Antibody_specificityDocumented, domain=Antibody, range=Union[bool, Bool])
+                   model_uri=EVORAO.Antibody_specificityDocumented, domain=Antibody, range=Optional[Union[bool, Bool]])
 
 slots.Antibody_antibodySpecificity = Slot(uri=EVORAO.antibodySpecificity, name="Antibody_antibodySpecificity", curie=EVORAO.curie('antibodySpecificity'),
                    model_uri=EVORAO.Antibody_antibodySpecificity, domain=Antibody, range=Optional[str])
@@ -4121,7 +4116,7 @@ slots.DetectionKit_standardOperatingProcedureFile = Slot(uri=EVORAO.standardOper
                    model_uri=EVORAO.DetectionKit_standardOperatingProcedureFile, domain=DetectionKit, range=Optional[Union[Union[dict, "File"], list[Union[dict, "File"]]]])
 
 slots.DetectionKit_specificityDocumented = Slot(uri=EVORAO.specificityDocumented, name="DetectionKit_specificityDocumented", curie=EVORAO.curie('specificityDocumented'),
-                   model_uri=EVORAO.DetectionKit_specificityDocumented, domain=DetectionKit, range=Union[bool, Bool])
+                   model_uri=EVORAO.DetectionKit_specificityDocumented, domain=DetectionKit, range=Optional[Union[bool, Bool]])
 
 slots.DetectionKit_specificity = Slot(uri=EVORAO.specificity, name="DetectionKit_specificity", curie=EVORAO.curie('specificity'),
                    model_uri=EVORAO.DetectionKit_specificity, domain=DetectionKit, range=Optional[str])

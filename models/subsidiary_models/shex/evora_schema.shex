@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10825
+# version: 1.0.10834
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -64,7 +64,7 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <Product> ] ? ;
              <productionSystem> @linkml:String ? ;
              <antibodyPurifiedByAffinity> @linkml:Boolean ? ;
-             <specificityDocumented> @linkml:Boolean ;
+             <specificityDocumented> @linkml:Boolean ? ;
              <antibodySpecificity> @linkml:String ? ;
              <targetedAntigen> @linkml:String ;
              <sequenceReference> @<SequenceReference> * ;
@@ -276,7 +276,7 @@ linkml:Sparqlpath xsd:string
     (  $<DetectionKit_tes> (  &<Product_tes> ;
           rdf:type [ <Product> ] ? ;
           <standardOperatingProcedureFile> @<File> * ;
-          <specificityDocumented> @linkml:Boolean ;
+          <specificityDocumented> @linkml:Boolean ? ;
           <specificity> @linkml:String ? ;
           <targetedRegion> @linkml:String ?
        ) ;
