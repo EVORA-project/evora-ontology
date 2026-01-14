@@ -34,8 +34,6 @@ Alias: inclusionBodiesType
 
 * Range: [String](String.md)
 
-* Multivalued: True
-
 
 
 
@@ -82,7 +80,7 @@ domain_of:
 - Protein
 range: string
 required: false
-multivalued: true
+multivalued: false
 equals_string_in:
 - Denatured
 - Refolded

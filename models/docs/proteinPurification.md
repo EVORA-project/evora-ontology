@@ -34,7 +34,7 @@ Alias: proteinPurification
 
 * Range: [String](String.md)
 
-* Multivalued: True
+* Recommended: True
 
 
 
@@ -83,7 +83,8 @@ domain_of:
 - Protein
 range: string
 required: false
-multivalued: true
+recommended: true
+multivalued: false
 equals_string_in:
 - Greater than 95 percent
 - Unpurified expression host lysate or partly purified protein

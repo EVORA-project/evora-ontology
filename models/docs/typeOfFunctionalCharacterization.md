@@ -36,6 +36,8 @@ Alias: typeOfFunctionalCharacterization
 
 * Multivalued: True
 
+* Recommended: True
+
 
 
 
@@ -84,6 +86,7 @@ domain_of:
 - Protein
 range: string
 required: false
+recommended: true
 multivalued: true
 equals_string_in:
 - Enzymatic

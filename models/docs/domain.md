@@ -34,8 +34,6 @@ Alias: domain
 
 * Range: [String](String.md)
 
-* Multivalued: True
-
 
 
 
@@ -85,7 +83,7 @@ domain_of:
 - Protein
 range: string
 required: false
-multivalued: true
+multivalued: false
 
 ```
 </details>

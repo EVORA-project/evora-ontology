@@ -334,15 +334,15 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
 | [relatedPdb](relatedPdb.md) | * <br/> [PdbReference](PdbReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database | direct |
 | [specialFeature](specialFeature.md) | * <br/> [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... | direct |
 | [tagSequence](tagSequence.md) | 0..1 _recommended_ <br/> [TagSequence](TagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... | direct |
-| [domain](domain.md) | * <br/> [String](String.md) | A distinct structural and functional unit within the protein, often capable o... | direct |
-| [expressedAs](expressedAs.md) | * <br/> [String](String.md) | Refers to the form in which the protein is produced and manifested in a biolo... | direct |
-| [inclusionBodiesType](inclusionBodiesType.md) | * <br/> [String](String.md) | Refers to the state of aggregated proteins within a cell | direct |
-| [expressionSystem](expressionSystem.md) | * <br/> [String](String.md) | The host organism or cellular environment used to produce a protein from a sp... | direct |
-| [functionalCharacterization](functionalCharacterization.md) | * <br/> [String](String.md) | The process of determining and describing the specific biological activities ... | direct |
-| [functionalAndTechnicalDescription](functionalAndTechnicalDescription.md) | * <br/> [String](String.md) | Detailed information about the specific biological functions, mechanisms of a... | direct |
-| [proteinPurification](proteinPurification.md) | * <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | direct |
-| [tagStatusOfTheSolubilizedProtein](tagStatusOfTheSolubilizedProtein.md) | * <br/> [String](String.md) | Indicates the presence and condition of a tag on the protein after solubiliza... | direct |
-| [typeOfFunctionalCharacterization](typeOfFunctionalCharacterization.md) | * <br/> [String](String.md) | Refers to the classification of a protein based on the specific type of funct... | direct |
+| [domain](domain.md) | 0..1 <br/> [String](String.md) | A distinct structural and functional unit within the protein, often capable o... | direct |
+| [expressedAs](expressedAs.md) | 0..1 <br/> [String](String.md) | Refers to the form in which the protein is produced and manifested in a biolo... | direct |
+| [inclusionBodiesType](inclusionBodiesType.md) | 0..1 <br/> [String](String.md) | Refers to the state of aggregated proteins within a cell | direct |
+| [expressionSystem](expressionSystem.md) | 0..1 _recommended_ <br/> [String](String.md) | The host organism or cellular environment used to produce a protein from a sp... | direct |
+| [functionalCharacterization](functionalCharacterization.md) | 0..1 _recommended_ <br/> [String](String.md) | The process of determining and describing the specific biological activities ... | direct |
+| [functionalAndTechnicalDescription](functionalAndTechnicalDescription.md) | 0..1 <br/> [String](String.md) | Detailed information about the specific biological functions, mechanisms of a... | direct |
+| [proteinPurification](proteinPurification.md) | 0..1 _recommended_ <br/> [String](String.md) | Refers to the degree of purity achieved for a protein sample | direct |
+| [tagStatusOfTheSolubilizedProtein](tagStatusOfTheSolubilizedProtein.md) | 0..1 <br/> [String](String.md) | Indicates the presence and condition of a tag on the protein after solubiliza... | direct |
+| [typeOfFunctionalCharacterization](typeOfFunctionalCharacterization.md) | * _recommended_ <br/> [String](String.md) | Refers to the classification of a protein based on the specific type of funct... | direct |
 | [iataClassification](iataClassification.md) | 1 <br/> [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
 | [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
@@ -558,7 +558,7 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   expressedAs:
     name: expressedAs
     description: Refers to the form in which the protein is produced and manifested
@@ -572,7 +572,7 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   inclusionBodiesType:
     name: inclusionBodiesType
     description: Refers to the state of aggregated proteins within a cell. Possible
@@ -584,7 +584,7 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   expressionSystem:
     name: expressionSystem
     description: The host organism or cellular environment used to produce a protein
@@ -598,7 +598,8 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   functionalCharacterization:
     name: functionalCharacterization
     description: The process of determining and describing the specific biological
@@ -610,7 +611,8 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   functionalAndTechnicalDescription:
     name: functionalAndTechnicalDescription
     description: Detailed information about the specific biological functions, mechanisms
@@ -623,7 +625,7 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   proteinPurification:
     name: proteinPurification
     description: Refers to the degree of purity achieved for a protein sample. Possible
@@ -635,7 +637,8 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   tagStatusOfTheSolubilizedProtein:
     name: tagStatusOfTheSolubilizedProtein
     description: Indicates the presence and condition of a tag on the protein after
@@ -647,7 +650,7 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   typeOfFunctionalCharacterization:
     name: typeOfFunctionalCharacterization
     description: Refers to the classification of a protein based on the specific type
@@ -660,6 +663,7 @@ slot_usage:
     - Protein
     range: string
     required: false
+    recommended: true
     multivalued: true
 
 ```
@@ -777,7 +781,7 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   expressedAs:
     name: expressedAs
     description: Refers to the form in which the protein is produced and manifested
@@ -791,7 +795,7 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   inclusionBodiesType:
     name: inclusionBodiesType
     description: Refers to the state of aggregated proteins within a cell. Possible
@@ -803,7 +807,7 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   expressionSystem:
     name: expressionSystem
     description: The host organism or cellular environment used to produce a protein
@@ -817,7 +821,8 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   functionalCharacterization:
     name: functionalCharacterization
     description: The process of determining and describing the specific biological
@@ -829,7 +834,8 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   functionalAndTechnicalDescription:
     name: functionalAndTechnicalDescription
     description: Detailed information about the specific biological functions, mechanisms
@@ -842,7 +848,7 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   proteinPurification:
     name: proteinPurification
     description: Refers to the degree of purity achieved for a protein sample. Possible
@@ -854,7 +860,8 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   tagStatusOfTheSolubilizedProtein:
     name: tagStatusOfTheSolubilizedProtein
     description: Indicates the presence and condition of a tag on the protein after
@@ -866,7 +873,7 @@ slot_usage:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   typeOfFunctionalCharacterization:
     name: typeOfFunctionalCharacterization
     description: Refers to the classification of a protein based on the specific type
@@ -879,6 +886,7 @@ slot_usage:
     - Protein
     range: string
     required: false
+    recommended: true
     multivalued: true
 attributes:
   biologicalMaterialOrigin:
@@ -999,7 +1007,7 @@ attributes:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   expressedAs:
     name: expressedAs
     description: Refers to the form in which the protein is produced and manifested
@@ -1017,7 +1025,7 @@ attributes:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
     equals_string_in:
     - Soluble
     - Inclusion bodies
@@ -1036,7 +1044,7 @@ attributes:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
     equals_string_in:
     - Denatured
     - Refolded
@@ -1057,7 +1065,8 @@ attributes:
     - Protein
     range: string
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
     equals_string_in:
     - E. coli
     - Insect cells
@@ -1077,7 +1086,8 @@ attributes:
     - Protein
     range: string
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
     equals_string_in:
     - Functionally characterized
     - No functional characterization
@@ -1097,7 +1107,7 @@ attributes:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   proteinPurification:
     name: proteinPurification
     description: Refers to the degree of purity achieved for a protein sample. Possible
@@ -1113,7 +1123,8 @@ attributes:
     - Protein
     range: string
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
     equals_string_in:
     - Greater than 95 percent
     - Unpurified expression host lysate or partly purified protein
@@ -1132,7 +1143,7 @@ attributes:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   typeOfFunctionalCharacterization:
     name: typeOfFunctionalCharacterization
     description: Refers to the classification of a protein based on the specific type
@@ -1149,6 +1160,7 @@ attributes:
     - Protein
     range: string
     required: false
+    recommended: true
     multivalued: true
     equals_string_in:
     - Enzymatic

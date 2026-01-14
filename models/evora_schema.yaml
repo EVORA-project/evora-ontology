@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10923
+version: 1.0.10936
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -2056,7 +2056,7 @@ slots:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   expressedAs:
     description: Refers to the form in which the protein is produced and manifested
       in a biological system. Possible values include 'Soluble' (proteins that are
@@ -2070,7 +2070,7 @@ slots:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
     equals_string_in:
     - Soluble
     - Inclusion bodies
@@ -2085,7 +2085,7 @@ slots:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
     equals_string_in:
     - Denatured
     - Refolded
@@ -2102,7 +2102,8 @@ slots:
     - Protein
     range: string
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
     equals_string_in:
     - E. coli
     - Insect cells
@@ -2118,7 +2119,8 @@ slots:
     - Protein
     range: string
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
     equals_string_in:
     - Functionally characterized
     - No functional characterization
@@ -2134,7 +2136,7 @@ slots:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   proteinPurification:
     description: Refers to the degree of purity achieved for a protein sample. Possible
       values include '>95%' (the protein is highly purified, with more than 95% purity)
@@ -2146,7 +2148,8 @@ slots:
     - Protein
     range: string
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
     equals_string_in:
     - Greater than 95 percent
     - Unpurified expression host lysate or partly purified protein
@@ -2161,7 +2164,7 @@ slots:
     - Protein
     range: string
     required: false
-    multivalued: true
+    multivalued: false
   typeOfFunctionalCharacterization:
     description: Refers to the classification of a protein based on the specific type
       of functional analysis performed to determine its biological activities and
@@ -2174,6 +2177,7 @@ slots:
     - Protein
     range: string
     required: false
+    recommended: true
     multivalued: true
     equals_string_in:
     - Enzymatic
@@ -6130,7 +6134,7 @@ classes:
         - Protein
         range: string
         required: false
-        multivalued: true
+        multivalued: false
       expressedAs:
         description: Refers to the form in which the protein is produced and manifested
           in a biological system. Possible values include 'Soluble' (proteins that
@@ -6143,7 +6147,7 @@ classes:
         - Protein
         range: string
         required: false
-        multivalued: true
+        multivalued: false
       inclusionBodiesType:
         description: Refers to the state of aggregated proteins within a cell. Possible
           values include 'Denatured' (proteins are in an unfolded, inactive state)
@@ -6154,7 +6158,7 @@ classes:
         - Protein
         range: string
         required: false
-        multivalued: true
+        multivalued: false
       expressionSystem:
         description: The host organism or cellular environment used to produce a protein
           from a specific gene. Possible values include 'E. coli' (bacterial system),
@@ -6167,7 +6171,8 @@ classes:
         - Protein
         range: string
         required: false
-        multivalued: true
+        recommended: true
+        multivalued: false
       functionalCharacterization:
         description: The process of determining and describing the specific biological
           activities and roles of a protein. Possible values include 'Functionally
@@ -6179,7 +6184,8 @@ classes:
         - Protein
         range: string
         required: false
-        multivalued: true
+        recommended: true
+        multivalued: false
       functionalAndTechnicalDescription:
         description: Detailed information about the specific biological functions,
           mechanisms of action, and technical attributes of a protein. This includes
@@ -6191,7 +6197,7 @@ classes:
         - Protein
         range: string
         required: false
-        multivalued: true
+        multivalued: false
       proteinPurification:
         description: Refers to the degree of purity achieved for a protein sample.
           Possible values include '>95%' (the protein is highly purified, with more
@@ -6203,7 +6209,8 @@ classes:
         - Protein
         range: string
         required: false
-        multivalued: true
+        recommended: true
+        multivalued: false
       tagStatusOfTheSolubilizedProtein:
         description: Indicates the presence and condition of a tag on the protein
           after solubilization. Possible values include 'Uncleaved Tag' (the tag is
@@ -6214,7 +6221,7 @@ classes:
         - Protein
         range: string
         required: false
-        multivalued: true
+        multivalued: false
       typeOfFunctionalCharacterization:
         description: Refers to the classification of a protein based on the specific
           type of functional analysis performed to determine its biological activities
@@ -6226,6 +6233,7 @@ classes:
         - Protein
         range: string
         required: false
+        recommended: true
         multivalued: true
   NucleicAcid:
     description: Nucleic acid related to a pathogen. It can be extracted or synthetic.
@@ -7824,4 +7832,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-01-14T16:57:40'
+generation_date: '2026-01-14T17:03:30'

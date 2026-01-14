@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10923"
+version = "1.0.10936"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-14T16:57:40',
+     'generation_date': '2026-01-14T17:03:30',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -8787,7 +8787,7 @@ class Protein(Product):
                                                   "contributes to the protein's "
                                                   'overall function.',
                                    'domain_of': ['Protein'],
-                                   'multivalued': True,
+                                   'multivalued': False,
                                    'name': 'domain',
                                    'range': 'string',
                                    'required': False,
@@ -8805,7 +8805,7 @@ class Protein(Product):
                                                        'insoluble and form within the '
                                                        'cell).',
                                         'domain_of': ['Protein'],
-                                        'multivalued': True,
+                                        'multivalued': False,
                                         'name': 'expressedAs',
                                         'range': 'string',
                                         'required': False,
@@ -8822,9 +8822,10 @@ class Protein(Product):
                                                             "'Mammalian cells' "
                                                             '(mammalian cell lines).',
                                              'domain_of': ['Protein'],
-                                             'multivalued': True,
+                                             'multivalued': False,
                                              'name': 'expressionSystem',
                                              'range': 'string',
+                                             'recommended': True,
                                              'required': False,
                                              'title': 'expression system'},
                         'functionalAndTechnicalDescription': {'description': 'Detailed '
@@ -8867,7 +8868,7 @@ class Protein(Product):
                                                                              'other '
                                                                              'molecules.',
                                                               'domain_of': ['Protein'],
-                                                              'multivalued': True,
+                                                              'multivalued': False,
                                                               'name': 'functionalAndTechnicalDescription',
                                                               'range': 'string',
                                                               'required': False,
@@ -8899,9 +8900,10 @@ class Protein(Product):
                                                                       'identified or '
                                                                       'described).',
                                                        'domain_of': ['Protein'],
-                                                       'multivalued': True,
+                                                       'multivalued': False,
                                                        'name': 'functionalCharacterization',
                                                        'range': 'string',
+                                                       'recommended': True,
                                                        'required': False,
                                                        'title': 'functional '
                                                                 'characterization'},
@@ -8918,7 +8920,7 @@ class Protein(Product):
                                                                'their functional, '
                                                                'active conformation).',
                                                 'domain_of': ['Protein'],
-                                                'multivalued': True,
+                                                'multivalued': False,
                                                 'name': 'inclusionBodiesType',
                                                 'range': 'string',
                                                 'required': False,
@@ -8940,9 +8942,10 @@ class Protein(Product):
                                                                'lysate or only '
                                                                'partially purified).',
                                                 'domain_of': ['Protein'],
-                                                'multivalued': True,
+                                                'multivalued': False,
                                                 'name': 'proteinPurification',
                                                 'range': 'string',
+                                                'recommended': True,
                                                 'required': False,
                                                 'title': 'protein purification'},
                         'relatedPdb': {'close_mappings': ['wdp:P638'],
@@ -9052,7 +9055,7 @@ class Protein(Product):
                                                                             'have a '
                                                                             'tag).',
                                                              'domain_of': ['Protein'],
-                                                             'multivalued': True,
+                                                             'multivalued': False,
                                                              'name': 'tagStatusOfTheSolubilizedProtein',
                                                              'range': 'string',
                                                              'required': False,
@@ -9104,6 +9107,7 @@ class Protein(Product):
                                                              'multivalued': True,
                                                              'name': 'typeOfFunctionalCharacterization',
                                                              'range': 'string',
+                                                             'recommended': True,
                                                              'required': False,
                                                              'title': 'type of '
                                                                       'functional '
@@ -9139,34 +9143,38 @@ class Protein(Product):
          'domain_of': ['Protein', 'NucleicAcid'],
          'exact_mappings': ['bao:0002796'],
          'recommended': True} })
-    domain: Optional[list[str]] = Field(default=None, title="domain", description="""A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function.""", json_schema_extra = { "linkml_meta": {'alias': 'domain',
+    domain: Optional[str] = Field(default=None, title="domain", description="""A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function.""", json_schema_extra = { "linkml_meta": {'alias': 'domain',
          'close_mappings': ['uniprotrdfs:domain'],
          'domain_of': ['Protein']} })
-    expressedAs: Optional[list[Literal["Soluble", "Inclusion bodies"]]] = Field(default=None, title="expressed as", description="""Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell).""", json_schema_extra = { "linkml_meta": {'alias': 'expressedAs',
+    expressedAs: Optional[Literal["Soluble", "Inclusion bodies"]] = Field(default=None, title="expressed as", description="""Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell).""", json_schema_extra = { "linkml_meta": {'alias': 'expressedAs',
          'close_mappings': ['apollo:00000102'],
          'domain_of': ['Protein'],
          'equals_string_in': ['Soluble', 'Inclusion bodies']} })
-    inclusionBodiesType: Optional[list[Literal["Denatured", "Refolded"]]] = Field(default=None, title="inclusion bodies type", description="""Refers to the state of aggregated proteins within a cell. Possible values include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded' (proteins have been processed to regain their functional, active conformation).""", json_schema_extra = { "linkml_meta": {'alias': 'inclusionBodiesType',
+    inclusionBodiesType: Optional[Literal["Denatured", "Refolded"]] = Field(default=None, title="inclusion bodies type", description="""Refers to the state of aggregated proteins within a cell. Possible values include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded' (proteins have been processed to regain their functional, active conformation).""", json_schema_extra = { "linkml_meta": {'alias': 'inclusionBodiesType',
          'domain_of': ['Protein'],
          'equals_string_in': ['Denatured', 'Refolded']} })
-    expressionSystem: Optional[list[Literal["E. coli", "Insect cells", "Mammalian cells"]]] = Field(default=None, title="expression system", description="""The host organism or cellular environment used to produce a protein from a specific gene. Possible values include 'E. coli' (bacterial system), 'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines).""", json_schema_extra = { "linkml_meta": {'alias': 'expressionSystem',
+    expressionSystem: Optional[Literal["E. coli", "Insect cells", "Mammalian cells"]] = Field(default=None, title="expression system", description="""The host organism or cellular environment used to produce a protein from a specific gene. Possible values include 'E. coli' (bacterial system), 'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines).""", json_schema_extra = { "linkml_meta": {'alias': 'expressionSystem',
          'close_mappings': ['ro:0002206'],
          'domain_of': ['Protein'],
-         'equals_string_in': ['E. coli', 'Insect cells', 'Mammalian cells']} })
-    functionalCharacterization: Optional[list[Literal["Functionally characterized", "No functional characterization"]]] = Field(default=None, title="functional characterization", description="""The process of determining and describing the specific biological activities and roles of a protein. Possible values include 'Functionally characterized' (the protein's functions have been identified and described) and 'No functional characterization' (the protein's functions have not been identified or described).""", json_schema_extra = { "linkml_meta": {'alias': 'functionalCharacterization',
+         'equals_string_in': ['E. coli', 'Insect cells', 'Mammalian cells'],
+         'recommended': True} })
+    functionalCharacterization: Optional[Literal["Functionally characterized", "No functional characterization"]] = Field(default=None, title="functional characterization", description="""The process of determining and describing the specific biological activities and roles of a protein. Possible values include 'Functionally characterized' (the protein's functions have been identified and described) and 'No functional characterization' (the protein's functions have not been identified or described).""", json_schema_extra = { "linkml_meta": {'alias': 'functionalCharacterization',
          'domain_of': ['Protein'],
          'equals_string_in': ['Functionally characterized',
-                              'No functional characterization']} })
-    functionalAndTechnicalDescription: Optional[list[str]] = Field(default=None, title="functional and technical description", description="""Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.""", json_schema_extra = { "linkml_meta": {'alias': 'functionalAndTechnicalDescription', 'domain_of': ['Protein']} })
-    proteinPurification: Optional[list[Literal["Greater than 95 percent", "Unpurified expression host lysate or partly purified protein"]]] = Field(default=None, title="protein purification", description="""Refers to the degree of purity achieved for a protein sample. Possible values include '>95%' (the protein is highly purified, with more than 95% purity) and 'Unpurified expression host lysate or partly purified protein' (the protein is either unpurified and present in the host cell lysate or only partially purified).""", json_schema_extra = { "linkml_meta": {'alias': 'proteinPurification',
+                              'No functional characterization'],
+         'recommended': True} })
+    functionalAndTechnicalDescription: Optional[str] = Field(default=None, title="functional and technical description", description="""Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.""", json_schema_extra = { "linkml_meta": {'alias': 'functionalAndTechnicalDescription', 'domain_of': ['Protein']} })
+    proteinPurification: Optional[Literal["Greater than 95 percent", "Unpurified expression host lysate or partly purified protein"]] = Field(default=None, title="protein purification", description="""Refers to the degree of purity achieved for a protein sample. Possible values include '>95%' (the protein is highly purified, with more than 95% purity) and 'Unpurified expression host lysate or partly purified protein' (the protein is either unpurified and present in the host cell lysate or only partially purified).""", json_schema_extra = { "linkml_meta": {'alias': 'proteinPurification',
          'domain_of': ['Protein'],
          'equals_string_in': ['Greater than 95 percent',
                               'Unpurified expression host lysate or partly purified '
-                              'protein']} })
-    tagStatusOfTheSolubilizedProtein: Optional[list[str]] = Field(default=None, title="tag status of the solubilized protein", description="""Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag).""", json_schema_extra = { "linkml_meta": {'alias': 'tagStatusOfTheSolubilizedProtein', 'domain_of': ['Protein']} })
+                              'protein'],
+         'recommended': True} })
+    tagStatusOfTheSolubilizedProtein: Optional[str] = Field(default=None, title="tag status of the solubilized protein", description="""Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag).""", json_schema_extra = { "linkml_meta": {'alias': 'tagStatusOfTheSolubilizedProtein', 'domain_of': ['Protein']} })
     typeOfFunctionalCharacterization: Optional[list[Literal["Enzymatic", "Antigenic"]]] = Field(default=None, title="type of functional Characterization", description="""Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include 'Enzymatic' (the protein has been characterized for its enzyme activity) and 'Antigenic' (the protein has been characterized for its ability to elicit an immune response).""", json_schema_extra = { "linkml_meta": {'alias': 'typeOfFunctionalCharacterization',
          'domain_of': ['Protein'],
-         'equals_string_in': ['Enzymatic', 'Antigenic']} })
+         'equals_string_in': ['Enzymatic', 'Antigenic'],
+         'recommended': True} })
     iataClassification: IataClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product.""", json_schema_extra = { "linkml_meta": {'alias': 'iataClassification',
          'close_mappings': ['wdp:P238', 'schema:iataCode'],
          'domain_of': ['Product']} })

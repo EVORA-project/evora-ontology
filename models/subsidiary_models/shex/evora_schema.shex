@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10923
+# version: 1.0.10936
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -709,14 +709,14 @@ linkml:Sparqlpath xsd:string
           <relatedPdb> @<PdbReference> * ;
           <specialFeature> @<SpecialFeature> * ;
           <tagSequence> @<TagSequence> ? ;
-          <domain> @linkml:String * ;
-          <expressedAs> @linkml:String * ;
-          <inclusionBodiesType> @linkml:String * ;
-          <expressionSystem> @linkml:String * ;
-          <functionalCharacterization> @linkml:String * ;
-          <functionalAndTechnicalDescription> @linkml:String * ;
-          <proteinPurification> @linkml:String * ;
-          <tagStatusOfTheSolubilizedProtein> @linkml:String * ;
+          <domain> @linkml:String ? ;
+          <expressedAs> @linkml:String ? ;
+          <inclusionBodiesType> @linkml:String ? ;
+          <expressionSystem> @linkml:String ? ;
+          <functionalCharacterization> @linkml:String ? ;
+          <functionalAndTechnicalDescription> @linkml:String ? ;
+          <proteinPurification> @linkml:String ? ;
+          <tagStatusOfTheSolubilizedProtein> @linkml:String ? ;
           <typeOfFunctionalCharacterization> @linkml:String *
        ) ;
        rdf:type [ <Protein> ] ?

@@ -4707,150 +4707,6 @@ class ProteinSpecialFeature(Base):
     
 
 
-class ProteinDomain(Base):
-    """
-    
-    """
-    __tablename__ = 'Protein_domain'
-
-    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    domain = Column(Text(), primary_key=True)
-    
-
-    def __repr__(self):
-        return f"Protein_domain(Protein_id={self.Protein_id},domain={self.domain},)"
-
-
-
-    
-
-
-class ProteinExpressedAs(Base):
-    """
-    
-    """
-    __tablename__ = 'Protein_expressedAs'
-
-    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    expressedAs = Column(Text(), primary_key=True)
-    
-
-    def __repr__(self):
-        return f"Protein_expressedAs(Protein_id={self.Protein_id},expressedAs={self.expressedAs},)"
-
-
-
-    
-
-
-class ProteinInclusionBodiesType(Base):
-    """
-    
-    """
-    __tablename__ = 'Protein_inclusionBodiesType'
-
-    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    inclusionBodiesType = Column(Text(), primary_key=True)
-    
-
-    def __repr__(self):
-        return f"Protein_inclusionBodiesType(Protein_id={self.Protein_id},inclusionBodiesType={self.inclusionBodiesType},)"
-
-
-
-    
-
-
-class ProteinExpressionSystem(Base):
-    """
-    
-    """
-    __tablename__ = 'Protein_expressionSystem'
-
-    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    expressionSystem = Column(Text(), primary_key=True)
-    
-
-    def __repr__(self):
-        return f"Protein_expressionSystem(Protein_id={self.Protein_id},expressionSystem={self.expressionSystem},)"
-
-
-
-    
-
-
-class ProteinFunctionalCharacterization(Base):
-    """
-    
-    """
-    __tablename__ = 'Protein_functionalCharacterization'
-
-    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    functionalCharacterization = Column(Text(), primary_key=True)
-    
-
-    def __repr__(self):
-        return f"Protein_functionalCharacterization(Protein_id={self.Protein_id},functionalCharacterization={self.functionalCharacterization},)"
-
-
-
-    
-
-
-class ProteinFunctionalAndTechnicalDescription(Base):
-    """
-    
-    """
-    __tablename__ = 'Protein_functionalAndTechnicalDescription'
-
-    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    functionalAndTechnicalDescription = Column(Text(), primary_key=True)
-    
-
-    def __repr__(self):
-        return f"Protein_functionalAndTechnicalDescription(Protein_id={self.Protein_id},functionalAndTechnicalDescription={self.functionalAndTechnicalDescription},)"
-
-
-
-    
-
-
-class ProteinProteinPurification(Base):
-    """
-    
-    """
-    __tablename__ = 'Protein_proteinPurification'
-
-    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    proteinPurification = Column(Text(), primary_key=True)
-    
-
-    def __repr__(self):
-        return f"Protein_proteinPurification(Protein_id={self.Protein_id},proteinPurification={self.proteinPurification},)"
-
-
-
-    
-
-
-class ProteinTagStatusOfTheSolubilizedProtein(Base):
-    """
-    
-    """
-    __tablename__ = 'Protein_tagStatusOfTheSolubilizedProtein'
-
-    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    tagStatusOfTheSolubilizedProtein = Column(Text(), primary_key=True)
-    
-
-    def __repr__(self):
-        return f"Protein_tagStatusOfTheSolubilizedProtein(Protein_id={self.Protein_id},tagStatusOfTheSolubilizedProtein={self.tagStatusOfTheSolubilizedProtein},)"
-
-
-
-    
-
-
 class ProteinTypeOfFunctionalCharacterization(Base):
     """
     
@@ -12440,6 +12296,14 @@ class Protein(Product):
     __tablename__ = 'Protein'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
+    domain = Column(Text())
+    expressedAs = Column(Text())
+    inclusionBodiesType = Column(Text())
+    expressionSystem = Column(Text())
+    functionalCharacterization = Column(Text())
+    functionalAndTechnicalDescription = Column(Text())
+    proteinPurification = Column(Text())
+    tagStatusOfTheSolubilizedProtein = Column(Text())
     shippingConditions = Column(Text(), nullable=False )
     storageConditions = Column(Text(), nullable=False )
     thirdPartyDistributionConsent = Column(Boolean())
@@ -12497,46 +12361,6 @@ class Protein(Product):
     
     # ManyToMany
     specialFeature = relationship( "SpecialFeature", secondary="Protein_specialFeature")
-    
-    
-    domain_rel = relationship( "ProteinDomain" )
-    domain = association_proxy("domain_rel", "domain",
-                                  creator=lambda x_: ProteinDomain(domain=x_))
-    
-    
-    expressedAs_rel = relationship( "ProteinExpressedAs" )
-    expressedAs = association_proxy("expressedAs_rel", "expressedAs",
-                                  creator=lambda x_: ProteinExpressedAs(expressedAs=x_))
-    
-    
-    inclusionBodiesType_rel = relationship( "ProteinInclusionBodiesType" )
-    inclusionBodiesType = association_proxy("inclusionBodiesType_rel", "inclusionBodiesType",
-                                  creator=lambda x_: ProteinInclusionBodiesType(inclusionBodiesType=x_))
-    
-    
-    expressionSystem_rel = relationship( "ProteinExpressionSystem" )
-    expressionSystem = association_proxy("expressionSystem_rel", "expressionSystem",
-                                  creator=lambda x_: ProteinExpressionSystem(expressionSystem=x_))
-    
-    
-    functionalCharacterization_rel = relationship( "ProteinFunctionalCharacterization" )
-    functionalCharacterization = association_proxy("functionalCharacterization_rel", "functionalCharacterization",
-                                  creator=lambda x_: ProteinFunctionalCharacterization(functionalCharacterization=x_))
-    
-    
-    functionalAndTechnicalDescription_rel = relationship( "ProteinFunctionalAndTechnicalDescription" )
-    functionalAndTechnicalDescription = association_proxy("functionalAndTechnicalDescription_rel", "functionalAndTechnicalDescription",
-                                  creator=lambda x_: ProteinFunctionalAndTechnicalDescription(functionalAndTechnicalDescription=x_))
-    
-    
-    proteinPurification_rel = relationship( "ProteinProteinPurification" )
-    proteinPurification = association_proxy("proteinPurification_rel", "proteinPurification",
-                                  creator=lambda x_: ProteinProteinPurification(proteinPurification=x_))
-    
-    
-    tagStatusOfTheSolubilizedProtein_rel = relationship( "ProteinTagStatusOfTheSolubilizedProtein" )
-    tagStatusOfTheSolubilizedProtein = association_proxy("tagStatusOfTheSolubilizedProtein_rel", "tagStatusOfTheSolubilizedProtein",
-                                  creator=lambda x_: ProteinTagStatusOfTheSolubilizedProtein(tagStatusOfTheSolubilizedProtein=x_))
     
     
     typeOfFunctionalCharacterization_rel = relationship( "ProteinTypeOfFunctionalCharacterization" )
@@ -12600,7 +12424,7 @@ class Protein(Product):
     
 
     def __repr__(self):
-        return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},tagSequence_id={self.tagSequence_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
+        return f"Protein(id={self.id},domain={self.domain},expressedAs={self.expressedAs},inclusionBodiesType={self.inclusionBodiesType},expressionSystem={self.expressionSystem},functionalCharacterization={self.functionalCharacterization},functionalAndTechnicalDescription={self.functionalAndTechnicalDescription},proteinPurification={self.proteinPurification},tagStatusOfTheSolubilizedProtein={self.tagStatusOfTheSolubilizedProtein},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},tagSequence_id={self.tagSequence_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 

@@ -34,7 +34,7 @@ Alias: expressionSystem
 
 * Range: [String](String.md)
 
-* Multivalued: True
+* Recommended: True
 
 
 
@@ -85,7 +85,8 @@ domain_of:
 - Protein
 range: string
 required: false
-multivalued: true
+recommended: true
+multivalued: false
 equals_string_in:
 - E. coli
 - Insect cells

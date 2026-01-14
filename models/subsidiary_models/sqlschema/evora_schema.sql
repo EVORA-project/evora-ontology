@@ -654,6 +654,14 @@
 --     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Protein" Description: "A protein as a derived product from a pathogen."
 --     * Slot: id Description: 
+--     * Slot: domain Description: A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function.
+--     * Slot: expressedAs Description: Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell).
+--     * Slot: inclusionBodiesType Description: Refers to the state of aggregated proteins within a cell. Possible values include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded' (proteins have been processed to regain their functional, active conformation).
+--     * Slot: expressionSystem Description: The host organism or cellular environment used to produce a protein from a specific gene. Possible values include 'E. coli' (bacterial system), 'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines).
+--     * Slot: functionalCharacterization Description: The process of determining and describing the specific biological activities and roles of a protein. Possible values include 'Functionally characterized' (the protein's functions have been identified and described) and 'No functional characterization' (the protein's functions have not been identified or described).
+--     * Slot: functionalAndTechnicalDescription Description: Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.
+--     * Slot: proteinPurification Description: Refers to the degree of purity achieved for a protein sample. Possible values include '>95%' (the protein is highly purified, with more than 95% purity) and 'Unpurified expression host lysate or partly purified protein' (the protein is either unpurified and present in the host cell lysate or only partially purified).
+--     * Slot: tagStatusOfTheSolubilizedProtein Description: Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag).
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
@@ -2034,30 +2042,6 @@
 -- # Class: "Protein_specialFeature" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: specialFeature_id Description: Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...
--- # Class: "Protein_domain" Description: ""
---     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: domain Description: A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function.
--- # Class: "Protein_expressedAs" Description: ""
---     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: expressedAs Description: Refers to the form in which the protein is produced and manifested in a biological system. Possible values include 'Soluble' (proteins that are dissolved in the cellular or extracellular fluid) and 'Inclusion bodies' (aggregated proteins that are insoluble and form within the cell).
--- # Class: "Protein_inclusionBodiesType" Description: ""
---     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: inclusionBodiesType Description: Refers to the state of aggregated proteins within a cell. Possible values include 'Denatured' (proteins are in an unfolded, inactive state) and 'Refolded' (proteins have been processed to regain their functional, active conformation).
--- # Class: "Protein_expressionSystem" Description: ""
---     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: expressionSystem Description: The host organism or cellular environment used to produce a protein from a specific gene. Possible values include 'E. coli' (bacterial system), 'Insect cells' (using baculovirus vectors), and 'Mammalian cells' (mammalian cell lines).
--- # Class: "Protein_functionalCharacterization" Description: ""
---     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: functionalCharacterization Description: The process of determining and describing the specific biological activities and roles of a protein. Possible values include 'Functionally characterized' (the protein's functions have been identified and described) and 'No functional characterization' (the protein's functions have not been identified or described).
--- # Class: "Protein_functionalAndTechnicalDescription" Description: ""
---     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: functionalAndTechnicalDescription Description: Detailed information about the specific biological functions, mechanisms of action, and technical attributes of a protein. This includes how the protein interacts within biological systems, its role in cellular processes, and any relevant technical details such as structure, activity, and interactions with other molecules.
--- # Class: "Protein_proteinPurification" Description: ""
---     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: proteinPurification Description: Refers to the degree of purity achieved for a protein sample. Possible values include '>95%' (the protein is highly purified, with more than 95% purity) and 'Unpurified expression host lysate or partly purified protein' (the protein is either unpurified and present in the host cell lysate or only partially purified).
--- # Class: "Protein_tagStatusOfTheSolubilizedProtein" Description: ""
---     * Slot: Protein_id Description: Autocreated FK slot
---     * Slot: tagStatusOfTheSolubilizedProtein Description: Indicates the presence and condition of a tag on the protein after solubilization. Possible values include 'Uncleaved Tag' (the tag is still attached to the protein), 'Cleaved Tag' (the tag has been removed from the protein), and 'No Tag' (the protein does not have a tag).
 -- # Class: "Protein_typeOfFunctionalCharacterization" Description: ""
 --     * Slot: Protein_id Description: Autocreated FK slot
 --     * Slot: typeOfFunctionalCharacterization Description: Refers to the classification of a protein based on the specific type of functional analysis performed to determine its biological activities and roles. Possible values include 'Enzymatic' (the protein has been characterized for its enzyme activity) and 'Antigenic' (the protein has been characterized for its ability to elicit an immune response).
@@ -3926,6 +3910,14 @@ CREATE TABLE "Hybridoma" (
 );
 CREATE TABLE "Protein" (
 	id INTEGER NOT NULL, 
+	domain TEXT, 
+	"expressedAs" TEXT, 
+	"inclusionBodiesType" TEXT, 
+	"expressionSystem" TEXT, 
+	"functionalCharacterization" TEXT, 
+	"functionalAndTechnicalDescription" TEXT, 
+	"proteinPurification" TEXT, 
+	"tagStatusOfTheSolubilizedProtein" TEXT, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 
@@ -6201,54 +6193,6 @@ CREATE TABLE "Protein_specialFeature" (
 	PRIMARY KEY ("Protein_id", "specialFeature_id"), 
 	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id), 
 	FOREIGN KEY("specialFeature_id") REFERENCES "SpecialFeature" (id)
-);
-CREATE TABLE "Protein_domain" (
-	"Protein_id" INTEGER, 
-	domain TEXT, 
-	PRIMARY KEY ("Protein_id", domain), 
-	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
-);
-CREATE TABLE "Protein_expressedAs" (
-	"Protein_id" INTEGER, 
-	"expressedAs" TEXT, 
-	PRIMARY KEY ("Protein_id", "expressedAs"), 
-	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
-);
-CREATE TABLE "Protein_inclusionBodiesType" (
-	"Protein_id" INTEGER, 
-	"inclusionBodiesType" TEXT, 
-	PRIMARY KEY ("Protein_id", "inclusionBodiesType"), 
-	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
-);
-CREATE TABLE "Protein_expressionSystem" (
-	"Protein_id" INTEGER, 
-	"expressionSystem" TEXT, 
-	PRIMARY KEY ("Protein_id", "expressionSystem"), 
-	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
-);
-CREATE TABLE "Protein_functionalCharacterization" (
-	"Protein_id" INTEGER, 
-	"functionalCharacterization" TEXT, 
-	PRIMARY KEY ("Protein_id", "functionalCharacterization"), 
-	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
-);
-CREATE TABLE "Protein_functionalAndTechnicalDescription" (
-	"Protein_id" INTEGER, 
-	"functionalAndTechnicalDescription" TEXT, 
-	PRIMARY KEY ("Protein_id", "functionalAndTechnicalDescription"), 
-	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
-);
-CREATE TABLE "Protein_proteinPurification" (
-	"Protein_id" INTEGER, 
-	"proteinPurification" TEXT, 
-	PRIMARY KEY ("Protein_id", "proteinPurification"), 
-	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
-);
-CREATE TABLE "Protein_tagStatusOfTheSolubilizedProtein" (
-	"Protein_id" INTEGER, 
-	"tagStatusOfTheSolubilizedProtein" TEXT, 
-	PRIMARY KEY ("Protein_id", "tagStatusOfTheSolubilizedProtein"), 
-	FOREIGN KEY("Protein_id") REFERENCES "Protein" (id)
 );
 CREATE TABLE "Protein_typeOfFunctionalCharacterization" (
 	"Protein_id" INTEGER, 

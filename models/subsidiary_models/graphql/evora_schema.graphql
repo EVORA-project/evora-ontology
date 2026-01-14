@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10923
+# version: 1.0.10936
 type AlternateName
   {
     keyword: [String]
@@ -1340,14 +1340,14 @@ type Protein
     relatedPdb: [PdbReference]
     specialFeature: [SpecialFeature]
     tagSequence: TagSequence
-    domain: [String]
-    expressedAs: [String]
-    inclusionBodiesType: [String]
-    expressionSystem: [String]
-    functionalCharacterization: [String]
-    functionalAndTechnicalDescription: [String]
-    proteinPurification: [String]
-    tagStatusOfTheSolubilizedProtein: [String]
+    domain: String
+    expressedAs: String
+    inclusionBodiesType: String
+    expressionSystem: String
+    functionalCharacterization: String
+    functionalAndTechnicalDescription: String
+    proteinPurification: String
+    tagStatusOfTheSolubilizedProtein: String
     typeOfFunctionalCharacterization: [String]
   }
 

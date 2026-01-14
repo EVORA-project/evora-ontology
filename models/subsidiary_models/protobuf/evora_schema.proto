@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.10923
+// version: 1.0.10936
 // List of other names for things.
 message AlternateName
  {
@@ -1168,14 +1168,14 @@ message Protein
  repeated  pdbReference relatedPdb = 0
  repeated  specialFeature specialFeature = 0
   tagSequence tagSequence = 0
- repeated  string domain = 0
- repeated  string expressedAs = 0
- repeated  string inclusionBodiesType = 0
- repeated  string expressionSystem = 0
- repeated  string functionalCharacterization = 0
- repeated  string functionalAndTechnicalDescription = 0
- repeated  string proteinPurification = 0
- repeated  string tagStatusOfTheSolubilizedProtein = 0
+  string domain = 0
+  string expressedAs = 0
+  string inclusionBodiesType = 0
+  string expressionSystem = 0
+  string functionalCharacterization = 0
+  string functionalAndTechnicalDescription = 0
+  string proteinPurification = 0
+  string tagStatusOfTheSolubilizedProtein = 0
  repeated  string typeOfFunctionalCharacterization = 0
  }
 // The protozoan as a biological material.

@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-14T15:58:27
+# Generation date: 2026-01-14T16:04:17
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10923"
+version = "1.0.10936"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1907,14 +1907,14 @@ class Protein(Product):
     relatedPdb: Optional[Union[Union[dict, PdbReference], list[Union[dict, PdbReference]]]] = empty_list()
     specialFeature: Optional[Union[Union[dict, SpecialFeature], list[Union[dict, SpecialFeature]]]] = empty_list()
     tagSequence: Optional[Union[dict, TagSequence]] = None
-    domain: Optional[Union[str, list[str]]] = empty_list()
-    expressedAs: Optional[Union[str, list[str]]] = empty_list()
-    inclusionBodiesType: Optional[Union[str, list[str]]] = empty_list()
-    expressionSystem: Optional[Union[str, list[str]]] = empty_list()
-    functionalCharacterization: Optional[Union[str, list[str]]] = empty_list()
-    functionalAndTechnicalDescription: Optional[Union[str, list[str]]] = empty_list()
-    proteinPurification: Optional[Union[str, list[str]]] = empty_list()
-    tagStatusOfTheSolubilizedProtein: Optional[Union[str, list[str]]] = empty_list()
+    domain: Optional[str] = None
+    expressedAs: Optional[str] = None
+    inclusionBodiesType: Optional[str] = None
+    expressionSystem: Optional[str] = None
+    functionalCharacterization: Optional[str] = None
+    functionalAndTechnicalDescription: Optional[str] = None
+    proteinPurification: Optional[str] = None
+    tagStatusOfTheSolubilizedProtein: Optional[str] = None
     typeOfFunctionalCharacterization: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1936,37 +1936,29 @@ class Protein(Product):
         if self.tagSequence is not None and not isinstance(self.tagSequence, TagSequence):
             self.tagSequence = TagSequence(**as_dict(self.tagSequence))
 
-        if not isinstance(self.domain, list):
-            self.domain = [self.domain] if self.domain is not None else []
-        self.domain = [v if isinstance(v, str) else str(v) for v in self.domain]
+        if self.domain is not None and not isinstance(self.domain, str):
+            self.domain = str(self.domain)
 
-        if not isinstance(self.expressedAs, list):
-            self.expressedAs = [self.expressedAs] if self.expressedAs is not None else []
-        self.expressedAs = [v if isinstance(v, str) else str(v) for v in self.expressedAs]
+        if self.expressedAs is not None and not isinstance(self.expressedAs, str):
+            self.expressedAs = str(self.expressedAs)
 
-        if not isinstance(self.inclusionBodiesType, list):
-            self.inclusionBodiesType = [self.inclusionBodiesType] if self.inclusionBodiesType is not None else []
-        self.inclusionBodiesType = [v if isinstance(v, str) else str(v) for v in self.inclusionBodiesType]
+        if self.inclusionBodiesType is not None and not isinstance(self.inclusionBodiesType, str):
+            self.inclusionBodiesType = str(self.inclusionBodiesType)
 
-        if not isinstance(self.expressionSystem, list):
-            self.expressionSystem = [self.expressionSystem] if self.expressionSystem is not None else []
-        self.expressionSystem = [v if isinstance(v, str) else str(v) for v in self.expressionSystem]
+        if self.expressionSystem is not None and not isinstance(self.expressionSystem, str):
+            self.expressionSystem = str(self.expressionSystem)
 
-        if not isinstance(self.functionalCharacterization, list):
-            self.functionalCharacterization = [self.functionalCharacterization] if self.functionalCharacterization is not None else []
-        self.functionalCharacterization = [v if isinstance(v, str) else str(v) for v in self.functionalCharacterization]
+        if self.functionalCharacterization is not None and not isinstance(self.functionalCharacterization, str):
+            self.functionalCharacterization = str(self.functionalCharacterization)
 
-        if not isinstance(self.functionalAndTechnicalDescription, list):
-            self.functionalAndTechnicalDescription = [self.functionalAndTechnicalDescription] if self.functionalAndTechnicalDescription is not None else []
-        self.functionalAndTechnicalDescription = [v if isinstance(v, str) else str(v) for v in self.functionalAndTechnicalDescription]
+        if self.functionalAndTechnicalDescription is not None and not isinstance(self.functionalAndTechnicalDescription, str):
+            self.functionalAndTechnicalDescription = str(self.functionalAndTechnicalDescription)
 
-        if not isinstance(self.proteinPurification, list):
-            self.proteinPurification = [self.proteinPurification] if self.proteinPurification is not None else []
-        self.proteinPurification = [v if isinstance(v, str) else str(v) for v in self.proteinPurification]
+        if self.proteinPurification is not None and not isinstance(self.proteinPurification, str):
+            self.proteinPurification = str(self.proteinPurification)
 
-        if not isinstance(self.tagStatusOfTheSolubilizedProtein, list):
-            self.tagStatusOfTheSolubilizedProtein = [self.tagStatusOfTheSolubilizedProtein] if self.tagStatusOfTheSolubilizedProtein is not None else []
-        self.tagStatusOfTheSolubilizedProtein = [v if isinstance(v, str) else str(v) for v in self.tagStatusOfTheSolubilizedProtein]
+        if self.tagStatusOfTheSolubilizedProtein is not None and not isinstance(self.tagStatusOfTheSolubilizedProtein, str):
+            self.tagStatusOfTheSolubilizedProtein = str(self.tagStatusOfTheSolubilizedProtein)
 
         if not isinstance(self.typeOfFunctionalCharacterization, list):
             self.typeOfFunctionalCharacterization = [self.typeOfFunctionalCharacterization] if self.typeOfFunctionalCharacterization is not None else []
@@ -3332,28 +3324,28 @@ slots.tagSequence = Slot(uri=EVORAO.tagSequence, name="tagSequence", curie=EVORA
                    model_uri=EVORAO.tagSequence, domain=None, range=Optional[Union[dict, TagSequence]])
 
 slots.domain = Slot(uri=EVORAO.domain, name="domain", curie=EVORAO.curie('domain'),
-                   model_uri=EVORAO.domain, domain=None, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.domain, domain=None, range=Optional[str])
 
 slots.expressedAs = Slot(uri=EVORAO.expressedAs, name="expressedAs", curie=EVORAO.curie('expressedAs'),
-                   model_uri=EVORAO.expressedAs, domain=None, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.expressedAs, domain=None, range=Optional[str])
 
 slots.inclusionBodiesType = Slot(uri=EVORAO.inclusionBodiesType, name="inclusionBodiesType", curie=EVORAO.curie('inclusionBodiesType'),
-                   model_uri=EVORAO.inclusionBodiesType, domain=None, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.inclusionBodiesType, domain=None, range=Optional[str])
 
 slots.expressionSystem = Slot(uri=EVORAO.expressionSystem, name="expressionSystem", curie=EVORAO.curie('expressionSystem'),
-                   model_uri=EVORAO.expressionSystem, domain=None, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.expressionSystem, domain=None, range=Optional[str])
 
 slots.functionalCharacterization = Slot(uri=EVORAO.functionalCharacterization, name="functionalCharacterization", curie=EVORAO.curie('functionalCharacterization'),
-                   model_uri=EVORAO.functionalCharacterization, domain=None, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.functionalCharacterization, domain=None, range=Optional[str])
 
 slots.functionalAndTechnicalDescription = Slot(uri=EVORAO.functionalAndTechnicalDescription, name="functionalAndTechnicalDescription", curie=EVORAO.curie('functionalAndTechnicalDescription'),
-                   model_uri=EVORAO.functionalAndTechnicalDescription, domain=None, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.functionalAndTechnicalDescription, domain=None, range=Optional[str])
 
 slots.proteinPurification = Slot(uri=EVORAO.proteinPurification, name="proteinPurification", curie=EVORAO.curie('proteinPurification'),
-                   model_uri=EVORAO.proteinPurification, domain=None, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.proteinPurification, domain=None, range=Optional[str])
 
 slots.tagStatusOfTheSolubilizedProtein = Slot(uri=EVORAO.tagStatusOfTheSolubilizedProtein, name="tagStatusOfTheSolubilizedProtein", curie=EVORAO.curie('tagStatusOfTheSolubilizedProtein'),
-                   model_uri=EVORAO.tagStatusOfTheSolubilizedProtein, domain=None, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.tagStatusOfTheSolubilizedProtein, domain=None, range=Optional[str])
 
 slots.typeOfFunctionalCharacterization = Slot(uri=EVORAO.typeOfFunctionalCharacterization, name="typeOfFunctionalCharacterization", curie=EVORAO.curie('typeOfFunctionalCharacterization'),
                    model_uri=EVORAO.typeOfFunctionalCharacterization, domain=None, range=Optional[Union[str, list[str]]])
@@ -4022,28 +4014,28 @@ slots.Protein_tagSequence = Slot(uri=EVORAO.tagSequence, name="Protein_tagSequen
                    model_uri=EVORAO.Protein_tagSequence, domain=Protein, range=Optional[Union[dict, TagSequence]])
 
 slots.Protein_domain = Slot(uri=EVORAO.domain, name="Protein_domain", curie=EVORAO.curie('domain'),
-                   model_uri=EVORAO.Protein_domain, domain=Protein, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.Protein_domain, domain=Protein, range=Optional[str])
 
 slots.Protein_expressedAs = Slot(uri=EVORAO.expressedAs, name="Protein_expressedAs", curie=EVORAO.curie('expressedAs'),
-                   model_uri=EVORAO.Protein_expressedAs, domain=Protein, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.Protein_expressedAs, domain=Protein, range=Optional[str])
 
 slots.Protein_inclusionBodiesType = Slot(uri=EVORAO.inclusionBodiesType, name="Protein_inclusionBodiesType", curie=EVORAO.curie('inclusionBodiesType'),
-                   model_uri=EVORAO.Protein_inclusionBodiesType, domain=Protein, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.Protein_inclusionBodiesType, domain=Protein, range=Optional[str])
 
 slots.Protein_expressionSystem = Slot(uri=EVORAO.expressionSystem, name="Protein_expressionSystem", curie=EVORAO.curie('expressionSystem'),
-                   model_uri=EVORAO.Protein_expressionSystem, domain=Protein, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.Protein_expressionSystem, domain=Protein, range=Optional[str])
 
 slots.Protein_functionalCharacterization = Slot(uri=EVORAO.functionalCharacterization, name="Protein_functionalCharacterization", curie=EVORAO.curie('functionalCharacterization'),
-                   model_uri=EVORAO.Protein_functionalCharacterization, domain=Protein, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.Protein_functionalCharacterization, domain=Protein, range=Optional[str])
 
 slots.Protein_functionalAndTechnicalDescription = Slot(uri=EVORAO.functionalAndTechnicalDescription, name="Protein_functionalAndTechnicalDescription", curie=EVORAO.curie('functionalAndTechnicalDescription'),
-                   model_uri=EVORAO.Protein_functionalAndTechnicalDescription, domain=Protein, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.Protein_functionalAndTechnicalDescription, domain=Protein, range=Optional[str])
 
 slots.Protein_proteinPurification = Slot(uri=EVORAO.proteinPurification, name="Protein_proteinPurification", curie=EVORAO.curie('proteinPurification'),
-                   model_uri=EVORAO.Protein_proteinPurification, domain=Protein, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.Protein_proteinPurification, domain=Protein, range=Optional[str])
 
 slots.Protein_tagStatusOfTheSolubilizedProtein = Slot(uri=EVORAO.tagStatusOfTheSolubilizedProtein, name="Protein_tagStatusOfTheSolubilizedProtein", curie=EVORAO.curie('tagStatusOfTheSolubilizedProtein'),
-                   model_uri=EVORAO.Protein_tagStatusOfTheSolubilizedProtein, domain=Protein, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.Protein_tagStatusOfTheSolubilizedProtein, domain=Protein, range=Optional[str])
 
 slots.Protein_typeOfFunctionalCharacterization = Slot(uri=EVORAO.typeOfFunctionalCharacterization, name="Protein_typeOfFunctionalCharacterization", curie=EVORAO.curie('typeOfFunctionalCharacterization'),
                    model_uri=EVORAO.Protein_typeOfFunctionalCharacterization, domain=Protein, range=Optional[Union[str, list[str]]])
