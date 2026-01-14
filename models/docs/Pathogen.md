@@ -606,6 +606,12 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format.
     title: sequence
+    comments:
+    - Sequence information is logically one of the minimal quality requirements for
+      entities such as pathogens, nucleic acids, and proteins, and should always be
+      provided. However, in some rare cases, a nucleic acid may still be valuable
+      even if it has not been sequenced after being extracted from identified material.
+      In such exceptional cases, the sequence may legitimately be missing.
     close_mappings:
     - geno:0000239
     - bao:0002817
@@ -866,6 +872,12 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format.
     title: sequence
+    comments:
+    - Sequence information is logically one of the minimal quality requirements for
+      entities such as pathogens, nucleic acids, and proteins, and should always be
+      provided. However, in some rare cases, a nucleic acid may still be valuable
+      even if it has not been sequenced after being extracted from identified material.
+      In such exceptional cases, the sequence may legitimately be missing.
     close_mappings:
     - geno:0000239
     - bao:0002817
@@ -1114,11 +1126,18 @@ attributes:
     description: The related sequence information from a sequence provider or in fasta
       format.
     title: sequence
+    comments:
+    - Sequence information is logically one of the minimal quality requirements for
+      entities such as pathogens, nucleic acids, and proteins, and should always be
+      provided. However, in some rare cases, a nucleic acid may still be valuable
+      even if it has not been sequenced after being extracted from identified material.
+      In such exceptional cases, the sequence may legitimately be missing.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - geno:0000239
     - bao:0002817
     related_mappings:
+    - uniprotrdfs:sequence
     - uniprotrdfs:sequence
     - uniprotrdfs:sequence
     rank: 1000

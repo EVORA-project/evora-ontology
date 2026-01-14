@@ -5146,7 +5146,7 @@ class NucleicAcidSequence(Base):
     __tablename__ = 'NucleicAcid_sequence'
 
     NucleicAcid_id = Column(Integer(), ForeignKey('NucleicAcid.id'), primary_key=True)
-    sequence_id = Column(Integer(), ForeignKey('Sequence.id'), primary_key=True, nullable=False )
+    sequence_id = Column(Integer(), ForeignKey('Sequence.id'), primary_key=True)
     
 
     def __repr__(self):

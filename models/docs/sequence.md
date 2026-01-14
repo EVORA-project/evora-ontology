@@ -22,16 +22,16 @@ Alias: sequence
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part |  yes  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
 | [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
 | [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [RecombinantPartIdentification](RecombinantPartIdentification.md) | Identification of a recombinant part |  yes  |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  yes  |
 | [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  yes  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 
 
 
@@ -50,6 +50,12 @@ Alias: sequence
 
 
 
+
+## Comments
+
+* Sequence information is logically one of the minimal quality requirements for entities such as pathogens, nucleic acids, and proteins, and should always be provided. However, in some rare cases, a nucleic acid may still be valuable even if it has not been sequenced after being extracted from identified material. In such exceptional cases, the sequence may legitimately be missing.
+* Sequence information is logically one of the minimal quality requirements for entities such as pathogens, nucleic acids, and proteins, and should always be provided. However, in some rare cases, a nucleic acid may still be valuable even if it has not been sequenced after being extracted from identified material. In such exceptional cases, the sequence may legitimately be missing.
+* Sequence information is logically one of the minimal quality requirements for entities such as pathogens, nucleic acids, and proteins, and should always be provided. However, in some rare cases, a nucleic acid may still be valuable even if it has not been sequenced after being extracted from identified material. In such exceptional cases, the sequence may legitimately be missing.
 
 ## Identifier and Mapping Information
 
@@ -73,8 +79,8 @@ Alias: sequence
 | ---  | ---  |
 | self | EVORAO:sequence |
 | native | EVORAO:sequence |
-| related | uniprotrdfs:sequence, uniprotrdfs:sequence |
-| close | geno:0000239, bao:0002817, geno:0000239, bao:0002817, geno:0000239, bao:0002817 |
+| related | uniprotrdfs:sequence, uniprotrdfs:sequence, uniprotrdfs:sequence |
+| close | geno:0000239, bao:0002817, geno:0000239, bao:0002817, geno:0000239, bao:0002817, geno:0000239, bao:0002817 |
 
 
 
@@ -87,6 +93,22 @@ name: sequence
 description: The related sequence information from a sequence provider or in fasta
   format.
 title: sequence
+comments:
+- Sequence information is logically one of the minimal quality requirements for entities
+  such as pathogens, nucleic acids, and proteins, and should always be provided. However,
+  in some rare cases, a nucleic acid may still be valuable even if it has not been
+  sequenced after being extracted from identified material. In such exceptional cases,
+  the sequence may legitimately be missing.
+- Sequence information is logically one of the minimal quality requirements for entities
+  such as pathogens, nucleic acids, and proteins, and should always be provided. However,
+  in some rare cases, a nucleic acid may still be valuable even if it has not been
+  sequenced after being extracted from identified material. In such exceptional cases,
+  the sequence may legitimately be missing.
+- Sequence information is logically one of the minimal quality requirements for entities
+  such as pathogens, nucleic acids, and proteins, and should always be provided. However,
+  in some rare cases, a nucleic acid may still be valuable even if it has not been
+  sequenced after being extracted from identified material. In such exceptional cases,
+  the sequence may legitimately be missing.
 from_schema: https://w3id.org/evorao/
 close_mappings:
 - geno:0000239
@@ -95,7 +117,10 @@ close_mappings:
 - bao:0002817
 - geno:0000239
 - bao:0002817
+- geno:0000239
+- bao:0002817
 related_mappings:
+- uniprotrdfs:sequence
 - uniprotrdfs:sequence
 - uniprotrdfs:sequence
 rank: 1000

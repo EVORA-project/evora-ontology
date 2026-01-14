@@ -275,7 +275,7 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
           
     
     
-    NucleicAcid --> "1..* _recommended_" Sequence : sequence
+    NucleicAcid --> "* _recommended_" Sequence : sequence
     click Sequence href "../Sequence"
 
         
@@ -338,7 +338,7 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
 | ---  | --- | --- | --- |
 | [biologicalMaterialOrigin](biologicalMaterialOrigin.md) | 1 <br/> [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md) | Information about the origin of the biological material, essential for access... | direct |
 | [genBankFileOfTheConstruct](genBankFileOfTheConstruct.md) | * <br/> [Data](Data.md) | A GenBank formatted file that contains detailed sequence and annotation infor... | direct |
-| [sequence](sequence.md) | 1..* _recommended_ <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
+| [sequence](sequence.md) | * _recommended_ <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
 | [clonedNucleicAcid](clonedNucleicAcid.md) | 1 <br/> [Boolean](Boolean.md) | Specification of the terms and parameters for transporting | direct |
 | [clonedIntoPlasmid](clonedIntoPlasmid.md) | 0..1 _recommended_ <br/> [ExpressionVector](ExpressionVector.md) | The plasmid into which the nucleic acid has been cloned | direct |
 | [plasmidSelection](plasmidSelection.md) | * _recommended_ <br/> [PlasmidSelection](PlasmidSelection.md) | Specific selectable markers in the plasmid, such as antibiotic resistance gen... | direct |
@@ -508,6 +508,12 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format.
     title: sequence
+    comments:
+    - Sequence information is logically one of the minimal quality requirements for
+      entities such as pathogens, nucleic acids, and proteins, and should always be
+      provided. However, in some rare cases, a nucleic acid may still be valuable
+      even if it has not been sequenced after being extracted from identified material.
+      In such exceptional cases, the sequence may legitimately be missing.
     close_mappings:
     - geno:0000239
     - bao:0002817
@@ -519,7 +525,8 @@ slot_usage:
     - Protein
     - Pathogen
     range: Sequence
-    required: true
+    required: false
+    recommended: true
     multivalued: true
   clonedNucleicAcid:
     name: clonedNucleicAcid
@@ -709,6 +716,12 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format.
     title: sequence
+    comments:
+    - Sequence information is logically one of the minimal quality requirements for
+      entities such as pathogens, nucleic acids, and proteins, and should always be
+      provided. However, in some rare cases, a nucleic acid may still be valuable
+      even if it has not been sequenced after being extracted from identified material.
+      In such exceptional cases, the sequence may legitimately be missing.
     close_mappings:
     - geno:0000239
     - bao:0002817
@@ -720,7 +733,8 @@ slot_usage:
     - Protein
     - Pathogen
     range: Sequence
-    required: true
+    required: false
+    recommended: true
     multivalued: true
   clonedNucleicAcid:
     name: clonedNucleicAcid
@@ -891,6 +905,12 @@ attributes:
     description: The related sequence information from a sequence provider or in fasta
       format.
     title: sequence
+    comments:
+    - Sequence information is logically one of the minimal quality requirements for
+      entities such as pathogens, nucleic acids, and proteins, and should always be
+      provided. However, in some rare cases, a nucleic acid may still be valuable
+      even if it has not been sequenced after being extracted from identified material.
+      In such exceptional cases, the sequence may legitimately be missing.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - geno:0000239
@@ -906,7 +926,7 @@ attributes:
     - Protein
     - Pathogen
     range: Sequence
-    required: true
+    required: false
     recommended: true
     multivalued: true
   clonedNucleicAcid:

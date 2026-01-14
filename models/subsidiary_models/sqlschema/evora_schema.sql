@@ -6353,7 +6353,7 @@ CREATE TABLE "NucleicAcid_genBankFileOfTheConstruct" (
 );
 CREATE TABLE "NucleicAcid_sequence" (
 	"NucleicAcid_id" INTEGER, 
-	sequence_id INTEGER NOT NULL, 
+	sequence_id INTEGER, 
 	PRIMARY KEY ("NucleicAcid_id", sequence_id), 
 	FOREIGN KEY("NucleicAcid_id") REFERENCES "NucleicAcid" (id), 
 	FOREIGN KEY(sequence_id) REFERENCES "Sequence" (id)
