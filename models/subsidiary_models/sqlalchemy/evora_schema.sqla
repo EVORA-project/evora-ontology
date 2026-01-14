@@ -4707,24 +4707,6 @@ class ProteinSpecialFeature(Base):
     
 
 
-class ProteinTagSequence(Base):
-    """
-    
-    """
-    __tablename__ = 'Protein_tagSequence'
-
-    Protein_id = Column(Integer(), ForeignKey('Protein.id'), primary_key=True)
-    tagSequence_id = Column(Integer(), ForeignKey('TagSequence.id'), primary_key=True)
-    
-
-    def __repr__(self):
-        return f"Protein_tagSequence(Protein_id={self.Protein_id},tagSequence_id={self.tagSequence_id},)"
-
-
-
-    
-
-
 class ProteinDomain(Base):
     """
     
@@ -12483,6 +12465,8 @@ class Protein(Product):
     dateModified = Column(DateTime())
     biologicalMaterialOrigin_id = Column(Integer(), ForeignKey('BiologicalMaterialOrigin.id'), nullable=False )
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
+    tagSequence_id = Column(Integer(), ForeignKey('TagSequence.id'))
+    tagSequence = relationship("TagSequence", uselist=False, foreign_keys=[tagSequence_id])
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])
     materialSafetyDataSheet_id = Column(Integer(), ForeignKey('MaterialSafetyDataSheet.id'))
@@ -12513,10 +12497,6 @@ class Protein(Product):
     
     # ManyToMany
     specialFeature = relationship( "SpecialFeature", secondary="Protein_specialFeature")
-    
-    
-    # ManyToMany
-    tagSequence = relationship( "TagSequence", secondary="Protein_tagSequence")
     
     
     domain_rel = relationship( "ProteinDomain" )
@@ -12620,7 +12600,7 @@ class Protein(Product):
     
 
     def __repr__(self):
-        return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
+        return f"Protein(id={self.id},shippingConditions={self.shippingConditions},storageConditions={self.storageConditions},thirdPartyDistributionConsent={self.thirdPartyDistributionConsent},usageRestrictions={self.usageRestrictions},preparationTechnique={self.preparationTechnique},accessPointUrl={self.accessPointUrl},refSku={self.refSku},unitDefinition={self.unitDefinition},unitCost={self.unitCost},unitCostCurrency={self.unitCostCurrency},unitCostNote={self.unitCostNote},qualityGrading={self.qualityGrading},biosafetyRestrictions={self.biosafetyRestrictions},canBeUsedToProduceGmo={self.canBeUsedToProduceGmo},availability={self.availability},technicalRecommendation={self.technicalRecommendation},internalReference={self.internalReference},note={self.note},title={self.title},description={self.description},version={self.version},dateIssued={self.dateIssued},dateModified={self.dateModified},biologicalMaterialOrigin_id={self.biologicalMaterialOrigin_id},tagSequence_id={self.tagSequence_id},iataClassification_id={self.iataClassification_id},materialSafetyDataSheet_id={self.materialSafetyDataSheet_id},originator_id={self.originator_id},category_id={self.category_id},riskGroup_id={self.riskGroup_id},biosafetyLevel_id={self.biosafetyLevel_id},provider_id={self.provider_id},contactPoint_id={self.contactPoint_id},publisher_id={self.publisher_id},)"
 
 
 
@@ -12674,7 +12654,7 @@ class NucleicAcid(Product):
     biologicalMaterialOrigin = relationship("BiologicalMaterialOrigin", uselist=False, foreign_keys=[biologicalMaterialOrigin_id])
     clonedIntoPlasmid_id = Column(Integer(), ForeignKey('ExpressionVector.id'))
     clonedIntoPlasmid = relationship("ExpressionVector", uselist=False, foreign_keys=[clonedIntoPlasmid_id])
-    tagSequence_id = Column(Integer(), ForeignKey('TagSequence.id'), nullable=False )
+    tagSequence_id = Column(Integer(), ForeignKey('TagSequence.id'))
     tagSequence = relationship("TagSequence", uselist=False, foreign_keys=[tagSequence_id])
     iataClassification_id = Column(Integer(), ForeignKey('IataClassification.id'), nullable=False )
     iataClassification = relationship("IataClassification", uselist=False, foreign_keys=[iataClassification_id])

@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10897
+# version: 1.0.10923
 type AlternateName
   {
     keyword: [String]
@@ -899,7 +899,7 @@ type NucleicAcid
     clonedNucleicAcid: Boolean!
     clonedIntoPlasmid: ExpressionVector
     plasmidSelection: [PlasmidSelection]
-    tagSequence: TagSequence!
+    tagSequence: TagSequence
     regionEncompassedInThisProduct: String!
     mutationObserved: Boolean!
     observedMutations: String
@@ -1339,7 +1339,7 @@ type Protein
     sequence: [Sequence]!
     relatedPdb: [PdbReference]
     specialFeature: [SpecialFeature]
-    tagSequence: [TagSequence]!
+    tagSequence: TagSequence
     domain: [String]
     expressedAs: [String]
     inclusionBodiesType: [String]

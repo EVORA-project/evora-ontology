@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10897"
+version = "1.0.10923"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-14T16:36:46',
+     'generation_date': '2026-01-14T16:57:40',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -8993,7 +8993,13 @@ class Protein(Product):
                                            'range': 'SpecialFeature',
                                            'required': False,
                                            'title': 'special feature'},
-                        'tagSequence': {'description': 'The name of the DNA coding '
+                        'tagSequence': {'comments': ['The tagSequence is strongly '
+                                                     'recommended for cloned nucleic '
+                                                     'acids and proteins but may be '
+                                                     'absent in certain cases, such as '
+                                                     'for some non-cloned nucleic '
+                                                     'acids.'],
+                                        'description': 'The name of the DNA coding '
                                                        'sequence or corresponding '
                                                        'peptide/protein sequence fused '
                                                        'to a sequence of interest, '
@@ -9006,9 +9012,10 @@ class Protein(Product):
                                                        'proteins and nucleic acids.',
                                         'domain_of': ['Protein', 'NucleicAcid'],
                                         'exact_mappings': ['bao:0002796'],
-                                        'multivalued': True,
+                                        'multivalued': False,
                                         'name': 'tagSequence',
                                         'range': 'TagSequence',
+                                        'recommended': True,
                                         'required': False,
                                         'title': 'tag sequence'},
                         'tagStatusOfTheSolubilizedProtein': {'description': 'Indicates '
@@ -9125,9 +9132,13 @@ class Protein(Product):
          'close_mappings': ['wdp:P638'],
          'domain_of': ['Protein']} })
     specialFeature: Optional[list[SpecialFeature]] = Field(default=None, title="special feature", description="""Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ...""", json_schema_extra = { "linkml_meta": {'alias': 'specialFeature', 'domain_of': ['Protein']} })
-    tagSequence: Optional[list[TagSequence]] = Field(default=None, title="tag sequence", description="""The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids.""", json_schema_extra = { "linkml_meta": {'alias': 'tagSequence',
+    tagSequence: Optional[TagSequence] = Field(default=None, title="tag sequence", description="""The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids.""", json_schema_extra = { "linkml_meta": {'alias': 'tagSequence',
+         'comments': ['The tagSequence is strongly recommended for cloned nucleic '
+                      'acids and proteins but may be absent in certain cases, such as '
+                      'for some non-cloned nucleic acids.'],
          'domain_of': ['Protein', 'NucleicAcid'],
-         'exact_mappings': ['bao:0002796']} })
+         'exact_mappings': ['bao:0002796'],
+         'recommended': True} })
     domain: Optional[list[str]] = Field(default=None, title="domain", description="""A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function.""", json_schema_extra = { "linkml_meta": {'alias': 'domain',
          'close_mappings': ['uniprotrdfs:domain'],
          'domain_of': ['Protein']} })
@@ -9604,7 +9615,13 @@ class NucleicAcid(Product):
                                        'range': 'string',
                                        'required': True,
                                        'title': 'sequencing'},
-                        'tagSequence': {'description': 'The name of the DNA coding '
+                        'tagSequence': {'comments': ['The tagSequence is strongly '
+                                                     'recommended for cloned nucleic '
+                                                     'acids and proteins but may be '
+                                                     'absent in certain cases, such as '
+                                                     'for some non-cloned nucleic '
+                                                     'acids.'],
+                                        'description': 'The name of the DNA coding '
                                                        'sequence or corresponding '
                                                        'peptide/protein sequence fused '
                                                        'to a sequence of interest, '
@@ -9620,7 +9637,8 @@ class NucleicAcid(Product):
                                         'multivalued': False,
                                         'name': 'tagSequence',
                                         'range': 'TagSequence',
-                                        'required': True,
+                                        'recommended': True,
+                                        'required': False,
                                         'title': 'tag sequence'},
                         'titer': {'description': 'The titer value, its corresponding '
                                                  'unit, and the method of '
@@ -9663,9 +9681,13 @@ class NucleicAcid(Product):
          'domain_of': ['NucleicAcid'],
          'recommended': True} })
     plasmidSelection: Optional[list[PlasmidSelection]] = Field(default=None, title="plasmid selection", description="""Specific selectable markers in the plasmid, such as antibiotic resistance genes, used to identify and maintain cells that contain the plasmid.""", json_schema_extra = { "linkml_meta": {'alias': 'plasmidSelection', 'domain_of': ['NucleicAcid'], 'recommended': True} })
-    tagSequence: TagSequence = Field(default=..., title="tag sequence", description="""The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids.""", json_schema_extra = { "linkml_meta": {'alias': 'tagSequence',
+    tagSequence: Optional[TagSequence] = Field(default=None, title="tag sequence", description="""The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids.""", json_schema_extra = { "linkml_meta": {'alias': 'tagSequence',
+         'comments': ['The tagSequence is strongly recommended for cloned nucleic '
+                      'acids and proteins but may be absent in certain cases, such as '
+                      'for some non-cloned nucleic acids.'],
          'domain_of': ['NucleicAcid', 'Protein'],
-         'exact_mappings': ['bao:0002796']} })
+         'exact_mappings': ['bao:0002796'],
+         'recommended': True} })
     regionEncompassedInThisProduct: str = Field(default=..., title="region encompassed in this Product", description="""The specific region encompassed in the product.""", json_schema_extra = { "linkml_meta": {'alias': 'regionEncompassedInThisProduct', 'domain_of': ['NucleicAcid']} })
     mutationObserved: bool = Field(default=..., title="mutation observed", description="""Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true.""", json_schema_extra = { "linkml_meta": {'alias': 'mutationObserved', 'domain_of': ['NucleicAcid']} })
     observedMutations: Optional[str] = Field(default=None, title="observed mutations", description="""The specific mutations that have been identified and documented in the nucleic acid sequence.""", json_schema_extra = { "linkml_meta": {'alias': 'observedMutations', 'domain_of': ['NucleicAcid']} })

@@ -292,7 +292,7 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
           
     
     
-    NucleicAcid --> "1" TagSequence : tagSequence
+    NucleicAcid --> "0..1 _recommended_" TagSequence : tagSequence
     click TagSequence href "../TagSequence"
 
         
@@ -342,7 +342,7 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
 | [clonedNucleicAcid](clonedNucleicAcid.md) | 1 <br/> [Boolean](Boolean.md) | Specification of the terms and parameters for transporting | direct |
 | [clonedIntoPlasmid](clonedIntoPlasmid.md) | 0..1 _recommended_ <br/> [ExpressionVector](ExpressionVector.md) | The plasmid into which the nucleic acid has been cloned | direct |
 | [plasmidSelection](plasmidSelection.md) | * _recommended_ <br/> [PlasmidSelection](PlasmidSelection.md) | Specific selectable markers in the plasmid, such as antibiotic resistance gen... | direct |
-| [tagSequence](tagSequence.md) | 1 <br/> [TagSequence](TagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... | direct |
+| [tagSequence](tagSequence.md) | 0..1 _recommended_ <br/> [TagSequence](TagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... | direct |
 | [regionEncompassedInThisProduct](regionEncompassedInThisProduct.md) | 1 <br/> [String](String.md) | The specific region encompassed in the product | direct |
 | [mutationObserved](mutationObserved.md) | 1 <br/> [Boolean](Boolean.md) | Indicates if the current nucleic acid has No mutation compared to the referen... | direct |
 | [observedMutations](observedMutations.md) | 0..1 <br/> [String](String.md) | The specific mutations that have been identified and documented in the nuclei... | direct |
@@ -565,13 +565,17 @@ slot_usage:
       such as purification, detection, localization, tracking, solubility enhancement,
       or selection. Applicable to both proteins and nucleic acids.
     title: tag sequence
+    comments:
+    - The tagSequence is strongly recommended for cloned nucleic acids and proteins
+      but may be absent in certain cases, such as for some non-cloned nucleic acids.
     exact_mappings:
     - bao:0002796
     domain_of:
     - NucleicAcid
     - Protein
     range: TagSequence
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   regionEncompassedInThisProduct:
     name: regionEncompassedInThisProduct
@@ -773,13 +777,17 @@ slot_usage:
       such as purification, detection, localization, tracking, solubility enhancement,
       or selection. Applicable to both proteins and nucleic acids.
     title: tag sequence
+    comments:
+    - The tagSequence is strongly recommended for cloned nucleic acids and proteins
+      but may be absent in certain cases, such as for some non-cloned nucleic acids.
     exact_mappings:
     - bao:0002796
     domain_of:
     - NucleicAcid
     - Protein
     range: TagSequence
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   regionEncompassedInThisProduct:
     name: regionEncompassedInThisProduct
@@ -978,6 +986,9 @@ attributes:
       such as purification, detection, localization, tracking, solubility enhancement,
       or selection. Applicable to both proteins and nucleic acids.
     title: tag sequence
+    comments:
+    - The tagSequence is strongly recommended for cloned nucleic acids and proteins
+      but may be absent in certain cases, such as for some non-cloned nucleic acids.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - bao:0002796
@@ -988,7 +999,8 @@ attributes:
     - NucleicAcid
     - Protein
     range: TagSequence
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   regionEncompassedInThisProduct:
     name: regionEncompassedInThisProduct

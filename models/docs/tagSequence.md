@@ -35,11 +35,15 @@ Alias: tagSequence
 
 * Range: [TagSequence](TagSequence.md)
 
-* Required: True
+* Recommended: True
 
 
 
 
+
+## Comments
+
+* The tagSequence is strongly recommended for cloned nucleic acids and proteins but may be absent in certain cases, such as for some non-cloned nucleic acids.
 
 ## Identifier and Mapping Information
 
@@ -63,7 +67,7 @@ Alias: tagSequence
 | ---  | ---  |
 | self | EVORAO:tagSequence |
 | native | EVORAO:tagSequence |
-| exact | bao:0002796, bao:0002796 |
+| exact | bao:0002796 |
 
 
 
@@ -78,9 +82,11 @@ description: The name of the DNA coding sequence or corresponding peptide/protei
   such as purification, detection, localization, tracking, solubility enhancement,
   or selection. Applicable to both proteins and nucleic acids.
 title: tag sequence
+comments:
+- The tagSequence is strongly recommended for cloned nucleic acids and proteins but
+  may be absent in certain cases, such as for some non-cloned nucleic acids.
 from_schema: https://w3id.org/evorao/
 exact_mappings:
-- bao:0002796
 - bao:0002796
 rank: 1000
 alias: tagSequence
@@ -88,7 +94,8 @@ domain_of:
 - Protein
 - NucleicAcid
 range: TagSequence
-required: true
+required: false
+recommended: true
 multivalued: false
 
 ```

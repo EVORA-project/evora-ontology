@@ -3777,7 +3777,7 @@ type Protein struct {
 	/*
 	 * The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids.
 	 */
-	TagSequence []TagSequence `json:"tagSequence"`
+	TagSequence TagSequence `json:"tagSequence"`
 	/*
 	 * A distinct structural and functional unit within the protein, often capable of independent folding and stability, which contributes to the protein's overall function.
 	 */

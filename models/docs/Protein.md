@@ -283,7 +283,7 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
           
     
     
-    Protein --> "*" TagSequence : tagSequence
+    Protein --> "0..1 _recommended_" TagSequence : tagSequence
     click TagSequence href "../TagSequence"
 
         
@@ -333,7 +333,7 @@ URI: [EVORAO:Protein](https://w3id.org/evorao/Protein)
 | [sequence](sequence.md) | 1..* _recommended_ <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
 | [relatedPdb](relatedPdb.md) | * <br/> [PdbReference](PdbReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database | direct |
 | [specialFeature](specialFeature.md) | * <br/> [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... | direct |
-| [tagSequence](tagSequence.md) | * <br/> [TagSequence](TagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... | direct |
+| [tagSequence](tagSequence.md) | 0..1 _recommended_ <br/> [TagSequence](TagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... | direct |
 | [domain](domain.md) | * <br/> [String](String.md) | A distinct structural and functional unit within the protein, often capable o... | direct |
 | [expressedAs](expressedAs.md) | * <br/> [String](String.md) | Refers to the form in which the protein is produced and manifested in a biolo... | direct |
 | [inclusionBodiesType](inclusionBodiesType.md) | * <br/> [String](String.md) | Refers to the state of aggregated proteins within a cell | direct |
@@ -534,6 +534,9 @@ slot_usage:
       such as purification, detection, localization, tracking, solubility enhancement,
       or selection. Applicable to both proteins and nucleic acids.
     title: tag sequence
+    comments:
+    - The tagSequence is strongly recommended for cloned nucleic acids and proteins
+      but may be absent in certain cases, such as for some non-cloned nucleic acids.
     exact_mappings:
     - bao:0002796
     domain_of:
@@ -541,7 +544,8 @@ slot_usage:
     - NucleicAcid
     range: TagSequence
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   domain:
     name: domain
     description: A distinct structural and functional unit within the protein, often
@@ -749,6 +753,9 @@ slot_usage:
       such as purification, detection, localization, tracking, solubility enhancement,
       or selection. Applicable to both proteins and nucleic acids.
     title: tag sequence
+    comments:
+    - The tagSequence is strongly recommended for cloned nucleic acids and proteins
+      but may be absent in certain cases, such as for some non-cloned nucleic acids.
     exact_mappings:
     - bao:0002796
     domain_of:
@@ -756,7 +763,8 @@ slot_usage:
     - NucleicAcid
     range: TagSequence
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   domain:
     name: domain
     description: A distinct structural and functional unit within the protein, often
@@ -959,6 +967,9 @@ attributes:
       such as purification, detection, localization, tracking, solubility enhancement,
       or selection. Applicable to both proteins and nucleic acids.
     title: tag sequence
+    comments:
+    - The tagSequence is strongly recommended for cloned nucleic acids and proteins
+      but may be absent in certain cases, such as for some non-cloned nucleic acids.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
     - bao:0002796
@@ -970,7 +981,8 @@ attributes:
     - NucleicAcid
     range: TagSequence
     required: false
-    multivalued: true
+    recommended: true
+    multivalued: false
   domain:
     name: domain
     description: A distinct structural and functional unit within the protein, often

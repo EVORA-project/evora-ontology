@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.10897
+// version: 1.0.10923
 // List of other names for things.
 message AlternateName
  {
@@ -1167,7 +1167,7 @@ message Protein
  repeated  sequence sequence = 0
  repeated  pdbReference relatedPdb = 0
  repeated  specialFeature specialFeature = 0
- repeated  tagSequence tagSequence = 0
+  tagSequence tagSequence = 0
  repeated  string domain = 0
  repeated  string expressedAs = 0
  repeated  string inclusionBodiesType = 0

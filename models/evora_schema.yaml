@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10897
+version: 1.0.10923
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -2031,15 +2031,18 @@ slots:
       such as purification, detection, localization, tracking, solubility enhancement,
       or selection. Applicable to both proteins and nucleic acids.
     title: tag sequence
+    comments:
+    - The tagSequence is strongly recommended for cloned nucleic acids and proteins
+      but may be absent in certain cases, such as for some non-cloned nucleic acids.
     from_schema: https://w3id.org/evorao/
     exact_mappings:
-    - bao:0002796
     - bao:0002796
     domain_of:
     - Protein
     - NucleicAcid
     range: TagSequence
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   domain:
     description: A distinct structural and functional unit within the protein, often
@@ -6104,13 +6107,18 @@ classes:
           operations such as purification, detection, localization, tracking, solubility
           enhancement, or selection. Applicable to both proteins and nucleic acids.
         title: tag sequence
+        comments:
+        - The tagSequence is strongly recommended for cloned nucleic acids and proteins
+          but may be absent in certain cases, such as for some non-cloned nucleic
+          acids.
         exact_mappings:
         - bao:0002796
         domain_of:
         - Protein
         range: TagSequence
         required: false
-        multivalued: true
+        recommended: true
+        multivalued: false
       domain:
         description: A distinct structural and functional unit within the protein,
           often capable of independent folding and stability, which contributes to
@@ -6330,12 +6338,17 @@ classes:
           operations such as purification, detection, localization, tracking, solubility
           enhancement, or selection. Applicable to both proteins and nucleic acids.
         title: tag sequence
+        comments:
+        - The tagSequence is strongly recommended for cloned nucleic acids and proteins
+          but may be absent in certain cases, such as for some non-cloned nucleic
+          acids.
         exact_mappings:
         - bao:0002796
         domain_of:
         - NucleicAcid
         range: TagSequence
-        required: true
+        required: false
+        recommended: true
         multivalued: false
       regionEncompassedInThisProduct:
         description: The specific region encompassed in the product.
@@ -7811,4 +7824,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-01-14T16:36:46'
+generation_date: '2026-01-14T16:57:40'

@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10897",
+  "version": "1.0.10923",
   "imports": [
     "linkml:types"
   ],
@@ -3348,9 +3348,11 @@
       "definition_uri": "https://w3id.org/evorao/tagSequence",
       "description": "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids.",
       "title": "tag sequence",
+      "comments": [
+        "The tagSequence is strongly recommended for cloned nucleic acids and proteins but may be absent in certain cases, such as for some non-cloned nucleic acids."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
-        "http://www.bioassayontology.org/bao#BAO_0002796",
         "http://www.bioassayontology.org/bao#BAO_0002796"
       ],
       "slot_uri": "https://w3id.org/evorao/tagSequence",
@@ -3360,7 +3362,7 @@
         "NucleicAcid"
       ],
       "range": "TagSequence",
-      "required": true,
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -8699,6 +8701,9 @@
       "definition_uri": "https://w3id.org/evorao/tagSequence",
       "description": "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids.",
       "title": "tag sequence",
+      "comments": [
+        "The tagSequence is strongly recommended for cloned nucleic acids and proteins but may be absent in certain cases, such as for some non-cloned nucleic acids."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.bioassayontology.org/bao#BAO_0002796"
@@ -8714,8 +8719,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tagSequence",
       "range": "TagSequence",
-      "required": true,
-      "multivalued": true,
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -9079,6 +9083,9 @@
       "definition_uri": "https://w3id.org/evorao/tagSequence",
       "description": "The name of the DNA coding sequence or corresponding peptide/protein sequence fused to a sequence of interest, used to facilitate experimental operations such as purification, detection, localization, tracking, solubility enhancement, or selection. Applicable to both proteins and nucleic acids.",
       "title": "tag sequence",
+      "comments": [
+        "The tagSequence is strongly recommended for cloned nucleic acids and proteins but may be absent in certain cases, such as for some non-cloned nucleic acids."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
         "http://www.bioassayontology.org/bao#BAO_0002796"
@@ -9094,7 +9101,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "tagSequence",
       "range": "TagSequence",
-      "required": true,
+      "recommended": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -14615,9 +14622,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-01-14T15:37:08",
-  "source_file_size": 249008,
-  "generation_date": "2026-01-14T15:37:27",
+  "source_file_date": "2026-01-14T15:58:03",
+  "source_file_size": 249660,
+  "generation_date": "2026-01-14T15:58:21",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10897 */
+/* version: 1.0.10923 */
 
 
 /**
@@ -19,7 +19,7 @@ public class Protein extends Product {
   private List<Sequence> sequence;
   private List<PdbReference> relatedPdb;
   private List<SpecialFeature> specialFeature;
-  private List<TagSequence> tagSequence;
+  private TagSequence tagSequence;
   private List<String> domain;
   private List<String> expressedAs;
   private List<String> inclusionBodiesType;
