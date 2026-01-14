@@ -5410,7 +5410,7 @@ CREATE TABLE "BiologicalMaterialOrigin_iri" (
 );
 CREATE TABLE "RecombinantPartIdentification_sequence" (
 	"RecombinantPartIdentification_id" INTEGER, 
-	sequence_id INTEGER NOT NULL, 
+	sequence_id INTEGER, 
 	PRIMARY KEY ("RecombinantPartIdentification_id", sequence_id), 
 	FOREIGN KEY("RecombinantPartIdentification_id") REFERENCES "RecombinantPartIdentification" (id), 
 	FOREIGN KEY(sequence_id) REFERENCES "Sequence" (id)

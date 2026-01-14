@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10853"
+version = "1.0.10859"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-14T15:41:08',
+     'generation_date': '2026-01-14T16:05:06',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -6564,6 +6564,18 @@ class RecombinantPartIdentification(Resource):
                                                'required': True,
                                                'title': 'Part identification'},
                         'sequence': {'close_mappings': ['geno:0000239', 'bao:0002817'],
+                                     'comments': ['Sequence information is logically '
+                                                  'one of the minimal quality '
+                                                  'requirements for entities such as '
+                                                  'pathogens, nucleic acids, and '
+                                                  'proteins, and should always be '
+                                                  'provided. However, in some rare '
+                                                  'cases, a nucleic acid may still be '
+                                                  'valuable even if it has not been '
+                                                  'sequenced after being extracted '
+                                                  'from identified material. In such '
+                                                  'exceptional cases, the sequence may '
+                                                  'legitimately be missing.'],
                                      'description': 'The related sequence information '
                                                     'from a sequence provider or in '
                                                     'fasta format.',
@@ -6576,28 +6588,14 @@ class RecombinantPartIdentification(Resource):
                                      'range': 'Sequence',
                                      'recommended': True,
                                      'related_mappings': ['uniprotrdfs:sequence'],
-                                     'required': True,
+                                     'required': False,
                                      'title': 'sequence'}},
          'title': 'Recombinant part identification'})
 
     partIdentification: str = Field(default=..., title="Part identification", description="""A short designation of this recombinant part of the related biological material.""", json_schema_extra = { "linkml_meta": {'alias': 'partIdentification', 'domain_of': ['RecombinantPartIdentification']} })
-    sequence: list[Sequence] = Field(default=..., title="sequence", description="""The related sequence information from a sequence provider or in fasta format.""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
+    sequence: Optional[list[Sequence]] = Field(default=None, title="sequence", description="""The related sequence information from a sequence provider or in fasta format.""", json_schema_extra = { "linkml_meta": {'alias': 'sequence',
          'close_mappings': ['geno:0000239', 'bao:0002817'],
          'comments': ['Sequence information is logically one of the minimal quality '
-                      'requirements for entities such as pathogens, nucleic acids, and '
-                      'proteins, and should always be provided. However, in some rare '
-                      'cases, a nucleic acid may still be valuable even if it has not '
-                      'been sequenced after being extracted from identified material. '
-                      'In such exceptional cases, the sequence may legitimately be '
-                      'missing.',
-                      'Sequence information is logically one of the minimal quality '
-                      'requirements for entities such as pathogens, nucleic acids, and '
-                      'proteins, and should always be provided. However, in some rare '
-                      'cases, a nucleic acid may still be valuable even if it has not '
-                      'been sequenced after being extracted from identified material. '
-                      'In such exceptional cases, the sequence may legitimately be '
-                      'missing.',
-                      'Sequence information is logically one of the minimal quality '
                       'requirements for entities such as pathogens, nucleic acids, and '
                       'proteins, and should always be provided. However, in some rare '
                       'cases, a nucleic acid may still be valuable even if it has not '
@@ -10729,6 +10727,7 @@ class Pathogen(Product):
                                      'multivalued': True,
                                      'name': 'sequence',
                                      'range': 'Sequence',
+                                     'related_mappings': ['uniprotrdfs:sequence'],
                                      'required': True,
                                      'title': 'sequence'},
                         'suspectedEpidemiologicalOrigin': {'description': 'The '
@@ -10812,9 +10811,7 @@ class Pathogen(Product):
                        'Protein',
                        'NucleicAcid'],
          'recommended': True,
-         'related_mappings': ['uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence']} })
+         'related_mappings': ['uniprotrdfs:sequence']} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering.'],
@@ -11194,9 +11191,7 @@ class Virus(Pathogen):
                        'Protein',
                        'NucleicAcid'],
          'recommended': True,
-         'related_mappings': ['uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence']} })
+         'related_mappings': ['uniprotrdfs:sequence']} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering.'],
@@ -11517,9 +11512,7 @@ class Bacterium(Pathogen):
                        'Protein',
                        'NucleicAcid'],
          'recommended': True,
-         'related_mappings': ['uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence']} })
+         'related_mappings': ['uniprotrdfs:sequence']} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering.'],
@@ -11838,9 +11831,7 @@ class Fungus(Pathogen):
                        'Protein',
                        'NucleicAcid'],
          'recommended': True,
-         'related_mappings': ['uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence']} })
+         'related_mappings': ['uniprotrdfs:sequence']} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering.'],
@@ -12155,9 +12146,7 @@ class Protozoan(Pathogen):
                        'Protein',
                        'NucleicAcid'],
          'recommended': True,
-         'related_mappings': ['uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence']} })
+         'related_mappings': ['uniprotrdfs:sequence']} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering.'],
@@ -12464,9 +12453,7 @@ class Viroid(Pathogen):
                        'Protein',
                        'NucleicAcid'],
          'recommended': True,
-         'related_mappings': ['uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence']} })
+         'related_mappings': ['uniprotrdfs:sequence']} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering.'],
@@ -12781,9 +12768,7 @@ class Prion(Pathogen):
                        'Protein',
                        'NucleicAcid'],
          'recommended': True,
-         'related_mappings': ['uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence',
-                              'uniprotrdfs:sequence']} })
+         'related_mappings': ['uniprotrdfs:sequence']} })
     cultivability: Literal["Cultivable", "Uncultivable", "Inactivated"] = Field(default="Cultivable", title="cultivability", description="""The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.""", json_schema_extra = { "linkml_meta": {'alias': 'cultivability',
          'comments': ['Might also be related to a product sub-category that helps '
                       'filtering.'],

@@ -49,7 +49,7 @@ URI: [EVORAO:RecombinantPartIdentification](https://w3id.org/evorao/RecombinantP
           
     
     
-    RecombinantPartIdentification --> "1..* _recommended_" Sequence : sequence
+    RecombinantPartIdentification --> "* _recommended_" Sequence : sequence
     click Sequence href "../Sequence"
 
         
@@ -71,7 +71,7 @@ URI: [EVORAO:RecombinantPartIdentification](https://w3id.org/evorao/RecombinantP
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [partIdentification](partIdentification.md) | 1 <br/> [String](String.md) | A short designation of this recombinant part of the related biological materi... | direct |
-| [sequence](sequence.md) | 1..* _recommended_ <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
+| [sequence](sequence.md) | * _recommended_ <br/> [Sequence](Sequence.md) | The related sequence information from a sequence provider or in fasta format | direct |
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 | [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | [Resource](Resource.md) |
 | [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
@@ -157,6 +157,12 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format.
     title: sequence
+    comments:
+    - Sequence information is logically one of the minimal quality requirements for
+      entities such as pathogens, nucleic acids, and proteins, and should always be
+      provided. However, in some rare cases, a nucleic acid may still be valuable
+      even if it has not been sequenced after being extracted from identified material.
+      In such exceptional cases, the sequence may legitimately be missing.
     close_mappings:
     - geno:0000239
     - bao:0002817
@@ -168,7 +174,7 @@ slot_usage:
     - NucleicAcid
     - Pathogen
     range: Sequence
-    required: true
+    required: false
     recommended: true
     multivalued: true
 
@@ -200,6 +206,12 @@ slot_usage:
     description: The related sequence information from a sequence provider or in fasta
       format.
     title: sequence
+    comments:
+    - Sequence information is logically one of the minimal quality requirements for
+      entities such as pathogens, nucleic acids, and proteins, and should always be
+      provided. However, in some rare cases, a nucleic acid may still be valuable
+      even if it has not been sequenced after being extracted from identified material.
+      In such exceptional cases, the sequence may legitimately be missing.
     close_mappings:
     - geno:0000239
     - bao:0002817
@@ -211,7 +223,7 @@ slot_usage:
     - NucleicAcid
     - Pathogen
     range: Sequence
-    required: true
+    required: false
     recommended: true
     multivalued: true
 attributes:
@@ -240,16 +252,6 @@ attributes:
       provided. However, in some rare cases, a nucleic acid may still be valuable
       even if it has not been sequenced after being extracted from identified material.
       In such exceptional cases, the sequence may legitimately be missing.
-    - Sequence information is logically one of the minimal quality requirements for
-      entities such as pathogens, nucleic acids, and proteins, and should always be
-      provided. However, in some rare cases, a nucleic acid may still be valuable
-      even if it has not been sequenced after being extracted from identified material.
-      In such exceptional cases, the sequence may legitimately be missing.
-    - Sequence information is logically one of the minimal quality requirements for
-      entities such as pathogens, nucleic acids, and proteins, and should always be
-      provided. However, in some rare cases, a nucleic acid may still be valuable
-      even if it has not been sequenced after being extracted from identified material.
-      In such exceptional cases, the sequence may legitimately be missing.
     from_schema: https://w3id.org/evorao/
     close_mappings:
     - geno:0000239
@@ -265,7 +267,7 @@ attributes:
     - NucleicAcid
     - Pathogen
     range: Sequence
-    required: true
+    required: false
     recommended: true
     multivalued: true
   keyword:

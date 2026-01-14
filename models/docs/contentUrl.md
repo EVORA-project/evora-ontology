@@ -28,12 +28,12 @@ Alias: contentUrl
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
+| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
 | [Audio](Audio.md) | Subclass of File representing sound recordings or audio tracks |  no  |
+| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
 | [File](File.md) | Digital document or record stored in a specific format that contains data or ... |  yes  |
 | [Document](Document.md) | Subclass of File representing textual or written files such as reports, manua... |  no  |
-| [Image](Image.md) | Subclass of File representing visual content such as pictures, diagrams, or i... |  no  |
-| [Video](Video.md) | Subclass of File representing moving visual media, such as recordings, presen... |  no  |
-| [Data](Data.md) | Subclass of File representing structured or unstructured datasets, often used... |  no  |
 
 
 

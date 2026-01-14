@@ -3274,7 +3274,7 @@ class RecombinantPartIdentificationSequence(Base):
     __tablename__ = 'RecombinantPartIdentification_sequence'
 
     RecombinantPartIdentification_id = Column(Integer(), ForeignKey('RecombinantPartIdentification.id'), primary_key=True)
-    sequence_id = Column(Integer(), ForeignKey('Sequence.id'), primary_key=True, nullable=False )
+    sequence_id = Column(Integer(), ForeignKey('Sequence.id'), primary_key=True)
     
 
     def __repr__(self):

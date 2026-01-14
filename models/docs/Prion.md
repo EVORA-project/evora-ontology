@@ -615,8 +615,6 @@ attributes:
     - bao:0002817
     related_mappings:
     - uniprotrdfs:sequence
-    - uniprotrdfs:sequence
-    - uniprotrdfs:sequence
     rank: 1000
     alias: sequence
     owner: Prion

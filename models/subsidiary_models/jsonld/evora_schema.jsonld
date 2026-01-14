@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10853",
+  "version": "1.0.10859",
   "imports": [
     "linkml:types"
   ],
@@ -2369,7 +2369,6 @@
       "title": "sequence",
       "comments": [
         "Sequence information is logically one of the minimal quality requirements for entities such as pathogens, nucleic acids, and proteins, and should always be provided. However, in some rare cases, a nucleic acid may still be valuable even if it has not been sequenced after being extracted from identified material. In such exceptional cases, the sequence may legitimately be missing.",
-        "Sequence information is logically one of the minimal quality requirements for entities such as pathogens, nucleic acids, and proteins, and should always be provided. However, in some rare cases, a nucleic acid may still be valuable even if it has not been sequenced after being extracted from identified material. In such exceptional cases, the sequence may legitimately be missing.",
         "Sequence information is logically one of the minimal quality requirements for entities such as pathogens, nucleic acids, and proteins, and should always be provided. However, in some rare cases, a nucleic acid may still be valuable even if it has not been sequenced after being extracted from identified material. In such exceptional cases, the sequence may legitimately be missing."
       ],
       "from_schema": "https://w3id.org/evorao/",
@@ -2377,14 +2376,9 @@
         "http://purl.obolibrary.org/obo/GENO_0000239",
         "http://www.bioassayontology.org/bao#BAO_0002817",
         "http://purl.obolibrary.org/obo/GENO_0000239",
-        "http://www.bioassayontology.org/bao#BAO_0002817",
-        "http://purl.obolibrary.org/obo/GENO_0000239",
-        "http://www.bioassayontology.org/bao#BAO_0002817",
-        "http://purl.obolibrary.org/obo/GENO_0000239",
         "http://www.bioassayontology.org/bao#BAO_0002817"
       ],
       "related_mappings": [
-        "http://purl.uniprot.org/core/sequence",
         "http://purl.uniprot.org/core/sequence",
         "http://purl.uniprot.org/core/sequence"
       ],
@@ -7371,8 +7365,6 @@
       "description": "The related sequence information from a sequence provider or in fasta format.",
       "title": "sequence",
       "comments": [
-        "Sequence information is logically one of the minimal quality requirements for entities such as pathogens, nucleic acids, and proteins, and should always be provided. However, in some rare cases, a nucleic acid may still be valuable even if it has not been sequenced after being extracted from identified material. In such exceptional cases, the sequence may legitimately be missing.",
-        "Sequence information is logically one of the minimal quality requirements for entities such as pathogens, nucleic acids, and proteins, and should always be provided. However, in some rare cases, a nucleic acid may still be valuable even if it has not been sequenced after being extracted from identified material. In such exceptional cases, the sequence may legitimately be missing.",
         "Sequence information is logically one of the minimal quality requirements for entities such as pathogens, nucleic acids, and proteins, and should always be provided. However, in some rare cases, a nucleic acid may still be valuable even if it has not been sequenced after being extracted from identified material. In such exceptional cases, the sequence may legitimately be missing."
       ],
       "from_schema": "https://w3id.org/evorao/",
@@ -9517,8 +9509,6 @@
         "http://www.bioassayontology.org/bao#BAO_0002817"
       ],
       "related_mappings": [
-        "http://purl.uniprot.org/core/sequence",
-        "http://purl.uniprot.org/core/sequence",
         "http://purl.uniprot.org/core/sequence"
       ],
       "is_a": "sequence",
@@ -14627,9 +14617,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-01-14T14:41:30",
-  "source_file_size": 248951,
-  "generation_date": "2026-01-14T14:41:47",
+  "source_file_date": "2026-01-14T15:05:30",
+  "source_file_size": 248956,
+  "generation_date": "2026-01-14T15:05:46",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

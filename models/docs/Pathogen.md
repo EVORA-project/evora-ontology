@@ -615,6 +615,8 @@ slot_usage:
     close_mappings:
     - geno:0000239
     - bao:0002817
+    related_mappings:
+    - uniprotrdfs:sequence
     domain_of:
     - Pathogen
     - RecombinantPartIdentification
@@ -881,6 +883,8 @@ slot_usage:
     close_mappings:
     - geno:0000239
     - bao:0002817
+    related_mappings:
+    - uniprotrdfs:sequence
     domain_of:
     - Pathogen
     - RecombinantPartIdentification
@@ -1137,8 +1141,6 @@ attributes:
     - geno:0000239
     - bao:0002817
     related_mappings:
-    - uniprotrdfs:sequence
-    - uniprotrdfs:sequence
     - uniprotrdfs:sequence
     rank: 1000
     alias: sequence
