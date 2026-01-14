@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10936",
+  "version": "1.0.10945",
   "imports": [
     "linkml:types"
   ],
@@ -3600,6 +3600,9 @@
       "definition_uri": "https://w3id.org/evorao/regionEncompassedInThisProduct",
       "description": "The specific region encompassed in the product.",
       "title": "region encompassed in this Product",
+      "comments": [
+        "The regionEncompassedInThisProduct property is strongly recommended for cloned nucleic acids, as it provides essential information that greatly improves the clarity and precision of the description for the user."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/regionEncompassedInThisProduct",
       "owner": "NucleicAcid",
@@ -3607,7 +3610,7 @@
         "NucleicAcid"
       ],
       "range": "string",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9102,6 +9105,9 @@
       "definition_uri": "https://w3id.org/evorao/regionEncompassedInThisProduct",
       "description": "The specific region encompassed in the product.",
       "title": "region encompassed in this Product",
+      "comments": [
+        "The regionEncompassedInThisProduct property is strongly recommended for cloned nucleic acids, as it provides essential information that greatly improves the clarity and precision of the description for the user."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "regionEncompassedInThisProduct",
       "domain": "NucleicAcid",
@@ -9114,7 +9120,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "regionEncompassedInThisProduct",
       "range": "string",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -14614,9 +14620,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-01-14T16:03:53",
-  "source_file_size": 249868,
-  "generation_date": "2026-01-14T16:04:11",
+  "source_file_date": "2026-01-14T16:14:45",
+  "source_file_size": 250422,
+  "generation_date": "2026-01-14T16:15:04",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

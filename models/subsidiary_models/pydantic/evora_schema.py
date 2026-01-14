@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10936"
+version = "1.0.10945"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-14T17:03:30',
+     'generation_date': '2026-01-14T17:14:23',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -9550,7 +9550,26 @@ class NucleicAcid(Product):
                                              'recommended': True,
                                              'required': False,
                                              'title': 'plasmid selection'},
-                        'regionEncompassedInThisProduct': {'description': 'The '
+                        'regionEncompassedInThisProduct': {'comments': ['The '
+                                                                        'regionEncompassedInThisProduct '
+                                                                        'property is '
+                                                                        'strongly '
+                                                                        'recommended '
+                                                                        'for cloned '
+                                                                        'nucleic '
+                                                                        'acids, as it '
+                                                                        'provides '
+                                                                        'essential '
+                                                                        'information '
+                                                                        'that greatly '
+                                                                        'improves the '
+                                                                        'clarity and '
+                                                                        'precision of '
+                                                                        'the '
+                                                                        'description '
+                                                                        'for the '
+                                                                        'user.'],
+                                                           'description': 'The '
                                                                           'specific '
                                                                           'region '
                                                                           'encompassed '
@@ -9560,7 +9579,8 @@ class NucleicAcid(Product):
                                                            'multivalued': False,
                                                            'name': 'regionEncompassedInThisProduct',
                                                            'range': 'string',
-                                                           'required': True,
+                                                           'recommended': True,
+                                                           'required': False,
                                                            'title': 'region '
                                                                     'encompassed in '
                                                                     'this Product'},
@@ -9696,7 +9716,13 @@ class NucleicAcid(Product):
          'domain_of': ['NucleicAcid', 'Protein'],
          'exact_mappings': ['bao:0002796'],
          'recommended': True} })
-    regionEncompassedInThisProduct: str = Field(default=..., title="region encompassed in this Product", description="""The specific region encompassed in the product.""", json_schema_extra = { "linkml_meta": {'alias': 'regionEncompassedInThisProduct', 'domain_of': ['NucleicAcid']} })
+    regionEncompassedInThisProduct: Optional[str] = Field(default=None, title="region encompassed in this Product", description="""The specific region encompassed in the product.""", json_schema_extra = { "linkml_meta": {'alias': 'regionEncompassedInThisProduct',
+         'comments': ['The regionEncompassedInThisProduct property is strongly '
+                      'recommended for cloned nucleic acids, as it provides essential '
+                      'information that greatly improves the clarity and precision of '
+                      'the description for the user.'],
+         'domain_of': ['NucleicAcid'],
+         'recommended': True} })
     mutationObserved: bool = Field(default=..., title="mutation observed", description="""Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true.""", json_schema_extra = { "linkml_meta": {'alias': 'mutationObserved', 'domain_of': ['NucleicAcid']} })
     observedMutations: Optional[str] = Field(default=None, title="observed mutations", description="""The specific mutations that have been identified and documented in the nucleic acid sequence.""", json_schema_extra = { "linkml_meta": {'alias': 'observedMutations', 'domain_of': ['NucleicAcid']} })
     identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis.""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['NucleicAcid', 'Pathogen']} })

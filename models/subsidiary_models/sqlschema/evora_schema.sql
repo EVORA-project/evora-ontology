@@ -3968,7 +3968,7 @@ CREATE TABLE "Protein" (
 CREATE TABLE "NucleicAcid" (
 	id INTEGER NOT NULL, 
 	"clonedNucleicAcid" BOOLEAN NOT NULL, 
-	"regionEncompassedInThisProduct" TEXT NOT NULL, 
+	"regionEncompassedInThisProduct" TEXT, 
 	"mutationObserved" BOOLEAN NOT NULL, 
 	"observedMutations" TEXT, 
 	"identificationTechnique" TEXT, 

@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10936
+version: 1.0.10945
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -2225,11 +2225,16 @@ slots:
   regionEncompassedInThisProduct:
     description: The specific region encompassed in the product.
     title: region encompassed in this Product
+    comments:
+    - The regionEncompassedInThisProduct property is strongly recommended for cloned
+      nucleic acids, as it provides essential information that greatly improves the
+      clarity and precision of the description for the user.
     from_schema: https://w3id.org/evorao/
     domain_of:
     - NucleicAcid
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   mutationObserved:
     description: Indicates if the current nucleic acid has No mutation compared to
@@ -6361,10 +6366,15 @@ classes:
       regionEncompassedInThisProduct:
         description: The specific region encompassed in the product.
         title: region encompassed in this Product
+        comments:
+        - The regionEncompassedInThisProduct property is strongly recommended for
+          cloned nucleic acids, as it provides essential information that greatly
+          improves the clarity and precision of the description for the user.
         domain_of:
         - NucleicAcid
         range: string
-        required: true
+        required: false
+        recommended: true
         multivalued: false
       mutationObserved:
         description: Indicates if the current nucleic acid has No mutation compared
@@ -7832,4 +7842,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-01-14T17:03:30'
+generation_date: '2026-01-14T17:14:23'

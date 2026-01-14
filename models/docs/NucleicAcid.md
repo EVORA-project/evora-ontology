@@ -343,7 +343,7 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
 | [clonedIntoPlasmid](clonedIntoPlasmid.md) | 0..1 _recommended_ <br/> [ExpressionVector](ExpressionVector.md) | The plasmid into which the nucleic acid has been cloned | direct |
 | [plasmidSelection](plasmidSelection.md) | * _recommended_ <br/> [PlasmidSelection](PlasmidSelection.md) | Specific selectable markers in the plasmid, such as antibiotic resistance gen... | direct |
 | [tagSequence](tagSequence.md) | 0..1 _recommended_ <br/> [TagSequence](TagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... | direct |
-| [regionEncompassedInThisProduct](regionEncompassedInThisProduct.md) | 1 <br/> [String](String.md) | The specific region encompassed in the product | direct |
+| [regionEncompassedInThisProduct](regionEncompassedInThisProduct.md) | 0..1 _recommended_ <br/> [String](String.md) | The specific region encompassed in the product | direct |
 | [mutationObserved](mutationObserved.md) | 1 <br/> [Boolean](Boolean.md) | Indicates if the current nucleic acid has No mutation compared to the referen... | direct |
 | [observedMutations](observedMutations.md) | 0..1 <br/> [String](String.md) | The specific mutations that have been identified and documented in the nuclei... | direct |
 | [identificationTechnique](identificationTechnique.md) | 0..1 <br/> [String](String.md) | A method or procedure used to detect, identify, and confirm the presence of a... | direct |
@@ -581,10 +581,15 @@ slot_usage:
     name: regionEncompassedInThisProduct
     description: The specific region encompassed in the product.
     title: region encompassed in this Product
+    comments:
+    - The regionEncompassedInThisProduct property is strongly recommended for cloned
+      nucleic acids, as it provides essential information that greatly improves the
+      clarity and precision of the description for the user.
     domain_of:
     - NucleicAcid
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   mutationObserved:
     name: mutationObserved
@@ -793,10 +798,15 @@ slot_usage:
     name: regionEncompassedInThisProduct
     description: The specific region encompassed in the product.
     title: region encompassed in this Product
+    comments:
+    - The regionEncompassedInThisProduct property is strongly recommended for cloned
+      nucleic acids, as it provides essential information that greatly improves the
+      clarity and precision of the description for the user.
     domain_of:
     - NucleicAcid
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   mutationObserved:
     name: mutationObserved
@@ -1006,6 +1016,10 @@ attributes:
     name: regionEncompassedInThisProduct
     description: The specific region encompassed in the product.
     title: region encompassed in this Product
+    comments:
+    - The regionEncompassedInThisProduct property is strongly recommended for cloned
+      nucleic acids, as it provides essential information that greatly improves the
+      clarity and precision of the description for the user.
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: regionEncompassedInThisProduct
@@ -1013,7 +1027,8 @@ attributes:
     domain_of:
     - NucleicAcid
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   mutationObserved:
     name: mutationObserved

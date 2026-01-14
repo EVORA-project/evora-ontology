@@ -34,11 +34,15 @@ Alias: regionEncompassedInThisProduct
 
 * Range: [String](String.md)
 
-* Required: True
+* Recommended: True
 
 
 
 
+
+## Comments
+
+* The regionEncompassedInThisProduct property is strongly recommended for cloned nucleic acids, as it provides essential information that greatly improves the clarity and precision of the description for the user.
 
 ## Identifier and Mapping Information
 
@@ -73,13 +77,18 @@ Alias: regionEncompassedInThisProduct
 name: regionEncompassedInThisProduct
 description: The specific region encompassed in the product.
 title: region encompassed in this Product
+comments:
+- The regionEncompassedInThisProduct property is strongly recommended for cloned nucleic
+  acids, as it provides essential information that greatly improves the clarity and
+  precision of the description for the user.
 from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: regionEncompassedInThisProduct
 domain_of:
 - NucleicAcid
 range: string
-required: true
+required: false
+recommended: true
 multivalued: false
 
 ```
