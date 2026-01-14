@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10859
+# version: 1.0.10888
 type AlternateName
   {
     keyword: [String]
@@ -352,7 +352,7 @@ type Country
     description: String
     weight: Integer
     inVocabulary: Vocabulary
-    alpha2Code: String!
+    alpha2Code: String
   }
 
 type Data

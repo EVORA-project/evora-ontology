@@ -34,7 +34,7 @@ Alias: alpha2Code
 
 * Range: [String](String.md)
 
-* Required: True
+* Recommended: True
 
 
 
@@ -89,7 +89,8 @@ alias: alpha2Code
 domain_of:
 - Country
 range: string
-required: true
+required: false
+recommended: true
 multivalued: false
 
 ```

@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10859
+# version: 1.0.10888
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -213,7 +213,7 @@ linkml:Sparqlpath xsd:string
 <Country> CLOSED {
     (  $<Country_tes> (  &<Term_tes> ;
           rdf:type [ <Term> ] ? ;
-          <alpha2Code> @linkml:String
+          <alpha2Code> @linkml:String ?
        ) ;
        rdf:type [ <Country> ] ?
     )

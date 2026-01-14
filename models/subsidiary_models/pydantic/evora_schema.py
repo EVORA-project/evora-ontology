@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10859"
+version = "1.0.10888"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-14T16:05:06',
+     'generation_date': '2026-01-14T16:22:44',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -4148,16 +4148,18 @@ class Country(Term):
                                        'multivalued': False,
                                        'name': 'alpha2Code',
                                        'range': 'string',
+                                       'recommended': True,
                                        'related_mappings': ['obib:0000620',
                                                             'ncit:C54641'],
-                                       'required': True,
+                                       'required': False,
                                        'title': 'alpha 2 code'}},
          'title': 'Country'})
 
-    alpha2Code: str = Field(default=..., title="alpha 2 code", description="""Two-letter country codes from ISO 3166-1 alpha-2.""", json_schema_extra = { "linkml_meta": {'alias': 'alpha2Code',
+    alpha2Code: Optional[str] = Field(default=None, title="alpha 2 code", description="""Two-letter country codes from ISO 3166-1 alpha-2.""", json_schema_extra = { "linkml_meta": {'alias': 'alpha2Code',
          'close_mappings': ['schema:addressCountry'],
          'domain_of': ['Country'],
          'exact_mappings': ['geo:000000023'],
+         'recommended': True,
          'related_mappings': ['obib:0000620', 'ncit:C54641']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '

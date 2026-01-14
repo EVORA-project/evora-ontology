@@ -77,7 +77,7 @@ URI: [EVORAO:Country](https://w3id.org/evorao/Country)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [alpha2Code](alpha2Code.md) | 1 <br/> [String](String.md) | Two-letter country codes from ISO 3166-1 alpha-2 | direct |
+| [alpha2Code](alpha2Code.md) | 0..1 _recommended_ <br/> [String](String.md) | Two-letter country codes from ISO 3166-1 alpha-2 | direct |
 | [title](title.md) | 1 <br/> [String](String.md) | A name given to the resource | [Term](Term.md) |
 | [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A short explanation of the characteristics, features, or nature of the curren... | [Term](Term.md) |
 | [weight](weight.md) | 0..1 _recommended_ <br/> [Integer](Integer.md) | A numerical value indicating relative importance or priority, generally proce... | [Term](Term.md) |
@@ -193,7 +193,8 @@ slot_usage:
     domain_of:
     - Country
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -242,7 +243,8 @@ slot_usage:
     domain_of:
     - Country
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
 attributes:
   alpha2Code:
@@ -263,7 +265,8 @@ attributes:
     domain_of:
     - Country
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   title:
     name: title

@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-14T15:05:51
+# Generation date: 2026-01-14T15:23:29
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10859"
+version = "1.0.10888"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -932,12 +932,10 @@ class Country(Term):
     class_model_uri: ClassVar[URIRef] = EVORAO.Country
 
     title: str = None
-    alpha2Code: str = None
+    alpha2Code: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.alpha2Code):
-            self.MissingRequiredField("alpha2Code")
-        if not isinstance(self.alpha2Code, str):
+        if self.alpha2Code is not None and not isinstance(self.alpha2Code, str):
             self.alpha2Code = str(self.alpha2Code)
 
         super().__post_init__(**kwargs)
@@ -3090,7 +3088,7 @@ slots.parentCategory = Slot(uri=EVORAO.parentCategory, name="parentCategory", cu
                    model_uri=EVORAO.parentCategory, domain=None, range=Optional[Union[dict, ProductCategory]])
 
 slots.alpha2Code = Slot(uri=EVORAO.alpha2Code, name="alpha2Code", curie=EVORAO.curie('alpha2Code'),
-                   model_uri=EVORAO.alpha2Code, domain=None, range=str)
+                   model_uri=EVORAO.alpha2Code, domain=None, range=Optional[str])
 
 slots.taxonomy = Slot(uri=EVORAO.taxonomy, name="taxonomy", curie=EVORAO.curie('taxonomy'),
                    model_uri=EVORAO.taxonomy, domain=None, range=Optional[Union[Union[dict, Taxonomy], list[Union[dict, Taxonomy]]]])
@@ -3747,7 +3745,7 @@ slots.ProductCategory_parentCategory = Slot(uri=EVORAO.parentCategory, name="Pro
                    model_uri=EVORAO.ProductCategory_parentCategory, domain=ProductCategory, range=Optional[Union[dict, "ProductCategory"]])
 
 slots.Country_alpha2Code = Slot(uri=EVORAO.alpha2Code, name="Country_alpha2Code", curie=EVORAO.curie('alpha2Code'),
-                   model_uri=EVORAO.Country_alpha2Code, domain=Country, range=str)
+                   model_uri=EVORAO.Country_alpha2Code, domain=Country, range=Optional[str])
 
 slots.TaxonomicRank_taxonomy = Slot(uri=EVORAO.taxonomy, name="TaxonomicRank_taxonomy", curie=EVORAO.curie('taxonomy'),
                    model_uri=EVORAO.TaxonomicRank_taxonomy, domain=TaxonomicRank, range=Optional[Union[Union[dict, Taxonomy], list[Union[dict, Taxonomy]]]])

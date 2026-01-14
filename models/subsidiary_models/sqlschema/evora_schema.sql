@@ -2773,7 +2773,7 @@ CREATE TABLE "Vocabulary" (
 );
 CREATE TABLE "Country" (
 	id INTEGER NOT NULL, 
-	"alpha2Code" TEXT NOT NULL, 
+	"alpha2Code" TEXT, 
 	title TEXT NOT NULL, 
 	description TEXT, 
 	weight INTEGER, 

@@ -10812,7 +10812,7 @@ class Country(Term):
     __tablename__ = 'Country'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    alpha2Code = Column(Text(), nullable=False )
+    alpha2Code = Column(Text())
     title = Column(Text(), nullable=False )
     description = Column(Text())
     weight = Column(Integer())
