@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-14T15:23:29
+# Generation date: 2026-01-14T15:27:38
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10888"
+version = "1.0.10892"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
