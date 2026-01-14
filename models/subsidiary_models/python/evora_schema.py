@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-14T15:27:38
+# Generation date: 2026-01-14T15:37:32
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10892"
+version = "1.0.10897"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1537,7 +1537,6 @@ class ProductOrService(Dataset):
     refSku: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -1552,6 +1551,7 @@ class ProductOrService(Dataset):
     riskGroup: Optional[Union[dict, RiskGroup]] = None
     biosafetyLevel: Optional[Union[dict, BiosafetyLevel]] = None
     biosafetyRestrictions: Optional[str] = None
+    canBeUsedToProduceGmo: Optional[Union[bool, Bool]] = None
     complementaryDocument: Optional[Union[Union[dict, "Document"], list[Union[dict, "Document"]]]] = empty_list()
     technicalRecommendation: Optional[str] = None
     productPicture: Optional[Union[Union[dict, "Image"], list[Union[dict, "Image"]]]] = empty_list()
@@ -1581,11 +1581,6 @@ class ProductOrService(Dataset):
         if self._is_empty(self.pathogenIdentification):
             self.MissingRequiredField("pathogenIdentification")
         self._normalize_inlined_as_dict(slot_name="pathogenIdentification", slot_type=PathogenIdentification, key_name="taxon", keyed=False)
-
-        if self._is_empty(self.canBeUsedToProduceGmo):
-            self.MissingRequiredField("canBeUsedToProduceGmo")
-        if not isinstance(self.canBeUsedToProduceGmo, Bool):
-            self.canBeUsedToProduceGmo = Bool(self.canBeUsedToProduceGmo)
 
         if self._is_empty(self.provider):
             self.MissingRequiredField("provider")
@@ -1643,6 +1638,9 @@ class ProductOrService(Dataset):
         if self.biosafetyRestrictions is not None and not isinstance(self.biosafetyRestrictions, str):
             self.biosafetyRestrictions = str(self.biosafetyRestrictions)
 
+        if self.canBeUsedToProduceGmo is not None and not isinstance(self.canBeUsedToProduceGmo, Bool):
+            self.canBeUsedToProduceGmo = Bool(self.canBeUsedToProduceGmo)
+
         self._normalize_inlined_as_dict(slot_name="complementaryDocument", slot_type=Document, key_name="name", keyed=False)
 
         if self.technicalRecommendation is not None and not isinstance(self.technicalRecommendation, str):
@@ -1688,7 +1686,6 @@ class Service(ProductOrService):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -1725,7 +1722,6 @@ class Product(ProductOrService):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -1792,7 +1788,6 @@ class Antibody(Product):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -1862,7 +1857,6 @@ class Hybridoma(Antibody):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -1899,7 +1893,6 @@ class Protein(Product):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -2000,7 +1993,6 @@ class NucleicAcid(Product):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -2105,7 +2097,6 @@ class DetectionKit(Product):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -2153,7 +2144,6 @@ class Bundle(Product):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -2191,7 +2181,6 @@ class Pathogen(Product):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -2305,7 +2294,6 @@ class Virus(Pathogen):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -2359,7 +2347,6 @@ class Bacterium(Pathogen):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -2394,7 +2381,6 @@ class Fungus(Pathogen):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -2429,7 +2415,6 @@ class Protozoan(Pathogen):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -2464,7 +2449,6 @@ class Viroid(Pathogen):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -2499,7 +2483,6 @@ class Prion(Pathogen):
     version: str = None
     category: Union[dict, ProductCategory] = None
     pathogenIdentification: Union[Union[dict, PathogenIdentification], list[Union[dict, PathogenIdentification]]] = None
-    canBeUsedToProduceGmo: Union[bool, Bool] = None
     provider: Union[dict, Provider] = None
     collection: Union[Union[dict, Collection], list[Union[dict, Collection]]] = None
     keywords: Union[Union[dict, Keyword], list[Union[dict, Keyword]]] = None
@@ -3244,7 +3227,7 @@ slots.biosafetyRestrictions = Slot(uri=EVORAO.biosafetyRestrictions, name="biosa
                    model_uri=EVORAO.biosafetyRestrictions, domain=None, range=Optional[str])
 
 slots.canBeUsedToProduceGmo = Slot(uri=EVORAO.canBeUsedToProduceGmo, name="canBeUsedToProduceGmo", curie=EVORAO.curie('canBeUsedToProduceGmo'),
-                   model_uri=EVORAO.canBeUsedToProduceGmo, domain=None, range=Union[bool, Bool])
+                   model_uri=EVORAO.canBeUsedToProduceGmo, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.provider = Slot(uri=EVORAO.provider, name="provider", curie=EVORAO.curie('provider'),
                    model_uri=EVORAO.provider, domain=None, range=Union[dict, Provider])
@@ -3925,7 +3908,7 @@ slots.ProductOrService_biosafetyRestrictions = Slot(uri=EVORAO.biosafetyRestrict
                    model_uri=EVORAO.ProductOrService_biosafetyRestrictions, domain=ProductOrService, range=Optional[str])
 
 slots.ProductOrService_canBeUsedToProduceGmo = Slot(uri=EVORAO.canBeUsedToProduceGmo, name="ProductOrService_canBeUsedToProduceGmo", curie=EVORAO.curie('canBeUsedToProduceGmo'),
-                   model_uri=EVORAO.ProductOrService_canBeUsedToProduceGmo, domain=ProductOrService, range=Union[bool, Bool])
+                   model_uri=EVORAO.ProductOrService_canBeUsedToProduceGmo, domain=ProductOrService, range=Optional[Union[bool, Bool]])
 
 slots.ProductOrService_provider = Slot(uri=EVORAO.provider, name="ProductOrService_provider", curie=EVORAO.curie('provider'),
                    model_uri=EVORAO.ProductOrService_provider, domain=ProductOrService, range=Union[dict, Provider])

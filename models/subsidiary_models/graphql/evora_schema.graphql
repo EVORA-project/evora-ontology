@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10892
+# version: 1.0.10897
 type AlternateName
   {
     keyword: [String]
@@ -38,7 +38,7 @@ type Antibody
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -111,7 +111,7 @@ type Bacterium
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -217,7 +217,7 @@ type Bundle
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -441,7 +441,7 @@ type DetectionKit
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -585,7 +585,7 @@ type Fungus
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -666,7 +666,7 @@ type Hybridoma
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -868,7 +868,7 @@ type NucleicAcid
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -964,7 +964,7 @@ interface Pathogen
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -1110,7 +1110,7 @@ type Prion
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -1177,7 +1177,7 @@ type Product
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -1258,7 +1258,7 @@ interface ProductOrService
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -1310,7 +1310,7 @@ type Protein
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -1373,7 +1373,7 @@ type Protozoan
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -1552,7 +1552,7 @@ type Service
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -1764,7 +1764,7 @@ type Viroid
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!
@@ -1831,7 +1831,7 @@ type Virus
     riskGroup: RiskGroup
     biosafetyLevel: BiosafetyLevel
     biosafetyRestrictions: String
-    canBeUsedToProduceGmo: Boolean!
+    canBeUsedToProduceGmo: Boolean
     provider: Provider!
     collection: [Collection]!
     keywords: [Keyword]!

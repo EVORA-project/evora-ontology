@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10892",
+  "version": "1.0.10897",
   "imports": [
     "linkml:types"
   ],
@@ -2733,7 +2733,6 @@
         "ProductOrService"
       ],
       "range": "boolean",
-      "required": true,
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -7836,7 +7835,6 @@
       "is_usage_slot": true,
       "usage_slot_name": "canBeUsedToProduceGmo",
       "range": "boolean",
-      "required": true,
       "recommended": true,
       "@type": "SlotDefinition"
     },
@@ -14617,9 +14615,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-01-14T15:27:16",
-  "source_file_size": 249006,
-  "generation_date": "2026-01-14T15:27:33",
+  "source_file_date": "2026-01-14T15:37:08",
+  "source_file_size": 249008,
+  "generation_date": "2026-01-14T15:37:27",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",
