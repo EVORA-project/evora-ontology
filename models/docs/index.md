@@ -183,6 +183,7 @@ Name: EVORAO
 | [identificationTechnique](identificationTechnique.md) | A method or procedure used to detect, identify, and confirm the presence of a... |
 | [identifier](identifier.md) | A unique identifier of the resource being described or cataloged |
 | [inclusionBodiesType](inclusionBodiesType.md) | Refers to the state of aggregated proteins within a cell |
+| [Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products](Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products.md) | Tell whether or not the sequence of the product was controlled, which is expe... |
 | [indigenousPeopleAndLocalCommunityOrigin](indigenousPeopleAndLocalCommunityOrigin.md) | The specific IPLC area (Indigenous People and Local Communities) from which t... |
 | [infectivity](infectivity.md) | Indicates the ability of the pathogen to establish an infection in a host org... |
 | [infectivityTest](infectivityTest.md) | The description of the completed infectivity test, providing details on the m... |
@@ -257,7 +258,6 @@ Name: EVORAO
 | [riskGroup](riskGroup.md) | The highest risk group related to this resource |
 | [rorId](rorId.md) | The corresponding organization's persistent identifier from the Research Orga... |
 | [sequence](sequence.md) | The related sequence information from a sequence provider or in fasta format |
-| [sequenceChecked](sequenceChecked.md) | Tell whether or not the sequence of the product was controlled (compulsory fo... |
 | [sequenceFasta](sequenceFasta.md) | Textual encoding of a biological sequence information in FASTA format |
 | [sequenceProvider](sequenceProvider.md) | The name of the sequence provider within the list of accepted sequence provid... |
 | [sequenceReference](sequenceReference.md) | A reference that permits to retrieve the sequence information from a sequence... |

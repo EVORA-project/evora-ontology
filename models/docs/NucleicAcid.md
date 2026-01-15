@@ -169,6 +169,8 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
         
       NucleicAcid : identifier
         
+      NucleicAcid : Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products
+        
       NucleicAcid : internalReference
         
       NucleicAcid : iri
@@ -279,8 +281,6 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
     click Sequence href "../Sequence"
 
         
-      NucleicAcid : sequenceChecked
-        
       NucleicAcid : sequencing
         
       NucleicAcid : shippingConditions
@@ -349,7 +349,7 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
 | [identificationTechnique](identificationTechnique.md) | 0..1 <br/> [String](String.md) | A method or procedure used to detect, identify, and confirm the presence of a... | direct |
 | [sequencing](sequencing.md) | 1 <br/> [String](String.md) | Refers to the level of sequencing performed on the nucleic acid | direct |
 | [titer](titer.md) | 0..1 <br/> [String](String.md) | The titer value, its corresponding unit, and the method of quantification (e | direct |
-| [sequenceChecked](sequenceChecked.md) | 1 <br/> [Boolean](Boolean.md) | Tell whether or not the sequence of the product was controlled (compulsory fo... | direct |
+| [Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products](Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Tell whether or not the sequence of the product was controlled, which is expe... | direct |
 | [iataClassification](iataClassification.md) | 1 <br/> [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
 | [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
@@ -476,7 +476,8 @@ slots:
 - identificationTechnique
 - sequencing
 - titer
-- sequenceChecked
+- Indicates whether or not the sequence of the product was controlled, which is expected
+  for sequenced nucleic acids and especially important for cloned products
 slot_usage:
   biologicalMaterialOrigin:
     name: biologicalMaterialOrigin
@@ -658,19 +659,29 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  sequenceChecked:
-    name: sequenceChecked
-    description: Tell whether or not the sequence of the product was controlled (compulsory
-      for cloned products).
+  ? Indicates whether or not the sequence of the product was controlled, which is
+    expected for sequenced nucleic acids and especially important for cloned products
+  : name: Indicates whether or not the sequence of the product was controlled, which
+      is expected for sequenced nucleic acids and especially important for cloned
+      products
+    description: Tell whether or not the sequence of the product was controlled, which
+      is expected for sequenced nucleic acids and especially important for cloned
+      ones.
     title: sequence checked
     comments:
-    - Sequence check is mandatory for cloned products.
+    - For non-sequenced nucleic acids, the sequenceChecked value cannot be assessed.
+      In all other cases, it is strongly recommended to indicate whether the sequence
+      verification has been performed or not. For cloned products in particular, providing
+      this information is especially meaningful, as sequence verification is a key
+      element in confirming the integrity of the cloned construct and is therefore
+      expected to be documented whenever available.
     related_mappings:
     - iceo:0000336
     domain_of:
     - NucleicAcid
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -880,19 +891,29 @@ slot_usage:
     range: string
     required: false
     multivalued: false
-  sequenceChecked:
-    name: sequenceChecked
-    description: Tell whether or not the sequence of the product was controlled (compulsory
-      for cloned products).
+  ? Indicates whether or not the sequence of the product was controlled, which is
+    expected for sequenced nucleic acids and especially important for cloned products
+  : name: Indicates whether or not the sequence of the product was controlled, which
+      is expected for sequenced nucleic acids and especially important for cloned
+      products
+    description: Tell whether or not the sequence of the product was controlled, which
+      is expected for sequenced nucleic acids and especially important for cloned
+      ones.
     title: sequence checked
     comments:
-    - Sequence check is mandatory for cloned products.
+    - For non-sequenced nucleic acids, the sequenceChecked value cannot be assessed.
+      In all other cases, it is strongly recommended to indicate whether the sequence
+      verification has been performed or not. For cloned products in particular, providing
+      this information is especially meaningful, as sequence verification is a key
+      element in confirming the integrity of the cloned construct and is therefore
+      expected to be documented whenever available.
     related_mappings:
     - iceo:0000336
     domain_of:
     - NucleicAcid
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
 attributes:
   biologicalMaterialOrigin:
@@ -1133,23 +1154,33 @@ attributes:
     range: string
     required: false
     multivalued: false
-  sequenceChecked:
-    name: sequenceChecked
-    description: Tell whether or not the sequence of the product was controlled (compulsory
-      for cloned products).
+  ? Indicates whether or not the sequence of the product was controlled, which is
+    expected for sequenced nucleic acids and especially important for cloned products
+  : name: Indicates whether or not the sequence of the product was controlled, which
+      is expected for sequenced nucleic acids and especially important for cloned
+      products
+    description: Tell whether or not the sequence of the product was controlled, which
+      is expected for sequenced nucleic acids and especially important for cloned
+      ones.
     title: sequence checked
     comments:
-    - Sequence check is mandatory for cloned products.
+    - For non-sequenced nucleic acids, the sequenceChecked value cannot be assessed.
+      In all other cases, it is strongly recommended to indicate whether the sequence
+      verification has been performed or not. For cloned products in particular, providing
+      this information is especially meaningful, as sequence verification is a key
+      element in confirming the integrity of the cloned construct and is therefore
+      expected to be documented whenever available.
     from_schema: https://w3id.org/evorao/
     related_mappings:
     - iceo:0000336
     rank: 1000
-    alias: sequenceChecked
+    alias: Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products
     owner: NucleicAcid
     domain_of:
     - NucleicAcid
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   iataClassification:
     name: iataClassification

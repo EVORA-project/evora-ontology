@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10956"
+version = "1.0.10966"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-15T10:45:07',
+     'generation_date': '2026-01-15T11:18:49',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -9423,7 +9423,127 @@ class NucleicAcid(Product):
                             'chebi:33696'],
          'from_schema': 'https://w3id.org/evorao/',
          'related_mappings': ['mi:0318', 'mi:0318'],
-         'slot_usage': {'biologicalMaterialOrigin': {'description': 'Information about '
+         'slot_usage': {'Indicates whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned products': {'comments': ['For '
+                                                                                                                                                                                                         'non-sequenced '
+                                                                                                                                                                                                         'nucleic '
+                                                                                                                                                                                                         'acids, '
+                                                                                                                                                                                                         'the '
+                                                                                                                                                                                                         'sequenceChecked '
+                                                                                                                                                                                                         'value '
+                                                                                                                                                                                                         'cannot '
+                                                                                                                                                                                                         'be '
+                                                                                                                                                                                                         'assessed. '
+                                                                                                                                                                                                         'In '
+                                                                                                                                                                                                         'all '
+                                                                                                                                                                                                         'other '
+                                                                                                                                                                                                         'cases, '
+                                                                                                                                                                                                         'it '
+                                                                                                                                                                                                         'is '
+                                                                                                                                                                                                         'strongly '
+                                                                                                                                                                                                         'recommended '
+                                                                                                                                                                                                         'to '
+                                                                                                                                                                                                         'indicate '
+                                                                                                                                                                                                         'whether '
+                                                                                                                                                                                                         'the '
+                                                                                                                                                                                                         'sequence '
+                                                                                                                                                                                                         'verification '
+                                                                                                                                                                                                         'has '
+                                                                                                                                                                                                         'been '
+                                                                                                                                                                                                         'performed '
+                                                                                                                                                                                                         'or '
+                                                                                                                                                                                                         'not. '
+                                                                                                                                                                                                         'For '
+                                                                                                                                                                                                         'cloned '
+                                                                                                                                                                                                         'products '
+                                                                                                                                                                                                         'in '
+                                                                                                                                                                                                         'particular, '
+                                                                                                                                                                                                         'providing '
+                                                                                                                                                                                                         'this '
+                                                                                                                                                                                                         'information '
+                                                                                                                                                                                                         'is '
+                                                                                                                                                                                                         'especially '
+                                                                                                                                                                                                         'meaningful, '
+                                                                                                                                                                                                         'as '
+                                                                                                                                                                                                         'sequence '
+                                                                                                                                                                                                         'verification '
+                                                                                                                                                                                                         'is '
+                                                                                                                                                                                                         'a '
+                                                                                                                                                                                                         'key '
+                                                                                                                                                                                                         'element '
+                                                                                                                                                                                                         'in '
+                                                                                                                                                                                                         'confirming '
+                                                                                                                                                                                                         'the '
+                                                                                                                                                                                                         'integrity '
+                                                                                                                                                                                                         'of '
+                                                                                                                                                                                                         'the '
+                                                                                                                                                                                                         'cloned '
+                                                                                                                                                                                                         'construct '
+                                                                                                                                                                                                         'and '
+                                                                                                                                                                                                         'is '
+                                                                                                                                                                                                         'therefore '
+                                                                                                                                                                                                         'expected '
+                                                                                                                                                                                                         'to '
+                                                                                                                                                                                                         'be '
+                                                                                                                                                                                                         'documented '
+                                                                                                                                                                                                         'whenever '
+                                                                                                                                                                                                         'available.'],
+                                                                                                                                                                                            'description': 'Tell '
+                                                                                                                                                                                                           'whether '
+                                                                                                                                                                                                           'or '
+                                                                                                                                                                                                           'not '
+                                                                                                                                                                                                           'the '
+                                                                                                                                                                                                           'sequence '
+                                                                                                                                                                                                           'of '
+                                                                                                                                                                                                           'the '
+                                                                                                                                                                                                           'product '
+                                                                                                                                                                                                           'was '
+                                                                                                                                                                                                           'controlled, '
+                                                                                                                                                                                                           'which '
+                                                                                                                                                                                                           'is '
+                                                                                                                                                                                                           'expected '
+                                                                                                                                                                                                           'for '
+                                                                                                                                                                                                           'sequenced '
+                                                                                                                                                                                                           'nucleic '
+                                                                                                                                                                                                           'acids '
+                                                                                                                                                                                                           'and '
+                                                                                                                                                                                                           'especially '
+                                                                                                                                                                                                           'important '
+                                                                                                                                                                                                           'for '
+                                                                                                                                                                                                           'cloned '
+                                                                                                                                                                                                           'ones.',
+                                                                                                                                                                                            'domain_of': ['NucleicAcid'],
+                                                                                                                                                                                            'multivalued': False,
+                                                                                                                                                                                            'name': 'Indicates '
+                                                                                                                                                                                                    'whether '
+                                                                                                                                                                                                    'or '
+                                                                                                                                                                                                    'not '
+                                                                                                                                                                                                    'the '
+                                                                                                                                                                                                    'sequence '
+                                                                                                                                                                                                    'of '
+                                                                                                                                                                                                    'the '
+                                                                                                                                                                                                    'product '
+                                                                                                                                                                                                    'was '
+                                                                                                                                                                                                    'controlled, '
+                                                                                                                                                                                                    'which '
+                                                                                                                                                                                                    'is '
+                                                                                                                                                                                                    'expected '
+                                                                                                                                                                                                    'for '
+                                                                                                                                                                                                    'sequenced '
+                                                                                                                                                                                                    'nucleic '
+                                                                                                                                                                                                    'acids '
+                                                                                                                                                                                                    'and '
+                                                                                                                                                                                                    'especially '
+                                                                                                                                                                                                    'important '
+                                                                                                                                                                                                    'for '
+                                                                                                                                                                                                    'cloned '
+                                                                                                                                                                                                    'products',
+                                                                                                                                                                                            'range': 'boolean',
+                                                                                                                                                                                            'recommended': True,
+                                                                                                                                                                                            'related_mappings': ['iceo:0000336'],
+                                                                                                                                                                                            'required': False,
+                                                                                                                                                                                            'title': 'sequence '
+                                                                                                                                                                                                     'checked'},
+                        'biologicalMaterialOrigin': {'description': 'Information about '
                                                                     'the origin of the '
                                                                     'biological '
                                                                     'material, '
@@ -9620,19 +9740,6 @@ class NucleicAcid(Product):
                                      'related_mappings': ['uniprotrdfs:sequence'],
                                      'required': False,
                                      'title': 'sequence'},
-                        'sequenceChecked': {'comments': ['Sequence check is mandatory '
-                                                         'for cloned products.'],
-                                            'description': 'Tell whether or not the '
-                                                           'sequence of the product '
-                                                           'was controlled (compulsory '
-                                                           'for cloned products).',
-                                            'domain_of': ['NucleicAcid'],
-                                            'multivalued': False,
-                                            'name': 'sequenceChecked',
-                                            'range': 'boolean',
-                                            'related_mappings': ['iceo:0000336'],
-                                            'required': True,
-                                            'title': 'sequence checked'},
                         'sequencing': {'comments': ['Cloned products have to be '
                                                     'sequenced.'],
                                        'description': 'Refers to the level of '
@@ -9748,9 +9855,17 @@ class NucleicAcid(Product):
     titer: Optional[str] = Field(default=None, title="titer", description="""The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.""", json_schema_extra = { "linkml_meta": {'alias': 'titer',
          'domain_of': ['NucleicAcid', 'Pathogen'],
          'related_mappings': ['wd:Q2166189']} })
-    sequenceChecked: bool = Field(default=..., title="sequence checked", description="""Tell whether or not the sequence of the product was controlled (compulsory for cloned products).""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceChecked',
-         'comments': ['Sequence check is mandatory for cloned products.'],
+    Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products: Optional[bool] = Field(default=None, title="sequence checked", description="""Tell whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned ones.""", json_schema_extra = { "linkml_meta": {'alias': 'Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products',
+         'comments': ['For non-sequenced nucleic acids, the sequenceChecked value '
+                      'cannot be assessed. In all other cases, it is strongly '
+                      'recommended to indicate whether the sequence verification has '
+                      'been performed or not. For cloned products in particular, '
+                      'providing this information is especially meaningful, as '
+                      'sequence verification is a key element in confirming the '
+                      'integrity of the cloned construct and is therefore expected to '
+                      'be documented whenever available.'],
          'domain_of': ['NucleicAcid'],
+         'recommended': True,
          'related_mappings': ['iceo:0000336']} })
     iataClassification: IataClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product.""", json_schema_extra = { "linkml_meta": {'alias': 'iataClassification',
          'close_mappings': ['wdp:P238', 'schema:iataCode'],

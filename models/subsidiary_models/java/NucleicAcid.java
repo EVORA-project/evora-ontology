@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10956 */
+/* version: 1.0.10966 */
 
 
 /**
@@ -28,6 +28,6 @@ public class NucleicAcid extends Product {
   private String identificationTechnique;
   private String sequencing;
   private String titer;
-  private boolean sequenceChecked;
+  private boolean indicatesWhetherOrNotTheSequenceOfTheProductWasControlledWhichIsExpectedForSequencedNucleicAcidsAndEspeciallyImportantForClonedProducts;
 
 }

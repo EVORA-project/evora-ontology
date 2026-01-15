@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10956
+# version: 1.0.10966
 type AlternateName
   {
     keyword: [String]
@@ -906,7 +906,7 @@ type NucleicAcid
     identificationTechnique: String
     sequencing: String!
     titer: String!
-    sequenceChecked: Boolean!
+    indicatesWhetherOrNotTheSequenceOfTheProductWasControlledWhichIsExpectedForSequencedNucleicAcidsAndEspeciallyImportantForClonedProducts: Boolean
   }
 
 type Organization

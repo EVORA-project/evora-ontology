@@ -28,11 +28,11 @@ Alias: homePage
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
-| [ResearchInfrastructure](ResearchInfrastructure.md) | A research infrastructure (RI) |  no  |
 | [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
 | [Person](Person.md) | An individual |  no  |
 | [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [ResearchInfrastructure](ResearchInfrastructure.md) | A research infrastructure (RI) |  no  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 
 

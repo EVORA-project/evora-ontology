@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10956",
+  "version": "1.0.10966",
   "imports": [
     "linkml:types"
   ],
@@ -3703,24 +3703,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "sequenceChecked",
-      "definition_uri": "https://w3id.org/evorao/sequenceChecked",
-      "description": "Tell whether or not the sequence of the product was controlled (compulsory for cloned products).",
+      "name": "Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
+      "definition_uri": "https://w3id.org/evorao/Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
+      "description": "Tell whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned ones.",
       "title": "sequence checked",
       "comments": [
-        "Sequence check is mandatory for cloned products."
+        "For non-sequenced nucleic acids, the sequenceChecked value cannot be assessed. In all other cases, it is strongly recommended to indicate whether the sequence verification has been performed or not. For cloned products in particular, providing this information is especially meaningful, as sequence verification is a key element in confirming the integrity of the cloned construct and is therefore expected to be documented whenever available."
       ],
       "from_schema": "https://w3id.org/evorao/",
       "related_mappings": [
         "http://purl.obolibrary.org/obo/ICEO_0000336"
       ],
-      "slot_uri": "https://w3id.org/evorao/sequenceChecked",
+      "slot_uri": "https://w3id.org/evorao/Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
       "owner": "NucleicAcid",
       "domain_of": [
         "NucleicAcid"
       ],
       "range": "boolean",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9239,29 +9239,29 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "NucleicAcid_sequenceChecked",
-      "definition_uri": "https://w3id.org/evorao/sequenceChecked",
-      "description": "Tell whether or not the sequence of the product was controlled (compulsory for cloned products).",
+      "name": "NucleicAcid_Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
+      "definition_uri": "https://w3id.org/evorao/Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
+      "description": "Tell whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned ones.",
       "title": "sequence checked",
       "comments": [
-        "Sequence check is mandatory for cloned products."
+        "For non-sequenced nucleic acids, the sequenceChecked value cannot be assessed. In all other cases, it is strongly recommended to indicate whether the sequence verification has been performed or not. For cloned products in particular, providing this information is especially meaningful, as sequence verification is a key element in confirming the integrity of the cloned construct and is therefore expected to be documented whenever available."
       ],
       "from_schema": "https://w3id.org/evorao/",
       "related_mappings": [
         "http://purl.obolibrary.org/obo/ICEO_0000336"
       ],
-      "is_a": "sequenceChecked",
+      "is_a": "Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
       "domain": "NucleicAcid",
-      "slot_uri": "https://w3id.org/evorao/sequenceChecked",
-      "alias": "sequenceChecked",
+      "slot_uri": "https://w3id.org/evorao/Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
+      "alias": "Indicates whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned products",
       "owner": "NucleicAcid",
       "domain_of": [
         "NucleicAcid"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "sequenceChecked",
+      "usage_slot_name": "Indicates whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned products",
       "range": "boolean",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13379,7 +13379,7 @@
         "NucleicAcid_identificationTechnique",
         "NucleicAcid_sequencing",
         "NucleicAcid_titer",
-        "NucleicAcid_sequenceChecked"
+        "NucleicAcid_Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/NucleicAcid",
@@ -14626,9 +14626,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-01-15T09:45:31",
-  "source_file_size": 250940,
-  "generation_date": "2026-01-15T09:45:48",
+  "source_file_date": "2026-01-15T10:19:12",
+  "source_file_size": 252446,
+  "generation_date": "2026-01-15T10:19:28",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

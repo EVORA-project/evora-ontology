@@ -705,7 +705,7 @@
 --     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis.
 --     * Slot: sequencing Description: Refers to the level of sequencing performed on the nucleic acid. Possible values include 'Not sequenced' (no sequencing has been performed), 'Partly sequenced' (only a portion of the nucleic acid sequence has been determined), and 'Fully sequenced' (the entire nucleic acid sequence has been determined).
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
---     * Slot: sequenceChecked Description: Tell whether or not the sequence of the product was controlled (compulsory for cloned products).
+--     * Slot: Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products Description: Tell whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned ones.
 --     * Slot: shippingConditions Description: Specification of the terms and parameters for transporting.
 --     * Slot: storageConditions Description: Specifies the conditions under which the product has to be stored to maintain stability and integrity, such as temperature, buffer, and other environmental factors.
 --     * Slot: thirdPartyDistributionConsent Description: Indicates whether the biological material can be distributed without restriction to third parties, as indicated by the ABS permit, in case an ABS permit is required.
@@ -3974,7 +3974,7 @@ CREATE TABLE "NucleicAcid" (
 	"identificationTechnique" TEXT, 
 	sequencing TEXT NOT NULL, 
 	titer TEXT, 
-	"sequenceChecked" BOOLEAN NOT NULL, 
+	"Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products" BOOLEAN, 
 	"shippingConditions" TEXT NOT NULL, 
 	"storageConditions" TEXT NOT NULL, 
 	"thirdPartyDistributionConsent" BOOLEAN, 

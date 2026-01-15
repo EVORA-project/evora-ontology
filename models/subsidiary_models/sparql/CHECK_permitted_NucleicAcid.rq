@@ -76,7 +76,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:identificationTechnique,
    EVORAO:sequencing,
    EVORAO:titer,
-   EVORAO:sequenceChecked,
+   EVORAO:Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products,
    EVORAO:iataClassification,
    EVORAO:shippingConditions,
    EVORAO:materialSafetyDataSheet,

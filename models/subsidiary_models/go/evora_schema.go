@@ -4057,9 +4057,9 @@ type NucleicAcid struct {
 	 */
 	Titer string `json:"titer"`
 	/*
-	 * Tell whether or not the sequence of the product was controlled (compulsory for cloned products).
+	 * Tell whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned ones.
 	 */
-	SequenceChecked bool `json:"sequenceChecked"`
+	IndicatesWhetherOrNotTheSequenceOfTheProductWasControlledWhichIsExpectedForSequencedNucleicAcidsAndEspeciallyImportantForClonedProducts bool `json:"Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products"`
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product.
 	 */

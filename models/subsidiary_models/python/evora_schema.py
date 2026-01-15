@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-15T09:45:53
+# Generation date: 2026-01-15T10:19:33
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10956"
+version = "1.0.10966"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1997,7 +1997,6 @@ class NucleicAcid(Product):
     clonedNucleicAcid: Union[bool, Bool] = None
     sequencing: str = None
     titer: str = None
-    sequenceChecked: Union[bool, Bool] = None
     availability: str = "on request"
     genBankFileOfTheConstruct: Optional[Union[Union[dict, "Data"], list[Union[dict, "Data"]]]] = empty_list()
     clonedIntoPlasmid: Optional[Union[dict, ExpressionVector]] = None
@@ -2007,6 +2006,7 @@ class NucleicAcid(Product):
     mutationObserved: Optional[Union[bool, Bool]] = None
     observedMutations: Optional[str] = None
     identificationTechnique: Optional[str] = None
+    Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.biologicalMaterialOrigin):
@@ -2035,11 +2035,6 @@ class NucleicAcid(Product):
         if not isinstance(self.titer, str):
             self.titer = str(self.titer)
 
-        if self._is_empty(self.sequenceChecked):
-            self.MissingRequiredField("sequenceChecked")
-        if not isinstance(self.sequenceChecked, Bool):
-            self.sequenceChecked = Bool(self.sequenceChecked)
-
         self._normalize_inlined_as_dict(slot_name="genBankFileOfTheConstruct", slot_type=Data, key_name="name", keyed=False)
 
         if self.clonedIntoPlasmid is not None and not isinstance(self.clonedIntoPlasmid, ExpressionVector):
@@ -2061,6 +2056,9 @@ class NucleicAcid(Product):
 
         if self.identificationTechnique is not None and not isinstance(self.identificationTechnique, str):
             self.identificationTechnique = str(self.identificationTechnique)
+
+        if self.Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products is not None and not isinstance(self.Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products, Bool):
+            self.Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products = Bool(self.Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products)
 
         super().__post_init__(**kwargs)
 
@@ -3376,8 +3374,8 @@ slots.sequencing = Slot(uri=EVORAO.sequencing, name="sequencing", curie=EVORAO.c
 slots.titer = Slot(uri=EVORAO.titer, name="titer", curie=EVORAO.curie('titer'),
                    model_uri=EVORAO.titer, domain=None, range=str)
 
-slots.sequenceChecked = Slot(uri=EVORAO.sequenceChecked, name="sequenceChecked", curie=EVORAO.curie('sequenceChecked'),
-                   model_uri=EVORAO.sequenceChecked, domain=None, range=Union[bool, Bool])
+slots.Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products = Slot(uri=EVORAO.Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products, name="Indicates whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned products", curie=EVORAO.curie('Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products'),
+                   model_uri=EVORAO.Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.standardOperatingProcedureFile = Slot(uri=EVORAO.standardOperatingProcedureFile, name="standardOperatingProcedureFile", curie=EVORAO.curie('standardOperatingProcedureFile'),
                    model_uri=EVORAO.standardOperatingProcedureFile, domain=None, range=Optional[Union[Union[dict, File], list[Union[dict, File]]]])
@@ -4075,8 +4073,8 @@ slots.NucleicAcid_sequencing = Slot(uri=EVORAO.sequencing, name="NucleicAcid_seq
 slots.NucleicAcid_titer = Slot(uri=EVORAO.titer, name="NucleicAcid_titer", curie=EVORAO.curie('titer'),
                    model_uri=EVORAO.NucleicAcid_titer, domain=NucleicAcid, range=str)
 
-slots.NucleicAcid_sequenceChecked = Slot(uri=EVORAO.sequenceChecked, name="NucleicAcid_sequenceChecked", curie=EVORAO.curie('sequenceChecked'),
-                   model_uri=EVORAO.NucleicAcid_sequenceChecked, domain=NucleicAcid, range=Union[bool, Bool])
+slots.NucleicAcid_Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products = Slot(uri=EVORAO.Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products, name="NucleicAcid_Indicates whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned products", curie=EVORAO.curie('Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products'),
+                   model_uri=EVORAO.NucleicAcid_Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products, domain=NucleicAcid, range=Optional[Union[bool, Bool]])
 
 slots.DetectionKit_standardOperatingProcedureFile = Slot(uri=EVORAO.standardOperatingProcedureFile, name="DetectionKit_standardOperatingProcedureFile", curie=EVORAO.curie('standardOperatingProcedureFile'),
                    model_uri=EVORAO.DetectionKit_standardOperatingProcedureFile, domain=DetectionKit, range=Optional[Union[Union[dict, "File"], list[Union[dict, "File"]]]])

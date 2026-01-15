@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10956
+version: 1.0.10966
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -2309,19 +2309,27 @@ slots:
     range: string
     required: true
     multivalued: false
-  sequenceChecked:
-    description: Tell whether or not the sequence of the product was controlled (compulsory
-      for cloned products).
+  ? Indicates whether or not the sequence of the product was controlled, which is
+    expected for sequenced nucleic acids and especially important for cloned products
+  : description: Tell whether or not the sequence of the product was controlled, which
+      is expected for sequenced nucleic acids and especially important for cloned
+      ones.
     title: sequence checked
     comments:
-    - Sequence check is mandatory for cloned products.
+    - For non-sequenced nucleic acids, the sequenceChecked value cannot be assessed.
+      In all other cases, it is strongly recommended to indicate whether the sequence
+      verification has been performed or not. For cloned products in particular, providing
+      this information is especially meaningful, as sequence verification is a key
+      element in confirming the integrity of the cloned construct and is therefore
+      expected to be documented whenever available.
     from_schema: https://w3id.org/evorao/
     related_mappings:
     - iceo:0000336
     domain_of:
     - NucleicAcid
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   standardOperatingProcedureFile:
     description: The related standard operating procedure file (SOP).
@@ -6278,7 +6286,8 @@ classes:
     - identificationTechnique
     - sequencing
     - titer
-    - sequenceChecked
+    - Indicates whether or not the sequence of the product was controlled, which is
+      expected for sequenced nucleic acids and especially important for cloned products
     slot_usage:
       biologicalMaterialOrigin:
         description: Information about the origin of the biological material, essential
@@ -6442,18 +6451,27 @@ classes:
         range: string
         required: false
         multivalued: false
-      sequenceChecked:
-        description: Tell whether or not the sequence of the product was controlled
-          (compulsory for cloned products).
+      ? Indicates whether or not the sequence of the product was controlled, which
+        is expected for sequenced nucleic acids and especially important for cloned
+        products
+      : description: Tell whether or not the sequence of the product was controlled,
+          which is expected for sequenced nucleic acids and especially important for
+          cloned ones.
         title: sequence checked
         comments:
-        - Sequence check is mandatory for cloned products.
+        - For non-sequenced nucleic acids, the sequenceChecked value cannot be assessed.
+          In all other cases, it is strongly recommended to indicate whether the sequence
+          verification has been performed or not. For cloned products in particular,
+          providing this information is especially meaningful, as sequence verification
+          is a key element in confirming the integrity of the cloned construct and
+          is therefore expected to be documented whenever available.
         related_mappings:
         - iceo:0000336
         domain_of:
         - NucleicAcid
         range: boolean
-        required: true
+        required: false
+        recommended: true
         multivalued: false
   DetectionKit:
     description: A detection kit for specific pathogens.
@@ -7852,4 +7870,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-01-15T10:45:07'
+generation_date: '2026-01-15T11:18:49'
