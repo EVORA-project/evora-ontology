@@ -6476,7 +6476,7 @@ CREATE TABLE "Bundle_itemsOfTheBundle" (
 	"itemsOfTheBundle_id" INTEGER NOT NULL, 
 	PRIMARY KEY ("Bundle_id", "itemsOfTheBundle_id"), 
 	FOREIGN KEY("Bundle_id") REFERENCES "Bundle" (id), 
-	FOREIGN KEY("itemsOfTheBundle_id") REFERENCES "Product" (id)
+	FOREIGN KEY("itemsOfTheBundle_id") REFERENCES "ProductOrService" (id)
 );
 CREATE TABLE "Bundle_additionalCategory" (
 	"Bundle_id" INTEGER, 

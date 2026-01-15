@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10968
+# version: 1.0.10970
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -129,7 +129,7 @@ linkml:Sparqlpath xsd:string
 <Bundle> CLOSED {
     (  $<Bundle_tes> (  &<Product_tes> ;
           rdf:type [ <Product> ] ? ;
-          <itemsOfTheBundle> @<Product> +
+          <itemsOfTheBundle> @<ProductOrService> +
        ) ;
        rdf:type [ <Bundle> ] ?
     )

@@ -71,6 +71,10 @@ WHERE {
   FILTER NOT EXISTS {
     ?object rdf:type ?otype .
     FILTER ( ?otype IN (
+      EVORAO:ProductOrService
+      , 
+      EVORAO:Service
+      , 
       EVORAO:Product
       , 
       EVORAO:Antibody

@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10968",
+  "version": "1.0.10970",
   "imports": [
     "linkml:types"
   ],
@@ -3781,7 +3781,7 @@
       "domain_of": [
         "Bundle"
       ],
-      "range": "Product",
+      "range": "ProductOrService",
       "required": true,
       "multivalued": true,
       "inlined": true,
@@ -9362,7 +9362,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "itemsOfTheBundle",
-      "range": "Product",
+      "range": "ProductOrService",
       "required": true,
       "multivalued": true,
       "inlined": true,
@@ -14626,9 +14626,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-01-15T14:10:33",
-  "source_file_size": 251986,
-  "generation_date": "2026-01-15T14:10:55",
+  "source_file_date": "2026-01-15T15:17:56",
+  "source_file_size": 252004,
+  "generation_date": "2026-01-15T15:18:15",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

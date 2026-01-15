@@ -147,8 +147,8 @@ URI: [EVORAO:Bundle](https://w3id.org/evorao/Bundle)
           
     
     
-    Bundle --> "1..*" Product : itemsOfTheBundle
-    click Product href "../Product"
+    Bundle --> "1..*" ProductOrService : itemsOfTheBundle
+    click ProductOrService href "../ProductOrService"
 
         
       Bundle : keyword
@@ -275,7 +275,7 @@ URI: [EVORAO:Bundle](https://w3id.org/evorao/Bundle)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [itemsOfTheBundle](itemsOfTheBundle.md) | 1..* <br/> [Product](Product.md) | Specifies the constituent products and/or services that are part of the bundl... | direct |
+| [itemsOfTheBundle](itemsOfTheBundle.md) | 1..* <br/> [ProductOrService](ProductOrService.md) | Specifies the constituent products and/or services that are part of the bundl... | direct |
 | [iataClassification](iataClassification.md) | 1 <br/> [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... | [Product](Product.md) |
 | [shippingConditions](shippingConditions.md) | 1 <br/> [String](String.md) | Specification of the terms and parameters for transporting | [Product](Product.md) |
 | [materialSafetyDataSheet](materialSafetyDataSheet.md) | 0..1 <br/> [MaterialSafetyDataSheet](MaterialSafetyDataSheet.md) | A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardi... | [Product](Product.md) |
@@ -398,7 +398,7 @@ slot_usage:
     - schema:includesObject
     domain_of:
     - Bundle
-    range: Product
+    range: ProductOrService
     required: true
     multivalued: true
 
@@ -435,7 +435,7 @@ slot_usage:
     - schema:includesObject
     domain_of:
     - Bundle
-    range: Product
+    range: ProductOrService
     required: true
     multivalued: true
 attributes:
@@ -452,7 +452,7 @@ attributes:
     owner: Bundle
     domain_of:
     - Bundle
-    range: Product
+    range: ProductOrService
     required: true
     multivalued: true
   iataClassification:

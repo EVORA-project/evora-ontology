@@ -4459,7 +4459,7 @@ type Bundle struct {
 	/*
 	 * Specifies the constituent products and/or services that are part of the bundle.
 	 */
-	ItemsOfTheBundle []Product `json:"itemsOfTheBundle"`
+	ItemsOfTheBundle []ProductOrService `json:"itemsOfTheBundle"`
 	/*
 	 * The corresponding International Air Transport Association (IATA)'s category for this Product.
 	 */

@@ -32,7 +32,7 @@ Alias: itemsOfTheBundle
 
 ## Properties
 
-* Range: [Product](Product.md)
+* Range: [ProductOrService](ProductOrService.md)
 
 * Multivalued: True
 
@@ -84,7 +84,7 @@ rank: 1000
 alias: itemsOfTheBundle
 domain_of:
 - Bundle
-range: Product
+range: ProductOrService
 required: true
 multivalued: true
 

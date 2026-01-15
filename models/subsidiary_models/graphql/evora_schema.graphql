@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10968
+# version: 1.0.10970
 type AlternateName
   {
     keyword: [String]
@@ -242,7 +242,7 @@ type Bundle
     thirdPartyDistributionConsent: Boolean
     usageRestrictions: String
     preparationTechnique: String
-    itemsOfTheBundle: [Product]!
+    itemsOfTheBundle: [ProductOrService]!
   }
 
 interface Catalogue

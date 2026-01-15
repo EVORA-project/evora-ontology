@@ -336,13 +336,6 @@ URI: [EVORAO:Product](https://w3id.org/evorao/Product)
 
 
 
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [Bundle](Bundle.md) | [itemsOfTheBundle](itemsOfTheBundle.md) | range | [Product](Product.md) |
-
-
 
 
 

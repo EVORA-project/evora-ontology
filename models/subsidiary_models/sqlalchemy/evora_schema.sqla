@@ -5506,7 +5506,7 @@ class BundleItemsOfTheBundle(Base):
     __tablename__ = 'Bundle_itemsOfTheBundle'
 
     Bundle_id = Column(Integer(), ForeignKey('Bundle.id'), primary_key=True)
-    itemsOfTheBundle_id = Column(Integer(), ForeignKey('Product.id'), primary_key=True, nullable=False )
+    itemsOfTheBundle_id = Column(Integer(), ForeignKey('ProductOrService.id'), primary_key=True, nullable=False )
     
 
     def __repr__(self):
@@ -12756,7 +12756,7 @@ class Bundle(Product):
     
     
     # ManyToMany
-    itemsOfTheBundle = relationship( "Product", secondary="Bundle_itemsOfTheBundle")
+    itemsOfTheBundle = relationship( "ProductOrService", secondary="Bundle_itemsOfTheBundle")
     
     
     # ManyToMany

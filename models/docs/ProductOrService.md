@@ -285,6 +285,7 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Collection](Collection.md) | [collectionItem](collectionItem.md) | range | [ProductOrService](ProductOrService.md) |
+| [Bundle](Bundle.md) | [itemsOfTheBundle](itemsOfTheBundle.md) | range | [ProductOrService](ProductOrService.md) |
 
 
 

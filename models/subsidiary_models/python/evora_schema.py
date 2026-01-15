@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-15T14:10:59
+# Generation date: 2026-01-15T15:18:21
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10968"
+version = "1.0.10970"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -2135,13 +2135,13 @@ class Bundle(Product):
     iataClassification: Union[dict, IataClassification] = None
     shippingConditions: str = None
     storageConditions: str = None
-    itemsOfTheBundle: Union[Union[dict, Product], list[Union[dict, Product]]] = None
+    itemsOfTheBundle: Union[Union[dict, ProductOrService], list[Union[dict, ProductOrService]]] = None
     availability: str = "on request"
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.itemsOfTheBundle):
             self.MissingRequiredField("itemsOfTheBundle")
-        self._normalize_inlined_as_dict(slot_name="itemsOfTheBundle", slot_type=Product, key_name="title", keyed=False)
+        self._normalize_inlined_as_dict(slot_name="itemsOfTheBundle", slot_type=ProductOrService, key_name="title", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -3387,7 +3387,7 @@ slots.targetedRegion = Slot(uri=EVORAO.targetedRegion, name="targetedRegion", cu
                    model_uri=EVORAO.targetedRegion, domain=None, range=Optional[str])
 
 slots.itemsOfTheBundle = Slot(uri=EVORAO.itemsOfTheBundle, name="itemsOfTheBundle", curie=EVORAO.curie('itemsOfTheBundle'),
-                   model_uri=EVORAO.itemsOfTheBundle, domain=None, range=Union[Union[dict, Product], list[Union[dict, Product]]])
+                   model_uri=EVORAO.itemsOfTheBundle, domain=None, range=Union[Union[dict, ProductOrService], list[Union[dict, ProductOrService]]])
 
 slots.suspectedEpidemiologicalOrigin = Slot(uri=EVORAO.suspectedEpidemiologicalOrigin, name="suspectedEpidemiologicalOrigin", curie=EVORAO.curie('suspectedEpidemiologicalOrigin'),
                    model_uri=EVORAO.suspectedEpidemiologicalOrigin, domain=None, range=Optional[Union[Union[dict, GeographicalOrigin], list[Union[dict, GeographicalOrigin]]]])
@@ -4089,7 +4089,7 @@ slots.DetectionKit_targetedRegion = Slot(uri=EVORAO.targetedRegion, name="Detect
                    model_uri=EVORAO.DetectionKit_targetedRegion, domain=DetectionKit, range=Optional[str])
 
 slots.Bundle_itemsOfTheBundle = Slot(uri=EVORAO.itemsOfTheBundle, name="Bundle_itemsOfTheBundle", curie=EVORAO.curie('itemsOfTheBundle'),
-                   model_uri=EVORAO.Bundle_itemsOfTheBundle, domain=Bundle, range=Union[Union[dict, Product], list[Union[dict, Product]]])
+                   model_uri=EVORAO.Bundle_itemsOfTheBundle, domain=Bundle, range=Union[Union[dict, ProductOrService], list[Union[dict, ProductOrService]]])
 
 slots.Pathogen_biologicalMaterialOrigin = Slot(uri=EVORAO.biologicalMaterialOrigin, name="Pathogen_biologicalMaterialOrigin", curie=EVORAO.curie('biologicalMaterialOrigin'),
                    model_uri=EVORAO.Pathogen_biologicalMaterialOrigin, domain=Pathogen, range=Union[dict, BiologicalMaterialOrigin])

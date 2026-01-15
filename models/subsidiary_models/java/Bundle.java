@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10968 */
+/* version: 1.0.10970 */
 
 
 /**
@@ -15,6 +15,6 @@ import lombok.*;
 @EqualsAndHashCode(callSuper=false)
 public class Bundle extends Product {
 
-  private List<Product> itemsOfTheBundle;
+  private List<ProductOrService> itemsOfTheBundle;
 
 }

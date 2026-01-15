@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10968"
+version = "1.0.10970"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-15T15:10:05',
+     'generation_date': '2026-01-15T16:17:26',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -10326,12 +10326,12 @@ class Bundle(Product):
                                              'domain_of': ['Bundle'],
                                              'multivalued': True,
                                              'name': 'itemsOfTheBundle',
-                                             'range': 'Product',
+                                             'range': 'ProductOrService',
                                              'required': True,
                                              'title': 'items of the bundle'}},
          'title': 'Bundle'})
 
-    itemsOfTheBundle: list[Product] = Field(default=..., title="items of the bundle", description="""Specifies the constituent products and/or services that are part of the bundle.""", json_schema_extra = { "linkml_meta": {'alias': 'itemsOfTheBundle',
+    itemsOfTheBundle: list[ProductOrService] = Field(default=..., title="items of the bundle", description="""Specifies the constituent products and/or services that are part of the bundle.""", json_schema_extra = { "linkml_meta": {'alias': 'itemsOfTheBundle',
          'close_mappings': ['schema:includesObject'],
          'domain_of': ['Bundle']} })
     iataClassification: IataClassification = Field(default=..., title="IATA classification", description="""The corresponding International Air Transport Association (IATA)'s category for this Product.""", json_schema_extra = { "linkml_meta": {'alias': 'iataClassification',

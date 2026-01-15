@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10968
+version: 1.0.10970
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -2370,7 +2370,7 @@ slots:
     - schema:includesObject
     domain_of:
     - Bundle
-    range: Product
+    range: ProductOrService
     required: true
     multivalued: true
   suspectedEpidemiologicalOrigin:
@@ -6548,7 +6548,7 @@ classes:
         - schema:includesObject
         domain_of:
         - Bundle
-        range: Product
+        range: ProductOrService
         required: true
         multivalued: true
   Pathogen:
@@ -7866,4 +7866,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-01-15T15:10:05'
+generation_date: '2026-01-15T16:17:26'

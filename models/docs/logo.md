@@ -22,15 +22,15 @@ Alias: logo
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [ResearchInfrastructure](ResearchInfrastructure.md) | A research infrastructure (RI) |  no  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
+| [Person](Person.md) | An individual |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
+| [FundingSource](FundingSource.md) | A program, grant, or project providing financial support for the access or us... |  yes  |
+| [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
 | [License](License.md) | The legal terms and conditions under which the subject can be used, shared, o... |  yes  |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
-| [ResearchInfrastructure](ResearchInfrastructure.md) | A research infrastructure (RI) |  no  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
 | [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Person](Person.md) | An individual |  no  |
-| [Certification](Certification.md) | Assurance given by an independent certification body that a product, service ... |  yes  |
-| [FundingSource](FundingSource.md) | A program, grant, or project providing financial support for the access or us... |  yes  |
 
 
 
