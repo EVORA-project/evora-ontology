@@ -1,6 +1,6 @@
 
 
-# Slot: sequence checked (Indicates whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned products) 
+# Slot: sequence checked (sequenceChecked) 
 
 
 _Tell whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned ones._
@@ -9,8 +9,8 @@ _Tell whether or not the sequence of the product was controlled, which is expect
 
 
 
-URI: [EVORAO:Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products](https://w3id.org/evorao/Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products)
-Alias: Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products
+URI: [EVORAO:sequenceChecked](https://w3id.org/evorao/sequenceChecked)
+Alias: sequenceChecked
 
 <!-- no inheritance hierarchy -->
 
@@ -64,8 +64,8 @@ Alias: Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | EVORAO:Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products |
-| native | EVORAO:Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products |
+| self | EVORAO:sequenceChecked |
+| native | EVORAO:sequenceChecked |
 | related | iceo:0000336 |
 
 
@@ -75,8 +75,7 @@ Alias: Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which
 
 <details>
 ```yaml
-name: Indicates whether or not the sequence of the product was controlled, which is
-  expected for sequenced nucleic acids and especially important for cloned products
+name: sequenceChecked
 description: Tell whether or not the sequence of the product was controlled, which
   is expected for sequenced nucleic acids and especially important for cloned ones.
 title: sequence checked
@@ -91,7 +90,7 @@ from_schema: https://w3id.org/evorao/
 related_mappings:
 - iceo:0000336
 rank: 1000
-alias: Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products
+alias: sequenceChecked
 domain_of:
 - NucleicAcid
 range: boolean

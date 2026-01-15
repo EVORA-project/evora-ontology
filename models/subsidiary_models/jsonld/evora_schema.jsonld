@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10966",
+  "version": "1.0.10968",
   "imports": [
     "linkml:types"
   ],
@@ -3703,8 +3703,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
-      "definition_uri": "https://w3id.org/evorao/Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
+      "name": "sequenceChecked",
+      "definition_uri": "https://w3id.org/evorao/sequenceChecked",
       "description": "Tell whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned ones.",
       "title": "sequence checked",
       "comments": [
@@ -3714,7 +3714,7 @@
       "related_mappings": [
         "http://purl.obolibrary.org/obo/ICEO_0000336"
       ],
-      "slot_uri": "https://w3id.org/evorao/Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
+      "slot_uri": "https://w3id.org/evorao/sequenceChecked",
       "owner": "NucleicAcid",
       "domain_of": [
         "NucleicAcid"
@@ -9239,8 +9239,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "NucleicAcid_Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
-      "definition_uri": "https://w3id.org/evorao/Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
+      "name": "NucleicAcid_sequenceChecked",
+      "definition_uri": "https://w3id.org/evorao/sequenceChecked",
       "description": "Tell whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned ones.",
       "title": "sequence checked",
       "comments": [
@@ -9250,16 +9250,16 @@
       "related_mappings": [
         "http://purl.obolibrary.org/obo/ICEO_0000336"
       ],
-      "is_a": "Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
+      "is_a": "sequenceChecked",
       "domain": "NucleicAcid",
-      "slot_uri": "https://w3id.org/evorao/Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products",
-      "alias": "Indicates whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned products",
+      "slot_uri": "https://w3id.org/evorao/sequenceChecked",
+      "alias": "sequenceChecked",
       "owner": "NucleicAcid",
       "domain_of": [
         "NucleicAcid"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "Indicates whether or not the sequence of the product was controlled, which is expected for sequenced nucleic acids and especially important for cloned products",
+      "usage_slot_name": "sequenceChecked",
       "range": "boolean",
       "recommended": true,
       "@type": "SlotDefinition"
@@ -13379,7 +13379,7 @@
         "NucleicAcid_identificationTechnique",
         "NucleicAcid_sequencing",
         "NucleicAcid_titer",
-        "NucleicAcid_Indicates_whether_or_not_the_sequence_of_the_product_was_controlled_which_is_expected_for_sequenced_nucleic_acids_and_especially_important_for_cloned_products"
+        "NucleicAcid_sequenceChecked"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/evorao/NucleicAcid",
@@ -14626,9 +14626,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-01-15T10:19:12",
-  "source_file_size": 252446,
-  "generation_date": "2026-01-15T10:19:28",
+  "source_file_date": "2026-01-15T14:10:33",
+  "source_file_size": 251986,
+  "generation_date": "2026-01-15T14:10:55",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

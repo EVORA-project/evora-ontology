@@ -22,9 +22,9 @@ Alias: specificityDocumented
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  yes  |
 | [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  yes  |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  yes  |
 
 
 

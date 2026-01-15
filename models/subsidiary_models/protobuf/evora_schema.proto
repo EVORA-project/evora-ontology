@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.10966
+// version: 1.0.10968
 // List of other names for things.
 message AlternateName
  {
@@ -842,7 +842,7 @@ message NucleicAcid
   string identificationTechnique = 0
   string sequencing = 0
   string titer = 0
-  boolean indicatesWhetherOrNotTheSequenceOfTheProductWasControlledWhichIsExpectedForSequencedNucleicAcidsAndEspeciallyImportantForClonedProducts = 0
+  boolean sequenceChecked = 0
  }
 // A social entity established to meet needs or pursue specific goals.
 message Organization
