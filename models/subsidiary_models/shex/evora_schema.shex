@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10945
+# version: 1.0.10956
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -490,7 +490,7 @@ linkml:Sparqlpath xsd:string
           <plasmidSelection> @<PlasmidSelection> * ;
           <tagSequence> @<TagSequence> ? ;
           <regionEncompassedInThisProduct> @linkml:String ? ;
-          <mutationObserved> @linkml:Boolean ;
+          <mutationObserved> @linkml:Boolean ? ;
           <observedMutations> @linkml:String ? ;
           <identificationTechnique> @linkml:String ? ;
           <sequencing> @linkml:String ;

@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10945",
+  "version": "1.0.10956",
   "imports": [
     "linkml:types"
   ],
@@ -3618,6 +3618,9 @@
       "definition_uri": "https://w3id.org/evorao/mutationObserved",
       "description": "Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true.",
       "title": "mutation observed",
+      "comments": [
+        "Except for non-sequenced nucleic acids, for which mutations cannot be assessed, it is strongly recommended to determine whether any mutations are present in the provided sequenced nucleic acid."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/mutationObserved",
       "owner": "NucleicAcid",
@@ -3625,7 +3628,7 @@
         "NucleicAcid"
       ],
       "range": "boolean",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9128,6 +9131,9 @@
       "definition_uri": "https://w3id.org/evorao/mutationObserved",
       "description": "Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true.",
       "title": "mutation observed",
+      "comments": [
+        "Except for non-sequenced nucleic acids, for which mutations cannot be assessed, it is strongly recommended to determine whether any mutations are present in the provided sequenced nucleic acid."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "mutationObserved",
       "domain": "NucleicAcid",
@@ -9140,7 +9146,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "mutationObserved",
       "range": "boolean",
-      "required": true,
+      "recommended": true,
       "@type": "SlotDefinition"
     },
     {
@@ -14620,9 +14626,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-01-14T16:14:45",
-  "source_file_size": 250422,
-  "generation_date": "2026-01-14T16:15:04",
+  "source_file_date": "2026-01-15T09:45:31",
+  "source_file_size": 250940,
+  "generation_date": "2026-01-15T09:45:48",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

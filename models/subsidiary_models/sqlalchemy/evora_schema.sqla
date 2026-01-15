@@ -12445,7 +12445,7 @@ class NucleicAcid(Product):
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
     clonedNucleicAcid = Column(Boolean(), nullable=False )
     regionEncompassedInThisProduct = Column(Text())
-    mutationObserved = Column(Boolean(), nullable=False )
+    mutationObserved = Column(Boolean())
     observedMutations = Column(Text())
     identificationTechnique = Column(Text())
     sequencing = Column(Text(), nullable=False )

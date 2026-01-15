@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10945
+version: 1.0.10956
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -2241,11 +2241,16 @@ slots:
       the reference sequence if the value is set to false or if it contains mutations
       (no frameshift, no unexpected STOP codon) if set to true.
     title: mutation observed
+    comments:
+    - Except for non-sequenced nucleic acids, for which mutations cannot be assessed,
+      it is strongly recommended to determine whether any mutations are present in
+      the provided sequenced nucleic acid.
     from_schema: https://w3id.org/evorao/
     domain_of:
     - NucleicAcid
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   observedMutations:
     description: The specific mutations that have been identified and documented in
@@ -6381,10 +6386,15 @@ classes:
           to the reference sequence if the value is set to false or if it contains
           mutations (no frameshift, no unexpected STOP codon) if set to true.
         title: mutation observed
+        comments:
+        - Except for non-sequenced nucleic acids, for which mutations cannot be assessed,
+          it is strongly recommended to determine whether any mutations are present
+          in the provided sequenced nucleic acid.
         domain_of:
         - NucleicAcid
         range: boolean
-        required: true
+        required: false
+        recommended: true
         multivalued: false
       observedMutations:
         description: The specific mutations that have been identified and documented
@@ -7842,4 +7852,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-01-14T17:14:23'
+generation_date: '2026-01-15T10:45:07'

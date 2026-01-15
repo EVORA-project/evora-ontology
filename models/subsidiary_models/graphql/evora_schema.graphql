@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10945
+# version: 1.0.10956
 type AlternateName
   {
     keyword: [String]
@@ -901,7 +901,7 @@ type NucleicAcid
     plasmidSelection: [PlasmidSelection]
     tagSequence: TagSequence
     regionEncompassedInThisProduct: String
-    mutationObserved: Boolean!
+    mutationObserved: Boolean
     observedMutations: String
     identificationTechnique: String
     sequencing: String!

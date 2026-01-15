@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10945"
+version = "1.0.10956"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-14T17:14:23',
+     'generation_date': '2026-01-15T10:45:07',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -9510,7 +9510,15 @@ class NucleicAcid(Product):
                                                     'required': False,
                                                     'title': 'identification '
                                                              'technique'},
-                        'mutationObserved': {'description': 'Indicates if the current '
+                        'mutationObserved': {'comments': ['Except for non-sequenced '
+                                                          'nucleic acids, for which '
+                                                          'mutations cannot be '
+                                                          'assessed, it is strongly '
+                                                          'recommended to determine '
+                                                          'whether any mutations are '
+                                                          'present in the provided '
+                                                          'sequenced nucleic acid.'],
+                                             'description': 'Indicates if the current '
                                                             'nucleic acid has No '
                                                             'mutation compared to the '
                                                             'reference sequence if the '
@@ -9523,7 +9531,8 @@ class NucleicAcid(Product):
                                              'multivalued': False,
                                              'name': 'mutationObserved',
                                              'range': 'boolean',
-                                             'required': True,
+                                             'recommended': True,
+                                             'required': False,
                                              'title': 'mutation observed'},
                         'observedMutations': {'description': 'The specific mutations '
                                                              'that have been '
@@ -9723,7 +9732,13 @@ class NucleicAcid(Product):
                       'the description for the user.'],
          'domain_of': ['NucleicAcid'],
          'recommended': True} })
-    mutationObserved: bool = Field(default=..., title="mutation observed", description="""Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true.""", json_schema_extra = { "linkml_meta": {'alias': 'mutationObserved', 'domain_of': ['NucleicAcid']} })
+    mutationObserved: Optional[bool] = Field(default=None, title="mutation observed", description="""Indicates if the current nucleic acid has No mutation compared to the reference sequence if the value is set to false or if it contains mutations (no frameshift, no unexpected STOP codon) if set to true.""", json_schema_extra = { "linkml_meta": {'alias': 'mutationObserved',
+         'comments': ['Except for non-sequenced nucleic acids, for which mutations '
+                      'cannot be assessed, it is strongly recommended to determine '
+                      'whether any mutations are present in the provided sequenced '
+                      'nucleic acid.'],
+         'domain_of': ['NucleicAcid'],
+         'recommended': True} })
     observedMutations: Optional[str] = Field(default=None, title="observed mutations", description="""The specific mutations that have been identified and documented in the nucleic acid sequence.""", json_schema_extra = { "linkml_meta": {'alias': 'observedMutations', 'domain_of': ['NucleicAcid']} })
     identificationTechnique: Optional[str] = Field(default=None, title="identification technique", description="""A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis.""", json_schema_extra = { "linkml_meta": {'alias': 'identificationTechnique', 'domain_of': ['NucleicAcid', 'Pathogen']} })
     sequencing: Literal["Not sequenced", "Partly sequenced", "Fully sequenced"] = Field(default=..., title="sequencing", description="""Refers to the level of sequencing performed on the nucleic acid. Possible values include 'Not sequenced' (no sequencing has been performed), 'Partly sequenced' (only a portion of the nucleic acid sequence has been determined), and 'Fully sequenced' (the entire nucleic acid sequence has been determined).""", json_schema_extra = { "linkml_meta": {'alias': 'sequencing',

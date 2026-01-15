@@ -3969,7 +3969,7 @@ CREATE TABLE "NucleicAcid" (
 	id INTEGER NOT NULL, 
 	"clonedNucleicAcid" BOOLEAN NOT NULL, 
 	"regionEncompassedInThisProduct" TEXT, 
-	"mutationObserved" BOOLEAN NOT NULL, 
+	"mutationObserved" BOOLEAN, 
 	"observedMutations" TEXT, 
 	"identificationTechnique" TEXT, 
 	sequencing TEXT NOT NULL, 

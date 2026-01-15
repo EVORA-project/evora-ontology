@@ -34,11 +34,15 @@ Alias: mutationObserved
 
 * Range: [Boolean](Boolean.md)
 
-* Required: True
+* Recommended: True
 
 
 
 
+
+## Comments
+
+* Except for non-sequenced nucleic acids, for which mutations cannot be assessed, it is strongly recommended to determine whether any mutations are present in the provided sequenced nucleic acid.
 
 ## Identifier and Mapping Information
 
@@ -75,13 +79,18 @@ description: Indicates if the current nucleic acid has No mutation compared to t
   reference sequence if the value is set to false or if it contains mutations (no
   frameshift, no unexpected STOP codon) if set to true.
 title: mutation observed
+comments:
+- Except for non-sequenced nucleic acids, for which mutations cannot be assessed,
+  it is strongly recommended to determine whether any mutations are present in the
+  provided sequenced nucleic acid.
 from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: mutationObserved
 domain_of:
 - NucleicAcid
 range: boolean
-required: true
+required: false
+recommended: true
 multivalued: false
 
 ```

@@ -344,7 +344,7 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
 | [plasmidSelection](plasmidSelection.md) | * _recommended_ <br/> [PlasmidSelection](PlasmidSelection.md) | Specific selectable markers in the plasmid, such as antibiotic resistance gen... | direct |
 | [tagSequence](tagSequence.md) | 0..1 _recommended_ <br/> [TagSequence](TagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... | direct |
 | [regionEncompassedInThisProduct](regionEncompassedInThisProduct.md) | 0..1 _recommended_ <br/> [String](String.md) | The specific region encompassed in the product | direct |
-| [mutationObserved](mutationObserved.md) | 1 <br/> [Boolean](Boolean.md) | Indicates if the current nucleic acid has No mutation compared to the referen... | direct |
+| [mutationObserved](mutationObserved.md) | 0..1 _recommended_ <br/> [Boolean](Boolean.md) | Indicates if the current nucleic acid has No mutation compared to the referen... | direct |
 | [observedMutations](observedMutations.md) | 0..1 <br/> [String](String.md) | The specific mutations that have been identified and documented in the nuclei... | direct |
 | [identificationTechnique](identificationTechnique.md) | 0..1 <br/> [String](String.md) | A method or procedure used to detect, identify, and confirm the presence of a... | direct |
 | [sequencing](sequencing.md) | 1 <br/> [String](String.md) | Refers to the level of sequencing performed on the nucleic acid | direct |
@@ -597,10 +597,15 @@ slot_usage:
       the reference sequence if the value is set to false or if it contains mutations
       (no frameshift, no unexpected STOP codon) if set to true.
     title: mutation observed
+    comments:
+    - Except for non-sequenced nucleic acids, for which mutations cannot be assessed,
+      it is strongly recommended to determine whether any mutations are present in
+      the provided sequenced nucleic acid.
     domain_of:
     - NucleicAcid
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   observedMutations:
     name: observedMutations
@@ -814,10 +819,15 @@ slot_usage:
       the reference sequence if the value is set to false or if it contains mutations
       (no frameshift, no unexpected STOP codon) if set to true.
     title: mutation observed
+    comments:
+    - Except for non-sequenced nucleic acids, for which mutations cannot be assessed,
+      it is strongly recommended to determine whether any mutations are present in
+      the provided sequenced nucleic acid.
     domain_of:
     - NucleicAcid
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   observedMutations:
     name: observedMutations
@@ -1036,6 +1046,10 @@ attributes:
       the reference sequence if the value is set to false or if it contains mutations
       (no frameshift, no unexpected STOP codon) if set to true.
     title: mutation observed
+    comments:
+    - Except for non-sequenced nucleic acids, for which mutations cannot be assessed,
+      it is strongly recommended to determine whether any mutations are present in
+      the provided sequenced nucleic acid.
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: mutationObserved
@@ -1043,7 +1057,8 @@ attributes:
     domain_of:
     - NucleicAcid
     range: boolean
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   observedMutations:
     name: observedMutations

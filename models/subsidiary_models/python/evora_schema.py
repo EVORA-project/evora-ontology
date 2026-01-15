@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-14T16:15:09
+# Generation date: 2026-01-15T09:45:53
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10945"
+version = "1.0.10956"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1995,7 +1995,6 @@ class NucleicAcid(Product):
     biologicalMaterialOrigin: Union[dict, BiologicalMaterialOrigin] = None
     sequence: Union[Union[dict, Sequence], list[Union[dict, Sequence]]] = None
     clonedNucleicAcid: Union[bool, Bool] = None
-    mutationObserved: Union[bool, Bool] = None
     sequencing: str = None
     titer: str = None
     sequenceChecked: Union[bool, Bool] = None
@@ -2005,6 +2004,7 @@ class NucleicAcid(Product):
     plasmidSelection: Optional[Union[Union[dict, PlasmidSelection], list[Union[dict, PlasmidSelection]]]] = empty_list()
     tagSequence: Optional[Union[dict, TagSequence]] = None
     regionEncompassedInThisProduct: Optional[str] = None
+    mutationObserved: Optional[Union[bool, Bool]] = None
     observedMutations: Optional[str] = None
     identificationTechnique: Optional[str] = None
 
@@ -2024,11 +2024,6 @@ class NucleicAcid(Product):
             self.MissingRequiredField("clonedNucleicAcid")
         if not isinstance(self.clonedNucleicAcid, Bool):
             self.clonedNucleicAcid = Bool(self.clonedNucleicAcid)
-
-        if self._is_empty(self.mutationObserved):
-            self.MissingRequiredField("mutationObserved")
-        if not isinstance(self.mutationObserved, Bool):
-            self.mutationObserved = Bool(self.mutationObserved)
 
         if self._is_empty(self.sequencing):
             self.MissingRequiredField("sequencing")
@@ -2057,6 +2052,9 @@ class NucleicAcid(Product):
 
         if self.regionEncompassedInThisProduct is not None and not isinstance(self.regionEncompassedInThisProduct, str):
             self.regionEncompassedInThisProduct = str(self.regionEncompassedInThisProduct)
+
+        if self.mutationObserved is not None and not isinstance(self.mutationObserved, Bool):
+            self.mutationObserved = Bool(self.mutationObserved)
 
         if self.observedMutations is not None and not isinstance(self.observedMutations, str):
             self.observedMutations = str(self.observedMutations)
@@ -3364,7 +3362,7 @@ slots.regionEncompassedInThisProduct = Slot(uri=EVORAO.regionEncompassedInThisPr
                    model_uri=EVORAO.regionEncompassedInThisProduct, domain=None, range=Optional[str])
 
 slots.mutationObserved = Slot(uri=EVORAO.mutationObserved, name="mutationObserved", curie=EVORAO.curie('mutationObserved'),
-                   model_uri=EVORAO.mutationObserved, domain=None, range=Union[bool, Bool])
+                   model_uri=EVORAO.mutationObserved, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.observedMutations = Slot(uri=EVORAO.observedMutations, name="observedMutations", curie=EVORAO.curie('observedMutations'),
                    model_uri=EVORAO.observedMutations, domain=None, range=Optional[str])
@@ -4063,7 +4061,7 @@ slots.NucleicAcid_regionEncompassedInThisProduct = Slot(uri=EVORAO.regionEncompa
                    model_uri=EVORAO.NucleicAcid_regionEncompassedInThisProduct, domain=NucleicAcid, range=Optional[str])
 
 slots.NucleicAcid_mutationObserved = Slot(uri=EVORAO.mutationObserved, name="NucleicAcid_mutationObserved", curie=EVORAO.curie('mutationObserved'),
-                   model_uri=EVORAO.NucleicAcid_mutationObserved, domain=NucleicAcid, range=Union[bool, Bool])
+                   model_uri=EVORAO.NucleicAcid_mutationObserved, domain=NucleicAcid, range=Optional[Union[bool, Bool]])
 
 slots.NucleicAcid_observedMutations = Slot(uri=EVORAO.observedMutations, name="NucleicAcid_observedMutations", curie=EVORAO.curie('observedMutations'),
                    model_uri=EVORAO.NucleicAcid_observedMutations, domain=NucleicAcid, range=Optional[str])
