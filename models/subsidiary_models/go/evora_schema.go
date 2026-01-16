@@ -4707,7 +4707,7 @@ type Pathogen struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -4981,7 +4981,7 @@ type Virus struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -5243,7 +5243,7 @@ type Bacterium struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -5505,7 +5505,7 @@ type Fungus struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -5767,7 +5767,7 @@ type Protozoan struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -6029,7 +6029,7 @@ type Viroid struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*
@@ -6291,7 +6291,7 @@ type Prion struct {
 	 */
 	IsolationConditions string `json:"isolationConditions"`
 	/*
-	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+	 * Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 	 */
 	LetterOfAuthority string `json:"letterOfAuthority"`
 	/*

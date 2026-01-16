@@ -821,7 +821,7 @@
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
 --     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
@@ -869,7 +869,7 @@
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
 --     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
@@ -915,7 +915,7 @@
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
 --     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
@@ -961,7 +961,7 @@
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
 --     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
@@ -1007,7 +1007,7 @@
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
 --     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
@@ -1053,7 +1053,7 @@
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
 --     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
@@ -1099,7 +1099,7 @@
 --     * Slot: infectivityTest Description: The description of the completed infectivity test, providing details on the methods, conditions, and results of the test used to assess the pathogen's ability to infect a host organism.
 --     * Slot: isolationTechnique Description: The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.
 --     * Slot: isolationConditions Description: The environmental and procedural conditions under which the pathogen was isolated.
---     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.
+--     * Slot: letterOfAuthority Description: Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.
 --     * Slot: passage Description: The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.
 --     * Slot: genomeSequencing Description: The extent of the pathogen's genetic material that has been sequenced, with possible values including 'Complete genome' for the entire genome, 'Complete coding sequence' for all coding regions, and 'Partial sequence' for only a portion of the genetic material.
 --     * Slot: titer Description: The titer value, its corresponding unit, and the method of quantification (e.g., RT-qPCR, TCID50), representing the concentration or amount of unit present in the sample. The titer corresponds to the highest dilution factor that still yields a positive reading.
@@ -4126,7 +4126,7 @@ CREATE TABLE "Pathogen" (
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" TEXT, 
 	passage TEXT, 
 	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
@@ -4186,7 +4186,7 @@ CREATE TABLE "Virus" (
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" TEXT, 
 	passage TEXT, 
 	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
@@ -4244,7 +4244,7 @@ CREATE TABLE "Bacterium" (
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" TEXT, 
 	passage TEXT, 
 	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
@@ -4302,7 +4302,7 @@ CREATE TABLE "Fungus" (
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" TEXT, 
 	passage TEXT, 
 	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
@@ -4360,7 +4360,7 @@ CREATE TABLE "Protozoan" (
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" TEXT, 
 	passage TEXT, 
 	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
@@ -4418,7 +4418,7 @@ CREATE TABLE "Viroid" (
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" TEXT, 
 	passage TEXT, 
 	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 
@@ -4476,7 +4476,7 @@ CREATE TABLE "Prion" (
 	"infectivityTest" TEXT, 
 	"isolationTechnique" TEXT, 
 	"isolationConditions" TEXT, 
-	"letterOfAuthority" TEXT NOT NULL, 
+	"letterOfAuthority" TEXT, 
 	passage TEXT, 
 	"genomeSequencing" TEXT NOT NULL, 
 	titer TEXT NOT NULL, 

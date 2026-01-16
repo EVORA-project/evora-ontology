@@ -388,7 +388,7 @@ URI: [EVORAO:Pathogen](https://w3id.org/evorao/Pathogen)
 | [infectivityTest](infectivityTest.md) | 0..1 <br/> [String](String.md) | The description of the completed infectivity test, providing details on the m... | direct |
 | [isolationTechnique](isolationTechnique.md) | 0..1 <br/> [String](String.md) | The specific method or procedure used to isolate the pathogen from a host org... | direct |
 | [isolationConditions](isolationConditions.md) | 0..1 <br/> [String](String.md) | The environmental and procedural conditions under which the pathogen was isol... | direct |
-| [letterOfAuthority](letterOfAuthority.md) | 1 <br/> [String](String.md) | Indicate whether a Letter of Authority is required, confirming the necessity ... | direct |
+| [letterOfAuthority](letterOfAuthority.md) | 0..1 _recommended_ <br/> [String](String.md) | Indicate whether a Letter of Authority is required, confirming the necessity ... | direct |
 | [passage](passage.md) | 0..1 <br/> [String](String.md) | The number of times the pathogen was cultured through serial passage, a proce... | direct |
 | [genomeSequencing](genomeSequencing.md) | 1 <br/> [String](String.md) | The extent of the pathogen's genetic material that has been sequenced, with p... | direct |
 | [titer](titer.md) | 1 <br/> [String](String.md) | The titer value, its corresponding unit, and the method of quantification (e | direct |
@@ -713,14 +713,20 @@ slot_usage:
   letterOfAuthority:
     name: letterOfAuthority
     description: Indicate whether a Letter of Authority is required, confirming the
-      necessity of formal authorization. The possible values are 'N/A', 'NOT Required',
-      'Required for customers in the EU' or 'Required'.
+      necessity of formal authorization. The possible values are 'Not applicable',
+      'Not required', 'Required for customers in the EU' or 'Required'.
     title: letter of authority
+    comments:
+    - When a letter of authority may be required, as is often the case for certain
+      pathogens such as plant viruses, it is strongly recommended to indicate the
+      status of this requirement, as this information may affect delivery conditions
+      and is important for the end-user.
     ifabsent: string(Not applicable)
     domain_of:
     - Pathogen
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   passage:
     name: passage
@@ -981,14 +987,20 @@ slot_usage:
   letterOfAuthority:
     name: letterOfAuthority
     description: Indicate whether a Letter of Authority is required, confirming the
-      necessity of formal authorization. The possible values are 'N/A', 'NOT Required',
-      'Required for customers in the EU' or 'Required'.
+      necessity of formal authorization. The possible values are 'Not applicable',
+      'Not required', 'Required for customers in the EU' or 'Required'.
     title: letter of authority
+    comments:
+    - When a letter of authority may be required, as is often the case for certain
+      pathogens such as plant viruses, it is strongly recommended to indicate the
+      status of this requirement, as this information may affect delivery conditions
+      and is important for the end-user.
     ifabsent: string(Not applicable)
     domain_of:
     - Pathogen
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   passage:
     name: passage
@@ -1278,9 +1290,14 @@ attributes:
   letterOfAuthority:
     name: letterOfAuthority
     description: Indicate whether a Letter of Authority is required, confirming the
-      necessity of formal authorization. The possible values are 'N/A', 'NOT Required',
-      'Required for customers in the EU' or 'Required'.
+      necessity of formal authorization. The possible values are 'Not applicable',
+      'Not required', 'Required for customers in the EU' or 'Required'.
     title: letter of authority
+    comments:
+    - When a letter of authority may be required, as is often the case for certain
+      pathogens such as plant viruses, it is strongly recommended to indicate the
+      status of this requirement, as this information may affect delivery conditions
+      and is important for the end-user.
     from_schema: https://w3id.org/evorao/
     rank: 1000
     ifabsent: string(Not applicable)
@@ -1289,7 +1306,8 @@ attributes:
     domain_of:
     - Pathogen
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
     equals_string_in:
     - Not applicable

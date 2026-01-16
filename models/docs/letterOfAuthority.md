@@ -3,7 +3,7 @@
 # Slot: letter of authority (letterOfAuthority) 
 
 
-_Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'._
+_Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'._
 
 
 
@@ -22,13 +22,13 @@ Alias: letterOfAuthority
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 | [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
 | [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 | [Fungus](Fungus.md) | The fungus as a biological material |  no  |
 | [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  yes  |
 
 
 
@@ -40,11 +40,15 @@ Alias: letterOfAuthority
 
 * Range: [String](String.md)
 
-* Required: True
+* Recommended: True
 
 
 
 
+
+## Comments
+
+* When a letter of authority may be required, as is often the case for certain pathogens such as plant viruses, it is strongly recommended to indicate the status of this requirement, as this information may affect delivery conditions and is important for the end-user.
 
 ## Identifier and Mapping Information
 
@@ -78,9 +82,14 @@ Alias: letterOfAuthority
 ```yaml
 name: letterOfAuthority
 description: Indicate whether a Letter of Authority is required, confirming the necessity
-  of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required
-  for customers in the EU' or 'Required'.
+  of formal authorization. The possible values are 'Not applicable', 'Not required',
+  'Required for customers in the EU' or 'Required'.
 title: letter of authority
+comments:
+- When a letter of authority may be required, as is often the case for certain pathogens
+  such as plant viruses, it is strongly recommended to indicate the status of this
+  requirement, as this information may affect delivery conditions and is important
+  for the end-user.
 from_schema: https://w3id.org/evorao/
 rank: 1000
 ifabsent: string(Not applicable)
@@ -88,7 +97,8 @@ alias: letterOfAuthority
 domain_of:
 - Pathogen
 range: string
-required: true
+required: false
+recommended: true
 multivalued: false
 equals_string_in:
 - Not applicable

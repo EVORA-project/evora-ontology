@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10970
+# version: 1.0.10979
 type AlternateName
   {
     keyword: [String]
@@ -150,7 +150,7 @@ type Bacterium
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: String
     passage: String
     genomeSequencing: String!
     titer: String!
@@ -624,7 +624,7 @@ type Fungus
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: String
     passage: String
     genomeSequencing: String!
     titer: String!
@@ -1003,7 +1003,7 @@ interface Pathogen
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: String
     passage: String
     genomeSequencing: String!
     titer: String!
@@ -1149,7 +1149,7 @@ type Prion
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: String
     passage: String
     genomeSequencing: String!
     titer: String!
@@ -1412,7 +1412,7 @@ type Protozoan
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: String
     passage: String
     genomeSequencing: String!
     titer: String!
@@ -1803,7 +1803,7 @@ type Viroid
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: String
     passage: String
     genomeSequencing: String!
     titer: String!
@@ -1870,7 +1870,7 @@ type Virus
     infectivityTest: String
     isolationTechnique: String
     isolationConditions: String
-    letterOfAuthority: String!
+    letterOfAuthority: String
     passage: String
     genomeSequencing: String!
     titer: String!

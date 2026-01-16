@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-15T15:18:21
+# Generation date: 2026-01-16T09:37:26
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10970"
+version = "1.0.10979"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -2179,7 +2179,6 @@ class Pathogen(Product):
     titer: str = None
     availability: str = "on request"
     cultivability: str = "Cultivable"
-    letterOfAuthority: str = "Not applicable"
     suspectedEpidemiologicalOrigin: Optional[Union[Union[dict, GeographicalOrigin], list[Union[dict, GeographicalOrigin]]]] = empty_list()
     isolationHost: Optional[Union[Union[dict, IsolationHost], list[Union[dict, IsolationHost]]]] = empty_list()
     productionCellLine: Optional[Union[Union[dict, ProductionCellLine], list[Union[dict, ProductionCellLine]]]] = empty_list()
@@ -2190,6 +2189,7 @@ class Pathogen(Product):
     infectivityTest: Optional[str] = None
     isolationTechnique: Optional[str] = None
     isolationConditions: Optional[str] = None
+    letterOfAuthority: Optional[str] = "Not applicable"
     passage: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -2213,11 +2213,6 @@ class Pathogen(Product):
             self.MissingRequiredField("infectivity")
         if not isinstance(self.infectivity, str):
             self.infectivity = str(self.infectivity)
-
-        if self._is_empty(self.letterOfAuthority):
-            self.MissingRequiredField("letterOfAuthority")
-        if not isinstance(self.letterOfAuthority, str):
-            self.letterOfAuthority = str(self.letterOfAuthority)
 
         if self._is_empty(self.genomeSequencing):
             self.MissingRequiredField("genomeSequencing")
@@ -2253,6 +2248,9 @@ class Pathogen(Product):
 
         if self.isolationConditions is not None and not isinstance(self.isolationConditions, str):
             self.isolationConditions = str(self.isolationConditions)
+
+        if self.letterOfAuthority is not None and not isinstance(self.letterOfAuthority, str):
+            self.letterOfAuthority = str(self.letterOfAuthority)
 
         if self.passage is not None and not isinstance(self.passage, str):
             self.passage = str(self.passage)
@@ -2293,7 +2291,6 @@ class Virus(Pathogen):
     mycoplasmicContent: Union[bool, Bool] = None
     availability: str = "on request"
     cultivability: str = "Cultivable"
-    letterOfAuthority: str = "Not applicable"
     contaminationWithCoInfectingViruses: Union[bool, Bool] = False
     coInfectingViruses: Optional[Union[Union[dict, VirusName], list[Union[dict, VirusName]]]] = empty_list()
 
@@ -2345,7 +2342,6 @@ class Bacterium(Pathogen):
     titer: str = None
     availability: str = "on request"
     cultivability: str = "Cultivable"
-    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class Fungus(Pathogen):
@@ -2379,7 +2375,6 @@ class Fungus(Pathogen):
     titer: str = None
     availability: str = "on request"
     cultivability: str = "Cultivable"
-    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class Protozoan(Pathogen):
@@ -2413,7 +2408,6 @@ class Protozoan(Pathogen):
     titer: str = None
     availability: str = "on request"
     cultivability: str = "Cultivable"
-    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class Viroid(Pathogen):
@@ -2447,7 +2441,6 @@ class Viroid(Pathogen):
     titer: str = None
     availability: str = "on request"
     cultivability: str = "Cultivable"
-    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class Prion(Pathogen):
@@ -2481,7 +2474,6 @@ class Prion(Pathogen):
     titer: str = None
     availability: str = "on request"
     cultivability: str = "Cultivable"
-    letterOfAuthority: str = "Not applicable"
 
 @dataclass(repr=False)
 class MaterialSafetyDataSheet(Resource):
@@ -3423,7 +3415,7 @@ slots.isolationConditions = Slot(uri=EVORAO.isolationConditions, name="isolation
                    model_uri=EVORAO.isolationConditions, domain=None, range=Optional[str])
 
 slots.letterOfAuthority = Slot(uri=EVORAO.letterOfAuthority, name="letterOfAuthority", curie=EVORAO.curie('letterOfAuthority'),
-                   model_uri=EVORAO.letterOfAuthority, domain=None, range=str)
+                   model_uri=EVORAO.letterOfAuthority, domain=None, range=Optional[str])
 
 slots.passage = Slot(uri=EVORAO.passage, name="passage", curie=EVORAO.curie('passage'),
                    model_uri=EVORAO.passage, domain=None, range=Optional[str])
@@ -4134,7 +4126,7 @@ slots.Pathogen_isolationConditions = Slot(uri=EVORAO.isolationConditions, name="
                    model_uri=EVORAO.Pathogen_isolationConditions, domain=Pathogen, range=Optional[str])
 
 slots.Pathogen_letterOfAuthority = Slot(uri=EVORAO.letterOfAuthority, name="Pathogen_letterOfAuthority", curie=EVORAO.curie('letterOfAuthority'),
-                   model_uri=EVORAO.Pathogen_letterOfAuthority, domain=Pathogen, range=str)
+                   model_uri=EVORAO.Pathogen_letterOfAuthority, domain=Pathogen, range=Optional[str])
 
 slots.Pathogen_passage = Slot(uri=EVORAO.passage, name="Pathogen_passage", curie=EVORAO.curie('passage'),
                    model_uri=EVORAO.Pathogen_passage, domain=Pathogen, range=Optional[str])

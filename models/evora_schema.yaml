@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10970
+version: 1.0.10979
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -2507,15 +2507,21 @@ slots:
     multivalued: false
   letterOfAuthority:
     description: Indicate whether a Letter of Authority is required, confirming the
-      necessity of formal authorization. The possible values are 'N/A', 'NOT Required',
-      'Required for customers in the EU' or 'Required'.
+      necessity of formal authorization. The possible values are 'Not applicable',
+      'Not required', 'Required for customers in the EU' or 'Required'.
     title: letter of authority
+    comments:
+    - When a letter of authority may be required, as is often the case for certain
+      pathogens such as plant viruses, it is strongly recommended to indicate the
+      status of this requirement, as this information may affect delivery conditions
+      and is important for the end-user.
     from_schema: https://w3id.org/evorao/
     ifabsent: string(Not applicable)
     domain_of:
     - Pathogen
     range: string
-    required: true
+    required: false
+    recommended: true
     multivalued: false
     equals_string_in:
     - Not applicable
@@ -6759,14 +6765,20 @@ classes:
         multivalued: false
       letterOfAuthority:
         description: Indicate whether a Letter of Authority is required, confirming
-          the necessity of formal authorization. The possible values are 'N/A', 'NOT
-          Required', 'Required for customers in the EU' or 'Required'.
+          the necessity of formal authorization. The possible values are 'Not applicable',
+          'Not required', 'Required for customers in the EU' or 'Required'.
         title: letter of authority
+        comments:
+        - When a letter of authority may be required, as is often the case for certain
+          pathogens such as plant viruses, it is strongly recommended to indicate
+          the status of this requirement, as this information may affect delivery
+          conditions and is important for the end-user.
         ifabsent: string(Not applicable)
         domain_of:
         - Pathogen
         range: string
-        required: true
+        required: false
+        recommended: true
         multivalued: false
       passage:
         description: The number of times the pathogen was cultured through serial
@@ -7866,4 +7878,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-01-15T16:17:26'
+generation_date: '2026-01-16T10:36:42'

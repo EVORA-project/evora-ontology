@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10970",
+  "version": "1.0.10979",
   "imports": [
     "linkml:types"
   ],
@@ -3983,8 +3983,11 @@
     {
       "name": "letterOfAuthority",
       "definition_uri": "https://w3id.org/evorao/letterOfAuthority",
-      "description": "Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.",
+      "description": "Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.",
       "title": "letter of authority",
+      "comments": [
+        "When a letter of authority may be required, as is often the case for certain pathogens such as plant viruses, it is strongly recommended to indicate the status of this requirement, as this information may affect delivery conditions and is important for the end-user."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/letterOfAuthority",
       "ifabsent": "string(Not applicable)",
@@ -3993,7 +3996,7 @@
         "Pathogen"
       ],
       "range": "string",
-      "required": true,
+      "recommended": true,
       "equals_string_in": [
         "Not applicable",
         "Not required",
@@ -9695,8 +9698,11 @@
     {
       "name": "Pathogen_letterOfAuthority",
       "definition_uri": "https://w3id.org/evorao/letterOfAuthority",
-      "description": "Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.",
+      "description": "Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.",
       "title": "letter of authority",
+      "comments": [
+        "When a letter of authority may be required, as is often the case for certain pathogens such as plant viruses, it is strongly recommended to indicate the status of this requirement, as this information may affect delivery conditions and is important for the end-user."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "letterOfAuthority",
       "domain": "Pathogen",
@@ -9710,7 +9716,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "letterOfAuthority",
       "range": "string",
-      "required": true,
+      "recommended": true,
       "equals_string_in": [
         "Not applicable",
         "Not required",
@@ -14626,9 +14632,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-01-15T15:17:56",
-  "source_file_size": 252004,
-  "generation_date": "2026-01-15T15:18:15",
+  "source_file_date": "2026-01-16T09:37:03",
+  "source_file_size": 252706,
+  "generation_date": "2026-01-16T09:37:20",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

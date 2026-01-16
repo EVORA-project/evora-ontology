@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10970"
+version = "1.0.10979"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-15T16:17:26',
+     'generation_date': '2026-01-16T10:36:42',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -10754,22 +10754,35 @@ class Pathogen(Product):
                                                'range': 'string',
                                                'required': False,
                                                'title': 'isolation technique'},
-                        'letterOfAuthority': {'description': 'Indicate whether a '
+                        'letterOfAuthority': {'comments': ['When a letter of authority '
+                                                           'may be required, as is '
+                                                           'often the case for certain '
+                                                           'pathogens such as plant '
+                                                           'viruses, it is strongly '
+                                                           'recommended to indicate '
+                                                           'the status of this '
+                                                           'requirement, as this '
+                                                           'information may affect '
+                                                           'delivery conditions and is '
+                                                           'important for the '
+                                                           'end-user.'],
+                                              'description': 'Indicate whether a '
                                                              'Letter of Authority is '
                                                              'required, confirming the '
                                                              'necessity of formal '
                                                              'authorization. The '
-                                                             'possible values are '
-                                                             "'N/A', 'NOT Required', "
-                                                             "'Required for customers "
-                                                             "in the EU' or "
+                                                             "possible values are 'Not "
+                                                             "applicable', 'Not "
+                                                             "required', 'Required for "
+                                                             "customers in the EU' or "
                                                              "'Required'.",
                                               'domain_of': ['Pathogen'],
                                               'ifabsent': 'string(Not applicable)',
                                               'multivalued': False,
                                               'name': 'letterOfAuthority',
                                               'range': 'string',
-                                              'required': True,
+                                              'recommended': True,
+                                              'required': False,
                                               'title': 'letter of authority'},
                         'passage': {'description': 'The number of times the pathogen '
                                                    'was cultured through serial '
@@ -10933,13 +10946,19 @@ class Pathogen(Product):
          'related_mappings': ['cido:0001195']} })
     isolationTechnique: Optional[str] = Field(default=None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(default=None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: Optional[Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"]] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+         'comments': ['When a letter of authority may be required, as is often the '
+                      'case for certain pathogens such as plant viruses, it is '
+                      'strongly recommended to indicate the status of this '
+                      'requirement, as this information may affect delivery conditions '
+                      'and is important for the end-user.'],
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Not applicable',
                               'Not required',
                               'Required for customers in the EU',
                               'Required'],
-         'ifabsent': 'string(Not applicable)'} })
+         'ifabsent': 'string(Not applicable)',
+         'recommended': True} })
     passage: Optional[str] = Field(default=None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage',
          'domain_of': ['Pathogen'],
          'related_mappings': ['ncit:C164572']} })
@@ -11313,13 +11332,19 @@ class Virus(Pathogen):
          'related_mappings': ['cido:0001195']} })
     isolationTechnique: Optional[str] = Field(default=None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(default=None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: Optional[Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"]] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+         'comments': ['When a letter of authority may be required, as is often the '
+                      'case for certain pathogens such as plant viruses, it is '
+                      'strongly recommended to indicate the status of this '
+                      'requirement, as this information may affect delivery conditions '
+                      'and is important for the end-user.'],
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Not applicable',
                               'Not required',
                               'Required for customers in the EU',
                               'Required'],
-         'ifabsent': 'string(Not applicable)'} })
+         'ifabsent': 'string(Not applicable)',
+         'recommended': True} })
     passage: Optional[str] = Field(default=None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage',
          'domain_of': ['Pathogen'],
          'related_mappings': ['ncit:C164572']} })
@@ -11634,13 +11659,19 @@ class Bacterium(Pathogen):
          'related_mappings': ['cido:0001195']} })
     isolationTechnique: Optional[str] = Field(default=None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(default=None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: Optional[Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"]] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+         'comments': ['When a letter of authority may be required, as is often the '
+                      'case for certain pathogens such as plant viruses, it is '
+                      'strongly recommended to indicate the status of this '
+                      'requirement, as this information may affect delivery conditions '
+                      'and is important for the end-user.'],
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Not applicable',
                               'Not required',
                               'Required for customers in the EU',
                               'Required'],
-         'ifabsent': 'string(Not applicable)'} })
+         'ifabsent': 'string(Not applicable)',
+         'recommended': True} })
     passage: Optional[str] = Field(default=None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage',
          'domain_of': ['Pathogen'],
          'related_mappings': ['ncit:C164572']} })
@@ -11953,13 +11984,19 @@ class Fungus(Pathogen):
          'related_mappings': ['cido:0001195']} })
     isolationTechnique: Optional[str] = Field(default=None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(default=None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: Optional[Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"]] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+         'comments': ['When a letter of authority may be required, as is often the '
+                      'case for certain pathogens such as plant viruses, it is '
+                      'strongly recommended to indicate the status of this '
+                      'requirement, as this information may affect delivery conditions '
+                      'and is important for the end-user.'],
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Not applicable',
                               'Not required',
                               'Required for customers in the EU',
                               'Required'],
-         'ifabsent': 'string(Not applicable)'} })
+         'ifabsent': 'string(Not applicable)',
+         'recommended': True} })
     passage: Optional[str] = Field(default=None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage',
          'domain_of': ['Pathogen'],
          'related_mappings': ['ncit:C164572']} })
@@ -12268,13 +12305,19 @@ class Protozoan(Pathogen):
          'related_mappings': ['cido:0001195']} })
     isolationTechnique: Optional[str] = Field(default=None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(default=None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: Optional[Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"]] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+         'comments': ['When a letter of authority may be required, as is often the '
+                      'case for certain pathogens such as plant viruses, it is '
+                      'strongly recommended to indicate the status of this '
+                      'requirement, as this information may affect delivery conditions '
+                      'and is important for the end-user.'],
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Not applicable',
                               'Not required',
                               'Required for customers in the EU',
                               'Required'],
-         'ifabsent': 'string(Not applicable)'} })
+         'ifabsent': 'string(Not applicable)',
+         'recommended': True} })
     passage: Optional[str] = Field(default=None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage',
          'domain_of': ['Pathogen'],
          'related_mappings': ['ncit:C164572']} })
@@ -12575,13 +12618,19 @@ class Viroid(Pathogen):
          'related_mappings': ['cido:0001195']} })
     isolationTechnique: Optional[str] = Field(default=None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(default=None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: Optional[Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"]] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+         'comments': ['When a letter of authority may be required, as is often the '
+                      'case for certain pathogens such as plant viruses, it is '
+                      'strongly recommended to indicate the status of this '
+                      'requirement, as this information may affect delivery conditions '
+                      'and is important for the end-user.'],
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Not applicable',
                               'Not required',
                               'Required for customers in the EU',
                               'Required'],
-         'ifabsent': 'string(Not applicable)'} })
+         'ifabsent': 'string(Not applicable)',
+         'recommended': True} })
     passage: Optional[str] = Field(default=None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage',
          'domain_of': ['Pathogen'],
          'related_mappings': ['ncit:C164572']} })
@@ -12890,13 +12939,19 @@ class Prion(Pathogen):
          'related_mappings': ['cido:0001195']} })
     isolationTechnique: Optional[str] = Field(default=None, title="isolation technique", description="""The specific method or procedure used to isolate the pathogen from a host organism or sample, detailing the techniques and tools employed in the isolation process.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationTechnique', 'domain_of': ['Pathogen']} })
     isolationConditions: Optional[str] = Field(default=None, title="isolation conditions", description="""The environmental and procedural conditions under which the pathogen was isolated.""", json_schema_extra = { "linkml_meta": {'alias': 'isolationConditions', 'domain_of': ['Pathogen']} })
-    letterOfAuthority: Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'N/A', 'NOT Required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+    letterOfAuthority: Optional[Literal["Not applicable", "Not required", "Required for customers in the EU", "Required"]] = Field(default="Not applicable", title="letter of authority", description="""Indicate whether a Letter of Authority is required, confirming the necessity of formal authorization. The possible values are 'Not applicable', 'Not required', 'Required for customers in the EU' or 'Required'.""", json_schema_extra = { "linkml_meta": {'alias': 'letterOfAuthority',
+         'comments': ['When a letter of authority may be required, as is often the '
+                      'case for certain pathogens such as plant viruses, it is '
+                      'strongly recommended to indicate the status of this '
+                      'requirement, as this information may affect delivery conditions '
+                      'and is important for the end-user.'],
          'domain_of': ['Pathogen'],
          'equals_string_in': ['Not applicable',
                               'Not required',
                               'Required for customers in the EU',
                               'Required'],
-         'ifabsent': 'string(Not applicable)'} })
+         'ifabsent': 'string(Not applicable)',
+         'recommended': True} })
     passage: Optional[str] = Field(default=None, title="passage", description="""The number of times the pathogen was cultured through serial passage, a process used to increase the stock but which can also lead to the evolution of the original pathogen.""", json_schema_extra = { "linkml_meta": {'alias': 'passage',
          'domain_of': ['Pathogen'],
          'related_mappings': ['ncit:C164572']} })
