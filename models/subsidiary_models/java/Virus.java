@@ -5,7 +5,7 @@ import lombok.*;
 
 
 
-/* version: 1.0.10979 */
+/* version: 1.0.11042 */
 
 
 /**
@@ -16,7 +16,7 @@ import lombok.*;
 public class Virus extends Pathogen {
 
   private List<VirusName> coInfectingViruses;
-  private boolean contaminationWithCoInfectingViruses;
-  private boolean mycoplasmicContent;
+  private String contaminationWithCoInfectingViruses;
+  private String mycoplasmicContent;
 
 }

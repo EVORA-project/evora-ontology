@@ -4917,13 +4917,13 @@ type Virus struct {
 	 */
 	CoInfectingViruses []VirusName `json:"coInfectingViruses"`
 	/*
-	 * A boolean value indicating whether there is contamination with co-infecting viruses.
+	 * Indicates whether the sample contains contamination with co-infecting viruses. Possible values are ‘Not tested’, ‘Contaminated’, and ‘No contamination detected’.
 	 */
-	ContaminationWithCoInfectingViruses bool `json:"contaminationWithCoInfectingViruses"`
+	ContaminationWithCoInfectingViruses string `json:"contaminationWithCoInfectingViruses"`
 	/*
-	 * Indicates the presence of mycoplasma contamination within the sample.
+	 * Indicates whether the sample contains mycoplasma contamination. The possible values are 'Not tested', 'Mycoplasma free', 'Contains mycoplasmae', 'Contains mycoplasmae - A protocol to remove mycoplasmae is provided'
 	 */
-	MycoplasmicContent bool `json:"mycoplasmicContent"`
+	MycoplasmicContent string `json:"mycoplasmicContent"`
 	/*
 	 * Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.
 	 */

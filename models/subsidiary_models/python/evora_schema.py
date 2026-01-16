@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-16T09:37:26
+# Generation date: 2026-01-16T10:34:33
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.0.10979"
+version = "1.0.11042"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -2288,24 +2288,20 @@ class Virus(Pathogen):
     infectivity: str = None
     genomeSequencing: str = None
     titer: str = None
-    mycoplasmicContent: Union[bool, Bool] = None
     availability: str = "on request"
     cultivability: str = "Cultivable"
-    contaminationWithCoInfectingViruses: Union[bool, Bool] = False
     coInfectingViruses: Optional[Union[Union[dict, VirusName], list[Union[dict, VirusName]]]] = empty_list()
+    contaminationWithCoInfectingViruses: Optional[str] = None
+    mycoplasmicContent: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.contaminationWithCoInfectingViruses):
-            self.MissingRequiredField("contaminationWithCoInfectingViruses")
-        if not isinstance(self.contaminationWithCoInfectingViruses, Bool):
-            self.contaminationWithCoInfectingViruses = Bool(self.contaminationWithCoInfectingViruses)
-
-        if self._is_empty(self.mycoplasmicContent):
-            self.MissingRequiredField("mycoplasmicContent")
-        if not isinstance(self.mycoplasmicContent, Bool):
-            self.mycoplasmicContent = Bool(self.mycoplasmicContent)
-
         self._normalize_inlined_as_dict(slot_name="coInfectingViruses", slot_type=VirusName, key_name="title", keyed=False)
+
+        if self.contaminationWithCoInfectingViruses is not None and not isinstance(self.contaminationWithCoInfectingViruses, str):
+            self.contaminationWithCoInfectingViruses = str(self.contaminationWithCoInfectingViruses)
+
+        if self.mycoplasmicContent is not None and not isinstance(self.mycoplasmicContent, str):
+            self.mycoplasmicContent = str(self.mycoplasmicContent)
 
         super().__post_init__(**kwargs)
 
@@ -3427,10 +3423,10 @@ slots.coInfectingViruses = Slot(uri=EVORAO.coInfectingViruses, name="coInfecting
                    model_uri=EVORAO.coInfectingViruses, domain=None, range=Optional[Union[Union[dict, VirusName], list[Union[dict, VirusName]]]])
 
 slots.contaminationWithCoInfectingViruses = Slot(uri=EVORAO.contaminationWithCoInfectingViruses, name="contaminationWithCoInfectingViruses", curie=EVORAO.curie('contaminationWithCoInfectingViruses'),
-                   model_uri=EVORAO.contaminationWithCoInfectingViruses, domain=None, range=Union[bool, Bool])
+                   model_uri=EVORAO.contaminationWithCoInfectingViruses, domain=None, range=Optional[str])
 
 slots.mycoplasmicContent = Slot(uri=EVORAO.mycoplasmicContent, name="mycoplasmicContent", curie=EVORAO.curie('mycoplasmicContent'),
-                   model_uri=EVORAO.mycoplasmicContent, domain=None, range=Union[bool, Bool])
+                   model_uri=EVORAO.mycoplasmicContent, domain=None, range=Optional[str])
 
 slots.materialSafetyContact = Slot(uri=EVORAO.materialSafetyContact, name="materialSafetyContact", curie=EVORAO.curie('materialSafetyContact'),
                    model_uri=EVORAO.materialSafetyContact, domain=None, range=Union[dict, ContactPoint])
@@ -4141,10 +4137,10 @@ slots.Virus_coInfectingViruses = Slot(uri=EVORAO.coInfectingViruses, name="Virus
                    model_uri=EVORAO.Virus_coInfectingViruses, domain=Virus, range=Optional[Union[Union[dict, VirusName], list[Union[dict, VirusName]]]])
 
 slots.Virus_contaminationWithCoInfectingViruses = Slot(uri=EVORAO.contaminationWithCoInfectingViruses, name="Virus_contaminationWithCoInfectingViruses", curie=EVORAO.curie('contaminationWithCoInfectingViruses'),
-                   model_uri=EVORAO.Virus_contaminationWithCoInfectingViruses, domain=Virus, range=Union[bool, Bool])
+                   model_uri=EVORAO.Virus_contaminationWithCoInfectingViruses, domain=Virus, range=Optional[str])
 
 slots.Virus_mycoplasmicContent = Slot(uri=EVORAO.mycoplasmicContent, name="Virus_mycoplasmicContent", curie=EVORAO.curie('mycoplasmicContent'),
-                   model_uri=EVORAO.Virus_mycoplasmicContent, domain=Virus, range=Union[bool, Bool])
+                   model_uri=EVORAO.Virus_mycoplasmicContent, domain=Virus, range=Optional[str])
 
 slots.MaterialSafetyDataSheet_materialSafetyContact = Slot(uri=EVORAO.materialSafetyContact, name="MaterialSafetyDataSheet_materialSafetyContact", curie=EVORAO.curie('materialSafetyContact'),
                    model_uri=EVORAO.MaterialSafetyDataSheet_materialSafetyContact, domain=MaterialSafetyDataSheet, range=Union[dict, "ContactPoint"])

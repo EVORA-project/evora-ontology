@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10979
+# version: 1.0.11042
 type AlternateName
   {
     keyword: [String]
@@ -1875,8 +1875,8 @@ type Virus
     genomeSequencing: String!
     titer: String!
     coInfectingViruses: [VirusName]
-    contaminationWithCoInfectingViruses: Boolean!
-    mycoplasmicContent: Boolean!
+    contaminationWithCoInfectingViruses: String
+    mycoplasmicContent: String
   }
 
 type VirusName

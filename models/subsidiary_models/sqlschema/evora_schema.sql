@@ -860,8 +860,8 @@
 --     * Slot: publisher_id Description: The entity responsible for making the resource available.
 -- # Class: "Virus" Description: "The virus as a biological material."
 --     * Slot: id Description: 
---     * Slot: contaminationWithCoInfectingViruses Description: A boolean value indicating whether there is contamination with co-infecting viruses.
---     * Slot: mycoplasmicContent Description: Indicates the presence of mycoplasma contamination within the sample.
+--     * Slot: contaminationWithCoInfectingViruses Description: Indicates whether the sample contains contamination with co-infecting viruses. Possible values are ‘Not tested’, ‘Contaminated’, and ‘No contamination detected’.
+--     * Slot: mycoplasmicContent Description: Indicates whether the sample contains mycoplasma contamination. The possible values are 'Not tested', 'Mycoplasma free', 'Contains mycoplasmae', 'Contains mycoplasmae - A protocol to remove mycoplasmae is provided'
 --     * Slot: cultivability Description: The ability of the pathogen to be cultivated or grown in laboratory conditions. Possible values are  'Cultivable pathogen', 'Uncultivable pathogen' or 'Inactivated pathogen'.
 --     * Slot: clinicalInformation Description: Details about the clinical aspects of the pathogen, including symptoms, severity, treatment protocols, and patient outcomes.
 --     * Slot: identificationTechnique Description: A method or procedure used to detect, identify, and confirm the presence of a specific nucleic acid sequence, pathogen, or associated constructs. This may involve various techniques such as PCR, sequencing, hybridization, or other molecular methods, utilizing specific tools and procedures for accurate detection and analysis.
@@ -4177,8 +4177,8 @@ CREATE TABLE "Pathogen" (
 );
 CREATE TABLE "Virus" (
 	id INTEGER NOT NULL, 
-	"contaminationWithCoInfectingViruses" BOOLEAN NOT NULL, 
-	"mycoplasmicContent" BOOLEAN NOT NULL, 
+	"contaminationWithCoInfectingViruses" TEXT, 
+	"mycoplasmicContent" TEXT, 
 	cultivability TEXT NOT NULL, 
 	"clinicalInformation" TEXT, 
 	"identificationTechnique" TEXT, 

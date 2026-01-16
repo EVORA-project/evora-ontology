@@ -3,7 +3,7 @@
 # Slot: mycoplasmic content (mycoplasmicContent) 
 
 
-_Indicates the presence of mycoplasma contamination within the sample._
+_Indicates whether the sample contains mycoplasma contamination. The possible values are 'Not tested', 'Mycoplasma free', 'Contains mycoplasmae', 'Contains mycoplasmae - A protocol to remove mycoplasmae is provided'_
 
 
 
@@ -32,13 +32,17 @@ Alias: mycoplasmicContent
 
 ## Properties
 
-* Range: [Boolean](Boolean.md)
+* Range: [String](String.md)
 
-* Required: True
-
-
+* Recommended: True
 
 
+
+
+
+## Comments
+
+* When it can be assessed, it is recommended to indicate whether mycoplasma contamination was detected or if the test was not performed.
 
 ## Identifier and Mapping Information
 
@@ -71,16 +75,27 @@ Alias: mycoplasmicContent
 <details>
 ```yaml
 name: mycoplasmicContent
-description: Indicates the presence of mycoplasma contamination within the sample.
+description: Indicates whether the sample contains mycoplasma contamination. The possible
+  values are 'Not tested', 'Mycoplasma free', 'Contains mycoplasmae', 'Contains mycoplasmae
+  - A protocol to remove mycoplasmae is provided'
 title: mycoplasmic content
+comments:
+- When it can be assessed, it is recommended to indicate whether mycoplasma contamination
+  was detected or if the test was not performed.
 from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: mycoplasmicContent
 domain_of:
 - Virus
-range: boolean
-required: true
+range: string
+required: false
+recommended: true
 multivalued: false
+equals_string_in:
+- Not tested
+- Mycoplasma free
+- Contains mycoplasmae
+- Contains mycoplasmae - A protocol to remove mycoplasmae is provided
 
 ```
 </details>

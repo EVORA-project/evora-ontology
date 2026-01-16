@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.0.10979"
+version = "1.0.11042"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-16T10:36:42',
+     'generation_date': '2026-01-16T11:33:48',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -11244,36 +11244,77 @@ class Virus(Pathogen):
                                                                     'mesh:D060085'],
                                                'required': False,
                                                'title': 'co-infecting viruses'},
-                        'contaminationWithCoInfectingViruses': {'description': 'A '
-                                                                               'boolean '
-                                                                               'value '
-                                                                               'indicating '
+                        'contaminationWithCoInfectingViruses': {'comments': ['When it '
+                                                                             'can be '
+                                                                             'assessed, '
+                                                                             'it is '
+                                                                             'recommended '
+                                                                             'to '
+                                                                             'indicate '
+                                                                             'whether '
+                                                                             'contamination '
+                                                                             'with '
+                                                                             'co-infecting '
+                                                                             'viruses '
+                                                                             'was '
+                                                                             'detected '
+                                                                             'or if '
+                                                                             'the test '
+                                                                             'was not '
+                                                                             'performed.'],
+                                                                'description': 'Indicates '
                                                                                'whether '
-                                                                               'there '
-                                                                               'is '
+                                                                               'the '
+                                                                               'sample '
+                                                                               'contains '
                                                                                'contamination '
                                                                                'with '
                                                                                'co-infecting '
-                                                                               'viruses.',
+                                                                               'viruses. '
+                                                                               'Possible '
+                                                                               'values '
+                                                                               'are '
+                                                                               '‘Not '
+                                                                               'tested’, '
+                                                                               '‘Contaminated’, '
+                                                                               'and '
+                                                                               '‘No '
+                                                                               'contamination '
+                                                                               'detected’.',
                                                                 'domain_of': ['Virus'],
-                                                                'ifabsent': 'false',
                                                                 'multivalued': False,
                                                                 'name': 'contaminationWithCoInfectingViruses',
-                                                                'range': 'boolean',
-                                                                'required': True,
+                                                                'range': 'string',
+                                                                'recommended': True,
+                                                                'required': False,
                                                                 'title': 'contamination '
                                                                          'with '
                                                                          'co-infecting '
                                                                          'viruses'},
-                        'mycoplasmicContent': {'description': 'Indicates the presence '
-                                                              'of mycoplasma '
-                                                              'contamination within '
-                                                              'the sample.',
+                        'mycoplasmicContent': {'comments': ['When it can be assessed, '
+                                                            'it is recommended to '
+                                                            'indicate whether '
+                                                            'mycoplasma contamination '
+                                                            'was detected or if the '
+                                                            'test was not performed.'],
+                                               'description': 'Indicates whether the '
+                                                              'sample contains '
+                                                              'mycoplasma '
+                                                              'contamination. The '
+                                                              'possible values are '
+                                                              "'Not tested', "
+                                                              "'Mycoplasma free', "
+                                                              "'Contains mycoplasmae', "
+                                                              "'Contains mycoplasmae - "
+                                                              'A protocol to remove '
+                                                              'mycoplasmae is '
+                                                              "provided'",
                                                'domain_of': ['Virus'],
                                                'multivalued': False,
                                                'name': 'mycoplasmicContent',
-                                               'range': 'boolean',
-                                               'required': True,
+                                               'range': 'string',
+                                               'recommended': True,
+                                               'required': False,
                                                'title': 'mycoplasmic content'}},
          'title': 'Virus'})
 
@@ -11281,10 +11322,26 @@ class Virus(Pathogen):
          'close_mappings': ['dwc:associatedTaxa'],
          'domain_of': ['Virus'],
          'related_mappings': ['efo:0010716', 'mesh:D060085']} })
-    contaminationWithCoInfectingViruses: bool = Field(default=False, title="contamination with co-infecting viruses", description="""A boolean value indicating whether there is contamination with co-infecting viruses.""", json_schema_extra = { "linkml_meta": {'alias': 'contaminationWithCoInfectingViruses',
+    contaminationWithCoInfectingViruses: Optional[Literal["Not tested", "Contaminated", "No contamination detected"]] = Field(default=None, title="contamination with co-infecting viruses", description="""Indicates whether the sample contains contamination with co-infecting viruses. Possible values are ‘Not tested’, ‘Contaminated’, and ‘No contamination detected’.""", json_schema_extra = { "linkml_meta": {'alias': 'contaminationWithCoInfectingViruses',
+         'comments': ['When it can be assessed, it is recommended to indicate whether '
+                      'contamination with co-infecting viruses was detected or if the '
+                      'test was not performed.'],
          'domain_of': ['Virus'],
-         'ifabsent': 'false'} })
-    mycoplasmicContent: bool = Field(default=..., title="mycoplasmic content", description="""Indicates the presence of mycoplasma contamination within the sample.""", json_schema_extra = { "linkml_meta": {'alias': 'mycoplasmicContent', 'domain_of': ['Virus']} })
+         'equals_string_in': ['Not tested',
+                              'Contaminated',
+                              'No contamination detected'],
+         'recommended': True} })
+    mycoplasmicContent: Optional[Literal["Not tested", "Mycoplasma free", "Contains mycoplasmae", "Contains mycoplasmae - A protocol to remove mycoplasmae is provided"]] = Field(default=None, title="mycoplasmic content", description="""Indicates whether the sample contains mycoplasma contamination. The possible values are 'Not tested', 'Mycoplasma free', 'Contains mycoplasmae', 'Contains mycoplasmae - A protocol to remove mycoplasmae is provided'""", json_schema_extra = { "linkml_meta": {'alias': 'mycoplasmicContent',
+         'comments': ['When it can be assessed, it is recommended to indicate whether '
+                      'mycoplasma contamination was detected or if the test was not '
+                      'performed.'],
+         'domain_of': ['Virus'],
+         'equals_string_in': ['Not tested',
+                              'Mycoplasma free',
+                              'Contains mycoplasmae',
+                              'Contains mycoplasmae - A protocol to remove mycoplasmae '
+                              'is provided'],
+         'recommended': True} })
     biologicalMaterialOrigin: BiologicalMaterialOrigin = Field(default=..., title="biological material origin", description="""Information about the origin of the biological material, essential for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol.""", json_schema_extra = { "linkml_meta": {'alias': 'biologicalMaterialOrigin',
          'domain_of': ['Pathogen', 'Protein', 'NucleicAcid'],
          'related_mappings': ['sepio:0000058']} })

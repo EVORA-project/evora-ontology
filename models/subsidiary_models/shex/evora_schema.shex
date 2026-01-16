@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 1.0.10979
+# version: 1.0.11042
 BASE <https://w3id.org/evorao/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -959,8 +959,8 @@ linkml:Sparqlpath xsd:string
     (  $<Virus_tes> (  &<Pathogen_tes> ;
           rdf:type [ <Pathogen> ] ? ;
           <coInfectingViruses> @<VirusName> * ;
-          <contaminationWithCoInfectingViruses> @linkml:Boolean ;
-          <mycoplasmicContent> @linkml:Boolean
+          <contaminationWithCoInfectingViruses> @linkml:String ? ;
+          <mycoplasmicContent> @linkml:String ?
        ) ;
        rdf:type [ <Virus> ] ?
     )

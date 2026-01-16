@@ -366,8 +366,8 @@ URI: [EVORAO:Virus](https://w3id.org/evorao/Virus)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [coInfectingViruses](coInfectingViruses.md) | * <br/> [VirusName](VirusName.md) | Identifies other viruses that may co-infect the host organism along with the ... | direct |
-| [contaminationWithCoInfectingViruses](contaminationWithCoInfectingViruses.md) | 1 <br/> [Boolean](Boolean.md) | A boolean value indicating whether there is contamination with co-infecting v... | direct |
-| [mycoplasmicContent](mycoplasmicContent.md) | 1 <br/> [Boolean](Boolean.md) | Indicates the presence of mycoplasma contamination within the sample | direct |
+| [contaminationWithCoInfectingViruses](contaminationWithCoInfectingViruses.md) | 0..1 _recommended_ <br/> [String](String.md) | Indicates whether the sample contains contamination with co-infecting viruses | direct |
+| [mycoplasmicContent](mycoplasmicContent.md) | 0..1 _recommended_ <br/> [String](String.md) | Indicates whether the sample contains mycoplasma contamination | direct |
 | [biologicalMaterialOrigin](biologicalMaterialOrigin.md) | 1 <br/> [BiologicalMaterialOrigin](BiologicalMaterialOrigin.md) | Information about the origin of the biological material, essential for access... | [Pathogen](Pathogen.md) |
 | [suspectedEpidemiologicalOrigin](suspectedEpidemiologicalOrigin.md) | * <br/> [GeographicalOrigin](GeographicalOrigin.md) | The potential geographical or environmental source from which the pathogen is... | [Pathogen](Pathogen.md) |
 | [isolationHost](isolationHost.md) | * <br/> [IsolationHost](IsolationHost.md) | The host organism from which the pathogen was originally isolated | [Pathogen](Pathogen.md) |
@@ -527,23 +527,33 @@ slot_usage:
     multivalued: true
   contaminationWithCoInfectingViruses:
     name: contaminationWithCoInfectingViruses
-    description: A boolean value indicating whether there is contamination with co-infecting
-      viruses.
+    description: Indicates whether the sample contains contamination with co-infecting
+      viruses. Possible values are ‘Not tested’, ‘Contaminated’, and ‘No contamination
+      detected’.
     title: contamination with co-infecting viruses
-    ifabsent: 'false'
+    comments:
+    - When it can be assessed, it is recommended to indicate whether contamination
+      with co-infecting viruses was detected or if the test was not performed.
     domain_of:
     - Virus
-    range: boolean
-    required: true
+    range: string
+    required: false
+    recommended: true
     multivalued: false
   mycoplasmicContent:
     name: mycoplasmicContent
-    description: Indicates the presence of mycoplasma contamination within the sample.
+    description: Indicates whether the sample contains mycoplasma contamination. The
+      possible values are 'Not tested', 'Mycoplasma free', 'Contains mycoplasmae',
+      'Contains mycoplasmae - A protocol to remove mycoplasmae is provided'
     title: mycoplasmic content
+    comments:
+    - When it can be assessed, it is recommended to indicate whether mycoplasma contamination
+      was detected or if the test was not performed.
     domain_of:
     - Virus
-    range: boolean
-    required: true
+    range: string
+    required: false
+    recommended: true
     multivalued: false
 
 ```
@@ -597,23 +607,33 @@ slot_usage:
     multivalued: true
   contaminationWithCoInfectingViruses:
     name: contaminationWithCoInfectingViruses
-    description: A boolean value indicating whether there is contamination with co-infecting
-      viruses.
+    description: Indicates whether the sample contains contamination with co-infecting
+      viruses. Possible values are ‘Not tested’, ‘Contaminated’, and ‘No contamination
+      detected’.
     title: contamination with co-infecting viruses
-    ifabsent: 'false'
+    comments:
+    - When it can be assessed, it is recommended to indicate whether contamination
+      with co-infecting viruses was detected or if the test was not performed.
     domain_of:
     - Virus
-    range: boolean
-    required: true
+    range: string
+    required: false
+    recommended: true
     multivalued: false
   mycoplasmicContent:
     name: mycoplasmicContent
-    description: Indicates the presence of mycoplasma contamination within the sample.
+    description: Indicates whether the sample contains mycoplasma contamination. The
+      possible values are 'Not tested', 'Mycoplasma free', 'Contains mycoplasmae',
+      'Contains mycoplasmae - A protocol to remove mycoplasmae is provided'
     title: mycoplasmic content
+    comments:
+    - When it can be assessed, it is recommended to indicate whether mycoplasma contamination
+      was detected or if the test was not performed.
     domain_of:
     - Virus
-    range: boolean
-    required: true
+    range: string
+    required: false
+    recommended: true
     multivalued: false
 attributes:
   coInfectingViruses:
@@ -638,32 +658,51 @@ attributes:
     multivalued: true
   contaminationWithCoInfectingViruses:
     name: contaminationWithCoInfectingViruses
-    description: A boolean value indicating whether there is contamination with co-infecting
-      viruses.
+    description: Indicates whether the sample contains contamination with co-infecting
+      viruses. Possible values are ‘Not tested’, ‘Contaminated’, and ‘No contamination
+      detected’.
     title: contamination with co-infecting viruses
+    comments:
+    - When it can be assessed, it is recommended to indicate whether contamination
+      with co-infecting viruses was detected or if the test was not performed.
     from_schema: https://w3id.org/evorao/
     rank: 1000
-    ifabsent: 'false'
     alias: contaminationWithCoInfectingViruses
     owner: Virus
     domain_of:
     - Virus
-    range: boolean
-    required: true
+    range: string
+    required: false
+    recommended: true
     multivalued: false
+    equals_string_in:
+    - Not tested
+    - Contaminated
+    - No contamination detected
   mycoplasmicContent:
     name: mycoplasmicContent
-    description: Indicates the presence of mycoplasma contamination within the sample.
+    description: Indicates whether the sample contains mycoplasma contamination. The
+      possible values are 'Not tested', 'Mycoplasma free', 'Contains mycoplasmae',
+      'Contains mycoplasmae - A protocol to remove mycoplasmae is provided'
     title: mycoplasmic content
+    comments:
+    - When it can be assessed, it is recommended to indicate whether mycoplasma contamination
+      was detected or if the test was not performed.
     from_schema: https://w3id.org/evorao/
     rank: 1000
     alias: mycoplasmicContent
     owner: Virus
     domain_of:
     - Virus
-    range: boolean
-    required: true
+    range: string
+    required: false
+    recommended: true
     multivalued: false
+    equals_string_in:
+    - Not tested
+    - Mycoplasma free
+    - Contains mycoplasmae
+    - Contains mycoplasmae - A protocol to remove mycoplasmae is provided
   biologicalMaterialOrigin:
     name: biologicalMaterialOrigin
     description: Information about the origin of the biological material, essential

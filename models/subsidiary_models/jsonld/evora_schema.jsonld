@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.0.10979",
+  "version": "1.0.11042",
   "imports": [
     "linkml:types"
   ],
@@ -4071,32 +4071,48 @@
     {
       "name": "contaminationWithCoInfectingViruses",
       "definition_uri": "https://w3id.org/evorao/contaminationWithCoInfectingViruses",
-      "description": "A boolean value indicating whether there is contamination with co-infecting viruses.",
+      "description": "Indicates whether the sample contains contamination with co-infecting viruses. Possible values are \u2018Not tested\u2019, \u2018Contaminated\u2019, and \u2018No contamination detected\u2019.",
       "title": "contamination with co-infecting viruses",
+      "comments": [
+        "When it can be assessed, it is recommended to indicate whether contamination with co-infecting viruses was detected or if the test was not performed."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/contaminationWithCoInfectingViruses",
-      "ifabsent": "false",
       "owner": "Virus",
       "domain_of": [
         "Virus"
       ],
-      "range": "boolean",
-      "required": true,
+      "range": "string",
+      "recommended": true,
+      "equals_string_in": [
+        "Not tested",
+        "Contaminated",
+        "No contamination detected"
+      ],
       "@type": "SlotDefinition"
     },
     {
       "name": "mycoplasmicContent",
       "definition_uri": "https://w3id.org/evorao/mycoplasmicContent",
-      "description": "Indicates the presence of mycoplasma contamination within the sample.",
+      "description": "Indicates whether the sample contains mycoplasma contamination. The possible values are 'Not tested', 'Mycoplasma free', 'Contains mycoplasmae', 'Contains mycoplasmae - A protocol to remove mycoplasmae is provided'",
       "title": "mycoplasmic content",
+      "comments": [
+        "When it can be assessed, it is recommended to indicate whether mycoplasma contamination was detected or if the test was not performed."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/mycoplasmicContent",
       "owner": "Virus",
       "domain_of": [
         "Virus"
       ],
-      "range": "boolean",
-      "required": true,
+      "range": "string",
+      "recommended": true,
+      "equals_string_in": [
+        "Not tested",
+        "Mycoplasma free",
+        "Contains mycoplasmae",
+        "Contains mycoplasmae - A protocol to remove mycoplasmae is provided"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -9829,13 +9845,15 @@
     {
       "name": "Virus_contaminationWithCoInfectingViruses",
       "definition_uri": "https://w3id.org/evorao/contaminationWithCoInfectingViruses",
-      "description": "A boolean value indicating whether there is contamination with co-infecting viruses.",
+      "description": "Indicates whether the sample contains contamination with co-infecting viruses. Possible values are \u2018Not tested\u2019, \u2018Contaminated\u2019, and \u2018No contamination detected\u2019.",
       "title": "contamination with co-infecting viruses",
+      "comments": [
+        "When it can be assessed, it is recommended to indicate whether contamination with co-infecting viruses was detected or if the test was not performed."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "contaminationWithCoInfectingViruses",
       "domain": "Virus",
       "slot_uri": "https://w3id.org/evorao/contaminationWithCoInfectingViruses",
-      "ifabsent": "false",
       "alias": "contaminationWithCoInfectingViruses",
       "owner": "Virus",
       "domain_of": [
@@ -9843,15 +9861,23 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "contaminationWithCoInfectingViruses",
-      "range": "boolean",
-      "required": true,
+      "range": "string",
+      "recommended": true,
+      "equals_string_in": [
+        "Not tested",
+        "Contaminated",
+        "No contamination detected"
+      ],
       "@type": "SlotDefinition"
     },
     {
       "name": "Virus_mycoplasmicContent",
       "definition_uri": "https://w3id.org/evorao/mycoplasmicContent",
-      "description": "Indicates the presence of mycoplasma contamination within the sample.",
+      "description": "Indicates whether the sample contains mycoplasma contamination. The possible values are 'Not tested', 'Mycoplasma free', 'Contains mycoplasmae', 'Contains mycoplasmae - A protocol to remove mycoplasmae is provided'",
       "title": "mycoplasmic content",
+      "comments": [
+        "When it can be assessed, it is recommended to indicate whether mycoplasma contamination was detected or if the test was not performed."
+      ],
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "mycoplasmicContent",
       "domain": "Virus",
@@ -9863,8 +9889,14 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "mycoplasmicContent",
-      "range": "boolean",
-      "required": true,
+      "range": "string",
+      "recommended": true,
+      "equals_string_in": [
+        "Not tested",
+        "Mycoplasma free",
+        "Contains mycoplasmae",
+        "Contains mycoplasmae - A protocol to remove mycoplasmae is provided"
+      ],
       "@type": "SlotDefinition"
     },
     {
@@ -14632,9 +14664,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-01-16T09:37:03",
-  "source_file_size": 252706,
-  "generation_date": "2026-01-16T09:37:20",
+  "source_file_date": "2026-01-16T10:34:12",
+  "source_file_size": 254260,
+  "generation_date": "2026-01-16T10:34:28",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

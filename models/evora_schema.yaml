@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.0.10979
+version: 1.0.11042
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -2576,25 +2576,44 @@ slots:
     required: false
     multivalued: true
   contaminationWithCoInfectingViruses:
-    description: A boolean value indicating whether there is contamination with co-infecting
-      viruses.
+    description: "Indicates whether the sample contains contamination with co-infecting\
+      \ viruses. Possible values are \u2018Not tested\u2019, \u2018Contaminated\u2019\
+      , and \u2018No contamination detected\u2019."
     title: contamination with co-infecting viruses
+    comments:
+    - When it can be assessed, it is recommended to indicate whether contamination
+      with co-infecting viruses was detected or if the test was not performed.
     from_schema: https://w3id.org/evorao/
-    ifabsent: 'false'
     domain_of:
     - Virus
-    range: boolean
-    required: true
+    range: string
+    required: false
+    recommended: true
     multivalued: false
+    equals_string_in:
+    - Not tested
+    - Contaminated
+    - No contamination detected
   mycoplasmicContent:
-    description: Indicates the presence of mycoplasma contamination within the sample.
+    description: Indicates whether the sample contains mycoplasma contamination. The
+      possible values are 'Not tested', 'Mycoplasma free', 'Contains mycoplasmae',
+      'Contains mycoplasmae - A protocol to remove mycoplasmae is provided'
     title: mycoplasmic content
+    comments:
+    - When it can be assessed, it is recommended to indicate whether mycoplasma contamination
+      was detected or if the test was not performed.
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Virus
-    range: boolean
-    required: true
+    range: string
+    required: false
+    recommended: true
     multivalued: false
+    equals_string_in:
+    - Not tested
+    - Mycoplasma free
+    - Contains mycoplasmae
+    - Contains mycoplasmae - A protocol to remove mycoplasmae is provided
   materialSafetyContact:
     description: The designated contact point responsible for providing information
       related to the safety, handling, and regulatory compliance of the biological
@@ -6864,23 +6883,32 @@ classes:
         required: false
         multivalued: true
       contaminationWithCoInfectingViruses:
-        description: A boolean value indicating whether there is contamination with
-          co-infecting viruses.
+        description: "Indicates whether the sample contains contamination with co-infecting\
+          \ viruses. Possible values are \u2018Not tested\u2019, \u2018Contaminated\u2019\
+          , and \u2018No contamination detected\u2019."
         title: contamination with co-infecting viruses
-        ifabsent: 'false'
+        comments:
+        - When it can be assessed, it is recommended to indicate whether contamination
+          with co-infecting viruses was detected or if the test was not performed.
         domain_of:
         - Virus
-        range: boolean
-        required: true
+        range: string
+        required: false
+        recommended: true
         multivalued: false
       mycoplasmicContent:
-        description: Indicates the presence of mycoplasma contamination within the
-          sample.
+        description: Indicates whether the sample contains mycoplasma contamination.
+          The possible values are 'Not tested', 'Mycoplasma free', 'Contains mycoplasmae',
+          'Contains mycoplasmae - A protocol to remove mycoplasmae is provided'
         title: mycoplasmic content
+        comments:
+        - When it can be assessed, it is recommended to indicate whether mycoplasma
+          contamination was detected or if the test was not performed.
         domain_of:
         - Virus
-        range: boolean
-        required: true
+        range: string
+        required: false
+        recommended: true
         multivalued: false
   Bacterium:
     description: The bacterium as a biological material.
@@ -7878,4 +7906,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-01-16T10:36:42'
+generation_date: '2026-01-16T11:33:48'

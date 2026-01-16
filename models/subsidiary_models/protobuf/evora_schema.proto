@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.0.10979
+// version: 1.0.11042
 // List of other names for things.
 message AlternateName
  {
@@ -1679,8 +1679,8 @@ message Virus
   string genomeSequencing = 0
   string titer = 0
  repeated  virusName coInfectingViruses = 0
-  boolean contaminationWithCoInfectingViruses = 0
-  boolean mycoplasmicContent = 0
+  string contaminationWithCoInfectingViruses = 0
+  string mycoplasmicContent = 0
  }
 // A virus vernacular name or a name that describes a group of viruses.
 message VirusName

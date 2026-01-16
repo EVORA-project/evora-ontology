@@ -13124,8 +13124,8 @@ class Virus(Pathogen):
     __tablename__ = 'Virus'
 
     id = Column(Integer(), primary_key=True, autoincrement=True , nullable=False )
-    contaminationWithCoInfectingViruses = Column(Boolean(), nullable=False )
-    mycoplasmicContent = Column(Boolean(), nullable=False )
+    contaminationWithCoInfectingViruses = Column(Text())
+    mycoplasmicContent = Column(Text())
     cultivability = Column(Text(), nullable=False )
     clinicalInformation = Column(Text())
     identificationTechnique = Column(Text())

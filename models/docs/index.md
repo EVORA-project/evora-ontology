@@ -137,7 +137,7 @@ Name: EVORAO
 | [collectionItem](collectionItem.md) | An item of the collection |
 | [complementaryDocument](complementaryDocument.md) | Any additional documents that provide supplementary information, instructions... |
 | [contactPoint](contactPoint.md) | An information that allows someone to establish communication |
-| [contaminationWithCoInfectingViruses](contaminationWithCoInfectingViruses.md) | A boolean value indicating whether there is contamination with co-infecting v... |
+| [contaminationWithCoInfectingViruses](contaminationWithCoInfectingViruses.md) | Indicates whether the sample contains contamination with co-infecting viruses |
 | [contentType](contentType.md) | The content type of the response to queries |
 | [contentUrl](contentUrl.md) | The web address or location where the file content is stored and can be acces... |
 | [country](country.md) | The country of the organization |
@@ -211,7 +211,7 @@ Name: EVORAO
 | [modelType](modelType.md) | The specific name of the infected organism, including its modification if nec... |
 | [modificationsFromTheReferenceSequences](modificationsFromTheReferenceSequences.md) | Set to TRUE if there was is any modification made from the reference sequence |
 | [mutationObserved](mutationObserved.md) | Indicates if the current nucleic acid has No mutation compared to the referen... |
-| [mycoplasmicContent](mycoplasmicContent.md) | Indicates the presence of mycoplasma contamination within the sample |
+| [mycoplasmicContent](mycoplasmicContent.md) | Indicates whether the sample contains mycoplasma contamination |
 | [name](name.md) | A word or set of words used to identify and refer to an entity |
 | [note](note.md) | An aditional information as a textual comment |
 | [observedMutations](observedMutations.md) | The specific mutations that have been identified and documented in the nuclei... |

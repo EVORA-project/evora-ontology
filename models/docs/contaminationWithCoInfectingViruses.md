@@ -3,7 +3,7 @@
 # Slot: contamination with co-infecting viruses (contaminationWithCoInfectingViruses) 
 
 
-_A boolean value indicating whether there is contamination with co-infecting viruses._
+_Indicates whether the sample contains contamination with co-infecting viruses. Possible values are ‘Not tested’, ‘Contaminated’, and ‘No contamination detected’._
 
 
 
@@ -32,13 +32,17 @@ Alias: contaminationWithCoInfectingViruses
 
 ## Properties
 
-* Range: [Boolean](Boolean.md)
+* Range: [String](String.md)
 
-* Required: True
-
-
+* Recommended: True
 
 
+
+
+
+## Comments
+
+* When it can be assessed, it is recommended to indicate whether contamination with co-infecting viruses was detected or if the test was not performed.
 
 ## Identifier and Mapping Information
 
@@ -71,18 +75,26 @@ Alias: contaminationWithCoInfectingViruses
 <details>
 ```yaml
 name: contaminationWithCoInfectingViruses
-description: A boolean value indicating whether there is contamination with co-infecting
-  viruses.
+description: Indicates whether the sample contains contamination with co-infecting
+  viruses. Possible values are ‘Not tested’, ‘Contaminated’, and ‘No contamination
+  detected’.
 title: contamination with co-infecting viruses
+comments:
+- When it can be assessed, it is recommended to indicate whether contamination with
+  co-infecting viruses was detected or if the test was not performed.
 from_schema: https://w3id.org/evorao/
 rank: 1000
-ifabsent: 'false'
 alias: contaminationWithCoInfectingViruses
 domain_of:
 - Virus
-range: boolean
-required: true
+range: string
+required: false
+recommended: true
 multivalued: false
+equals_string_in:
+- Not tested
+- Contaminated
+- No contamination detected
 
 ```
 </details>
