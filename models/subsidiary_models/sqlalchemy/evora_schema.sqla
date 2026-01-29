@@ -2313,6 +2313,24 @@ class TaxonPreviouslyKnownAs(Base):
     
 
 
+class TaxonLineage(Base):
+    """
+    
+    """
+    __tablename__ = 'Taxon_lineage'
+
+    Taxon_id = Column(Integer(), ForeignKey('Taxon.id'), primary_key=True)
+    lineage = Column(Text(), primary_key=True)
+    
+
+    def __repr__(self):
+        return f"Taxon_lineage(Taxon_id={self.Taxon_id},lineage={self.lineage},)"
+
+
+
+    
+
+
 class TaxonKeyword(Base):
     """
     
@@ -10824,6 +10842,11 @@ class Taxon(Term):
     
     # ManyToMany
     previouslyKnownAs = relationship( "Taxon", secondary="Taxon_previouslyKnownAs")
+    
+    
+    lineage_rel = relationship( "TaxonLineage" )
+    lineage = association_proxy("lineage_rel", "lineage",
+                                  creator=lambda x_: TaxonLineage(lineage=x_))
     
     
     keyword_rel = relationship( "TaxonKeyword" )

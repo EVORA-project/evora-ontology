@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.1.0",
+  "version": "1.1.29",
   "imports": [
     "linkml:types"
   ],
@@ -1781,6 +1781,24 @@
       "range": "Taxon",
       "multivalued": true,
       "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "lineage",
+      "definition_uri": "https://w3id.org/evorao/lineage",
+      "description": "An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent. This property provides a flattened, display-oriented view of the lineage and does not replace the parentTaxon relation.",
+      "title": "lineage",
+      "comments": [
+        "This property is intended for display, indexing, and search optimisation purposes. It represents a denormalised view of the taxonomic lineage and is typically derived automatically from successive parentTaxon relations. It MUST NOT be considered authoritative for taxonomic reasoning."
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "slot_uri": "https://w3id.org/evorao/lineage",
+      "owner": "Taxon",
+      "domain_of": [
+        "Taxon"
+      ],
+      "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6540,6 +6558,29 @@
       "range": "Taxon",
       "multivalued": true,
       "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Taxon_lineage",
+      "definition_uri": "https://w3id.org/evorao/lineage",
+      "description": "An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent. This property provides a flattened, display-oriented view of the lineage and does not replace the parentTaxon relation.",
+      "title": "lineage",
+      "comments": [
+        "This property is intended for display, indexing, and search optimisation purposes. It represents a denormalised view of the taxonomic lineage and is typically derived automatically from successive parentTaxon relations. It MUST NOT be considered authoritative for taxonomic reasoning."
+      ],
+      "from_schema": "https://w3id.org/evorao/",
+      "is_a": "lineage",
+      "domain": "Taxon",
+      "slot_uri": "https://w3id.org/evorao/lineage",
+      "alias": "lineage",
+      "owner": "Taxon",
+      "domain_of": [
+        "Taxon"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "lineage",
+      "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12388,6 +12429,7 @@
         "taxonomicNodeId",
         "Taxon_alternateName",
         "Taxon_previouslyKnownAs",
+        "Taxon_lineage",
         "Taxon_taxonomicId",
         "Taxon_taxonomicNodeId"
       ],
@@ -14664,9 +14706,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-01-16T13:32:35",
-  "source_file_size": 254256,
-  "generation_date": "2026-01-16T13:32:51",
+  "source_file_date": "2026-01-29T14:25:01",
+  "source_file_size": 255891,
+  "generation_date": "2026-01-29T14:25:18",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

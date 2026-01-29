@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.1.0
+// version: 1.1.29
 // List of other names for things.
 message AlternateName
  {
@@ -1453,6 +1453,7 @@ message Taxon
   string taxonomicNodeId = 0
  repeated  alternateName alternateName = 0
  repeated  taxon previouslyKnownAs = 0
+ repeated  string lineage = 0
  }
 // The possible taxonomic ranks and their description.
 message TaxonomicRank

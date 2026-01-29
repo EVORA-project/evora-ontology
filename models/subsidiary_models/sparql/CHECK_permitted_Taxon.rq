@@ -71,6 +71,7 @@ SELECT ?g ?s ?p WHERE {
    EVORAO:taxonomicNodeId,
    EVORAO:alternateName,
    EVORAO:previouslyKnownAs,
+   EVORAO:lineage,
    dct:title,
    dct:description,
    EVORAO:weight,

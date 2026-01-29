@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-16T13:32:56
+# Generation date: 2026-01-29T14:25:23
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, 
 from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
 
 metamodel_version = "1.7.0"
-version = "1.1.0"
+version = "1.1.29"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -1014,6 +1014,7 @@ class Taxon(Term):
     taxonomicNodeId: Optional[str] = None
     alternateName: Optional[Union[Union[dict, AlternateName], list[Union[dict, AlternateName]]]] = empty_list()
     previouslyKnownAs: Optional[Union[Union[dict, "Taxon"], list[Union[dict, "Taxon"]]]] = empty_list()
+    lineage: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.taxonomicId):
@@ -1042,6 +1043,10 @@ class Taxon(Term):
         self._normalize_inlined_as_dict(slot_name="alternateName", slot_type=AlternateName, key_name="title", keyed=False)
 
         self._normalize_inlined_as_dict(slot_name="previouslyKnownAs", slot_type=Taxon, key_name="title", keyed=False)
+
+        if not isinstance(self.lineage, list):
+            self.lineage = [self.lineage] if self.lineage is not None else []
+        self.lineage = [v if isinstance(v, str) else str(v) for v in self.lineage]
 
         if self.taxonomicNodeId is not None and not isinstance(self.taxonomicNodeId, str):
             self.taxonomicNodeId = str(self.taxonomicNodeId)
@@ -3062,6 +3067,9 @@ slots.taxonomicNodeId = Slot(uri=EVORAO.taxonomicNodeId, name="taxonomicNodeId",
 slots.previouslyKnownAs = Slot(uri=EVORAO.previouslyKnownAs, name="previouslyKnownAs", curie=EVORAO.curie('previouslyKnownAs'),
                    model_uri=EVORAO.previouslyKnownAs, domain=None, range=Optional[Union[Union[dict, Taxon], list[Union[dict, Taxon]]]])
 
+slots.lineage = Slot(uri=EVORAO.lineage, name="lineage", curie=EVORAO.curie('lineage'),
+                   model_uri=EVORAO.lineage, domain=None, range=Optional[Union[str, list[str]]])
+
 slots.reference = Slot(uri=EVORAO.reference, name="reference", curie=EVORAO.curie('reference'),
                    model_uri=EVORAO.reference, domain=None, range=str)
 
@@ -3727,6 +3735,9 @@ slots.Taxon_alternateName = Slot(uri=EVORAO.alternateName, name="Taxon_alternate
 
 slots.Taxon_previouslyKnownAs = Slot(uri=EVORAO.previouslyKnownAs, name="Taxon_previouslyKnownAs", curie=EVORAO.curie('previouslyKnownAs'),
                    model_uri=EVORAO.Taxon_previouslyKnownAs, domain=Taxon, range=Optional[Union[Union[dict, "Taxon"], list[Union[dict, "Taxon"]]]])
+
+slots.Taxon_lineage = Slot(uri=EVORAO.lineage, name="Taxon_lineage", curie=EVORAO.curie('lineage'),
+                   model_uri=EVORAO.Taxon_lineage, domain=Taxon, range=Optional[Union[str, list[str]]])
 
 slots.ClinicalGroup_alternateName = Slot(uri=EVORAO.alternateName, name="ClinicalGroup_alternateName", curie=EVORAO.curie('alternateName'),
                    model_uri=EVORAO.ClinicalGroup_alternateName, domain=ClinicalGroup, range=Optional[Union[Union[dict, AlternateName], list[Union[dict, AlternateName]]]])

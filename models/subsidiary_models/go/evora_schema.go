@@ -1883,6 +1883,10 @@ type Taxon struct {
 	 */
 	PreviouslyKnownAs []Taxon `json:"previouslyKnownAs"`
 	/*
+	 * An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent. This property provides a flattened, display-oriented view of the lineage and does not replace the parentTaxon relation.
+	 */
+	Lineage string `json:"lineage"`
+	/*
 	 * A name given to the resource.
 	 */
 	Title string `json:"title"`

@@ -1643,6 +1643,9 @@
 -- # Class: "Taxon_previouslyKnownAs" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
 --     * Slot: previouslyKnownAs_id Description: Any historic version of this taxon having a different name.
+-- # Class: "Taxon_lineage" Description: ""
+--     * Slot: Taxon_id Description: Autocreated FK slot
+--     * Slot: lineage Description: An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent. This property provides a flattened, display-oriented view of the lineage and does not replace the parentTaxon relation.
 -- # Class: "Taxon_keyword" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource.
@@ -5648,6 +5651,12 @@ CREATE TABLE "Taxon_previouslyKnownAs" (
 	PRIMARY KEY ("Taxon_id", "previouslyKnownAs_id"), 
 	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id), 
 	FOREIGN KEY("previouslyKnownAs_id") REFERENCES "Taxon" (id)
+);
+CREATE TABLE "Taxon_lineage" (
+	"Taxon_id" INTEGER, 
+	lineage TEXT, 
+	PRIMARY KEY ("Taxon_id", lineage), 
+	FOREIGN KEY("Taxon_id") REFERENCES "Taxon" (id)
 );
 CREATE TABLE "Taxon_keyword" (
 	"Taxon_id" INTEGER, 

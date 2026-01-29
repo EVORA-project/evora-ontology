@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.1.0
+version: 1.1.29
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -928,6 +928,23 @@ slots:
     domain_of:
     - Taxon
     range: Taxon
+    required: false
+    multivalued: true
+  lineage:
+    description: An ordered list of textual taxon names representing the taxonomic
+      lineage of the current taxon, normally from the highest known ancestor to the
+      immediate parent. This property provides a flattened, display-oriented view
+      of the lineage and does not replace the parentTaxon relation.
+    title: lineage
+    comments:
+    - This property is intended for display, indexing, and search optimisation purposes.
+      It represents a denormalised view of the taxonomic lineage and is typically
+      derived automatically from successive parentTaxon relations. It MUST NOT be
+      considered authoritative for taxonomic reasoning.
+    from_schema: https://w3id.org/evorao/
+    domain_of:
+    - Taxon
+    range: string
     required: false
     multivalued: true
   reference:
@@ -4498,6 +4515,7 @@ classes:
     - taxonomicNodeId
     - alternateName
     - previouslyKnownAs
+    - lineage
     slot_usage:
       taxonomy:
         description: The taxonomy release(s) in which this entity exists.
@@ -4626,6 +4644,22 @@ classes:
         domain_of:
         - Taxon
         range: Taxon
+        required: false
+        multivalued: true
+      lineage:
+        description: An ordered list of textual taxon names representing the taxonomic
+          lineage of the current taxon, normally from the highest known ancestor to
+          the immediate parent. This property provides a flattened, display-oriented
+          view of the lineage and does not replace the parentTaxon relation.
+        title: lineage
+        comments:
+        - This property is intended for display, indexing, and search optimisation
+          purposes. It represents a denormalised view of the taxonomic lineage and
+          is typically derived automatically from successive parentTaxon relations.
+          It MUST NOT be considered authoritative for taxonomic reasoning.
+        domain_of:
+        - Taxon
+        range: string
         required: false
         multivalued: true
   ClinicalGroup:
@@ -7906,4 +7940,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-01-16T14:32:08'
+generation_date: '2026-01-29T15:24:32'

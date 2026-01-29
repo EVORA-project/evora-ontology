@@ -200,6 +200,7 @@ Name: EVORAO
 | [letterOfAuthority](letterOfAuthority.md) | Indicate whether a Letter of Authority is required, confirming the necessity ... |
 | [license](license.md) | Information about terms and conditions under which the subject can be used, s... |
 | [licensingOrAttribution](licensingOrAttribution.md) | A text or html code that provides any related data sharing licence and/or att... |
+| [lineage](lineage.md) | An ordered list of textual taxon names representing the taxonomic lineage of ... |
 | [loginRequestMethod](loginRequestMethod.md) | The http request method used to acces the login request url |
 | [loginTokenName](loginTokenName.md) | The name of the token, unique identifier of an interaction session, that will... |
 | [loginUrl](loginUrl.md) | The URL template that allows to log in if required |
