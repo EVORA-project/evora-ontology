@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.1.29
+version: 1.1.33
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -933,14 +933,14 @@ slots:
   lineage:
     description: An ordered list of textual taxon names representing the taxonomic
       lineage of the current taxon, normally from the highest known ancestor to the
-      immediate parent. This property provides a flattened, display-oriented view
-      of the lineage and does not replace the parentTaxon relation.
+      immediate parent.
     title: lineage
     comments:
     - This property is intended for display, indexing, and search optimisation purposes.
       It represents a denormalised view of the taxonomic lineage and is typically
       derived automatically from successive parentTaxon relations. It MUST NOT be
-      considered authoritative for taxonomic reasoning.
+      considered authoritative for taxonomic reasoning. This property provides a flattened,
+      display-oriented view of the lineage and does not replace the parentTaxon relation.
     from_schema: https://w3id.org/evorao/
     domain_of:
     - Taxon
@@ -4649,14 +4649,15 @@ classes:
       lineage:
         description: An ordered list of textual taxon names representing the taxonomic
           lineage of the current taxon, normally from the highest known ancestor to
-          the immediate parent. This property provides a flattened, display-oriented
-          view of the lineage and does not replace the parentTaxon relation.
+          the immediate parent.
         title: lineage
         comments:
         - This property is intended for display, indexing, and search optimisation
           purposes. It represents a denormalised view of the taxonomic lineage and
           is typically derived automatically from successive parentTaxon relations.
-          It MUST NOT be considered authoritative for taxonomic reasoning.
+          It MUST NOT be considered authoritative for taxonomic reasoning. This property
+          provides a flattened, display-oriented view of the lineage and does not
+          replace the parentTaxon relation.
         domain_of:
         - Taxon
         range: string
@@ -7940,4 +7941,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-01-29T15:24:32'
+generation_date: '2026-02-04T10:40:43'

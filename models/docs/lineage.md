@@ -3,7 +3,7 @@
 # Slot: lineage (lineage) 
 
 
-_An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent. This property provides a flattened, display-oriented view of the lineage and does not replace the parentTaxon relation._
+_An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent._
 
 
 
@@ -42,7 +42,7 @@ Alias: lineage
 
 ## Comments
 
-* This property is intended for display, indexing, and search optimisation purposes. It represents a denormalised view of the taxonomic lineage and is typically derived automatically from successive parentTaxon relations. It MUST NOT be considered authoritative for taxonomic reasoning.
+* This property is intended for display, indexing, and search optimisation purposes. It represents a denormalised view of the taxonomic lineage and is typically derived automatically from successive parentTaxon relations. It MUST NOT be considered authoritative for taxonomic reasoning. This property provides a flattened, display-oriented view of the lineage and does not replace the parentTaxon relation.
 
 ## Identifier and Mapping Information
 
@@ -77,14 +77,14 @@ Alias: lineage
 name: lineage
 description: An ordered list of textual taxon names representing the taxonomic lineage
   of the current taxon, normally from the highest known ancestor to the immediate
-  parent. This property provides a flattened, display-oriented view of the lineage
-  and does not replace the parentTaxon relation.
+  parent.
 title: lineage
 comments:
 - This property is intended for display, indexing, and search optimisation purposes.
   It represents a denormalised view of the taxonomic lineage and is typically derived
   automatically from successive parentTaxon relations. It MUST NOT be considered authoritative
-  for taxonomic reasoning.
+  for taxonomic reasoning. This property provides a flattened, display-oriented view
+  of the lineage and does not replace the parentTaxon relation.
 from_schema: https://w3id.org/evorao/
 rank: 1000
 alias: lineage

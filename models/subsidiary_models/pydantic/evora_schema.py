@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.1.29"
+version = "1.1.33"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-01-29T15:24:32',
+     'generation_date': '2026-02-04T10:40:43',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -4635,16 +4635,16 @@ class Taxon(Term):
                                                  'automatically from successive '
                                                  'parentTaxon relations. It MUST NOT '
                                                  'be considered authoritative for '
-                                                 'taxonomic reasoning.'],
+                                                 'taxonomic reasoning. This property '
+                                                 'provides a flattened, '
+                                                 'display-oriented view of the lineage '
+                                                 'and does not replace the parentTaxon '
+                                                 'relation.'],
                                     'description': 'An ordered list of textual taxon '
                                                    'names representing the taxonomic '
                                                    'lineage of the current taxon, '
                                                    'normally from the highest known '
-                                                   'ancestor to the immediate parent. '
-                                                   'This property provides a '
-                                                   'flattened, display-oriented view '
-                                                   'of the lineage and does not '
-                                                   'replace the parentTaxon relation.',
+                                                   'ancestor to the immediate parent.',
                                     'domain_of': ['Taxon'],
                                     'multivalued': True,
                                     'name': 'lineage',
@@ -4813,12 +4813,14 @@ class Taxon(Term):
                        'context',
          'domain_of': ['Taxon'],
          'related_mappings': ['schema:alternateName']} })
-    lineage: Optional[list[str]] = Field(default=None, title="lineage", description="""An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent. This property provides a flattened, display-oriented view of the lineage and does not replace the parentTaxon relation.""", json_schema_extra = { "linkml_meta": {'alias': 'lineage',
+    lineage: Optional[list[str]] = Field(default=None, title="lineage", description="""An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent.""", json_schema_extra = { "linkml_meta": {'alias': 'lineage',
          'comments': ['This property is intended for display, indexing, and search '
                       'optimisation purposes. It represents a denormalised view of the '
                       'taxonomic lineage and is typically derived automatically from '
                       'successive parentTaxon relations. It MUST NOT be considered '
-                      'authoritative for taxonomic reasoning.'],
+                      'authoritative for taxonomic reasoning. This property provides a '
+                      'flattened, display-oriented view of the lineage and does not '
+                      'replace the parentTaxon relation.'],
          'domain_of': ['Taxon']} })
     title: str = Field(default=..., title="title", description="""A name given to the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'title',
          'comments': ['The title of the item should be as short and descriptive as '

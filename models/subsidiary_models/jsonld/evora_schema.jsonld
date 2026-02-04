@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.1.29",
+  "version": "1.1.33",
   "imports": [
     "linkml:types"
   ],
@@ -1786,10 +1786,10 @@
     {
       "name": "lineage",
       "definition_uri": "https://w3id.org/evorao/lineage",
-      "description": "An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent. This property provides a flattened, display-oriented view of the lineage and does not replace the parentTaxon relation.",
+      "description": "An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent.",
       "title": "lineage",
       "comments": [
-        "This property is intended for display, indexing, and search optimisation purposes. It represents a denormalised view of the taxonomic lineage and is typically derived automatically from successive parentTaxon relations. It MUST NOT be considered authoritative for taxonomic reasoning."
+        "This property is intended for display, indexing, and search optimisation purposes. It represents a denormalised view of the taxonomic lineage and is typically derived automatically from successive parentTaxon relations. It MUST NOT be considered authoritative for taxonomic reasoning. This property provides a flattened, display-oriented view of the lineage and does not replace the parentTaxon relation."
       ],
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/lineage",
@@ -6563,10 +6563,10 @@
     {
       "name": "Taxon_lineage",
       "definition_uri": "https://w3id.org/evorao/lineage",
-      "description": "An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent. This property provides a flattened, display-oriented view of the lineage and does not replace the parentTaxon relation.",
+      "description": "An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent.",
       "title": "lineage",
       "comments": [
-        "This property is intended for display, indexing, and search optimisation purposes. It represents a denormalised view of the taxonomic lineage and is typically derived automatically from successive parentTaxon relations. It MUST NOT be considered authoritative for taxonomic reasoning."
+        "This property is intended for display, indexing, and search optimisation purposes. It represents a denormalised view of the taxonomic lineage and is typically derived automatically from successive parentTaxon relations. It MUST NOT be considered authoritative for taxonomic reasoning. This property provides a flattened, display-oriented view of the lineage and does not replace the parentTaxon relation."
       ],
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "lineage",
@@ -14706,9 +14706,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-01-29T14:25:01",
-  "source_file_size": 255891,
-  "generation_date": "2026-01-29T14:25:18",
+  "source_file_date": "2026-02-04T09:41:06",
+  "source_file_size": 255901,
+  "generation_date": "2026-02-04T09:41:22",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

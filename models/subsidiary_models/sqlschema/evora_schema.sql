@@ -1645,7 +1645,7 @@
 --     * Slot: previouslyKnownAs_id Description: Any historic version of this taxon having a different name.
 -- # Class: "Taxon_lineage" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
---     * Slot: lineage Description: An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent. This property provides a flattened, display-oriented view of the lineage and does not replace the parentTaxon relation.
+--     * Slot: lineage Description: An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent.
 -- # Class: "Taxon_keyword" Description: ""
 --     * Slot: Taxon_id Description: Autocreated FK slot
 --     * Slot: keyword Description: A keyword or tag describing the resource.
