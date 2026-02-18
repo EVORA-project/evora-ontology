@@ -27,28 +27,28 @@ Alias: contactPoint
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
-| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
-| [ProductOrService](ProductOrService.md) | An offering provided by a provider, which may be tangible (a product) or inta... |  yes  |
-| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  no  |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
-| [Prion](Prion.md) | The prion as a biological material |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [Person](Person.md) | An individual |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
 | [ResearchInfrastructure](ResearchInfrastructure.md) | A research infrastructure (RI) |  no  |
 | [Viroid](Viroid.md) | The viroid as a biological material |  no  |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
+| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
+| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
+| [Prion](Prion.md) | The prion as a biological material |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
+| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  no  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
+| [ProductOrService](ProductOrService.md) | An offering provided by a provider, which may be tangible (a product) or inta... |  yes  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
+| [Person](Person.md) | An individual |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
 
 
 

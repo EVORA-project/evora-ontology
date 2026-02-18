@@ -262,6 +262,8 @@ attributes:
     equals_string_in:
     - ENA
     - GenBank
+    - DDBJ
+    - UniProt
   keyword:
     name: keyword
     description: A keyword or tag describing the resource.

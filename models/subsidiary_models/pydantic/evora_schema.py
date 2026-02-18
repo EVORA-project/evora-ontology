@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.1.33"
+version = "1.1.44"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-02-04T10:40:43',
+     'generation_date': '2026-02-18T11:30:09',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -5307,10 +5307,10 @@ class SequenceReference(Resource):
          'is_a': 'identifier',
          'narrow_mappings': ['ncit:P102'],
          'related_mappings': ['dct:identifier']} })
-    sequenceProvider: Literal["ENA", "GenBank"] = Field(default=..., title="sequence provider", description="""The name of the sequence provider within the list of accepted sequence providers.""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceProvider',
+    sequenceProvider: Literal["ENA", "GenBank", "DDBJ", "UniProt"] = Field(default=..., title="sequence provider", description="""The name of the sequence provider within the list of accepted sequence providers.""", json_schema_extra = { "linkml_meta": {'alias': 'sequenceProvider',
          'close_mappings': ['dct:publisher'],
          'domain_of': ['SequenceReference'],
-         'equals_string_in': ['ENA', 'GenBank']} })
+         'equals_string_in': ['ENA', 'GenBank', 'DDBJ', 'UniProt']} })
     keyword: Optional[list[str]] = Field(default=None, title="keyword", description="""A keyword or tag describing the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'keyword', 'domain_of': ['Resource'], 'slot_uri': 'dcat:keyword'} })
     dateIssued: Optional[datetime ] = Field(default=None, title="date issued", description="""Date of formal issuance (e.g., publication) of the resource.""", json_schema_extra = { "linkml_meta": {'alias': 'dateIssued',
          'close_mappings': ['schema:datePublished', 'schema:dateCreated'],

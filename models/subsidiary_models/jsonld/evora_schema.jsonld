@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.1.33",
+  "version": "1.1.44",
   "imports": [
     "linkml:types"
   ],
@@ -1958,7 +1958,9 @@
       "required": true,
       "equals_string_in": [
         "ENA",
-        "GenBank"
+        "GenBank",
+        "DDBJ",
+        "UniProt"
       ],
       "@type": "SlotDefinition"
     },
@@ -6843,7 +6845,9 @@
       "required": true,
       "equals_string_in": [
         "ENA",
-        "GenBank"
+        "GenBank",
+        "DDBJ",
+        "UniProt"
       ],
       "@type": "SlotDefinition"
     },
@@ -14706,9 +14710,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-02-04T09:41:06",
-  "source_file_size": 255901,
-  "generation_date": "2026-02-04T09:41:22",
+  "source_file_date": "2026-02-18T10:30:32",
+  "source_file_size": 255926,
+  "generation_date": "2026-02-18T10:30:48",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

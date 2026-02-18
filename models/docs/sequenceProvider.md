@@ -88,6 +88,8 @@ multivalued: false
 equals_string_in:
 - ENA
 - GenBank
+- DDBJ
+- UniProt
 
 ```
 </details>
