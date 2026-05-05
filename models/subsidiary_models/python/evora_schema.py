@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-05T14:16:22
+# Generation date: 2026-05-05T15:16:58
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/

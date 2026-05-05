@@ -22,8 +22,8 @@ Alias: tagSequence
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  yes  |
 | [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  yes  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  yes  |
 
 
 
