@@ -4925,7 +4925,7 @@ EVORAO: a owl:Ontology,
     dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
     cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
     dct:rights "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication."@en ;
-    vann:preferredNamespacePrefix "evorao" ;
+    vann:preferredNamespacePrefix "EVORAO" ;
     vann:preferredNamespaceUri "https://w3id.org/evorao/" ;
     foaf:homepage <https://evora-project.github.io/evora-ontology/> ;
     dcat:landingPage <https://evora-project.github.io/evora-ontology/> ;
