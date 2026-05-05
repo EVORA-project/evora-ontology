@@ -1,0 +1,60 @@
+name: CI - Publish EVORAO release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - models/evora_schema.yaml
+      - models/owl/evora_ontology.owl.ttl
+      - docs/**
+      - .github/workflows/publish_release.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve release tag
+        id: release
+        run: |
+          VERSION=$(grep -m1 '^version:' models/evora_schema.yaml | cut -d: -f2- | tr -d ' "')
+          if [ -z "$VERSION" ]; then
+            echo "Could not resolve schema version from models/evora_schema.yaml" >&2
+            exit 1
+          fi
+          TAG="v${VERSION#v}"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.release.outputs.tag }}
+          VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists; skipping."
+            exit 0
+          fi
+
+          git fetch --tags
+          if ! git rev-parse "$TAG" >/dev/null 2>&1; then
+            git tag "$TAG"
+            git push origin "$TAG"
+          fi
+
+          gh release create "$TAG" \
+            models/owl/evora_ontology.owl.ttl \
+            models/evora_schema.yaml \
+            --title "EVORAO $VERSION" \
+            --notes "EVORAO $VERSION generated from the LinkML schema, including LOV metadata and GitHub Pages documentation updates."

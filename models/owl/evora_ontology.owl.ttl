@@ -4902,4 +4902,850 @@ dct:description a owl:DatatypeProperty ;
     skos:inScheme EVORAO: ;
     skos:note "Describe this item in few lines. This description will serve as a summary to present the resource." .
 
+# BEGIN EVORAO LOV metadata enrichment
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 
+EVORAO: a owl:Ontology,
+        voaf:Vocabulary ;
+    rdfs:label "EVORAO"@en ;
+    dct:title "European Viral Outbreak Response Alliance Ontology"@en ;
+    dct:description "The EVORAO Ontology provides a structured and harmonized vocabulary for describing shareable pathogens as characterized biological materials, along with their derived products and associated services, organized into collections. Developed within the EVORA project, it supports consistent metadata annotation across research infrastructures, promoting findability, accessibility, interoperability, and reusability (FAIR). By aligning with relevant standards and ontologies, EVORAO facilitates cross-domain collaboration, integration, and sharing of pathogenic resources and services to enhance pandemic preparedness and response. While initially focused on virology, EVORAO is designed to be extensible and also supports metadata harmonization for other pathogens. EVORAO is compatible with DCAT, making it well-suited for efficiently cataloguing pathogen collections and related resources."@en ;
+    rdfs:comment "The EVORAO Ontology provides a structured and harmonized vocabulary for describing shareable pathogens as characterized biological materials, along with their derived products and associated services, organized into collections. Developed within the EVORA project, it supports consistent metadata annotation across research infrastructures, promoting findability, accessibility, interoperability, and reusability (FAIR). By aligning with relevant standards and ontologies, EVORAO facilitates cross-domain collaboration, integration, and sharing of pathogenic resources and services to enhance pandemic preparedness and response. While initially focused on virology, EVORAO is designed to be extensible and also supports metadata harmonization for other pathogens. EVORAO is compatible with DCAT, making it well-suited for efficiently cataloguing pathogen collections and related resources."@en ;
+    dct:issued "2024-12-12"^^xsd:date ;
+    dct:modified "2026-05-05"^^xsd:date ;
+    owl:versionInfo "1.1.44" ;
+    owl:versionIRI <https://github.com/EVORA-project/evora-ontology/releases/tag/v1.1.44> ;
+    owl:priorVersion <https://github.com/EVORA-project/evora-ontology/releases/tag/v1.1.0> ;
+    pav:version "1.1.44" ;
+    dct:creator <https://evora-project.eu/> ;
+    dct:publisher <https://evora-project.eu/> ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:rights "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication."@en ;
+    vann:preferredNamespacePrefix "evorao" ;
+    vann:preferredNamespaceUri "https://w3id.org/evorao/" ;
+    foaf:homepage <https://evora-project.github.io/evora-ontology/> ;
+    dcat:landingPage <https://evora-project.github.io/evora-ontology/> ;
+    dcat:downloadURL <https://raw.githubusercontent.com/EVORA-project/evora-ontology/main/models/owl/evora_ontology.owl.ttl> ;
+    rdfs:seeAlso <https://evora-project.github.io/evora-ontology/>,
+        <https://www.ebi.ac.uk/ols4/ontologies/evorao>,
+        <https://github.com/EVORA-project/evora-ontology> ;
+    dcat:keyword "virus"@en,
+        "pathogen"@en,
+        "viral resources"@en,
+        "pandemic preparedness"@en,
+        "virology"@en,
+        "biological materials"@en,
+        "biological collections"@en,
+        "infectious diseases"@en,
+        "biosample"@en,
+        "diagnostic material"@en,
+        "reference material"@en,
+        "biobank"@en,
+        "pathogen collections"@en,
+        "interoperability"@en ;
+    skos:inScheme EVORAO: .
+
+<https://evora-project.eu/> a foaf:Organization ;
+    foaf:name "European Viral Outbreak Response Alliance" ;
+    foaf:homepage <https://evora-project.eu/> .
+
+# LOV term provenance and status metadata.
+EVORAO:abstract rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:accessionNumber rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:accessPointUrl rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:accessToPhysicalGeneticResource rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:accidentalReleaseMeasures rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:additionalCategory rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:addressCountry rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:addressLocality rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:addressRegion rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:alpha2Code rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:AlternateName rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:alternateName rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:altText rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Antibody rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:antibodyCharacterizationMethod rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:antibodyCharacterizationObservation rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:antibodyPurifiedByAffinity rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:antibodySpecificity rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:antibodyType rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Audio rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:authors rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:availability rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Bacterium rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:BiologicalMaterialOrigin rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:biologicalMaterialOrigin rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:BiologicalPartOrigin rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:biologicalPartOrigin rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:biologicalSourceType rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:BiosafetyLevel rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:biosafetyLevel rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:biosafetyRestrictions rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Bundle rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:canBeUsedToProduceGmo rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Certification rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:certification rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:certificationDocument rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:ClinicalGroup rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:clinicalInformation rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:clonedIntoPlasmid rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:clonedNucleicAcid rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:coInfectingViruses rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:collectedBeforeDate rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Collection rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:collection rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:collectionDataProvider rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:collectionDate rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:collectionItem rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:CommonName rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:complementaryDocument rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:ContactPoint rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:contaminationWithCoInfectingViruses rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:contentType rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:contentUrl rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Country rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:country rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:countryOfCollection rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:cultivability rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Data rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:DataProvider rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:descriptionOfModificationsMadeFromTheReferenceSequences rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:DetectionKit rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:disposalConsiderations rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Document rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Doi rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:doi rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:domain rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:ecologicalInformation rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:eligibilityCriteria rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:email rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:exposureControlsPersonalProtection rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:expressedAs rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:expressionSystem rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:ExpressionVector rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:externalEquivalentTaxon rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:ExternalRelatedReference rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:externalRelatedReference rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:File rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:fireFightingMeasures rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:firstAidMeasures rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:format rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:functionalAndTechnicalDescription rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:functionalCharacterization rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:funder rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:fundingPeriodEnd rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:fundingPeriodStart rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:fundingProgram rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:FundingSource rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:fundingSource rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Fungus rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:furtherInformation rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:genBankFileOfTheConstruct rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:genomeSequencing rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:genotype rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:GeographicalOrigin rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:grantNumber rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:handlingAndStorage rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:hazardsIdentification rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:hostType rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Hybridoma rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:hybridomaDescription rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:IataClassification rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:iataClassification rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:identificationTechnique rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Image rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:inclusionBodiesType rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:indigenousPeopleAndLocalCommunityOrigin rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:infectivity rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:infectivityTest rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:internalReference rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:inVocabulary rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:IplcOrigin rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:iri rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:isolate rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:isolationConditions rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:IsolationHost rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:isolationHost rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:isolationTechnique rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:itemsOfTheBundle rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Journal rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:journal rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Keyword rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:keywords rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:letterOfAuthority rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:License rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:licensingOrAttribution rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:lineage rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:loginRequestMethod rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:loginTokenName rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:loginUrl rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:logo rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:materialSafetyContact rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:MaterialSafetyDataSheet rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:materialSafetyDataSheet rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:memberOfRi rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:modelSpecies rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:modelType rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:modificationsFromTheReferenceSequences rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:mutationObserved rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:mycoplasmicContent rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:NaturalPartOrigin rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:NucleicAcid rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:observedMutations rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:orcidId rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Originator rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:originator rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:parentCategory rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:parentTaxon rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:partIdentification rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:passage rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Pathogen rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:PathogenIdentification rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:pathogenIdentification rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:pathogenName rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:pathogenType rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:PdbReference rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:permitIdentifierForAbs rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:physicalChemicalProperties rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:PlasmidSelection rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:plasmidSelection rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:postalCode rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:preparationTechnique rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:previouslyKnownAs rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Prion rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Product rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:ProductCategory rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:ProductionCellLine rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:productionCellLine rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:productionSystem rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:ProductOrService rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:productPicture rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:PropagationHost rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:propagationHost rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Protein rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:proteinPurification rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Protozoan rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:providedEntityType rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Provider rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:provider rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Publication rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:qualityGrading rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:queryMethod rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:rank rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:rankDataProvider rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:recombinantMaterial rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:RecombinantPartIdentification rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:recombinantPartIdentification rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:reference rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:referenceLabel rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:referenceProviderName rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:referenceProviderPrefix rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:refSku rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:regionEncompassedInThisProduct rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:regulatoryInformation rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:relatedPdb rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:ResearchInfrastructure rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:resource rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:resourceUrl rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:RiskGroup rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:riskGroup rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:rorId rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Sequence rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:sequence rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:sequenceChecked rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:sequenceFasta rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:sequenceProvider rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:SequenceReference rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:sequenceReference rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:sequencing rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:serotype rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Service rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:shippingConditions rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:sourceOfInformation rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:SpecialFeature rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:specialFeature rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:specificity rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:specificityDocumented rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:stabilityAndReactivity rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:standardOperatingProcedureFile rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:storageConditions rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:strain rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:streetAddress rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:subspecies rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:suspectedEpidemiologicalOrigin rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:SyntheticPartOrigin rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:TagSequence rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:tagSequence rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:tagStatusOfTheSolubilizedProtein rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:targetedAntigen rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:targetedRegion rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Taxon rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:taxon rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:taxonDataProvider rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:taxonomicId rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:taxonomicNodeId rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:TaxonomicRank rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Taxonomy rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:taxonomy rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:technicalRecommendation rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:telephone rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Term rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:term rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:termDataProvider rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:thirdPartyDistributionConsent rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:titer rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:toxicologicalInformation rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:TransmissionMethod rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:transmissionMethod rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:transportInformation rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:typeOfFunctionalCharacterization rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:unitCost rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:unitCostCurrency rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:unitCostNote rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:unitDefinition rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:usageRestrictions rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Variant rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:variant rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Version rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:versionDataProvider rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:versionOf rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Video rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Viroid rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Virus rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:VirusName rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:Vocabulary rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+
+EVORAO:weight rdfs:isDefinedBy EVORAO: ;
+    vs:term_status "stable" .
+# END EVORAO LOV metadata enrichment

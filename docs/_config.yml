@@ -1,0 +1,14 @@
+title: EVORAO
+description: European Viral Outbreak Response Alliance Ontology
+remote_theme: pages-themes/primer@v0.6.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
