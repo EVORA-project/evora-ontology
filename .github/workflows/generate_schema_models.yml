@@ -21,7 +21,7 @@ jobs:
       DOCKER_IMAGE: evoratools/schemasheets:0.4.0_stable
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
 
@@ -39,7 +39,7 @@ jobs:
           --name EVORA Prefixes Schema CompleteList ClassesDetails PropertiesDetails PropertiesDomains AllowedValues \
           -o models/evora_schema.yaml
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: evora-schema.yaml
           path: models/evora_schema.yaml
@@ -56,7 +56,7 @@ jobs:
       - name: Enrich OWL ontology with LOV metadata
         run: python3 scripts/enrich_lov_metadata.py --modified-date "$(date -u +%F)"
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: evora-ontology.owl.ttl
           path: models/owl/evora_ontology.owl.ttl
@@ -70,7 +70,7 @@ jobs:
           linkml generate doc -d docs models/evora_schema.yaml
 
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: evora-schema-docs
           path: docs/
