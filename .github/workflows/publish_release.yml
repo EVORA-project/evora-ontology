@@ -7,8 +7,6 @@ on:
     paths:
       - models/evora_schema.yaml
       - models/owl/evora_ontology.owl.ttl
-      - docs/**
-      - .github/workflows/publish_release.yml
   workflow_dispatch:
 
 permissions:
