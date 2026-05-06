@@ -27,28 +27,28 @@ Alias: contactPoint
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Virus](Virus.md) | The virus as a biological material |  no  |
-| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
-| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
-| [Person](Person.md) | An individual |  no  |
-| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
-| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
-| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
-| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
-| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
-| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
-| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
-| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
-| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
-| [ResearchInfrastructure](ResearchInfrastructure.md) | A research infrastructure (RI) |  no  |
-| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
-| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
-| [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  no  |
 | [ProductOrService](ProductOrService.md) | An offering provided by a provider, which may be tangible (a product) or inta... |  yes  |
+| [Protein](Protein.md) | A protein as a derived product from a pathogen |  no  |
+| [Bundle](Bundle.md) | A grouping of products and/or services intentionally combined into a single o... |  no  |
+| [Protozoan](Protozoan.md) | The protozoan as a biological material |  no  |
+| [Pathogen](Pathogen.md) | Biological entity that causes disease in its host, which is typically an infe... |  no  |
+| [PersonOrOrganization](PersonOrOrganization.md) | A person or an organization |  yes  |
+| [DetectionKit](DetectionKit.md) | A detection kit for specific pathogens |  no  |
+| [Originator](Originator.md) | The individual or organization responsible for the original discovery, isolat... |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  no  |
+| [Fungus](Fungus.md) | The fungus as a biological material |  no  |
+| [Service](Service.md) | An intangible offering characterized by an activity, performance, or facilita... |  no  |
+| [Viroid](Viroid.md) | The viroid as a biological material |  no  |
 | [Prion](Prion.md) | The prion as a biological material |  no  |
+| [ResearchInfrastructure](ResearchInfrastructure.md) | A research infrastructure (RI) |  no  |
+| [Product](Product.md) | A tangible, physical item made available by a provider for use, consumption, ... |  no  |
+| [NucleicAcid](NucleicAcid.md) | Nucleic acid related to a pathogen |  no  |
+| [Person](Person.md) | An individual |  no  |
+| [Hybridoma](Hybridoma.md) | An hybridoma that provides antibodies that can be related to a pathogen |  no  |
+| [Bacterium](Bacterium.md) | The bacterium as a biological material |  no  |
 | [Antibody](Antibody.md) | Protein that can bind to certain types of foreign bodies, such as pathogens |  no  |
+| [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
+| [Virus](Virus.md) | The virus as a biological material |  no  |
 
 
 
