@@ -31,6 +31,12 @@ TERM_PATTERN = re.compile(
     r"(?:Class|DatatypeProperty|ObjectProperty|AnnotationProperty)\s*;",
     re.MULTILINE,
 )
+SCHEMA_ELEMENT_SECTIONS = {"classes", "slots", "enums"}
+DEPRECATION_FIELDS = {
+    "deprecated",
+    "deprecated_element_has_exact_replacement",
+    "deprecated_element_has_possible_replacement",
+}
 
 
 def read_scalar(schema_text: str, key: str, default: str = "") -> str:
@@ -61,6 +67,148 @@ def ttl_literal(value: str, lang: str | None = None) -> str:
     if lang:
         return f"{literal}@{lang}"
     return literal
+
+
+def clean_yaml_scalar(value: str) -> str:
+    value = value.strip()
+    if value in {"", "|", ">"}:
+        return ""
+    if (value.startswith('"') and value.endswith('"')) or (
+        value.startswith("'") and value.endswith("'")
+    ):
+        return value[1:-1]
+    return value
+
+
+def line_indent(line: str) -> int:
+    return len(line) - len(line.lstrip(" "))
+
+
+def yaml_field_value(
+    lines: list[str],
+    start: int,
+    field_indent: int,
+    element_indent: int,
+) -> tuple[str | list[str], int]:
+    line = lines[start]
+    initial = line.split(":", 1)[1].strip()
+    values: list[str] = []
+    text_parts: list[str] = []
+
+    if initial:
+        text_parts.append(clean_yaml_scalar(initial))
+
+    index = start + 1
+    while index < len(lines):
+        next_line = lines[index]
+        stripped = next_line.strip()
+        if not stripped:
+            index += 1
+            continue
+
+        next_indent = line_indent(next_line)
+        if next_indent <= element_indent:
+            break
+        if (
+            next_indent == field_indent
+            and not stripped.startswith("- ")
+            and re.match(r"^[A-Za-z_][\w-]*:\s*", stripped)
+        ):
+            break
+
+        if stripped.startswith("- "):
+            values.append(clean_yaml_scalar(stripped[2:]))
+        elif stripped:
+            text_parts.append(clean_yaml_scalar(stripped))
+        index += 1
+
+    if values:
+        return values, index
+    return " ".join(part for part in text_parts if part), index
+
+
+def schema_element_metadata(schema_text: str) -> dict[str, dict[str, str | list[str]]]:
+    """Read LinkML element lifecycle metadata without requiring PyYAML at runtime."""
+    metadata: dict[str, dict[str, str | list[str]]] = {}
+    lines = schema_text.splitlines()
+    section: str | None = None
+    element: str | None = None
+    element_indent = 0
+    index = 0
+
+    while index < len(lines):
+        line = lines[index]
+        top_level = re.match(r"^([A-Za-z][\w-]*):\s*$", line)
+        if top_level:
+            section_name = top_level.group(1)
+            section = section_name if section_name in SCHEMA_ELEMENT_SECTIONS else None
+            element = None
+            index += 1
+            continue
+
+        if section:
+            element_match = re.match(r"^  ([A-Za-z][A-Za-z0-9_]*)\s*:\s*$", line)
+            if element_match:
+                element = element_match.group(1)
+                element_indent = 2
+                metadata.setdefault(element, {})
+                index += 1
+                continue
+
+            slot_usage_match = re.match(
+                r"^      ([A-Za-z][A-Za-z0-9_]*)\s*:\s*$",
+                line,
+            )
+            if slot_usage_match:
+                element = slot_usage_match.group(1)
+                element_indent = 6
+                metadata.setdefault(element, {})
+                index += 1
+                continue
+
+            field_match = re.match(r"^(\s+)([A-Za-z_][\w-]*):\s*", line)
+            field_indent = len(field_match.group(1)) if field_match else 0
+            field_name = field_match.group(2) if field_match else ""
+            if (
+                element
+                and field_match
+                and field_indent == element_indent + 2
+                and field_name in DEPRECATION_FIELDS
+            ):
+                value, next_index = yaml_field_value(
+                    lines,
+                    index,
+                    field_indent,
+                    element_indent,
+                )
+                metadata.setdefault(element, {})[field_name] = value
+                index = next_index
+                continue
+
+        index += 1
+
+    return metadata
+
+
+def rdf_resource(value: str) -> str:
+    value = clean_yaml_scalar(value)
+    if not value:
+        return ""
+    if value.startswith("<") and value.endswith(">"):
+        return value
+    if re.match(r"^https?://", value):
+        return f"<{value}>"
+    if ":" in value:
+        return value
+    return f"EVORAO:{value}"
+
+
+def as_list(value: str | list[str] | None) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        return [item for item in value if item]
+    return [value] if value else []
 
 
 def validate_date(value: str, label: str) -> str:
@@ -101,7 +249,7 @@ def normalize_ontology_resource(text: str, ontology_resource: str) -> str:
     resources = (*LEGACY_ONTOLOGY_RESOURCES, ontology_resource)
     for resource in resources:
         text = re.sub(
-            rf"^{re.escape(resource)}\s+a\s+owl:Ontology\s*;",
+            rf"^{re.escape(resource)}\s+a\s+owl:Ontology\s*[,;]",
             f"{ontology_resource} a owl:Ontology ;",
             text,
             count=1,
@@ -266,13 +414,47 @@ def enrich_ontology_statement(text: str, args: argparse.Namespace, schema_text: 
     return "\n".join(lines) + "\n"
 
 
-def term_metadata_block(ontology_text: str, defined_by_resource: str) -> str:
+def term_metadata_block(ontology_text: str, schema_text: str, defined_by_resource: str) -> str:
     terms = sorted(set(TERM_PATTERN.findall(ontology_text)), key=lambda term: (term.lower(), term))
     if not terms:
         return ""
 
-    lines = ["# LOV term provenance and status metadata."]
+    lifecycle_metadata = schema_element_metadata(schema_text)
+    lines = ["# Term provenance and status metadata."]
     for term in terms:
+        term_lifecycle = lifecycle_metadata.get(term, {})
+        deprecated = as_list(term_lifecycle.get("deprecated"))
+        exact_replacements = as_list(
+            term_lifecycle.get("deprecated_element_has_exact_replacement")
+        )
+        possible_replacements = as_list(
+            term_lifecycle.get("deprecated_element_has_possible_replacement")
+        )
+
+        if deprecated:
+            lines.append(f"EVORAO:{term} rdfs:isDefinedBy {defined_by_resource} ;")
+            lines.append('    owl:deprecated "true"^^xsd:boolean ;')
+            lines.append('    vs:term_status "deprecated" ;')
+            lines.append(f"    skos:changeNote {ttl_literal(' '.join(deprecated), 'en')} ;")
+
+            replacement_objects = [rdf_resource(value) for value in exact_replacements]
+            replacement_objects = [value for value in replacement_objects if value]
+            if replacement_objects:
+                lines.append(
+                    f"    dct:isReplacedBy {', '.join(replacement_objects)} ;"
+                )
+
+            related_replacements = [
+                rdf_resource(value) for value in (*exact_replacements, *possible_replacements)
+            ]
+            related_replacements = [value for value in related_replacements if value]
+            if related_replacements:
+                lines.append(f"    rdfs:seeAlso {', '.join(related_replacements)} ;")
+
+            lines[-1] = replace_terminal_punctuation(lines[-1], ".")
+            lines.append("")
+            continue
+
         lines.extend(
             [
                 f"EVORAO:{term} rdfs:isDefinedBy {defined_by_resource} ;",
@@ -283,8 +465,8 @@ def term_metadata_block(ontology_text: str, defined_by_resource: str) -> str:
     return "\n".join(lines).rstrip()
 
 
-def build_tail_block(args: argparse.Namespace, ontology_text: str) -> str:
-    term_block = term_metadata_block(ontology_text, args.defined_by_resource)
+def build_tail_block(args: argparse.Namespace, ontology_text: str, schema_text: str) -> str:
+    term_block = term_metadata_block(ontology_text, schema_text, args.defined_by_resource)
     term_block = f"\n\n{term_block}" if term_block else ""
 
     return f"""{MARKER_START}
@@ -382,7 +564,7 @@ def main() -> None:
     stripped = normalize_generated_metadata_values(stripped)
     stripped = ensure_prefixes(stripped)
     stripped = enrich_ontology_statement(stripped, args, schema_text)
-    block = build_tail_block(args, stripped)
+    block = build_tail_block(args, stripped, schema_text)
     ontology_path.write_text(f"{stripped}\n{block}", encoding="utf-8")
 
 
