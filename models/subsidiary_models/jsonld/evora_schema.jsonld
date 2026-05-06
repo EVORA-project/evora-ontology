@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.1.56",
+  "version": "1.1.68",
   "imports": [
     "linkml:types"
   ],
@@ -1302,7 +1302,7 @@
     {
       "name": "subspecies",
       "definition_uri": "https://w3id.org/evorao/subspecies",
-      "description": "The subspecies information differentiates closely related pathogens within a single species.",
+      "description": "Taxonomic subdivision below species used to differentiates closely related pathogen populations within a single species.",
       "title": "subspecies",
       "from_schema": "https://w3id.org/evorao/",
       "slot_uri": "https://w3id.org/evorao/subspecies",
@@ -1662,7 +1662,7 @@
     {
       "name": "parentTaxon",
       "definition_uri": "https://w3id.org/evorao/parentTaxon",
-      "description": "The parent taxon of the current taxon.",
+      "description": "Immediate broader taxon that contains the current taxon in the taxonomy hierarchy.",
       "title": "parent taxon",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
@@ -1738,7 +1738,7 @@
     {
       "name": "taxonomicNodeId",
       "definition_uri": "https://w3id.org/evorao/taxonomicNodeId",
-      "description": "The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy.",
+      "description": "Identifier for the taxonomic node, unique to this taxon within the specific taxonomy release/version.",
       "title": "taxonomic node ID",
       "comments": [
         "NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in ICTV= Key of the taxon node!"
@@ -1824,7 +1824,7 @@
     {
       "name": "referenceLabel",
       "definition_uri": "https://w3id.org/evorao/referenceLabel",
-      "description": "The label informing what this reference is about.",
+      "description": "Human-readable label informing what this reference is about.",
       "title": "reference label",
       "comments": [
         "e.g., 'Infravec2 related product'."
@@ -2514,7 +2514,7 @@
     {
       "name": "unitDefinition",
       "definition_uri": "https://w3id.org/evorao/unitDefinition",
-      "description": "A short description of what will be delivered by ordering one unit of this item.",
+      "description": "A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.",
       "title": "unit definition",
       "comments": [
         "The description of what will be delivered to the end-user (e.g.: packaging, quantity...)."
@@ -5710,7 +5710,7 @@
     {
       "name": "PathogenIdentification_subspecies",
       "definition_uri": "https://w3id.org/evorao/subspecies",
-      "description": "The subspecies information differentiates closely related pathogens within a single species.",
+      "description": "Taxonomic subdivision below species used to differentiates closely related pathogen populations within a single species.",
       "title": "subspecies",
       "from_schema": "https://w3id.org/evorao/",
       "is_a": "subspecies",
@@ -6352,7 +6352,7 @@
     {
       "name": "Taxon_parentTaxon",
       "definition_uri": "https://w3id.org/evorao/parentTaxon",
-      "description": "The parent taxon of the current taxon.",
+      "description": "Immediate broader taxon that contains the current taxon in the taxonomy hierarchy.",
       "title": "parent taxon",
       "from_schema": "https://w3id.org/evorao/",
       "exact_mappings": [
@@ -6475,7 +6475,7 @@
     {
       "name": "Taxon_taxonomicNodeId",
       "definition_uri": "https://w3id.org/evorao/taxonomicNodeId",
-      "description": "The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy.",
+      "description": "Identifier for the taxonomic node, unique to this taxon within the specific taxonomy release/version.",
       "title": "taxonomic node ID",
       "comments": [
         "NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in ICTV= Key of the taxon node!"
@@ -6679,7 +6679,7 @@
     {
       "name": "ExternalRelatedReference_referenceLabel",
       "definition_uri": "https://w3id.org/evorao/referenceLabel",
-      "description": "The label informing what this reference is about.",
+      "description": "Human-readable label informing what this reference is about.",
       "title": "reference label",
       "comments": [
         "e.g., 'Infravec2 related product'."
@@ -7575,7 +7575,7 @@
     {
       "name": "ProductOrService_unitDefinition",
       "definition_uri": "https://w3id.org/evorao/unitDefinition",
-      "description": "A short description of what will be delivered by ordering one unit of this item.",
+      "description": "A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.",
       "title": "unit definition",
       "comments": [
         "The description of what will be delivered to the end-user (e.g.: packaging, quantity...)."
@@ -14711,9 +14711,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-05-06T13:25:22",
-  "source_file_size": 255970,
-  "generation_date": "2026-05-06T13:25:37",
+  "source_file_date": "2026-05-06T14:38:31",
+  "source_file_size": 256160,
+  "generation_date": "2026-05-06T14:38:49",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

@@ -63,7 +63,7 @@
 -- # Class: "PathogenIdentification" Description: "A collection of distinguishing information that enables the differentiation of a pathogen from another."
 --     * Slot: id Description: 
 --     * Slot: pathogenType Description: Identification of the specific type of pathogen among the listed categories e.g. 'Virus','Viroid','Bacterium'...
---     * Slot: subspecies Description: The subspecies information differentiates closely related pathogens within a single species.
+--     * Slot: subspecies Description: Taxonomic subdivision below species used to differentiates closely related pathogen populations within a single species.
 --     * Slot: strain Description: Identifier given to a genetic variant within a single species.
 --     * Slot: isolate Description: Identifier given to a pathogen that has been isolated from an infected host and propagated in a laboratory culture. The isolate information may include an internal reference code from the laboratory that took the sample or performed the isolation, as well as details about the specific conditions of isolation, such as the name of the town, hospital, and type of host.
 --     * Slot: genotype Description: Genotype information that identifies organisms that cluster in phylogenetic trees, thus different clusters are distinct genotypes.
@@ -323,13 +323,13 @@
 -- # Class: "Taxon" Description: "Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit."
 --     * Slot: id Description: 
 --     * Slot: taxonomicId Description: The taxonomic identifier as a persistent identifier accross releases.
---     * Slot: taxonomicNodeId Description: The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy.
+--     * Slot: taxonomicNodeId Description: Identifier for the taxonomic node, unique to this taxon within the specific taxonomy release/version.
 --     * Slot: title Description: A name given to the resource.
 --     * Slot: description Description: A short explanation of the characteristics, features, or nature of the current item.
 --     * Slot: weight Description: A numerical value indicating relative importance or priority, generally processed in ascending order. This weight helps prioritize content when organizing or processing data. Its value can be negative, with a default set to 0.
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
 --     * Slot: dateModified Description: Most recent date on which the resource was changed, updated or modified.
---     * Slot: parentTaxon_id Description: The parent taxon of the current taxon.
+--     * Slot: parentTaxon_id Description: Immediate broader taxon that contains the current taxon in the taxonomy hierarchy.
 --     * Slot: rank_id Description: Relative level or position of the identified taxon in the taxonomy.
 --     * Slot: inVocabulary_id Description: Terms belong to a specific vocabulary.
 --     * Slot: publisher_id Description: The entity responsible for making the resource available.
@@ -345,7 +345,7 @@
 -- # Class: "ExternalRelatedReference" Description: "A reference that permits to retrieve an item from an external provider."
 --     * Slot: id Description: 
 --     * Slot: reference Description: The identifier reference of the connected external item.
---     * Slot: referenceLabel Description: The label informing what this reference is about.
+--     * Slot: referenceLabel Description: Human-readable label informing what this reference is about.
 --     * Slot: referenceProviderPrefix Description: The url prefix that once completed with the reference will lead to the linked external resource.
 --     * Slot: referenceProviderName Description: The name for the reference provider.
 --     * Slot: dateIssued Description: Date of formal issuance (e.g., publication) of the resource.
@@ -485,7 +485,7 @@
 --     * Slot: id Description: 
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -513,7 +513,7 @@
 --     * Slot: modelType Description: The specific name of the infected organism, including its modification if necessary.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -544,7 +544,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -585,7 +585,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -627,7 +627,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -669,7 +669,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -713,7 +713,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -753,7 +753,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -787,7 +787,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -832,7 +832,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -880,7 +880,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -926,7 +926,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -972,7 +972,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -1018,7 +1018,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -1064,7 +1064,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).
@@ -1110,7 +1110,7 @@
 --     * Slot: preparationTechnique Description: The technique, method, or procedure employed to obtain or prepare the material prior to its use or storage.
 --     * Slot: accessPointUrl Description: The URL that permits to access to the product/service detailed description page on the provider's website and/or allows to place an order about it or at least describe the process to place an order/enquiry.
 --     * Slot: refSku Description: The reference or the stock keeping unit of the service or item provided in the provider's catalogue.
---     * Slot: unitDefinition Description: A short description of what will be delivered by ordering one unit of this item.
+--     * Slot: unitDefinition Description: A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 --     * Slot: unitCost Description: The cost per access for one unit as defined by the unit definition.
 --     * Slot: unitCostCurrency Description: The currency in which the unit cost is expressed, following ISO 4217 three-letter codes (e.g., EUR, USD).
 --     * Slot: unitCostNote Description: A free-text note describing special conditions or cases where the cost cannot be represented by a numerical value (e.g., on request, free for academics, depends on volume).

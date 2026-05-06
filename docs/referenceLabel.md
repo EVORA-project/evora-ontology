@@ -3,7 +3,7 @@
 # Slot: reference label (referenceLabel) 
 
 
-_The label informing what this reference is about._
+_Human-readable label informing what this reference is about._
 
 
 
@@ -76,7 +76,7 @@ Alias: referenceLabel
 <details>
 ```yaml
 name: referenceLabel
-description: The label informing what this reference is about.
+description: Human-readable label informing what this reference is about.
 title: reference label
 comments:
 - e.g., 'Infravec2 related product'.

@@ -219,7 +219,7 @@ Name: EVORAO
 | [orcidId](orcidId.md) | Unique persistent identifier for a person, provided by the Open Researcher an... |
 | [originator](originator.md) | The individual or organization responsible for the original discovery, isolat... |
 | [parentCategory](parentCategory.md) | An overarching category that encompasses the current category within a hierar... |
-| [parentTaxon](parentTaxon.md) | The parent taxon of the current taxon |
+| [parentTaxon](parentTaxon.md) | Immediate broader taxon that contains the current taxon in the taxonomy hiera... |
 | [partIdentification](partIdentification.md) | A short designation of this recombinant part of the related biological materi... |
 | [passage](passage.md) | The number of times the pathogen was cultured through serial passage, a proce... |
 | [pathogenIdentification](pathogenIdentification.md) | The identification of the pathogen or group of pathogens (e |
@@ -246,7 +246,7 @@ Name: EVORAO
 | [recombinantMaterial](recombinantMaterial.md) | Indicates if this biological material is a recombinant biological material |
 | [recombinantPartIdentification](recombinantPartIdentification.md) | Identification of a recombinant part |
 | [reference](reference.md) | The identifier reference of the connected external item |
-| [referenceLabel](referenceLabel.md) | The label informing what this reference is about |
+| [referenceLabel](referenceLabel.md) | Human-readable label informing what this reference is about |
 | [referenceProviderName](referenceProviderName.md) | The name for the reference provider |
 | [referenceProviderPrefix](referenceProviderPrefix.md) | The url prefix that once completed with the reference will lead to the linked... |
 | [refSku](refSku.md) | The reference or the stock keeping unit of the service or item provided in th... |
@@ -275,7 +275,7 @@ Name: EVORAO
 | [storageConditions](storageConditions.md) | Specifies the conditions under which the product has to be stored to maintain... |
 | [strain](strain.md) | Identifier given to a genetic variant within a single species |
 | [streetAddress](streetAddress.md) | The building/apartment number and the street name |
-| [subspecies](subspecies.md) | The subspecies information differentiates closely related pathogens within a ... |
+| [subspecies](subspecies.md) | Taxonomic subdivision below species used to differentiates closely related pa... |
 | [suspectedEpidemiologicalOrigin](suspectedEpidemiologicalOrigin.md) | The potential geographical or environmental source from which the pathogen is... |
 | [tagSequence](tagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... |
 | [tagStatusOfTheSolubilizedProtein](tagStatusOfTheSolubilizedProtein.md) | Indicates the presence and condition of a tag on the protein after solubiliza... |
@@ -284,7 +284,7 @@ Name: EVORAO
 | [taxon](taxon.md) | Scientifically classified group or entity within the reference taxonomy |
 | [taxonDataProvider](taxonDataProvider.md) | The data provider for the taxons of the taxonomy |
 | [taxonomicId](taxonomicId.md) | The taxonomic identifier as a persistent identifier accross releases |
-| [taxonomicNodeId](taxonomicNodeId.md) | The taxonomic_Node Identifier as an identifier specific the current taxon in ... |
+| [taxonomicNodeId](taxonomicNodeId.md) | Identifier for the taxonomic node, unique to this taxon within the specific t... |
 | [taxonomy](taxonomy.md) | The taxonomy release(s) in which this entity exists |
 | [technicalRecommendation](technicalRecommendation.md) | Expert advice or guidelines provided to ensure the optimal use, performance, ... |
 | [telephone](telephone.md) | The telephone number |
@@ -300,7 +300,7 @@ Name: EVORAO
 | [unitCost](unitCost.md) | The cost per access for one unit as defined by the unit definition |
 | [unitCostCurrency](unitCostCurrency.md) | The currency in which the unit cost is expressed, following ISO 4217 three-le... |
 | [unitCostNote](unitCostNote.md) | A free-text note describing special conditions or cases where the cost cannot... |
-| [unitDefinition](unitDefinition.md) | A short description of what will be delivered by ordering one unit of this it... |
+| [unitDefinition](unitDefinition.md) | A short description of what is delivered when one unit of this item is ordere... |
 | [usageRestrictions](usageRestrictions.md) | Specifies any limitations or conditions on the use of the biological material... |
 | [variant](variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |
 | [version](version.md) | The version indicator (name or identifier) of a resource |

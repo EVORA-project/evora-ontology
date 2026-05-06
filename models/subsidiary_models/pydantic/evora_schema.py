@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.1.56"
+version = "1.1.68"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-05-06T15:14:46',
+     'generation_date': '2026-05-06T16:37:58',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -1429,9 +1429,10 @@ class PathogenIdentification(Resource):
                                    'recommended': True,
                                    'required': False,
                                    'title': 'strain'},
-                        'subspecies': {'description': 'The subspecies information '
-                                                      'differentiates closely related '
-                                                      'pathogens within a single '
+                        'subspecies': {'description': 'Taxonomic subdivision below '
+                                                      'species used to differentiates '
+                                                      'closely related pathogen '
+                                                      'populations within a single '
                                                       'species.',
                                        'domain_of': ['PathogenIdentification'],
                                        'multivalued': False,
@@ -1495,7 +1496,7 @@ class PathogenIdentification(Resource):
          'domain_of': ['PathogenIdentification'],
          'equals_string_in': ['Animal', 'Human', 'Plant'],
          'recommended': True} })
-    subspecies: Optional[str] = Field(default=None, title="subspecies", description="""The subspecies information differentiates closely related pathogens within a single species.""", json_schema_extra = { "linkml_meta": {'alias': 'subspecies', 'domain_of': ['PathogenIdentification']} })
+    subspecies: Optional[str] = Field(default=None, title="subspecies", description="""Taxonomic subdivision below species used to differentiates closely related pathogen populations within a single species.""", json_schema_extra = { "linkml_meta": {'alias': 'subspecies', 'domain_of': ['PathogenIdentification']} })
     strain: Optional[str] = Field(default=None, title="strain", description="""Identifier given to a genetic variant within a single species.""", json_schema_extra = { "linkml_meta": {'alias': 'strain',
          'domain_of': ['PathogenIdentification'],
          'recommended': True} })
@@ -4653,8 +4654,9 @@ class Taxon(Term):
                                     'title': 'lineage'},
                         'parentTaxon': {'broad_mappings': ['dwc:Taxon'],
                                         'close_mappings': ['wdp:P171'],
-                                        'description': 'The parent taxon of the '
-                                                       'current taxon.',
+                                        'description': 'Immediate broader taxon that '
+                                                       'contains the current taxon in '
+                                                       'the taxonomy hierarchy.',
                                         'domain_of': ['Taxon'],
                                         'exact_mappings': ['schema:parentTaxon'],
                                         'multivalued': False,
@@ -4723,13 +4725,11 @@ class Taxon(Term):
                                                          'taxonomicID. Taxon_node id '
                                                          'is Unique  in ICTV= Key of '
                                                          'the taxon node!'],
-                                            'description': 'The taxonomic_Node '
-                                                           'Identifier as an '
-                                                           'identifier specific the '
-                                                           'current taxon in the '
-                                                           'corresponding '
-                                                           'release/version of the '
-                                                           'taxonomy.',
+                                            'description': 'Identifier for the '
+                                                           'taxonomic node, unique to '
+                                                           'this taxon within the '
+                                                           'specific taxonomy '
+                                                           'release/version.',
                                             'domain_of': ['Taxon'],
                                             'is_a': 'identifier',
                                             'multivalued': False,
@@ -4754,7 +4754,7 @@ class Taxon(Term):
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['Taxon', 'TaxonomicRank'],
          'recommended': True} })
-    parentTaxon: Optional[Taxon] = Field(default=None, title="parent taxon", description="""The parent taxon of the current taxon.""", json_schema_extra = { "linkml_meta": {'alias': 'parentTaxon',
+    parentTaxon: Optional[Taxon] = Field(default=None, title="parent taxon", description="""Immediate broader taxon that contains the current taxon in the taxonomy hierarchy.""", json_schema_extra = { "linkml_meta": {'alias': 'parentTaxon',
          'broad_mappings': ['dwc:Taxon'],
          'close_mappings': ['wdp:P171'],
          'domain_of': ['Taxon'],
@@ -4780,7 +4780,7 @@ class Taxon(Term):
          'exact_mappings': ['dwc:taxonID'],
          'is_a': 'identifier',
          'narrow_mappings': ['ncit:P331']} })
-    taxonomicNodeId: Optional[str] = Field(default=None, title="taxonomic node ID", description="""The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy.""", json_schema_extra = { "linkml_meta": {'alias': 'taxonomicNodeId',
+    taxonomicNodeId: Optional[str] = Field(default=None, title="taxonomic node ID", description="""Identifier for the taxonomic node, unique to this taxon within the specific taxonomy release/version.""", json_schema_extra = { "linkml_meta": {'alias': 'taxonomicNodeId',
          'broad_mappings': ['dct:identifier'],
          'close_mappings': ['dwc:taxonID'],
          'comments': ['NCBI does not have a taxon_node id, only a taxonomicID. '
@@ -5078,8 +5078,9 @@ class ExternalRelatedReference(Resource):
                         'referenceLabel': {'close_mappings': ['dct:title'],
                                            'comments': ["e.g., 'Infravec2 related "
                                                         "product'."],
-                                           'description': 'The label informing what '
-                                                          'this reference is about.',
+                                           'description': 'Human-readable label '
+                                                          'informing what this '
+                                                          'reference is about.',
                                            'domain_of': ['ExternalRelatedReference'],
                                            'multivalued': False,
                                            'name': 'referenceLabel',
@@ -5116,7 +5117,7 @@ class ExternalRelatedReference(Resource):
          'close_mappings': ['dct:identifier', 'dct:references'],
          'domain_of': ['ExternalRelatedReference'],
          'is_a': 'identifier'} })
-    referenceLabel: str = Field(default=..., title="reference label", description="""The label informing what this reference is about.""", json_schema_extra = { "linkml_meta": {'alias': 'referenceLabel',
+    referenceLabel: str = Field(default=..., title="reference label", description="""Human-readable label informing what this reference is about.""", json_schema_extra = { "linkml_meta": {'alias': 'referenceLabel',
          'close_mappings': ['dct:title'],
          'comments': ["e.g., 'Infravec2 related product'."],
          'domain_of': ['ExternalRelatedReference']} })
@@ -7229,9 +7230,10 @@ class ProductOrService(Dataset):
                                                         '(e.g.: packaging, '
                                                         'quantity...).'],
                                            'description': 'A short description of what '
-                                                          'will be delivered by '
-                                                          'ordering one unit of this '
-                                                          'item.',
+                                                          'is delivered when one unit '
+                                                          'of this item is ordered, '
+                                                          'such as quantity or '
+                                                          'packaging.',
                                            'domain_of': ['ProductOrService'],
                                            'multivalued': False,
                                            'name': 'unitDefinition',
@@ -7254,7 +7256,7 @@ class ProductOrService(Dataset):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -7503,7 +7505,7 @@ class Service(ProductOrService):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -7888,7 +7890,7 @@ class Product(ProductOrService):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -8290,7 +8292,7 @@ class Antibody(Product):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -8577,7 +8579,7 @@ class Hybridoma(Antibody):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -9241,7 +9243,7 @@ class Protein(Product):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -9846,7 +9848,7 @@ class NucleicAcid(Product):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -10144,7 +10146,7 @@ class DetectionKit(Product):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -10400,7 +10402,7 @@ class Bundle(Product):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -11037,7 +11039,7 @@ class Pathogen(Product):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -11480,7 +11482,7 @@ class Virus(Pathogen):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -11807,7 +11809,7 @@ class Bacterium(Pathogen):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -12132,7 +12134,7 @@ class Fungus(Pathogen):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -12453,7 +12455,7 @@ class Protozoan(Pathogen):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -12766,7 +12768,7 @@ class Viroid(Pathogen):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],
@@ -13087,7 +13089,7 @@ class Prion(Pathogen):
          'domain_of': ['ProductOrService'],
          'exact_mappings': ['schema:sku'],
          'is_a': 'identifier'} })
-    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what will be delivered by ordering one unit of this item.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
+    unitDefinition: Optional[str] = Field(default=None, title="unit definition", description="""A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.""", json_schema_extra = { "linkml_meta": {'alias': 'unitDefinition',
          'comments': ['The description of what will be delivered to the end-user '
                       '(e.g.: packaging, quantity...).'],
          'domain_of': ['ProductOrService'],

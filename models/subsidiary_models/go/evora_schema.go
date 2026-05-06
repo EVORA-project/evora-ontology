@@ -391,7 +391,7 @@ type PathogenIdentification struct {
 	 */
 	HostType string `json:"hostType"`
 	/*
-	 * The subspecies information differentiates closely related pathogens within a single species.
+	 * Taxonomic subdivision below species used to differentiates closely related pathogen populations within a single species.
 	 */
 	Subspecies string `json:"subspecies"`
 	/*
@@ -1855,7 +1855,7 @@ type Taxon struct {
 	 */
 	Taxonomy []Taxonomy `json:"taxonomy"`
 	/*
-	 * The parent taxon of the current taxon.
+	 * Immediate broader taxon that contains the current taxon in the taxonomy hierarchy.
 	 */
 	ParentTaxon Taxon `json:"parentTaxon"`
 	/*
@@ -1871,7 +1871,7 @@ type Taxon struct {
 	 */
 	TaxonomicId string `json:"taxonomicId"`
 	/*
-	 * The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy.
+	 * Identifier for the taxonomic node, unique to this taxon within the specific taxonomy release/version.
 	 */
 	TaxonomicNodeId string `json:"taxonomicNodeId"`
 	/*
@@ -1999,7 +1999,7 @@ type ExternalRelatedReference struct {
 	 */
 	Reference string `json:"reference"`
 	/*
-	 * The label informing what this reference is about.
+	 * Human-readable label informing what this reference is about.
 	 */
 	ReferenceLabel string `json:"referenceLabel"`
 	/*
@@ -2801,7 +2801,7 @@ type ProductOrService struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -2967,7 +2967,7 @@ type Service struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -3157,7 +3157,7 @@ type Product struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -3383,7 +3383,7 @@ type Antibody struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -3613,7 +3613,7 @@ type Hybridoma struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -3859,7 +3859,7 @@ type Protein struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -4105,7 +4105,7 @@ type NucleicAcid struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -4311,7 +4311,7 @@ type DetectionKit struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -4505,7 +4505,7 @@ type Bundle struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -4767,7 +4767,7 @@ type Pathogen struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -5041,7 +5041,7 @@ type Virus struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -5303,7 +5303,7 @@ type Bacterium struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -5565,7 +5565,7 @@ type Fungus struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -5827,7 +5827,7 @@ type Protozoan struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -6089,7 +6089,7 @@ type Viroid struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*
@@ -6351,7 +6351,7 @@ type Prion struct {
 	 */
 	RefSku string `json:"refSku"`
 	/*
-	 * A short description of what will be delivered by ordering one unit of this item.
+	 * A short description of what is delivered when one unit of this item is ordered, such as quantity or packaging.
 	 */
 	UnitDefinition string `json:"unitDefinition"`
 	/*

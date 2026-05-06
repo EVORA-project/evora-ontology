@@ -3,7 +3,7 @@
 # Slot: taxonomic node ID (taxonomicNodeId) 
 
 
-_The taxonomic_Node Identifier as an identifier specific the current taxon in the corresponding release/version of the taxonomy._
+_Identifier for the taxonomic node, unique to this taxon within the specific taxonomy release/version._
 
 
 
@@ -84,8 +84,8 @@ Alias: taxonomicNodeId
 <details>
 ```yaml
 name: taxonomicNodeId
-description: The taxonomic_Node Identifier as an identifier specific the current taxon
-  in the corresponding release/version of the taxonomy.
+description: Identifier for the taxonomic node, unique to this taxon within the specific
+  taxonomy release/version.
 title: taxonomic node ID
 comments:
 - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in

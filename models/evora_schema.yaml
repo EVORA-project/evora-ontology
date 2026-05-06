@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.1.56
+version: 1.1.68
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -598,8 +598,8 @@ slots:
     - Human
     - Plant
   subspecies:
-    description: The subspecies information differentiates closely related pathogens
-      within a single species.
+    description: Taxonomic subdivision below species used to differentiates closely
+      related pathogen populations within a single species.
     title: subspecies
     from_schema: https://w3id.org/evorao/
     domain_of:
@@ -845,7 +845,8 @@ slots:
     recommended: true
     multivalued: true
   parentTaxon:
-    description: The parent taxon of the current taxon.
+    description: Immediate broader taxon that contains the current taxon in the taxonomy
+      hierarchy.
     title: parent taxon
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -895,8 +896,8 @@ slots:
     required: true
     multivalued: false
   taxonomicNodeId:
-    description: The taxonomic_Node Identifier as an identifier specific the current
-      taxon in the corresponding release/version of the taxonomy.
+    description: Identifier for the taxonomic node, unique to this taxon within the
+      specific taxonomy release/version.
     title: taxonomic node ID
     comments:
     - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
@@ -961,7 +962,7 @@ slots:
     required: true
     multivalued: false
   referenceLabel:
-    description: The label informing what this reference is about.
+    description: Human-readable label informing what this reference is about.
     title: reference label
     comments:
     - e.g., 'Infravec2 related product'.
@@ -1442,8 +1443,8 @@ slots:
     required: true
     multivalued: false
   unitDefinition:
-    description: A short description of what will be delivered by ordering one unit
-      of this item.
+    description: A short description of what is delivered when one unit of this item
+      is ordered, such as quantity or packaging.
     title: unit definition
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
@@ -3716,8 +3717,8 @@ classes:
         recommended: true
         multivalued: true
       subspecies:
-        description: The subspecies information differentiates closely related pathogens
-          within a single species.
+        description: Taxonomic subdivision below species used to differentiates closely
+          related pathogen populations within a single species.
         title: subspecies
         domain_of:
         - PathogenIdentification
@@ -4531,7 +4532,8 @@ classes:
         recommended: true
         multivalued: true
       parentTaxon:
-        description: The parent taxon of the current taxon.
+        description: Immediate broader taxon that contains the current taxon in the
+          taxonomy hierarchy.
         title: parent taxon
         exact_mappings:
         - schema:parentTaxon
@@ -4596,8 +4598,8 @@ classes:
         required: true
         multivalued: false
       taxonomicNodeId:
-        description: The taxonomic_Node Identifier as an identifier specific the current
-          taxon in the corresponding release/version of the taxonomy.
+        description: Identifier for the taxonomic node, unique to this taxon within
+          the specific taxonomy release/version.
         title: taxonomic node ID
         comments:
         - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is
@@ -4742,7 +4744,7 @@ classes:
         required: true
         multivalued: false
       referenceLabel:
-        description: The label informing what this reference is about.
+        description: Human-readable label informing what this reference is about.
         title: reference label
         comments:
         - e.g., 'Infravec2 related product'.
@@ -5462,8 +5464,8 @@ classes:
         required: true
         multivalued: false
       unitDefinition:
-        description: A short description of what will be delivered by ordering one
-          unit of this item.
+        description: A short description of what is delivered when one unit of this
+          item is ordered, such as quantity or packaging.
         title: unit definition
         comments:
         - 'The description of what will be delivered to the end-user (e.g.: packaging,
@@ -7944,4 +7946,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-05-06T15:14:46'
+generation_date: '2026-05-06T16:37:58'

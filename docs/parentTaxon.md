@@ -3,7 +3,7 @@
 # Slot: parent taxon (parentTaxon) 
 
 
-_The parent taxon of the current taxon._
+_Immediate broader taxon that contains the current taxon in the taxonomy hierarchy._
 
 
 
@@ -74,7 +74,8 @@ Alias: parentTaxon
 <details>
 ```yaml
 name: parentTaxon
-description: The parent taxon of the current taxon.
+description: Immediate broader taxon that contains the current taxon in the taxonomy
+  hierarchy.
 title: parent taxon
 from_schema: https://w3id.org/evorao/
 exact_mappings:

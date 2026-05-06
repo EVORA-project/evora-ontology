@@ -68,7 +68,7 @@ URI: [EVORAO:ExternalRelatedReference](https://w3id.org/evorao/ExternalRelatedRe
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [reference](reference.md) | 1 <br/> [String](String.md) | The identifier reference of the connected external item | direct |
-| [referenceLabel](referenceLabel.md) | 1 <br/> [String](String.md) | The label informing what this reference is about | direct |
+| [referenceLabel](referenceLabel.md) | 1 <br/> [String](String.md) | Human-readable label informing what this reference is about | direct |
 | [referenceProviderPrefix](referenceProviderPrefix.md) | 1 <br/> [String](String.md) | The url prefix that once completed with the reference will lead to the linked... | direct |
 | [referenceProviderName](referenceProviderName.md) | 1 <br/> [String](String.md) | The name for the reference provider | direct |
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
@@ -177,7 +177,7 @@ slot_usage:
     multivalued: false
   referenceLabel:
     name: referenceLabel
-    description: The label informing what this reference is about.
+    description: Human-readable label informing what this reference is about.
     title: reference label
     comments:
     - e.g., 'Infravec2 related product'.
@@ -246,7 +246,7 @@ slot_usage:
     multivalued: false
   referenceLabel:
     name: referenceLabel
-    description: The label informing what this reference is about.
+    description: Human-readable label informing what this reference is about.
     title: reference label
     comments:
     - e.g., 'Infravec2 related product'.
@@ -301,7 +301,7 @@ attributes:
     multivalued: false
   referenceLabel:
     name: referenceLabel
-    description: The label informing what this reference is about.
+    description: Human-readable label informing what this reference is about.
     title: reference label
     comments:
     - e.g., 'Infravec2 related product'.

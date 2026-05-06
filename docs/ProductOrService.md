@@ -240,7 +240,7 @@ URI: [EVORAO:ProductOrService](https://w3id.org/evorao/ProductOrService)
 | ---  | --- | --- | --- |
 | [accessPointUrl](accessPointUrl.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | direct |
 | [refSku](refSku.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | direct |
-| [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | direct |
+| [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what is delivered when one unit of this item is ordere... | direct |
 | [category](category.md) | 1 <br/> [ProductCategory](ProductCategory.md) | The main category of the service or product | direct |
 | [additionalCategory](additionalCategory.md) | * _recommended_ <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | direct |
 | [unitCost](unitCost.md) | 0..1 _recommended_ <br/> [Decimal](Decimal.md) | The cost per access for one unit as defined by the unit definition | direct |
@@ -416,8 +416,8 @@ slot_usage:
     multivalued: false
   unitDefinition:
     name: unitDefinition
-    description: A short description of what will be delivered by ordering one unit
-      of this item.
+    description: A short description of what is delivered when one unit of this item
+      is ordered, such as quantity or packaging.
     title: unit definition
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
@@ -840,8 +840,8 @@ slot_usage:
     multivalued: false
   unitDefinition:
     name: unitDefinition
-    description: A short description of what will be delivered by ordering one unit
-      of this item.
+    description: A short description of what is delivered when one unit of this item
+      is ordered, such as quantity or packaging.
     title: unit definition
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,
@@ -1250,8 +1250,8 @@ attributes:
     multivalued: false
   unitDefinition:
     name: unitDefinition
-    description: A short description of what will be delivered by ordering one unit
-      of this item.
+    description: A short description of what is delivered when one unit of this item
+      is ordered, such as quantity or packaging.
     title: unit definition
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,

@@ -104,7 +104,7 @@ URI: [EVORAO:PathogenIdentification](https://w3id.org/evorao/PathogenIdentificat
 | [pathogenName](pathogenName.md) | 1 <br/> [CommonName](CommonName.md) | A pathogen common name or a name that describes a group of pathogens | direct |
 | [pathogenType](pathogenType.md) | 1 <br/> [String](String.md) | Identification of the specific type of pathogen among the listed categories e | direct |
 | [hostType](hostType.md) | * _recommended_ <br/> [String](String.md) | Indication of the possible host(s) for the identified pathogens among the lis... | direct |
-| [subspecies](subspecies.md) | 0..1 <br/> [String](String.md) | The subspecies information differentiates closely related pathogens within a ... | direct |
+| [subspecies](subspecies.md) | 0..1 <br/> [String](String.md) | Taxonomic subdivision below species used to differentiates closely related pa... | direct |
 | [strain](strain.md) | 0..1 _recommended_ <br/> [String](String.md) | Identifier given to a genetic variant within a single species | direct |
 | [isolate](isolate.md) | 0..1 <br/> [String](String.md) | Identifier given to a pathogen that has been isolated from an infected host a... | direct |
 | [genotype](genotype.md) | 0..1 <br/> [String](String.md) | Genotype information that identifies organisms that cluster in phylogenetic t... | direct |
@@ -264,8 +264,8 @@ slot_usage:
     multivalued: true
   subspecies:
     name: subspecies
-    description: The subspecies information differentiates closely related pathogens
-      within a single species.
+    description: Taxonomic subdivision below species used to differentiates closely
+      related pathogen populations within a single species.
     title: subspecies
     domain_of:
     - PathogenIdentification
@@ -404,8 +404,8 @@ slot_usage:
     multivalued: true
   subspecies:
     name: subspecies
-    description: The subspecies information differentiates closely related pathogens
-      within a single species.
+    description: Taxonomic subdivision below species used to differentiates closely
+      related pathogen populations within a single species.
     title: subspecies
     domain_of:
     - PathogenIdentification
@@ -554,8 +554,8 @@ attributes:
     - Plant
   subspecies:
     name: subspecies
-    description: The subspecies information differentiates closely related pathogens
-      within a single species.
+    description: Taxonomic subdivision below species used to differentiates closely
+      related pathogen populations within a single species.
     title: subspecies
     from_schema: https://w3id.org/evorao/
     rank: 1000

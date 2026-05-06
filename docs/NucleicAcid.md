@@ -360,7 +360,7 @@ URI: [EVORAO:NucleicAcid](https://w3id.org/evorao/NucleicAcid)
 | [preparationTechnique](preparationTechnique.md) | 0..1 <br/> [String](String.md) | The technique, method, or procedure employed to obtain or prepare the materia... | [Product](Product.md) |
 | [accessPointUrl](accessPointUrl.md) | 1 <br/> [Uri](Uri.md) | The URL that permits to access to the product/service detailed description pa... | [ProductOrService](ProductOrService.md) |
 | [refSku](refSku.md) | 1 <br/> [String](String.md) | The reference or the stock keeping unit of the service or item provided in th... | [ProductOrService](ProductOrService.md) |
-| [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what will be delivered by ordering one unit of this it... | [ProductOrService](ProductOrService.md) |
+| [unitDefinition](unitDefinition.md) | 0..1 _recommended_ <br/> [String](String.md) | A short description of what is delivered when one unit of this item is ordere... | [ProductOrService](ProductOrService.md) |
 | [category](category.md) | 1 <br/> [ProductCategory](ProductCategory.md) | The main category of the service or product | [ProductOrService](ProductOrService.md) |
 | [additionalCategory](additionalCategory.md) | * _recommended_ <br/> [ProductCategory](ProductCategory.md) | Any category apart from its main category in which this product or service ca... | [ProductOrService](ProductOrService.md) |
 | [unitCost](unitCost.md) | 0..1 _recommended_ <br/> [Decimal](Decimal.md) | The cost per access for one unit as defined by the unit definition | [ProductOrService](ProductOrService.md) |
@@ -1349,8 +1349,8 @@ attributes:
     multivalued: false
   unitDefinition:
     name: unitDefinition
-    description: A short description of what will be delivered by ordering one unit
-      of this item.
+    description: A short description of what is delivered when one unit of this item
+      is ordered, such as quantity or packaging.
     title: unit definition
     comments:
     - 'The description of what will be delivered to the end-user (e.g.: packaging,

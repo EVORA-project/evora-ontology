@@ -136,11 +136,11 @@ URI: [EVORAO:Taxon](https://w3id.org/evorao/Taxon)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [taxonomy](taxonomy.md) | * _recommended_ <br/> [Taxonomy](Taxonomy.md) | The taxonomy release(s) in which this entity exists | direct |
-| [parentTaxon](parentTaxon.md) | 0..1 _recommended_ <br/> [Taxon](Taxon.md) | The parent taxon of the current taxon | direct |
+| [parentTaxon](parentTaxon.md) | 0..1 _recommended_ <br/> [Taxon](Taxon.md) | Immediate broader taxon that contains the current taxon in the taxonomy hiera... | direct |
 | [rank](rank.md) | 0..1 _recommended_ <br/> [TaxonomicRank](TaxonomicRank.md) | Relative level or position of the identified taxon in the taxonomy | direct |
 | [externalEquivalentTaxon](externalEquivalentTaxon.md) | * <br/> [Taxon](Taxon.md) | Any equivalent taxon in a different taxonomy if exists/known to serve as a br... | direct |
 | [taxonomicId](taxonomicId.md) | 1 <br/> [String](String.md) | The taxonomic identifier as a persistent identifier accross releases | direct |
-| [taxonomicNodeId](taxonomicNodeId.md) | 0..1 _recommended_ <br/> [String](String.md) | The taxonomic_Node Identifier as an identifier specific the current taxon in ... | direct |
+| [taxonomicNodeId](taxonomicNodeId.md) | 0..1 _recommended_ <br/> [String](String.md) | Identifier for the taxonomic node, unique to this taxon within the specific t... | direct |
 | [alternateName](alternateName.md) | * <br/> [AlternateName](AlternateName.md) | Any other name under which the entity can be known | direct |
 | [previouslyKnownAs](previouslyKnownAs.md) | * <br/> [Taxon](Taxon.md) | Any historic version of this taxon having a different name | direct |
 | [lineage](lineage.md) | * <br/> [String](String.md) | An ordered list of textual taxon names representing the taxonomic lineage of ... | direct |
@@ -264,7 +264,8 @@ slot_usage:
     multivalued: true
   parentTaxon:
     name: parentTaxon
-    description: The parent taxon of the current taxon.
+    description: Immediate broader taxon that contains the current taxon in the taxonomy
+      hierarchy.
     title: parent taxon
     exact_mappings:
     - schema:parentTaxon
@@ -334,8 +335,8 @@ slot_usage:
     multivalued: false
   taxonomicNodeId:
     name: taxonomicNodeId
-    description: The taxonomic_Node Identifier as an identifier specific the current
-      taxon in the corresponding release/version of the taxonomy.
+    description: Identifier for the taxonomic node, unique to this taxon within the
+      specific taxonomy release/version.
     title: taxonomic node ID
     comments:
     - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
@@ -452,7 +453,8 @@ slot_usage:
     multivalued: true
   parentTaxon:
     name: parentTaxon
-    description: The parent taxon of the current taxon.
+    description: Immediate broader taxon that contains the current taxon in the taxonomy
+      hierarchy.
     title: parent taxon
     exact_mappings:
     - schema:parentTaxon
@@ -522,8 +524,8 @@ slot_usage:
     multivalued: false
   taxonomicNodeId:
     name: taxonomicNodeId
-    description: The taxonomic_Node Identifier as an identifier specific the current
-      taxon in the corresponding release/version of the taxonomy.
+    description: Identifier for the taxonomic node, unique to this taxon within the
+      specific taxonomy release/version.
     title: taxonomic node ID
     comments:
     - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
@@ -617,7 +619,8 @@ attributes:
     multivalued: true
   parentTaxon:
     name: parentTaxon
-    description: The parent taxon of the current taxon.
+    description: Immediate broader taxon that contains the current taxon in the taxonomy
+      hierarchy.
     title: parent taxon
     from_schema: https://w3id.org/evorao/
     exact_mappings:
@@ -703,8 +706,8 @@ attributes:
     multivalued: false
   taxonomicNodeId:
     name: taxonomicNodeId
-    description: The taxonomic_Node Identifier as an identifier specific the current
-      taxon in the corresponding release/version of the taxonomy.
+    description: Identifier for the taxonomic node, unique to this taxon within the
+      specific taxonomy release/version.
     title: taxonomic node ID
     comments:
     - NCBI does not have a taxon_node id, only a taxonomicID. Taxon_node id is Unique  in
