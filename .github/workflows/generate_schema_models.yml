@@ -24,6 +24,7 @@ jobs:
       - uses: actions/checkout@v6
         with:
           token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
+          fetch-depth: 0
 
       - name: Create required paths if not exist
         run: mkdir -p models models/owl docs
@@ -55,8 +56,24 @@ jobs:
 
       # LinkML emits the generated OWL document node with the owl.ttl suffix;
       # this step normalizes the vocabulary IRI to https://w3id.org/evorao/.
+      - name: Resolve previous release tag
+        id: prior_release
+        run: |
+          VERSION=$(grep -m1 '^version:' models/evora_schema.yaml | cut -d: -f2- | tr -d ' "')
+          CURRENT_TAG="v${VERSION#v}"
+          git fetch --tags --force
+          PRIOR_TAG=$(git tag --list 'v*' --sort=-v:refname | grep -vx "$CURRENT_TAG" | head -n 1 || true)
+          if [ -z "$PRIOR_TAG" ]; then
+            PRIOR_TAG="v1.1.0"
+          fi
+          echo "prior_release_tag=$PRIOR_TAG" >> "$GITHUB_OUTPUT"
+          echo "Resolved previous release tag: $PRIOR_TAG"
+
       - name: Enrich OWL ontology with LOV metadata
-        run: python3 scripts/enrich_lov_metadata.py --modified-date "$(date -u +%F)"
+        run: |
+          python3 scripts/enrich_lov_metadata.py \
+            --modified-date "$(date -u +%F)" \
+            --prior-release-tag "${{ steps.prior_release.outputs.prior_release_tag }}"
 
       - uses: actions/upload-artifact@v7
         with:
