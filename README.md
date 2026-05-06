@@ -18,7 +18,7 @@ The **EVORAO** Ontology provides a structured and harmonized vocabulary for desc
 
 The EVORAO ontology is available in **OWL Turtle** format in the [/models/owl](https://github.com/EVORA-project/evora-ontology/tree/main/models/owl) directory. The latest stable version can be accessed directly from the main branch of this repository, while the staging branch is used to simulate ontology generation before publication.
 
-**Ontology IRI:** https://w3id.org/evorao/
+**Ontology IRI:** https://w3id.org/evorao/owl.ttl
 
 **Namespace IRI (for classes/properties):** https://w3id.org/evorao/
 
@@ -121,4 +121,3 @@ A recommended best practice for extending or reusing EVORAO is to contribute to 
 ##
 
 For more information about the EVORA project, visit our website:[https://evora-project.eu](https://evora-project.eu).
-
