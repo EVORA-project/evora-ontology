@@ -23,8 +23,8 @@ Alias: country
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Provider](Provider.md) | A provider of products or services, as a specific organization |  no  |
-| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
 | [ResearchInfrastructure](ResearchInfrastructure.md) | A research infrastructure (RI) |  no  |
+| [Organization](Organization.md) | A social entity established to meet needs or pursue specific goals |  yes  |
 
 
 
