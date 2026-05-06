@@ -15,6 +15,7 @@ MARKER_START = "# BEGIN EVORAO LOV metadata enrichment"
 MARKER_END = "# END EVORAO LOV metadata enrichment"
 
 DEFAULT_ONTOLOGY_RESOURCE = "EVORAO:owl.ttl"
+DEFAULT_DEFINED_BY_RESOURCE = "EVORAO:"
 LEGACY_ONTOLOGY_RESOURCES = ("EVORAO:evorao.owl.ttl",)
 
 PREFIX_DECLARATIONS = {
@@ -131,24 +132,7 @@ def normalize_generated_metadata_values(text: str) -> str:
     )
 
 
-def term_metadata_block(ontology_text: str, ontology_resource: str) -> str:
-    terms = sorted(set(TERM_PATTERN.findall(ontology_text)), key=lambda term: (term.lower(), term))
-    if not terms:
-        return ""
-
-    lines = ["# LOV term provenance and status metadata."]
-    for term in terms:
-        lines.extend(
-            [
-                f"EVORAO:{term} rdfs:isDefinedBy {ontology_resource} ;",
-                '    vs:term_status "stable" .',
-                "",
-            ]
-        )
-    return "\n".join(lines).rstrip()
-
-
-def build_metadata_block(args: argparse.Namespace, schema_text: str, ontology_text: str) -> str:
+def ontology_metadata_values(args: argparse.Namespace, schema_text: str) -> dict[str, object]:
     title = read_scalar(
         schema_text,
         "title",
@@ -168,77 +152,195 @@ def build_metadata_block(args: argparse.Namespace, schema_text: str, ontology_te
     prior_release_url = f"{args.repository_url}/releases/tag/{args.prior_release_tag}"
     citation = f"{title} ({name}) version {version}. {args.ontology_iri}"
 
-    keyword_lines = ""
+    return {
+        "title": title,
+        "name": name,
+        "version": version,
+        "description": description,
+        "keywords": keywords,
+        "current_release_url": current_release_url,
+        "prior_release_url": prior_release_url,
+        "citation": citation,
+    }
+
+
+def predicate_exists(block: str, predicate: str) -> bool:
+    return re.search(rf"^\s*{re.escape(predicate)}\s+", block, re.MULTILINE) is not None
+
+
+def replace_terminal_punctuation(line: str, new_punctuation: str) -> str:
+    stripped = line.rstrip()
+    if stripped.endswith((".", ";")):
+        return f"{stripped[:-1]}{new_punctuation}"
+    return f"{stripped}{new_punctuation}"
+
+
+def ontology_statement_bounds(lines: list[str], ontology_resource: str) -> tuple[int, int]:
+    start_pattern = re.compile(rf"^{re.escape(ontology_resource)}\s+a\s+owl:Ontology\b")
+    start = next((index for index, line in enumerate(lines) if start_pattern.match(line)), None)
+    if start is None:
+        raise SystemExit(f"Could not find generated ontology statement for {ontology_resource}")
+
+    for end in range(start, len(lines)):
+        if lines[end].strip().endswith("."):
+            return start, end
+
+    raise SystemExit(f"Could not find end of ontology statement for {ontology_resource}")
+
+
+def ontology_metadata_entries(args: argparse.Namespace, values: dict[str, object]) -> list[tuple[str, list[str]]]:
+    description = str(values["description"])
+    keywords = list(values["keywords"])
+    keyword_lines: list[str] = []
     if keywords:
         keyword_values = ",\n        ".join(ttl_literal(keyword, "en") for keyword in keywords)
-        keyword_lines = f"    dcat:keyword {keyword_values} ;\n"
+        keyword_lines = [f"    dcat:keyword {keyword_values} ;"]
 
-    term_block = term_metadata_block(ontology_text, args.ontology_resource)
+    return [
+        ("dct:identifier", [f"    dct:identifier {ttl_literal(args.ontology_iri)} ;"]),
+        ("schema1:identifier", [f"    schema1:identifier {ttl_literal(args.ontology_iri)} ;"]),
+        ("schema1:url", [f"    schema1:url <{args.ontology_iri}> ;"]),
+        ("schema1:name", [f"    schema1:name {ttl_literal(str(values['title']), 'en')} ;"]),
+        ("dct:description", [f"    dct:description {ttl_literal(description, 'en')} ;"]),
+        ("schema1:description", [f"    schema1:description {ttl_literal(description, 'en')} ;"]),
+        ("rdfs:comment", [f"    rdfs:comment {ttl_literal(description, 'en')} ;"]),
+        ("dct:created", [f'    dct:created "{args.issued_date}"^^xsd:date ;']),
+        ("dct:issued", [f'    dct:issued "{args.issued_date}"^^xsd:date ;']),
+        ("dct:modified", [f'    dct:modified "{args.modified_date}"^^xsd:date ;']),
+        ("pav:createdOn", [f'    pav:createdOn "{args.issued_date}"^^xsd:date ;']),
+        ("schema1:dateCreated", [f'    schema1:dateCreated "{args.issued_date}"^^xsd:date ;']),
+        ("schema1:datePublished", [f'    schema1:datePublished "{args.issued_date}"^^xsd:date ;']),
+        ("schema1:dateModified", [f'    schema1:dateModified "{args.modified_date}"^^xsd:date ;']),
+        ("owl:versionInfo", [f"    owl:versionInfo {ttl_literal(str(values['version']))} ;"]),
+        ("owl:versionIRI", [f"    owl:versionIRI <{values['current_release_url']}> ;"]),
+        ("owl:priorVersion", [f"    owl:priorVersion <{values['prior_release_url']}> ;"]),
+        ("pav:previousVersion", [f"    pav:previousVersion <{values['prior_release_url']}> ;"]),
+        ("schema1:schemaVersion", [f"    schema1:schemaVersion {ttl_literal(str(values['version']))} ;"]),
+        ("dct:creator", ["    dct:creator <https://evora-project.eu/> ;"]),
+        ("schema1:creator", ["    schema1:creator <https://evora-project.eu/> ;"]),
+        ("dct:publisher", ["    dct:publisher <https://evora-project.eu/> ;"]),
+        ("schema1:publisher", ["    schema1:publisher <https://evora-project.eu/> ;"]),
+        ("cc:license", ["    cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;"]),
+        ("schema1:license", ["    schema1:license <https://creativecommons.org/publicdomain/zero/1.0/> ;"]),
+        (
+            "dct:rights",
+            [
+                f"    dct:rights {ttl_literal('CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.', 'en')} ;",
+            ],
+        ),
+        (
+            "dct:accessRights",
+            ["    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;"],
+        ),
+        (
+            "schema1:conditionsOfAccess",
+            [f"    schema1:conditionsOfAccess {ttl_literal('Publicly available without access restriction.', 'en')} ;"],
+        ),
+        ("vann:preferredNamespacePrefix", ['    vann:preferredNamespacePrefix "evorao" ;']),
+        ("vann:preferredNamespaceUri", ['    vann:preferredNamespaceUri "https://w3id.org/evorao/" ;']),
+        ("foaf:homepage", [f'    foaf:homepage "{args.docs_url}"^^xsd:anyURI ;']),
+        ("dcat:landingPage", [f"    dcat:landingPage <{args.docs_url}> ;"]),
+        ("dcat:downloadURL", [f"    dcat:downloadURL <{args.download_url}> ;"]),
+        ("schema1:contentUrl", [f"    schema1:contentUrl <{args.download_url}> ;"]),
+        ("schema1:encodingFormat", ['    schema1:encodingFormat "text/turtle" ;']),
+        ("dct:format", ['    dct:format "text/turtle" ;']),
+        (
+            "dcat:distribution",
+            [
+                "    dcat:distribution [",
+                "        a dcat:Distribution ;",
+                f"        dcat:downloadURL <{args.download_url}> ;",
+                '        dct:format "text/turtle"',
+                "    ] ;",
+            ],
+        ),
+        (
+            "schema1:distribution",
+            [
+                "    schema1:distribution [",
+                "        a schema1:DataDownload ;",
+                f"        schema1:contentUrl <{args.download_url}> ;",
+                '        schema1:encodingFormat "text/turtle"',
+                "    ] ;",
+            ],
+        ),
+        ("dct:bibliographicCitation", [f"    dct:bibliographicCitation {ttl_literal(str(values['citation']), 'en')} ;"]),
+        ("dct:source", [f"    dct:source <{args.repository_url}> ;"]),
+        ("prov:wasDerivedFrom", [f"    prov:wasDerivedFrom <{args.repository_url}> ;"]),
+        ("bibo:status", ['    bibo:status "published" ;']),
+        ("schema1:includedInDataCatalog", ["    schema1:includedInDataCatalog <https://www.ebi.ac.uk/ols4/> ;"]),
+        (
+            "rdfs:seeAlso",
+            [
+                f"    rdfs:seeAlso <{args.docs_url}>,",
+                "        <https://www.ebi.ac.uk/ols4/ontologies/evorao>,",
+                f"        <{args.repository_url}> ;",
+            ],
+        ),
+        ("dcat:keyword", keyword_lines),
+    ]
+
+
+def enrich_ontology_statement(text: str, args: argparse.Namespace, schema_text: str) -> str:
+    values = ontology_metadata_values(args, schema_text)
+    lines = text.splitlines()
+    start, end = ontology_statement_bounds(lines, args.ontology_resource)
+
+    continuation = start + 1
+    while continuation <= end and lines[continuation].strip() in {
+        "voaf:Vocabulary,",
+        "schema1:DefinedTermSet ;",
+    }:
+        continuation += 1
+    if continuation > start + 1:
+        del lines[start + 1 : continuation]
+        end -= continuation - (start + 1)
+
+    type_lines = [
+        f"{args.ontology_resource} a owl:Ontology,",
+        "        voaf:Vocabulary,",
+        "        schema1:DefinedTermSet ;",
+    ]
+    lines[start : start + 1] = type_lines
+    end += len(type_lines) - 1
+
+    block = "\n".join(lines[start : end + 1])
+    additions: list[str] = []
+    for predicate, entry_lines in ontology_metadata_entries(args, values):
+        if entry_lines and not predicate_exists(block, predicate):
+            additions.extend(entry_lines)
+
+    if not additions:
+        return "\n".join(lines) + "\n"
+
+    lines[end] = replace_terminal_punctuation(lines[end], ";")
+    additions[-1] = replace_terminal_punctuation(additions[-1], ".")
+    lines[end + 1 : end + 1] = additions
+    return "\n".join(lines) + "\n"
+
+
+def term_metadata_block(ontology_text: str, defined_by_resource: str) -> str:
+    terms = sorted(set(TERM_PATTERN.findall(ontology_text)), key=lambda term: (term.lower(), term))
+    if not terms:
+        return ""
+
+    lines = ["# LOV term provenance and status metadata."]
+    for term in terms:
+        lines.extend(
+            [
+                f"EVORAO:{term} rdfs:isDefinedBy {defined_by_resource} ;",
+                '    vs:term_status "stable" .',
+                "",
+            ]
+        )
+    return "\n".join(lines).rstrip()
+
+
+def build_tail_block(args: argparse.Namespace, ontology_text: str) -> str:
+    term_block = term_metadata_block(ontology_text, args.defined_by_resource)
     term_block = f"\n\n{term_block}" if term_block else ""
 
     return f"""{MARKER_START}
-{args.ontology_resource} a voaf:Vocabulary,
-        schema1:DefinedTermSet ;
-    dct:identifier {ttl_literal(args.ontology_iri)} ;
-    schema1:identifier {ttl_literal(args.ontology_iri)} ;
-    schema1:url <{args.ontology_iri}> ;
-    rdfs:label {ttl_literal(name, "en")} ;
-    dct:title {ttl_literal(title, "en")} ;
-    schema1:name {ttl_literal(title, "en")} ;
-    dct:description {ttl_literal(description, "en")} ;
-    schema1:description {ttl_literal(description, "en")} ;
-    rdfs:comment {ttl_literal(description, "en")} ;
-    dct:created "{args.issued_date}"^^xsd:date ;
-    dct:issued "{args.issued_date}"^^xsd:date ;
-    dct:modified "{args.modified_date}"^^xsd:date ;
-    pav:createdOn "{args.issued_date}"^^xsd:date ;
-    schema1:dateCreated "{args.issued_date}"^^xsd:date ;
-    schema1:datePublished "{args.issued_date}"^^xsd:date ;
-    schema1:dateModified "{args.modified_date}"^^xsd:date ;
-    owl:versionInfo {ttl_literal(version)} ;
-    owl:versionIRI <{current_release_url}> ;
-    owl:priorVersion <{prior_release_url}> ;
-    pav:previousVersion <{prior_release_url}> ;
-    pav:version {ttl_literal(version)} ;
-    schema1:schemaVersion {ttl_literal(version)} ;
-    dct:creator <https://evora-project.eu/> ;
-    schema1:creator <https://evora-project.eu/> ;
-    dct:publisher <https://evora-project.eu/> ;
-    schema1:publisher <https://evora-project.eu/> ;
-    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    schema1:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:rights {ttl_literal("CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.", "en")} ;
-    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
-    schema1:conditionsOfAccess {ttl_literal("Publicly available without access restriction.", "en")} ;
-    vann:preferredNamespacePrefix "evorao" ;
-    vann:preferredNamespaceUri "https://w3id.org/evorao/" ;
-    foaf:homepage "{args.docs_url}"^^xsd:anyURI ;
-    dcat:landingPage <{args.docs_url}> ;
-    dcat:downloadURL <{args.download_url}> ;
-    schema1:contentUrl <{args.download_url}> ;
-    schema1:encodingFormat "text/turtle" ;
-    dct:format "text/turtle" ;
-    dcat:distribution [
-        a dcat:Distribution ;
-        dcat:downloadURL <{args.download_url}> ;
-        dct:format "text/turtle"
-    ] ;
-    schema1:distribution [
-        a schema1:DataDownload ;
-        schema1:contentUrl <{args.download_url}> ;
-        schema1:encodingFormat "text/turtle"
-    ] ;
-    dct:bibliographicCitation {ttl_literal(citation, "en")} ;
-    dct:source <{args.repository_url}> ;
-    prov:wasDerivedFrom <{args.repository_url}> ;
-    bibo:status "published" ;
-    schema1:includedInDataCatalog <https://www.ebi.ac.uk/ols4/> ;
-    rdfs:seeAlso <{args.docs_url}>,
-        <https://www.ebi.ac.uk/ols4/ontologies/evorao>,
-        <{args.repository_url}> ;
-{keyword_lines}    skos:inScheme EVORAO: .
-
 <https://evora-project.eu/> a foaf:Organization ;
     foaf:name "European Viral Outbreak Response Alliance" ;
     foaf:homepage "https://evora-project.eu/"^^xsd:anyURI ;
@@ -277,6 +379,11 @@ def parse_args() -> argparse.Namespace:
         "--ontology-iri",
         default=os.environ.get("EVORAO_ONTOLOGY_IRI", "https://w3id.org/evorao/owl.ttl"),
         help="Canonical ontology document IRI.",
+    )
+    parser.add_argument(
+        "--defined-by-resource",
+        default=os.environ.get("EVORAO_DEFINED_BY_RESOURCE", DEFAULT_DEFINED_BY_RESOURCE),
+        help="Curie or IRI used as rdfs:isDefinedBy target for EVORAO terms.",
     )
     parser.add_argument(
         "--download-url",
@@ -327,7 +434,8 @@ def main() -> None:
     stripped = normalize_ontology_resource(stripped, args.ontology_resource)
     stripped = normalize_generated_metadata_values(stripped)
     stripped = ensure_prefixes(stripped)
-    block = build_metadata_block(args, schema_text, stripped)
+    stripped = enrich_ontology_statement(stripped, args, schema_text)
+    block = build_tail_block(args, stripped)
     ontology_path.write_text(f"{stripped}\n{block}", encoding="utf-8")
 
 
