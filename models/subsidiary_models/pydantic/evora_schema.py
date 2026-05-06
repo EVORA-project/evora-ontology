@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.1.44"
+version = "1.1.56"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-02-18T12:03:56',
+     'generation_date': '2026-05-06T15:14:46',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -4664,21 +4664,19 @@ class Taxon(Term):
                                         'required': False,
                                         'title': 'parent taxon'},
                         'previouslyKnownAs': {'broad_mappings': ['dwc:Taxon'],
-                                              'deprecated': 'EVORAO:previouslyKnownAs '
-                                                            'is deprecated in favor of '
-                                                            'alternateName. The '
-                                                            'property required '
-                                                            'complementary information '
-                                                            'linked to a Taxon, which '
-                                                            'limited its '
-                                                            'applicability. '
-                                                            'alternateName provides '
-                                                            'broader support for '
-                                                            'historical and '
-                                                            'non-historical '
-                                                            'alternative names without '
-                                                            'requiring taxonomic '
-                                                            'context',
+                                              'deprecated': 'Deprecated in favor of '
+                                                            'EVORAO:alternateName. Use '
+                                                            'EVORAO:alternateName for '
+                                                            'historical names, '
+                                                            'synonyms, and other '
+                                                            'alternative labels. '
+                                                            'EVORAO:previouslyKnownAs '
+                                                            'was limited to historical '
+                                                            'taxon names and required '
+                                                            'a Taxon value, which made '
+                                                            'it too narrow for broader '
+                                                            'naming use cases.',
+                                              'deprecated_element_has_possible_replacement': 'EVORAO:alternateName',
                                               'description': 'Any historic version of '
                                                              'this taxon having a '
                                                              'different name.',
@@ -4805,12 +4803,12 @@ class Taxon(Term):
          'exact_mappings': ['schema:alternateName', 'dct:alternative', 'iao:0000118']} })
     previouslyKnownAs: Optional[list[Taxon]] = Field(default=None, title="previously known as", description="""Any historic version of this taxon having a different name.""", json_schema_extra = { "linkml_meta": {'alias': 'previouslyKnownAs',
          'broad_mappings': ['dwc:Taxon'],
-         'deprecated': 'EVORAO:previouslyKnownAs is deprecated in favor of '
-                       'alternateName. The property required complementary information '
-                       'linked to a Taxon, which limited its applicability. '
-                       'alternateName provides broader support for historical and '
-                       'non-historical alternative names without requiring taxonomic '
-                       'context',
+         'deprecated': 'Deprecated in favor of EVORAO:alternateName. Use '
+                       'EVORAO:alternateName for historical names, synonyms, and other '
+                       'alternative labels. EVORAO:previouslyKnownAs was limited to '
+                       'historical taxon names and required a Taxon value, which made '
+                       'it too narrow for broader naming use cases.',
+         'deprecated_element_has_possible_replacement': 'EVORAO:alternateName',
          'domain_of': ['Taxon'],
          'related_mappings': ['schema:alternateName']} })
     lineage: Optional[list[str]] = Field(default=None, title="lineage", description="""An ordered list of textual taxon names representing the taxonomic lineage of the current taxon, normally from the highest known ancestor to the immediate parent.""", json_schema_extra = { "linkml_meta": {'alias': 'lineage',

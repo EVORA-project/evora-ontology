@@ -75,10 +75,10 @@ Alias: previouslyKnownAs
 name: previouslyKnownAs
 description: Any historic version of this taxon having a different name.
 title: previously known as
-deprecated: EVORAO:previouslyKnownAs is deprecated in favor of alternateName. The
-  property required complementary information linked to a Taxon, which limited its
-  applicability. alternateName provides broader support for historical and non-historical
-  alternative names without requiring taxonomic context
+deprecated: Deprecated in favor of EVORAO:alternateName. Use EVORAO:alternateName
+  for historical names, synonyms, and other alternative labels. EVORAO:previouslyKnownAs
+  was limited to historical taxon names and required a Taxon value, which made it
+  too narrow for broader naming use cases.
 from_schema: https://w3id.org/evorao/
 related_mappings:
 - schema:alternateName
