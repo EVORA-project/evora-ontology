@@ -14711,9 +14711,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-05-06T13:15:10",
+  "source_file_date": "2026-05-06T13:25:22",
   "source_file_size": 255970,
-  "generation_date": "2026-05-06T13:15:26",
+  "generation_date": "2026-05-06T13:25:37",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",
