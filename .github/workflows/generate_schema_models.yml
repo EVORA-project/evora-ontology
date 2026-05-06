@@ -53,6 +53,8 @@ jobs:
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate owl --no-use-native-uris --ontology-uri-suffix owl.ttl models/evora_schema.yaml > models/owl/evora_ontology.owl.ttl
 
+      # LinkML emits the generated OWL document node with the owl.ttl suffix;
+      # this step normalizes the vocabulary IRI to https://w3id.org/evorao/.
       - name: Enrich OWL ontology with LOV metadata
         run: python3 scripts/enrich_lov_metadata.py --modified-date "$(date -u +%F)"
 

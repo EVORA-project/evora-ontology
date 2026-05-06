@@ -18,17 +18,19 @@ The **EVORAO** Ontology provides a structured and harmonized vocabulary for desc
 
 The EVORAO ontology is available in **OWL Turtle** format in the [/models/owl](https://github.com/EVORA-project/evora-ontology/tree/main/models/owl) directory. The latest stable version can be accessed directly from the main branch of this repository, while the staging branch is used to simulate ontology generation before publication.
 
-**Ontology IRI:** https://w3id.org/evorao/owl.ttl
+**Ontology / vocabulary IRI:** https://w3id.org/evorao/
 
 **Namespace IRI (for classes/properties):** https://w3id.org/evorao/
 
-**Main Turtle file (source):** https://w3id.org/evorao/owl.ttl
+**OWL Turtle serialization:** https://w3id.org/evorao/owl.ttl
 
 **GitHub source file:** https://github.com/EVORA-project/evora-ontology/blob/main/models/owl/evora_ontology.owl.ttl
 
 **Release archive:** https://github.com/EVORA-project/evora-ontology/releases
 
-The ontology also declares LOV-oriented metadata, including title, description, version, license, publisher, preferred namespace prefix/URI, documentation URL, prior release, and term status/provenance metadata.
+The ontology also declares publication metadata, including title, description, version, license, publisher, preferred namespace prefix/URI, documentation URL, prior release, download URL, and term status/provenance metadata.
+
+For vocabulary registry submissions and metadata assessments, use the ontology / vocabulary IRI `https://w3id.org/evorao/`. The `/owl.ttl` URL is the concrete Turtle serialization.
 
 The ontology can also be browsed using the [OLS (Ontology Lookup Service)](https://www.ebi.ac.uk/ols4/ontologies/evorao).
 
@@ -43,14 +45,14 @@ It provides detailed information for consumers and developers working with EVORA
 
 Start exploring via the [index file](https://github.com/EVORA-project/evora-ontology/blob/main/docs/index.md).
 
-OLS remains a useful ontology browser, but the GitHub Pages documentation is the canonical human-readable documentation linked from the ontology metadata for vocabulary publication and LOV review.
+OLS remains a useful ontology browser, but the GitHub Pages documentation is the canonical human-readable documentation linked from the ontology metadata for vocabulary publication.
 
 
 ## EVORAO generation process
 
 EVORAO is generated from a [Google Sheet](https://docs.google.com/spreadsheets/d/1zcyNKuhkpH-0FqEGSt6UwHAiSYzsUUSkHYcDOYz67zI) using [schemasheets](https://github.com/linkml/schemasheets) and processed with [Linkml](https://github.com/linkml/linkml) compiling the schema into multiple formats.
 
-The generation workflow is tested on the `staging` branch. It regenerates the LinkML schema, OWL Turtle file, root `/docs` documentation, and subsidiary models. After OWL generation, the workflow runs `scripts/enrich_lov_metadata.py` to add the LOV metadata block that is not emitted by the standard LinkML OWL generator.
+The generation workflow is tested on the `staging` branch. It regenerates the LinkML schema, OWL Turtle file, root `/docs` documentation, and subsidiary models. After OWL generation, the workflow adds publication metadata that is not emitted by the standard LinkML OWL generator.
 
 Publication from `main` is handled separately: documentation is deployed to GitHub Pages, and a GitHub release is created from the schema version with the generated OWL Turtle and LinkML schema attached as release assets.
 

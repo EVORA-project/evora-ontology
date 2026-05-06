@@ -14,9 +14,9 @@ from pathlib import Path
 MARKER_START = "# BEGIN EVORAO LOV metadata enrichment"
 MARKER_END = "# END EVORAO LOV metadata enrichment"
 
-DEFAULT_ONTOLOGY_RESOURCE = "EVORAO:owl.ttl"
+DEFAULT_ONTOLOGY_RESOURCE = "EVORAO:"
 DEFAULT_DEFINED_BY_RESOURCE = "EVORAO:"
-LEGACY_ONTOLOGY_RESOURCES = ("EVORAO:evorao.owl.ttl",)
+LEGACY_ONTOLOGY_RESOURCES = ("EVORAO:owl.ttl", "EVORAO:evorao.owl.ttl")
 
 PREFIX_DECLARATIONS = {
     "bibo": "@prefix bibo: <http://purl.org/ontology/bibo/> .",
@@ -54,21 +54,6 @@ def read_description(schema_text: str, default: str = "") -> str:
             parts.append(continuation.strip())
         return " ".join(part for part in parts if part)
     return default
-
-
-def read_keywords(schema_text: str) -> list[str]:
-    lines = schema_text.splitlines()
-    for index, line in enumerate(lines):
-        if line != "keywords:":
-            continue
-
-        keywords: list[str] = []
-        for continuation in lines[index + 1 :]:
-            if not continuation.startswith("- "):
-                break
-            keywords.append(continuation[2:].strip().strip("\"'"))
-        return keywords
-    return []
 
 
 def ttl_literal(value: str, lang: str | None = None) -> str:
@@ -145,7 +130,6 @@ def ontology_metadata_values(args: argparse.Namespace, schema_text: str) -> dict
         "The EVORAO Ontology provides a structured and harmonized vocabulary for "
         "describing shareable pathogens as biological materials.",
     )
-    keywords = read_keywords(schema_text)
 
     version_tag = version if version.startswith("v") else f"v{version}"
     current_release_url = f"{args.repository_url}/releases/tag/{version_tag}"
@@ -157,7 +141,6 @@ def ontology_metadata_values(args: argparse.Namespace, schema_text: str) -> dict
         "name": name,
         "version": version,
         "description": description,
-        "keywords": keywords,
         "current_release_url": current_release_url,
         "prior_release_url": prior_release_url,
         "citation": citation,
@@ -190,38 +173,19 @@ def ontology_statement_bounds(lines: list[str], ontology_resource: str) -> tuple
 
 def ontology_metadata_entries(args: argparse.Namespace, values: dict[str, object]) -> list[tuple[str, list[str]]]:
     description = str(values["description"])
-    keywords = list(values["keywords"])
-    keyword_lines: list[str] = []
-    if keywords:
-        keyword_values = ",\n        ".join(ttl_literal(keyword, "en") for keyword in keywords)
-        keyword_lines = [f"    dcat:keyword {keyword_values} ;"]
-
     return [
         ("dct:identifier", [f"    dct:identifier {ttl_literal(args.ontology_iri)} ;"]),
-        ("schema1:identifier", [f"    schema1:identifier {ttl_literal(args.ontology_iri)} ;"]),
-        ("schema1:url", [f"    schema1:url <{args.ontology_iri}> ;"]),
-        ("schema1:name", [f"    schema1:name {ttl_literal(str(values['title']), 'en')} ;"]),
         ("dct:description", [f"    dct:description {ttl_literal(description, 'en')} ;"]),
-        ("schema1:description", [f"    schema1:description {ttl_literal(description, 'en')} ;"]),
-        ("rdfs:comment", [f"    rdfs:comment {ttl_literal(description, 'en')} ;"]),
         ("dct:created", [f'    dct:created "{args.issued_date}"^^xsd:date ;']),
         ("dct:issued", [f'    dct:issued "{args.issued_date}"^^xsd:date ;']),
         ("dct:modified", [f'    dct:modified "{args.modified_date}"^^xsd:date ;']),
-        ("pav:createdOn", [f'    pav:createdOn "{args.issued_date}"^^xsd:date ;']),
-        ("schema1:dateCreated", [f'    schema1:dateCreated "{args.issued_date}"^^xsd:date ;']),
-        ("schema1:datePublished", [f'    schema1:datePublished "{args.issued_date}"^^xsd:date ;']),
-        ("schema1:dateModified", [f'    schema1:dateModified "{args.modified_date}"^^xsd:date ;']),
         ("owl:versionInfo", [f"    owl:versionInfo {ttl_literal(str(values['version']))} ;"]),
         ("owl:versionIRI", [f"    owl:versionIRI <{values['current_release_url']}> ;"]),
         ("owl:priorVersion", [f"    owl:priorVersion <{values['prior_release_url']}> ;"]),
         ("pav:previousVersion", [f"    pav:previousVersion <{values['prior_release_url']}> ;"]),
-        ("schema1:schemaVersion", [f"    schema1:schemaVersion {ttl_literal(str(values['version']))} ;"]),
         ("dct:creator", ["    dct:creator <https://evora-project.eu/> ;"]),
-        ("schema1:creator", ["    schema1:creator <https://evora-project.eu/> ;"]),
         ("dct:publisher", ["    dct:publisher <https://evora-project.eu/> ;"]),
-        ("schema1:publisher", ["    schema1:publisher <https://evora-project.eu/> ;"]),
         ("cc:license", ["    cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;"]),
-        ("schema1:license", ["    schema1:license <https://creativecommons.org/publicdomain/zero/1.0/> ;"]),
         (
             "dct:rights",
             [
@@ -232,17 +196,11 @@ def ontology_metadata_entries(args: argparse.Namespace, values: dict[str, object
             "dct:accessRights",
             ["    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;"],
         ),
-        (
-            "schema1:conditionsOfAccess",
-            [f"    schema1:conditionsOfAccess {ttl_literal('Publicly available without access restriction.', 'en')} ;"],
-        ),
         ("vann:preferredNamespacePrefix", ['    vann:preferredNamespacePrefix "evorao" ;']),
         ("vann:preferredNamespaceUri", ['    vann:preferredNamespaceUri "https://w3id.org/evorao/" ;']),
         ("foaf:homepage", [f'    foaf:homepage "{args.docs_url}"^^xsd:anyURI ;']),
         ("dcat:landingPage", [f"    dcat:landingPage <{args.docs_url}> ;"]),
         ("dcat:downloadURL", [f"    dcat:downloadURL <{args.download_url}> ;"]),
-        ("schema1:contentUrl", [f"    schema1:contentUrl <{args.download_url}> ;"]),
-        ("schema1:encodingFormat", ['    schema1:encodingFormat "text/turtle" ;']),
         ("dct:format", ['    dct:format "text/turtle" ;']),
         (
             "dcat:distribution",
@@ -251,16 +209,6 @@ def ontology_metadata_entries(args: argparse.Namespace, values: dict[str, object
                 "        a dcat:Distribution ;",
                 f"        dcat:downloadURL <{args.download_url}> ;",
                 '        dct:format "text/turtle"',
-                "    ] ;",
-            ],
-        ),
-        (
-            "schema1:distribution",
-            [
-                "    schema1:distribution [",
-                "        a schema1:DataDownload ;",
-                f"        schema1:contentUrl <{args.download_url}> ;",
-                '        schema1:encodingFormat "text/turtle"',
                 "    ] ;",
             ],
         ),
@@ -277,7 +225,6 @@ def ontology_metadata_entries(args: argparse.Namespace, values: dict[str, object
                 f"        <{args.repository_url}> ;",
             ],
         ),
-        ("dcat:keyword", keyword_lines),
     ]
 
 
@@ -377,8 +324,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--ontology-iri",
-        default=os.environ.get("EVORAO_ONTOLOGY_IRI", "https://w3id.org/evorao/owl.ttl"),
-        help="Canonical ontology document IRI.",
+        default=os.environ.get("EVORAO_ONTOLOGY_IRI", "https://w3id.org/evorao/"),
+        help="Canonical ontology/vocabulary IRI.",
     )
     parser.add_argument(
         "--defined-by-resource",
