@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.1.68
+version: 1.1.75
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -1060,6 +1060,7 @@ slots:
     - ENA
     - GenBank
     - DDBJ
+    - Pathoplexus
     - UniProt
   name:
     description: A word or set of words used to identify and refer to an entity.
@@ -7946,4 +7947,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-05-06T16:37:58'
+generation_date: '2026-07-01T13:45:27'

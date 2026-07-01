@@ -263,6 +263,7 @@ attributes:
     - ENA
     - GenBank
     - DDBJ
+    - Pathoplexus
     - UniProt
   keyword:
     name: keyword

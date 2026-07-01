@@ -89,6 +89,7 @@ equals_string_in:
 - ENA
 - GenBank
 - DDBJ
+- Pathoplexus
 - UniProt
 
 ```
