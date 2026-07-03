@@ -639,6 +639,7 @@ slot_usage:
     - dct:isPartOf
     domain_of:
     - ProductOrService
+    inverse: collectionItem
     range: Collection
     required: true
     multivalued: true
@@ -1063,6 +1064,7 @@ slot_usage:
     - dct:isPartOf
     domain_of:
     - ProductOrService
+    inverse: collectionItem
     range: Collection
     required: true
     multivalued: true
@@ -1535,6 +1537,7 @@ attributes:
     owner: ProductOrService
     domain_of:
     - ProductOrService
+    inverse: collectionItem
     range: Collection
     required: true
     multivalued: true

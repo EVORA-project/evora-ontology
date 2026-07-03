@@ -1085,6 +1085,7 @@ attributes:
     owner: Hybridoma
     domain_of:
     - ProductOrService
+    inverse: collectionItem
     range: Collection
     required: true
     multivalued: true

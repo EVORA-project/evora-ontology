@@ -189,6 +189,7 @@ slot_usage:
     - dcat:dataset
     domain_of:
     - Collection
+    inverse: collection
     range: ProductOrService
     required: false
     recommended: true
@@ -233,6 +234,7 @@ slot_usage:
     - dcat:dataset
     domain_of:
     - Collection
+    inverse: collection
     range: ProductOrService
     required: false
     recommended: true
@@ -265,6 +267,7 @@ attributes:
     owner: Collection
     domain_of:
     - Collection
+    inverse: collection
     range: ProductOrService
     required: false
     recommended: true

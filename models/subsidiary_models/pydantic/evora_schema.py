@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.1.75"
+version = "1.1.82"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-07-01T13:45:27',
+     'generation_date': '2026-07-03T09:30:39',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -6701,6 +6701,7 @@ class Collection(Catalogue):
                                                               'dcat:dataset'],
                                            'description': 'An item of the collection.',
                                            'domain_of': ['Collection'],
+                                           'inverse': 'collection',
                                            'multivalued': True,
                                            'name': 'collectionItem',
                                            'range': 'ProductOrService',
@@ -6714,6 +6715,7 @@ class Collection(Catalogue):
     collectionItem: Optional[list[ProductOrService]] = Field(default=None, title="collection item", description="""An item of the collection.""", json_schema_extra = { "linkml_meta": {'alias': 'collectionItem',
          'broad_mappings': ['schema:includesObject', 'dcat:dataset'],
          'domain_of': ['Collection'],
+         'inverse': 'collection',
          'recommended': True,
          'related_mappings': ['dcat:resource', 'dcat:servesDataset']} })
     collectionDataProvider: Optional[DataProvider] = Field(default=None, title="collection data provider", description="""The provider of the data of the collection.""", json_schema_extra = { "linkml_meta": {'alias': 'collectionDataProvider',
@@ -6946,6 +6948,7 @@ class ProductOrService(Dataset):
                                        'description': 'The collection(s) to which '
                                                       'belongs this item.',
                                        'domain_of': ['ProductOrService'],
+                                       'inverse': 'collectionItem',
                                        'multivalued': True,
                                        'name': 'collection',
                                        'range': 'Collection',
@@ -7338,6 +7341,7 @@ class ProductOrService(Dataset):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -7587,6 +7591,7 @@ class Service(ProductOrService):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -7972,6 +7977,7 @@ class Product(ProductOrService):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -8374,6 +8380,7 @@ class Antibody(Product):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -8661,6 +8668,7 @@ class Hybridoma(Antibody):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -9325,6 +9333,7 @@ class Protein(Product):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -9930,6 +9939,7 @@ class NucleicAcid(Product):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -10228,6 +10238,7 @@ class DetectionKit(Product):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -10484,6 +10495,7 @@ class Bundle(Product):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -11121,6 +11133,7 @@ class Pathogen(Product):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -11564,6 +11577,7 @@ class Virus(Pathogen):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -11891,6 +11905,7 @@ class Bacterium(Pathogen):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -12216,6 +12231,7 @@ class Fungus(Pathogen):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -12537,6 +12553,7 @@ class Protozoan(Pathogen):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -12850,6 +12867,7 @@ class Viroid(Pathogen):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],
@@ -13171,6 +13189,7 @@ class Prion(Pathogen):
     collection: list[Collection] = Field(default=..., title="collection", description="""The collection(s) to which belongs this item.""", json_schema_extra = { "linkml_meta": {'alias': 'collection',
          'broad_mappings': ['dct:isPartOf'],
          'domain_of': ['ProductOrService'],
+         'inverse': 'collectionItem',
          'related_mappings': ['afop:AFX_0002720']} })
     keywords: list[Keyword] = Field(default=..., title="keywords", description="""List of terms used to tag and categorize this Item.""", json_schema_extra = { "linkml_meta": {'alias': 'keywords',
          'close_mappings': ['dcat:keyword'],

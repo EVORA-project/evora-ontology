@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.1.75",
+  "version": "1.1.82",
   "imports": [
     "linkml:types"
   ],
@@ -7484,6 +7484,7 @@
       "domain_of": [
         "Collection"
       ],
+      "inverse": "collection",
       "is_usage_slot": true,
       "usage_slot_name": "collectionItem",
       "range": "ProductOrService",
@@ -7957,6 +7958,7 @@
       "domain_of": [
         "ProductOrService"
       ],
+      "inverse": "collectionItem",
       "is_usage_slot": true,
       "usage_slot_name": "collection",
       "range": "Collection",
@@ -14713,9 +14715,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-07-01T11:46:03",
-  "source_file_size": 256178,
-  "generation_date": "2026-07-01T11:46:20",
+  "source_file_date": "2026-07-03T07:31:10",
+  "source_file_size": 256238,
+  "generation_date": "2026-07-03T07:31:28",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

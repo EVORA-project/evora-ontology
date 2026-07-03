@@ -1287,6 +1287,7 @@ attributes:
     owner: Viroid
     domain_of:
     - ProductOrService
+    inverse: collectionItem
     range: Collection
     required: true
     multivalued: true
