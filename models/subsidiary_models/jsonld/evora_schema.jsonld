@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.1.82",
+  "version": "1.1.87",
   "imports": [
     "linkml:types"
   ],
@@ -1767,6 +1767,7 @@
       "title": "previously known as",
       "deprecated": "Deprecated in favor of EVORAO:alternateName. Use EVORAO:alternateName for historical names, synonyms, and other alternative labels. EVORAO:previouslyKnownAs was limited to historical taxon names and required a Taxon value, which made it too narrow for broader naming use cases.",
       "from_schema": "https://w3id.org/evorao/",
+      "deprecated_element_has_possible_replacement": "EVORAO:alternateName",
       "related_mappings": [
         "http://schema.org/alternateName"
       ],
@@ -2437,6 +2438,7 @@
       "domain_of": [
         "Collection"
       ],
+      "inverse": "collection",
       "range": "ProductOrService",
       "recommended": true,
       "multivalued": true,
@@ -2797,6 +2799,7 @@
       "domain_of": [
         "ProductOrService"
       ],
+      "inverse": "collectionItem",
       "range": "Collection",
       "required": true,
       "multivalued": true,
@@ -14715,9 +14718,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-07-03T07:31:10",
-  "source_file_size": 256238,
-  "generation_date": "2026-07-03T07:31:28",
+  "source_file_date": "2026-07-03T08:14:29",
+  "source_file_size": 256360,
+  "generation_date": "2026-07-03T08:14:46",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

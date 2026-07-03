@@ -80,6 +80,7 @@ deprecated: Deprecated in favor of EVORAO:alternateName. Use EVORAO:alternateNam
   was limited to historical taxon names and required a Taxon value, which made it
   too narrow for broader naming use cases.
 from_schema: https://w3id.org/evorao/
+deprecated_element_has_possible_replacement: EVORAO:alternateName
 related_mappings:
 - schema:alternateName
 broad_mappings:

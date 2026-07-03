@@ -88,6 +88,7 @@ rank: 1000
 alias: collectionItem
 domain_of:
 - Collection
+inverse: collection
 range: ProductOrService
 required: false
 recommended: true

@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.1.82
+version: 1.1.87
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -922,6 +922,7 @@ slots:
       was limited to historical taxon names and required a Taxon value, which made
       it too narrow for broader naming use cases.
     from_schema: https://w3id.org/evorao/
+    deprecated_element_has_possible_replacement: EVORAO:alternateName
     related_mappings:
     - schema:alternateName
     broad_mappings:
@@ -1392,6 +1393,7 @@ slots:
     - dcat:dataset
     domain_of:
     - Collection
+    inverse: collection
     range: ProductOrService
     required: false
     recommended: true
@@ -1654,6 +1656,7 @@ slots:
     - dct:isPartOf
     domain_of:
     - ProductOrService
+    inverse: collectionItem
     range: Collection
     required: true
     multivalued: true
@@ -7949,4 +7952,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-07-03T09:30:39'
+generation_date: '2026-07-03T10:14:06'
