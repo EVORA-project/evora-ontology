@@ -1,0 +1,2 @@
+resource,resourceTitle,pathogenName,taxon
+https://example.org/evorao-fixture/resource-1,Synthetic inactivated virus reference material,Example orthomyxo-like virus,https://example.org/evorao-fixture/taxon-1
