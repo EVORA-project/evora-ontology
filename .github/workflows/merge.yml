@@ -42,8 +42,6 @@ jobs:
               --base main \
               --title 'Merge from staging' \
               --body "$BODY" \
-              --label report \
-              --label 'automated pr' \
               --assignee Angatar
             PR_NUMBER=$(gh pr list --head staging --base main --state open --json number --jq '.[0].number')
           else
