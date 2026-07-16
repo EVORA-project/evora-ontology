@@ -31,27 +31,46 @@ jobs:
         id: pr
         env:
           GH_TOKEN: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
           VERSION: ${{ inputs.version }}
         run: |
           set -euo pipefail
-          PR_NUMBER=$(gh pr list --head staging --base main --state open --json number --jq '.[0].number // empty')
+          HEAD_BRANCH="${REPOSITORY_OWNER}:staging"
           BODY="Merge report including last schema models based on updated metadata google sheet version ${VERSION}. Auto-generated after the staging generation workflow completed."
+          PR_NUMBER=$(gh api \
+            --method GET \
+            "repos/${REPOSITORY}/pulls" \
+            -f head="$HEAD_BRANCH" \
+            -f base=main \
+            -f state=open \
+            --jq '.[0].number // empty')
           if [ -z "$PR_NUMBER" ]; then
-            gh pr create \
-              --head staging \
-              --base main \
-              --title 'Merge from staging' \
-              --body "$BODY" \
-              --assignee Angatar
-            PR_NUMBER=$(gh pr list --head staging --base main --state open --json number --jq '.[0].number')
+            PR_NUMBER=$(gh api \
+              --method POST \
+              "repos/${REPOSITORY}/pulls" \
+              -f head="$HEAD_BRANCH" \
+              -f base=main \
+              -f title='Merge from staging' \
+              -f body="$BODY" \
+              --jq '.number')
           else
-            gh pr edit "$PR_NUMBER" \
-              --title 'Merge from staging' \
-              --body "$BODY"
+            gh api \
+              --method PATCH \
+              "repos/${REPOSITORY}/pulls/${PR_NUMBER}" \
+              -f title='Merge from staging' \
+              -f body="$BODY" \
+              >/dev/null
           fi
           echo "pull-request-number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
 
       - name: Enable Pull Request Automerge
         env:
           GH_TOKEN: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
-        run: gh pr merge --merge --auto "${{ steps.pr.outputs.pull-request-number }}"
+          PR_NUMBER: ${{ steps.pr.outputs.pull-request-number }}
+        run: |
+          if gh pr merge --merge --auto "$PR_NUMBER"; then
+            echo "Automerge enabled for pull request #${PR_NUMBER}." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Pull request #${PR_NUMBER} was created or updated, but automerge could not be enabled. Merge it manually after checks pass." >> "$GITHUB_STEP_SUMMARY"
+          fi
