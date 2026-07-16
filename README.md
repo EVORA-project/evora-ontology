@@ -57,6 +57,18 @@ The generation workflow is tested on the `staging` branch. It regenerates the Li
 Publication from `main` is handled separately: documentation is deployed to GitHub Pages, and a GitHub release is created from the schema version with the generated OWL Turtle and LinkML schema attached as release assets.
 
 
+## EVORAO quality gate
+
+The staging generation workflow runs a deterministic QA gate before committing or pushing generated artefacts. The same gate can be started locally with Docker using:
+
+```bash
+./qa/run_qa.sh
+```
+
+The gate validates the generated ontology structure, runs OWL reasoning with ROBOT/HermiT, checks generated SHACL against frozen positive and negative catalogue fixtures, executes SPARQL competency queries, and writes reports under `qa/reports/`. In CI these reports are uploaded as workflow artifacts and the generated commit is blocked when a deterministic check fails.
+
+
+
 ## Subsidiary data models
 
 In addition to the core ontology, the repository includes subsidiary data models based on the [LinkML](https://github.com/linkml/linkml) tool for their generation, which provide interoperable data representations in various formats based on the corresponding [EVORAO LinkML schema](https://github.com/EVORA-project/evora-ontology/tree/main/models/evora_schema.yaml). These models can be found in the [/models/subsidiary_models](https://github.com/EVORA-project/evora-ontology/tree/main/models/subsidiary_models) directory and contain material to help start building a data model based on the EVORAO:
