@@ -330,6 +330,7 @@ Name: EVORAO
 | [Integer](Integer.md) | An integer |
 | [Jsonpath](Jsonpath.md) | A string encoding a JSON Path |
 | [Jsonpointer](Jsonpointer.md) | A string encoding a JSON Pointer |
+| [Literal](Literal.md) | The class rdfs:Literal is the class of literal values such as strings and int... |
 | [Ncname](Ncname.md) | Prefix part of CURIE |
 | [Nodeidentifier](Nodeidentifier.md) | A URI, CURIE or BNODE that represents a node in a model |
 | [Objectidentifier](Objectidentifier.md) | A URI or CURIE that represents an object in the model |

@@ -38,7 +38,7 @@
     "interoperability"
   ],
   "id": "https://w3id.org/evorao/",
-  "version": "1.1.87",
+  "version": "1.1.102",
   "imports": [
     "linkml:types"
   ],
@@ -284,6 +284,15 @@
   "default_prefix": "EVORAO",
   "default_range": "string",
   "types": [
+    {
+      "name": "literal",
+      "definition_uri": "https://w3id.org/evorao/Literal",
+      "description": "The class rdfs:Literal is the class of literal values such as strings and integers. Property values such as textual strings are examples of RDF literals.",
+      "from_schema": "https://w3id.org/evorao/",
+      "base": "string",
+      "uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "@type": "TypeDefinition"
+    },
     {
       "name": "string",
       "definition_uri": "https://w3id.org/linkml/String",
@@ -685,7 +694,7 @@
       "domain_of": [
         "Resource"
       ],
-      "range": "string",
+      "range": "literal",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -4853,7 +4862,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "identifier",
-      "range": "string",
+      "range": "literal",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -14718,9 +14727,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "evora_schema.yaml",
-  "source_file_date": "2026-07-03T08:14:29",
-  "source_file_size": 256360,
-  "generation_date": "2026-07-03T08:14:46",
+  "source_file_date": "2026-07-16T14:07:47",
+  "source_file_size": 256639,
+  "generation_date": "2026-07-16T14:08:06",
   "@type": "SchemaDefinition",
   "@context": [
     "https://w3id.org/linkml/types.context.jsonld",

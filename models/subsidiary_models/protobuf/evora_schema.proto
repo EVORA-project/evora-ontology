@@ -1,14 +1,14 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 1.1.87
+// version: 1.1.102
 // List of other names for things.
 message AlternateName
  {
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -24,7 +24,7 @@ message Antibody
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -82,7 +82,7 @@ message Audio
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
@@ -97,7 +97,7 @@ message Bacterium
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -164,7 +164,7 @@ message BiologicalMaterialOrigin
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   boolean recombinantMaterial = 0
@@ -177,7 +177,7 @@ message BiosafetyLevel
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -191,7 +191,7 @@ message Bundle
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -241,7 +241,7 @@ message Certification
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -256,7 +256,7 @@ message ClinicalGroup
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -272,7 +272,7 @@ message Collection
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -287,7 +287,7 @@ message CommonName
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -303,7 +303,7 @@ message ContactPoint
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
@@ -323,7 +323,7 @@ message Country
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -338,7 +338,7 @@ message Data
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
@@ -353,7 +353,7 @@ message DataProvider
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -375,7 +375,7 @@ message DetectionKit
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -428,7 +428,7 @@ message Document
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
@@ -443,7 +443,7 @@ message Doi
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -457,7 +457,7 @@ message ExpressionVector
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -471,7 +471,7 @@ message ExternalRelatedReference
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string reference = 0
@@ -485,7 +485,7 @@ message FundingSource
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -504,7 +504,7 @@ message Fungus
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -571,7 +571,7 @@ message GeographicalOrigin
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -585,7 +585,7 @@ message Hybridoma
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -644,7 +644,7 @@ message IataClassification
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -658,7 +658,7 @@ message Image
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
@@ -674,7 +674,7 @@ message IplcOrigin
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -688,7 +688,7 @@ message IsolationHost
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -702,7 +702,7 @@ message Journal
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -716,7 +716,7 @@ message Keyword
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -730,7 +730,7 @@ message License
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -745,7 +745,7 @@ message MaterialSafetyDataSheet
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   contactPoint materialSafetyContact = 0
@@ -770,7 +770,7 @@ message NaturalPartOrigin
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   recombinantPartIdentification recombinantPartIdentification = 0
@@ -787,7 +787,7 @@ message NucleicAcid
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -850,7 +850,7 @@ message Organization
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
@@ -868,7 +868,7 @@ message Originator
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
@@ -883,7 +883,7 @@ message PathogenIdentification
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   taxon taxon = 0
@@ -903,7 +903,7 @@ message PdbReference
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -917,7 +917,7 @@ message Person
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
@@ -933,7 +933,7 @@ message PersonOrOrganization
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
@@ -948,7 +948,7 @@ message PlasmidSelection
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -962,7 +962,7 @@ message Prion
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1029,7 +1029,7 @@ message Product
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1078,7 +1078,7 @@ message ProductCategory
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1093,7 +1093,7 @@ message ProductionCellLine
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1107,7 +1107,7 @@ message PropagationHost
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1121,7 +1121,7 @@ message Protein
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1184,7 +1184,7 @@ message Protozoan
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1251,7 +1251,7 @@ message Provider
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
@@ -1270,7 +1270,7 @@ message Publication
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1285,7 +1285,7 @@ message RecombinantPartIdentification
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string partIdentification = 0
@@ -1297,7 +1297,7 @@ message ResearchInfrastructure
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
@@ -1315,7 +1315,7 @@ message RiskGroup
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1329,7 +1329,7 @@ message Sequence
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
  repeated  sequenceReference sequenceReference = 0
@@ -1341,7 +1341,7 @@ message SequenceReference
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string accessionNumber = 0
@@ -1353,7 +1353,7 @@ message Service
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1396,7 +1396,7 @@ message SpecialFeature
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1410,7 +1410,7 @@ message SyntheticPartOrigin
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   recombinantPartIdentification recombinantPartIdentification = 0
@@ -1424,7 +1424,7 @@ message TagSequence
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1438,7 +1438,7 @@ message Taxon
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1461,7 +1461,7 @@ message TaxonomicRank
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1476,7 +1476,7 @@ message Taxonomy
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1494,7 +1494,7 @@ message TransmissionMethod
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1508,7 +1508,7 @@ message Variant
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1524,7 +1524,7 @@ message Version
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string version = 0
@@ -1537,7 +1537,7 @@ message Video
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string name = 0
@@ -1552,7 +1552,7 @@ message Viroid
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1619,7 +1619,7 @@ message Virus
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1689,7 +1689,7 @@ message VirusName
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0
@@ -1705,7 +1705,7 @@ message Vocabulary
  repeated  string keyword = 0
   datetime dateIssued = 0
   datetime dateModified = 0
- repeated  string identifier = 0
+ repeated  literal identifier = 0
   personOrOrganization publisher = 0
  repeated  uri iri = 0
   string title = 0

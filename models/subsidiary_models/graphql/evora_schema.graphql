@@ -1,11 +1,11 @@
 # metamodel_version: 1.7.0
-# version: 1.1.87
+# version: 1.1.102
 type AlternateName
   {
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -21,7 +21,7 @@ type Antibody
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -79,7 +79,7 @@ type Audio
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -94,7 +94,7 @@ type Bacterium
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -161,7 +161,7 @@ type BiologicalMaterialOrigin
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     recombinantMaterial: Boolean!
@@ -174,7 +174,7 @@ interface BiologicalPartOrigin
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     recombinantPartIdentification: RecombinantPartIdentification
@@ -186,7 +186,7 @@ type BiosafetyLevel
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -200,7 +200,7 @@ type Bundle
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -250,7 +250,7 @@ interface Catalogue
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -263,7 +263,7 @@ type Certification
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -278,7 +278,7 @@ type ClinicalGroup
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -294,7 +294,7 @@ type Collection
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -309,7 +309,7 @@ type CommonName
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -325,7 +325,7 @@ type ContactPoint
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -345,7 +345,7 @@ type Country
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -360,7 +360,7 @@ type Data
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -375,7 +375,7 @@ type DataProvider
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -397,7 +397,7 @@ interface DataService
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -411,7 +411,7 @@ interface Dataset
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -424,7 +424,7 @@ type DetectionKit
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -477,7 +477,7 @@ type Document
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -492,7 +492,7 @@ type Doi
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -506,7 +506,7 @@ type ExpressionVector
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -520,7 +520,7 @@ type ExternalRelatedReference
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     reference: String!
@@ -534,7 +534,7 @@ interface File
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -549,7 +549,7 @@ type FundingSource
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -568,7 +568,7 @@ type Fungus
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -635,7 +635,7 @@ type GeographicalOrigin
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -649,7 +649,7 @@ type Hybridoma
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -708,7 +708,7 @@ type IataClassification
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -722,7 +722,7 @@ type Image
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -738,7 +738,7 @@ type IplcOrigin
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -752,7 +752,7 @@ type IsolationHost
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -766,7 +766,7 @@ type Journal
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -780,7 +780,7 @@ type Keyword
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -794,7 +794,7 @@ type License
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -809,7 +809,7 @@ type MaterialSafetyDataSheet
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     materialSafetyContact: ContactPoint!
@@ -834,7 +834,7 @@ type NaturalPartOrigin
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     recombinantPartIdentification: RecombinantPartIdentification
@@ -851,7 +851,7 @@ type NucleicAcid
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -914,7 +914,7 @@ type Organization
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -932,7 +932,7 @@ type Originator
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -947,7 +947,7 @@ interface Pathogen
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1014,7 +1014,7 @@ type PathogenIdentification
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     taxon: Taxon!
@@ -1034,7 +1034,7 @@ type PdbReference
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1048,7 +1048,7 @@ type Person
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -1064,7 +1064,7 @@ type PersonOrOrganization
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -1079,7 +1079,7 @@ type PlasmidSelection
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1093,7 +1093,7 @@ type Prion
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1160,7 +1160,7 @@ type Product
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1209,7 +1209,7 @@ type ProductCategory
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1224,7 +1224,7 @@ type ProductionCellLine
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1238,7 +1238,7 @@ interface ProductOrService
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1279,7 +1279,7 @@ type PropagationHost
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1293,7 +1293,7 @@ type Protein
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1356,7 +1356,7 @@ type Protozoan
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1423,7 +1423,7 @@ type Provider
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -1442,7 +1442,7 @@ type Publication
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1457,7 +1457,7 @@ type RecombinantPartIdentification
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     partIdentification: String!
@@ -1469,7 +1469,7 @@ type ResearchInfrastructure
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -1487,7 +1487,7 @@ interface Resource
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     iri: [Uri]
     publisher: PersonOrOrganization
   }
@@ -1497,7 +1497,7 @@ type RiskGroup
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1511,7 +1511,7 @@ type Sequence
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     sequenceReference: [SequenceReference]
@@ -1523,7 +1523,7 @@ type SequenceReference
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     accessionNumber: String!
@@ -1535,7 +1535,7 @@ type Service
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1578,7 +1578,7 @@ type SpecialFeature
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1592,7 +1592,7 @@ type SyntheticPartOrigin
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     recombinantPartIdentification: RecombinantPartIdentification
@@ -1606,7 +1606,7 @@ type TagSequence
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1620,7 +1620,7 @@ type Taxon
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1643,7 +1643,7 @@ type TaxonomicRank
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1658,7 +1658,7 @@ type Taxonomy
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1676,7 +1676,7 @@ interface Term
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1690,7 +1690,7 @@ type TransmissionMethod
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1704,7 +1704,7 @@ type Variant
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1720,7 +1720,7 @@ type Version
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     version: String!
@@ -1733,7 +1733,7 @@ type Video
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     name: String!
@@ -1748,7 +1748,7 @@ type Viroid
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1815,7 +1815,7 @@ type Virus
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1885,7 +1885,7 @@ type VirusName
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
@@ -1901,7 +1901,7 @@ type Vocabulary
     keyword: [String]
     dateIssued: Datetime
     dateModified: Datetime
-    identifier: [String]
+    identifier: [Literal]
     publisher: PersonOrOrganization
     iri: [Uri]
     title: String!
