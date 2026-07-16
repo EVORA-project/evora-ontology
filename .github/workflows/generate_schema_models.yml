@@ -41,7 +41,7 @@ jobs:
         run: |
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           sheets2linkml --gsheet-id 1zcyNKuhkpH-0FqEGSt6UwHAiSYzsUUSkHYcDOYz67zI \
-          --name EVORA Prefixes Schema CompleteList ClassesDetails PropertiesDetails PropertiesDomains AllowedValues \
+          --name EVORA Prefixes Schema DataTypes CompleteList ClassesDetails PropertiesDetails PropertiesDomains AllowedValues \
           -o models/evora_schema.yaml
 
       - name: Validate generated ontology version
