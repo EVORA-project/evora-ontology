@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "1.1.87"
+version = "1.2.0"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -99,7 +99,7 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                     'pathogens. EVORAO is compatible with DCAT, making it '
                     'well-suited for efficiently cataloguing pathogen collections '
                     'and related resources.',
-     'generation_date': '2026-07-03T10:14:06',
+     'generation_date': '2026-07-16T16:38:27',
      'id': 'https://w3id.org/evorao/',
      'imports': ['linkml:types'],
      'in_language': 'en',
@@ -238,7 +238,16 @@ linkml_meta = LinkMLMeta({'comments': ['EVORAO is an ontology for standardized m
                   'xsd': {'prefix_prefix': 'xsd',
                           'prefix_reference': 'http://www.w3.org/2001/XMLSchema#'}},
      'source_file': 'models/evora_schema.yaml',
-     'title': 'European Viral Outbreak Response Alliance Ontology'} )
+     'title': 'European Viral Outbreak Response Alliance Ontology',
+     'types': {'literal': {'base': 'string',
+                           'description': 'The class rdfs:Literal is the class of '
+                                          'literal values such as strings and '
+                                          'integers. Property values such as '
+                                          'textual strings are examples of RDF '
+                                          'literals.',
+                           'from_schema': 'https://w3id.org/evorao/',
+                           'name': 'literal',
+                           'uri': 'rdfs:Literal'}}} )
 
 
 class Resource(ConfiguredBaseModel):
@@ -291,7 +300,7 @@ class Resource(ConfiguredBaseModel):
                                        'exact_mappings': ['schema:identifier'],
                                        'multivalued': True,
                                        'name': 'identifier',
-                                       'range': 'string',
+                                       'range': 'literal',
                                        'required': False,
                                        'slot_uri': 'dct:identifier',
                                        'title': 'identifier'},
@@ -352,7 +361,7 @@ class Resource(ConfiguredBaseModel):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -504,7 +513,7 @@ class Dataset(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -676,7 +685,7 @@ class DataService(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -771,7 +780,7 @@ class Version(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -863,7 +872,7 @@ class Catalogue(Dataset):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -1038,7 +1047,7 @@ class Taxonomy(Catalogue):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -1317,7 +1326,7 @@ class DataProvider(DataService):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -1521,7 +1530,7 @@ class PathogenIdentification(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -1672,7 +1681,7 @@ class Publication(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -1793,7 +1802,7 @@ class Vocabulary(Catalogue):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -1971,7 +1980,7 @@ class Term(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -2124,7 +2133,7 @@ class CommonName(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -2236,7 +2245,7 @@ class VirusName(CommonName):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -2387,7 +2396,7 @@ class AlternateName(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -2501,7 +2510,7 @@ class RiskGroup(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -2612,7 +2621,7 @@ class BiosafetyLevel(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -2713,7 +2722,7 @@ class Doi(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -2814,7 +2823,7 @@ class Journal(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -2909,7 +2918,7 @@ class PdbReference(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -3010,7 +3019,7 @@ class Keyword(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -3107,7 +3116,7 @@ class TagSequence(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -3204,7 +3213,7 @@ class SpecialFeature(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -3302,7 +3311,7 @@ class ExpressionVector(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -3396,7 +3405,7 @@ class PlasmidSelection(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -3490,7 +3499,7 @@ class PropagationHost(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -3585,7 +3594,7 @@ class TransmissionMethod(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -3683,7 +3692,7 @@ class ProductionCellLine(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -3801,7 +3810,7 @@ class ProductCategory(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -3893,7 +3902,7 @@ class IsolationHost(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -3996,7 +4005,7 @@ class GeographicalOrigin(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -4097,7 +4106,7 @@ class IplcOrigin(GeographicalOrigin):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -4224,7 +4233,7 @@ class Country(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -4318,7 +4327,7 @@ class IataClassification(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -4429,7 +4438,7 @@ class Variant(CommonName):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -4544,7 +4553,7 @@ class TaxonomicRank(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -4882,7 +4891,7 @@ class Taxon(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -5034,7 +5043,7 @@ class ClinicalGroup(Term):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -5142,7 +5151,7 @@ class ExternalRelatedReference(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -5240,7 +5249,7 @@ class Sequence(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -5325,7 +5334,7 @@ class SequenceReference(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -5482,7 +5491,7 @@ class PersonOrOrganization(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -5590,7 +5599,7 @@ class Person(PersonOrOrganization):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -5744,7 +5753,7 @@ class Organization(PersonOrOrganization):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -5851,7 +5860,7 @@ class ResearchInfrastructure(Organization):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -5971,7 +5980,7 @@ class Provider(Organization):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -6058,7 +6067,7 @@ class Originator(PersonOrOrganization):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -6186,7 +6195,7 @@ class BiologicalMaterialOrigin(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -6280,7 +6289,7 @@ class BiologicalPartOrigin(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -6449,7 +6458,7 @@ class NaturalPartOrigin(BiologicalPartOrigin):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -6558,7 +6567,7 @@ class SyntheticPartOrigin(BiologicalPartOrigin):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -6657,7 +6666,7 @@ class RecombinantPartIdentification(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -6775,7 +6784,7 @@ class Collection(Catalogue):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -7433,7 +7442,7 @@ class ProductOrService(Dataset):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -7683,7 +7692,7 @@ class Service(ProductOrService):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -8069,7 +8078,7 @@ class Product(ProductOrService):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -8472,7 +8481,7 @@ class Antibody(Product):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -8760,7 +8769,7 @@ class Hybridoma(Antibody):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -9425,7 +9434,7 @@ class Protein(Product):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -10031,7 +10040,7 @@ class NucleicAcid(Product):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -10330,7 +10339,7 @@ class DetectionKit(Product):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -10587,7 +10596,7 @@ class Bundle(Product):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -11225,7 +11234,7 @@ class Pathogen(Product):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -11669,7 +11678,7 @@ class Virus(Pathogen):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -11997,7 +12006,7 @@ class Bacterium(Pathogen):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -12323,7 +12332,7 @@ class Fungus(Pathogen):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -12645,7 +12654,7 @@ class Protozoan(Pathogen):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -12959,7 +12968,7 @@ class Viroid(Pathogen):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -13281,7 +13290,7 @@ class Prion(Pathogen):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -13707,7 +13716,7 @@ class MaterialSafetyDataSheet(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -13869,7 +13878,7 @@ class File(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -13956,7 +13965,7 @@ class Data(File):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -14045,7 +14054,7 @@ class Document(File):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -14132,7 +14141,7 @@ class Audio(File):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -14217,7 +14226,7 @@ class Video(File):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -14322,7 +14331,7 @@ class Image(File):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -14560,7 +14569,7 @@ class ContactPoint(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -14745,7 +14754,7 @@ class License(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -14933,7 +14942,7 @@ class Certification(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '
@@ -15174,7 +15183,7 @@ class FundingSource(Resource):
          'domain_of': ['Resource'],
          'exact_mappings': ['sepio:0000036'],
          'slot_uri': 'dct:modified'} })
-    identifier: Optional[list[str]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
+    identifier: Optional[list[string]] = Field(default=None, title="identifier", description="""A unique identifier of the resource being described or cataloged.""", json_schema_extra = { "linkml_meta": {'alias': 'identifier',
          'comments': ['The identifier is a text string which is assigned to the '
                       'resource to provide an unambiguous reference within a '
                       'particular context. Persistent identifiers should be provided '

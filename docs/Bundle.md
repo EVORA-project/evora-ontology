@@ -318,7 +318,7 @@ URI: [EVORAO:Bundle](https://w3id.org/evorao/Bundle)
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | [Resource](Resource.md) |
 | [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | [Resource](Resource.md) |
 | [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | [Resource](Resource.md) |
-| [identifier](identifier.md) | * <br/> [String](String.md) | A unique identifier of the resource being described or cataloged | [Resource](Resource.md) |
+| [identifier](identifier.md) | * <br/> [Literal](Literal.md) | A unique identifier of the resource being described or cataloged | [Resource](Resource.md) |
 | [iri](iri.md) | * <br/> [Uri](Uri.md) | International Resource Identifier (IRI) that uniquely identifies or refers to... | [Resource](Resource.md) |
 | [publisher](publisher.md) | 0..1 <br/> [PersonOrOrganization](PersonOrOrganization.md) | The entity responsible for making the resource available | [Resource](Resource.md) |
 
@@ -1256,7 +1256,7 @@ attributes:
     owner: Bundle
     domain_of:
     - Resource
-    range: string
+    range: literal
     required: false
     multivalued: true
   iri:

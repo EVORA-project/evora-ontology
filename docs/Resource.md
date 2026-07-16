@@ -118,7 +118,7 @@ URI: [dcat:Resource](http://www.w3.org/ns/dcat#Resource)
 | [keyword](keyword.md) | * <br/> [String](String.md) | A keyword or tag describing the resource | direct |
 | [dateIssued](dateIssued.md) | 0..1 <br/> [Datetime](Datetime.md) | Date of formal issuance (e | direct |
 | [dateModified](dateModified.md) | 0..1 <br/> [Datetime](Datetime.md) | Most recent date on which the resource was changed, updated or modified | direct |
-| [identifier](identifier.md) | * <br/> [String](String.md) | A unique identifier of the resource being described or cataloged | direct |
+| [identifier](identifier.md) | * <br/> [Literal](Literal.md) | A unique identifier of the resource being described or cataloged | direct |
 | [iri](iri.md) | * <br/> [Uri](Uri.md) | International Resource Identifier (IRI) that uniquely identifies or refers to... | direct |
 | [publisher](publisher.md) | 0..1 <br/> [PersonOrOrganization](PersonOrOrganization.md) | The entity responsible for making the resource available | direct |
 
@@ -243,7 +243,7 @@ slot_usage:
     slot_uri: dct:identifier
     domain_of:
     - Resource
-    range: string
+    range: literal
     required: false
     multivalued: true
   iri:
@@ -350,7 +350,7 @@ slot_usage:
     slot_uri: dct:identifier
     domain_of:
     - Resource
-    range: string
+    range: literal
     required: false
     multivalued: true
   iri:
@@ -459,7 +459,7 @@ attributes:
     owner: Resource
     domain_of:
     - Resource
-    range: string
+    range: literal
     required: false
     multivalued: true
   iri:

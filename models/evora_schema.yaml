@@ -48,7 +48,7 @@ keywords:
 - pathogen collections
 - interoperability
 id: https://w3id.org/evorao/
-version: 1.1.87
+version: 1.2.0
 imports:
 - linkml:types
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -114,6 +114,13 @@ prefixes:
   linkml: https://w3id.org/linkml/
 default_prefix: EVORAO
 default_range: string
+types:
+  literal:
+    description: The class rdfs:Literal is the class of literal values such as strings
+      and integers. Property values such as textual strings are examples of RDF literals.
+    from_schema: https://w3id.org/evorao/
+    base: string
+    uri: rdfs:Literal
 slots:
   keyword:
     description: A keyword or tag describing the resource.
@@ -171,7 +178,7 @@ slots:
     slot_uri: dct:identifier
     domain_of:
     - Resource
-    range: string
+    range: literal
     required: false
     multivalued: true
   iri:
@@ -3150,7 +3157,7 @@ classes:
         slot_uri: dct:identifier
         domain_of:
         - Resource
-        range: string
+        range: literal
         required: false
         multivalued: true
       iri:
@@ -7952,4 +7959,4 @@ classes:
         required: false
         multivalued: false
 source_file: https://w3id.org/evorao/evorao.owl.ttl
-generation_date: '2026-07-03T10:14:06'
+generation_date: '2026-07-16T16:38:27'

@@ -22,34 +22,34 @@ Alias: weight
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Country](Country.md) | The country as of ISO3166 |  no  |
-| [Journal](Journal.md) | Periodical journal publishing scientific research |  no  |
-| [Doi](Doi.md) | A unique string identifier assigned to a digital object, providing a permanen... |  no  |
-| [IplcOrigin](IplcOrigin.md) | The IPLC area (Indigenous People and Local Communities) from which a physical... |  no  |
-| [ClinicalGroup](ClinicalGroup.md) | A syndromic grouping of pathogens, based on typical disease manifestation, cl... |  no  |
-| [AlternateName](AlternateName.md) | List of other names for things |  no  |
-| [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
-| [PdbReference](PdbReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database |  no  |
-| [PropagationHost](PropagationHost.md) | The organism used to grow and multiply the pathogen under controlled conditio... |  no  |
-| [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... |  no  |
-| [Keyword](Keyword.md) | A term or phrase used to tag and categorize content |  no  |
-| [TransmissionMethod](TransmissionMethod.md) | The process by which the pathogen spreads between hosts |  no  |
-| [ProductCategory](ProductCategory.md) | A term used to classify a group of products that share common characteristics... |  no  |
-| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  yes  |
-| [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... |  no  |
-| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
-| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to someth... |  no  |
-| [ProductionCellLine](ProductionCellLine.md) | A population of cells that originates from a primary culture, adapted to grow... |  no  |
-| [ExpressionVector](ExpressionVector.md) | A reference to an expression vector plasmid, typically embedding a resistance... |  no  |
-| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  no  |
 | [TagSequence](TagSequence.md) | The name of the DNA coding sequence or corresponding peptide/protein sequence... |  no  |
-| [TaxonomicRank](TaxonomicRank.md) | The possible taxonomic ranks and their description |  no  |
-| [PlasmidSelection](PlasmidSelection.md) | The process of identifying cells that have successfully incorporated a plasmi... |  no  |
-| [GeographicalOrigin](GeographicalOrigin.md) | The specific location or region where a physical item, originates or is natur... |  no  |
-| [RiskGroup](RiskGroup.md) | Risk group classification guides initial handling of biological agents in lab... |  no  |
+| [TransmissionMethod](TransmissionMethod.md) | The process by which the pathogen spreads between hosts |  no  |
+| [CommonName](CommonName.md) | Vernacular name that is the name used in everyday language to refer to someth... |  no  |
+| [ExpressionVector](ExpressionVector.md) | A reference to an expression vector plasmid, typically embedding a resistance... |  no  |
+| [BiosafetyLevel](BiosafetyLevel.md) | The level of biocontainment required or applied in the facility where the bio... |  no  |
 | [IsolationHost](IsolationHost.md) | Host organism from which the pathogen was isolated |  no  |
 | [Term](Term.md) | Word or phrase from a specialized area of knowledge |  yes  |
-| [BiosafetyLevel](BiosafetyLevel.md) | The level of biocontainment required or applied in the facility where the bio... |  no  |
+| [PlasmidSelection](PlasmidSelection.md) | The process of identifying cells that have successfully incorporated a plasmi... |  no  |
+| [IplcOrigin](IplcOrigin.md) | The IPLC area (Indigenous People and Local Communities) from which a physical... |  no  |
+| [AlternateName](AlternateName.md) | List of other names for things |  no  |
+| [TaxonomicRank](TaxonomicRank.md) | The possible taxonomic ranks and their description |  no  |
+| [ClinicalGroup](ClinicalGroup.md) | A syndromic grouping of pathogens, based on typical disease manifestation, cl... |  no  |
+| [IataClassification](IataClassification.md) | The corresponding International Air Transport Association (IATA)'s category f... |  no  |
+| [GeographicalOrigin](GeographicalOrigin.md) | The specific location or region where a physical item, originates or is natur... |  no  |
+| [VirusName](VirusName.md) | A virus vernacular name or a name that describes a group of viruses |  no  |
+| [Journal](Journal.md) | Periodical journal publishing scientific research |  no  |
+| [DataProvider](DataProvider.md) | An external API (Application Programming Interface) or Endpoint that permits ... |  yes  |
+| [SpecialFeature](SpecialFeature.md) | Distinctive attributes of a product that set it apart from other similar item... |  no  |
+| [Doi](Doi.md) | A unique string identifier assigned to a digital object, providing a permanen... |  no  |
+| [Keyword](Keyword.md) | A term or phrase used to tag and categorize content |  no  |
+| [Country](Country.md) | The country as of ISO3166 |  no  |
+| [PropagationHost](PropagationHost.md) | The organism used to grow and multiply the pathogen under controlled conditio... |  no  |
+| [Variant](Variant.md) | An organism with one or more new mutations is referred to as a “variant” of t... |  no  |
+| [Taxon](Taxon.md) | Conceptual entity that groups one or more populations of an organism or organ... |  no  |
+| [ProductCategory](ProductCategory.md) | A term used to classify a group of products that share common characteristics... |  no  |
+| [ProductionCellLine](ProductionCellLine.md) | A population of cells that originates from a primary culture, adapted to grow... |  no  |
+| [PdbReference](PdbReference.md) | Identifier for 3D structural data as per the PDB (Protein Data Bank) database |  no  |
+| [RiskGroup](RiskGroup.md) | Risk group classification guides initial handling of biological agents in lab... |  no  |
 
 
 

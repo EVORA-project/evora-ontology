@@ -1,5 +1,5 @@
 # Auto generated from evora_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-03T08:14:51
+# Generation date: 2026-07-16T14:39:13
 # Schema: EVORAO
 #
 # id: https://w3id.org/evorao/
@@ -57,10 +57,10 @@ from rdflib import (
 )
 
 from linkml_runtime.linkml_model.types import Boolean, Date, Datetime, Decimal, Integer, String, Uri
-from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime
+from linkml_runtime.utils.metamodelcore import Bool, Decimal, URI, XSDDate, XSDDateTime, string
 
 metamodel_version = "1.7.0"
-version = "1.1.87"
+version = "1.2.0"
 
 # Namespaces
 EVORAO = CurieNamespace('EVORAO', 'https://w3id.org/evorao/')
@@ -126,6 +126,13 @@ DEFAULT_ = EVORAO
 
 
 # Types
+class Literal(string):
+    """ The class rdfs:Literal is the class of literal values such as strings and integers. Property values such as textual strings are examples of RDF literals. """
+    type_class_uri = RDFS["Literal"]
+    type_class_curie = "rdfs:Literal"
+    type_name = "literal"
+    type_model_uri = EVORAO.Literal
+
 
 # Class references
 
@@ -146,7 +153,7 @@ class Resource(YAMLRoot):
     keyword: Optional[Union[str, list[str]]] = empty_list()
     dateIssued: Optional[Union[str, XSDDateTime]] = None
     dateModified: Optional[Union[str, XSDDateTime]] = None
-    identifier: Optional[Union[str, list[str]]] = empty_list()
+    identifier: Optional[Union[string, list[string]]] = empty_list()
     iri: Optional[Union[Union[str, URI], list[Union[str, URI]]]] = empty_list()
     publisher: Optional[Union[dict, "PersonOrOrganization"]] = None
 
@@ -163,7 +170,7 @@ class Resource(YAMLRoot):
 
         if not isinstance(self.identifier, list):
             self.identifier = [self.identifier] if self.identifier is not None else []
-        self.identifier = [v if isinstance(v, str) else str(v) for v in self.identifier]
+        self.identifier = [v if isinstance(v, string) else string(v) for v in self.identifier]
 
         if not isinstance(self.iri, list):
             self.iri = [self.iri] if self.iri is not None else []
@@ -2921,7 +2928,7 @@ slots.dateModified = Slot(uri=DCT.modified, name="dateModified", curie=DCT.curie
                    model_uri=EVORAO.dateModified, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.identifier = Slot(uri=DCT.identifier, name="identifier", curie=DCT.curie('identifier'),
-                   model_uri=EVORAO.identifier, domain=None, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.identifier, domain=None, range=Optional[Union[string, list[string]]])
 
 slots.iri = Slot(uri=EVORAO.iri, name="iri", curie=EVORAO.curie('iri'),
                    model_uri=EVORAO.iri, domain=None, range=Optional[Union[Union[str, URI], list[Union[str, URI]]]])
@@ -3548,7 +3555,7 @@ slots.Resource_dateModified = Slot(uri=DCT.modified, name="Resource_dateModified
                    model_uri=EVORAO.Resource_dateModified, domain=Resource, range=Optional[Union[str, XSDDateTime]])
 
 slots.Resource_identifier = Slot(uri=DCT.identifier, name="Resource_identifier", curie=DCT.curie('identifier'),
-                   model_uri=EVORAO.Resource_identifier, domain=Resource, range=Optional[Union[str, list[str]]])
+                   model_uri=EVORAO.Resource_identifier, domain=Resource, range=Optional[Union[string, list[string]]])
 
 slots.Resource_iri = Slot(uri=EVORAO.iri, name="Resource_iri", curie=EVORAO.curie('iri'),
                    model_uri=EVORAO.Resource_iri, domain=Resource, range=Optional[Union[Union[str, URI], list[Union[str, URI]]]])

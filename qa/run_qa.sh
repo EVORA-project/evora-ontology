@@ -68,9 +68,8 @@ else
   exit 16
 fi
 
-# Full DL reasoners currently expose datatype/profile issues in the generated ontology
-# that are useful to review but would block every release candidate. Keep the report
-# deterministic and visible without replacing the blocking ROBOT reasoner above.
+# The strict DL reasoner is informative rather than blocking. Its report keeps
+# OWL DL profile or datatype issues visible without replacing the ELK gate.
 echo "Recording non-blocking ROBOT/$STRICT_REASONER DL check"
 if docker run --rm \
   -v "$ROOT_DIR:/workdir" \

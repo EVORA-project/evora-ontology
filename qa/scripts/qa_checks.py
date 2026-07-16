@@ -291,7 +291,7 @@ def final_summary() -> None:
         f"- Structural checks: {structural_status}",
         f"- Blocking ROBOT reasoning ({reasoning_status.get('reasoner', 'unknown')}): {reasoning_status['status']}",
         f"- Fixture ROBOT reasoning ({fixture_reasoning_status.get('reasoner', 'unknown')}): {fixture_reasoning_status['status']}",
-        f"- Strict DL ROBOT check ({strict_reasoning_status.get('reasoner', 'unknown')}): {strict_reasoning_status['status']}",
+        f"- Non-blocking ROBOT DL check ({strict_reasoning_status.get('reasoner', 'unknown')}): {strict_reasoning_status['status']}",
         f"- SHACL valid fixture: {shacl_status['valid_fixture']}",
         f"- SHACL invalid fixture: {shacl_status['invalid_fixture']}",
         f"- Competency queries: {metrics['competency_query_status']}",
