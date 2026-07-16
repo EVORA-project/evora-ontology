@@ -8,6 +8,10 @@ on:
               description: 'Google Sheet metadata file version asking for Sync'
               required: false
               type: string
+          expectedOntologyVersion:
+              description: 'Expected ontology semantic version after generation, e.g. 1.1.88'
+              required: false
+              type: string
           commitMessage:
               description: 'User commit message explaining latest modifications to the metadata'
               required: false
@@ -21,7 +25,7 @@ jobs:
       DOCKER_IMAGE: evoratools/schemasheets:0.4.0_stable
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
           fetch-depth: 0
@@ -37,8 +41,24 @@ jobs:
         run: |
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           sheets2linkml --gsheet-id 1zcyNKuhkpH-0FqEGSt6UwHAiSYzsUUSkHYcDOYz67zI \
-          --name EVORA Prefixes Schema CompleteList ClassesDetails PropertiesDetails PropertiesDomains AllowedValues \
+          --name EVORA Prefixes Schema DataTypes CompleteList ClassesDetails PropertiesDetails PropertiesDomains AllowedValues \
           -o models/evora_schema.yaml
+
+      - name: Validate generated ontology version
+        if: ${{ inputs.expectedOntologyVersion != '' }}
+        run: |
+          GENERATED_VERSION=$(grep -m1 '^version:' models/evora_schema.yaml | cut -d: -f2- | tr -d ' "')
+          EXPECTED_VERSION="${{ inputs.expectedOntologyVersion }}"
+          if [ -z "$GENERATED_VERSION" ]; then
+            echo "Could not resolve version from models/evora_schema.yaml" >&2
+            exit 1
+          fi
+          if [ "v${GENERATED_VERSION#v}" != "v${EXPECTED_VERSION#v}" ]; then
+            echo "Generated ontology version v${GENERATED_VERSION#v} does not match expected v${EXPECTED_VERSION#v}." >&2
+            echo "Update the Google Sheet ontology version metadata, or rerun with the generated version as the expectation." >&2
+            exit 1
+          fi
+          echo "Generated ontology version v${GENERATED_VERSION#v} matches the requested release expectation."
 
       - uses: actions/upload-artifact@v7
         with:
@@ -140,7 +160,25 @@ jobs:
           docker run --rm -v $(pwd):/workdir -u $(id -u):$(id -g) $DOCKER_IMAGE \
           linkml generate pydantic --meta AUTO models/evora_schema.yaml > models/subsidiary_models/pydantic/evora_schema.py
 
+      - name: Run deterministic EVORAO QA gate
+        run: ./qa/run_qa.sh
 
+      - name: Upload EVORAO QA reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: evora-qa-reports
+          path: qa/reports/
+          compression-level: 9
+
+      - name: Publish EVORAO QA summary
+        if: always()
+        run: |
+          if [ -f qa/reports/summary.md ]; then
+            cat qa/reports/summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "EVORAO QA did not produce a summary." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: GIT commit and push all changed files
         env:
@@ -151,5 +189,9 @@ jobs:
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "username@users.noreply.github.com"
           git add -A
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
           git commit -m "${{ env.CI_COMMIT_MESSAGE }}" -m "${{ env.USER_COMMIT_MESSAGE }}"
           git push

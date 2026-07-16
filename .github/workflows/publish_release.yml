@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -55,4 +55,4 @@ jobs:
             models/owl/evora_ontology.owl.ttl \
             models/evora_schema.yaml \
             --title "EVORAO $VERSION" \
-            --notes "EVORAO $VERSION generated from the LinkML schema, including LOV metadata and GitHub Pages documentation updates."
+            --notes "EVORAO $VERSION generated from the LinkML schema, including FAIR metadata and GitHub Pages documentation updates."

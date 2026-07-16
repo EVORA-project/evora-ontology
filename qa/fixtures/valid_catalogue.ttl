@@ -1,0 +1,88 @@
+@prefix EVORAO: <https://w3id.org/evorao/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ex: <https://example.org/evorao-fixture/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:catalogue a owl:NamedIndividual,
+        dcat:Catalog ;
+    dct:title "Synthetic EVORAO fixture catalogue" ;
+    dct:description "Historical synthetic fixture used only for deterministic EVORAO QA tests." ;
+    dcat:version "fixture-2026-07-15" ;
+    EVORAO:collectionItem ex:resource-1 .
+
+ex:portal-service a owl:NamedIndividual,
+        dcat:DataService ;
+    dct:title "Synthetic EVORA request endpoint" ;
+    dct:description "Fictional data service fixture representing a provider request route." ;
+    dcat:endpointURL "https://example.org/evorao-fixture/request"^^xsd:anyURI ;
+    dcat:servesDataset ex:resource-1 .
+
+ex:resource-1 a owl:NamedIndividual,
+        dcat:Dataset,
+        EVORAO:ProductOrService ;
+    dct:title "Synthetic inactivated virus reference material" ;
+    dct:description "Fictional reference material modelled after EVORAO catalogue patterns." ;
+    EVORAO:accessPointUrl "https://example.org/evorao-fixture/resource-1"^^xsd:anyURI ;
+    EVORAO:refSku "EVORA-FIX-001" ;
+    EVORAO:unitDefinition "One vial of inactivated synthetic reference material." ;
+    dcat:theme ex:category-reference-material ;
+    EVORAO:pathogenIdentification ex:pathogen-identification-1 ;
+    EVORAO:provider ex:provider-1 ;
+    EVORAO:collection ex:collection-1 ;
+    EVORAO:availability "on request" ;
+    EVORAO:keywords ex:keyword-virus ;
+    EVORAO:biosafetyLevel ex:bsl-2 ;
+    EVORAO:biosafetyRestrictions "Handle according to institutional biosafety procedures for inactivated material." ;
+    EVORAO:technicalRecommendation "Use only for assay validation." ;
+    EVORAO:usageRestrictions "Research use only." ;
+    dct:license ex:fixture-license .
+
+ex:provider-1 a owl:NamedIndividual,
+        EVORAO:Provider ;
+    foaf:name "Example EVORA Provider" ;
+    dcat:contactPoint ex:contact-1 .
+
+ex:contact-1 a owl:NamedIndividual,
+        EVORAO:ContactPoint ;
+    foaf:name "Example requests contact" ;
+    EVORAO:email "requests@example.org" .
+
+ex:collection-1 a owl:NamedIndividual,
+        EVORAO:Collection ;
+    dct:title "Synthetic EVORA reference collection" ;
+    dct:description "Fictional collection used by deterministic EVORAO QA tests." .
+
+ex:pathogen-identification-1 a owl:NamedIndividual,
+        EVORAO:PathogenIdentification ;
+    EVORAO:pathogenName ex:common-name-1 ;
+    EVORAO:pathogenType "Virus" ;
+    EVORAO:taxon ex:taxon-1 .
+
+ex:common-name-1 a owl:NamedIndividual,
+        EVORAO:CommonName ;
+    dct:title "Example orthomyxo-like virus" .
+
+ex:taxon-1 a owl:NamedIndividual,
+        EVORAO:Taxon ;
+    dct:title "Example orthomyxo-like virus" ;
+    EVORAO:taxonomicId "EXAMPLE:0001" .
+
+ex:category-reference-material a owl:NamedIndividual,
+        EVORAO:ProductCategory ;
+    dct:title "Reference material" .
+
+ex:keyword-virus a owl:NamedIndividual,
+        EVORAO:Keyword ;
+    dct:title "virus" .
+
+ex:bsl-2 a owl:NamedIndividual,
+        EVORAO:BiosafetyLevel ;
+    dct:title "Biosafety level 2" .
+
+ex:fixture-license a owl:NamedIndividual,
+        EVORAO:License ;
+    dct:title "Synthetic fixture terms" ;
+    dct:description "This fixture is fictional and does not represent a live Portal record." .

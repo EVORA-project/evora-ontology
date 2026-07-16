@@ -1,0 +1,2 @@
+resource,providerName,accessPoint,endpoint
+https://example.org/evorao-fixture/resource-1,Example EVORA Provider,https://example.org/evorao-fixture/resource-1,https://example.org/evorao-fixture/request

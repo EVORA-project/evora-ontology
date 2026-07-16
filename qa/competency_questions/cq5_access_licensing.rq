@@ -1,0 +1,11 @@
+# Catalogue task: Which access, licensing or redistribution conditions are stated?
+PREFIX EVORAO: <https://w3id.org/evorao/>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+SELECT ?resource ?availability ?license ?usageRestrictions
+WHERE {
+  ?resource EVORAO:availability ?availability ;
+            dct:license ?license .
+  OPTIONAL { ?resource EVORAO:usageRestrictions ?usageRestrictions . }
+}
+ORDER BY ?resource
